@@ -191,12 +191,12 @@
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
     </Reference>
-    <ProjectReference Include="..\SaleDS\BondDS.csproj">
+    <ProjectReference Include="..\BondDS\BondDS.csproj">
       <Name>BondDS</Name>
       <Project>{39DC1A18-A725-4DF1-93CE-467C130CEEF9}</Project>
       <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
-    <ProjectReference Include="..\SaleUS\BondUS.csproj">
+    <ProjectReference Include="..\BondUS\BondUS.csproj">
       <Name>BondUS</Name>
       <Project>{A6E36F4B-6825-44A8-9396-C5BBD8630CB0}</Project>
       <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
