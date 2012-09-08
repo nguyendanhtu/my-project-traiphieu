@@ -1,0 +1,13 @@
+C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPWordReport\bin\IP.Core.IPWordReport.dll
+C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPWordReport\bin\IP.Core.IPWordReport.pdb
+C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPWordReport\bin\IP.Core.IPWordReport.xml
+C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPWordReport\bin\Interop.Word.dll
+C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPWordReport\bin\Interop.Microsoft.Office.Core.dll
+C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPWordReport\bin\Interop.VBIDE.dll
+C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPWordReport\obj\Debug\ResolveAssemblyReference.cache
+C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPWordReport\obj\Debug\Interop.Microsoft.Office.Core.dll
+C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPWordReport\obj\Debug\Interop.VBIDE.dll
+C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPWordReport\obj\Debug\IPWordReport.vbproj.ResolveComReference.cache
+C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPWordReport\obj\Debug\IP.Core.IPWordReport.dll
+C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPWordReport\obj\Debug\IP.Core.IPWordReport.xml
+C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPWordReport\obj\Debug\IP.Core.IPWordReport.pdb
