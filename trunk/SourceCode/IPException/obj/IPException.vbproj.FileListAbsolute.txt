@@ -1,7 +1,0 @@
-C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPException\bin\IPException.dll
-C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPException\bin\IPException.pdb
-C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPException\bin\IPException.xml
-C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPException\obj\Debug\ResolveAssemblyReference.cache
-C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPException\obj\Debug\IPException.dll
-C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPException\obj\Debug\IPException.xml
-C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPException\obj\Debug\IPException.pdb
