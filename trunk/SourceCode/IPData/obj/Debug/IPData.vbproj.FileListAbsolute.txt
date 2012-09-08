@@ -1,0 +1,6 @@
+D:\01. BKIndex\01. Project\01. du an\01.2012.08.Trai phieu\VietTinBankSC\SourceCode\IPData\bin\IPData.dll
+D:\01. BKIndex\01. Project\01. du an\01.2012.08.Trai phieu\VietTinBankSC\SourceCode\IPData\bin\IPData.pdb
+D:\01. BKIndex\01. Project\01. du an\01.2012.08.Trai phieu\VietTinBankSC\SourceCode\IPData\bin\IPData.xml
+D:\01. BKIndex\01. Project\01. du an\01.2012.08.Trai phieu\VietTinBankSC\SourceCode\IPData\obj\Debug\IPData.dll
+D:\01. BKIndex\01. Project\01. du an\01.2012.08.Trai phieu\VietTinBankSC\SourceCode\IPData\obj\Debug\IPData.xml
+D:\01. BKIndex\01. Project\01. du an\01.2012.08.Trai phieu\VietTinBankSC\SourceCode\IPData\obj\Debug\IPData.pdb
