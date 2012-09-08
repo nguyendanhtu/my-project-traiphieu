@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="DS_KET_QUA_TONG_HOP" targetNamespace="http://tempuri.org/DS_KET_QUA_TONG_HOP.xsd"
+	elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/DS_KET_QUA_TONG_HOP.xsd"
+	xmlns:mstns="http://tempuri.org/DS_KET_QUA_TONG_HOP.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="DS_KET_QUA_TONG_HOP" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="KET_QUA_TONG_HOP">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DOT_DAU_GIA" type="xs:string" minOccurs="0" />
+							<xs:element name="NGAY_DAU_GIA" type="xs:dateTime" minOccurs="0" />
+							<xs:element name="TONG_SO_CO_PHAN_CHAO_BAN" type="xs:decimal" minOccurs="0" />
+							<xs:element name="TONG_SO_NHA_DAU_TU_DANG_KY" type="xs:decimal" minOccurs="0" />
+							<xs:element name="TONG_SO_CO_PHAN_DANG_KY" type="xs:decimal" minOccurs="0" />
+							<xs:element name="TONG_SO_NHA_DAU_TU_HOP_LE" type="xs:decimal" minOccurs="0" />
+							<xs:element name="TONG_SO_NHA_DAU_TU_THAM_GIA" type="xs:decimal" minOccurs="0" />
+							<xs:element name="TONG_SO_NHA_DAU_TU_TRUNG_THAU" type="xs:decimal" minOccurs="0" />
+							<xs:element name="TONG_SO_CO_PHAN_DAT_MUA" type="xs:decimal" minOccurs="0" />
+							<xs:element name="TONG_SO_CO_PHAN_BAN_DUOC" type="xs:decimal" minOccurs="0" />
+							<xs:element name="TONG_SO_CO_PHAN_CHUA_BAN_DUOC" type="xs:decimal" minOccurs="0" />
+							<xs:element name="GIA_TRUNG_THAU_CAO_NHAT" type="xs:decimal" minOccurs="0" />
+							<xs:element name="GIA_TRUNG_THAU_THAP_NHAT" type="xs:decimal" minOccurs="0" />
+							<xs:element name="GIA_TRUNG_THAU_TRUNG_BINH" type="xs:decimal" minOccurs="0" />
+							<xs:element name="TONG_GIA_TRI_DAU_GIA" type="xs:decimal" minOccurs="0" />
+							<xs:element name="TOM_TAT_THEO_NHOM" type="xs:string" minOccurs="0" />
+							<xs:element name="SO_LUONG_CO_PHAN_NGUOI_NUOC_NGOAI_DUOC_MUA" type="xs:decimal" minOccurs="0" />
+							<xs:element name="MENH_GIA_CO_PHAN" type="xs:decimal" minOccurs="0" />
+							<xs:element name="GIA_KHOI_DIEM" type="xs:decimal" minOccurs="0" />
+							<xs:element name="TONG_NHA_DAU_TU_PHAP_NHAN" type="xs:decimal" minOccurs="0" />
+							<xs:element name="TONG_NHA_DAU_TU_CA_NHAN" type="xs:decimal" minOccurs="0" />
+							<xs:element name="KHOI_LUONG_DAT_CAO_NHAT" type="xs:decimal" minOccurs="0" />
+							<xs:element name="KHOI_LUONG_DAT_THAP_NHAT" type="xs:decimal" minOccurs="0" />
+							<xs:element name="GIA_DAT_CAO_NHAT" type="xs:decimal" minOccurs="0" />
+							<xs:element name="GIA_DAT_THAP_NHAT" type="xs:decimal" minOccurs="0" />
+							<xs:element name="SO_CO_PHAN_TRUNG_CUA_NGUOI_NUOC_NGOAI" type="xs:decimal" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
