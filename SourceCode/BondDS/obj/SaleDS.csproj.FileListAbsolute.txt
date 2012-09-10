@@ -1,6 +1,0 @@
-C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\SaleDS\bin\Debug\SaleDS.dll.config
-C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\SaleDS\bin\Debug\SaleDS.dll
-C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\SaleDS\bin\Debug\SaleDS.pdb
-C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\SaleDS\obj\Debug\ResolveAssemblyReference.cache
-C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\SaleDS\obj\Debug\SaleDS.dll
-C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\SaleDS\obj\Debug\SaleDS.pdb
