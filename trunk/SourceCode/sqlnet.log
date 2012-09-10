@@ -1,0 +1,38 @@
+
+
+***********************************************************************
+Fatal NI connect error 12514, connecting to:
+ (DESCRIPTION=(CONNECT_DATA=(SID=*)(SERVICE_NAME=LEQUANG)(CID=(PROGRAM=C:\Program Files\Microsoft Visual Studio .NET 2003\Common7\IDE\devenv.exe)(HOST=LEQUANG)(USER=Le?Quang)))(ADDRESS=(PROTOCOL=TCP)(HOST=LEQUANG)(PORT=1521)))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 31-JUL-2008 22:49:28
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12564
+    TNS-12564: TNS:connection refused
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12514, connecting to:
+ (DESCRIPTION=(CONNECT_DATA=(SID=*)(SERVICE_NAME=LEQUANG)(CID=(PROGRAM=C:\Program Files\Microsoft Visual Studio .NET 2003\Common7\IDE\devenv.exe)(HOST=LEQUANG)(USER=Le?Quang)))(ADDRESS=(PROTOCOL=TCP)(HOST=LEQUANG)(PORT=1521)))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 9.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 9.2.0.1.0 - Production
+  Time: 31-JUL-2008 22:49:35
+  Tracing not turned on.
+  Tns error struct:
+    nr err code: 0
+    ns main err code: 12564
+    TNS-12564: TNS:connection refused
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
