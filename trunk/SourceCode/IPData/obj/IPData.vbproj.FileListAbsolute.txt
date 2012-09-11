@@ -1,7 +1,0 @@
-C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPData\bin\IPData.dll
-C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPData\bin\IPData.pdb
-C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPData\bin\IPData.xml
-C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPData\obj\Debug\ResolveAssemblyReference.cache
-C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPData\obj\Debug\IPData.dll
-C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPData\obj\Debug\IPData.xml
-C:\TU_WORK\PROJECT.16. BAN HANG\SourceCode\IPData\obj\Debug\IPData.pdb
