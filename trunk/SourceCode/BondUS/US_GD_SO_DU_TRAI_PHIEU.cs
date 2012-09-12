@@ -148,6 +148,14 @@ public class US_GD_SO_DU_TRAI_PHIEU : US_Object
 		this.FillDatasetByCommand(pm_objDS, v_cmdSQL);
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
+    
+        public void select_us_gd_so_du_trai_phieu_byTraiChuID(decimal ip_trai_chu_ID, DS_GD_SO_DU_TRAI_PHIEU op_ds)
+        {
+            US_GD_SO_DU_TRAI_PHIEU v_us = new US_GD_SO_DU_TRAI_PHIEU();
+            CStoredProc v_cstore = new CStoredProc("pr_GD_SO_DU_TRAI_PHIEU_SelectByTraiChuID");
+            v_cstore.addDecimalInputParam("@ID", ip_trai_chu_ID);
+            v_cstore.fillDataSetByCommand(this, op_ds);
+        }
 #endregion
 }
 }
