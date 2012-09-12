@@ -175,7 +175,7 @@
             // m_lbl_fax
             // 
             this.m_lbl_fax.AutoSize = true;
-            this.m_lbl_fax.Location = new System.Drawing.Point(676, 147);
+            this.m_lbl_fax.Location = new System.Drawing.Point(684, 147);
             this.m_lbl_fax.Name = "m_lbl_fax";
             this.m_lbl_fax.Size = new System.Drawing.Size(24, 13);
             this.m_lbl_fax.TabIndex = 23;
@@ -344,7 +344,7 @@
             // m_lbl_so_luong_trai_phieu
             // 
             this.m_lbl_so_luong_trai_phieu.AutoSize = true;
-            this.m_lbl_so_luong_trai_phieu.Location = new System.Drawing.Point(52, 74);
+            this.m_lbl_so_luong_trai_phieu.Location = new System.Drawing.Point(47, 74);
             this.m_lbl_so_luong_trai_phieu.Name = "m_lbl_so_luong_trai_phieu";
             this.m_lbl_so_luong_trai_phieu.Size = new System.Drawing.Size(95, 13);
             this.m_lbl_so_luong_trai_phieu.TabIndex = 11;
@@ -588,13 +588,12 @@
             this.m_txt_tong_gia_tri.ReadOnly = true;
             this.m_txt_tong_gia_tri.Size = new System.Drawing.Size(140, 20);
             this.m_txt_tong_gia_tri.TabIndex = 7;
-            this.m_txt_tong_gia_tri.Text = "9,999,999,999";
             this.m_txt_tong_gia_tri.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // m_lbl_tong_so_trai_phieu
             // 
             this.m_lbl_tong_so_trai_phieu.AutoSize = true;
-            this.m_lbl_tong_so_trai_phieu.Location = new System.Drawing.Point(52, 48);
+            this.m_lbl_tong_so_trai_phieu.Location = new System.Drawing.Point(50, 48);
             this.m_lbl_tong_so_trai_phieu.Name = "m_lbl_tong_so_trai_phieu";
             this.m_lbl_tong_so_trai_phieu.Size = new System.Drawing.Size(92, 13);
             this.m_lbl_tong_so_trai_phieu.TabIndex = 4;
