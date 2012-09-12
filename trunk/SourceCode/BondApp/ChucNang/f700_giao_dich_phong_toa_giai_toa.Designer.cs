@@ -72,8 +72,8 @@
             this.m_txt_lai_suat = new System.Windows.Forms.TextBox();
             this.m_lbl_ngay_dao_han = new System.Windows.Forms.Label();
             this.m_txt_ngay_dao_han = new System.Windows.Forms.TextBox();
-            this.m_lbl_ngay_het_han = new System.Windows.Forms.Label();
-            this.m_txt_ngay_het_han = new System.Windows.Forms.TextBox();
+            this.m_lbl_ngay_phat_hanh = new System.Windows.Forms.Label();
+            this.m_txt_ngay_phat_hanh = new System.Windows.Forms.TextBox();
             this.m_lbl_tong_gia_tri = new System.Windows.Forms.Label();
             this.m_txt_tong_gia_tri = new System.Windows.Forms.TextBox();
             this.m_lbl_tong_so_trai_phieu = new System.Windows.Forms.Label();
@@ -473,8 +473,8 @@
             this.groupBox3.Controls.Add(this.m_txt_lai_suat);
             this.groupBox3.Controls.Add(this.m_lbl_ngay_dao_han);
             this.groupBox3.Controls.Add(this.m_txt_ngay_dao_han);
-            this.groupBox3.Controls.Add(this.m_lbl_ngay_het_han);
-            this.groupBox3.Controls.Add(this.m_txt_ngay_het_han);
+            this.groupBox3.Controls.Add(this.m_lbl_ngay_phat_hanh);
+            this.groupBox3.Controls.Add(this.m_txt_ngay_phat_hanh);
             this.groupBox3.Controls.Add(this.m_lbl_tong_gia_tri);
             this.groupBox3.Controls.Add(this.m_txt_tong_gia_tri);
             this.groupBox3.Controls.Add(this.m_lbl_tong_so_trai_phieu);
@@ -553,23 +553,23 @@
             this.m_txt_ngay_dao_han.Size = new System.Drawing.Size(140, 20);
             this.m_txt_ngay_dao_han.TabIndex = 11;
             // 
-            // m_lbl_ngay_het_han
+            // m_lbl_ngay_phat_hanh
             // 
-            this.m_lbl_ngay_het_han.AutoSize = true;
-            this.m_lbl_ngay_het_han.Location = new System.Drawing.Point(347, 48);
-            this.m_lbl_ngay_het_han.Name = "m_lbl_ngay_het_han";
-            this.m_lbl_ngay_het_han.Size = new System.Drawing.Size(71, 13);
-            this.m_lbl_ngay_het_han.TabIndex = 8;
-            this.m_lbl_ngay_het_han.Text = "Ngày hết hạn";
+            this.m_lbl_ngay_phat_hanh.AutoSize = true;
+            this.m_lbl_ngay_phat_hanh.Location = new System.Drawing.Point(335, 48);
+            this.m_lbl_ngay_phat_hanh.Name = "m_lbl_ngay_phat_hanh";
+            this.m_lbl_ngay_phat_hanh.Size = new System.Drawing.Size(83, 13);
+            this.m_lbl_ngay_phat_hanh.TabIndex = 8;
+            this.m_lbl_ngay_phat_hanh.Text = "Ngày phát hành";
             // 
-            // m_txt_ngay_het_han
+            // m_txt_ngay_phat_hanh
             // 
-            this.m_txt_ngay_het_han.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_txt_ngay_het_han.Location = new System.Drawing.Point(424, 45);
-            this.m_txt_ngay_het_han.Name = "m_txt_ngay_het_han";
-            this.m_txt_ngay_het_han.ReadOnly = true;
-            this.m_txt_ngay_het_han.Size = new System.Drawing.Size(140, 20);
-            this.m_txt_ngay_het_han.TabIndex = 9;
+            this.m_txt_ngay_phat_hanh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.m_txt_ngay_phat_hanh.Location = new System.Drawing.Point(424, 45);
+            this.m_txt_ngay_phat_hanh.Name = "m_txt_ngay_phat_hanh";
+            this.m_txt_ngay_phat_hanh.ReadOnly = true;
+            this.m_txt_ngay_phat_hanh.Size = new System.Drawing.Size(140, 20);
+            this.m_txt_ngay_phat_hanh.TabIndex = 9;
             // 
             // m_lbl_tong_gia_tri
             // 
@@ -836,8 +836,8 @@
         private System.Windows.Forms.TextBox m_txt_lai_suat;
         private System.Windows.Forms.Label m_lbl_ngay_dao_han;
         private System.Windows.Forms.TextBox m_txt_ngay_dao_han;
-        private System.Windows.Forms.Label m_lbl_ngay_het_han;
-        private System.Windows.Forms.TextBox m_txt_ngay_het_han;
+        private System.Windows.Forms.Label m_lbl_ngay_phat_hanh;
+        private System.Windows.Forms.TextBox m_txt_ngay_phat_hanh;
         private System.Windows.Forms.Label m_lbl_tong_gia_tri;
         private System.Windows.Forms.TextBox m_txt_tong_gia_tri;
         private System.Windows.Forms.GroupBox groupBox2;
