@@ -249,6 +249,17 @@ public class US_GD_LICH_THANH_TOAN_LAI_GOC : US_Object
         this.FillDatasetByCommand(ip_gd_lich, v_obj_cmd.getSelectCmd());
 
     }
+    public void FillDataset(DS_GD_LICH_THANH_TOAN_LAI_GOC ip_gd_lich, DateTime ip_from_date, DateTime ip_to_date, decimal ip_id_loai_nhac_viec)
+    {
+        CStoredProc v_pr_obj = new CStoredProc("pr_GD_LICH_THANH_TOAN_LAI_GOC_filter");
+        v_pr_obj.addDatetimeInputParam("@ip_from_date", ip_from_date);
+        v_pr_obj.addDatetimeInputParam("@ip_to_date", ip_to_date);
+        v_pr_obj.addDecimalInputParam("@ip_id_loai_nhac_viec", ip_id_loai_nhac_viec);
+
+        v_pr_obj.fillDataSetByCommand(this, ip_gd_lich);
+
+
+    }
     #endregion
 }
 }
