@@ -472,7 +472,7 @@ namespace BondUS
         #region Public Interface
         public void FillDatasetByIDTraiPhieu(DS_DM_TRAI_CHU ip_ds, decimal ip_id_trai_phieu)
         {
-            base.FillDataset(ip_ds, " WHERE dtc.ID_TRAI_PHIEU_SO_HUU = "+" "+ip_id_trai_phieu.ToString());
+            base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = "+" "+ip_id_trai_phieu.ToString());
         }
 
         #endregion        
