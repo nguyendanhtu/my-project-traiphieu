@@ -220,11 +220,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="V_GD_CHUYEN_NHUONG.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>V_GD_CHUYEN_NHUONG.xsd</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -451,17 +446,6 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="V_GD_CHUYEN_NHUONG.xsc">
-      <DependentUpon>V_GD_CHUYEN_NHUONG.xsd</DependentUpon>
-    </None>
-    <None Include="V_GD_CHUYEN_NHUONG.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>V_GD_CHUYEN_NHUONG.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="V_GD_CHUYEN_NHUONG.xss">
-      <DependentUpon>V_GD_CHUYEN_NHUONG.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
