@@ -179,14 +179,18 @@ namespace BondApp
         }
 
         private void thong_bao_lai_suat(){
+            grid2us_object(m_us_gd_lich_tt_lai_goc, m_fg.Row);
             IP.Core.IPWordReport.CWordReport v_obj_word_rpt = new CWordReport("f750_ TB Lai Suat.doc");
+            v_obj_word_rpt.AddFindAndReplace("<NGAY_CAP_NHAT_LAI_SUAT>", CIPConvert.ToStr(m_us_gd_lich_tt_lai_goc.datNGAY));
             v_obj_word_rpt.AddFindAndReplace("<TEN_TRAI_PHIEU>", m_us_trai_phieu.strTEN_TRAI_PHIEU);
             v_obj_word_rpt.AddFindAndReplace("<MENH_GIA>", m_txt_menh_gia.Text);
             v_obj_word_rpt.AddFindAndReplace("<NGAY_PHAT_HANH>", m_txt_ngay_phat_hanh.Text);
             v_obj_word_rpt.AddFindAndReplace("<NGAY_DAO_HAN>", m_txt_ngay_dao_han.Text);
             v_obj_word_rpt.AddFindAndReplace("<SO_LUONG_TRAI_PHIEU>", m_txt_tong_so_luong_trai_phieu.Text);
-            v_obj_word_rpt.AddFindAndReplace("<TONG_GIA_TRI_TRAI_PHIEU>", m_txt_tong_gia_tri_trai_phieu.Text);
-            
+            v_obj_word_rpt.AddFindAndReplace("<TONG_GIA_TRI_TRAI_PHIEU>", m_txt_tong_gia_tri_trai_phieu.Text + "VNĐ");
+            v_obj_word_rpt.AddFindAndReplace("<KY_HAN>", m_txt_ky_han.Text);
+            v_obj_word_rpt.AddFindAndReplace("<KY_TINH_LAI>", m_txt_ky_tinh_lai.Text);
+            v_obj_word_rpt.AddFindAndReplace("<LAI_SUAT>", m_txt_lai_suat.Text);
             v_obj_word_rpt.Export2Word(true);
         }
 
