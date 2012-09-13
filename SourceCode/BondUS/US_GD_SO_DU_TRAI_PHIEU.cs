@@ -152,7 +152,7 @@ public class US_GD_SO_DU_TRAI_PHIEU : US_Object
         public void select_us_gd_so_du_trai_phieu_byTraiChuID(decimal ip_trai_chu_ID, DS_GD_SO_DU_TRAI_PHIEU op_ds)
         {
             CStoredProc v_cstore = new CStoredProc("pr_GD_SO_DU_TRAI_PHIEU_SelectByTraiChuID");
-            v_cstore.addDecimalInputParam("@ID", ip_trai_chu_ID);
+            v_cstore.addDecimalInputParam("@ID_TRAI_CHU", ip_trai_chu_ID);
             v_cstore.fillDataSetByCommand(this, op_ds);
         }
 #endregion
