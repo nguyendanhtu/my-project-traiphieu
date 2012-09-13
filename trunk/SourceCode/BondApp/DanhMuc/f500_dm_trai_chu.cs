@@ -144,9 +144,9 @@ namespace BondApp
             this.m_cmd_select.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_select.ImageIndex = 18;
             this.m_cmd_select.ImageList = this.ImageList;
-            this.m_cmd_select.Location = new System.Drawing.Point(440, 4);
+            this.m_cmd_select.Location = new System.Drawing.Point(431, 4);
             this.m_cmd_select.Name = "m_cmd_select";
-            this.m_cmd_select.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_select.Size = new System.Drawing.Size(97, 28);
             this.m_cmd_select.TabIndex = 22;
             this.m_cmd_select.Text = "Chọn trái chủ";
             // 
