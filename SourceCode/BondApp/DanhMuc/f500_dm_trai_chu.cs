@@ -322,8 +322,7 @@ namespace BondApp
         public US_DM_TRAI_CHU select_trai_chu()
         {
             m_e_form_mode = DataEntryFormMode.SelectDataState;            
-            this.ShowDialog();
-
+            this.ShowDialog();            
             return m_us;
         }
 
@@ -357,7 +356,7 @@ namespace BondApp
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
 		DS_DM_TRAI_CHU m_ds = new DS_DM_TRAI_CHU();
 		US_DM_TRAI_CHU m_us = new US_DM_TRAI_CHU();
-        public decimal m_id_trai_phieu;
+        public decimal m_id_trai_phieu = 0;
         #endregion
 
 		#region Private Methods
@@ -393,12 +392,11 @@ namespace BondApp
                     break;
             }
 
-			m_obj_trans = get_trans_object(m_fg);
-			load_data_2_grid();
-            if (m_id_trai_phieu != null)
-            {
-                
-            }
+			m_obj_trans = get_trans_object(m_fg);			
+            if (m_id_trai_phieu != 0)
+                load_data_2_grid(m_id_trai_phieu);
+            else
+                load_data_2_grid();
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
