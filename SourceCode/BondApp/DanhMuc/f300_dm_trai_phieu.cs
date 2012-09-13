@@ -38,6 +38,7 @@ namespace BondApp
 		internal SIS.Controls.Button.SiSButton m_cmd_insert;
 		internal SIS.Controls.Button.SiSButton m_cmd_exit;
 		internal SIS.Controls.Button.SiSButton m_cmd_view;
+        internal SIS.Controls.Button.SiSButton m_cmd_select;
 		private System.ComponentModel.IContainer components;
 
 		public f300_dm_trai_phieu()
@@ -85,6 +86,7 @@ namespace BondApp
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_cmd_select = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
@@ -118,6 +120,7 @@ namespace BondApp
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_select);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
@@ -215,6 +218,21 @@ namespace BondApp
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
+            // m_cmd_select
+            // 
+            this.m_cmd_select.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_select.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_select.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_select.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_select.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_select.ImageIndex = 18;
+            this.m_cmd_select.ImageList = this.ImageList;
+            this.m_cmd_select.Location = new System.Drawing.Point(463, 4);
+            this.m_cmd_select.Name = "m_cmd_select";
+            this.m_cmd_select.Size = new System.Drawing.Size(103, 28);
+            this.m_cmd_select.TabIndex = 23;
+            this.m_cmd_select.Text = "Chọn trái phiếu";
+            // 
             // f300_dm_trai_phieu
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -235,6 +253,14 @@ namespace BondApp
 		public void display(){			
 			this.ShowDialog();
 		}
+
+        public US_DM_TRAI_PHIEU select_trai_phieu()
+        {
+            m_e_form_mode = DataEntryFormMode.SelectDataState;
+            this.ShowDialog();
+
+            return m_us;
+        }
 		#endregion
 
 		#region Data Structure
@@ -265,6 +291,7 @@ namespace BondApp
 		ITransferDataRow m_obj_trans;		
 		DS_DM_TRAI_PHIEU m_ds = new DS_DM_TRAI_PHIEU();
 		US_DM_TRAI_PHIEU m_us = new US_DM_TRAI_PHIEU();
+        DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
 		#endregion
 
 		#region Private Methods
@@ -276,7 +303,29 @@ namespace BondApp
 			set_define_events();
 			this.KeyPreview = true;		
 		}
-		private void set_initial_form_load(){						
+		private void set_initial_form_load(){
+            switch (m_e_form_mode)
+            {
+                case DataEntryFormMode.InsertDataState:
+                    break;
+                case DataEntryFormMode.SelectDataState:
+                    m_cmd_delete.Visible = false;
+                    m_cmd_update.Visible = false;
+                    m_cmd_insert.Visible = false;
+                    m_cmd_select.Visible = true;
+                    break;
+                case DataEntryFormMode.UpdateDataState:
+                    break;
+                case DataEntryFormMode.ViewDataState:
+                    m_cmd_delete.Visible = true;
+                    m_cmd_update.Visible = true;
+                    m_cmd_insert.Visible = true;
+                    
+                    m_cmd_select.Visible = false;
+                    break;
+                default:
+                    break;
+            }		
 			m_obj_trans = get_trans_object(m_fg);
 			load_data_2_grid();		
 		}	
@@ -400,13 +449,48 @@ namespace BondApp
             f650_lich_thanh_toan_lai_goc_xem v_frm_650 = new f650_lich_thanh_toan_lai_goc_xem();
             v_frm_650.display_lich_thanh_toan_lai_goc(m_us);		
 		}
+
+        private void chon_trai_phieu()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if (m_e_form_mode != DataEntryFormMode.SelectDataState) return;
+            grid2us_object(m_us, m_fg.Row);
+            this.Close();
+        }
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
+            m_cmd_select.Click += new EventHandler(m_cmd_select_Click);
 		}
+
+        void m_cmd_select_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                chon_trai_phieu();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_fg_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                chon_trai_phieu();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 		#endregion
 
 //
