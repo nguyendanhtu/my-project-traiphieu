@@ -240,13 +240,15 @@ public class US_GD_LICH_THANH_TOAN_LAI_GOC : US_Object
 
     public void FillDatasetByIDTraiPhieu(DS_GD_LICH_THANH_TOAN_LAI_GOC ip_gd_lich, decimal ip_id_trai_phieu)
     {
-        CMakeAndSelectCmd v_obj_cmd = new CMakeAndSelectCmd(ip_gd_lich, c_TableName);
-        v_obj_cmd.AddCondition(GD_LICH_THANH_TOAN_LAI_GOC.ID_TRAI_PHIEU
+        CMakeAndSelectCmd v_obj_mak_cmd = new CMakeAndSelectCmd(ip_gd_lich, c_TableName);
+        v_obj_mak_cmd.AddCondition(GD_LICH_THANH_TOAN_LAI_GOC.ID_TRAI_PHIEU
             , ip_id_trai_phieu
             , eKieuDuLieu.KieuNumber
             , eKieuSoSanh.Bang);
+        SqlCommand v_obj_cmd = v_obj_mak_cmd.getSelectCmd();
+        v_obj_cmd.CommandText += " ORDER BY " + GD_LICH_THANH_TOAN_LAI_GOC.NGAY;
 
-        this.FillDatasetByCommand(ip_gd_lich, v_obj_cmd.getSelectCmd());
+        this.FillDatasetByCommand(ip_gd_lich, v_obj_cmd);
 
     }
     public void FillDataset(DS_GD_LICH_THANH_TOAN_LAI_GOC ip_gd_lich, DateTime ip_from_date, DateTime ip_to_date, decimal ip_id_loai_nhac_viec)
