@@ -60,6 +60,7 @@ namespace BondDS.CDBNames
         public const string TEN_TRAI_CHU = "TEN_TRAI_CHU";
         public const string DIA_CHI = "DIA_CHI";
         public const string MOBILE = "MOBILE";
+        public const string FAX = "FAX";
         public const string CMT_GIAY_DKKD = "CMT_GIAY_DKKD";
         public const string NGAY_CAP_CMT = "NGAY_CAP_CMT";
         public const string NOI_CAP_CMT = "NOI_CAP_CMT";
@@ -74,6 +75,7 @@ namespace BondDS.CDBNames
         public const string ID_NGUOI_DUYET = "ID_NGUOI_DUYET";
         public const string ID_TRANG_THAI = "ID_TRANG_THAI";
     }
+
     public class DM_TRAI_PHIEU
     {
         public const string ID = "ID";
