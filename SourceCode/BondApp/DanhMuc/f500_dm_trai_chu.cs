@@ -39,7 +39,11 @@ namespace BondApp
 		internal SIS.Controls.Button.SiSButton m_cmd_exit;
 		internal SIS.Controls.Button.SiSButton m_cmd_view;
         internal SIS.Controls.Button.SiSButton m_cmd_select;
-        private GroupBox groupBox1;
+        private Label m_lbl_title;
+        private GroupBox m_gru_tim_kiem;
+        private TextBox m_txt_search;
+        private Label label1;
+        private Button m_cmd_filter;
 		private System.ComponentModel.IContainer components;
 
 		public f500_dm_trai_chu()
@@ -88,9 +92,14 @@ namespace BondApp
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.m_lbl_title = new System.Windows.Forms.Label();
+            this.m_gru_tim_kiem = new System.Windows.Forms.GroupBox();
+            this.m_txt_search = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_cmd_filter = new System.Windows.Forms.Button();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
+            this.m_gru_tim_kiem.SuspendLayout();
             this.SuspendLayout();
             // 
             // ImageList
@@ -148,7 +157,7 @@ namespace BondApp
             this.m_cmd_select.Name = "m_cmd_select";
             this.m_cmd_select.Size = new System.Drawing.Size(97, 28);
             this.m_cmd_select.TabIndex = 22;
-            this.m_cmd_select.Text = "Chọn trái chủ";            
+            this.m_cmd_select.Text = "Chọn trái chủ";
             // 
             // m_cmd_insert
             // 
@@ -229,26 +238,69 @@ namespace BondApp
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 104);
+            this.m_fg.Location = new System.Drawing.Point(0, 92);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(884, 422);
+            this.m_fg.Size = new System.Drawing.Size(884, 434);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
-            // groupBox1
+            // m_lbl_title
             // 
-            this.groupBox1.Location = new System.Drawing.Point(27, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(715, 100);
-            this.groupBox1.TabIndex = 21;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.m_lbl_title.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
+            this.m_lbl_title.Name = "m_lbl_title";
+            this.m_lbl_title.Size = new System.Drawing.Size(884, 37);
+            this.m_lbl_title.TabIndex = 22;
+            this.m_lbl_title.Text = "F500 - Danh mục trái trủ";
+            this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // m_gru_tim_kiem
+            // 
+            this.m_gru_tim_kiem.Controls.Add(this.m_txt_search);
+            this.m_gru_tim_kiem.Controls.Add(this.label1);
+            this.m_gru_tim_kiem.Controls.Add(this.m_cmd_filter);
+            this.m_gru_tim_kiem.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_gru_tim_kiem.Location = new System.Drawing.Point(0, 37);
+            this.m_gru_tim_kiem.Name = "m_gru_tim_kiem";
+            this.m_gru_tim_kiem.Size = new System.Drawing.Size(884, 49);
+            this.m_gru_tim_kiem.TabIndex = 23;
+            this.m_gru_tim_kiem.TabStop = false;
+            // 
+            // m_txt_search
+            // 
+            this.m_txt_search.Location = new System.Drawing.Point(78, 16);
+            this.m_txt_search.Name = "m_txt_search";
+            this.m_txt_search.Size = new System.Drawing.Size(508, 20);
+            this.m_txt_search.TabIndex = 31;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Tìm kiếm";
+            // 
+            // m_cmd_filter
+            // 
+            this.m_cmd_filter.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_filter.Image")));
+            this.m_cmd_filter.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.m_cmd_filter.Location = new System.Drawing.Point(601, 14);
+            this.m_cmd_filter.Name = "m_cmd_filter";
+            this.m_cmd_filter.Size = new System.Drawing.Size(64, 23);
+            this.m_cmd_filter.TabIndex = 29;
+            this.m_cmd_filter.Text = "     Xem";
+            this.m_cmd_filter.UseVisualStyleBackColor = true;
             // 
             // f500_dm_trai_chu
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(884, 562);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.m_gru_tim_kiem);
+            this.Controls.Add(this.m_lbl_title);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f500_dm_trai_chu";
@@ -256,6 +308,8 @@ namespace BondApp
             this.Load += new System.EventHandler(this.f500_dm_trai_chu_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
+            this.m_gru_tim_kiem.ResumeLayout(false);
+            this.m_gru_tim_kiem.PerformLayout();
             this.ResumeLayout(false);
 
 		}
@@ -267,7 +321,7 @@ namespace BondApp
 		}
         public US_DM_TRAI_CHU select_trai_chu()
         {
-            m_e_form_mode = DataEntryFormMode.SelectDataState;
+            m_e_form_mode = DataEntryFormMode.SelectDataState;            
             this.ShowDialog();
 
             return m_us;
@@ -303,7 +357,8 @@ namespace BondApp
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
 		DS_DM_TRAI_CHU m_ds = new DS_DM_TRAI_CHU();
 		US_DM_TRAI_CHU m_us = new US_DM_TRAI_CHU();
-		#endregion
+        public decimal m_id_trai_phieu;
+        #endregion
 
 		#region Private Methods
 		private void format_controls(){
@@ -339,7 +394,11 @@ namespace BondApp
             }
 
 			m_obj_trans = get_trans_object(m_fg);
-			load_data_2_grid();		
+			load_data_2_grid();
+            if (m_id_trai_phieu != null)
+            {
+                
+            }
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -364,6 +423,16 @@ namespace BondApp
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.DM_TRAI_CHU.NewRow());
 			return v_obj_trans;			
 		}
+
+        private void load_data_2_grid(decimal ip_id_trai_phieu)
+        {
+            m_ds = new DS_DM_TRAI_CHU();
+            m_us.FillDatasetByIDTraiPhieu(m_ds, ip_id_trai_phieu);            
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            m_fg.Redraw = true;
+        }
+
 		private void load_data_2_grid(){						
 			m_ds = new DS_DM_TRAI_CHU();			
 			m_us.FillDataset(m_ds);
@@ -534,7 +603,7 @@ namespace BondApp
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
-		}       
+		}         
 
 	}
 }
