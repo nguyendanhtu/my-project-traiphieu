@@ -1,5 +1,5 @@
 	public DateTime dat<PROPERTY_NAME>
-	}
+	{
 		get   
 		{
 			return CNull.RowNVLDate(pm_objDR, "<PROPERTY_NAME>", IPConstants.c_DefaultDate);
