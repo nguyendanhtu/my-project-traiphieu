@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // f600_giao_dich_chuyen_nhuong
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "f600_giao_dich_chuyen_nhuong";
+            this.ClientSize = new System.Drawing.Size(884, 562);
+            this.Name = "f600_giao_dich_chuyen_nhuong";
+            this.Text = "F600-Giao dich chuyen nhuong";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
