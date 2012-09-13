@@ -148,7 +148,7 @@ namespace BondApp
             this.m_cmd_select.Name = "m_cmd_select";
             this.m_cmd_select.Size = new System.Drawing.Size(97, 28);
             this.m_cmd_select.TabIndex = 22;
-            this.m_cmd_select.Text = "Chọn trái chủ";
+            this.m_cmd_select.Text = "Chọn trái chủ";            
             // 
             // m_cmd_insert
             // 
@@ -534,7 +534,7 @@ namespace BondApp
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
-		}
+		}       
 
 	}
 }
