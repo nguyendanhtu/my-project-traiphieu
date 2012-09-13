@@ -12,6 +12,7 @@ using IP.Core.IPCommon;
 using IP.Core.IPException;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
+using IP.Core.IPWordReport;
 
 using BondUS;
 using BondDS;
@@ -132,6 +133,7 @@ namespace BondApp
             if ((Boolean)m_fg[ip_grid_row, (int)e_col_Number.THANH_TOAN_GOC_YN] == true) v_str_content += " thanh toán gốc,";
             if ((Boolean)m_fg[ip_grid_row, (int)e_col_Number.THANH_TOAN_LAI_YN] == true) v_str_content += " thanh toán lãi,";
             if ((Boolean)m_fg[ip_grid_row, (int)e_col_Number.CAP_NHAT_LS_YN] == true) v_str_content += " cập nhật lãi suất,";
+            v_str_content = v_str_content.Substring(0, v_str_content.Length - 1);
             return v_str_content;
         }
 
@@ -153,11 +155,89 @@ namespace BondApp
             m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
         }
 
+        private void delete_lich_trai_phieu()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
+            US_GD_LICH_THANH_TOAN_LAI_GOC v_us = new US_GD_LICH_THANH_TOAN_LAI_GOC();
+            grid2us_object(v_us, m_fg.Row);
+            try
+            {
+                v_us.BeginTransaction();
+                v_us.Delete();
+                v_us.CommitTransaction();
+                m_fg.Rows.Remove(m_fg.Row);
+            }
+            catch (Exception v_e)
+            {
+                v_us.Rollback();
+                CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
+                    new CDBClientDBExceptionInterpret());
+                v_objErrHandler.showErrorMessage();
+            }
+        }
+
+        private void thong_bao_lai_suat(){
+            IP.Core.IPWordReport.CWordReport v_obj_word_rpt = new CWordReport("f750_ TB Lai Suat.doc");
+            v_obj_word_rpt.AddFindAndReplace("<TEN_TRAI_PHIEU>", m_us_trai_phieu.strTEN_TRAI_PHIEU);
+            v_obj_word_rpt.AddFindAndReplace("<MENH_GIA>", m_txt_menh_gia.Text);
+            v_obj_word_rpt.AddFindAndReplace("<NGAY_PHAT_HANH>", m_txt_ngay_phat_hanh.Text);
+            v_obj_word_rpt.AddFindAndReplace("<NGAY_DAO_HAN>", m_txt_ngay_dao_han.Text);
+            v_obj_word_rpt.AddFindAndReplace("<SO_LUONG_TRAI_PHIEU>", m_txt_tong_so_luong_trai_phieu.Text);
+            v_obj_word_rpt.AddFindAndReplace("<TONG_GIA_TRI_TRAI_PHIEU>", m_txt_tong_gia_tri_trai_phieu.Text);
+            
+            v_obj_word_rpt.Export2Word(true);
+        }
+
+
          #endregion
 
         private void set_define_events()
         {
-            this.Load += new EventHandler(f650_lich_thanh_toan_lai_goc_xem_Load); 
+            this.Load += new EventHandler(f650_lich_thanh_toan_lai_goc_xem_Load);
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
+            this.m_cmd_generate.Click += new System.EventHandler(this.m_cmd_generate_Click);
+            m_cmd_thong_bao_ls.Click += new EventHandler(m_cmd_thong_bao_ls_Click);
+        }
+
+        void m_cmd_thong_bao_ls_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                thong_bao_lai_suat();
+            }
+            catch (Exception v_e)
+            {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                delete_lich_trai_phieu();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void f650_lich_thanh_toan_lai_goc_xem_Load(object sender, EventArgs e)
@@ -171,6 +251,11 @@ namespace BondApp
 
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        private void m_cmd_generate_Click(object sender, EventArgs e)
+        {
+
         }
        
     }

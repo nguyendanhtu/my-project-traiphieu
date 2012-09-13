@@ -60,6 +60,7 @@
             this.m_cmd_generate = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_thong_bao_ls = new SIS.Controls.Button.SiSButton();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -338,6 +339,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_cmd_thong_bao_ls);
             this.panel1.Controls.Add(this.m_cmd_insert);
             this.panel1.Controls.Add(this.m_cmd_update);
             this.panel1.Controls.Add(this.m_cmd_generate);
@@ -425,6 +427,21 @@
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
+            // m_cmd_thong_bao_ls
+            // 
+            this.m_cmd_thong_bao_ls.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_thong_bao_ls.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_thong_bao_ls.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_thong_bao_ls.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_thong_bao_ls.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_thong_bao_ls.ImageIndex = 18;
+            this.m_cmd_thong_bao_ls.ImageList = this.ImageList;
+            this.m_cmd_thong_bao_ls.Location = new System.Drawing.Point(177, 4);
+            this.m_cmd_thong_bao_ls.Name = "m_cmd_thong_bao_ls";
+            this.m_cmd_thong_bao_ls.Size = new System.Drawing.Size(173, 28);
+            this.m_cmd_thong_bao_ls.TabIndex = 22;
+            this.m_cmd_thong_bao_ls.Text = "Thông báo lãi suất";
+            // 
             // f650_lich_thanh_toan_lai_goc_xem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -476,6 +493,7 @@
         internal SIS.Controls.Button.SiSButton m_cmd_generate;
         internal SIS.Controls.Button.SiSButton m_cmd_delete;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
+        internal SIS.Controls.Button.SiSButton m_cmd_thong_bao_ls;
 
     }
 }
