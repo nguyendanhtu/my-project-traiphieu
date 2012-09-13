@@ -83,6 +83,7 @@ namespace BondDS.CDBNames
         public const string ID_LOAI_TRAI_PHIEU = "ID_LOAI_TRAI_PHIEU";
         public const string MENH_GIA = "MENH_GIA";
         public const string KY_HAN = "KY_HAN";
+        public const string CO_SO_TINH_LAI = "CO_SO_TINH_LAI";
         public const string ID_DV_KY_HAN = "ID_DV_KY_HAN";
         public const string LAI_SUAT_DEFAULT = "LAI_SUAT_DEFAULT";
         public const string KY_DIEU_CHINH_LS = "KY_DIEU_CHINH_LS";
@@ -96,6 +97,7 @@ namespace BondDS.CDBNames
         public const string TONG_SL_PHAT_HANH = "TONG_SL_PHAT_HANH";
         public const string TONG_GIA_TRI = "TONG_GIA_TRI";
     }
+
     public class DOC_COLUMN_COMMENT
     {
         public const string COLUMN_NAME = "COLUMN_NAME";
