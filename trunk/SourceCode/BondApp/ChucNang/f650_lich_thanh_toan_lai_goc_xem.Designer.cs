@@ -53,7 +53,6 @@
             this.m_txt_ky_tinh_lai = new System.Windows.Forms.TextBox();
             this.m_txt_lai_suat = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
@@ -282,7 +281,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.m_lbl_ngay_dao_han);
             this.groupBox1.Controls.Add(this.m_txt_lai_suat);
             this.groupBox1.Controls.Add(this.m_lbl_ma_trai_phieu);
@@ -310,15 +308,6 @@
             this.groupBox1.TabIndex = 54;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin trái phiếu";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(232, 105);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(15, 13);
-            this.label2.TabIndex = 54;
-            this.label2.Text = "%";
             // 
             // ImageList
             // 
@@ -480,7 +469,6 @@
         private System.Windows.Forms.TextBox m_txt_ky_tinh_lai;
         private System.Windows.Forms.TextBox m_txt_lai_suat;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label2;
         internal System.Windows.Forms.ImageList ImageList;
         internal System.Windows.Forms.Panel panel1;
         internal SIS.Controls.Button.SiSButton m_cmd_insert;
