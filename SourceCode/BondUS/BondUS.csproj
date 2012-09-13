@@ -148,6 +148,7 @@
     <Compile Include="US_HT_THAM_SO_HE_THONG.cs" />
     <Compile Include="US_RPT_NHAC_VIEC.cs" />
     <Compile Include="US_UT_SEQUENCES.cs" />
+    <Compile Include="US_V_GD_CHUYEN_NHUONG.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
