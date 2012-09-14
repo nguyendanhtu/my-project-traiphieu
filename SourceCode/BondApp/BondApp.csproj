@@ -300,6 +300,9 @@
     <Compile Include="DanhMuc\f500_dm_trai_chu.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DanhMuc\f610_dm_giao_dien_chuyen_nhuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="f001_main_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -358,6 +361,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f500_dm_trai_chu.resx">
       <DependentUpon>f500_dm_trai_chu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f610_dm_giao_dien_chuyen_nhuong.resx">
+      <DependentUpon>f610_dm_giao_dien_chuyen_nhuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f001_main_form.resx">
       <DependentUpon>f001_main_form.cs</DependentUpon>
