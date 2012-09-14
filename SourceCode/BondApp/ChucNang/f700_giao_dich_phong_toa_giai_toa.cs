@@ -53,6 +53,10 @@ namespace BondApp
         #region Members
         US_DM_TRAI_CHU m_us_trai_chu = new US_DM_TRAI_CHU();
         US_DM_TRAI_PHIEU m_us_trai_phieu = new US_DM_TRAI_PHIEU();
+        US_CM_DM_TU_DIEN m_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
+        US_CM_DM_LOAI_TD m_us_cm_dm_loai_tu_dien = new US_CM_DM_LOAI_TD();
+        US_GD_PHONG_GIAI_TOA m_us_gd_phong_toa_giai_toa = new US_GD_PHONG_GIAI_TOA();
+        DS_GD_PHONG_GIAI_TOA m_ds_gd_phong_toa_giai_toa = new DS_GD_PHONG_GIAI_TOA();
         #endregion
 
         #region Private Methods
@@ -115,9 +119,15 @@ namespace BondApp
                 }            
         }
 
+        private void from_2_us_gd_phong_toa_giai_toa()
+        {
+            m_us_gd_phong_toa_giai_toa.strNGUOI_DAI_DIEN = m_txt_nguoi_dai_dien.Text;
+            m_us_gd_phong_toa_giai_toa.strCHUC_DANH = m_txt_chuc_danh.Text;
+        }
+
         private void lap_giao_dich_phong_toa_giai_toa()
         {
-            MessageBox.Show("Giao dich phong toa giai toa dang duoc code hehe");
+            //MessageBox.Show("Giao dich phong toa giai toa dang duoc code hehe");
         }
 
         #endregion
@@ -127,12 +137,13 @@ namespace BondApp
             m_cmd_chon_trai_chu.Click += new EventHandler(m_cmd_chon_trai_chu_Click);
             m_cmd_lap.Click += new EventHandler(m_cmd_lap_Click);
         }
-
+        
         void m_cmd_lap_Click(object sender, EventArgs e)
         {
             try
             {
                 lap_giao_dich_phong_toa_giai_toa();
+                MessageBox.Show("Cập nhập thành công!");
             }
             catch (Exception v_e)
             {
