@@ -38,7 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.m_cmd_filter = new System.Windows.Forms.Button();
             this.m_chk_da_thuc_hien = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.m_lbl_title = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -134,21 +134,21 @@
             this.m_chk_da_thuc_hien.UseVisualStyleBackColor = true;
             this.m_chk_da_thuc_hien.Visible = false;
             // 
-            // label1
+            // m_lbl_title
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(3, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(831, 20);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Lịch nhắc việc";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.m_lbl_title.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_title.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_title.Location = new System.Drawing.Point(3, 16);
+            this.m_lbl_title.Name = "m_lbl_title";
+            this.m_lbl_title.Size = new System.Drawing.Size(831, 20);
+            this.m_lbl_title.TabIndex = 31;
+            this.m_lbl_title.Text = "Lịch nhắc việc";
+            this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.m_lbl_title);
             this.groupBox1.Controls.Add(this.m_lbl_lich_nhac_viec_tu);
             this.groupBox1.Controls.Add(this.m_chk_da_thuc_hien);
             this.groupBox1.Controls.Add(this.m_lbl_lich_nhac_viec_den);
@@ -192,7 +192,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button m_cmd_filter;
         private System.Windows.Forms.CheckBox m_chk_da_thuc_hien;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label m_lbl_title;
         private System.Windows.Forms.GroupBox groupBox1;
     }
 }
