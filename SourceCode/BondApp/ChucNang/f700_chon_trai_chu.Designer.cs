@@ -35,9 +35,9 @@
             this.m_txt_ten_khach_hang_cam_co = new System.Windows.Forms.TextBox();
             this.c1FlexGrid1 = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_lbl_title = new System.Windows.Forms.Label();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            this.m_lbl_title = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.c1FlexGrid1)).BeginInit();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
@@ -78,9 +78,9 @@
             // 
             this.c1FlexGrid1.ColumnInfo = resources.GetString("c1FlexGrid1.ColumnInfo");
             this.c1FlexGrid1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.c1FlexGrid1.Location = new System.Drawing.Point(0, 112);
+            this.c1FlexGrid1.Location = new System.Drawing.Point(0, 114);
             this.c1FlexGrid1.Name = "c1FlexGrid1";
-            this.c1FlexGrid1.Size = new System.Drawing.Size(344, 54);
+            this.c1FlexGrid1.Size = new System.Drawing.Size(463, 54);
             this.c1FlexGrid1.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("c1FlexGrid1.Styles"));
             this.c1FlexGrid1.TabIndex = 37;
             // 
@@ -89,23 +89,11 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 166);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 168);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(344, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(463, 36);
             this.m_pnl_out_place_dm.TabIndex = 35;
-            // 
-            // m_lbl_title
-            // 
-            this.m_lbl_title.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
-            this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(344, 40);
-            this.m_lbl_title.TabIndex = 36;
-            this.m_lbl_title.Text = "F700 - Chọn trái chủ";
-            this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_cmd_delete
             // 
@@ -115,7 +103,7 @@
             this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_delete.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_delete.Image")));
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_delete.Location = new System.Drawing.Point(164, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(283, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 4;
@@ -129,17 +117,29 @@
             this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_exit.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_exit.Image")));
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_exit.Location = new System.Drawing.Point(252, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(371, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 3;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
+            // m_lbl_title
+            // 
+            this.m_lbl_title.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
+            this.m_lbl_title.Name = "m_lbl_title";
+            this.m_lbl_title.Size = new System.Drawing.Size(463, 40);
+            this.m_lbl_title.TabIndex = 36;
+            this.m_lbl_title.Text = "F700 - Chọn trái chủ";
+            this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // f700_chon_trai_chu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 202);
+            this.ClientSize = new System.Drawing.Size(463, 204);
             this.Controls.Add(this.m_lbl_ma_so_trai_phieu);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.m_lbl_ten_khach_hang_cam_co);

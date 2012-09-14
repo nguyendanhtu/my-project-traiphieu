@@ -143,7 +143,7 @@
             this.m_lbl_title.Name = "m_lbl_title";
             this.m_lbl_title.Size = new System.Drawing.Size(831, 20);
             this.m_lbl_title.TabIndex = 31;
-            this.m_lbl_title.Text = "Lịch nhắc việc";
+            this.m_lbl_title.Text = "LỊCH NHẮC VIỆC";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // groupBox1
