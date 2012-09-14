@@ -16,6 +16,91 @@ namespace BondDS.CDBNames
 
     }
 
+    public class V_GD_CHUYEN_NHUONG
+    {
+        public const string ID = "ID";
+        public const string MA_GIAO_DICH = "MA_GIAO_DICH";
+        public const string NGAY_XAC_NHAN = "NGAY_XAC_NHAN";
+        public const string NGAY_KY_CHUYEN_NHUONG = "NGAY_KY_CHUYEN_NHUONG";
+        public const string NGAY_VAO_SO = "NGAY_VAO_SO";
+        public const string ID_TRAI_CHU_MUA = "ID_TRAI_CHU_MUA";
+        public const string tcm_MA_TRAI_CHU = "tcm_MA_TRAI_CHU";
+        public const string tcm_TEN_TRAI_CHU = "tcm_TEN_TRAI_CHU";
+        public const string tcm_DIA_CHI_TRAI_CHU = "tcm_DIA_CHI_TRAI_CHU";
+        public const string tcm_MOBILE_TRAI_CHU = "tcm_MOBILE_TRAI_CHU";
+        public const string tcm_FAX = "tcm_FAX";
+        public const string tcm_CMT_GIAY_DKKD = "tcm_CMT_GIAY_DKKD";
+        public const string tcm_NGAY_CAP_CMT = "tcm_NGAY_CAP_CMT";
+        public const string tcm_NOI_CAP_CMT = "tcm_NOI_CAP_CMT";
+        public const string tcm_ID_LOAI_TRAI_CHU = "tcm_ID_LOAI_TRAI_CHU";
+        public const string tcm_TEN_LOAI_TRAI_CHU = "tcm_TEN_LOAI_TRAI_CHU";
+        public const string tcm_SO_TAI_KHOAN = "tcm_SO_TAI_KHOAN";
+        public const string tcm_MO_TAI_NGAN_HANG = "tcm_MO_TAI_NGAN_HANG";
+        public const string tcm_GHI_CHU1 = "tcm_GHI_CHU1";
+        public const string tcm_GHI_CHU2 = "tcm_GHI_CHU2";
+        public const string tcm_GHI_CHU3 = "tcm_GHI_CHU3";
+        public const string ID_TRAI_PHIEU_SO_HUU = "ID_TRAI_PHIEU_SO_HUU";
+        public const string ID_TO_CHUC_PHAT_HANH = "ID_TO_CHUC_PHAT_HANH";
+        public const string MA_TRAI_PHIEU = "MA_TRAI_PHIEU";
+        public const string TEN_TRAI_PHIEU = "TEN_TRAI_PHIEU";
+        public const string ID_LOAI_TRAI_PHIEU = "ID_LOAI_TRAI_PHIEU";
+        public const string MENH_GIA_TRAI_PHIEU = "MENH_GIA_TRAI_PHIEU";
+        public const string KY_HAN_TRAI_PHIEU = "KY_HAN_TRAI_PHIEU";
+        public const string ID_DV_KY_HAN = "ID_DV_KY_HAN";
+        public const string CO_SO_TINH_LAI = "CO_SO_TINH_LAI";
+        public const string LAI_SUAT_DEFAULT = "LAI_SUAT_DEFAULT";
+        public const string KY_DIEU_CHINH_LS = "KY_DIEU_CHINH_LS";
+        public const string ID_DV_DIEU_CHINH_LS = "ID_DV_DIEU_CHINH_LS";
+        public const string THA_NOI_YN = "THA_NOI_YN";
+        public const string KY_TRA_LAI = "KY_TRA_LAI";
+        public const string ID_DV_KY_TRA_LAI = "ID_DV_KY_TRA_LAI";
+        public const string TRA_LAI_SAU_YN = "TRA_LAI_SAU_YN";
+        public const string NGAY_PHAT_HANH = "NGAY_PHAT_HANH";
+        public const string NGAY_DAO_HAN = "NGAY_DAO_HAN";
+        public const string TONG_SL_PHAT_HANH = "TONG_SL_PHAT_HANH";
+        public const string TONG_GIA_TRI = "TONG_GIA_TRI";
+        public const string tcm_ID_NGUOI_LAP = "tcm_ID_NGUOI_LAP";
+        public const string tcm_ID_NGUOI_DUYET = "tcm_ID_NGUOI_DUYET";
+        public const string tcm_ID_TRANG_THAI = "tcm_ID_TRANG_THAI";
+        public const string ID_TRAI_CHU_BAN = "ID_TRAI_CHU_BAN";
+        public const string tcb_MA_TRAI_CHU = "tcb_MA_TRAI_CHU";
+        public const string tcb_TEN_TRAI_CHU = "tcb_TEN_TRAI_CHU";
+        public const string tcb_DIA_CHI_TRAI_CHU = "tcb_DIA_CHI_TRAI_CHU";
+        public const string tcb_MOBILE_TRAI_CHU = "tcb_MOBILE_TRAI_CHU";
+        public const string tcb_FAX = "tcb_FAX";
+        public const string tcb_CMT_GIAY_DKKD = "tcb_CMT_GIAY_DKKD";
+        public const string tcb_NGAY_CAP_CMT = "tcb_NGAY_CAP_CMT";
+        public const string tcb_NOI_CAP_CMT = "tcb_NOI_CAP_CMT";
+        public const string tcb_ID_LOAI_TRAI_CHU = "tcb_ID_LOAI_TRAI_CHU";
+        public const string tcb_TEN_LOAI_TRAI_CHU = "tcb_TEN_LOAI_TRAI_CHU";
+        public const string tcb_SO_TAI_KHOAN = "tcb_SO_TAI_KHOAN";
+        public const string tcb_MO_TAI_NGAN_HANG = "tcb_MO_TAI_NGAN_HANG";
+        public const string tcb_GHI_CHU1 = "tcb_GHI_CHU1";
+        public const string tcb_GHI_CHU2 = "tcb_GHI_CHU2";
+        public const string tcb_GHI_CHU3 = "tcb_GHI_CHU3";
+        public const string tcb_ID_NGUOI_LAP = "tcb_ID_NGUOI_LAP";
+        public const string tcb_ID_NGUOI_DUYET = "tcb_ID_NGUOI_DUYET";
+        public const string tcb_ID_TRANG_THAI = "tcb_ID_TRANG_THAI";
+        public const string TEN_NGUOI_UY_QUYEN_MUA = "TEN_NGUOI_UY_QUYEN_MUA";
+        public const string SO_CMT_NGUOI_MUA = "SO_CMT_NGUOI_MUA";
+        public const string NGAY_CAP_CMT_NGUOI_MUA = "NGAY_CAP_CMT_NGUOI_MUA";
+        public const string NOI_CAP_CMT_NGUOI_MUA = "NOI_CAP_CMT_NGUOI_MUA";
+        public const string TEN_NGUOI_UY_QUYEN_BAN = "TEN_NGUOI_UY_QUYEN_BAN";
+        public const string SO_CMT_NGUOI_BAN = "SO_CMT_NGUOI_BAN";
+        public const string NGAY_CAP_CMT_NGUOI_BAN = "NGAY_CAP_CMT_NGUOI_BAN";
+        public const string NOI_CAP_CMT_NGUOI_BAN = "NOI_CAP_CMT_NGUOI_BAN";
+        public const string SO_LUONG_CHUYEN_NHUONG = "SO_LUONG_CHUYEN_NHUONG";
+        public const string TY_LE_PHI_GD = "TY_LE_PHI_GD";
+        public const string PHI_GD = "PHI_GD";
+        public const string NOI_DUNG_GIAO_DICH = "NOI_DUNG_GIAO_DICH";
+        public const string PHAN_TRAM_THUE = "PHAN_TRAM_THUE";
+        public const string GIA_TRI_THUE = "GIA_TRI_THUE";
+        public const string ID_NGUOI_LAP = "ID_NGUOI_LAP";
+        public const string ID_NGUOI_DUYET = "ID_NGUOI_DUYET";
+        public const string ID_TRANG_THAI_CHUYEN_NHUONG = "ID_TRANG_THAI_CHUYEN_NHUONG";
+    }
+
+
     public class CM_DM_LOAI_TD
     {
         public const string ID = "ID";
