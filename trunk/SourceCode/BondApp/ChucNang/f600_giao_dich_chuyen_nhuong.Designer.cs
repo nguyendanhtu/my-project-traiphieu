@@ -357,7 +357,7 @@
             this.m_date_ngay_vao_so.Location = new System.Drawing.Point(706, 93);
             this.m_date_ngay_vao_so.Name = "m_date_ngay_vao_so";
             this.m_date_ngay_vao_so.Size = new System.Drawing.Size(156, 20);
-            this.m_date_ngay_vao_so.TabIndex = 5;
+            this.m_date_ngay_vao_so.TabIndex = 19;
             // 
             // label27
             // 
@@ -468,7 +468,7 @@
             this.m_txt_phan_tram_thue.Location = new System.Drawing.Point(141, 67);
             this.m_txt_phan_tram_thue.Name = "m_txt_phan_tram_thue";
             this.m_txt_phan_tram_thue.Size = new System.Drawing.Size(136, 20);
-            this.m_txt_phan_tram_thue.TabIndex = 4;
+            this.m_txt_phan_tram_thue.TabIndex = 18;
             this.m_txt_phan_tram_thue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // m_txt_phi_gd
@@ -488,7 +488,7 @@
             this.m_txt_ty_le_phi_gd.Location = new System.Drawing.Point(437, 41);
             this.m_txt_ty_le_phi_gd.Name = "m_txt_ty_le_phi_gd";
             this.m_txt_ty_le_phi_gd.Size = new System.Drawing.Size(136, 20);
-            this.m_txt_ty_le_phi_gd.TabIndex = 3;
+            this.m_txt_ty_le_phi_gd.TabIndex = 17;
             this.m_txt_ty_le_phi_gd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // m_txt_ngay_chuyen_nhuong
@@ -508,7 +508,7 @@
             this.m_txt_so_luong_chuyen_nhuong.Location = new System.Drawing.Point(142, 41);
             this.m_txt_so_luong_chuyen_nhuong.Name = "m_txt_so_luong_chuyen_nhuong";
             this.m_txt_so_luong_chuyen_nhuong.Size = new System.Drawing.Size(136, 20);
-            this.m_txt_so_luong_chuyen_nhuong.TabIndex = 2;
+            this.m_txt_so_luong_chuyen_nhuong.TabIndex = 16;
             this.m_txt_so_luong_chuyen_nhuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // groupBox1
@@ -555,7 +555,7 @@
             this.m_date_ngay_cap_cmnd_ng_dai_dien.Location = new System.Drawing.Point(276, 228);
             this.m_date_ngay_cap_cmnd_ng_dai_dien.Name = "m_date_ngay_cap_cmnd_ng_dai_dien";
             this.m_date_ngay_cap_cmnd_ng_dai_dien.Size = new System.Drawing.Size(126, 20);
-            this.m_date_ngay_cap_cmnd_ng_dai_dien.TabIndex = 11;
+            this.m_date_ngay_cap_cmnd_ng_dai_dien.TabIndex = 7;
             // 
             // m_lbl_so_luong_kha_dung
             // 
@@ -599,7 +599,7 @@
             this.m_txt_nguoi_dai_dien.Location = new System.Drawing.Point(102, 175);
             this.m_txt_nguoi_dai_dien.Name = "m_txt_nguoi_dai_dien";
             this.m_txt_nguoi_dai_dien.Size = new System.Drawing.Size(300, 20);
-            this.m_txt_nguoi_dai_dien.TabIndex = 8;
+            this.m_txt_nguoi_dai_dien.TabIndex = 4;
             // 
             // m_txt_so_luong_trai_phieu
             // 
@@ -720,7 +720,7 @@
             this.m_txt_noi_cap_cmt_ng_dai_dien.Location = new System.Drawing.Point(102, 227);
             this.m_txt_noi_cap_cmt_ng_dai_dien.Name = "m_txt_noi_cap_cmt_ng_dai_dien";
             this.m_txt_noi_cap_cmt_ng_dai_dien.Size = new System.Drawing.Size(109, 20);
-            this.m_txt_noi_cap_cmt_ng_dai_dien.TabIndex = 10;
+            this.m_txt_noi_cap_cmt_ng_dai_dien.TabIndex = 6;
             // 
             // m_txt_noi_cap
             // 
@@ -756,7 +756,7 @@
             this.m_txt_cmt_ng_dai_dien.Location = new System.Drawing.Point(102, 201);
             this.m_txt_cmt_ng_dai_dien.Name = "m_txt_cmt_ng_dai_dien";
             this.m_txt_cmt_ng_dai_dien.Size = new System.Drawing.Size(140, 20);
-            this.m_txt_cmt_ng_dai_dien.TabIndex = 9;
+            this.m_txt_cmt_ng_dai_dien.TabIndex = 5;
             // 
             // m_txt_so_cmnd_dkkd
             // 
@@ -765,7 +765,7 @@
             this.m_txt_so_cmnd_dkkd.Name = "m_txt_so_cmnd_dkkd";
             this.m_txt_so_cmnd_dkkd.ReadOnly = true;
             this.m_txt_so_cmnd_dkkd.Size = new System.Drawing.Size(140, 20);
-            this.m_txt_so_cmnd_dkkd.TabIndex = 6;
+            this.m_txt_so_cmnd_dkkd.TabIndex = 2;
             // 
             // m_lbl_ID_nguoi_ban
             // 
@@ -800,7 +800,7 @@
             this.m_cmd_chon_trai_chu.Location = new System.Drawing.Point(247, 42);
             this.m_cmd_chon_trai_chu.Name = "m_cmd_chon_trai_chu";
             this.m_cmd_chon_trai_chu.Size = new System.Drawing.Size(27, 23);
-            this.m_cmd_chon_trai_chu.TabIndex = 7;
+            this.m_cmd_chon_trai_chu.TabIndex = 3;
             this.m_cmd_chon_trai_chu.Text = "...";
             this.m_cmd_chon_trai_chu.UseVisualStyleBackColor = true;
             // 
@@ -848,7 +848,7 @@
             this.m_date_ben_mua_ngay_cap_cmnd_ng_dai_dien.Location = new System.Drawing.Point(286, 231);
             this.m_date_ben_mua_ngay_cap_cmnd_ng_dai_dien.Name = "m_date_ben_mua_ngay_cap_cmnd_ng_dai_dien";
             this.m_date_ben_mua_ngay_cap_cmnd_ng_dai_dien.Size = new System.Drawing.Size(126, 20);
-            this.m_date_ben_mua_ngay_cap_cmnd_ng_dai_dien.TabIndex = 17;
+            this.m_date_ben_mua_ngay_cap_cmnd_ng_dai_dien.TabIndex = 13;
             // 
             // label7
             // 
@@ -892,7 +892,7 @@
             this.m_txt_ben_mua_ten_nguoi_dai_dien.Location = new System.Drawing.Point(104, 176);
             this.m_txt_ben_mua_ten_nguoi_dai_dien.Name = "m_txt_ben_mua_ten_nguoi_dai_dien";
             this.m_txt_ben_mua_ten_nguoi_dai_dien.Size = new System.Drawing.Size(300, 20);
-            this.m_txt_ben_mua_ten_nguoi_dai_dien.TabIndex = 14;
+            this.m_txt_ben_mua_ten_nguoi_dai_dien.TabIndex = 10;
             // 
             // m_txt_ben_mua_so_luong_trai_phieu
             // 
@@ -1013,7 +1013,7 @@
             this.m_txt_ben_mua_noi_cap_cmnd_ng_dai_dien.Location = new System.Drawing.Point(104, 228);
             this.m_txt_ben_mua_noi_cap_cmnd_ng_dai_dien.Name = "m_txt_ben_mua_noi_cap_cmnd_ng_dai_dien";
             this.m_txt_ben_mua_noi_cap_cmnd_ng_dai_dien.Size = new System.Drawing.Size(109, 20);
-            this.m_txt_ben_mua_noi_cap_cmnd_ng_dai_dien.TabIndex = 16;
+            this.m_txt_ben_mua_noi_cap_cmnd_ng_dai_dien.TabIndex = 12;
             // 
             // m_txt_ben_mua_noi_cap_cmnd
             // 
@@ -1049,7 +1049,7 @@
             this.m_txt_ben_mua_cmnd_ng_dai_dien.Location = new System.Drawing.Point(104, 202);
             this.m_txt_ben_mua_cmnd_ng_dai_dien.Name = "m_txt_ben_mua_cmnd_ng_dai_dien";
             this.m_txt_ben_mua_cmnd_ng_dai_dien.Size = new System.Drawing.Size(140, 20);
-            this.m_txt_ben_mua_cmnd_ng_dai_dien.TabIndex = 15;
+            this.m_txt_ben_mua_cmnd_ng_dai_dien.TabIndex = 11;
             // 
             // m_txt_ben_mua_cmnd
             // 
@@ -1058,7 +1058,7 @@
             this.m_txt_ben_mua_cmnd.Name = "m_txt_ben_mua_cmnd";
             this.m_txt_ben_mua_cmnd.ReadOnly = true;
             this.m_txt_ben_mua_cmnd.Size = new System.Drawing.Size(140, 20);
-            this.m_txt_ben_mua_cmnd.TabIndex = 12;
+            this.m_txt_ben_mua_cmnd.TabIndex = 8;
             // 
             // m_lbl_ID_nguoi_mua
             // 
@@ -1093,7 +1093,7 @@
             this.m_cmd_chon_ben_mua.Location = new System.Drawing.Point(249, 43);
             this.m_cmd_chon_ben_mua.Name = "m_cmd_chon_ben_mua";
             this.m_cmd_chon_ben_mua.Size = new System.Drawing.Size(27, 23);
-            this.m_cmd_chon_ben_mua.TabIndex = 13;
+            this.m_cmd_chon_ben_mua.TabIndex = 9;
             this.m_cmd_chon_ben_mua.Text = "...";
             this.m_cmd_chon_ben_mua.UseVisualStyleBackColor = true;
             // 
@@ -1150,7 +1150,7 @@
             this.m_cmd_check.Location = new System.Drawing.Point(528, 4);
             this.m_cmd_check.Name = "m_cmd_check";
             this.m_cmd_check.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_check.TabIndex = 19;
+            this.m_cmd_check.TabIndex = 21;
             this.m_cmd_check.Text = "&Xác nhận";
             // 
             // m_cmd_insert
@@ -1165,7 +1165,7 @@
             this.m_cmd_insert.Location = new System.Drawing.Point(616, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_insert.TabIndex = 20;
+            this.m_cmd_insert.TabIndex = 22;
             this.m_cmd_insert.Text = "&Thêm";
             // 
             // m_cmd_update
@@ -1180,7 +1180,7 @@
             this.m_cmd_update.Location = new System.Drawing.Point(704, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_update.TabIndex = 21;
+            this.m_cmd_update.TabIndex = 23;
             this.m_cmd_update.Text = "&Sửa";
             // 
             // m_cmd_in
@@ -1195,7 +1195,7 @@
             this.m_cmd_in.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_in.Name = "m_cmd_in";
             this.m_cmd_in.Size = new System.Drawing.Size(163, 28);
-            this.m_cmd_in.TabIndex = 24;
+            this.m_cmd_in.TabIndex = 25;
             this.m_cmd_in.Text = "Danh sách chuyển nhượng";
             // 
             // m_cmd_exit
@@ -1210,7 +1210,7 @@
             this.m_cmd_exit.Location = new System.Drawing.Point(792, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 23;
+            this.m_cmd_exit.TabIndex = 24;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // m_lbl_ID_gd_chuyen_nhuong
@@ -1229,7 +1229,7 @@
             this.m_txt_ma_giao_dich.Location = new System.Drawing.Point(141, 15);
             this.m_txt_ma_giao_dich.Name = "m_txt_ma_giao_dich";
             this.m_txt_ma_giao_dich.Size = new System.Drawing.Size(136, 20);
-            this.m_txt_ma_giao_dich.TabIndex = 0;
+            this.m_txt_ma_giao_dich.TabIndex = 14;
             // 
             // label28
             // 
@@ -1247,7 +1247,7 @@
             this.m_txt_noi_dung_chuyen_nhuong.Location = new System.Drawing.Point(438, 15);
             this.m_txt_noi_dung_chuyen_nhuong.Name = "m_txt_noi_dung_chuyen_nhuong";
             this.m_txt_noi_dung_chuyen_nhuong.Size = new System.Drawing.Size(424, 20);
-            this.m_txt_noi_dung_chuyen_nhuong.TabIndex = 18;
+            this.m_txt_noi_dung_chuyen_nhuong.TabIndex = 15;
             // 
             // label29
             // 
@@ -1304,7 +1304,7 @@
             this.m_cbb_trang_thai_cn.Location = new System.Drawing.Point(706, 119);
             this.m_cbb_trang_thai_cn.Name = "m_cbb_trang_thai_cn";
             this.m_cbb_trang_thai_cn.Size = new System.Drawing.Size(154, 21);
-            this.m_cbb_trang_thai_cn.TabIndex = 59;
+            this.m_cbb_trang_thai_cn.TabIndex = 20;
             // 
             // m_txt_nguoi_duyet
             // 
