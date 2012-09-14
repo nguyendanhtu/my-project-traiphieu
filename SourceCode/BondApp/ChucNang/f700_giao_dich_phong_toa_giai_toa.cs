@@ -136,6 +136,20 @@ namespace BondApp
         {
             m_cmd_chon_trai_chu.Click += new EventHandler(m_cmd_chon_trai_chu_Click);
             m_cmd_lap.Click += new EventHandler(m_cmd_lap_Click);
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+        }
+
+        void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
         
         void m_cmd_lap_Click(object sender, EventArgs e)
