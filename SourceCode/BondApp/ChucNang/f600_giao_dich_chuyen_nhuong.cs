@@ -54,6 +54,9 @@ namespace BondApp
             Load_cbb_trang_thai_chuyen_nhuong();
             m_cbb_trang_thai_cn.SelectedItem = 0;
             this.KeyPreview = true;
+            m_lbl_title.Font = new Font("Arial", 16);
+            m_lbl_title.ForeColor = Color.DarkRed;
+            m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
         }
 
         private void select_trai_phieu()

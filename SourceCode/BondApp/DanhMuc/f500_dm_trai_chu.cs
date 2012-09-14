@@ -366,7 +366,10 @@ namespace BondApp
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
 			set_define_events();
-			this.KeyPreview = true;		
+			this.KeyPreview = true;
+            m_lbl_title.Font = new Font("Arial", 16);
+            m_lbl_title.ForeColor = Color.DarkRed;
+            m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
 		}
 		private void set_initial_form_load(){
             switch (m_e_form_mode)

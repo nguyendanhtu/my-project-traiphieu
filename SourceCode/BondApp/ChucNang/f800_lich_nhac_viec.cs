@@ -74,6 +74,9 @@ namespace BondApp
 
             set_define_events();
             this.KeyPreview = true;
+            m_lbl_title.Font = new Font("Arial", 16);
+            m_lbl_title.ForeColor = Color.DarkRed;
+            m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
         }
 
         private void load_data_2_cbo_loai_nhac_viec(){

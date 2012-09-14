@@ -63,6 +63,9 @@ namespace BondApp
          
             set_define_events();
             this.KeyPreview = true;
+            m_lbl_title.Font = new Font("Arial", 16);
+            m_lbl_title.ForeColor = Color.DarkRed;
+            m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
         }
 
         private void select_trai_chu()
