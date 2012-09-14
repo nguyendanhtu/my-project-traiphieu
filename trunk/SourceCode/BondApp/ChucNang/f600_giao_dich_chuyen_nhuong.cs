@@ -220,6 +220,28 @@ namespace BondApp
             m_cmd_chon_trai_chu.Click += new EventHandler(m_cmd_chon_trai_chu_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
+            m_txt_so_luong_chuyen_nhuong.LostFocus += new EventHandler(m_txt_so_luong_chuyen_nhuong_LostFocus);
+        }
+
+        void m_txt_so_luong_chuyen_nhuong_LostFocus(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_txt_so_luong_chuyen_nhuong.Text.Equals(""))
+                    return;
+                
+                if (double.Parse(m_txt_so_luong_chuyen_nhuong.Text) > double.Parse(m_txt_so_luong_kha_dung.Text))
+                {
+                    MessageBox.Show("Số lượng trái phiếu chuyển nhượng phải nhỏ hợn số trái phiếu khả dụng của trai chủ bán!");
+                    m_txt_so_luong_chuyen_nhuong.Focus();
+                }
+
+            }
+            catch (Exception v_e)
+            {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_insert_Click(object sender, EventArgs e)
