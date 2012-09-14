@@ -51,7 +51,7 @@ namespace BondApp
         {
             CControlFormat.setFormStyle(this);
             set_define_events();
-            Load_cbb_trang_thai_chuyen_nhuong();
+            load_cbb_trang_thai_chuyen_nhuong();
             m_cbb_trang_thai_cn.SelectedItem = 0;
             this.KeyPreview = true;
             m_lbl_title.Font = new Font("Arial", 16);
@@ -156,7 +156,7 @@ namespace BondApp
             //us_trai_phieu_2_form(m_us_trai_phieu);
         }
 
-        private void from_2_us_gd_chuyen_nhuong()
+        private void form_2_us_gd_chuyen_nhuong()
         {
             if(!m_lbl_ID_gd_chuyen_nhuong.Text.Equals(""))
             m_us_gd_chuyen_nhuong.dcID = CIPConvert.ToDecimal(m_lbl_ID_gd_chuyen_nhuong.Text);
@@ -188,7 +188,7 @@ namespace BondApp
             m_us_gd_chuyen_nhuong.dcID_TRANG_THAI_CHUYEN_NHUONG = CIPConvert.ToDecimal(m_cbb_trang_thai_cn.SelectedValue);
         }
 
-        private void Load_cbb_trang_thai_chuyen_nhuong()
+        private void load_cbb_trang_thai_chuyen_nhuong()
         {
             m_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds("TRANG_THAI_GD", m_ds_cm_dm_tu_dien);
             m_ds_cm_dm_tu_dien.EnforceConstraints = false;
@@ -199,7 +199,7 @@ namespace BondApp
             m_cbb_trang_thai_cn.DisplayMember = CM_DM_TU_DIEN.TEN;
             m_cbb_trang_thai_cn.DataSource = m_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;           
         }
-        private bool chect_thong_tin_chuyen_nhuong()
+        private bool check_thong_tin_chuyen_nhuong()
         {
             if(m_txt_ma_giao_dich.Text.Equals("")) return false;            
             if(m_txt_so_luong_chuyen_nhuong.Text.Equals("")) return false;
@@ -241,9 +241,9 @@ namespace BondApp
                     {
                         if (!m_lbl_ID_nguoi_mua.Text.Equals(""))
                         {
-                            if (chect_thong_tin_chuyen_nhuong())
+                            if (check_thong_tin_chuyen_nhuong())
                             {
-                                from_2_us_gd_chuyen_nhuong();
+                                form_2_us_gd_chuyen_nhuong();
                                 m_us_gd_chuyen_nhuong.Update();
                                 MessageBox.Show("Cập nhập thành công!");
                             }
@@ -298,9 +298,9 @@ namespace BondApp
                     {
                         if (!m_lbl_ID_nguoi_mua.Text.Equals(""))
                         {
-                            if (chect_thong_tin_chuyen_nhuong())
+                            if (check_thong_tin_chuyen_nhuong())
                             {
-                                from_2_us_gd_chuyen_nhuong();
+                                form_2_us_gd_chuyen_nhuong();
                                 m_us_gd_chuyen_nhuong.Insert();
                                 MessageBox.Show("Cập nhập thành công!");
                             }
