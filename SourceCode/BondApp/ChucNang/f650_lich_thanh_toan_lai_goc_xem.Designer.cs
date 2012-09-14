@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f650_lich_thanh_toan_lai_goc_xem));
-            this.label1 = new System.Windows.Forms.Label();
+            this.m_lbl_header = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_lbl_ma_trai_phieu = new System.Windows.Forms.Label();
             this.m_lbl_to_chuc_phat_hanh = new System.Windows.Forms.Label();
@@ -55,28 +55,28 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cmd_thong_bao_ls = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_generate = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_thong_bao_ls = new SIS.Controls.Button.SiSButton();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // m_lbl_header
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(839, 24);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "LỊCH THANH TOÁN LÃI - GỐC";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.m_lbl_header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_header.ForeColor = System.Drawing.Color.DarkRed;
+            this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
+            this.m_lbl_header.Name = "m_lbl_header";
+            this.m_lbl_header.Size = new System.Drawing.Size(839, 24);
+            this.m_lbl_header.TabIndex = 23;
+            this.m_lbl_header.Text = "F650 - LỊCH THANH TOÁN LÃI - GỐC";
+            this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_fg
             // 
@@ -352,6 +352,21 @@
             this.panel1.Size = new System.Drawing.Size(839, 36);
             this.panel1.TabIndex = 55;
             // 
+            // m_cmd_thong_bao_ls
+            // 
+            this.m_cmd_thong_bao_ls.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_thong_bao_ls.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_thong_bao_ls.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_thong_bao_ls.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_thong_bao_ls.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_thong_bao_ls.ImageIndex = 18;
+            this.m_cmd_thong_bao_ls.ImageList = this.ImageList;
+            this.m_cmd_thong_bao_ls.Location = new System.Drawing.Point(177, 4);
+            this.m_cmd_thong_bao_ls.Name = "m_cmd_thong_bao_ls";
+            this.m_cmd_thong_bao_ls.Size = new System.Drawing.Size(173, 28);
+            this.m_cmd_thong_bao_ls.TabIndex = 22;
+            this.m_cmd_thong_bao_ls.Text = "Thông báo lãi suất";
+            // 
             // m_cmd_insert
             // 
             this.m_cmd_insert.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -427,21 +442,6 @@
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
-            // m_cmd_thong_bao_ls
-            // 
-            this.m_cmd_thong_bao_ls.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_thong_bao_ls.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_thong_bao_ls.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_thong_bao_ls.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_thong_bao_ls.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_thong_bao_ls.ImageIndex = 18;
-            this.m_cmd_thong_bao_ls.ImageList = this.ImageList;
-            this.m_cmd_thong_bao_ls.Location = new System.Drawing.Point(177, 4);
-            this.m_cmd_thong_bao_ls.Name = "m_cmd_thong_bao_ls";
-            this.m_cmd_thong_bao_ls.Size = new System.Drawing.Size(173, 28);
-            this.m_cmd_thong_bao_ls.TabIndex = 22;
-            this.m_cmd_thong_bao_ls.Text = "Thông báo lãi suất";
-            // 
             // f650_lich_thanh_toan_lai_goc_xem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -450,9 +450,9 @@
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.m_lbl_header);
             this.Name = "f650_lich_thanh_toan_lai_goc_xem";
-            this.Text = "f650_lich_thanh_toan_lai_goc_xem";
+            this.Text = "F650 - Lịch thanh toán lãi gốc";
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -463,7 +463,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label m_lbl_header;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
         private System.Windows.Forms.Label m_lbl_ma_trai_phieu;
         private System.Windows.Forms.Label m_lbl_to_chuc_phat_hanh;

@@ -73,6 +73,9 @@ namespace BondApp
             CGridUtils.AddSearch_Handlers(m_fg);
             set_define_events();
             this.KeyPreview = true;
+            m_lbl_header.Font = new Font("Arial", 16);
+            m_lbl_header.ForeColor = Color.DarkRed;
+            m_lbl_header.TextAlign = ContentAlignment.MiddleCenter;
         }
 
         private void set_initial_form_load()
@@ -124,7 +127,6 @@ namespace BondApp
             }
             m_fg.Redraw = true;
         }
-
         private string get_content_of_calendar(int ip_grid_row)
         {
             string v_str_content = "Ngày";
@@ -259,7 +261,15 @@ namespace BondApp
 
         private void m_cmd_generate_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                m_us_gd_lich_tt_lai_goc.GenLichThanhToanLaiGoc(m_us_trai_phieu.dcID);
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
        
     }
