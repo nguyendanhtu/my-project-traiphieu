@@ -74,7 +74,7 @@ namespace BondApp
 
         private void us_trai_chu_2_form(US_DM_TRAI_CHU ip_us_trai_chu)
         {
-            if (ip_us_trai_chu.IsIDNull()) return;
+            if (ip_us_trai_chu.IsIDNull()) return;  
             DS_GD_SO_DU_TRAI_PHIEU v_ds = new DS_GD_SO_DU_TRAI_PHIEU();
             US_GD_SO_DU_TRAI_PHIEU v_us = new US_GD_SO_DU_TRAI_PHIEU();
             v_us.select_us_gd_so_du_trai_phieu_byTraiChuID(ip_us_trai_chu.dcID, v_ds);
@@ -112,12 +112,30 @@ namespace BondApp
                 }            
         }
 
+        private void lap_giao_dich_phong_toa_giai_toa()
+        {
+            MessageBox.Show("Giao dich phong toa giai toa dang duoc code hehe");
+        }
 
         #endregion
 
         private void set_define_events()
         {
             m_cmd_chon_trai_chu.Click += new EventHandler(m_cmd_chon_trai_chu_Click);
+            m_cmd_lap.Click += new EventHandler(m_cmd_lap_Click);
+        }
+
+        void m_cmd_lap_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lap_giao_dich_phong_toa_giai_toa();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_chon_trai_chu_Click(object sender, EventArgs e)
