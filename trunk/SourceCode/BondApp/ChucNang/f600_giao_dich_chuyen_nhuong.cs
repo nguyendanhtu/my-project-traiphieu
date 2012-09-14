@@ -158,11 +158,14 @@ namespace BondApp
 
         private void from_2_us_gd_chuyen_nhuong()
         {
+            if(!m_lbl_ID_gd_chuyen_nhuong.Text.Equals(""))
             m_us_gd_chuyen_nhuong.dcID = CIPConvert.ToDecimal(m_lbl_ID_gd_chuyen_nhuong.Text);
             m_us_gd_chuyen_nhuong.strMA_GIAO_DICH = m_txt_ma_giao_dich.Text;
+
+            if(!m_txt_ngay_xac_nhan.Text.Equals(""))
             m_us_gd_chuyen_nhuong.datNGAY_XAC_NHAN = CIPConvert.ToDatetime( m_txt_ngay_xac_nhan.Text);
             m_us_gd_chuyen_nhuong.datNGAY_KY_CHUYEN_NHUONG = CIPConvert.ToDatetime(m_txt_ngay_chuyen_nhuong.Text);
-            m_us_gd_chuyen_nhuong.datNGAY_VAO_SO = CIPConvert.ToDatetime(m_date_ngay_vao_so.Value);
+            m_us_gd_chuyen_nhuong.datNGAY_VAO_SO = CIPConvert.ToDatetime(m_date_ngay_vao_so.Text);
             m_us_gd_chuyen_nhuong.dcID_TRAI_CHU_MUA = CIPConvert.ToDecimal(m_lbl_ID_nguoi_mua.Text);
             m_us_gd_chuyen_nhuong.dcID_TRAI_CHU_BAN = CIPConvert.ToDecimal(m_lbl_ID_nguoi_ban.Text);
             m_us_gd_chuyen_nhuong.strTEN_NGUOI_UY_QUYEN_MUA = m_txt_ben_mua_ten_nguoi_dai_dien.Text;
@@ -180,6 +183,7 @@ namespace BondApp
             m_us_gd_chuyen_nhuong.dcPHAN_TRAM_THUE = CIPConvert.ToDecimal(m_txt_phan_tram_thue.Text)/100;
             m_us_gd_chuyen_nhuong.dcGIA_TRI_THUE = CIPConvert.ToDecimal(m_txt_thue.Text);
             m_us_gd_chuyen_nhuong.dcID_NGUOI_LAP = CIPConvert.ToDecimal(m_lbl_ID_nguoi_lap.Text);
+            if(!m_lbl_ID_nguoi_duyet.Text.Equals(""))
             m_us_gd_chuyen_nhuong.dcID_NGUOI_DUYET = CIPConvert.ToDecimal(m_lbl_ID_nguoi_duyet.Text);
             m_us_gd_chuyen_nhuong.dcID_TRANG_THAI_CHUYEN_NHUONG = CIPConvert.ToDecimal(m_cbb_trang_thai_cn.SelectedValue);
         }
