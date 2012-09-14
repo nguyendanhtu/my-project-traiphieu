@@ -208,6 +208,13 @@ namespace BondApp
             if (m_lbl_ID_nguoi_lap.Text.Equals("")) return false;            
             return true;
         }
+        private void ResterContro()
+        {
+            m_cmd_update.Visible = false;
+            m_cmd_check.Visible = false;
+            m_cmd_insert.Visible = true;
+            m_cmd_exit.Visible = true;
+        }
         #endregion
 
         #region Events
@@ -221,6 +228,43 @@ namespace BondApp
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
             m_txt_so_luong_chuyen_nhuong.LostFocus += new EventHandler(m_txt_so_luong_chuyen_nhuong_LostFocus);
+            m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
+        }
+
+        void m_cmd_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!m_lbl_ID_trai_phieu.Text.Equals(""))
+                {
+                    if (!m_lbl_ID_nguoi_ban.Text.Equals(""))
+                    {
+                        if (!m_lbl_ID_nguoi_mua.Text.Equals(""))
+                        {
+                            if (chect_thong_tin_chuyen_nhuong())
+                            {
+                                from_2_us_gd_chuyen_nhuong();
+                                m_us_gd_chuyen_nhuong.Update();
+                                MessageBox.Show("Cập nhập thành công!");
+                            }
+                            else
+                                MessageBox.Show("Chưa nhập đủ các thông tin chuyển nhượng!");
+
+                        }
+                        else
+                            MessageBox.Show("Chưa chọn người mua!");
+                    }
+                    else
+                        MessageBox.Show("Chưa chọn người bán!");
+                }
+                else
+                    MessageBox.Show("Chưa chọn trái phiếu!");
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_txt_so_luong_chuyen_nhuong_LostFocus(object sender, EventArgs e)
