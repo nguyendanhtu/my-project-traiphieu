@@ -4,6 +4,19 @@ using System.Text;
 
 namespace BondDS.CDBNames
 {
+    public class LOAI_TD
+    {
+        public const decimal PHAN_QUYEN = 1;
+        public const decimal PHAN_QUYEN = 1;
+        public const decimal LOAI_TRAI_PHIEU = 2;
+        public const decimal LOAI_TRAI_CHU = 3;
+        public const decimal DON_VI_KY_HAN = 4;
+        public const decimal LOAI_NHAC_NHAC_VIEC = 5;
+        public const decimal TRANG_THAI_GD = 6;
+
+
+    }
+
     public class CM_DM_LOAI_TD
     {
         public const string ID = "ID";
