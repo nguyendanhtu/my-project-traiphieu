@@ -59,18 +59,18 @@ Public Class f101_Dang_Nhap
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(f101_Dang_Nhap))
-        Me.Panel1 = New System.Windows.Forms.Panel
-        Me.m_btnOK = New SIS.Controls.Button.SiSButton
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.m_btnOK = New SIS.Controls.Button.SiSButton()
         Me.ImageList = New System.Windows.Forms.ImageList(Me.components)
-        Me.m_btnCancel = New SIS.Controls.Button.SiSButton
-        Me.m_txtMatKhau = New System.Windows.Forms.TextBox
-        Me.Label2 = New System.Windows.Forms.Label
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.m_txtTenTruyNhap = New System.Windows.Forms.TextBox
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.Panel2 = New System.Windows.Forms.Panel
+        Me.m_btnCancel = New SIS.Controls.Button.SiSButton()
+        Me.m_txtMatKhau = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.m_txtTenTruyNhap = New System.Windows.Forms.TextBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -180,7 +180,7 @@ Public Class f101_Dang_Nhap
         Me.GroupBox1.Size = New System.Drawing.Size(302, 162)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Đăng nhập - Hệ thống quản lý bán hàng"
+        Me.GroupBox1.Text = "Đăng nhập - Hệ thống quản lý trái phiếu"
         '
         'Panel2
         '
@@ -360,5 +360,9 @@ Public Class f101_Dang_Nhap
         Catch ex As Exception
             CSystemLog_301.ExceptionHandle(ex)
         End Try
+    End Sub
+
+    Private Sub GroupBox1_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox1.Enter
+
     End Sub
 End Class
