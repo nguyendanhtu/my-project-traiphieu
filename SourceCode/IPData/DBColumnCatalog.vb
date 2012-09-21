@@ -56,7 +56,10 @@ Namespace DBNames
     End Class
 
     '****************************
-   
+    Public Class CM_DM_LOAI_TD_LIST
+        Public Const TRANG_THAI_GD As String = "TRANG_THAI_GD"
+    End Class
+
 
 
 End Namespace

@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 using IP.Core.IPCommon;
 using IP.Core.IPException;
@@ -12,9 +13,11 @@ using IP.Core.IPUserService;
 using BondUS;
 using BondDS;
 using BondDS.CDBNames;
-
+using IP.Core.IPData.DBNames;
 using C1.Win.C1FlexGrid;
 using System.Data.SqlClient;
+
+using IP.Core.IPSystemAdmin;
 
 namespace BondApp
 {
@@ -27,77 +30,155 @@ namespace BondApp
         }
 
         #region Public Intrface
-        public void display()
+        public void display_lap_chuyen_nhuong()
         {
+            m_e_form_mode = eFormMode.LAP_CHUYEN_NHUONG;
             this.ShowDialog();
         }
         #endregion
 
         #region Data Structures
-
+        public enum eFormMode
+        {
+            LAP_CHUYEN_NHUONG
+                , SUA_CHUYEN_NHUONG_CHUA_DUYET
+            , DUYET_CHUYEN_NHUONG
+        }
         #endregion
 
         #region Members
         US_DM_TRAI_CHU m_us_trai_chu = new US_DM_TRAI_CHU();
         US_DM_TRAI_PHIEU m_us_trai_phieu = new US_DM_TRAI_PHIEU();
-        US_CM_DM_TU_DIEN m_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
-        DS_CM_DM_TU_DIEN m_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
         US_GD_CHUYEN_NHUONG m_us_gd_chuyen_nhuong = new US_GD_CHUYEN_NHUONG();
-        DS_GD_CHUYEN_NHUONG m_ds_gd_chuyen_nhuong = new DS_GD_CHUYEN_NHUONG();        
+
+        eFormMode m_e_form_mode = eFormMode.LAP_CHUYEN_NHUONG;
         #endregion
 
         #region Private Methods
         private void format_controls()
         {
-            CControlFormat.setFormStyle(this);
-            set_define_events();
-            load_cbb_trang_thai_chuyen_nhuong();
-            m_cbb_trang_thai_cn.SelectedItem = 0;
+            CControlFormat.setFormStyle(this);           
+            
             this.KeyPreview = true;
             m_lbl_title.Font = new Font("Arial", 16);
             m_lbl_title.ForeColor = Color.DarkRed;
             m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
+            set_define_events();
+        }
+        private void load_cbb_trang_thai_chuyen_nhuong()
+        {
+            US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
+            DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
+            v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds(CM_DM_LOAI_TD_LIST.TRANG_THAI_GD, v_ds_cm_dm_tu_dien);
+            v_ds_cm_dm_tu_dien.EnforceConstraints = false;
+            DataRow v_dr = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN.NewCM_DM_TU_DIENRow();
+            v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
+
+            m_cbb_trang_thai_cn.ValueMember = CM_DM_TU_DIEN.ID;
+            m_cbb_trang_thai_cn.DisplayMember = CM_DM_TU_DIEN.TEN;
+            m_cbb_trang_thai_cn.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
+        }
+
+        private void set_inital_form_load(){
+            load_cbb_trang_thai_chuyen_nhuong();
+            switch (m_e_form_mode)
+            {
+                case eFormMode.LAP_CHUYEN_NHUONG:
+                    m_cmd_lap_chuyen_nhuong.Enabled = true;
+                    m_cmd_sua_chuyen_nhuong.Enabled = false;
+                    m_cmd_duyet_chuyen_nhuong.Enabled = false;
+                    break;
+                case eFormMode.SUA_CHUYEN_NHUONG_CHUA_DUYET:
+                    m_cmd_lap_chuyen_nhuong.Enabled = false;
+                    m_cmd_sua_chuyen_nhuong.Enabled = true;
+                    m_cmd_duyet_chuyen_nhuong.Enabled = false;
+                    break;
+                case eFormMode.DUYET_CHUYEN_NHUONG:
+                    m_cmd_lap_chuyen_nhuong.Enabled = false;
+                    m_cmd_sua_chuyen_nhuong.Enabled = false;
+                    m_cmd_duyet_chuyen_nhuong.Enabled = true;
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void select_trai_phieu()
         {
             f300_dm_trai_phieu v_frm300 = new f300_dm_trai_phieu();
+            m_us_trai_phieu = new US_DM_TRAI_PHIEU();
             m_us_trai_phieu = v_frm300.select_trai_phieu();
-            if (m_us_trai_phieu.dcID != -1)
+            if (!m_us_trai_phieu.IsIDNull())
                 us_trai_phieu_2_form(m_us_trai_phieu);
         }
-
+        private void select_trai_chu_mua()
+        {
+            f500_dm_trai_chu v_frm500 = new f500_dm_trai_chu();
+           
+            m_us_trai_chu = v_frm500.select_trai_chu_of_trai_phieu(m_us_trai_phieu);
+            if (!m_us_trai_chu.IsIDNull())
+            {
+                if (!m_us_trai_chu.dcID.ToString().Equals(m_lbl_ID_nguoi_ban.Text))
+                    us_trai_chu_mua_2_form(m_us_trai_chu);
+                else
+                    MessageBox.Show("Phải chọn bên mmua không trùng với bên bán");
+            }
+        }
+        private void select_trai_chu_ban()
+        {
+            f500_dm_trai_chu v_frm500 = new f500_dm_trai_chu();
+            
+            m_us_trai_chu = v_frm500.select_trai_chu_of_trai_phieu(m_us_trai_phieu);
+            if (!m_us_trai_chu.IsIDNull())
+            {
+                if (!m_us_trai_chu.dcID.ToString().Equals(m_lbl_ID_nguoi_mua.Text))
+                    us_trai_chu_ban_2_form(m_us_trai_chu);
+                else
+                    MessageBox.Show("Phải chọn bên bán không trùng với bên mua");
+            }
+        }
         private void us_trai_phieu_2_form(US_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
-            m_lbl_ID_trai_phieu.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcID);
+            
+            US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
+            
             m_txt_ma_trai_phieu.Text = ip_us_trai_phieu.strMA_TRAI_PHIEU;
             m_txt_ten_trai_phieu.Text = ip_us_trai_phieu.strTEN_TRAI_PHIEU;
             m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcMENH_GIA, "#,###");
             m_txt_ky_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_DIEU_CHINH_LS, "#,###");
             m_txt_ngay_phat_hanh.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_PHAT_HANH);
             m_txt_ngay_dao_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_DAO_HAN);
-            m_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN(ip_us_trai_phieu.dcID_DV_KY_HAN);
-            if(m_us_cm_dm_tu_dien != null)
-            m_txt_ky_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_HAN) + " " + CIPConvert.ToStr(m_us_cm_dm_tu_dien.strTEN);
-            m_txt_lai_suat.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcLAI_SUAT_DEFAULT, "p");
-            m_txt_ngay_chuyen_nhuong.Text = DateTime.Today.ToString("dd/MM/yyyy");
-        }
-
-        private void select_trai_chu()
-        {
-            f500_dm_trai_chu v_frm500 = new f500_dm_trai_chu();
-            v_frm500.m_id_trai_phieu = CIPConvert.ToDecimal(m_lbl_ID_trai_phieu.Text);
-            m_us_trai_chu = v_frm500.select_trai_chu();
-            if (!m_us_trai_chu.IsIDNull())
+            try
             {
-                if (!m_us_trai_chu.dcID.ToString().Equals(m_lbl_ID_nguoi_mua.Text))
-                    us_trai_chu_2_form(m_us_trai_chu);
-                else
-                    MessageBox.Show("Phải chọn bên bán không trùng với bên mua");              
+                v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN(ip_us_trai_phieu.dcID_DV_KY_HAN);
             }
+            catch (Exception v_e)
+            {
+                MessageBox.Show("Trái phiếu " + m_us_trai_phieu.strTEN_TRAI_PHIEU + " không có đơn vị kỳ hạn");
+                    throw v_e;
+            }
+            
+            
+            m_txt_ky_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_HAN) + " " + CIPConvert.ToStr(v_us_cm_dm_tu_dien.strTEN);
+            m_txt_lai_suat.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcLAI_SUAT_DEFAULT, "p");
+            switch (m_e_form_mode)
+            {
+                case eFormMode.LAP_CHUYEN_NHUONG:
+                     m_txt_ngay_chuyen_nhuong.Text = DateTime.Today.ToString("dd/MM/yyyy"); // dòng này KHÔNG đúng trong trường hợp hiển thị Giao dịch chuyển nhượng đã xảy ra
+                    break;
+                case eFormMode.SUA_CHUYEN_NHUONG_CHUA_DUYET:
+                    m_txt_ngay_chuyen_nhuong.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.datNGAY_KY_CHUYEN_NHUONG);
+                    break;
+                case eFormMode.DUYET_CHUYEN_NHUONG:
+                    m_txt_ngay_chuyen_nhuong.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.datNGAY_KY_CHUYEN_NHUONG);
+                    break;
+                default:
+                    break;
+            }
+         
+            
         }
-
-        private void us_trai_chu_2_form(US_DM_TRAI_CHU ip_us_trai_chu)
+        private void us_trai_chu_ban_2_form(US_DM_TRAI_CHU ip_us_trai_chu)
         {
             m_lbl_ID_nguoi_ban.Text = CIPConvert.ToStr(ip_us_trai_chu.dcID);
             if (ip_us_trai_chu.IsIDNull()) return;
@@ -119,21 +200,7 @@ namespace BondApp
             m_txt_dia_chi.Text = ip_us_trai_chu.strDIA_CHI;
             //us_trai_phieu_2_form(m_us_trai_phieu);
         }
-        private void select_trai_chu_mua()
-        {
-            f500_dm_trai_chu v_frm500 = new f500_dm_trai_chu();
-            v_frm500.m_id_trai_phieu = CIPConvert.ToDecimal(m_lbl_ID_trai_phieu.Text);
-            m_us_trai_chu = v_frm500.select_trai_chu();
-            if (!m_us_trai_chu.IsIDNull())
-            {
-                if (!m_us_trai_chu.dcID.ToString().Equals(m_lbl_ID_nguoi_ban.Text))
-                    us_trai_mua_chu_2_form(m_us_trai_chu);
-                else
-                    MessageBox.Show("Phải chọn bên mmua không trùng với bên bán");
-            }
-        }
-
-        private void us_trai_mua_chu_2_form(US_DM_TRAI_CHU ip_us_trai_chu_mua)
+        private void us_trai_chu_mua_2_form(US_DM_TRAI_CHU ip_us_trai_chu_mua)
         {
             m_lbl_ID_nguoi_mua.Text = CIPConvert.ToStr(ip_us_trai_chu_mua.dcID);
             if (ip_us_trai_chu_mua.IsIDNull()) return;
@@ -155,15 +222,22 @@ namespace BondApp
             m_txt_ben_mua_dia_chi.Text = ip_us_trai_chu_mua.strDIA_CHI;
             //us_trai_phieu_2_form(m_us_trai_phieu);
         }
-
         private void form_2_us_gd_chuyen_nhuong()
         {
+            Debug.Assert(m_cbb_trang_thai_cn.SelectedValue != null, "Chưa thiết lập trạng thái chuyển nhượng ở Từ điển!");
+
             if(!m_lbl_ID_gd_chuyen_nhuong.Text.Equals(""))
             m_us_gd_chuyen_nhuong.dcID = CIPConvert.ToDecimal(m_lbl_ID_gd_chuyen_nhuong.Text);
             m_us_gd_chuyen_nhuong.strMA_GIAO_DICH = m_txt_ma_giao_dich.Text;
 
-            if(!m_txt_ngay_xac_nhan.Text.Equals(""))
-            m_us_gd_chuyen_nhuong.datNGAY_XAC_NHAN = CIPConvert.ToDatetime( m_txt_ngay_xac_nhan.Text);
+            if (m_txt_ngay_xac_nhan.Text.Equals(""))
+            {
+                m_us_gd_chuyen_nhuong.SetNGAY_XAC_NHANNull();
+            }
+            else
+            {
+                m_us_gd_chuyen_nhuong.datNGAY_XAC_NHAN = CIPConvert.ToDatetime(m_txt_ngay_xac_nhan.Text);
+            }
             m_us_gd_chuyen_nhuong.datNGAY_KY_CHUYEN_NHUONG = CIPConvert.ToDatetime(m_txt_ngay_chuyen_nhuong.Text);
             m_us_gd_chuyen_nhuong.datNGAY_VAO_SO = CIPConvert.ToDatetime(m_date_ngay_vao_so.Text);
             m_us_gd_chuyen_nhuong.dcID_TRAI_CHU_MUA = CIPConvert.ToDecimal(m_lbl_ID_nguoi_mua.Text);
@@ -182,38 +256,50 @@ namespace BondApp
             m_us_gd_chuyen_nhuong.strNOI_DUNG_GIAO_DICH = m_txt_noi_dung_chuyen_nhuong.Text;
             m_us_gd_chuyen_nhuong.dcPHAN_TRAM_THUE = CIPConvert.ToDecimal(m_txt_phan_tram_thue.Text)/100;
             m_us_gd_chuyen_nhuong.dcGIA_TRI_THUE = CIPConvert.ToDecimal(m_txt_thue.Text);
-            m_us_gd_chuyen_nhuong.dcID_NGUOI_LAP = CIPConvert.ToDecimal(m_lbl_ID_nguoi_lap.Text);
-            if(!m_lbl_ID_nguoi_duyet.Text.Equals(""))
-            m_us_gd_chuyen_nhuong.dcID_NGUOI_DUYET = CIPConvert.ToDecimal(m_lbl_ID_nguoi_duyet.Text);
+
+            switch (m_e_form_mode)
+            {
+                case eFormMode.LAP_CHUYEN_NHUONG:
+                    m_us_gd_chuyen_nhuong.dcID_NGUOI_LAP = CAppContext_201.getCurrentUserID();
+                    m_us_gd_chuyen_nhuong.SetID_NGUOI_DUYETNull();
+                    break;
+                case eFormMode.SUA_CHUYEN_NHUONG_CHUA_DUYET:
+                    m_us_gd_chuyen_nhuong.dcID_NGUOI_LAP = CAppContext_201.getCurrentUserID();
+                    m_us_gd_chuyen_nhuong.SetID_NGUOI_DUYETNull();
+                    break;
+                case eFormMode.DUYET_CHUYEN_NHUONG:
+                    m_us_gd_chuyen_nhuong.dcID_NGUOI_DUYET = CAppContext_201.getCurrentUserID();
+                    break;
+                default:
+                    break;
+            }
             m_us_gd_chuyen_nhuong.dcID_TRANG_THAI_CHUYEN_NHUONG = CIPConvert.ToDecimal(m_cbb_trang_thai_cn.SelectedValue);
         }
 
-        private void load_cbb_trang_thai_chuyen_nhuong()
+        
+        private bool check_thong_tin_chuyen_nhuong_is_ok()
         {
-            m_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds("TRANG_THAI_GD", m_ds_cm_dm_tu_dien);
-            m_ds_cm_dm_tu_dien.EnforceConstraints = false;
-            DataRow v_dr = m_ds_cm_dm_tu_dien.CM_DM_TU_DIEN.NewCM_DM_TU_DIENRow();            
-            m_ds_cm_dm_tu_dien.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
-
-            m_cbb_trang_thai_cn.ValueMember = CM_DM_TU_DIEN.ID;
-            m_cbb_trang_thai_cn.DisplayMember = CM_DM_TU_DIEN.TEN;
-            m_cbb_trang_thai_cn.DataSource = m_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;           
-        }
-        private bool check_thong_tin_chuyen_nhuong()
-        {
-            if(m_txt_ma_giao_dich.Text.Equals("")) return false;            
-            if(m_txt_so_luong_chuyen_nhuong.Text.Equals("")) return false;
-            if(m_txt_ty_le_phi_gd.Text.Equals("")) return false;
-            if(m_txt_so_cmnd_dkkd.Text.Equals("")) return false;
-            if (m_lbl_ID_nguoi_lap.Text.Equals("")) return false;            
+            if(!CValidateTextBox.IsValid( m_txt_ma_giao_dich, DataType.StringType, allowNull.NO)) return false;            
+            if(!CValidateTextBox.IsValid(m_txt_so_luong_chuyen_nhuong, DataType.NumberType, allowNull.NO)) return false;
+            if(!CValidateTextBox.IsValid(m_txt_ty_le_phi_gd, DataType.NumberType, allowNull.NO)) return false;
+            if(!CValidateTextBox.IsValid(m_txt_so_cmnd_dkkd, DataType.StringType, allowNull.NO)) return false;
             return true;
         }
-        private void ResterContro()
+
+        private void lap_chuyen_nhuong()
         {
-            m_cmd_update.Visible = false;
-            m_cmd_check.Visible = false;
-            m_cmd_insert.Visible = true;
-            m_cmd_exit.Visible = true;
+            if (!check_thong_tin_chuyen_nhuong_is_ok()) return;
+            form_2_us_gd_chuyen_nhuong();
+            m_us_gd_chuyen_nhuong.Insert();
+            MessageBox.Show("Cập nhập thành công!");
+        }
+
+        private void sua_thong_tin_chuyen_nhuong()
+        {
+            if (!check_thong_tin_chuyen_nhuong_is_ok()) return;
+            form_2_us_gd_chuyen_nhuong();
+            m_us_gd_chuyen_nhuong.Update();
+            MessageBox.Show("Cập nhập thành công!");
         }
         #endregion
 
@@ -226,39 +312,30 @@ namespace BondApp
             m_cmd_chon_ben_mua.Click += new EventHandler(m_cmd_chon_ben_mua_Click);
             m_cmd_chon_trai_chu.Click += new EventHandler(m_cmd_chon_trai_chu_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-            m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
+            m_cmd_lap_chuyen_nhuong.Click += new EventHandler(m_cmd_insert_Click);
             m_txt_so_luong_chuyen_nhuong.LostFocus += new EventHandler(m_txt_so_luong_chuyen_nhuong_LostFocus);
-            m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
+            m_cmd_sua_chuyen_nhuong.Click += new EventHandler(m_cmd_update_Click);
+            this.Load += new EventHandler(f600_giao_dich_chuyen_nhuong_Load);
+        }
+
+        void f600_giao_dich_chuyen_nhuong_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                set_inital_form_load();
+            }
+            catch (Exception v_e)
+            {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_update_Click(object sender, EventArgs e)
         {
             try
             {
-                if (!m_lbl_ID_trai_phieu.Text.Equals(""))
-                {
-                    if (!m_lbl_ID_nguoi_ban.Text.Equals(""))
-                    {
-                        if (!m_lbl_ID_nguoi_mua.Text.Equals(""))
-                        {
-                            if (check_thong_tin_chuyen_nhuong())
-                            {
-                                form_2_us_gd_chuyen_nhuong();
-                                m_us_gd_chuyen_nhuong.Update();
-                                MessageBox.Show("Cập nhập thành công!");
-                            }
-                            else
-                                MessageBox.Show("Chưa nhập đủ các thông tin chuyển nhượng!");
-
-                        }
-                        else
-                            MessageBox.Show("Chưa chọn người mua!");
-                    }
-                    else
-                        MessageBox.Show("Chưa chọn người bán!");
-                }
-                else
-                    MessageBox.Show("Chưa chọn trái phiếu!");
+                sua_thong_tin_chuyen_nhuong();
             }
             catch (Exception v_e)
             {
@@ -271,10 +348,12 @@ namespace BondApp
         {
             try
             {
-                if (m_txt_so_luong_chuyen_nhuong.Text.Equals(""))
-                    return;
+                if (!CValidateTextBox.IsValid(m_txt_so_luong_chuyen_nhuong, DataType.NumberType, allowNull.NO)) return;
+                if (!CValidateTextBox.IsValid(m_txt_so_luong_kha_dung, DataType.NumberType, allowNull.NO)) return;
+                    
                 
-                if (double.Parse(m_txt_so_luong_chuyen_nhuong.Text) > double.Parse(m_txt_so_luong_kha_dung.Text))
+                if (CIPConvert.ToDecimal(m_txt_so_luong_chuyen_nhuong.Text) 
+                    > CIPConvert.ToDecimal(m_txt_so_luong_kha_dung.Text))
                 {
                     MessageBox.Show("Số lượng trái phiếu chuyển nhượng phải nhỏ hợn số trái phiếu khả dụng của trai chủ bán!");
                     m_txt_so_luong_chuyen_nhuong.Focus();
@@ -292,28 +371,7 @@ namespace BondApp
         {
             try
             {
-                if (!m_lbl_ID_trai_phieu.Text.Equals(""))
-                {
-                    if (!m_lbl_ID_nguoi_ban.Text.Equals(""))
-                    {
-                        if (!m_lbl_ID_nguoi_mua.Text.Equals(""))
-                        {
-                            if (check_thong_tin_chuyen_nhuong())
-                            {
-                                form_2_us_gd_chuyen_nhuong();
-                                m_us_gd_chuyen_nhuong.Insert();
-                                MessageBox.Show("Cập nhập thành công!");
-                            }
-                            else
-                                MessageBox.Show("Chưa nhập đủ các thông tin chuyển nhượng!");
-                            
-                        }else
-                        MessageBox.Show("Chưa chọn người mua!");                        
-                    }else
-                    MessageBox.Show("Chưa chọn người bán!");
-                }
-                else
-                    MessageBox.Show("Chưa chọn trái phiếu!");                
+                lap_chuyen_nhuong();
             }
             catch (Exception v_e)
             {
@@ -324,7 +382,16 @@ namespace BondApp
 
         void m_cmd_exit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+           
         }
 
         void m_cmd_chon_trai_phieu_Click(object sender, EventArgs e)
@@ -344,12 +411,17 @@ namespace BondApp
         {
             try
             {
-                if (!m_txt_phan_tram_thue.Text.Equals("") && !m_txt_so_luong_chuyen_nhuong.Text.Equals(""))
-                {
-                    double v_phan_tram_thue = double.Parse(m_txt_ty_le_phi_gd.Text)/100;
-                    double v_so_luong_CN = double.Parse(m_txt_so_luong_chuyen_nhuong.Text);
-                    m_txt_thue.Text = CIPConvert.ToStr(v_so_luong_CN * v_phan_tram_thue * double.Parse(CIPConvert.ToStr(m_us_trai_phieu.dcMENH_GIA)), "#,###");
-                }
+                if (!CValidateTextBox.IsValid(m_txt_phan_tram_thue, DataType.NumberType, allowNull.YES)) return;
+                if (!CValidateTextBox.IsValid(m_txt_so_luong_chuyen_nhuong, DataType.NumberType, allowNull.YES)) return;
+                if (!CIPConvert.is_valid_number(m_txt_phan_tram_thue.Text)) return;
+                if (!CIPConvert.is_valid_number(m_txt_so_luong_chuyen_nhuong.Text)) return;
+
+                decimal v_dc_phan_tram_thue = CIPConvert.ToDecimal(m_txt_ty_le_phi_gd.Text)/100;
+                decimal v_dc_so_luong_chuyen_nhuong = CIPConvert.ToDecimal(m_txt_so_luong_chuyen_nhuong.Text);
+                m_txt_thue.Text = CIPConvert.ToStr(
+                    v_dc_so_luong_chuyen_nhuong * v_dc_phan_tram_thue * m_us_trai_phieu.dcMENH_GIA
+                    , "#,###");
+               
             }
             catch (Exception v_e)
             {
@@ -362,11 +434,12 @@ namespace BondApp
         {
             try
             {
+                // Ninh phải sửa đi nhé
                 if (!m_txt_ty_le_phi_gd.Text.Equals("") && !m_txt_so_luong_chuyen_nhuong.Text.Equals(""))
                 {
-                    double v_ty_le_phi = double.Parse(m_txt_ty_le_phi_gd.Text)/100;
-                    double v_so_luong_CN = double.Parse(m_txt_so_luong_chuyen_nhuong.Text);
-                    m_txt_phi_gd.Text = CIPConvert.ToStr(v_so_luong_CN * v_ty_le_phi * double.Parse(CIPConvert.ToStr(m_us_trai_phieu.dcMENH_GIA)), "#,###");
+                    decimal v_ty_le_phi = decimal.Parse(m_txt_ty_le_phi_gd.Text) / 100;
+                    decimal v_so_luong_CN = decimal.Parse(m_txt_so_luong_chuyen_nhuong.Text);
+                    m_txt_phi_gd.Text = CIPConvert.ToStr(v_so_luong_CN * v_ty_le_phi * m_us_trai_phieu.dcMENH_GIA, "#,###");
                 }
             }            
             catch (Exception v_e)
@@ -380,10 +453,13 @@ namespace BondApp
         {
             try
             {
-                if (!m_lbl_ID_trai_phieu.Text.Equals(""))
-                    select_trai_chu_mua();
-                else
+                if (m_us_trai_phieu.IsIDNull()) {
                     MessageBox.Show("Cần chọn trái phiếu trước");
+                    return;
+                }
+                 select_trai_chu_mua();
+                
+                    
             }
             catch (Exception v_e)
             {
@@ -396,10 +472,12 @@ namespace BondApp
         {
             try
             {
-                if (!m_lbl_ID_trai_phieu.Text.Equals(""))
-                    select_trai_chu();
-                else
+                 if (m_us_trai_phieu.IsIDNull()) {
                     MessageBox.Show("Cần chọn trái phiếu trước");
+                    return;
+                }
+                    select_trai_chu_ban();
+                
             }
             catch (Exception v_e)
             {
@@ -410,3 +488,4 @@ namespace BondApp
         #endregion                                     
     }
 }
+ 

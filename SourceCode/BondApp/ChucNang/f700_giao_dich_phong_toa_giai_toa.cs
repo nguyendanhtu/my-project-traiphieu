@@ -75,7 +75,7 @@ namespace BondApp
         private void select_trai_chu()
         {
             f500_dm_trai_chu v_frm500 = new f500_dm_trai_chu();
-            m_us_trai_chu =  v_frm500.select_trai_chu();
+            m_us_trai_chu =  v_frm500.select_trai_chu_of_trai_phieu(null);
             us_trai_chu_2_form(m_us_trai_chu);
         }
 

@@ -253,7 +253,7 @@ namespace BondApp
             this.m_lbl_title.Name = "m_lbl_title";
             this.m_lbl_title.Size = new System.Drawing.Size(884, 37);
             this.m_lbl_title.TabIndex = 22;
-            this.m_lbl_title.Text = "F500 - Danh mục trái trủ";
+            this.m_lbl_title.Text = "F500 - Danh sách trái chủ";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_gru_tim_kiem
@@ -319,9 +319,10 @@ namespace BondApp
 		public void display(){			
 			this.ShowDialog();
 		}
-        public US_DM_TRAI_CHU select_trai_chu()
+        public US_DM_TRAI_CHU select_trai_chu_of_trai_phieu(US_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
-            m_e_form_mode = DataEntryFormMode.SelectDataState;            
+            m_e_form_mode = DataEntryFormMode.SelectDataState;
+            m_us_trai_phieu = ip_us_trai_phieu;
             this.ShowDialog();            
             return m_us;
         }
@@ -356,7 +357,8 @@ namespace BondApp
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
 		DS_DM_TRAI_CHU m_ds = new DS_DM_TRAI_CHU();
 		US_DM_TRAI_CHU m_us = new US_DM_TRAI_CHU();
-        public decimal m_id_trai_phieu = 0;
+        US_DM_TRAI_PHIEU m_us_trai_phieu;
+
         #endregion
 
 		#region Private Methods
@@ -396,10 +398,9 @@ namespace BondApp
             }
 
 			m_obj_trans = get_trans_object(m_fg);			
-            if (m_id_trai_phieu != 0)
-                load_data_2_grid(m_id_trai_phieu);
-            else
-                load_data_2_grid();
+            
+           
+                load_data_2_grid(m_us_trai_phieu);
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -425,18 +426,19 @@ namespace BondApp
 			return v_obj_trans;			
 		}
 
-        private void load_data_2_grid(decimal ip_id_trai_phieu)
-        {
-            m_ds = new DS_DM_TRAI_CHU();
-            m_us.FillDatasetByIDTraiPhieu(m_ds, ip_id_trai_phieu);            
-            m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            m_fg.Redraw = true;
-        }
+        
 
-		private void load_data_2_grid(){						
-			m_ds = new DS_DM_TRAI_CHU();			
-			m_us.FillDataset(m_ds);
+		private void load_data_2_grid(US_DM_TRAI_PHIEU ip_us_trai_phieu){						
+			m_ds = new DS_DM_TRAI_CHU();
+            if (ip_us_trai_phieu.IsIDNull())
+            {
+
+                m_us.FillDataset(m_ds);
+            }
+            else
+            {
+                m_us.FillDatasetByIDTraiPhieu(m_ds, ip_us_trai_phieu.dcID);     
+            }
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
 			m_fg.Redraw = true;
@@ -461,7 +463,7 @@ namespace BondApp
 		private void insert_dm_trai_chu(){			
 		//	f500_dm_trai_chu_DE v_fDE = new  f500_dm_trai_chu_DE();								
 		//	v_fDE.display();
-			load_data_2_grid();
+			load_data_2_grid(null);
 		}
 
 		private void update_dm_trai_chu(){			
@@ -470,7 +472,7 @@ namespace BondApp
 			grid2us_object(m_us, m_fg.Row);
 		//	f500_dm_trai_chu_DE v_fDE = new f500_dm_trai_chu_DE();
 		//	v_fDE.display(m_us);
-			load_data_2_grid();
+			load_data_2_grid(null);
 		}
 				
 		private void delete_dm_trai_chu(){
