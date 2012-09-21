@@ -32,12 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f600_giao_dich_chuyen_nhuong));
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label34 = new System.Windows.Forms.Label();
             this.m_txt_lai_suat = new System.Windows.Forms.TextBox();
             this.m_lbl_ky_han = new System.Windows.Forms.Label();
             this.m_txt_ky_han = new System.Windows.Forms.TextBox();
             this.m_lbl_lai_suat = new System.Windows.Forms.Label();
             this.m_lbl_ngay_dao_han = new System.Windows.Forms.Label();
-            this.m_lbl_ID_trai_phieu = new System.Windows.Forms.Label();
+            
             this.m_lbl_ma_trai_phieu = new System.Windows.Forms.Label();
             this.m_lbl_to_chuc_phat_hanh = new System.Windows.Forms.Label();
             this.m_lbl_menh_gia = new System.Windows.Forms.Label();
@@ -125,9 +126,9 @@
             this.m_cmd_chon_ben_mua = new System.Windows.Forms.Button();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.m_cmd_check = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_update = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_duyet_chuyen_nhuong = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_lap_chuyen_nhuong = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_sua_chuyen_nhuong = new SIS.Controls.Button.SiSButton();
             this.m_cmd_in = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_lbl_ID_gd_chuyen_nhuong = new System.Windows.Forms.Label();
@@ -136,18 +137,15 @@
             this.m_txt_noi_dung_chuyen_nhuong = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label35 = new System.Windows.Forms.Label();
             this.m_cbb_trang_thai_cn = new System.Windows.Forms.ComboBox();
             this.m_txt_nguoi_duyet = new System.Windows.Forms.TextBox();
             this.m_txt_nguoi_lap = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
-            this.m_lbl_ID_nguoi_duyet = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.m_lbl_ID_nguoi_lap = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.m_gru_thong_khach_hang = new System.Windows.Forms.GroupBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -176,7 +174,7 @@
             this.groupBox2.Controls.Add(this.m_txt_ky_han);
             this.groupBox2.Controls.Add(this.m_lbl_lai_suat);
             this.groupBox2.Controls.Add(this.m_lbl_ngay_dao_han);
-            this.groupBox2.Controls.Add(this.m_lbl_ID_trai_phieu);
+            
             this.groupBox2.Controls.Add(this.m_lbl_ma_trai_phieu);
             this.groupBox2.Controls.Add(this.m_lbl_to_chuc_phat_hanh);
             this.groupBox2.Controls.Add(this.m_lbl_menh_gia);
@@ -194,6 +192,16 @@
             this.groupBox2.TabIndex = 55;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin trái phiếu";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(283, 47);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(30, 13);
+            this.label34.TabIndex = 56;
+            this.label34.Text = "VNĐ";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // m_txt_lai_suat
             // 
@@ -247,13 +255,7 @@
             // 
             // m_lbl_ID_trai_phieu
             // 
-            this.m_lbl_ID_trai_phieu.AutoSize = true;
-            this.m_lbl_ID_trai_phieu.Location = new System.Drawing.Point(9, 18);
-            this.m_lbl_ID_trai_phieu.Name = "m_lbl_ID_trai_phieu";
-            this.m_lbl_ID_trai_phieu.Size = new System.Drawing.Size(0, 13);
-            this.m_lbl_ID_trai_phieu.TabIndex = 33;
-            this.m_lbl_ID_trai_phieu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_lbl_ID_trai_phieu.Visible = false;
+          
             // 
             // m_lbl_ma_trai_phieu
             // 
@@ -476,10 +478,9 @@
             // 
             // m_txt_phi_gd
             // 
-            this.m_txt_phi_gd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.m_txt_phi_gd.BackColor = System.Drawing.Color.White;
             this.m_txt_phi_gd.Location = new System.Drawing.Point(678, 38);
             this.m_txt_phi_gd.Name = "m_txt_phi_gd";
-            this.m_txt_phi_gd.ReadOnly = true;
             this.m_txt_phi_gd.Size = new System.Drawing.Size(156, 20);
             this.m_txt_phi_gd.TabIndex = 44;
             this.m_txt_phi_gd.TabStop = false;
@@ -496,10 +497,9 @@
             // 
             // m_txt_ngay_chuyen_nhuong
             // 
-            this.m_txt_ngay_chuyen_nhuong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.m_txt_ngay_chuyen_nhuong.BackColor = System.Drawing.Color.White;
             this.m_txt_ngay_chuyen_nhuong.Location = new System.Drawing.Point(142, 93);
             this.m_txt_ngay_chuyen_nhuong.Name = "m_txt_ngay_chuyen_nhuong";
-            this.m_txt_ngay_chuyen_nhuong.ReadOnly = true;
             this.m_txt_ngay_chuyen_nhuong.Size = new System.Drawing.Size(136, 20);
             this.m_txt_ngay_chuyen_nhuong.TabIndex = 46;
             this.m_txt_ngay_chuyen_nhuong.TabStop = false;
@@ -1133,9 +1133,9 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.m_cmd_check);
-            this.panel1.Controls.Add(this.m_cmd_insert);
-            this.panel1.Controls.Add(this.m_cmd_update);
+            this.panel1.Controls.Add(this.m_cmd_duyet_chuyen_nhuong);
+            this.panel1.Controls.Add(this.m_cmd_lap_chuyen_nhuong);
+            this.panel1.Controls.Add(this.m_cmd_sua_chuyen_nhuong);
             this.panel1.Controls.Add(this.m_cmd_in);
             this.panel1.Controls.Add(this.m_cmd_exit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -1145,50 +1145,50 @@
             this.panel1.Size = new System.Drawing.Size(884, 36);
             this.panel1.TabIndex = 57;
             // 
-            // m_cmd_check
+            // m_cmd_duyet_chuyen_nhuong
             // 
-            this.m_cmd_check.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_check.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_check.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_check.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_check.Enabled = false;
-            this.m_cmd_check.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_check.Image")));
-            this.m_cmd_check.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_check.Location = new System.Drawing.Point(528, 4);
-            this.m_cmd_check.Name = "m_cmd_check";
-            this.m_cmd_check.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_check.TabIndex = 21;
-            this.m_cmd_check.Text = "&Xác nhận";
+            this.m_cmd_duyet_chuyen_nhuong.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_duyet_chuyen_nhuong.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_duyet_chuyen_nhuong.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_duyet_chuyen_nhuong.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_duyet_chuyen_nhuong.Enabled = false;
+            this.m_cmd_duyet_chuyen_nhuong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet_chuyen_nhuong.Image")));
+            this.m_cmd_duyet_chuyen_nhuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_duyet_chuyen_nhuong.Location = new System.Drawing.Point(528, 4);
+            this.m_cmd_duyet_chuyen_nhuong.Name = "m_cmd_duyet_chuyen_nhuong";
+            this.m_cmd_duyet_chuyen_nhuong.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_duyet_chuyen_nhuong.TabIndex = 21;
+            this.m_cmd_duyet_chuyen_nhuong.Text = "&Xác nhận";
             // 
-            // m_cmd_insert
+            // m_cmd_lap_chuyen_nhuong
             // 
-            this.m_cmd_insert.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_insert.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_insert.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_insert.ImageIndex = 2;
-            this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(616, 4);
-            this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_insert.TabIndex = 22;
-            this.m_cmd_insert.Text = "& Lập";
+            this.m_cmd_lap_chuyen_nhuong.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_lap_chuyen_nhuong.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_lap_chuyen_nhuong.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_lap_chuyen_nhuong.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_lap_chuyen_nhuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_lap_chuyen_nhuong.ImageIndex = 2;
+            this.m_cmd_lap_chuyen_nhuong.ImageList = this.ImageList;
+            this.m_cmd_lap_chuyen_nhuong.Location = new System.Drawing.Point(616, 4);
+            this.m_cmd_lap_chuyen_nhuong.Name = "m_cmd_lap_chuyen_nhuong";
+            this.m_cmd_lap_chuyen_nhuong.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_lap_chuyen_nhuong.TabIndex = 22;
+            this.m_cmd_lap_chuyen_nhuong.Text = "& Lập";
             // 
-            // m_cmd_update
+            // m_cmd_sua_chuyen_nhuong
             // 
-            this.m_cmd_update.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_update.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_update.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_update.ImageIndex = 3;
-            this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(704, 4);
-            this.m_cmd_update.Name = "m_cmd_update";
-            this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_update.TabIndex = 23;
-            this.m_cmd_update.Text = "&Sửa";
+            this.m_cmd_sua_chuyen_nhuong.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_sua_chuyen_nhuong.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_sua_chuyen_nhuong.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_sua_chuyen_nhuong.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_sua_chuyen_nhuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_sua_chuyen_nhuong.ImageIndex = 3;
+            this.m_cmd_sua_chuyen_nhuong.ImageList = this.ImageList;
+            this.m_cmd_sua_chuyen_nhuong.Location = new System.Drawing.Point(704, 4);
+            this.m_cmd_sua_chuyen_nhuong.Name = "m_cmd_sua_chuyen_nhuong";
+            this.m_cmd_sua_chuyen_nhuong.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_sua_chuyen_nhuong.TabIndex = 23;
+            this.m_cmd_sua_chuyen_nhuong.Text = "&Sửa";
             // 
             // m_cmd_in
             // 
@@ -1285,10 +1285,8 @@
             this.groupBox4.Controls.Add(this.label33);
             this.groupBox4.Controls.Add(this.m_txt_thue);
             this.groupBox4.Controls.Add(this.label32);
-            this.groupBox4.Controls.Add(this.m_lbl_ID_nguoi_duyet);
             this.groupBox4.Controls.Add(this.label30);
             this.groupBox4.Controls.Add(this.m_txt_ngay_xac_nhan);
-            this.groupBox4.Controls.Add(this.m_lbl_ID_nguoi_lap);
             this.groupBox4.Controls.Add(this.label31);
             this.groupBox4.Controls.Add(this.m_lbl_tong_so_luong_trai_phieu);
             this.groupBox4.Controls.Add(this.label20);
@@ -1305,6 +1303,15 @@
             this.groupBox4.TabIndex = 60;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thông tin chuyển nhương";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(840, 41);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(30, 13);
+            this.label35.TabIndex = 59;
+            this.label35.Text = "VNĐ";
             // 
             // m_cbb_trang_thai_cn
             // 
@@ -1354,15 +1361,6 @@
             this.label32.TabIndex = 39;
             this.label32.Text = "Trạng thái";
             // 
-            // m_lbl_ID_nguoi_duyet
-            // 
-            this.m_lbl_ID_nguoi_duyet.AutoSize = true;
-            this.m_lbl_ID_nguoi_duyet.Location = new System.Drawing.Point(376, 124);
-            this.m_lbl_ID_nguoi_duyet.Name = "m_lbl_ID_nguoi_duyet";
-            this.m_lbl_ID_nguoi_duyet.Size = new System.Drawing.Size(0, 13);
-            this.m_lbl_ID_nguoi_duyet.TabIndex = 39;
-            this.m_lbl_ID_nguoi_duyet.Visible = false;
-            // 
             // label30
             // 
             this.label30.AutoSize = true;
@@ -1371,16 +1369,6 @@
             this.label30.Size = new System.Drawing.Size(64, 13);
             this.label30.TabIndex = 39;
             this.label30.Text = "Người duyệt";
-            // 
-            // m_lbl_ID_nguoi_lap
-            // 
-            this.m_lbl_ID_nguoi_lap.AutoSize = true;
-            this.m_lbl_ID_nguoi_lap.Location = new System.Drawing.Point(62, 122);
-            this.m_lbl_ID_nguoi_lap.Name = "m_lbl_ID_nguoi_lap";
-            this.m_lbl_ID_nguoi_lap.Size = new System.Drawing.Size(13, 13);
-            this.m_lbl_ID_nguoi_lap.TabIndex = 39;
-            this.m_lbl_ID_nguoi_lap.Text = "1";
-            this.m_lbl_ID_nguoi_lap.Visible = false;
             // 
             // label31
             // 
@@ -1402,25 +1390,6 @@
             this.m_gru_thong_khach_hang.TabIndex = 61;
             this.m_gru_thong_khach_hang.TabStop = false;
             this.m_gru_thong_khach_hang.Text = "Thông tin khách hàng";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(283, 47);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(30, 13);
-            this.label34.TabIndex = 56;
-            this.label34.Text = "VNĐ";
-            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(840, 41);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(30, 13);
-            this.label35.TabIndex = 59;
-            this.label35.Text = "VNĐ";
             // 
             // f600_giao_dich_chuyen_nhuong
             // 
@@ -1527,8 +1496,8 @@
         private System.Windows.Forms.Button m_cmd_chon_ben_mua;
         internal System.Windows.Forms.ImageList ImageList;
         internal System.Windows.Forms.Panel panel1;
-        internal SIS.Controls.Button.SiSButton m_cmd_insert;
-        internal SIS.Controls.Button.SiSButton m_cmd_update;
+        internal SIS.Controls.Button.SiSButton m_cmd_lap_chuyen_nhuong;
+        internal SIS.Controls.Button.SiSButton m_cmd_sua_chuyen_nhuong;
         internal SIS.Controls.Button.SiSButton m_cmd_in;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private System.Windows.Forms.Label label22;
@@ -1544,12 +1513,12 @@
         private System.Windows.Forms.TextBox m_txt_phan_tram_thue;
         private System.Windows.Forms.TextBox m_txt_phi_gd;
         private System.Windows.Forms.TextBox m_txt_ty_le_phi_gd;
-        internal SIS.Controls.Button.SiSButton m_cmd_check;
+        internal SIS.Controls.Button.SiSButton m_cmd_duyet_chuyen_nhuong;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.DateTimePicker m_date_ngay_vao_so;
         private System.Windows.Forms.DateTimePicker m_date_ngay_cap_cmnd_ng_dai_dien;
         private System.Windows.Forms.DateTimePicker m_date_ben_mua_ngay_cap_cmnd_ng_dai_dien;
-        private System.Windows.Forms.Label m_lbl_ID_trai_phieu;
+        
         private System.Windows.Forms.Label m_lbl_ID_nguoi_ban;
         private System.Windows.Forms.Label m_lbl_ID_nguoi_mua;
         private System.Windows.Forms.Label m_lbl_ID_gd_chuyen_nhuong;
@@ -1566,8 +1535,8 @@
         private System.Windows.Forms.ComboBox m_cbb_trang_thai_cn;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label m_lbl_ID_nguoi_duyet;
-        private System.Windows.Forms.Label m_lbl_ID_nguoi_lap;
+        
+        
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label35;
 
