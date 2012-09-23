@@ -16,6 +16,10 @@ namespace BondDS.CDBNames
 
     }
 
+    public class CM_DM_DS_LOAI_TU_DIEN
+    {
+        public const string TRANG_THAI_GD = "TRANG_THAI_GD";
+    }
     public class V_GD_CHUYEN_NHUONG
     {
         public const string ID = "ID";
