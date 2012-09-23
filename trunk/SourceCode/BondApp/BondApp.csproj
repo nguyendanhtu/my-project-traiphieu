@@ -297,6 +297,12 @@
     <Compile Include="DanhMuc\f300_dm_trai_phieu.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DanhMuc\f300_dm_trai_phieu_DE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\f300_dm_trai_phieu_DE.Designer.cs">
+      <DependentUpon>f300_dm_trai_phieu_DE.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\f400_dm_loai_trai_phieu.cs">
       <SubType>Form</SubType>
     </Compile>
