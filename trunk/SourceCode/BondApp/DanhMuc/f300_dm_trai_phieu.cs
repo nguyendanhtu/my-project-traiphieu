@@ -22,6 +22,7 @@ using BondDS;
 using BondDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
+using BondApp.DanhMuc;
 
 namespace BondApp
 {
@@ -476,9 +477,8 @@ namespace BondApp
 		}
 
 
-		private void insert_dm_trai_phieu(){			
-		//	f300_dm_trai_phieu_DE v_fDE = new  f300_dm_trai_phieu_DE();								
-		//	v_fDE.display();
+		private void insert_dm_trai_phieu(){
+            f300_dm_trai_phieu_DE v_fDE = new f300_dm_trai_phieu_DE();
 			load_data_2_grid();
 		}
 
