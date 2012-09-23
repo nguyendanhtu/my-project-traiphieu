@@ -69,7 +69,7 @@ namespace BondApp
         {
             US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
             DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
-            v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds(CM_DM_LOAI_TD_LIST.TRANG_THAI_GD, v_ds_cm_dm_tu_dien);
+            v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds(CM_DM_DS_LOAI_TU_DIEN.TRANG_THAI_GD, v_ds_cm_dm_tu_dien);
             v_ds_cm_dm_tu_dien.EnforceConstraints = false;
             DataRow v_dr = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN.NewCM_DM_TU_DIENRow();
             v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
