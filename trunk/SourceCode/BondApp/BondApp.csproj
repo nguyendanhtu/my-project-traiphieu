@@ -285,6 +285,12 @@
     <Compile Include="ChucNang\f800_lich_nhac_viec.Designer.cs">
       <DependentUpon>f800_lich_nhac_viec.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChucNang\f900_quan_ly_coupon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChucNang\f900_quan_ly_coupon.Designer.cs">
+      <DependentUpon>f900_quan_ly_coupon.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\f100_dm_to_chuc_phat_hanh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -311,6 +317,12 @@
     </Compile>
     <Compile Include="DanhMuc\f500_dm_trai_chu.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\f500_dm_trai_chu_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\f500_dm_trai_chu_de.Designer.cs">
+      <DependentUpon>f500_dm_trai_chu_de.cs</DependentUpon>
     </Compile>
     <Compile Include="DanhMuc\f610_dm_giao_dien_chuyen_nhuong.cs">
       <SubType>Form</SubType>
@@ -362,6 +374,9 @@
     <EmbeddedResource Include="ChucNang\F800_lich_nhac_viec.resx">
       <DependentUpon>f800_lich_nhac_viec.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChucNang\f900_quan_ly_coupon.resx">
+      <DependentUpon>f900_quan_ly_coupon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f100_dm_to_chuc_phat_hanh.resx">
       <DependentUpon>f100_dm_to_chuc_phat_hanh.cs</DependentUpon>
     </EmbeddedResource>
@@ -376,6 +391,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f500_dm_trai_chu.resx">
       <DependentUpon>f500_dm_trai_chu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f500_dm_trai_chu_de.resx">
+      <DependentUpon>f500_dm_trai_chu_de.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f610_dm_giao_dien_chuyen_nhuong.resx">
       <DependentUpon>f610_dm_giao_dien_chuyen_nhuong.cs</DependentUpon>
