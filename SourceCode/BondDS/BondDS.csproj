@@ -140,6 +140,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_DM_TRAI_CHU.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_DM_TRAI_PHIEU.cs">
+      <DependentUpon>DS_DM_TRAI_PHIEU.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DS_DM_TRAI_PHIEU.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
