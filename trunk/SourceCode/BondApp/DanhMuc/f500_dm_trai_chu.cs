@@ -22,6 +22,7 @@ using BondDS;
 using BondDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
+using BondApp.DanhMuc;
 
 namespace BondApp
 {
@@ -397,10 +398,8 @@ namespace BondApp
                     break;
             }
 
-			m_obj_trans = get_trans_object(m_fg);			
-            
-           
-                load_data_2_grid(m_us_trai_phieu);
+			m_obj_trans = get_trans_object(m_fg);
+            load_data_2_grid(m_us_trai_phieu);
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -426,11 +425,9 @@ namespace BondApp
 			return v_obj_trans;			
 		}
 
-        
-
 		private void load_data_2_grid(US_DM_TRAI_PHIEU ip_us_trai_phieu){						
 			m_ds = new DS_DM_TRAI_CHU();
-            if (ip_us_trai_phieu.IsIDNull())
+            if (ip_us_trai_phieu == null)
             {
 
                 m_us.FillDataset(m_ds);
@@ -460,9 +457,9 @@ namespace BondApp
 		}
 
 
-		private void insert_dm_trai_chu(){			
-		//	f500_dm_trai_chu_DE v_fDE = new  f500_dm_trai_chu_DE();								
-		//	v_fDE.display();
+		private void insert_dm_trai_chu(){
+            f500_dm_trai_chu_de v_frm500 = new f500_dm_trai_chu_de();
+            v_frm500.display_for_insert();
 			load_data_2_grid(null);
 		}
 
@@ -470,8 +467,8 @@ namespace BondApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
 			grid2us_object(m_us, m_fg.Row);
-		//	f500_dm_trai_chu_DE v_fDE = new f500_dm_trai_chu_DE();
-		//	v_fDE.display(m_us);
+            f500_dm_trai_chu_de v_frm500 = new f500_dm_trai_chu_de();
+            v_frm500.display_for_update(m_us);
 			load_data_2_grid(null);
 		}
 				
@@ -606,7 +603,7 @@ namespace BondApp
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
-		}         
+		}       
 
 	}
 }
