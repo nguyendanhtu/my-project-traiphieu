@@ -209,6 +209,28 @@ public class US_GD_LICH_THANH_TOAN_LAI_GOC : US_Object
 		pm_objDR["LAI_SUAT"] = System.Convert.DBNull;
 	}
 
+    public string strGHI_CHU
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "GHI_CHU", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["GHI_CHU"] = value;
+        }
+    }
+
+    public bool IsGHI_CHUNull()
+    {
+        return pm_objDR.IsNull("GHI_CHU");
+    }
+
+    public void SetGHI_CHUNull()
+    {
+        pm_objDR["GHI_CHU"] = System.Convert.DBNull;
+    }
+
 #endregion
 #region "Init Functions"
 	public US_GD_LICH_THANH_TOAN_LAI_GOC() 
