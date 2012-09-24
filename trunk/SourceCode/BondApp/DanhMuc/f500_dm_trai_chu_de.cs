@@ -102,6 +102,8 @@ namespace BondApp.DanhMuc
 
         private void us_object_2_form(US_DM_TRAI_CHU ip_us_trai_chu)
         {
+            m_us_trai_phieu = new US_DM_TRAI_PHIEU(ip_us_trai_chu.dcID_TRAI_PHIEU_SO_HUU);
+
             m_txt_ma_trai_chu.Text = ip_us_trai_chu.strMA_TRAI_CHU;
             m_txt_ten_khach_hang.Text = ip_us_trai_chu.strTEN_TRAI_CHU;
             m_cbo_loai_trai_chu.SelectedValue = CIPConvert.ToStr(ip_us_trai_chu.dcID_LOAI_TRAI_CHU);
@@ -117,7 +119,7 @@ namespace BondApp.DanhMuc
             m_txt_ghi_chu_2.Text = ip_us_trai_chu.strGHI_CHU2;
             m_txt_ghi_chu_3.Text = ip_us_trai_chu.strGHI_CHU3;
             m_txt_noi_cap.Text = ip_us_trai_chu.strNOI_CAP_CMT;
-            m_txt_id_trai_phieu_so_huu.Text = CIPConvert.ToStr(ip_us_trai_chu.dcID_TRAI_PHIEU_SO_HUU);
+            m_txt_id_trai_phieu_so_huu.Text = m_us_trai_phieu.strMA_TRAI_PHIEU;
             m_txt_nguoi_lap.Text = CIPConvert.ToStr(ip_us_trai_chu.dcID_NGUOI_LAP);
             m_txt_nguoi_duyet.Text = CIPConvert.ToStr(ip_us_trai_chu.dcID_NGUOI_DUYET);
             m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ip_us_trai_chu.dcID_TRANG_THAI);
@@ -140,7 +142,7 @@ namespace BondApp.DanhMuc
             ip_us_trai_chu.strGHI_CHU2 = m_txt_ghi_chu_2.Text;
             ip_us_trai_chu.strGHI_CHU3 = m_txt_ghi_chu_3.Text;
             ip_us_trai_chu.strNOI_CAP_CMT = m_txt_noi_cap.Text;
-            ip_us_trai_chu.dcID_TRAI_PHIEU_SO_HUU = CIPConvert.ToDecimal(m_txt_id_trai_phieu_so_huu.Text);
+            ip_us_trai_chu.dcID_TRAI_PHIEU_SO_HUU = m_us_trai_phieu.dcID;
             ip_us_trai_chu.dcID_NGUOI_LAP = CIPConvert.ToDecimal(m_txt_nguoi_lap.Text);
             ip_us_trai_chu.dcID_NGUOI_DUYET = CIPConvert.ToDecimal(m_txt_nguoi_duyet.Text);
             ip_us_trai_chu.dcID_TRANG_THAI = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
@@ -195,7 +197,7 @@ namespace BondApp.DanhMuc
             {
                 return false;
             }
-            if (!CValidateTextBox.IsValid(m_txt_id_trai_phieu_so_huu, DataType.NumberType, allowNull.NO, true))
+            if (!CValidateTextBox.IsValid(m_txt_id_trai_phieu_so_huu, DataType.StringType, allowNull.NO, true))
             {
                 return false;
             }
@@ -244,7 +246,7 @@ namespace BondApp.DanhMuc
             f300_dm_trai_phieu v_frm300 = new f300_dm_trai_phieu();
             m_us_trai_phieu = v_frm300.select_trai_phieu();
             if (!m_us_trai_phieu.IsIDNull())
-                m_txt_id_trai_phieu_so_huu.Text = CIPConvert.ToStr(m_us_trai_phieu.dcID);
+                m_txt_id_trai_phieu_so_huu.Text = m_us_trai_phieu.strMA_TRAI_PHIEU;
         }
 
         #endregion

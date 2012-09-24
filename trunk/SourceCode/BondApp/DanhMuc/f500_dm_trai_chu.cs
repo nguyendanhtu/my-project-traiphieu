@@ -359,7 +359,7 @@ namespace BondApp
 		DS_DM_TRAI_CHU m_ds = new DS_DM_TRAI_CHU();
 		US_DM_TRAI_CHU m_us = new US_DM_TRAI_CHU();
         US_DM_TRAI_PHIEU m_us_trai_phieu;
-
+        DS_DM_TRAI_PHIEU m_ds_trai_phieu;
         #endregion
 
 		#region Private Methods
@@ -438,8 +438,46 @@ namespace BondApp
             }
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            load_data_2_cbo_grid();
 			m_fg.Redraw = true;
 		}
+
+        private void load_data_2_cbo_grid()
+        {
+            US_CM_DM_TU_DIEN v_us_tu_dien = new US_CM_DM_TU_DIEN();
+            DS_CM_DM_TU_DIEN v_ds_tu_dien = new DS_CM_DM_TU_DIEN();
+            //load loai trai chu
+            v_us_tu_dien.fill_tu_dien_cung_loai_ds("LOAI_TRAI_CHU", v_ds_tu_dien);
+            Hashtable v_hst_loai_tu_dien = new Hashtable();
+            foreach (DataRow v_dr in v_ds_tu_dien.CM_DM_TU_DIEN.Rows)
+            {
+                v_hst_loai_tu_dien.Add(v_dr[CM_DM_TU_DIEN.ID], v_dr[CM_DM_TU_DIEN.TEN_NGAN]);
+            }
+            m_fg.Cols[(int)e_col_Number.ID_LOAI_TRAI_CHU].DataMap = v_hst_loai_tu_dien;
+
+            //load trang thai
+            v_ds_tu_dien = new DS_CM_DM_TU_DIEN();
+            v_us_tu_dien.fill_tu_dien_cung_loai_ds("TRANG_THAI_GD", v_ds_tu_dien);
+
+            Hashtable v_hst_dv_ky_han = new Hashtable();
+            foreach (DataRow v_dr in v_ds_tu_dien.CM_DM_TU_DIEN.Rows)
+            {
+                v_hst_dv_ky_han.Add(v_dr[CM_DM_TU_DIEN.ID], v_dr[CM_DM_TU_DIEN.TEN_NGAN]);
+            }
+            m_fg.Cols[(int)e_col_Number.ID_TRANG_THAI].DataMap = v_hst_dv_ky_han;
+
+            //load trai phieu so huu
+            m_us_trai_phieu = new US_DM_TRAI_PHIEU();
+            m_ds_trai_phieu = new DS_DM_TRAI_PHIEU();
+            m_us_trai_phieu.FillDataset(m_ds_trai_phieu);
+            Hashtable v_hst_trai_phieu_so_huu = new Hashtable();
+            foreach (DataRow v_dr in m_ds_trai_phieu.DM_TRAI_PHIEU.Rows)
+            {
+                v_hst_trai_phieu_so_huu.Add(v_dr[DM_TRAI_PHIEU.ID], v_dr[DM_TRAI_PHIEU.MA_TRAI_PHIEU]);
+            }
+            m_fg.Cols[(int)e_col_Number.ID_TRAI_PHIEU_SO_HUU].DataMap = v_hst_trai_phieu_so_huu;
+        }
+
 		private void grid2us_object(US_DM_TRAI_CHU i_us
 			, int i_grid_row) {
 			DataRow v_dr;
