@@ -10,6 +10,7 @@ using IP.Core.IPCommon;
 using IP.Core.IPException;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
+using IP.Core.IPSystemAdmin;
 using BondUS;
 using BondDS;
 using BondDS.CDBNames;
@@ -37,8 +38,9 @@ namespace BondApp
             this.Left = 0;
             this.Height = i_objContainer.Height;
             this.Width = i_objContainer.Width;
-            this.Dock = DockStyle.Fill;            
-            i_objContainer.Controls.Add(this);            
+            this.Dock = DockStyle.Fill;
+            if (CAppContext_201.getCurrentUserID() == 0) return;
+            i_objContainer.Controls.Add(this);      
             set_start_form();
             this.Show();
         }
@@ -196,8 +198,20 @@ namespace BondApp
         #endregion
         private void set_define_events(){
             m_cmd_filter.Click += new EventHandler(m_cmd_filter_Click);
+            m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
         }
 
+        void m_fg_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         void m_cmd_filter_Click(object sender, EventArgs e)
         {
             try
@@ -209,7 +223,6 @@ namespace BondApp
 
                 CSystemLog_301.ExceptionHandle(v_e);
             }
-        }
-        
+        }   
     }
 }
