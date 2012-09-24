@@ -51,7 +51,7 @@
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.Location = new System.Drawing.Point(0, 88);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(837, 325);
+            this.m_fg.Size = new System.Drawing.Size(962, 325);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 21;
             // 
@@ -141,7 +141,7 @@
             this.m_lbl_title.ForeColor = System.Drawing.Color.Red;
             this.m_lbl_title.Location = new System.Drawing.Point(3, 16);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(831, 20);
+            this.m_lbl_title.Size = new System.Drawing.Size(956, 20);
             this.m_lbl_title.TabIndex = 31;
             this.m_lbl_title.Text = "LỊCH NHẮC VIỆC";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -160,7 +160,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(837, 88);
+            this.groupBox1.Size = new System.Drawing.Size(962, 88);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin lọc";
@@ -169,7 +169,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(837, 413);
+            this.ClientSize = new System.Drawing.Size(962, 413);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.groupBox1);
             this.Name = "f800_lich_nhac_viec";
