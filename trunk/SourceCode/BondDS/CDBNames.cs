@@ -273,6 +273,7 @@ namespace BondDS.CDBNames
         public const string NGAY = "NGAY";
         public const string DA_THUC_HIEN_YN = "DA_THUC_HIEN_YN";
         public const string LAI_SUAT = "LAI_SUAT";
+        public const string GHI_CHU = "GHI_CHU";
     }
     public class GD_PHONG_GIAI_TOA
     {
