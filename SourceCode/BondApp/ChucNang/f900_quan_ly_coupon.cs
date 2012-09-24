@@ -6,6 +6,9 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using IP.Core.IPCommon;
+using BondUS;
+using IP.Core.IPUserService;
+using IP.Core.IPData;
 
 namespace BondApp.ChucNang
 {
@@ -41,17 +44,21 @@ namespace BondApp.ChucNang
         #endregion
 
         #region Members
-        /*US_DM_TRAI_CHU m_us_trai_chu = new US_DM_TRAI_CHU();
+        US_DM_TRAI_CHU m_us_trai_chu = new US_DM_TRAI_CHU();
         US_DM_TRAI_PHIEU m_us_trai_phieu;
         US_CM_DM_TU_DIEN m_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
         DS_CM_DM_TU_DIEN m_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
-        DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;*/
+        DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
         #endregion
 
         #region Private Method
         private void format_control()
         {
             CControlFormat.setFormStyle(this);
+            this.KeyPreview = true;
+            m_lbl_title.Font = new Font("Arial", 16);
+            m_lbl_title.ForeColor = Color.DarkRed;
+            m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
             set_define_event();
         }
 
@@ -76,6 +83,17 @@ namespace BondApp.ChucNang
         {
             
         }*/
+
+        private void us_trai_phieu_2_form(US_DM_TRAI_PHIEU ip_us_trai_phieu)
+        {
+            m_txt_ma_trai_phieu.Text = ip_us_trai_phieu.strMA_TRAI_PHIEU;
+            m_txt_ten_trai_phieu.Text = ip_us_trai_phieu.strTEN_TRAI_PHIEU;
+            m_txt_ngay_phat_hanh.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_PHAT_HANH);
+            m_txt_ngay_dao_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_DAO_HAN);
+            m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcMENH_GIA);
+            m_txt_lai_suat.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcLAI_SUAT_DEFAULT);
+            m_txt_ky_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_HAN);
+        }
 
         private bool check_data_is_ok()
         {
@@ -114,10 +132,15 @@ namespace BondApp.ChucNang
 
         private void select_trai_phieu()
         {
-            /*f300_dm_trai_phieu v_frm300 = new f300_dm_trai_phieu();
+            f300_dm_trai_phieu v_frm300 = new f300_dm_trai_phieu();
             m_us_trai_phieu = v_frm300.select_trai_phieu();
             if (!m_us_trai_phieu.IsIDNull())
-                m_txt_id_trai_phieu_so_huu.Text = CIPConvert.ToStr(m_us_trai_phieu.dcID);*/
+                us_trai_phieu_2_form(m_us_trai_phieu);
+        }
+
+         private void select_trai_chu()
+        {
+
         }
 
         #endregion
