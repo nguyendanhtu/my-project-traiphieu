@@ -479,6 +479,7 @@ namespace BondApp
 
 		private void insert_dm_trai_phieu(){
             f300_dm_trai_phieu_DE v_fDE = new f300_dm_trai_phieu_DE();
+            v_fDE.display_for_insert();
 			load_data_2_grid();
 		}
 
@@ -486,8 +487,8 @@ namespace BondApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
 			grid2us_object(m_us, m_fg.Row);
-		//	f300_dm_trai_phieu_DE v_fDE = new f300_dm_trai_phieu_DE();
-		//	v_fDE.display(m_us);
+            f300_dm_trai_phieu_DE v_fDE = new f300_dm_trai_phieu_DE();
+            v_fDE.display_for_update(m_us);
 			load_data_2_grid();
 		}
 				
@@ -621,7 +622,6 @@ namespace BondApp
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
-
 	}
 }
 
