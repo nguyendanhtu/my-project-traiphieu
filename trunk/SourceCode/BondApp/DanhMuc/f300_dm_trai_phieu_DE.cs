@@ -23,6 +23,8 @@ namespace BondApp.DanhMuc
         public f300_dm_trai_phieu_DE()
         {
             InitializeComponent();
+            format_controls();
+            set_define_events();
         }
         #region Public Interface
         public void display_for_insert()
@@ -63,10 +65,39 @@ namespace BondApp.DanhMuc
         }
         private void form_2_us_object(US_DM_TRAI_PHIEU op_us_trai_phieu)
         {
-
+            op_us_trai_phieu.strTEN_TRAI_PHIEU = m_txt_ten_trai_phieu.Text;
+            op_us_trai_phieu.dcID_TO_CHUC_PHAT_HANH = m_us_to_chuc_phat_hanh.dcID;
+            op_us_trai_phieu.strMA_TRAI_PHIEU = m_txt_ma_trai_phieu.Text;
+            op_us_trai_phieu.dcID_LOAI_TRAI_PHIEU = m_us_tu_dien.dcID_LOAI_TU_DIEN;
+            op_us_trai_phieu.dcKY_HAN = decimal.Parse(m_txt_ky_han.Text.ToString());
+            op_us_trai_phieu.dcKY_DIEU_CHINH_LS = decimal.Parse(m_txt_ky_dieu_chinh_ls.Text);
+            op_us_trai_phieu.dcKY_TRA_LAI = decimal.Parse(m_txt_ky_tra_lai.Text);
+            op_us_trai_phieu.dcMENH_GIA = decimal.Parse(m_txt_menh_gia.Text);
+            op_us_trai_phieu.dcTONG_SL_PHAT_HANH = decimal.Parse(m_txt_tong_sl.Text);
+            op_us_trai_phieu.dcLAI_SUAT_DEFAULT = decimal.Parse(m_txt_lai_suat.Text);
         }
         private bool check_validate_data_is_ok()
         {
+            if (!CValidateTextBox.IsValid(m_txt_ten_trai_phieu, DataType.StringType, allowNull.NO, true))
+            { return false; }
+            if (!CValidateTextBox.IsValid(m_txt_ma_to_chuc_phat_hanh, DataType.StringType, allowNull.NO, true))
+            { return false; }
+            if (!CValidateTextBox.IsValid(m_txt_ma_trai_phieu, DataType.StringType, allowNull.NO, true))
+            { return false; }
+            if (!CValidateTextBox.IsValid(m_txt_ma_loai_trai_phieu, DataType.StringType, allowNull.NO, true))
+            { return false; }
+            if (!CValidateTextBox.IsValid(m_txt_ky_han, DataType.NumberType, allowNull.NO, true))
+            { return false; }
+            if (!CValidateTextBox.IsValid(m_txt_ky_dieu_chinh_ls, DataType.NumberType, allowNull.NO, true))
+            { return false; }
+            if (!CValidateTextBox.IsValid(m_txt_ky_tra_lai, DataType.NumberType, allowNull.NO, true))
+            { return false; }
+            if (!CValidateTextBox.IsValid(m_txt_menh_gia, DataType.NumberType, allowNull.NO, true))
+            { return false; }
+            if (!CValidateTextBox.IsValid(m_txt_tong_sl, DataType.NumberType, allowNull.NO, true))
+            { return false; }
+            if (!CValidateTextBox.IsValid(m_txt_lai_suat, DataType.NumberType, allowNull.NO, true))
+            { return false; }
             return true;
         }
         private void save_data()
@@ -91,9 +122,57 @@ namespace BondApp.DanhMuc
         }
         private void set_define_events()
         {
+            this.Load += new EventHandler(f300_dm_trai_phieu_DE_Load);
             m_cmd_ma_to_chuc_phat_hanh.Click += new EventHandler(m_cmd_ma_to_chuc_phat_hanh_Click);
+            m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
         }
-
+        void f300_dm_trai_phieu_DE_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                switch (m_e_form_mode)
+                {
+                    case DataEntryFormMode.InsertDataState:
+                        break;
+                    case DataEntryFormMode.SelectDataState:
+                        break;
+                    case DataEntryFormMode.UpdateDataState:
+                        us_object_2_form(m_us_trai_phieu);
+                        break;
+                    case DataEntryFormMode.ViewDataState:
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        void m_cmd_save_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                save_data();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         void m_cmd_ma_to_chuc_phat_hanh_Click(object sender, EventArgs e)
         {
             try
