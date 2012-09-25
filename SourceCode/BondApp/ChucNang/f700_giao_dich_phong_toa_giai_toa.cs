@@ -27,11 +27,6 @@ namespace BondApp
 
             format_controls();
         }
-        bool isPhongToa = true;
-        public void setPhongToa(bool x)
-        {
-            this.isPhongToa = x;
-        }
 
         #region Public Interface
         public void display_phong_toa()
