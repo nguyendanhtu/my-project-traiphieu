@@ -27,6 +27,11 @@ namespace BondApp
 
             format_controls();
         }
+        bool isPhongToa = true;
+        public void setPhongToa(bool x)
+        {
+            this.isPhongToa = x;
+        }
 
         #region Public Interface
         public void display()
@@ -57,6 +62,7 @@ namespace BondApp
         US_CM_DM_LOAI_TD m_us_cm_dm_loai_tu_dien = new US_CM_DM_LOAI_TD();
         US_GD_PHONG_GIAI_TOA m_us_gd_phong_toa_giai_toa = new US_GD_PHONG_GIAI_TOA();
         DS_GD_PHONG_GIAI_TOA m_ds_gd_phong_toa_giai_toa = new DS_GD_PHONG_GIAI_TOA();
+     
         #endregion
 
         #region Private Methods
