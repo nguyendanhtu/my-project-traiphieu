@@ -48,10 +48,19 @@ namespace BondApp.DanhMuc
         }
         private void select_to_chuc_phat_hanh()
         {
-            
+            f100_dm_to_chuc_phat_hanh v_frm100 = new f100_dm_to_chuc_phat_hanh();
+            m_us_to_chuc_phat_hanh = v_frm100.select_to_chuc_phat_hanh();
+            us_to_chuc_phat_hanh_2_form(m_us_to_chuc_phat_hanh);
+        }
+        private void us_to_chuc_phat_hanh_2_form(US_DM_TO_CHUC_PHAT_HANH ip_us_to_chuc_phat_hanh)
+        {
+            if (ip_us_to_chuc_phat_hanh.IsIDNull()) return;
+            m_txt_ma_to_chuc_phat_hanh.Text = ip_us_to_chuc_phat_hanh.strMA_TO_CHUC_PHAT_HANH;
         }
         private void us_object_2_form(US_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
+            m_us_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH(ip_us_trai_phieu.dcID_TO_CHUC_PHAT_HANH);
+            m_us_tu_dien = new US_CM_DM_TU_DIEN(ip_us_trai_phieu.dcID_LOAI_TRAI_PHIEU);
             m_txt_ten_trai_phieu.Text = m_us_trai_phieu.strTEN_TRAI_PHIEU;
             m_txt_ma_to_chuc_phat_hanh.Text = m_us_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HÀNH;
             m_txt_ma_trai_phieu.Text = m_us_trai_phieu.strMA_TRAI_PHIEU;
