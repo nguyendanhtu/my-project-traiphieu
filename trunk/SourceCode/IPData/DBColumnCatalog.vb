@@ -58,6 +58,12 @@ Namespace DBNames
     '****************************
     Public Class CM_DM_LOAI_TD_LIST
         Public Const TRANG_THAI_GD As String = "TRANG_THAI_GD"
+        Public Const LOAI_TRAI_PHIEU As String = "LOAI_TRAI_PHIEU"
+        Public Const PHAN_QUYEN As String = "PHAN_QUYEN"
+        Public Const LOAI_TRAI_CHU As String = "LOAI_TRAI_CHU"
+        Public Const DON_VI_KY_HAN As String = "DON_VI_KY_HAN"
+        Public Const LOAI_NHAC_NHAC_VIEC As String = "LOAI_NHAC_NHAC_VIEC"
+
     End Class
 
 
