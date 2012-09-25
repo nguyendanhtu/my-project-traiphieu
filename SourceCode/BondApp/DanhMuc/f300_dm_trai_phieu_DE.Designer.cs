@@ -46,7 +46,7 @@
             this.m_lbl_tha_noi = new System.Windows.Forms.Label();
             this.m_cbo_dv_dieu_chinh_ls = new System.Windows.Forms.ComboBox();
             this.m_lbl_dv_dieu_chinh_ls = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.m_txt_ky_dieu_chinh_ls = new System.Windows.Forms.TextBox();
             this.m_lbl_ky_dieu_chinh_ls = new System.Windows.Forms.Label();
             this.m_txt_lai_suat = new System.Windows.Forms.TextBox();
             this.m_lbl_lai_suat = new System.Windows.Forms.Label();
@@ -104,7 +104,7 @@
             this.m.Controls.Add(this.m_lbl_tha_noi);
             this.m.Controls.Add(this.m_cbo_dv_dieu_chinh_ls);
             this.m.Controls.Add(this.m_lbl_dv_dieu_chinh_ls);
-            this.m.Controls.Add(this.textBox1);
+            this.m.Controls.Add(this.m_txt_ky_dieu_chinh_ls);
             this.m.Controls.Add(this.m_lbl_ky_dieu_chinh_ls);
             this.m.Controls.Add(this.m_txt_lai_suat);
             this.m.Controls.Add(this.m_lbl_lai_suat);
@@ -268,12 +268,12 @@
             this.m_lbl_dv_dieu_chinh_ls.TabIndex = 65;
             this.m_lbl_dv_dieu_chinh_ls.Text = "Đơn vị";
             // 
-            // textBox1
+            // m_txt_ky_dieu_chinh_ls
             // 
-            this.textBox1.Location = new System.Drawing.Point(385, 107);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(84, 20);
-            this.textBox1.TabIndex = 64;
+            this.m_txt_ky_dieu_chinh_ls.Location = new System.Drawing.Point(385, 107);
+            this.m_txt_ky_dieu_chinh_ls.Name = "m_txt_ky_dieu_chinh_ls";
+            this.m_txt_ky_dieu_chinh_ls.Size = new System.Drawing.Size(84, 20);
+            this.m_txt_ky_dieu_chinh_ls.TabIndex = 64;
             // 
             // m_lbl_ky_dieu_chinh_ls
             // 
@@ -514,7 +514,7 @@
         private System.Windows.Forms.Label m_lbl_tha_noi;
         private System.Windows.Forms.ComboBox m_cbo_dv_dieu_chinh_ls;
         private System.Windows.Forms.Label m_lbl_dv_dieu_chinh_ls;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox m_txt_ky_dieu_chinh_ls;
         private System.Windows.Forms.Label m_lbl_ky_dieu_chinh_ls;
         private System.Windows.Forms.TextBox m_txt_lai_suat;
         private System.Windows.Forms.Label m_lbl_lai_suat;

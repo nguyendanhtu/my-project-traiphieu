@@ -50,7 +50,16 @@ namespace BondApp.DanhMuc
         }
         private void us_object_2_form(US_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
-            
+            m_txt_ten_trai_phieu.Text = m_us_trai_phieu.strTEN_TRAI_PHIEU;
+            m_txt_ma_to_chuc_phat_hanh.Text = m_us_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HÀNH;
+            m_txt_ma_trai_phieu.Text = m_us_trai_phieu.strMA_TRAI_PHIEU;
+            m_txt_ma_loai_trai_phieu.Text = m_us_tu_dien.strTEN;
+            m_txt_ky_han.Text = m_us_trai_phieu.dcKY_HAN.ToString();
+            m_txt_ky_dieu_chinh_ls.Text = m_us_trai_phieu.dcKY_DIEU_CHINH_LS.ToString();
+            m_txt_ky_tra_lai.Text = m_us_trai_phieu.dcKY_TRA_LAI.ToString();
+            m_txt_menh_gia.Text = m_us_trai_phieu.dcMENH_GIA.ToString();
+            m_txt_tong_sl.Text = m_us_trai_phieu.dcTONG_SL_PHAT_HANH.ToString();
+            m_txt_lai_suat.Text = m_us_trai_phieu.dcLAI_SUAT_DEFAULT.ToString();
         }
         private void form_2_us_object(US_DM_TRAI_PHIEU op_us_trai_phieu)
         {
@@ -101,6 +110,7 @@ namespace BondApp.DanhMuc
         #region Members
         US_DM_TRAI_PHIEU m_us_trai_phieu = new US_DM_TRAI_PHIEU();
         US_DM_TO_CHUC_PHAT_HANH m_us_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH();
+        US_CM_DM_TU_DIEN m_us_tu_dien = new US_CM_DM_TU_DIEN();
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
         #endregion
         #region Data Structures
