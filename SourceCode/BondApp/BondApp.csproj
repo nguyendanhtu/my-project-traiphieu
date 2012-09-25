@@ -243,7 +243,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="bin\Debug\Help\help.chm" />
     <Content Include="App.ico" />
     <None Include="Resources\report.jpg" />
@@ -290,6 +292,12 @@
     </Compile>
     <Compile Include="ChucNang\f900_quan_ly_coupon.Designer.cs">
       <DependentUpon>f900_quan_ly_coupon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChucNang\f950_quan_ly_tra_goc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChucNang\f950_quan_ly_tra_goc.Designer.cs">
+      <DependentUpon>f950_quan_ly_tra_goc.cs</DependentUpon>
     </Compile>
     <Compile Include="DanhMuc\f100_dm_to_chuc_phat_hanh.cs">
       <SubType>Form</SubType>
@@ -376,6 +384,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f900_quan_ly_coupon.resx">
       <DependentUpon>f900_quan_ly_coupon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChucNang\f950_quan_ly_tra_goc.resx">
+      <DependentUpon>f950_quan_ly_tra_goc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f100_dm_to_chuc_phat_hanh.resx">
       <DependentUpon>f100_dm_to_chuc_phat_hanh.cs</DependentUpon>

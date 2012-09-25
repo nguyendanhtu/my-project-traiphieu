@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.m_cbo_loai_trai_chu = new System.Windows.Forms.ComboBox();
             this.m_cmd_select_trai_phieu = new System.Windows.Forms.Button();
             this.m_dat_ngay_cap = new System.Windows.Forms.DateTimePicker();
             this.m_cbo_trang_thai = new System.Windows.Forms.ComboBox();
@@ -68,7 +69,6 @@
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_cbo_loai_trai_chu = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
@@ -120,6 +120,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin trái chủ";
             // 
+            // m_cbo_loai_trai_chu
+            // 
+            this.m_cbo_loai_trai_chu.FormattingEnabled = true;
+            this.m_cbo_loai_trai_chu.Location = new System.Drawing.Point(717, 18);
+            this.m_cbo_loai_trai_chu.Name = "m_cbo_loai_trai_chu";
+            this.m_cbo_loai_trai_chu.Size = new System.Drawing.Size(136, 21);
+            this.m_cbo_loai_trai_chu.TabIndex = 37;
+            // 
             // m_cmd_select_trai_phieu
             // 
             this.m_cmd_select_trai_phieu.Location = new System.Drawing.Point(294, 151);
@@ -131,6 +139,7 @@
             // 
             // m_dat_ngay_cap
             // 
+            this.m_dat_ngay_cap.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_cap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_cap.Location = new System.Drawing.Point(717, 45);
             this.m_dat_ngay_cap.Name = "m_dat_ngay_cap";
@@ -455,14 +464,6 @@
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(866, 36);
             this.m_pnl_out_place_dm.TabIndex = 59;
-            // 
-            // m_cbo_loai_trai_chu
-            // 
-            this.m_cbo_loai_trai_chu.FormattingEnabled = true;
-            this.m_cbo_loai_trai_chu.Location = new System.Drawing.Point(717, 18);
-            this.m_cbo_loai_trai_chu.Name = "m_cbo_loai_trai_chu";
-            this.m_cbo_loai_trai_chu.Size = new System.Drawing.Size(136, 21);
-            this.m_cbo_loai_trai_chu.TabIndex = 37;
             // 
             // f500_dm_trai_chu_de
             // 
