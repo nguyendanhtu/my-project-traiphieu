@@ -420,7 +420,7 @@ namespace BondApp
 			v_htb.Add(DM_TRAI_CHU.GHI_CHU2, e_col_Number.GHI_CHU2);
 			v_htb.Add(DM_TRAI_CHU.SO_TAI_KHOAN, e_col_Number.SO_TAI_KHOAN);
 			v_htb.Add(DM_TRAI_CHU.CMT_GIAY_DKKD, e_col_Number.CMT_GIAY_DKKD);
-									
+				
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.DM_TRAI_CHU.NewRow());
 			return v_obj_trans;			
 		}
