@@ -62,9 +62,9 @@ namespace BondApp.DanhMuc
             m_us_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH(ip_us_trai_phieu.dcID_TO_CHUC_PHAT_HANH);
             m_us_tu_dien = new US_CM_DM_TU_DIEN(ip_us_trai_phieu.dcID_LOAI_TRAI_PHIEU);
             m_txt_ten_trai_phieu.Text = m_us_trai_phieu.strTEN_TRAI_PHIEU;
-            m_txt_ma_to_chuc_phat_hanh.Text = m_us_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HÀNH;
+            m_txt_ma_to_chuc_phat_hanh.Text = m_us_to_chuc_phat_hanh.strMA_TO_CHUC_PHAT_HANH;
             m_txt_ma_trai_phieu.Text = m_us_trai_phieu.strMA_TRAI_PHIEU;
-            m_txt_ma_loai_trai_phieu.Text = m_us_tu_dien.strTEN;
+            m_txt_ma_loai_trai_phieu.Text = m_us_tu_dien.strMA_TU_DIEN;
             m_txt_ky_han.Text = m_us_trai_phieu.dcKY_HAN.ToString();
             m_txt_ky_dieu_chinh_ls.Text = m_us_trai_phieu.dcKY_DIEU_CHINH_LS.ToString();
             m_txt_ky_tra_lai.Text = m_us_trai_phieu.dcKY_TRA_LAI.ToString();
