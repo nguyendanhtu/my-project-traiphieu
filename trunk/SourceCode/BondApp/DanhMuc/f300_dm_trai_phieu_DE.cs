@@ -60,6 +60,8 @@ namespace BondApp.DanhMuc
         private void us_object_2_form(US_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
             m_us_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH(ip_us_trai_phieu.dcID_TO_CHUC_PHAT_HANH);
+            m_us_tu_dien = new US_CM_DM_TU_DIEN(ip_us_trai_phieu.dcID_LOAI_TRAI_PHIEU);
+
             m_txt_ten_trai_phieu.Text = m_us_trai_phieu.strTEN_TRAI_PHIEU;
             m_txt_ma_to_chuc_phat_hanh.Text = m_us_to_chuc_phat_hanh.strMA_TO_CHUC_PHAT_HANH;
             m_txt_ma_trai_phieu.Text = m_us_trai_phieu.strMA_TRAI_PHIEU;
@@ -69,7 +71,7 @@ namespace BondApp.DanhMuc
             m_txt_menh_gia.Text = m_us_trai_phieu.dcMENH_GIA.ToString();
             m_txt_tong_sl.Text = m_us_trai_phieu.dcTONG_SL_PHAT_HANH.ToString();
             m_txt_lai_suat.Text = m_us_trai_phieu.dcLAI_SUAT_DEFAULT.ToString();
-            load_data_2_cbo();
+            m_cbo_ma_loai_trai_phieu.SelectedValue = CIPConvert.ToStr(m_us_tu_dien.dcID_LOAI_TU_DIEN);
         }
         private void form_2_us_object(US_DM_TRAI_PHIEU op_us_trai_phieu)
         {
@@ -90,6 +92,8 @@ namespace BondApp.DanhMuc
             m_cbo_ma_loai_trai_phieu.DataSource = m_ds_cm_dm_tu_dien.Tables[0];
             m_cbo_ma_loai_trai_phieu.DisplayMember = CM_DM_TU_DIEN.TEN_NGAN;
             m_cbo_ma_loai_trai_phieu.ValueMember = CM_DM_TU_DIEN.ID;
+
+
         }
 
         private bool check_validate_data_is_ok()
@@ -148,10 +152,12 @@ namespace BondApp.DanhMuc
                 switch (m_e_form_mode)
                 {
                     case DataEntryFormMode.InsertDataState:
+                        load_data_2_cbo();
                         break;
                     case DataEntryFormMode.SelectDataState:
                         break;
                     case DataEntryFormMode.UpdateDataState:
+                        load_data_2_cbo();
                         us_object_2_form(m_us_trai_phieu);
                         break;
                     case DataEntryFormMode.ViewDataState:
