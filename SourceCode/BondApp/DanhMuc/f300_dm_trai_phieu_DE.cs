@@ -15,7 +15,7 @@ using IP.Core.IPUserService;
 using BondUS;
 using BondDS;
 using BondDS.CDBNames;
-
+using IP.Core.IPData.DBNames;
 namespace BondApp.DanhMuc
 {
     public partial class f300_dm_trai_phieu_DE : Form
@@ -60,17 +60,16 @@ namespace BondApp.DanhMuc
         private void us_object_2_form(US_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
             m_us_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH(ip_us_trai_phieu.dcID_TO_CHUC_PHAT_HANH);
-            m_us_tu_dien = new US_CM_DM_TU_DIEN(ip_us_trai_phieu.dcID_LOAI_TRAI_PHIEU);
             m_txt_ten_trai_phieu.Text = m_us_trai_phieu.strTEN_TRAI_PHIEU;
             m_txt_ma_to_chuc_phat_hanh.Text = m_us_to_chuc_phat_hanh.strMA_TO_CHUC_PHAT_HANH;
             m_txt_ma_trai_phieu.Text = m_us_trai_phieu.strMA_TRAI_PHIEU;
-            m_txt_ma_loai_trai_phieu.Text = m_us_tu_dien.strMA_TU_DIEN;
             m_txt_ky_han.Text = m_us_trai_phieu.dcKY_HAN.ToString();
             m_txt_ky_dieu_chinh_ls.Text = m_us_trai_phieu.dcKY_DIEU_CHINH_LS.ToString();
             m_txt_ky_tra_lai.Text = m_us_trai_phieu.dcKY_TRA_LAI.ToString();
             m_txt_menh_gia.Text = m_us_trai_phieu.dcMENH_GIA.ToString();
             m_txt_tong_sl.Text = m_us_trai_phieu.dcTONG_SL_PHAT_HANH.ToString();
             m_txt_lai_suat.Text = m_us_trai_phieu.dcLAI_SUAT_DEFAULT.ToString();
+            load_data_2_cbo();
         }
         private void form_2_us_object(US_DM_TRAI_PHIEU op_us_trai_phieu)
         {
@@ -85,6 +84,14 @@ namespace BondApp.DanhMuc
             op_us_trai_phieu.dcTONG_SL_PHAT_HANH = decimal.Parse(m_txt_tong_sl.Text);
             op_us_trai_phieu.dcLAI_SUAT_DEFAULT = decimal.Parse(m_txt_lai_suat.Text);
         }
+        private void load_data_2_cbo()
+        {
+            m_ds_cm_dm_tu_dien = m_us_tu_dien.getLoaiTuDienDS(CM_DM_LOAI_TD_LIST.LOAI_TRAI_PHIEU);
+            m_cbo_ma_loai_trai_phieu.DataSource = m_ds_cm_dm_tu_dien.Tables[0];
+            m_cbo_ma_loai_trai_phieu.DisplayMember = CM_DM_TU_DIEN.TEN_NGAN;
+            m_cbo_ma_loai_trai_phieu.ValueMember = CM_DM_TU_DIEN.ID;
+        }
+
         private bool check_validate_data_is_ok()
         {
             if (!CValidateTextBox.IsValid(m_txt_ten_trai_phieu, DataType.StringType, allowNull.NO, true))
@@ -92,8 +99,6 @@ namespace BondApp.DanhMuc
             if (!CValidateTextBox.IsValid(m_txt_ma_to_chuc_phat_hanh, DataType.StringType, allowNull.NO, true))
             { return false; }
             if (!CValidateTextBox.IsValid(m_txt_ma_trai_phieu, DataType.StringType, allowNull.NO, true))
-            { return false; }
-            if (!CValidateTextBox.IsValid(m_txt_ma_loai_trai_phieu, DataType.StringType, allowNull.NO, true))
             { return false; }
             if (!CValidateTextBox.IsValid(m_txt_ky_han, DataType.NumberType, allowNull.NO, true))
             { return false; }
@@ -199,6 +204,7 @@ namespace BondApp.DanhMuc
         US_DM_TRAI_PHIEU m_us_trai_phieu = new US_DM_TRAI_PHIEU();
         US_DM_TO_CHUC_PHAT_HANH m_us_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH();
         US_CM_DM_TU_DIEN m_us_tu_dien = new US_CM_DM_TU_DIEN();
+        DS_CM_DM_TU_DIEN m_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
         #endregion
         #region Data Structures
