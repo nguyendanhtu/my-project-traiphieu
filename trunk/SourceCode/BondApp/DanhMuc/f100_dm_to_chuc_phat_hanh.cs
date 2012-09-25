@@ -44,6 +44,7 @@ namespace BondApp
         private Label label1;
         private Button m_cmd_filter;
         private Label m_lbl_title;
+        internal SIS.Controls.Button.SiSButton m_cmd_select;
 		private System.ComponentModel.IContainer components;
 
 		public f100_dm_to_chuc_phat_hanh()
@@ -96,6 +97,7 @@ namespace BondApp
             this.label1 = new System.Windows.Forms.Label();
             this.m_cmd_filter = new System.Windows.Forms.Button();
             this.m_lbl_title = new System.Windows.Forms.Label();
+            this.m_cmd_select = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.m_gru_tim_kiem.SuspendLayout();
@@ -130,6 +132,7 @@ namespace BondApp
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_select);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
@@ -278,6 +281,21 @@ namespace BondApp
             this.m_lbl_title.Text = "F100 - Danh mục tổ chức phát hành";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // m_cmd_select
+            // 
+            this.m_cmd_select.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_select.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_select.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_select.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_select.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_select.ImageIndex = 18;
+            this.m_cmd_select.ImageList = this.ImageList;
+            this.m_cmd_select.Location = new System.Drawing.Point(515, 4);
+            this.m_cmd_select.Name = "m_cmd_select";
+            this.m_cmd_select.Size = new System.Drawing.Size(97, 28);
+            this.m_cmd_select.TabIndex = 23;
+            this.m_cmd_select.Text = "Chọn trái chủ";
+            // 
             // f100_dm_to_chuc_phat_hanh
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -382,7 +400,16 @@ namespace BondApp
 			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
 		}
 
+        private void chon_to_chuc()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if (m_e_form_mode != DataEntryFormMode.SelectDataState) return;
 
+            grid2us_object(m_us, m_fg.Row);
+            this.Close();
+
+        }
 		private void insert_dm_to_chuc_phat_hanh(){			
 			f100_dm_to_chuc_phat_hanh_de frm100 = new  f100_dm_to_chuc_phat_hanh_de();
             frm100.display_for_insert();
@@ -426,11 +453,13 @@ namespace BondApp
 		//	v_fDE.display(m_us);
 		}
 		private void set_define_events(){
+            m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_cmd_select.Click +=new EventHandler(m_cmd_select_Click);
 		}
 		#endregion
 
@@ -448,7 +477,28 @@ namespace BondApp
 			}
 		
 		}
-
+        void m_fg_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                chon_to_chuc();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        void m_cmd_select_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                chon_to_chuc();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 		private void m_cmd_exit_Click(object sender, EventArgs e) {
 			try{
 				this.Close();
