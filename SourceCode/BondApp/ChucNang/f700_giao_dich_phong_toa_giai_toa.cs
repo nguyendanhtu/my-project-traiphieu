@@ -34,8 +34,14 @@ namespace BondApp
         }
 
         #region Public Interface
-        public void display()
+        public void display_phong_toa()
         {
+            m_e_form_mode = eFormMode.PHONG_TOA;
+            this.ShowDialog();
+        }
+        public void display_giai_toa()
+        {
+            m_e_form_mode = eFormMode.GIAI_TOA;
             this.ShowDialog();
         }
         #endregion
@@ -52,7 +58,13 @@ namespace BondApp
             TONG_SO_DU = 4
                 ,
             SO_DU_KHA_DUNG = 5
-        }	
+        }
+        public enum eFormMode
+        {
+            PHONG_TOA
+                ,
+            GIAI_TOA
+        }
         #endregion
 
         #region Members
@@ -62,7 +74,7 @@ namespace BondApp
         US_CM_DM_LOAI_TD m_us_cm_dm_loai_tu_dien = new US_CM_DM_LOAI_TD();
         US_GD_PHONG_GIAI_TOA m_us_gd_phong_toa_giai_toa = new US_GD_PHONG_GIAI_TOA();
         DS_GD_PHONG_GIAI_TOA m_ds_gd_phong_toa_giai_toa = new DS_GD_PHONG_GIAI_TOA();
-     
+        eFormMode m_e_form_mode = eFormMode.PHONG_TOA;
         #endregion
 
         #region Private Methods
@@ -77,7 +89,22 @@ namespace BondApp
             m_lbl_title.ForeColor = Color.DarkRed;
             m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
         }
-
+        private void set_inital_form_load()
+        {
+           
+            switch (m_e_form_mode)
+            {
+                case eFormMode.GIAI_TOA:
+                 
+                    break;
+                case eFormMode.PHONG_TOA:
+                   
+                    break;
+             
+                default:
+                    break;
+            }
+        }
         private void select_trai_chu()
         {
             f500_dm_trai_chu v_frm500 = new f500_dm_trai_chu();
@@ -177,6 +204,19 @@ namespace BondApp
             try
             {
                 select_trai_chu();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void f700_giao_dich_phong_toa_giai_toa_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                set_inital_form_load();
             }
             catch (Exception v_e)
             {

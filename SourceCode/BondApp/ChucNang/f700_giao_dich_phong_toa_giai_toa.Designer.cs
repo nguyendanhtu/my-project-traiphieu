@@ -772,6 +772,7 @@
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f700_giao_dich_phong_toa_giai_toa";
             this.Text = "F700 - Giao dich phong toa, giai toa";
+            this.Load += new System.EventHandler(this.f700_giao_dich_phong_toa_giai_toa_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
