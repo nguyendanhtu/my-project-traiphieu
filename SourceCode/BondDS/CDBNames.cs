@@ -105,6 +105,43 @@ namespace BondDS.CDBNames
         public const string ID_TRANG_THAI_CHUYEN_NHUONG = "ID_TRANG_THAI_CHUYEN_NHUONG";
     }
 
+    public class V_DM_TRAI_CHU_CHOT_LAI
+    {
+        public const string ID = "ID";
+        public const string ID_CHOT_LAI = "ID_CHOT_LAI";
+        public const string ID_TRAI_CHU = "ID_TRAI_CHU";
+        public const string SO_LUONG_TINH_LAI = "SO_LUONG_TINH_LAI";
+        public const string SO_TIEN_LAI = "SO_TIEN_LAI";
+        public const string DA_NHAN_TIEN_YN = "DA_NHAN_TIEN_YN";
+        public const string NGAY_NHAN_TIEN = "NGAY_NHAN_TIEN";
+        public const string TEN_TRAI_CHU = "TEN_TRAI_CHU";
+        public const string MA_TRAI_CHU = "MA_TRAI_CHU";
+        public const string DIA_CHI = "DIA_CHI";
+        public const string MOBILE = "MOBILE";
+        public const string FAX = "FAX";
+        public const string CMT_GIAY_DKKD = "CMT_GIAY_DKKD";
+        public const string NGAY_CAP_CMT = "NGAY_CAP_CMT";
+        public const string NOI_CAP_CMT = "NOI_CAP_CMT";
+        public const string ID_LOAI_TRAI_CHU = "ID_LOAI_TRAI_CHU";
+        public const string ID_NGUOI_DUYET_TC = "ID_NGUOI_DUYET_TC";
+        public const string ID_NGUOI_LAP_TC = "ID_NGUOI_LAP_TC";
+        public const string ID_TRAI_PHIEU_SO_HUU = "ID_TRAI_PHIEU_SO_HUU";
+        public const string SO_TAI_KHOAN = "SO_TAI_KHOAN";
+        public const string MO_TAI_NGAN_HANG = "MO_TAI_NGAN_HANG";
+        public const string GHI_CHU1 = "GHI_CHU1";
+        public const string GHI_CHU2 = "GHI_CHU2";
+        public const string GHI_CHU3 = "GHI_CHU3";
+        public const string ID_TRANG_THAI = "ID_TRANG_THAI";
+        public const string NGAY_CHOT_LAI = "NGAY_CHOT_LAI";
+        public const string NGAY_THANH_TOAN = "NGAY_THANH_TOAN";
+        public const string ID_TRAI_PHIEU = "ID_TRAI_PHIEU";
+        public const string KY_TINH_LAI = "KY_TINH_LAI";
+        public const string TRANG_THAI_CHOT_LAI = "TRANG_THAI_CHOT_LAI";
+        public const string MUC_DICH = "MUC_DICH";
+        public const string GHI_CHU_CHOT_LAI = "GHI_CHU_CHOT_LAI";
+        public const string ID_NGUOI_LAP_CHOT_LAI = "ID_NGUOI_LAP_CHOT_LAI";
+        public const string ID_NGUOI_DUYET_CHOT_LAI = "ID_NGUOI_DUYET_CHOT_LAI";
+    }
 
     public class CM_DM_LOAI_TD
     {
