@@ -302,6 +302,13 @@ namespace BondApp
 		public void display(){			
 			this.ShowDialog();
 		}
+
+        public US_DM_TO_CHUC_PHAT_HANH select_to_chuc_phat_hanh()
+        {   
+            m_e_form_mode = DataEntryFormMode.SelectDataState;
+            this.ShowDialog();
+            return m_us;
+        }
 		#endregion
 
 		#region Data Structure
@@ -318,7 +325,8 @@ namespace BondApp
 		#endregion
 
 		#region Members
-		ITransferDataRow m_obj_trans;		
+		ITransferDataRow m_obj_trans;
+        DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
 		DS_DM_TO_CHUC_PHAT_HANH m_ds = new DS_DM_TO_CHUC_PHAT_HANH();
 		US_DM_TO_CHUC_PHAT_HANH m_us = new US_DM_TO_CHUC_PHAT_HANH();
 		#endregion

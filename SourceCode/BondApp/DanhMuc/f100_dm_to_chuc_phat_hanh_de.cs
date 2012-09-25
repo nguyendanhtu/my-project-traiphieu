@@ -102,7 +102,6 @@ namespace BondApp.DanhMuc
 
             return true;
         }
-
         private void save_data()
         {
             if(check_validate_data_is_ok() == false) return;
@@ -130,7 +129,6 @@ namespace BondApp.DanhMuc
             BaseMessages.MsgBox_Infor(10); //Dữ liệu đã cập nhật thành công
             this.Close();
         }
-
         private void set_define_events()
         {
             this.Load += new EventHandler(f100_dm_to_chuc_phat_hanh_de_Load);
