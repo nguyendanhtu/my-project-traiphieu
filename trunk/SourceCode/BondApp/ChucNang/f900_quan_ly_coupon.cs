@@ -44,55 +44,65 @@ namespace BondApp.ChucNang
         #region Data Structure
         private enum e_col_Number
         {
-            SO_TIEN_LAI = 7
+            GHI_CHU3 = 22
 ,
-            DIA_CHI = 12
-                ,
-            NGAY_CHOT_LAI = 8
-                ,
-            NGAY_NHAN_TIEN = 11
-                ,
-            MO_TAI_NGAN_HANG = 16
-                ,
             SO_LUONG_TINH_LAI = 6
                 ,
-            GHI_CHU1 = 17
+            FAX = 16
                 ,
-            MOBILE = 13
+            NGAY_CHOT_LAI = 10
                 ,
-            ID_NGUOI_DUYET_CHOT_LAI = 22
+            DIA_CHI = 14
                 ,
-            DA_NHAN_TIEN_YN = 10
+            KY_TINH_LAI = 5
                 ,
-            ID_TRANG_THAI = 20
+            SO_TAI_KHOAN = 12
                 ,
-            MA_TRAI_CHU = 1
+            ID_CHOT_LAI = 26
                 ,
-            NGAY_THANH_TOAN = 9
+            NOI_CAP_CMT = 18
                 ,
-            GHI_CHU3 = 19
+            SO_TIEN_LAI = 7
                 ,
-            ID_NGUOI_LAP_CHOT_LAI = 21
+            NGAY_NHAN_TIEN = 9
                 ,
-            NGAY_CAP_CMT = 4
+            DA_NHAN_TIEN_YN = 8
                 ,
-            NOI_CAP_CMT = 5
+            GHI_CHU2 = 21
+                ,
+            ID_TRAI_PHIEU_SO_HUU = 4
+                ,
+            GHI_CHU1 = 20
+                ,
+            GHI_CHU_CHOT_LAI = 23
+                ,
+            NGAY_THANH_TOAN = 11
+                ,
+            ID_LOAI_TRAI_CHU = 19
                 ,
             TEN_TRAI_CHU = 2
                 ,
-            GHI_CHU2 = 18
+            ID_NGUOI_DUYET_CHOT_LAI = 25
                 ,
-            SO_TAI_KHOAN = 15
+            ID_TRAI_CHU = 27
                 ,
-            ID_LOAI_TRAI_CHU = 14
-                , CMT_GIAY_DKKD = 3
+            ID_NGUOI_LAP_CHOT_LAI = 24
+                ,
+            MO_TAI_NGAN_HANG = 13
+                ,
+            NGAY_CAP_CMT = 17
+                ,
+            MOBILE = 15
+                ,
+            CMT_GIAY_DKKD = 3
+                , MA_TRAI_CHU = 1
 
-        }	
+        }
         #endregion
 
         #region Members
         US_DM_TRAI_CHU m_us_trai_chu = new US_DM_TRAI_CHU();
-        US_DM_TRAI_PHIEU m_us_trai_phieu = new US_DM_TRAI_PHIEU();
+        US_DM_TRAI_PHIEU m_us_trai_phieu;
         US_CM_DM_TU_DIEN m_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
         DS_CM_DM_TU_DIEN m_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
@@ -125,45 +135,59 @@ namespace BondApp.ChucNang
                     us_object_2_form(m_us_trai_chu);
                     break;
             }*/
-            us_trai_phieu_2_form(m_us_trai_phieu);
+            if (m_us_trai_phieu != null)
+                us_trai_phieu_2_form(m_us_trai_phieu);
             m_obj_trans = get_trans_object(m_fg);
-            load_data_2_grid();	
+            load_data_2_grid(m_us_trai_phieu);	
         }
 
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
             Hashtable v_htb = new Hashtable();
-            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.SO_TIEN_LAI, e_col_Number.SO_TIEN_LAI);
-            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.DIA_CHI, e_col_Number.DIA_CHI);
-            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.NGAY_CHOT_LAI, e_col_Number.NGAY_CHOT_LAI);
-            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.NGAY_NHAN_TIEN, e_col_Number.NGAY_NHAN_TIEN);
-            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.MO_TAI_NGAN_HANG, e_col_Number.MO_TAI_NGAN_HANG);
-            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.SO_LUONG_TINH_LAI, e_col_Number.SO_LUONG_TINH_LAI);
-            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.GHI_CHU1, e_col_Number.GHI_CHU1);
-            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.MOBILE, e_col_Number.MOBILE);
-            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.ID_NGUOI_DUYET_CHOT_LAI, e_col_Number.ID_NGUOI_DUYET_CHOT_LAI);
-            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.DA_NHAN_TIEN_YN, e_col_Number.DA_NHAN_TIEN_YN);
-            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.ID_TRANG_THAI, e_col_Number.ID_TRANG_THAI);
-            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.MA_TRAI_CHU, e_col_Number.MA_TRAI_CHU);
-            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.NGAY_THANH_TOAN, e_col_Number.NGAY_THANH_TOAN);
             v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.GHI_CHU3, e_col_Number.GHI_CHU3);
-            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.ID_NGUOI_LAP_CHOT_LAI, e_col_Number.ID_NGUOI_LAP_CHOT_LAI);
-            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.NGAY_CAP_CMT, e_col_Number.NGAY_CAP_CMT);
-            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.NOI_CAP_CMT, e_col_Number.NOI_CAP_CMT);
-            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.TEN_TRAI_CHU, e_col_Number.TEN_TRAI_CHU);
-            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.GHI_CHU2, e_col_Number.GHI_CHU2);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.SO_LUONG_TINH_LAI, e_col_Number.SO_LUONG_TINH_LAI);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.FAX, e_col_Number.FAX);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.NGAY_CHOT_LAI, e_col_Number.NGAY_CHOT_LAI);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.DIA_CHI, e_col_Number.DIA_CHI);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.KY_TINH_LAI, e_col_Number.KY_TINH_LAI);
             v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.SO_TAI_KHOAN, e_col_Number.SO_TAI_KHOAN);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.ID_CHOT_LAI, e_col_Number.ID_CHOT_LAI);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.NOI_CAP_CMT, e_col_Number.NOI_CAP_CMT);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.SO_TIEN_LAI, e_col_Number.SO_TIEN_LAI);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.NGAY_NHAN_TIEN, e_col_Number.NGAY_NHAN_TIEN);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.DA_NHAN_TIEN_YN, e_col_Number.DA_NHAN_TIEN_YN);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.GHI_CHU2, e_col_Number.GHI_CHU2);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.ID_TRAI_PHIEU_SO_HUU, e_col_Number.ID_TRAI_PHIEU_SO_HUU);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.GHI_CHU1, e_col_Number.GHI_CHU1);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.GHI_CHU_CHOT_LAI, e_col_Number.GHI_CHU_CHOT_LAI);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.NGAY_THANH_TOAN, e_col_Number.NGAY_THANH_TOAN);
             v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.ID_LOAI_TRAI_CHU, e_col_Number.ID_LOAI_TRAI_CHU);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.TEN_TRAI_CHU, e_col_Number.TEN_TRAI_CHU);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.ID_NGUOI_DUYET_CHOT_LAI, e_col_Number.ID_NGUOI_DUYET_CHOT_LAI);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.ID_TRAI_CHU, e_col_Number.ID_TRAI_CHU);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.ID_NGUOI_LAP_CHOT_LAI, e_col_Number.ID_NGUOI_LAP_CHOT_LAI);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.MO_TAI_NGAN_HANG, e_col_Number.MO_TAI_NGAN_HANG);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.NGAY_CAP_CMT, e_col_Number.NGAY_CAP_CMT);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.MOBILE, e_col_Number.MOBILE);
             v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.CMT_GIAY_DKKD, e_col_Number.CMT_GIAY_DKKD);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.MA_TRAI_CHU, e_col_Number.MA_TRAI_CHU);
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_DM_TRAI_CHU_CHOT_LAI.NewRow());
             return v_obj_trans;
         }
 
-        private void load_data_2_grid()
+        private void load_data_2_grid(US_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
             m_ds = new DS_V_DM_TRAI_CHU_CHOT_LAI();
-            m_us.FillDataset(m_ds);
+            if (ip_us_trai_phieu == null)
+            {
+
+                m_us.FillDataset(m_ds);
+            }
+            else
+            {
+                m_us.FillDatasetByIDTraiPhieu(m_ds, ip_us_trai_phieu.dcID);
+            }
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;
@@ -190,7 +214,7 @@ namespace BondApp.ChucNang
         {
             //	f950_quan_ly_tra_coupon_DE v_fDE = new  f950_quan_ly_tra_coupon_DE();								
             //	v_fDE.display();
-            load_data_2_grid();
+            load_data_2_grid(m_us_trai_phieu);
         }
 
         private void update_v_dm_trai_chu_chot_lai()
@@ -198,9 +222,10 @@ namespace BondApp.ChucNang
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             grid2us_object(m_us, m_fg.Row);
-            //	f950_quan_ly_tra_coupon_DE v_fDE = new f950_quan_ly_tra_coupon_DE();
-            //	v_fDE.display(m_us);
-            load_data_2_grid();
+            m_us.strDA_NHAN_TIEN_YN = "Y";
+            m_us.Update();
+            BaseMessages.MsgBox_Infor("Đã xác nhận trả lãi!");
+            load_data_2_grid(m_us_trai_phieu);
         }
 
         private void delete_v_dm_trai_chu_chot_lai()
@@ -303,8 +328,11 @@ namespace BondApp.ChucNang
         {
             f300_dm_trai_phieu v_frm300 = new f300_dm_trai_phieu();
             m_us_trai_phieu = v_frm300.select_trai_phieu();
-            if (!m_us_trai_phieu.IsIDNull())
+            if (m_us_trai_phieu.strMA_TRAI_PHIEU != "")
+            {
                 us_trai_phieu_2_form(m_us_trai_phieu);
+                load_data_2_grid(m_us_trai_phieu);	
+            }
         }
 
          private void select_trai_chu()
@@ -316,8 +344,10 @@ namespace BondApp.ChucNang
          {
              m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
              m_cmd_chon_trai_phieu.Click += new EventHandler(m_cmd_chon_trai_phieu_Click);
+             m_cmd_xac_nhan.Click += new EventHandler(m_cmd_xac_nhan_Click);
          }
 
+         
         #endregion
 
         #region Events
@@ -357,6 +387,19 @@ namespace BondApp.ChucNang
                  CSystemLog_301.ExceptionHandle(v_e);
              }
          }
+
+         void m_cmd_xac_nhan_Click(object sender, EventArgs e)
+         {
+             try
+             {
+                 update_v_dm_trai_chu_chot_lai();
+             }
+             catch (Exception v_e)
+             {
+                 CSystemLog_301.ExceptionHandle(v_e);
+             }
+         }
+
         #endregion
 
     }
