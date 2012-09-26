@@ -32,11 +32,13 @@ namespace BondApp
         public void display_phong_toa()
         {
             m_e_form_mode = eFormMode.PHONG_TOA;
+            m_lbl_title.Text = "F700 - Giao dịch phong tỏa";
             this.ShowDialog();
         }
         public void display_giai_toa()
         {
             m_e_form_mode = eFormMode.GIAI_TOA;
+            m_lbl_title.Text = "F700 - Giao dịch giải tỏa";
             this.ShowDialog();
         }
         #endregion
