@@ -103,8 +103,7 @@ namespace BondApp.ChucNang
         #region Members
         US_DM_TRAI_CHU m_us_trai_chu = new US_DM_TRAI_CHU();
         US_DM_TRAI_PHIEU m_us_trai_phieu;
-        US_CM_DM_TU_DIEN m_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
-        DS_CM_DM_TU_DIEN m_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
+        US_GD_CHOT_LAI_DETAIL m_us_gd_chot_lai_detail;
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
         ITransferDataRow m_obj_trans;
         DS_V_DM_TRAI_CHU_CHOT_LAI m_ds = new DS_V_DM_TRAI_CHU_CHOT_LAI();
@@ -222,9 +221,21 @@ namespace BondApp.ChucNang
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             grid2us_object(m_us, m_fg.Row);
+            if (m_us.strDA_NHAN_TIEN_YN == "Y") return;
             m_us.strDA_NHAN_TIEN_YN = "Y";
-            m_us.Update();
-            BaseMessages.MsgBox_Infor("Đã xác nhận trả lãi!");
+            m_us.datNGAY_NHAN_TIEN = DateTime.Now;
+
+            m_us_gd_chot_lai_detail = new US_GD_CHOT_LAI_DETAIL();
+            m_us_gd_chot_lai_detail.dcID = m_us.dcID;
+            m_us_gd_chot_lai_detail.dcID_CHOT_LAI = m_us.dcID_CHOT_LAI;
+            m_us_gd_chot_lai_detail.dcID_TRAI_CHU = m_us.dcID_TRAI_CHU;
+            m_us_gd_chot_lai_detail.dcSO_LUONG_TINH_LAI = m_us.dcSO_LUONG_TINH_LAI;
+            m_us_gd_chot_lai_detail.dcSO_TIEN_LAI = m_us.dcSO_TIEN_LAI;
+            m_us_gd_chot_lai_detail.datNGAY_NHAN_TIEN = m_us.datNGAY_NHAN_TIEN;
+            m_us_gd_chot_lai_detail.strDA_NHAN_TIEN_YN = m_us.strDA_NHAN_TIEN_YN;
+
+            m_us_gd_chot_lai_detail.Update();
+            BaseMessages.MsgBox_Infor("Xác nhận trả lãi!");
             load_data_2_grid(m_us_trai_phieu);
         }
 
@@ -335,19 +346,27 @@ namespace BondApp.ChucNang
             }
         }
 
-         private void select_trai_chu()
+        private void select_trai_chu()
         {
 
         }
+        private void filter()
+        {
+            if (m_txt_search.Text == "")
+            {
+                m_us_trai_phieu = null;
+                load_data_2_grid(null);
+            }
+        }
 
-         private void set_define_event()
-         {
-             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-             m_cmd_chon_trai_phieu.Click += new EventHandler(m_cmd_chon_trai_phieu_Click);
-             m_cmd_xac_nhan.Click += new EventHandler(m_cmd_xac_nhan_Click);
-         }
+        private void set_define_event()
+        {
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_cmd_chon_trai_phieu.Click += new EventHandler(m_cmd_chon_trai_phieu_Click);
+            m_cmd_xac_nhan.Click += new EventHandler(m_cmd_xac_nhan_Click);
+            m_cmd_filter.Click += new EventHandler(m_cmd_filter_Click);
+        }
 
-         
         #endregion
 
         #region Events
@@ -393,6 +412,18 @@ namespace BondApp.ChucNang
              try
              {
                  update_v_dm_trai_chu_chot_lai();
+             }
+             catch (Exception v_e)
+             {
+                 CSystemLog_301.ExceptionHandle(v_e);
+             }
+         }
+
+         void m_cmd_filter_Click(object sender, EventArgs e)
+         {
+             try
+             {
+                 filter();
              }
              catch (Exception v_e)
              {
