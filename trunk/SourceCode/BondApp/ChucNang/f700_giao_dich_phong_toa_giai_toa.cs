@@ -13,6 +13,7 @@ using IP.Core.IPUserService;
 using BondUS;
 using BondDS;
 using BondDS.CDBNames;
+using IP.Core.IPWordReport;
 
 using C1.Win.C1FlexGrid;
 using System.Data.SqlClient;
@@ -95,7 +96,7 @@ namespace BondApp
                  
                     break;
                 case eFormMode.PHONG_TOA:
-                   
+                    m_cmd_lap.Enabled = false;
                     break;
              
                 default:
@@ -159,7 +160,33 @@ namespace BondApp
         {
             //MessageBox.Show("Giao dich phong toa giai toa dang duoc code hehe");
         }
-
+        private void export_word()
+        {
+            CWordReport v_obj_export_word = new CWordReport("f700_ĐLĐKLK_Giay De Nghi Phong Toa TP.doc");
+            v_obj_export_word.AddFindAndReplace("<TEN_NGAN_HANG> ", m_txt_ngan_hang_cam_co.Text);
+            v_obj_export_word.AddFindAndReplace("<TEN_KHACH_HANG>",m_txt_ten_khach_hang.Text);
+            v_obj_export_word.AddFindAndReplace("<SO_CMND>", m_txt_so_cmnd_dkkd.Text);
+            v_obj_export_word.AddFindAndReplace("<TC_CAP_CMND> ", m_txt_noi_cap.Text);
+            v_obj_export_word.AddFindAndReplace("<NGAY_CAP>", m_txt_ngay_cap.Text);
+            v_obj_export_word.AddFindAndReplace("<NGUOI_DAI_DIEN>  ", m_txt_nguoi_dai_dien.Text);
+            v_obj_export_word.AddFindAndReplace("<CHUC_DANH_DAI_DIEN>", m_txt_chuc_danh.Text);
+            v_obj_export_word.AddFindAndReplace("<TRU_SO_CHINH_DAI_DIEN> ", m_txt_tru_so_chinh.Text);
+            v_obj_export_word.AddFindAndReplace("<DIEN_THOAI_DAI_DIEN> ", m_txt_dien_thoai.Text);
+            v_obj_export_word.AddFindAndReplace("<SO_FAX> ", m_txt_fax.Text);
+            v_obj_export_word.AddFindAndReplace("<MA_SO_DAU_TU>", m_txt_ma_so_trai_phieu.Text);
+            v_obj_export_word.AddFindAndReplace("<MA_SO_TP>", m_txt_ma_so_trai_phieu.Text);
+            v_obj_export_word.AddFindAndReplace("<TO_CHUC_PHAT_HANH>", m_txt_to_chuc_phat_hanh.Text);
+            v_obj_export_word.AddFindAndReplace("<TONG_SO_LUONG_TRAI_PHIEU>", m_txt_tong_so_trai_phieu.Text);
+            v_obj_export_word.AddFindAndReplace("<TONG_GIA_TRI_THEO_MENH_GIA>", m_txt_tong_gia_tri.Text);
+            v_obj_export_word.AddFindAndReplace("<NGAY_PHAT_HANH>", m_txt_ngay_phat_hanh.Text);
+            v_obj_export_word.AddFindAndReplace("<NGAY_DAO_HAN>", m_txt_ngay_dao_han.Text);
+            v_obj_export_word.AddFindAndReplace("<LAI_SUAT>", m_txt_lai_suat.Text);
+            v_obj_export_word.AddFindAndReplace("<HINH_THUC_TRA_LAI>", m_txt_hinh_thuc_tra_lai.Text);
+            v_obj_export_word.AddFindAndReplace("<MA_TRAI_PHIEU> ", m_txt_ma_so_trai_phieu.Text);
+            v_obj_export_word.AddFindAndReplace("<TEN_NGAN_HANG> ", m_txt_ngan_hang_cam_co.Text);
+            v_obj_export_word.Export2Word(true);
+            m_cmd_lap.Enabled = true;
+        }
         #endregion
 
         private void set_define_events()
@@ -167,6 +194,7 @@ namespace BondApp
             m_cmd_chon_trai_chu.Click += new EventHandler(m_cmd_chon_trai_chu_Click);
             m_cmd_lap.Click += new EventHandler(m_cmd_lap_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_cmd_print.Click += new EventHandler(m_cmd_print_Click);
         }
 
         void m_cmd_exit_Click(object sender, EventArgs e)
@@ -218,6 +246,30 @@ namespace BondApp
             catch (Exception v_e)
             {
 
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_print_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                switch (m_e_form_mode)
+                {
+                    case eFormMode.GIAI_TOA:
+
+                        break;
+                    case eFormMode.PHONG_TOA:
+                        export_word();
+                        break;
+
+                    default:
+                        break;
+                }
+               
+            }
+            catch (Exception v_e)
+            {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
