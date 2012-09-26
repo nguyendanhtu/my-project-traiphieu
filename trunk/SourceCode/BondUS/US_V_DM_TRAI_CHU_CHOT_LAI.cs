@@ -752,5 +752,11 @@ public class US_V_DM_TRAI_CHU_CHOT_LAI : US_Object
 	}
 #endregion
 
+    #region Public Interface
+    public void FillDatasetByIDTraiPhieu(DS_V_DM_TRAI_CHU_CHOT_LAI ip_ds, decimal ip_id_trai_phieu_so_huu)
+    {
+        base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu_so_huu.ToString());
+    }
 
+    #endregion  
 }
