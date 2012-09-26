@@ -71,7 +71,7 @@ namespace BondApp.DanhMuc
             m_txt_menh_gia.Text = m_us_trai_phieu.dcMENH_GIA.ToString();
             m_txt_tong_sl.Text = m_us_trai_phieu.dcTONG_SL_PHAT_HANH.ToString();
             m_txt_lai_suat.Text = m_us_trai_phieu.dcLAI_SUAT_DEFAULT.ToString();
-            m_cbo_ma_loai_trai_phieu.SelectedValue = CIPConvert.ToStr(m_us_tu_dien.dcID_LOAI_TU_DIEN);
+            m_cbo_loai_trai_phieu.SelectedText = m_us_tu_dien.strTEN;
         }
         private void form_2_us_object(US_DM_TRAI_PHIEU op_us_trai_phieu)
         {
@@ -89,11 +89,9 @@ namespace BondApp.DanhMuc
         private void load_data_2_cbo()
         {
             m_ds_cm_dm_tu_dien = m_us_tu_dien.getLoaiTuDienDS(CM_DM_LOAI_TD_LIST.LOAI_TRAI_PHIEU);
-            m_cbo_ma_loai_trai_phieu.DataSource = m_ds_cm_dm_tu_dien.Tables[0];
-            m_cbo_ma_loai_trai_phieu.DisplayMember = CM_DM_TU_DIEN.TEN_NGAN;
-            m_cbo_ma_loai_trai_phieu.ValueMember = CM_DM_TU_DIEN.ID;
-
-
+            m_cbo_loai_trai_phieu.DataSource = m_ds_cm_dm_tu_dien.Tables[0];
+            m_cbo_loai_trai_phieu.DisplayMember = CM_DM_TU_DIEN.TEN;
+            m_cbo_loai_trai_phieu.ValueMember = CM_DM_TU_DIEN.ID_LOAI_TU_DIEN;
         }
 
         private bool check_validate_data_is_ok()

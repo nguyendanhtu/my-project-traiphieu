@@ -30,6 +30,7 @@
         {
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.m = new System.Windows.Forms.GroupBox();
+            this.m_cbo_loai_trai_phieu = new System.Windows.Forms.ComboBox();
             this.m_txt_tong_sl = new System.Windows.Forms.TextBox();
             this.m_lbl_tong_sl = new System.Windows.Forms.Label();
             this.m_dat_ngay_phat_hanh = new System.Windows.Forms.DateTimePicker();
@@ -67,9 +68,8 @@
             this.m_lbl_ky_han = new System.Windows.Forms.Label();
             this.m_txt_ten_trai_phieu = new System.Windows.Forms.TextBox();
             this.m_txt_menh_gia = new System.Windows.Forms.TextBox();
-            this.m_lbl_ma_loai_trai_phieu = new System.Windows.Forms.Label();
+            this.m_lbl_loai_trai_phieu = new System.Windows.Forms.Label();
             this.m_lbl_menh_gia = new System.Windows.Forms.Label();
-            this.m_cbo_ma_loai_trai_phieu = new System.Windows.Forms.ComboBox();
             this.m.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
@@ -88,7 +88,7 @@
             // 
             // m
             // 
-            this.m.Controls.Add(this.m_cbo_ma_loai_trai_phieu);
+            this.m.Controls.Add(this.m_cbo_loai_trai_phieu);
             this.m.Controls.Add(this.m_txt_tong_sl);
             this.m.Controls.Add(this.m_lbl_tong_sl);
             this.m.Controls.Add(this.m_dat_ngay_phat_hanh);
@@ -124,7 +124,7 @@
             this.m.Controls.Add(this.m_lbl_ky_han);
             this.m.Controls.Add(this.m_txt_ten_trai_phieu);
             this.m.Controls.Add(this.m_txt_menh_gia);
-            this.m.Controls.Add(this.m_lbl_ma_loai_trai_phieu);
+            this.m.Controls.Add(this.m_lbl_loai_trai_phieu);
             this.m.Controls.Add(this.m_lbl_menh_gia);
             this.m.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m.Location = new System.Drawing.Point(0, 40);
@@ -133,6 +133,14 @@
             this.m.TabIndex = 21;
             this.m.TabStop = false;
             this.m.Text = "Thông tin trái phiếu";
+            // 
+            // m_cbo_loai_trai_phieu
+            // 
+            this.m_cbo_loai_trai_phieu.FormattingEnabled = true;
+            this.m_cbo_loai_trai_phieu.Location = new System.Drawing.Point(131, 133);
+            this.m_cbo_loai_trai_phieu.Name = "m_cbo_loai_trai_phieu";
+            this.m_cbo_loai_trai_phieu.Size = new System.Drawing.Size(120, 21);
+            this.m_cbo_loai_trai_phieu.TabIndex = 81;
             // 
             // m_txt_tong_sl
             // 
@@ -453,14 +461,14 @@
             this.m_txt_menh_gia.Size = new System.Drawing.Size(120, 20);
             this.m_txt_menh_gia.TabIndex = 11;
             // 
-            // m_lbl_ma_loai_trai_phieu
+            // m_lbl_loai_trai_phieu
             // 
-            this.m_lbl_ma_loai_trai_phieu.AutoSize = true;
-            this.m_lbl_ma_loai_trai_phieu.Location = new System.Drawing.Point(38, 136);
-            this.m_lbl_ma_loai_trai_phieu.Name = "m_lbl_ma_loai_trai_phieu";
-            this.m_lbl_ma_loai_trai_phieu.Size = new System.Drawing.Size(87, 13);
-            this.m_lbl_ma_loai_trai_phieu.TabIndex = 8;
-            this.m_lbl_ma_loai_trai_phieu.Text = "Mã loại trái phiếu";
+            this.m_lbl_loai_trai_phieu.AutoSize = true;
+            this.m_lbl_loai_trai_phieu.Location = new System.Drawing.Point(52, 137);
+            this.m_lbl_loai_trai_phieu.Name = "m_lbl_loai_trai_phieu";
+            this.m_lbl_loai_trai_phieu.Size = new System.Drawing.Size(73, 13);
+            this.m_lbl_loai_trai_phieu.TabIndex = 8;
+            this.m_lbl_loai_trai_phieu.Text = "Loại trái phiếu";
             // 
             // m_lbl_menh_gia
             // 
@@ -470,14 +478,6 @@
             this.m_lbl_menh_gia.Size = new System.Drawing.Size(51, 13);
             this.m_lbl_menh_gia.TabIndex = 10;
             this.m_lbl_menh_gia.Text = "Mệnh giá";
-            // 
-            // m_cbo_ma_loai_trai_phieu
-            // 
-            this.m_cbo_ma_loai_trai_phieu.FormattingEnabled = true;
-            this.m_cbo_ma_loai_trai_phieu.Location = new System.Drawing.Point(131, 133);
-            this.m_cbo_ma_loai_trai_phieu.Name = "m_cbo_ma_loai_trai_phieu";
-            this.m_cbo_ma_loai_trai_phieu.Size = new System.Drawing.Size(120, 21);
-            this.m_cbo_ma_loai_trai_phieu.TabIndex = 81;
             // 
             // f300_dm_trai_phieu_DE
             // 
@@ -536,9 +536,9 @@
         private System.Windows.Forms.Label m_lbl_ky_han;
         private System.Windows.Forms.TextBox m_txt_ten_trai_phieu;
         private System.Windows.Forms.TextBox m_txt_menh_gia;
-        private System.Windows.Forms.Label m_lbl_ma_loai_trai_phieu;
+        private System.Windows.Forms.Label m_lbl_loai_trai_phieu;
         private System.Windows.Forms.Label m_lbl_menh_gia;
-        private System.Windows.Forms.ComboBox m_cbo_ma_loai_trai_phieu;
+        private System.Windows.Forms.ComboBox m_cbo_loai_trai_phieu;
 
     }
 }
