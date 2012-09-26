@@ -207,6 +207,7 @@
             this.m_cmd_print.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_print.TabIndex = 0;
             this.m_cmd_print.Text = "&In";
+            //this.m_cmd_print.Click += new System.EventHandler(this.m_cmd_print_Click);
             // 
             // m_cmd_check
             // 
