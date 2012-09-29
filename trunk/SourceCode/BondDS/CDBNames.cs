@@ -185,7 +185,7 @@ namespace BondDS.CDBNames
     {
         public const string ID = "ID";
         public const string MA_TO_CHUC_PHAT_HANH = "MA_TO_CHUC_PHAT_HANH";
-        public const string TEN_TO_CHUC_PHAT_HÀNH = "TEN_TO_CHUC_PHAT_HÀNH";
+        public const string TEN_TO_CHUC_PHAT_HANH = "TEN_TO_CHUC_PHAT_HÀNH";
         public const string DIA_CHI_TRU_SO_CHINH = "DIA_CHI_TRU_SO_CHINH";
         public const string MA_SO_THUE = "MA_SO_THUE";
         public const string DIEN_THOAI = "DIEN_THOAI";
