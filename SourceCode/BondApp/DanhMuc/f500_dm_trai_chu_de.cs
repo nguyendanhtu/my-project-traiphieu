@@ -96,7 +96,7 @@ namespace BondApp.DanhMuc
 
             m_ds_cm_dm_tu_dien = m_us_cm_dm_tu_dien.getLoaiTuDienDS(CM_DM_DS_LOAI_TU_DIEN.LOAI_TRAI_CHU);
             m_cbo_loai_trai_chu.DataSource = m_ds_cm_dm_tu_dien.Tables[0];
-            m_cbo_loai_trai_chu.DisplayMember = CM_DM_TU_DIEN.TEN_NGAN;
+            m_cbo_loai_trai_chu.DisplayMember = CM_DM_TU_DIEN.TEN;
             m_cbo_loai_trai_chu.ValueMember = CM_DM_TU_DIEN.ID;
         }
 
