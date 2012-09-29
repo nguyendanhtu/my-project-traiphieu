@@ -83,7 +83,7 @@ namespace BondApp.DanhMuc
         private void us_object_2_form(US_DM_TO_CHUC_PHAT_HANH ip_to_chuc_phat_hanh)
         {
             m_txt_ma_to_chuc.Text = ip_to_chuc_phat_hanh.strMA_TO_CHUC_PHAT_HANH;
-            m_txt_ten_to_chuc.Text = ip_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HÀNH;
+            m_txt_ten_to_chuc.Text = ip_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HANH;
             m_txt_ma_so_thue.Text = ip_to_chuc_phat_hanh.strMA_SO_THUE;
             m_txt_dia_chi.Text = ip_to_chuc_phat_hanh.strDIA_CHI_TRU_SO_CHINH;
             m_txt_dien_thoai.Text = ip_to_chuc_phat_hanh.strDIEN_THOAI;
@@ -93,7 +93,7 @@ namespace BondApp.DanhMuc
         private void form_2_usobject(US_DM_TO_CHUC_PHAT_HANH op_to_chuc_phat_hanh)
         {
             op_to_chuc_phat_hanh.strMA_TO_CHUC_PHAT_HANH = m_txt_ma_to_chuc.Text;
-            op_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HÀNH = m_txt_ten_to_chuc.Text;
+            op_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HANH = m_txt_ten_to_chuc.Text;
             op_to_chuc_phat_hanh.strMA_SO_THUE = m_txt_ma_so_thue.Text;
             op_to_chuc_phat_hanh.strDIA_CHI_TRU_SO_CHINH = m_txt_dia_chi.Text;
             op_to_chuc_phat_hanh.strDIEN_THOAI = m_txt_dien_thoai.Text;

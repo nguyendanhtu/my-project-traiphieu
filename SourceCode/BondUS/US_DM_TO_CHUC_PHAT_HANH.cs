@@ -62,25 +62,25 @@ public class US_DM_TO_CHUC_PHAT_HANH : US_Object
 		pm_objDR["MA_TO_CHUC_PHAT_HANH"] = System.Convert.DBNull;
 	}
 
-	public string strTEN_TO_CHUC_PHAT_HÀNH 
+	public string strTEN_TO_CHUC_PHAT_HANH 
 	{
 		get 
 		{
-			return CNull.RowNVLString(pm_objDR, "TEN_TO_CHUC_PHAT_HÀNH", IPConstants.c_DefaultString);
+			return CNull.RowNVLString(pm_objDR, "TEN_TO_CHUC_PHAT_HANH", IPConstants.c_DefaultString);
 		}
 		set 
 		{
-			pm_objDR["TEN_TO_CHUC_PHAT_HÀNH"] = value;
+			pm_objDR["TEN_TO_CHUC_PHAT_HANH"] = value;
 		}
 	}
 
-	public bool IsTEN_TO_CHUC_PHAT_HÀNHNull() 
+	public bool IsTEN_TO_CHUC_PHAT_HANHNull() 
 	{
-		return pm_objDR.IsNull("TEN_TO_CHUC_PHAT_HÀNH");
+		return pm_objDR.IsNull("TEN_TO_CHUC_PHAT_HANH");
 	}
 
 	public void SetTEN_TO_CHUC_PHAT_HÀNHNull() {
-		pm_objDR["TEN_TO_CHUC_PHAT_HÀNH"] = System.Convert.DBNull;
+		pm_objDR["TEN_TO_CHUC_PHAT_HANH"] = System.Convert.DBNull;
 	}
 
 	public string strDIA_CHI_TRU_SO_CHINH 

@@ -372,7 +372,7 @@ namespace BondApp
 			v_htb.Add(DM_TO_CHUC_PHAT_HANH.MA_SO_THUE, e_col_Number.MA_SO_THUE);
 			v_htb.Add(DM_TO_CHUC_PHAT_HANH.FAX, e_col_Number.FAX);
 			v_htb.Add(DM_TO_CHUC_PHAT_HANH.DIEN_THOAI, e_col_Number.DIEN_THOAI);
-			v_htb.Add(DM_TO_CHUC_PHAT_HANH.TEN_TO_CHUC_PHAT_HÀNH, e_col_Number.TEN_TO_CHUC_PHAT_HÀNH);
+			v_htb.Add(DM_TO_CHUC_PHAT_HANH.TEN_TO_CHUC_PHAT_HANH, e_col_Number.TEN_TO_CHUC_PHAT_HÀNH);
 			v_htb.Add(DM_TO_CHUC_PHAT_HANH.MA_TO_CHUC_PHAT_HANH, e_col_Number.MA_TO_CHUC_PHAT_HANH);
 									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.DM_TO_CHUC_PHAT_HANH.NewRow());
