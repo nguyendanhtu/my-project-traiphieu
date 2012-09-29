@@ -290,7 +290,22 @@ namespace BondApp
         {
             if (!check_thong_tin_chuyen_nhuong_is_ok()) return;
             form_2_us_gd_chuyen_nhuong();
-            m_us_gd_chuyen_nhuong.Insert();
+            try
+            {
+                m_us_gd_chuyen_nhuong.BeginTransaction();
+                m_us_gd_chuyen_nhuong.Insert();
+                m_us_gd_chuyen_nhuong.CommitTransaction();
+            }
+            catch (Exception v_e)
+            {
+                if (m_us_gd_chuyen_nhuong.is_having_transaction())
+                {
+                    m_us_gd_chuyen_nhuong.Rollback();
+                }
+
+                throw v_e;
+            }
+            
             MessageBox.Show("Cập nhập thành công!");
         }
 
@@ -298,8 +313,32 @@ namespace BondApp
         {
             if (!check_thong_tin_chuyen_nhuong_is_ok()) return;
             form_2_us_gd_chuyen_nhuong();
-            m_us_gd_chuyen_nhuong.Update();
+            
+            try
+            {
+                m_us_gd_chuyen_nhuong.BeginTransaction();
+                m_us_gd_chuyen_nhuong.Update();
+                m_us_gd_chuyen_nhuong.CommitTransaction();
+            }
+            catch (Exception v_e)
+            {
+                if (m_us_gd_chuyen_nhuong.is_having_transaction())
+                {
+                    m_us_gd_chuyen_nhuong.Rollback();
+                }
+
+                throw v_e;
+            }
             MessageBox.Show("Cập nhập thành công!");
+        }
+
+        private void duyet_chuyen_nhuong()
+        {
+            /*Cần thực hiện 02 việc ở dưới procedure (trong cùng 01 transaction)
+             * 1. Update trạng thái chuyển nhượng
+             * 2. Cập nhật số dư
+             * */
+
         }
         #endregion
 
@@ -316,6 +355,19 @@ namespace BondApp
             m_txt_so_luong_chuyen_nhuong.LostFocus += new EventHandler(m_txt_so_luong_chuyen_nhuong_LostFocus);
             m_cmd_sua_chuyen_nhuong.Click += new EventHandler(m_cmd_update_Click);
             this.Load += new EventHandler(f600_giao_dich_chuyen_nhuong_Load);
+            m_cmd_duyet_chuyen_nhuong.Click += new EventHandler(m_cmd_duyet_chuyen_nhuong_Click);
+        }
+
+        void m_cmd_duyet_chuyen_nhuong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                duyet_chuyen_nhuong();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void f600_giao_dich_chuyen_nhuong_Load(object sender, EventArgs e)
