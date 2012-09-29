@@ -25,10 +25,8 @@ namespace BondApp.DanhMuc
         {
             InitializeComponent();
             format_controls();
-            set_define_events();
-            m_lbl_to_chuc_phat_hanh.Font = new Font("Arial", 16);
-            m_lbl_to_chuc_phat_hanh.ForeColor = Color.DarkRed;
-            m_lbl_to_chuc_phat_hanh.TextAlign = ContentAlignment.MiddleCenter;
+            
+           
         }
 
         #region Public Interface
@@ -42,6 +40,45 @@ namespace BondApp.DanhMuc
              m_e_form_mode = DataEntryFormMode.UpdateDataState;
              m_us_to_chuc_phat_hanh = ip_us_to_chuc_phat_hanh;
              this.ShowDialog();
+        }
+        #endregion
+
+    
+        #region Members
+        US_DM_TO_CHUC_PHAT_HANH m_us_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH();
+        DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
+        #endregion
+               
+        #region Data Structure
+        #endregion
+
+        #region Private Method
+        private void format_controls()
+        {
+            CControlFormat.setFormStyle(this);
+            this.KeyPreview = true;
+            m_lbl_to_chuc_phat_hanh.Font = new Font("Arial", 16);
+            m_lbl_to_chuc_phat_hanh.ForeColor = Color.DarkRed;
+            m_lbl_to_chuc_phat_hanh.TextAlign = ContentAlignment.MiddleCenter;
+            set_define_events();
+        }
+
+        private void set_inital_form_load()
+        {
+            switch (m_e_form_mode)
+            {
+                case DataEntryFormMode.InsertDataState:
+                    break;
+                case DataEntryFormMode.SelectDataState:
+                    break;
+                case DataEntryFormMode.UpdateDataState:
+                    us_object_2_form(m_us_to_chuc_phat_hanh);
+                    break;
+                case DataEntryFormMode.ViewDataState:
+                    break;
+                default:
+                    break;
+            }
         }
         private void us_object_2_form(US_DM_TO_CHUC_PHAT_HANH ip_to_chuc_phat_hanh)
         {
@@ -65,48 +102,49 @@ namespace BondApp.DanhMuc
         }
         private bool check_validate_data_is_ok()
         {
-            if (!CValidateTextBox.IsValid(m_txt_ma_to_chuc,DataType.StringType,allowNull.NO,true))
+            if (!CValidateTextBox.IsValid(m_txt_ma_to_chuc, DataType.StringType, allowNull.NO, true))
             {
                 return false;
             }
 
-            if (!CValidateTextBox.IsValid(m_txt_ten_to_chuc,DataType.StringType,allowNull.NO,true))
+            if (!CValidateTextBox.IsValid(m_txt_ten_to_chuc, DataType.StringType, allowNull.NO, true))
+            {
+                return false;
+            }
+
+            if (!CValidateTextBox.IsValid(m_txt_chung_nhan_dkdn, DataType.StringType, allowNull.NO, true))
+            {
+                return false;
+            }
+
+            if (!CValidateTextBox.IsValid(m_txt_ma_so_thue, DataType.StringType, allowNull.NO, true))
+            {
+                return false;
+            }
+
+            if (!CValidateTextBox.IsValid(m_txt_dien_thoai, DataType.StringType, allowNull.NO, true))
+            {
+                return false;
+            }
+
+            if (!CValidateTextBox.IsValid(m_txt_fax, DataType.StringType, allowNull.YES, true))
             {
                 return false;
             }
             
-            if (!CValidateTextBox.IsValid(m_txt_ma_so_thue,DataType.StringType,allowNull.NO,true))
+
+            if (!CValidateTextBox.IsValid(m_txt_dia_chi, DataType.StringType, allowNull.NO, true))
             {
                 return false;
             }
 
-            if (!CValidateTextBox.IsValid(m_txt_dia_chi,DataType.StringType,allowNull.NO,true))
-            {
-                return false;
-            }
-
-            if (!CValidateTextBox.IsValid(m_txt_dien_thoai,DataType.StringType,allowNull.NO,true))
-            {
-                return false;
-            }
-
-            if (!CValidateTextBox.IsValid(m_txt_fax,DataType.StringType,allowNull.NO,true))
-            {
-                return false;
-            }
-
-            if (!CValidateTextBox.IsValid(m_txt_chung_nhan_dkdn,DataType.StringType,allowNull.NO,true))
-            {
-                return false;
-            }
-
-            return true;
+                        return true;
         }
         private void save_data()
         {
-            if(check_validate_data_is_ok() == false) return;
+            if (check_validate_data_is_ok() == false) return;
             form_2_usobject(m_us_to_chuc_phat_hanh);
-            switch(m_e_form_mode)
+            switch (m_e_form_mode)
             {
                 case DataEntryFormMode.InsertDataState:
                     m_us_to_chuc_phat_hanh.Insert();
@@ -114,7 +152,7 @@ namespace BondApp.DanhMuc
 
                 case DataEntryFormMode.SelectDataState:
                     break;
-                
+
                 case DataEntryFormMode.UpdateDataState:
                     m_us_to_chuc_phat_hanh.Update();
                     break;
@@ -129,34 +167,18 @@ namespace BondApp.DanhMuc
             BaseMessages.MsgBox_Infor(10); //Dữ liệu đã cập nhật thành công
             this.Close();
         }
+
+        #endregion
+
+
+        #region Event
         private void set_define_events()
         {
             this.Load += new EventHandler(f100_dm_to_chuc_phat_hanh_de_Load);
             m_cmd_luu.Click += new EventHandler(m_cmd_luu_Click);
-            m_cmd_thoat.Click += new EventHandler(m_cmd_thoat_Click);
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
         }
-
-        #endregion
-
-        #region Private Method
-        private void format_controls()
-        {
-            CControlFormat.setFormStyle(this);
-            this.KeyPreview = true;
-        }
-
-        #endregion
-
-        #region Members
-        US_DM_TO_CHUC_PHAT_HANH m_us_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH();
-        DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
-        #endregion
-               
-        #region Data Structure
-        #endregion
-
-        #region Event
-        void m_cmd_thoat_Click(object sender, EventArgs e)
+        void m_cmd_exit_Click(object sender, EventArgs e)
         {
             try
             {
@@ -184,20 +206,7 @@ namespace BondApp.DanhMuc
         {
             try
             {
-                switch (m_e_form_mode)
-                {
-                    case DataEntryFormMode.InsertDataState:
-                        break;
-                    case DataEntryFormMode.SelectDataState:
-                        break;
-                    case DataEntryFormMode.UpdateDataState:
-                        us_object_2_form(m_us_to_chuc_phat_hanh);
-                        break;
-                    case DataEntryFormMode.ViewDataState:
-                        break;
-                    default:
-                        break;
-                }
+                set_inital_form_load();  
             }
             catch (Exception v_e)
             {
