@@ -70,7 +70,7 @@ namespace BondApp.DanhMuc
         {
             if (ip_us_to_chuc_phat_hanh.IsIDNull()) return;
             m_txt_ma_to_chuc_phat_hanh.Text = ip_us_to_chuc_phat_hanh.strMA_TO_CHUC_PHAT_HANH;
-            m_lbl_ten_to_chuc_phat_hanh.Text = ip_us_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HÀNH;
+            m_lbl_ten_to_chuc_phat_hanh.Text = ip_us_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HANH;
 
 
         }
@@ -106,13 +106,13 @@ namespace BondApp.DanhMuc
             m_cbo_dv_tra_lai.SelectedText = m_us_tu_dien.strTEN;
             m_cbo_dv_tra_lai.SelectedValue = m_us_tu_dien.dcID;
             if (m_us_trai_phieu.strTRA_LAI_SAU_YN.ToUpper() == "Y")
-                m_cbo_tra_lai_sau.SelectedText = "Yes";
+                m_cbo_tra_lai_sau.SelectedText = "Có";
             else
-                m_cbo_tra_lai_sau.SelectedText = "No";
+                m_cbo_tra_lai_sau.SelectedText = "Không";
             if (m_us_trai_phieu.strTHA_NOI_YN.ToUpper() == "Y")
-                m_cbo_tha_noi.SelectedText = "Yes";
+                m_cbo_tha_noi.SelectedText = "Có";
             else
-                m_cbo_tha_noi.SelectedText = "No";
+                m_cbo_tha_noi.SelectedText = "Không";
             m_cbo_tra_lai_sau.SelectedValue = m_us_trai_phieu.strTRA_LAI_SAU_YN.ToUpper();
 
             us_to_chuc_phat_hanh_2_form(m_us_to_chuc_phat_hanh);
