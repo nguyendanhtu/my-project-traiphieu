@@ -71,8 +71,6 @@ namespace BondApp.DanhMuc
             if (ip_us_to_chuc_phat_hanh.IsIDNull()) return;
             m_txt_ma_to_chuc_phat_hanh.Text = ip_us_to_chuc_phat_hanh.strMA_TO_CHUC_PHAT_HANH;
             m_lbl_ten_to_chuc_phat_hanh.Text = ip_us_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HANH;
-
-
         }
         private void us_object_2_form(US_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
@@ -86,13 +84,13 @@ namespace BondApp.DanhMuc
             m_txt_ky_tra_lai.Text = m_us_trai_phieu.dcKY_TRA_LAI.ToString();
             m_txt_menh_gia.Text = CIPConvert.ToStr(m_us_trai_phieu.dcMENH_GIA, "#,###");
             m_txt_tong_sl.Text = CIPConvert.ToStr(m_us_trai_phieu.dcTONG_SL_PHAT_HANH, "#,###");
-            m_txt_lai_suat.Text = CIPConvert.ToStr(m_us_trai_phieu.dcLAI_SUAT_DEFAULT, "p");
+            m_txt_lai_suat.Text = CIPConvert.ToStr(m_us_trai_phieu.dcLAI_SUAT_DEFAULT);
             m_dat_ngay_phat_hanh.Value = m_us_trai_phieu.datNGAY_PHAT_HANH;
             m_dat_ngay_dao_han.Value = m_us_trai_phieu.datNGAY_DAO_HAN;
 
             m_cbo_co_so_tinh_lai.SelectedText = m_us_trai_phieu.strCO_SO_TINH_LAI;
-            m_cbo_ma_loai_trai_phieu.SelectedText = m_us_tu_dien.strTEN;
-            m_cbo_ma_loai_trai_phieu.SelectedValue = m_us_tu_dien.dcID;
+            m_cbo_loai_trai_phieu.SelectedText = m_us_tu_dien.strTEN;
+            m_cbo_loai_trai_phieu.SelectedValue = m_us_tu_dien.dcID;
 
             m_us_tu_dien = new US_CM_DM_TU_DIEN(m_us_trai_phieu.dcID_DV_KY_HAN);
             m_cbo_don_vi_ky_han.SelectedText = m_us_tu_dien.strTEN;
@@ -122,7 +120,7 @@ namespace BondApp.DanhMuc
             op_us_trai_phieu.strTEN_TRAI_PHIEU = m_txt_ten_trai_phieu.Text;
             op_us_trai_phieu.dcID_TO_CHUC_PHAT_HANH = m_us_to_chuc_phat_hanh.dcID;
             op_us_trai_phieu.strMA_TRAI_PHIEU = m_txt_ma_trai_phieu.Text;
-            op_us_trai_phieu.dcID_LOAI_TRAI_PHIEU = (decimal)m_cbo_ma_loai_trai_phieu.SelectedValue;
+            op_us_trai_phieu.dcID_LOAI_TRAI_PHIEU = (decimal)m_cbo_loai_trai_phieu.SelectedValue;
             op_us_trai_phieu.dcMENH_GIA = CIPConvert.ToDecimal(m_txt_menh_gia.Text);
             op_us_trai_phieu.dcKY_HAN = CIPConvert.ToDecimal(m_txt_ky_han.Text);
             op_us_trai_phieu.dcID_DV_KY_HAN = (decimal)m_cbo_don_vi_ky_han.SelectedValue;
@@ -141,10 +139,10 @@ namespace BondApp.DanhMuc
         private void load_data_2_cbo()
         {
             m_ds_cm_dm_tu_dien = m_us_tu_dien.getLoaiTuDienDS(CM_DM_LOAI_TD_LIST.LOAI_TRAI_PHIEU);
-            m_cbo_ma_loai_trai_phieu.DataSource = m_ds_cm_dm_tu_dien.Tables[0];
-            m_cbo_ma_loai_trai_phieu.DisplayMember = CM_DM_TU_DIEN.MA_TU_DIEN;
-            m_cbo_ma_loai_trai_phieu.ValueMember = CM_DM_TU_DIEN.ID;
-            m_cbo_ma_loai_trai_phieu.Text = "";
+            m_cbo_loai_trai_phieu.DataSource = m_ds_cm_dm_tu_dien.Tables[0];
+            m_cbo_loai_trai_phieu.DisplayMember = CM_DM_TU_DIEN.TEN;
+            m_cbo_loai_trai_phieu.ValueMember = CM_DM_TU_DIEN.ID;
+            m_cbo_loai_trai_phieu.Text = "";
 
             m_ds_cm_dm_tu_dien = m_us_tu_dien.getLoaiTuDienDS(CM_DM_LOAI_TD_LIST.DON_VI_KY_HAN);
             m_cbo_don_vi_ky_han.DataSource = m_ds_cm_dm_tu_dien.Tables[0];
@@ -192,23 +190,23 @@ namespace BondApp.DanhMuc
         
         private bool check_validate_data_is_ok()
         {
+            if (!CValidateTextBox.IsValid(m_txt_ma_trai_phieu, DataType.StringType, allowNull.NO, true))
+            { return false; }
             if (!CValidateTextBox.IsValid(m_txt_ten_trai_phieu, DataType.StringType, allowNull.NO, true))
             { return false; }
             if (!CValidateTextBox.IsValid(m_txt_ma_to_chuc_phat_hanh, DataType.StringType, allowNull.NO, true))
             { return false; }
-            if (!CValidateTextBox.IsValid(m_txt_ma_trai_phieu, DataType.StringType, allowNull.NO, true))
-            { return false; }
             if (!CValidateTextBox.IsValid(m_txt_ky_han, DataType.NumberType, allowNull.NO, true))
-            { return false; }
-            if (!CValidateTextBox.IsValid(m_txt_ky_dieu_chinh_ls, DataType.NumberType, allowNull.NO, true))
-            { return false; }
-            if (!CValidateTextBox.IsValid(m_txt_ky_tra_lai, DataType.NumberType, allowNull.NO, true))
             { return false; }
             if (!CValidateTextBox.IsValid(m_txt_menh_gia, DataType.NumberType, allowNull.NO, true))
             { return false; }
             if (!CValidateTextBox.IsValid(m_txt_tong_sl, DataType.NumberType, allowNull.NO, true))
             { return false; }
             if (!CValidateTextBox.IsValid(m_txt_lai_suat, DataType.NumberType, allowNull.NO, true))
+            { return false; }
+            if (!CValidateTextBox.IsValid(m_txt_ky_tra_lai, DataType.NumberType, allowNull.NO, true))
+            { return false; }
+            if (!CValidateTextBox.IsValid(m_txt_ky_dieu_chinh_ls, DataType.NumberType, allowNull.NO, true))
             { return false; }
             if (m_us_to_chuc_phat_hanh.IsIDNull()) {
                 MessageBox.Show("Bạn chưa chọn tổ chức phát hành!");
@@ -307,6 +305,7 @@ namespace BondApp.DanhMuc
             }
         }
         #endregion
+
     }
     public class CO_SO_TINH_LAI
     { 
