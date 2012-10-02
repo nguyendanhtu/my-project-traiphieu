@@ -1,0 +1,74 @@
+﻿-- 1. Ý nghĩa: Procedure này dùng để cập nhật lại số dư và số dư khả dụng của trái phiếu
+-- 2. Inputs: 
+--   + @date: ngày cập nhật
+--   + @ip_dc_trai_chu_id: id trái chủ (sẽ suy ra được id trái phiếu) cập nhật số dư trái phiếu
+--   + @add_value_tong_so_du: Tổng số dư cập nhật. Nếu mà tổng số dư giảm thì số này là âm
+--   + @add_value_so_du_kha_dung: Tổng số dư khả dụng cập nhật. Nếu mà số dư khả dụng giảm thì số này là âm
+-- Trong trường hợp số dư khả dụng không đổi mà tổng số dư thay đổi 
+-- thì số dư khả dụng sẽ thay đổi theo Tổng số dư
+
+CREATE PROCEDURE [dbo].[pr_GD_SO_DU_TRAI_PHIEU_add_so_du]
+  @date datetime
+, @ip_dc_trai_chu_id numeric(18,0)
+, @add_value_tong_so_du numeric(18,3)
+, @add_value_so_du_kha_dung numeric(18,3)
+AS
+-- Biến này lưu trữ giá trị đúng (=1)or sai(=0): ngày cập nhật số lượng đã tồn tại hay chưa?
+declare @v_is_exists_day numeric(18,0)
+-- số dư cuối
+declare @v_last_so_du numeric(18,3)
+declare @v_last_so_du_kha_dung numeric(18,3)
+-- Set là câu lệnh gán giá trị, kiểm tra trong kho với mã hàng tương ứng, ngày đó đã có cập nhật số lượng hay chưa?
+set @v_is_exists_day = (select count(1)  
+                        FROM GD_SO_DU_TRAI_PHIEU gsdtp
+                        WHERE gsdtp.NGAY = @date
+							AND gsdtp.ID_TRAI_CHU = @ip_dc_trai_chu_id)
+BEGIN TRANSACTION tran_cap_nhat_so_du						
+--1. Neu khong co' ban ghi(tại ngày đó) thi phai tao 1 ban ghi tai ngay do'
+if @v_is_exists_day = 0
+BEGIN
+	INSERT INTO GD_SO_DU_TRAI_PHIEU
+	(
+		-- ID -- this column value is auto-generated,
+		ID_TRAI_CHU,
+		NGAY,
+		TONG_SO_DU,
+		SO_DU_KHA_DUNG
+	)
+	VALUES
+	(
+		/* ID_TRAI_CHU	*/@ip_dc_trai_chu_id,
+		/* NGAY	*/@date,
+		/* TONG_SO_DU	*/0,
+		/* SO_DU_KHA_DUNG	*/0
+	)
+-- Lay so du cua ngay truoc do' de cap nhat vao bang do' 
+		select top(1) @v_last_so_du = gsdtp.TONG_SO_DU,
+		 @v_last_so_du_kha_dung= gsdtp.SO_DU_KHA_DUNG
+		FROM GD_SO_DU_TRAI_PHIEU gsdtp
+		WHERE gsdtp.NGAY < @date
+		AND gsdtp.ID_TRAI_CHU = @ip_dc_trai_chu_id
+		order BY gsdtp.NGAY desc
+-- 1.1 Nếu chưa có số dư đầu (chưa có ngày giao dịch nào cho tới ngày @date) thì
+	if @v_last_so_du is null
+		BEGIN
+			set @v_last_so_du = 0  -- cho số dư cuối bằng 0	
+			SET @v_last_so_du_kha_dung = 0  -- cho số dư khả dụng cuối bằng 0	
+		END
+-- Cập nhật lại số dư
+	UPDATE GD_SO_DU_TRAI_PHIEU
+	SET
+		TONG_SO_DU = @v_last_so_du,
+		SO_DU_KHA_DUNG = @v_last_so_du_kha_dung
+	WHERE NGAY = @date
+		AND ID_TRAI_CHU = @ip_dc_trai_chu_id
+end
+--2. Cap nhat so du tai khoan them vao
+UPDATE GD_SO_DU_TRAI_PHIEU
+SET	
+	TONG_SO_DU = TONG_SO_DU + @add_value_tong_so_du,
+	SO_DU_KHA_DUNG = SO_DU_KHA_DUNG + @add_value_so_du_kha_dung
+WHERE NGAY >= @date
+	AND ID_TRAI_CHU = @ip_dc_trai_chu_id
+IF @@ERROR != 0 ROLLBACK TRAN tran_cap_nhat_so_du
+ELSE COMMIT TRAN tran_cap_nhat_so_du
