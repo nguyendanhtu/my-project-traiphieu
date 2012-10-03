@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f500_dm_trai_chu_de));
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.m_cbo_loai_trai_chu = new System.Windows.Forms.ComboBox();
@@ -63,6 +65,7 @@
             this.m_txt_ma_trai_chu = new System.Windows.Forms.TextBox();
             this.m_lbl_dien_thoai = new System.Windows.Forms.Label();
             this.m_lbl_tru_so_chinh = new System.Windows.Forms.Label();
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
@@ -84,6 +87,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.m_pnl_out_place_dm);
             this.groupBox1.Controls.Add(this.m_cbo_loai_trai_chu);
             this.groupBox1.Controls.Add(this.m_cmd_select_trai_phieu);
             this.groupBox1.Controls.Add(this.m_dat_ngay_cap);
@@ -117,10 +121,10 @@
             this.groupBox1.Controls.Add(this.m_txt_ma_trai_chu);
             this.groupBox1.Controls.Add(this.m_lbl_dien_thoai);
             this.groupBox1.Controls.Add(this.m_lbl_tru_so_chinh);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(548, 417);
+            this.groupBox1.Size = new System.Drawing.Size(548, 454);
             this.groupBox1.TabIndex = 62;
             this.groupBox1.TabStop = false;
             // 
@@ -402,16 +406,43 @@
             this.m_lbl_tru_so_chinh.TabIndex = 19;
             this.m_lbl_tru_so_chinh.Text = "Tài khoản";
             // 
+            // ImageList
+            // 
+            this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
+            this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.ImageList.Images.SetKeyName(0, "");
+            this.ImageList.Images.SetKeyName(1, "");
+            this.ImageList.Images.SetKeyName(2, "");
+            this.ImageList.Images.SetKeyName(3, "");
+            this.ImageList.Images.SetKeyName(4, "");
+            this.ImageList.Images.SetKeyName(5, "");
+            this.ImageList.Images.SetKeyName(6, "");
+            this.ImageList.Images.SetKeyName(7, "");
+            this.ImageList.Images.SetKeyName(8, "");
+            this.ImageList.Images.SetKeyName(9, "");
+            this.ImageList.Images.SetKeyName(10, "");
+            this.ImageList.Images.SetKeyName(11, "");
+            this.ImageList.Images.SetKeyName(12, "");
+            this.ImageList.Images.SetKeyName(13, "");
+            this.ImageList.Images.SetKeyName(14, "");
+            this.ImageList.Images.SetKeyName(15, "");
+            this.ImageList.Images.SetKeyName(16, "");
+            this.ImageList.Images.SetKeyName(17, "");
+            this.ImageList.Images.SetKeyName(18, "");
+            this.ImageList.Images.SetKeyName(19, "");
+            this.ImageList.Images.SetKeyName(20, "");
+            this.ImageList.Images.SetKeyName(21, "");
+            // 
             // m_pnl_out_place_dm
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 458);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(3, 415);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(548, 36);
-            this.m_pnl_out_place_dm.TabIndex = 63;
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(542, 36);
+            this.m_pnl_out_place_dm.TabIndex = 37;
             // 
             // m_cmd_save
             // 
@@ -420,11 +451,12 @@
             this.m_cmd_save.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_save.ImageIndex = 2;
-            this.m_cmd_save.Location = new System.Drawing.Point(368, 4);
+            this.m_cmd_save.ImageIndex = 10;
+            this.m_cmd_save.ImageList = this.ImageList;
+            this.m_cmd_save.Location = new System.Drawing.Point(362, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_save.TabIndex = 12;
+            this.m_cmd_save.TabIndex = 0;
             this.m_cmd_save.Text = "&Lưu";
             // 
             // m_cmd_exit
@@ -435,10 +467,11 @@
             this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
-            this.m_cmd_exit.Location = new System.Drawing.Point(456, 4);
+            this.m_cmd_exit.ImageList = this.ImageList;
+            this.m_cmd_exit.Location = new System.Drawing.Point(450, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 11;
+            this.m_cmd_exit.TabIndex = 1;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // f500_dm_trai_chu_de
@@ -446,7 +479,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(548, 494);
-            this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_lbl_title);
             this.Name = "f500_dm_trai_chu_de";
@@ -495,6 +527,7 @@
         private System.Windows.Forms.TextBox m_txt_ma_trai_chu;
         private System.Windows.Forms.Label m_lbl_dien_thoai;
         private System.Windows.Forms.Label m_lbl_tru_so_chinh;
+        internal System.Windows.Forms.ImageList ImageList;
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         internal SIS.Controls.Button.SiSButton m_cmd_save;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
