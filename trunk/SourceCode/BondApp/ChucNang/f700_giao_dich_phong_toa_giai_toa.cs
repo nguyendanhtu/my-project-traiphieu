@@ -94,7 +94,7 @@ namespace BondApp
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_print.Click += new EventHandler(m_cmd_print_Click);
         }
-        void m_cmd_exit_Click(object sender, EventArgs e)
+        private void m_cmd_exit_Click(object sender, EventArgs e)
         {
             try
             {
