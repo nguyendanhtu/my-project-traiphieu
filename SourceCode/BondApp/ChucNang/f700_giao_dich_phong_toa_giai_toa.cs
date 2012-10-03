@@ -179,7 +179,7 @@ namespace BondApp
 
             return true;
         }
-        void m_cmd_lap_Click(object sender, EventArgs e)
+        private void m_cmd_lap_Click(object sender, EventArgs e)
         {
             if (!check_thong_tin_chuyen_nhuong_is_ok())
             {
@@ -196,7 +196,7 @@ namespace BondApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        void m_cmd_chon_trai_chu_Click(object sender, EventArgs e)
+        private void m_cmd_chon_trai_chu_Click(object sender, EventArgs e)
         {
             try
             {
