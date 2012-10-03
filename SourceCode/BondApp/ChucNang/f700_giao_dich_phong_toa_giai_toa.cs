@@ -170,6 +170,11 @@ namespace BondApp
                 m_txt_cua.Focus();
                 return false;
             }
+            if (CIPConvert.ToDecimal(m_txt_so_luong_tp_cam_co.Text) > CIPConvert.ToDecimal(m_txt_so_luong_kha_dung.Text))
+            {
+                MessageBox.Show("Số lượng trái phiếu cầm cố không được lớn hơn số lượng TP khả dụng.", "Lỗi");
+                return false;
+            }
 
             return true;
         }
@@ -325,6 +330,7 @@ namespace BondApp
         }
         private void lap_giao_dich_phong_toa_giai_toa()
         {
+
             from_2_us_gd_phong_toa_giai_toa();
             m_us_gd_phong_toa_giai_toa.CapNhatSoDuTraiPhieuPhongGiaiToan(m_us_gd_phong_toa_giai_toa.datNGAY_GIAO_DICH, m_us_gd_phong_toa_giai_toa.dcID_TRAI_CHU, 0, m_us_gd_phong_toa_giai_toa.dcSO_LUONG);
             m_us_gd_phong_toa_giai_toa.Insert();
