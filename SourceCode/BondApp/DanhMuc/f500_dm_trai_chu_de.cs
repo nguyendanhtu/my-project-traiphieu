@@ -11,6 +11,7 @@ using BondDS;
 using IP.Core.IPUserService;
 using IP.Core.IPData;
 using BondDS.CDBNames;
+using IP.Core.IPSystemAdmin;
 
 namespace BondApp.DanhMuc
 {
@@ -120,8 +121,6 @@ namespace BondApp.DanhMuc
             m_txt_ghi_chu_3.Text = ip_us_trai_chu.strGHI_CHU3;
             m_txt_noi_cap.Text = ip_us_trai_chu.strNOI_CAP_CMT;
             m_txt_id_trai_phieu_so_huu.Text = m_us_trai_phieu.strMA_TRAI_PHIEU;
-            m_txt_nguoi_lap.Text = CIPConvert.ToStr(ip_us_trai_chu.dcID_NGUOI_LAP);
-            m_txt_nguoi_duyet.Text = CIPConvert.ToStr(ip_us_trai_chu.dcID_NGUOI_DUYET);
             m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ip_us_trai_chu.dcID_TRANG_THAI);
         }
 
@@ -143,8 +142,10 @@ namespace BondApp.DanhMuc
             ip_us_trai_chu.strGHI_CHU3 = m_txt_ghi_chu_3.Text;
             ip_us_trai_chu.strNOI_CAP_CMT = m_txt_noi_cap.Text;
             ip_us_trai_chu.dcID_TRAI_PHIEU_SO_HUU = m_us_trai_phieu.dcID;
-            ip_us_trai_chu.dcID_NGUOI_LAP = CIPConvert.ToDecimal(m_txt_nguoi_lap.Text);
-            ip_us_trai_chu.dcID_NGUOI_DUYET = CIPConvert.ToDecimal(m_txt_nguoi_duyet.Text);
+            if (m_e_form_mode == DataEntryFormMode.InsertDataState)
+                ip_us_trai_chu.dcID_NGUOI_LAP = CAppContext_201.getCurrentUserID();
+            else
+                ip_us_trai_chu.dcID_NGUOI_DUYET = CAppContext_201.getCurrentUserID();
             ip_us_trai_chu.dcID_TRANG_THAI = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
         }
 
@@ -198,14 +199,6 @@ namespace BondApp.DanhMuc
                 return false;
             }
             if (!CValidateTextBox.IsValid(m_txt_id_trai_phieu_so_huu, DataType.StringType, allowNull.NO, true))
-            {
-                return false;
-            }
-            if (!CValidateTextBox.IsValid(m_txt_nguoi_lap, DataType.NumberType, allowNull.NO, true))
-            {
-                return false;
-            }
-            if (!CValidateTextBox.IsValid(m_txt_nguoi_duyet, DataType.NumberType, allowNull.YES, true))
             {
                 return false;
             }
