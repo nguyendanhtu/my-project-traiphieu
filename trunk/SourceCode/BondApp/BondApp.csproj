@@ -388,6 +388,9 @@
     <EmbeddedResource Include="ChucNang\F800_lich_nhac_viec.resx">
       <DependentUpon>f800_lich_nhac_viec.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChucNang\f801_them_ghi_chu_lich_nhac_viec.resx">
+      <DependentUpon>f801_them_ghi_chu_lich_nhac_viec.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f900_quan_ly_coupon.resx">
       <DependentUpon>f900_quan_ly_coupon.cs</DependentUpon>
     </EmbeddedResource>
