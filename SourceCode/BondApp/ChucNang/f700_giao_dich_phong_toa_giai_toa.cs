@@ -173,6 +173,7 @@ namespace BondApp
             if (CIPConvert.ToDecimal(m_txt_so_luong_tp_cam_co.Text) > CIPConvert.ToDecimal(m_txt_so_luong_kha_dung.Text))
             {
                 MessageBox.Show("Số lượng trái phiếu cầm cố không được lớn hơn số lượng TP khả dụng.", "Lỗi");
+                m_txt_so_luong_tp_cam_co.Focus();
                 return false;
             }
 
