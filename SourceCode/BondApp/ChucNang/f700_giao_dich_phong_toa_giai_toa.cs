@@ -94,7 +94,6 @@ namespace BondApp
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_print.Click += new EventHandler(m_cmd_print_Click);
         }
-
         void m_cmd_exit_Click(object sender, EventArgs e)
         {
             try
@@ -107,9 +106,79 @@ namespace BondApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        private bool check_thong_tin_chuyen_nhuong_is_ok()
+        {
+            if (!CValidateTextBox.IsValid(m_txt_nguoi_dai_dien, DataType.StringType, allowNull.NO))
+            {
+                m_txt_nguoi_dai_dien.Focus();
+              
+                return false; 
+            }
+            if (!CValidateTextBox.IsValid(m_txt_tru_so_chinh, DataType.StringType, allowNull.NO))
+            {
+                m_txt_tru_so_chinh.Focus();
+                return false;
+            }
+            if (!CValidateTextBox.IsValid(m_txt_chuc_danh, DataType.StringType, allowNull.NO))
+            {
+                m_txt_chuc_danh.Focus();
+                return false;
+            }
+            if (!CValidateTextBox.IsValid(m_txt_dien_thoai, DataType.NumberType, allowNull.NO))
+            {
+                m_txt_dien_thoai.Focus();
+                return false;
+            }
+            if (!CValidateTextBox.IsValid(m_txt_so_luong_tp_cam_co, DataType.NumberType, allowNull.NO))
+            {
+                m_txt_so_luong_tp_cam_co.Focus();
+                return false;
+            }
+            if (!CValidateTextBox.IsValid(m_txt_so_luong_tp_cam_co, DataType.NumberType, allowNull.NO))
+            {
+                m_txt_so_luong_tp_cam_co.Focus();
+                return false;
+            }
+            if (!CValidateTextBox.IsValid(m_txt_ngan_hang_cam_co, DataType.StringType, allowNull.NO))
+            {
+                m_txt_ngan_hang_cam_co.Focus();
+                return false;
+            }
+            if (!CValidateTextBox.IsValid(m_txt_nguoi_xac_nhan, DataType.StringType, allowNull.NO))
+            {
+                m_txt_nguoi_xac_nhan.Focus();
+                return false;
+            }
+            if (!CValidateTextBox.IsValid(m_txt_chuc_vu, DataType.StringType, allowNull.NO))
+            {
+                m_txt_chuc_vu.Focus();
+                return false;
+            }
+            if (!CValidateTextBox.IsValid(m_txt_theo_giay_uy_quyen_so, DataType.StringType, allowNull.NO))
+            {
+                m_txt_theo_giay_uy_quyen_so.Focus();
+                return false;
+            }
+            if (!CValidateTextBox.IsValid(m_txt_ngay, DataType.DateType, allowNull.NO))
+            {
+                m_txt_ngay.Focus();
+                return false;
 
+            }
+            if (!CValidateTextBox.IsValid(m_txt_cua, DataType.StringType, allowNull.NO))
+            {
+                m_txt_cua.Focus();
+                return false;
+            }
+         
+            return true;
+        }
         void m_cmd_lap_Click(object sender, EventArgs e)
         {
+            if (!check_thong_tin_chuyen_nhuong_is_ok())
+            {
+                return;
+            }
             try
             {
                 lap_giao_dich_phong_toa_giai_toa();
@@ -121,7 +190,6 @@ namespace BondApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
         void m_cmd_chon_trai_chu_Click(object sender, EventArgs e)
         {
             try
@@ -134,7 +202,6 @@ namespace BondApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
         private void f700_giao_dich_phong_toa_giai_toa_Load(object sender, EventArgs e)
         {
             try
@@ -147,7 +214,6 @@ namespace BondApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
         private void m_cmd_print_Click(object sender, EventArgs e)
         {
             try
@@ -193,7 +259,6 @@ namespace BondApp
             m_us_trai_chu =  v_frm500.select_trai_chu_of_trai_phieu(null);
             us_trai_chu_2_form(m_us_trai_chu);
         }
-
         private void us_trai_chu_2_form(US_DM_TRAI_CHU ip_us_trai_chu)
         {
             if (ip_us_trai_chu.IsIDNull()) return;  
@@ -212,7 +277,6 @@ namespace BondApp
             
             us_trai_phieu_2_form(m_us_trai_phieu);            
         }
-
         private void us_trai_phieu_2_form(US_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
             m_txt_ma_so_trai_phieu.Text = ip_us_trai_phieu.strMA_TRAI_PHIEU;
@@ -233,13 +297,11 @@ namespace BondApp
                         break;
                 }            
         }
-
         private void from_2_us_gd_phong_toa_giai_toa()
         {
             m_us_gd_phong_toa_giai_toa.strNGUOI_DAI_DIEN = m_txt_nguoi_dai_dien.Text;
             m_us_gd_phong_toa_giai_toa.strCHUC_DANH = m_txt_chuc_danh.Text;
         }
-
         private void lap_giao_dich_phong_toa_giai_toa()
         {
             //MessageBox.Show("Giao dich phong toa giai toa dang duoc code hehe");
@@ -267,7 +329,6 @@ namespace BondApp
             v_obj_export_word.AddFindAndReplace("<LAI_SUAT>", m_txt_lai_suat.Text);
             v_obj_export_word.AddFindAndReplace("<HINH_THUC_TRA_LAI>", m_txt_hinh_thuc_tra_lai.Text);
             v_obj_export_word.AddFindAndReplace("<MA_TRAI_PHIEU> ", m_txt_ma_so_trai_phieu.Text);
-            v_obj_export_word.AddFindAndReplace("<TEN_NGAN_HANG> ", m_txt_ngan_hang_cam_co.Text);
             v_obj_export_word.Export2Word(true);
             m_cmd_lap.Enabled = true;
         }
