@@ -87,6 +87,90 @@ namespace BondApp
             m_lbl_title.ForeColor = Color.DarkRed;
             m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
         }
+        private void set_define_events()
+        {
+            m_cmd_chon_trai_chu.Click += new EventHandler(m_cmd_chon_trai_chu_Click);
+            m_cmd_lap.Click += new EventHandler(m_cmd_lap_Click);
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_cmd_print.Click += new EventHandler(m_cmd_print_Click);
+        }
+
+        void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_lap_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lap_giao_dich_phong_toa_giai_toa();
+                MessageBox.Show("Cập nhập thành công!");
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_chon_trai_chu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                select_trai_chu();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void f700_giao_dich_phong_toa_giai_toa_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                set_inital_form_load();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_print_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                switch (m_e_form_mode)
+                {
+                    case eFormMode.GIAI_TOA:
+
+                        break;
+                    case eFormMode.PHONG_TOA:
+                        export_word();
+                        break;
+
+                    default:
+                        break;
+                }
+
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         private void set_inital_form_load()
         {
            
@@ -189,90 +273,7 @@ namespace BondApp
         }
         #endregion
 
-        private void set_define_events()
-        {
-            m_cmd_chon_trai_chu.Click += new EventHandler(m_cmd_chon_trai_chu_Click);
-            m_cmd_lap.Click += new EventHandler(m_cmd_lap_Click);
-            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-            m_cmd_print.Click += new EventHandler(m_cmd_print_Click);
-        }
-
-        void m_cmd_exit_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.Close();
-            }
-            catch (Exception v_e)
-            {
-
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-        
-        void m_cmd_lap_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                lap_giao_dich_phong_toa_giai_toa();
-                MessageBox.Show("Cập nhập thành công!");
-            }
-            catch (Exception v_e)
-            {
-
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        void m_cmd_chon_trai_chu_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                select_trai_chu();
-            }
-            catch (Exception v_e)
-            {
-
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void f700_giao_dich_phong_toa_giai_toa_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                set_inital_form_load();
-            }
-            catch (Exception v_e)
-            {
-
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        private void m_cmd_print_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                switch (m_e_form_mode)
-                {
-                    case eFormMode.GIAI_TOA:
-
-                        break;
-                    case eFormMode.PHONG_TOA:
-                        export_word();
-                        break;
-
-                    default:
-                        break;
-                }
-               
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
+       
     }
 }
 
