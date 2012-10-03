@@ -125,26 +125,27 @@ public class US_GD_LICH_THANH_TOAN_LAI_GOC : US_Object
 		pm_objDR["THANH_TOAN_GOC_YN"] = System.Convert.DBNull;
 	}
 
-	public string strTHANH_TOAN_THUC_TE_YN 
-	{
-		get 
-		{
-			return CNull.RowNVLString(pm_objDR, "THANH_TOAN_THUC_TE_YN", IPConstants.c_DefaultString);
-		}
-		set 
-		{
-			pm_objDR["THANH_TOAN_THUC_TE_YN"] = value;
-		}
-	}
+    public string strTHANH_TOAN_LAI_YN
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "THANH_TOAN_LAI_YN", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["THANH_TOAN_LAI_YN"] = value;
+        }
+    }
 
-	public bool IsTHANH_TOAN_THUC_TE_YNNull() 
-	{
-		return pm_objDR.IsNull("THANH_TOAN_THUC_TE_YN");
-	}
+    public bool IsTHANH_TOAN_LAI_YNNull()
+    {
+        return pm_objDR.IsNull("THANH_TOAN_LAI_YN");
+    }
 
-	public void SetTHANH_TOAN_THUC_TE_YNNull() {
-		pm_objDR["THANH_TOAN_THUC_TE_YN"] = System.Convert.DBNull;
-	}
+    public void SetTHANH_TOAN_LAI_YNNull()
+    {
+        pm_objDR["THANH_TOAN_LAI_YN"] = System.Convert.DBNull;
+    }
 
 	public DateTime datNGAY
 	{
