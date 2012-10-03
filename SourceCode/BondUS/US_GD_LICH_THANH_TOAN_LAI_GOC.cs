@@ -292,6 +292,13 @@ public class US_GD_LICH_THANH_TOAN_LAI_GOC : US_Object
 
         v_pr_obj.ExecuteCommand(this);
     }
+    public void them_ghi_chu()
+    {
+        CStoredProc v_cstore = new CStoredProc("pr_GD_LICH_THANH_TOAN_LAI_GOC_Them_Ghi_Chu");
+        v_cstore.addDecimalInputParam("@ID",this.dcID);
+        v_cstore.addNVarcharInputParam("@GHI_CHU", this.strGHI_CHU);
+        v_cstore.ExecuteCommand(this);
+    }
     #endregion
 }
 }
