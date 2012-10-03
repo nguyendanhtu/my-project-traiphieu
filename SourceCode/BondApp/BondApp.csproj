@@ -287,6 +287,12 @@
     <Compile Include="ChucNang\f800_lich_nhac_viec.Designer.cs">
       <DependentUpon>f800_lich_nhac_viec.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChucNang\f801_them_ghi_chu_lich_nhac_viec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChucNang\f801_them_ghi_chu_lich_nhac_viec.Designer.cs">
+      <DependentUpon>f801_them_ghi_chu_lich_nhac_viec.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChucNang\f900_quan_ly_coupon.cs">
       <SubType>Form</SubType>
     </Compile>
