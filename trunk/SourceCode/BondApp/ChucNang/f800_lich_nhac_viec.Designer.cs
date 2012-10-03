@@ -40,6 +40,7 @@
             this.m_chk_da_thuc_hien = new System.Windows.Forms.CheckBox();
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.m_cmd_them_ghi_chu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -116,7 +117,7 @@
             // 
             this.m_cmd_filter.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_filter.Image")));
             this.m_cmd_filter.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.m_cmd_filter.Location = new System.Drawing.Point(735, 45);
+            this.m_cmd_filter.Location = new System.Drawing.Point(735, 43);
             this.m_cmd_filter.Name = "m_cmd_filter";
             this.m_cmd_filter.Size = new System.Drawing.Size(64, 23);
             this.m_cmd_filter.TabIndex = 28;
@@ -148,6 +149,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.m_cmd_them_ghi_chu);
             this.groupBox1.Controls.Add(this.m_lbl_title);
             this.groupBox1.Controls.Add(this.m_lbl_lich_nhac_viec_tu);
             this.groupBox1.Controls.Add(this.m_chk_da_thuc_hien);
@@ -164,6 +166,17 @@
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin lọc";
+            // 
+            // m_cmd_them_ghi_chu
+            // 
+            this.m_cmd_them_ghi_chu.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_them_ghi_chu.Image")));
+            this.m_cmd_them_ghi_chu.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.m_cmd_them_ghi_chu.Location = new System.Drawing.Point(825, 43);
+            this.m_cmd_them_ghi_chu.Name = "m_cmd_them_ghi_chu";
+            this.m_cmd_them_ghi_chu.Size = new System.Drawing.Size(104, 23);
+            this.m_cmd_them_ghi_chu.TabIndex = 32;
+            this.m_cmd_them_ghi_chu.Text = "     Thêm ghi chú";
+            this.m_cmd_them_ghi_chu.UseVisualStyleBackColor = true;
             // 
             // f800_lich_nhac_viec
             // 
@@ -194,5 +207,6 @@
         private System.Windows.Forms.CheckBox m_chk_da_thuc_hien;
         private System.Windows.Forms.Label m_lbl_title;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button m_cmd_them_ghi_chu;
     }
 }

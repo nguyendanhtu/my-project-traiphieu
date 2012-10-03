@@ -33,7 +33,7 @@
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_insert_note = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.m_lbl_ma_trai_phieu = new System.Windows.Forms.Label();
@@ -94,7 +94,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.m_cmd_insert);
+            this.panel1.Controls.Add(this.m_cmd_insert_note);
             this.panel1.Controls.Add(this.m_cmd_exit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 337);
@@ -103,20 +103,20 @@
             this.panel1.Size = new System.Drawing.Size(822, 36);
             this.panel1.TabIndex = 56;
             // 
-            // m_cmd_insert
+            // m_cmd_insert_note
             // 
-            this.m_cmd_insert.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_insert.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_insert.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_insert.ImageIndex = 2;
-            this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_insert.TabIndex = 12;
-            this.m_cmd_insert.Text = "&Thêm";
+            this.m_cmd_insert_note.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_insert_note.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_insert_note.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_insert_note.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_insert_note.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_insert_note.ImageIndex = 2;
+            this.m_cmd_insert_note.ImageList = this.ImageList;
+            this.m_cmd_insert_note.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_insert_note.Name = "m_cmd_insert_note";
+            this.m_cmd_insert_note.Size = new System.Drawing.Size(111, 28);
+            this.m_cmd_insert_note.TabIndex = 12;
+            this.m_cmd_insert_note.Text = "&Thêm ghi chú";
             // 
             // m_cmd_exit
             // 
@@ -154,7 +154,7 @@
             this.groupBox1.Size = new System.Drawing.Size(822, 307);
             this.groupBox1.TabIndex = 57;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin trái phiếu";
+            this.groupBox1.Text = "Thông tin nội dung công việc";
             // 
             // m_lbl_ma_trai_phieu
             // 
@@ -304,7 +304,7 @@
         private System.Windows.Forms.Label m_lbl_title;
         internal System.Windows.Forms.ImageList ImageList;
         internal System.Windows.Forms.Panel panel1;
-        internal SIS.Controls.Button.SiSButton m_cmd_insert;
+        internal SIS.Controls.Button.SiSButton m_cmd_insert_note;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label m_lbl_ma_trai_phieu;

@@ -17,6 +17,7 @@ using BondDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
 using System.Data.SqlClient;
+using BondApp.ChucNang;
 
 namespace BondApp
 {
@@ -58,7 +59,8 @@ namespace BondApp
             CHOT_DANH_SACH_LAI = 5,
             THANH_TOAN_LAI_YN = 6,
             THANH_TOAN_GOC_YN = 7,
-            DA_THUC_HIEN_YN = 8
+            DA_THUC_HIEN_YN = 8,
+            GHI_CHU = 9
         }
         #endregion
 
@@ -108,6 +110,7 @@ namespace BondApp
             v_htb.Add(GD_LICH_THANH_TOAN_LAI_GOC.THANH_TOAN_GOC_YN, e_col_Number.THANH_TOAN_GOC_YN);
             v_htb.Add(GD_LICH_THANH_TOAN_LAI_GOC.DA_THUC_HIEN_YN, e_col_Number.DA_THUC_HIEN_YN);
             v_htb.Add(GD_LICH_THANH_TOAN_LAI_GOC.ID_TRAI_PHIEU, e_col_Number.MA_TRAI_PHIEU);
+            v_htb.Add(GD_LICH_THANH_TOAN_LAI_GOC.GHI_CHU, e_col_Number.GHI_CHU);
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds_gd_lich_tt_lai_goc.GD_LICH_THANH_TOAN_LAI_GOC.NewRow());
             return v_obj_trans;
@@ -147,6 +150,13 @@ namespace BondApp
             m_fg.Redraw = true;
         }
 
+        private void grid_2_us_object(US_GD_LICH_THANH_TOAN_LAI_GOC ip_us_lich_thanh_toan_lai_goc, int ip_i_grid_row)
+        {
+            DataRow v_dr;
+            v_dr = (DataRow)m_fg.Rows[ip_i_grid_row].UserData;
+            m_obj_trans.GridRow2DataRow(ip_i_grid_row, v_dr);
+            ip_us_lich_thanh_toan_lai_goc.DataRow2Me(v_dr);
+        }
         private string get_content_of_calendar(int ip_grid_row)
         {
             string v_str_content = "Ngày";
@@ -157,7 +167,15 @@ namespace BondApp
             v_str_content = v_str_content.Substring(0, v_str_content.Length - 1);
             return v_str_content;
         }
-        
+        private void hien_form_them_ghi_chu()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid_2_us_object(m_us_gd_lich_tt_lai_goc, m_fg.Row);
+            f801_them_ghi_chu_lich_nhac_viec v_f801_them_ghi_chu = new f801_them_ghi_chu_lich_nhac_viec();
+            v_f801_them_ghi_chu.display_2_them_ghi_chu(m_us_gd_lich_tt_lai_goc);
+            load_data_2_grid();
+        }
         private void set_start_form()
         {
             m_obj_trans = get_trans_object(m_fg);
@@ -199,13 +217,26 @@ namespace BondApp
         private void set_define_events(){
             m_cmd_filter.Click += new EventHandler(m_cmd_filter_Click);
             m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
+            m_cmd_them_ghi_chu.Click += new EventHandler(m_cmd_them_ghi_chu_Click);
+        }
+
+        void m_cmd_them_ghi_chu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                hien_form_them_ghi_chu();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_fg_DoubleClick(object sender, EventArgs e)
         {
             try
             {
-                
+                hien_form_them_ghi_chu();
             }
             catch (Exception v_e)
             {
