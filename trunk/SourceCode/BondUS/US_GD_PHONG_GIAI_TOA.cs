@@ -243,7 +243,6 @@ namespace BondUS
 
         #endregion
 
-
         #region Init Functions
         public US_GD_PHONG_GIAI_TOA()
         {
@@ -268,6 +267,19 @@ namespace BondUS
             v_cmdSQL = v_objMkCmd.getSelectCmd();
             this.FillDatasetByCommand(pm_objDS, v_cmdSQL);
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
+        }
+        #endregion
+
+        #region Addition Functions
+        public void CapNhatSoDuTraiPhieuPhongGiaiToan(DateTime ip_dat_ngay,decimal ip_dc_id_trai_chu,decimal ip_dc_tong_so_du,decimal ip_dc_tong_so_du_kha_dung)
+        {
+            CStoredProc v_pr_obj = new CStoredProc("pr_GD_SO_DU_TRAI_PHIEU_add_so_du");
+            v_pr_obj.addDatetimeInputParam("@date", ip_dat_ngay);
+            v_pr_obj.addDecimalInputParam("@ip_dc_trai_chu_id", ip_dc_id_trai_chu);
+            v_pr_obj.addDecimalInputParam("@add_value_tong_so_du", ip_dc_tong_so_du);
+            v_pr_obj.addDecimalInputParam("@add_value_so_du_kha_dung", ip_dc_tong_so_du_kha_dung);
+
+            v_pr_obj.ExecuteCommand(this);
         }
         #endregion
     }
