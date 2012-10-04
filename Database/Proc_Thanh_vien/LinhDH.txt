@@ -7,7 +7,7 @@
 -- Trong trường hợp số dư khả dụng không đổi mà tổng số dư thay đổi 
 -- thì số dư khả dụng sẽ thay đổi theo Tổng số dư
 
-CREATE PROCEDURE [dbo].[pr_GD_SO_DU_TRAI_PHIEU_add_so_du]
+ALTER PROCEDURE [dbo].[pr_GD_SO_DU_TRAI_PHIEU_add_so_du]
   @date datetime
 , @ip_dc_trai_chu_id numeric(18,0)
 , @add_value_tong_so_du numeric(18,3)
@@ -82,3 +82,87 @@ UPDATE GD_LICH_THANH_TOAN_LAI_GOC
 SET
 	GHI_CHU = @GHI_CHU
 WHERE ID = @ID
+GO
+
+-- Hàm này dùng để tính số dư khả dụng trái phiếu dựa vào trái chủ và ngày
+-- Input: ID_TRAI_CHU và NGAY truy vấn
+-- Output: Số dư trái khả dụng phiếu tại ngày đó
+
+CREATE FUNCTION f_so_du_kha_dung_trai_phieu_theo_trai_chu
+(@ID_TRAI_CHU DECIMAL,
+@NGAY DATETIME)
+RETURNS NUMERIC(18,0)
+AS
+BEGIN
+	-- Nếu ngày là 1/1/1900 thì lấy số dư hiện tại
+	DECLARE @v_dc_so_du_kha_dung NUMERIC(18,0)
+	IF ( @NGAY = '1/1/1900')
+		SET @v_dc_so_du_kha_dung = (SELECT top 1 gsdtp.SO_DU_KHA_DUNG
+		                     FROM GD_SO_DU_TRAI_PHIEU gsdtp
+		WHERE gsdtp.ID_TRAI_CHU = @ID_TRAI_CHU
+		ORDER BY gsdtp.NGAY DESC)
+	
+	-- Nếu ngày khác thì sẽ tính theo ngày
+	ELSE
+		SET @v_dc_so_du_kha_dung = (SELECT top 1 gsdtp.SO_DU_KHA_DUNG
+		                     FROM GD_SO_DU_TRAI_PHIEU gsdtp
+		WHERE gsdtp.ID_TRAI_CHU = @ID_TRAI_CHU
+		AND gsdtp.NGAY = @NGAY)
+	
+	IF (@v_dc_so_du_kha_dung IS NULL) SET @v_dc_so_du_kha_dung = 0
+	
+	RETURN @v_dc_so_du_kha_dung
+END
+
+----
+GO
+
+-- Hàm này dùng để tính số dư trái phiếu dựa vào trái chủ và ngày
+-- Input: ID_TRAI_CHU và NGAY truy vấn
+-- Output: Số dư trái phiếu tại ngày đó
+
+CREATE FUNCTION [dbo].[f_so_du_trai_phieu_theo_trai_chu]
+(@ID_TRAI_CHU DECIMAL,
+@NGAY DATETIME)
+RETURNS NUMERIC(18,0)
+AS
+BEGIN
+	-- Nếu ngày là 1/1/1900 thì lấy số dư hiện tại
+	DECLARE @v_dc_so_du NUMERIC(18,0)
+	IF ( @NGAY = '1/1/1900')
+		SET @v_dc_so_du = (SELECT top 1 gsdtp.TONG_SO_DU FROM GD_SO_DU_TRAI_PHIEU gsdtp
+		WHERE gsdtp.ID_TRAI_CHU = @ID_TRAI_CHU
+		ORDER BY gsdtp.NGAY DESC)
+	
+	-- Nếu ngày khác thì sẽ tính theo ngày
+	ELSE
+		SET @v_dc_so_du = (SELECT top 1 gsdtp.TONG_SO_DU FROM GD_SO_DU_TRAI_PHIEU gsdtp
+		WHERE gsdtp.ID_TRAI_CHU = @ID_TRAI_CHU
+		AND gsdtp.NGAY = @NGAY)
+	
+	IF (@v_dc_so_du IS NULL) SET @v_dc_so_du = 0
+	
+	RETURN @v_dc_so_du
+END
+
+------ CREATE VIEW
+GO
+CREATE VIEW [dbo].[V_DM_TRAI_CHU]
+AS
+SELECT
+	dtc.ID,MA_TRAI_CHU,TEN_TRAI_CHU,DIA_CHI,MOBILE,FAX,CMT_GIAY_DKKD,NGAY_CAP_CMT,NOI_CAP_CMT,
+	ID_LOAI_TRAI_CHU,(SELECT cdtd.TEN FROM CM_DM_TU_DIEN cdtd
+	                  WHERE cdtd.ID_LOAI_TU_DIEN = 3 AND cdtd.ID = dtc.ID_LOAI_TRAI_CHU) AS TEN_LOAI_TRAI_CHU,
+	SO_TAI_KHOAN,
+	MO_TAI_NGAN_HANG,
+	GHI_CHU1,
+	GHI_CHU2,
+	GHI_CHU3,
+	ID_TRAI_PHIEU_SO_HUU,dtp.TEN_TRAI_PHIEU,dbo.f_so_du_trai_phieu_theo_trai_chu(dtc.ID,'1/1/1900') AS TONG_SO_DU_TRAI_PHIEU,
+	dbo.f_so_du_kha_dung_trai_phieu_theo_trai_chu(dtc.ID,'1/1/1900') AS SO_DU_KHA_DUNG,
+	ID_NGUOI_LAP,
+	ID_NGUOI_DUYET,
+	ID_TRANG_THAI, (SELECT cdtd.TEN FROM CM_DM_TU_DIEN cdtd
+	                WHERE dtc.ID_TRANG_THAI = cdtd.ID AND cdtd.ID_LOAI_TU_DIEN = 6) AS TEN_TRANG_THAI
+FROM DM_TRAI_CHU dtc, DM_TRAI_PHIEU dtp
+WHERE dtc.ID_TRAI_PHIEU_SO_HUU = dtp.ID
