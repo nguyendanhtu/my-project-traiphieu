@@ -266,6 +266,34 @@ namespace BondDS.CDBNames
         public const string TONG_SL_PHAT_HANH = "TONG_SL_PHAT_HANH";
         public const string TONG_GIA_TRI = "TONG_GIA_TRI";
     }
+    public class V_DM_TRAI_PHIEU
+    {
+        public const string ID = "ID";
+        public const string ID_TO_CHUC_PHAT_HANH = "ID_TO_CHUC_PHAT_HANH";
+        public const string TEN_TO_CHUC_PHAT_HANH = "TEN_TO_CHUC_PHAT_HANH";
+        public const string MA_TRAI_PHIEU = "MA_TRAI_PHIEU";
+        public const string TEN_TRAI_PHIEU = "TEN_TRAI_PHIEU";
+        public const string ID_LOAI_TRAI_PHIEU = "ID_LOAI_TRAI_PHIEU";
+        public const string TEN_LOAI_TRAI_PHIEU = "TEN_LOAI_TRAI_PHIEU";
+        public const string MENH_GIA = "MENH_GIA";
+        public const string KY_HAN = "KY_HAN";
+        public const string CO_SO_TINH_LAI = "CO_SO_TINH_LAI";
+        public const string ID_DV_KY_HAN = "ID_DV_KY_HAN";
+        public const string DON_VI_KY_HAN = "DON_VI_KY_HAN";
+        public const string LAI_SUAT_DEFAULT = "LAI_SUAT_DEFAULT";
+        public const string KY_DIEU_CHINH_LS = "KY_DIEU_CHINH_LS";
+        public const string ID_DV_DIEU_CHINH_LS = "ID_DV_DIEU_CHINH_LS";
+        public const string DON_VI_DIEU_CHINH_LAI_SUAT = "DON_VI_DIEU_CHINH_LAI_SUAT";
+        public const string THA_NOI_YN = "THA_NOI_YN";
+        public const string KY_TRA_LAI = "KY_TRA_LAI";
+        public const string ID_DV_KY_TRA_LAI = "ID_DV_KY_TRA_LAI";
+        public const string DON_VI_KY_TRA_LAI = "DON_VI_KY_TRA_LAI";
+        public const string TRA_LAI_SAU_YN = "TRA_LAI_SAU_YN";
+        public const string NGAY_PHAT_HANH = "NGAY_PHAT_HANH";
+        public const string NGAY_DAO_HAN = "NGAY_DAO_HAN";
+        public const string TONG_SL_PHAT_HANH = "TONG_SL_PHAT_HANH";
+        public const string TONG_GIA_TRI = "TONG_GIA_TRI";
+    }
 
     public class DOC_COLUMN_COMMENT
     {
