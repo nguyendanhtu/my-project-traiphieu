@@ -79,7 +79,7 @@ public class US_DM_TO_CHUC_PHAT_HANH : US_Object
 		return pm_objDR.IsNull("TEN_TO_CHUC_PHAT_HANH");
 	}
 
-	public void SetTEN_TO_CHUC_PHAT_HÀNHNull() {
+	public void SetTEN_TO_CHUC_PHAT_HANHNull() {
 		pm_objDR["TEN_TO_CHUC_PHAT_HANH"] = System.Convert.DBNull;
 	}
 
