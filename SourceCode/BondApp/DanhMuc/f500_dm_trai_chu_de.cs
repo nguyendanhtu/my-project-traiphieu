@@ -121,6 +121,7 @@ namespace BondApp.DanhMuc
             m_txt_ghi_chu_3.Text = ip_us_trai_chu.strGHI_CHU3;
             m_txt_noi_cap.Text = ip_us_trai_chu.strNOI_CAP_CMT;
             m_txt_id_trai_phieu_so_huu.Text = m_us_trai_phieu.strMA_TRAI_PHIEU;
+            m_txt_ten_trai_phieu.Text = m_us_trai_phieu.strTEN_TRAI_PHIEU;
             m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ip_us_trai_chu.dcID_TRANG_THAI);
         }
 
@@ -239,7 +240,10 @@ namespace BondApp.DanhMuc
             f300_dm_trai_phieu v_frm300 = new f300_dm_trai_phieu();
             m_us_trai_phieu = v_frm300.select_trai_phieu();
             if (!m_us_trai_phieu.IsIDNull())
+            {
                 m_txt_id_trai_phieu_so_huu.Text = m_us_trai_phieu.strMA_TRAI_PHIEU;
+                m_txt_ten_trai_phieu.Text = m_us_trai_phieu.strTEN_TRAI_PHIEU;
+            }
         }
 
         #endregion
