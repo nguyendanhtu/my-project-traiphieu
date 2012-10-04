@@ -166,3 +166,12 @@ SELECT
 	                WHERE dtc.ID_TRANG_THAI = cdtd.ID AND cdtd.ID_LOAI_TU_DIEN = 6) AS TEN_TRANG_THAI
 FROM DM_TRAI_CHU dtc, DM_TRAI_PHIEU dtp
 WHERE dtc.ID_TRAI_PHIEU_SO_HUU = dtp.ID
+
+GO
+--
+CREATE PROCEDURE [dbo].[pr_V_DM_TRAI_CHU_Delete]
+	@ID numeric(18, 0)
+AS
+DELETE FROM [dbo].[DM_TRAI_CHU]
+WHERE
+	[ID] = @ID
