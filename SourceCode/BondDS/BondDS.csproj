@@ -229,6 +229,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_DM_TRAI_CHU_CHOT_LAI.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_DM_TRAI_PHIEU.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_DM_TRAI_PHIEU.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_GD_CHUYEN_NHUONG.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -483,6 +488,17 @@
     </None>
     <None Include="DS_V_DM_TRAI_CHU_CHOT_LAI.xss">
       <DependentUpon>DS_V_DM_TRAI_CHU_CHOT_LAI.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DM_TRAI_PHIEU.xsc">
+      <DependentUpon>DS_V_DM_TRAI_PHIEU.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DM_TRAI_PHIEU.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_DM_TRAI_PHIEU.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_DM_TRAI_PHIEU.xss">
+      <DependentUpon>DS_V_DM_TRAI_PHIEU.xsd</DependentUpon>
     </None>
     <None Include="DS_V_GD_CHUYEN_NHUONG.xsc">
       <DependentUpon>DS_V_GD_CHUYEN_NHUONG.xsd</DependentUpon>
