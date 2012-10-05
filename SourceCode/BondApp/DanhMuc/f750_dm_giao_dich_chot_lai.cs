@@ -17,9 +17,9 @@ using IP.Core.IPException;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
 
-using SaleUS;
-using SaleDS;
-using Sale.CDBNames;
+using BondUS;
+using BondDS;
+using BondDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
 
