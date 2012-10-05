@@ -257,6 +257,12 @@
     </Compile>
     <Compile Include="CChartParameter.cs" />
     <Compile Include="ChartDataSourceInterface.cs" />
+    <Compile Include="ChucNang\f250_chi_tiet_giao_dich_chot_lai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChucNang\f250_chi_tiet_giao_dich_chot_lai.Designer.cs">
+      <DependentUpon>f250_chi_tiet_giao_dich_chot_lai.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChucNang\f600_giao_dich_chuyen_nhuong.cs">
       <SubType>Form</SubType>
     </Compile>
