@@ -431,6 +431,16 @@ namespace BondApp
             load_data_2_cbo_grid();
 			m_fg.Redraw = true;
 
+            //loadd to chuc phat hanh
+            DS_DM_TO_CHUC_PHAT_HANH v_ds_to_chuc_phat_hanh = new DS_DM_TO_CHUC_PHAT_HANH();
+            US_DM_TO_CHUC_PHAT_HANH v_us_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH();
+            v_us_to_chuc_phat_hanh.FillDataset(v_ds_to_chuc_phat_hanh);
+            Hashtable v_hst_to_chuc_phat_hanh = new Hashtable();
+            foreach (DataRow v_dr in v_ds_to_chuc_phat_hanh.DM_TO_CHUC_PHAT_HANH.Rows)
+            {
+                v_hst_to_chuc_phat_hanh.Add(v_dr[DM_TO_CHUC_PHAT_HANH.ID], v_dr[DM_TO_CHUC_PHAT_HANH.TEN_TO_CHUC_PHAT_HANH]);
+            }
+            m_fg.Cols[(int)e_col_Number.ID_TO_CHUC_PHAT_HANH].DataMap = v_hst_to_chuc_phat_hanh;
 		}
 
         private void load_data_2_cbo_grid()
