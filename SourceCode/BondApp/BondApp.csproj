@@ -341,6 +341,7 @@
     <Compile Include="DanhMuc\f610_dm_giao_dien_chuyen_nhuong.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DanhMuc\f750_dm_giao_dich_chot_lai.cs" />
     <Compile Include="DanhMuc\f850_dm_ngay_lam_viec.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -425,6 +426,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f610_dm_giao_dien_chuyen_nhuong.resx">
       <DependentUpon>f610_dm_giao_dien_chuyen_nhuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f750_dm_giao_dich_chot_lai.resx">
+      <DependentUpon>f750_dm_giao_dich_chot_lai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f850_dm_ngay_lam_viec.resx">
       <DependentUpon>f850_dm_ngay_lam_viec.cs</DependentUpon>
