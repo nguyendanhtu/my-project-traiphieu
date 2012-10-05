@@ -26,9 +26,6 @@ using BondApp.DanhMuc;
 
 namespace BondApp
 {
-
-
-
 	public class f300_dm_trai_phieu : System.Windows.Forms.Form
 	{
 		internal System.Windows.Forms.ImageList ImageList;
