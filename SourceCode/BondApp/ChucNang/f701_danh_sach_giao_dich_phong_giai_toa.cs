@@ -341,7 +341,7 @@ namespace BondApp
 			v_htb.Add(GD_PHONG_GIAI_TOA.ID_NGUOI_LAP, e_col_Number.ID_NGUOI_LAP);
 			v_htb.Add(GD_PHONG_GIAI_TOA.ID_TRAI_CHU, e_col_Number.ID_TRAI_CHU);
 			v_htb.Add(GD_PHONG_GIAI_TOA.SO_LUONG, e_col_Number.SO_LUONG);
-			v_htb.Add(GD_PHONG_GIAI_TOA.ID_TRANG_THAI, e_col_Number.ID_TRANG_THAI);
+			//v_htb.Add(GD_PHONG_GIAI_TOA.TRANG_THAI, e_col_Number.Tr);
 			v_htb.Add(GD_PHONG_GIAI_TOA.ID_NGUOI_DUYET, e_col_Number.ID_NGUOI_DUYET);
 			v_htb.Add(GD_PHONG_GIAI_TOA.CHUC_DANH, e_col_Number.CHUC_DANH);
 			v_htb.Add(GD_PHONG_GIAI_TOA.NGAY_GIAO_DICH, e_col_Number.NGAY_GIAO_DICH);
