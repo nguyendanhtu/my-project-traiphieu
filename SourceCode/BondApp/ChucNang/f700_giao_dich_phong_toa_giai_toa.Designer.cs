@@ -85,12 +85,12 @@
             this.m_lbl_ngan_hang_cam_co = new System.Windows.Forms.Label();
             this.m_txt_ngan_hang_cam_co = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.m_dat_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_cua = new System.Windows.Forms.Label();
             this.m_txt_cua = new System.Windows.Forms.TextBox();
             this.m_lbl_theo_giay_uy_quyen_so = new System.Windows.Forms.Label();
             this.m_txt_theo_giay_uy_quyen_so = new System.Windows.Forms.TextBox();
             this.m_lbl_ngay = new System.Windows.Forms.Label();
-            this.m_txt_ngay = new System.Windows.Forms.TextBox();
             this.m_lbl_nguoi_xac_nhan = new System.Windows.Forms.Label();
             this.m_txt_nguoi_xac_nhan = new System.Windows.Forms.TextBox();
             this.m_lbl_chuc_vu = new System.Windows.Forms.Label();
@@ -222,6 +222,7 @@
             this.m_cmd_duyet.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_duyet.TabIndex = 1;
             this.m_cmd_duyet.Text = "&Duyệt";
+            this.m_cmd_duyet.Click += new System.EventHandler(this.m_cmd_duyet_Click);
             // 
             // m_cmd_lap
             // 
@@ -678,12 +679,12 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.m_dat_ngay);
             this.groupBox2.Controls.Add(this.m_lbl_cua);
             this.groupBox2.Controls.Add(this.m_txt_cua);
             this.groupBox2.Controls.Add(this.m_lbl_theo_giay_uy_quyen_so);
             this.groupBox2.Controls.Add(this.m_txt_theo_giay_uy_quyen_so);
             this.groupBox2.Controls.Add(this.m_lbl_ngay);
-            this.groupBox2.Controls.Add(this.m_txt_ngay);
             this.groupBox2.Controls.Add(this.m_lbl_nguoi_xac_nhan);
             this.groupBox2.Controls.Add(this.m_txt_nguoi_xac_nhan);
             this.groupBox2.Controls.Add(this.m_lbl_chuc_vu);
@@ -695,6 +696,16 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Đơn vị xác nhận - Công ty cổ phần Chứng khoán Ngân hàng Công thương Việt Nam";
+            // 
+            // m_dat_ngay
+            // 
+            this.m_dat_ngay.CustomFormat = "\"dd/MM/yyyy\"";
+            this.m_dat_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_ngay.Location = new System.Drawing.Point(314, 71);
+            this.m_dat_ngay.Name = "m_dat_ngay";
+            this.m_dat_ngay.Size = new System.Drawing.Size(121, 20);
+            this.m_dat_ngay.TabIndex = 10;
+            this.m_dat_ngay.Value = new System.DateTime(2012, 10, 6, 22, 35, 45, 0);
             // 
             // m_lbl_cua
             // 
@@ -736,13 +747,6 @@
             this.m_lbl_ngay.Size = new System.Drawing.Size(30, 13);
             this.m_lbl_ngay.TabIndex = 6;
             this.m_lbl_ngay.Text = "ngày";
-            // 
-            // m_txt_ngay
-            // 
-            this.m_txt_ngay.Location = new System.Drawing.Point(314, 71);
-            this.m_txt_ngay.Name = "m_txt_ngay";
-            this.m_txt_ngay.Size = new System.Drawing.Size(121, 20);
-            this.m_txt_ngay.TabIndex = 7;
             // 
             // m_lbl_nguoi_xac_nhan
             // 
@@ -865,8 +869,8 @@
         private System.Windows.Forms.Label m_lbl_theo_giay_uy_quyen_so;
         private System.Windows.Forms.TextBox m_txt_theo_giay_uy_quyen_so;
         private System.Windows.Forms.Label m_lbl_ngay;
-        private System.Windows.Forms.TextBox m_txt_ngay;
         private System.Windows.Forms.Label m_lbl_cua;
         private System.Windows.Forms.TextBox m_txt_cua;
+        private System.Windows.Forms.DateTimePicker m_dat_ngay;
     }
 }
