@@ -388,6 +388,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChucNang\f104_quan_ly_tham_so_nhac_viec.resx">
+      <DependentUpon>f104_quan_ly_tham_so_nhac_viec.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f250_chi_tiet_giao_dich_chot_lai.resx">
       <DependentUpon>f250_chi_tiet_giao_dich_chot_lai.cs</DependentUpon>
     </EmbeddedResource>
