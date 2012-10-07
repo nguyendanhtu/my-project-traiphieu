@@ -201,7 +201,7 @@ namespace BondApp
             v_us.select_us_gd_so_du_trai_phieu_byTraiChuID(ip_us_trai_chu.dcID, v_ds);
             m_us_trai_phieu = new US_DM_TRAI_PHIEU(ip_us_trai_chu.dcID_TRAI_PHIEU_SO_HUU);
 
-            m_txt_ma_trai_chu.Text = ip_us_trai_chu.dcID.ToString();
+            m_txt_ma_trai_chu.Text = ip_us_trai_chu.strMA_TRAI_CHU;
             m_txt_ten_khach_hang.Text = ip_us_trai_chu.strTEN_TRAI_CHU;
             m_txt_so_cmnd_dkkd.Text = ip_us_trai_chu.strCMT_GIAY_DKKD;
             m_txt_noi_cap.Text = ip_us_trai_chu.strNOI_CAP_CMT;
