@@ -43,6 +43,13 @@ namespace BondApp.ChucNang
             m_lbl_title.ForeColor = Color.DarkRed;
             m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
         }
+        private void set_initial_form_load()
+        {
+            m_chb_cap_nhat_lai_suat_yn.Enabled = false;
+            m_chb_chot_lai_yn.Enabled = false;
+            m_chb_thanh_toan_goc.Enabled = false;
+            m_chb_thanh_toan_lai.Enabled = false;
+        }
         private void set_define_events()
         {
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
@@ -102,6 +109,7 @@ namespace BondApp.ChucNang
             try
             {
                 us_obj_2_form(m_us_gd_lich_thanh_toan_lai_goc);
+                set_initial_form_load();
             }
             catch (Exception v_e)
             {
