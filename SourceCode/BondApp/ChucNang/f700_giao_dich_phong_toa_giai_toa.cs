@@ -259,7 +259,7 @@ namespace BondApp
 
             }
             m_us_gd_phong_toa_giai_toa.dcID_TRAI_CHU = CIPConvert.ToDecimal(m_txt_ma_trai_chu.Text);
-            m_us_gd_phong_toa_giai_toa.datNGAY_GIAO_DICH = CIPConvert.ToDatetime(m_dat_ngay.Value.Date);
+            m_us_gd_phong_toa_giai_toa.datNGAY_GIAO_DICH = m_dat_ngay.Value.Date;
             m_us_gd_phong_toa_giai_toa.strNGUOI_DAI_DIEN = m_txt_nguoi_dai_dien.Text;
             m_us_gd_phong_toa_giai_toa.strCHUC_DANH = m_txt_chuc_danh.Text;   
             m_us_gd_phong_toa_giai_toa.dcID_TRANG_THAI = 0;
@@ -276,16 +276,16 @@ namespace BondApp
         private void export_word()
         {
             CWordReport v_obj_export_word = new CWordReport("f700_ĐLĐKLK_Giay De Nghi Phong Toa TP.doc");
-            v_obj_export_word.AddFindAndReplace("<TEN_NGAN_HANG> ", m_txt_ngan_hang_cam_co.Text);
+            v_obj_export_word.AddFindAndReplace("<TEN_NGAN_HANG>", m_txt_ngan_hang_cam_co.Text);
             v_obj_export_word.AddFindAndReplace("<TEN_KHACH_HANG>", m_txt_ten_khach_hang.Text);
             v_obj_export_word.AddFindAndReplace("<SO_CMND>", m_txt_so_cmnd_dkkd.Text);
-            v_obj_export_word.AddFindAndReplace("<TC_CAP_CMND> ", m_txt_noi_cap.Text);
+            v_obj_export_word.AddFindAndReplace("<TC_CAP_CMND>", m_txt_noi_cap.Text);
             v_obj_export_word.AddFindAndReplace("<NGAY_CAP>", m_txt_ngay_cap.Text);
-            v_obj_export_word.AddFindAndReplace("<NGUOI_DAI_DIEN>  ", m_txt_nguoi_dai_dien.Text);
+            v_obj_export_word.AddFindAndReplace("<NGUOI_DAI_DIEN>", m_txt_nguoi_dai_dien.Text);
             v_obj_export_word.AddFindAndReplace("<CHUC_DANH_DAI_DIEN>", m_txt_chuc_danh.Text);
-            v_obj_export_word.AddFindAndReplace("<TRU_SO_CHINH_DAI_DIEN> ", m_txt_tru_so_chinh.Text);
-            v_obj_export_word.AddFindAndReplace("<DIEN_THOAI_DAI_DIEN> ", m_txt_dien_thoai.Text);
-            v_obj_export_word.AddFindAndReplace("<SO_FAX> ", m_txt_fax.Text);
+            v_obj_export_word.AddFindAndReplace("<TRU_SO_CHINH_DAI_DIEN>", m_txt_tru_so_chinh.Text);
+            v_obj_export_word.AddFindAndReplace("<DIEN_THOAI_DAI_DIEN>", m_txt_dien_thoai.Text);
+            v_obj_export_word.AddFindAndReplace("<SO_FAX>", m_txt_fax.Text);
             v_obj_export_word.AddFindAndReplace("<MA_SO_DAU_TU>", m_txt_ma_so_trai_phieu.Text);
             v_obj_export_word.AddFindAndReplace("<MA_SO_TP>", m_txt_ma_so_trai_phieu.Text);
             v_obj_export_word.AddFindAndReplace("<TO_CHUC_PHAT_HANH>", m_txt_to_chuc_phat_hanh.Text);
@@ -295,7 +295,7 @@ namespace BondApp
             v_obj_export_word.AddFindAndReplace("<NGAY_DAO_HAN>", m_txt_ngay_dao_han.Text);
             v_obj_export_word.AddFindAndReplace("<LAI_SUAT>", m_txt_lai_suat.Text);
             v_obj_export_word.AddFindAndReplace("<HINH_THUC_TRA_LAI>", m_txt_hinh_thuc_tra_lai.Text);
-            v_obj_export_word.AddFindAndReplace("<MA_TRAI_PHIEU> ", m_txt_ma_so_trai_phieu.Text);
+            v_obj_export_word.AddFindAndReplace("<MA_TRAI_PHIEU>", m_txt_ma_so_trai_phieu.Text);
             v_obj_export_word.Export2Word(true);
          
         }
