@@ -239,6 +239,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_GD_CHUYEN_NHUONG.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_GD_PHONG_GIAI_TOA.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_GD_PHONG_GIAI_TOA.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -510,6 +515,17 @@
     </None>
     <None Include="DS_V_GD_CHUYEN_NHUONG.xss">
       <DependentUpon>DS_V_GD_CHUYEN_NHUONG.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_PHONG_GIAI_TOA.xsc">
+      <DependentUpon>DS_V_GD_PHONG_GIAI_TOA.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_GD_PHONG_GIAI_TOA.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_GD_PHONG_GIAI_TOA.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_GD_PHONG_GIAI_TOA.xss">
+      <DependentUpon>DS_V_GD_PHONG_GIAI_TOA.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
