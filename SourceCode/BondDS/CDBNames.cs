@@ -382,6 +382,31 @@ namespace BondDS.CDBNames
         public const string ID_NGUOI_DUYET = "ID_NGUOI_DUYET";
         public const string TRANG_THAI = "TRANG_THAI";
     }
+    public class V_GD_PHONG_GIAI_TOA
+    {
+        public const string ID = "ID";
+        public const string MA_GIAO_DICH = "MA_GIAO_DICH";
+        public const string ID_TRAI_CHU = "ID_TRAI_CHU";
+        public const string MA_TRAI_CHU = "MA_TRAI_CHU";
+        public const string TEN_TRAI_CHU = "TEN_TRAI_CHU";
+        public const string CMT_GIAY_DKKD = "CMT_GIAY_DKKD";
+        public const string NGAY_CAP_CMT = "NGAY_CAP_CMT";
+        public const string NOI_CAP_CMT = "NOI_CAP_CMT";
+        public const string NGAY_GIAO_DICH = "NGAY_GIAO_DICH";
+        public const string NGUOI_DAI_DIEN = "NGUOI_DAI_DIEN";
+        public const string SO_LUONG = "SO_LUONG";
+        public const string MENH_GIA = "MENH_GIA";
+        public const string GIA_TRI_GD_THEO_MENH_GIA = "GIA_TRI_GD_THEO_MENH_GIA";
+        public const string CHUC_DANH = "CHUC_DANH";
+        public const string PHONG_TOA_YN = "PHONG_TOA_YN";
+        public const string ID_NGUOI_LAP = "ID_NGUOI_LAP";
+        public const string NGUOI_THUC_HIEN = "NGUOI_THUC_HIEN";
+        public const string ID_NGUOI_DUYET = "ID_NGUOI_DUYET";
+        public const string ID_TRANG_THAI = "ID_TRANG_THAI";
+        public const string TY_LE_PHI_GD = "TY_LE_PHI_GD";
+        public const string PHI_GIAO_DICH = "PHI_GIAO_DICH";
+    }
+
     public class GD_SO_DU_TRAI_PHIEU
     {
         public const string ID = "ID";
