@@ -389,6 +389,12 @@
     <Compile Include="frmPieChart.designer.cs">
       <DependentUpon>frmPieChart.cs</DependentUpon>
     </Compile>
+    <Compile Include="HeThong\f106_tuy_chinh_tham_so_nhac_viec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeThong\f106_tuy_chinh_tham_so_nhac_viec.Designer.cs">
+      <DependentUpon>f106_tuy_chinh_tham_so_nhac_viec.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -361,7 +361,7 @@ namespace BondApp
 		private void set_initial_form_load(){
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_cbo_to_chuc_phat_hanh();
-			load_data_2_grid();		
+			load_data_2_grid();
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
