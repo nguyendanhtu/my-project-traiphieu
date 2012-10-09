@@ -258,6 +258,9 @@
     <Compile Include="BaoCao\f659_bao_cao_tinh_hinh_phong_toa.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BaoCao\f660_bao_cao_tinh_hinh_giai_toa.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CChartParameter.cs" />
     <Compile Include="ChartDataSourceInterface.cs" />
     <Compile Include="ChucNang\f104_quan_ly_tham_so_nhac_viec.cs">
@@ -393,6 +396,9 @@
     </Compile>
     <EmbeddedResource Include="BaoCao\f659_bao_cao_tinh_hinh_phong_toa.resx">
       <DependentUpon>f659_bao_cao_tinh_hinh_phong_toa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f660_bao_cao_tinh_hinh_giai_toa.resx">
+      <DependentUpon>f660_bao_cao_tinh_hinh_giai_toa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f104_quan_ly_tham_so_nhac_viec.resx">
       <DependentUpon>f104_quan_ly_tham_so_nhac_viec.cs</DependentUpon>
