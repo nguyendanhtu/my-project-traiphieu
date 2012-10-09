@@ -335,6 +335,9 @@
     <Compile Include="DanhMuc\f100_dm_to_chuc_phat_hanh_de.Designer.cs">
       <DependentUpon>f100_dm_to_chuc_phat_hanh_de.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\f107_ht_tham_so_he_thong.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DanhMuc\f200_dm_dot_chot_lai.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -446,6 +449,9 @@
     <EmbeddedResource Include="DanhMuc\f100_dm_to_chuc_phat_hanh_de.resx">
       <DependentUpon>f100_dm_to_chuc_phat_hanh_de.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f107_ht_tham_so_he_thong.resx">
+      <DependentUpon>f107_ht_tham_so_he_thong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f200_dm_dot_chot_lai.resx">
       <DependentUpon>f200_dm_dot_chot_lai.cs</DependentUpon>
