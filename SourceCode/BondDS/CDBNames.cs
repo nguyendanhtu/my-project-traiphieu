@@ -15,7 +15,14 @@ namespace BondDS.CDBNames
 
 
     }
-
+    public class ID_LOAI_NHAC_VIEC
+    {
+        public const decimal THANH_TOAN_LAI = 27;
+        public const decimal THANH_TOAN_GOC = 28;
+        public const decimal CAP_NHAT_LAI_SUAT = 29;
+        public const decimal GIAO_DICH_DA_THUC_HIEN = 30;
+        public const decimal CHOT_DANH_SACH_LAI = 33;
+    }
     public class CM_DM_DS_LOAI_TU_DIEN
     {
         public const string TRANG_THAI_GD = "TRANG_THAI_GD";
