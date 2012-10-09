@@ -373,8 +373,8 @@ namespace BondApp
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
-			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+			//m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
+			//m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
 		}
 		#endregion
 
