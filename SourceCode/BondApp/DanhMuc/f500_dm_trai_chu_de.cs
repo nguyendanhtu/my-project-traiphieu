@@ -109,6 +109,7 @@ namespace BondApp.DanhMuc
             m_txt_id_trai_phieu_so_huu.Text = m_us_trai_phieu.strMA_TRAI_PHIEU;
             m_txt_ten_trai_phieu.Text = m_us_trai_phieu.strTEN_TRAI_PHIEU;
             m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ip_us_trai_chu.dcID_TRANG_THAI);
+            m_txt_so_du_kha_dung.Text = CIPConvert.ToStr(ip_us_trai_chu.dcSO_DU_KHA_DUNG);
         }
 
         private void form_2_us_object(US_V_DM_TRAI_CHU ip_us_trai_chu)
