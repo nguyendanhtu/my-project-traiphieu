@@ -17,6 +17,7 @@ using IP.Core.IPWordReport;
 
 using C1.Win.C1FlexGrid;
 using System.Data.SqlClient;
+using WebUS;
 
 namespace BondApp
 {
@@ -84,7 +85,7 @@ namespace BondApp
         #endregion
 
         #region Members
-        US_DM_TRAI_CHU m_us_trai_chu = new US_DM_TRAI_CHU();
+        US_V_DM_TRAI_CHU m_us_trai_chu = new US_V_DM_TRAI_CHU();
         US_DM_TRAI_PHIEU m_us_trai_phieu = new US_DM_TRAI_PHIEU();
         US_CM_DM_TU_DIEN m_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
         US_CM_DM_LOAI_TD m_us_cm_dm_loai_tu_dien = new US_CM_DM_LOAI_TD();
@@ -193,7 +194,7 @@ namespace BondApp
             us_trai_chu_2_form(m_us_trai_chu);
             m_txt_nguoi_dai_dien.Focus();
         }
-        private void us_trai_chu_2_form(US_DM_TRAI_CHU ip_us_trai_chu)
+        private void us_trai_chu_2_form(US_V_DM_TRAI_CHU ip_us_trai_chu)
         {
             if (ip_us_trai_chu.IsIDNull()) return;
             DS_GD_SO_DU_TRAI_PHIEU v_ds = new DS_GD_SO_DU_TRAI_PHIEU();
