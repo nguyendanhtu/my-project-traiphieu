@@ -753,9 +753,24 @@ public class US_V_DM_TRAI_CHU_CHOT_LAI : US_Object
 #endregion
 
     #region Public Interface
-    public void FillDatasetByIDTraiPhieu(DS_V_DM_TRAI_CHU_CHOT_LAI ip_ds, decimal ip_id_trai_phieu_so_huu)
+    public void FillDatasetNo(DS_V_DM_TRAI_CHU_CHOT_LAI ip_ds)
     {
-        base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu_so_huu.ToString());
+        base.FillDataset(ip_ds, " WHERE DA_NHAN_TIEN_YN = 'N'");
+    }
+
+    public void FillDatasetYes(DS_V_DM_TRAI_CHU_CHOT_LAI ip_ds)
+    {
+        base.FillDataset(ip_ds, " WHERE DA_NHAN_TIEN_YN = 'Y'");
+    }
+
+    public void FillDatasetByIDTraiPhieuNo(DS_V_DM_TRAI_CHU_CHOT_LAI ip_ds, decimal ip_id_trai_phieu_so_huu)
+    {
+        base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu_so_huu.ToString() + "AND DA_NHAN_TIEN_YN = 'N'");
+    }
+
+    public void FillDatasetByIDTraiPhieuYes(DS_V_DM_TRAI_CHU_CHOT_LAI ip_ds, decimal ip_id_trai_phieu_so_huu)
+    {
+        base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu_so_huu.ToString() + "AND DA_NHAN_TIEN_YN = 'Y'");
     }
 
     #endregion  
