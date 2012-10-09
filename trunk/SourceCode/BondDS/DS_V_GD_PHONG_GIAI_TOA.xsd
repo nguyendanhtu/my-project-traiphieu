@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="QuanLyPhatHanhTraiPhieuConnectionString2 (Settings)" DbObjectName="QuanLyPhatHanhTraiPhieu.dbo.V_GD_PHONG_GIAI_TOA" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, MA_GIAO_DICH, ID_TRAI_CHU, MA_TRAI_CHU, TEN_TRAI_CHU, CMT_GIAY_DKKD, NGAY_CAP_CMT, NOI_CAP_CMT, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, SO_LUONG, MENH_GIA, GIA_TRI_GD_THEO_MENH_GIA, CHUC_DANH, PHONG_TOA_YN, ID_NGUOI_LAP, NGUOI_THUC_HIEN, ID_NGUOI_DUYET, ID_TRANG_THAI, TY_LE_PHI_GD, PHI_GIAO_DICH FROM dbo.V_GD_PHONG_GIAI_TOA</CommandText>
+                    <CommandText>SELECT ID, MA_GIAO_DICH, ID_TRAI_CHU, MA_TRAI_CHU, TEN_TRAI_CHU, CMT_GIAY_DKKD, NGAY_CAP_CMT, NOI_CAP_CMT, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, SO_LUONG, MENH_GIA, GIA_TRI_GD_THEO_MENH_GIA, CHUC_DANH, PHONG_TOA_YN, ID_NGUOI_LAP, NGUOI_THUC_HIEN, ID_NGUOI_DUYET, ID_TRANG_THAI, TY_LE_PHI_GD, PHI_GIAO_DICH, ID_TO_CHUC_PHAT_HANH FROM dbo.V_GD_PHONG_GIAI_TOA</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -40,6 +40,7 @@
               <Mapping SourceColumn="ID_TRANG_THAI" DataSetColumn="ID_TRANG_THAI" />
               <Mapping SourceColumn="TY_LE_PHI_GD" DataSetColumn="TY_LE_PHI_GD" />
               <Mapping SourceColumn="PHI_GIAO_DICH" DataSetColumn="PHI_GIAO_DICH" />
+              <Mapping SourceColumn="ID_TO_CHUC_PHAT_HANH" DataSetColumn="ID_TO_CHUC_PHAT_HANH" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -129,6 +130,7 @@
               <xs:element name="ID_TRANG_THAI" msprop:Generator_ColumnVarNameInTable="columnID_TRANG_THAI" msprop:Generator_ColumnPropNameInRow="ID_TRANG_THAI" msprop:Generator_ColumnPropNameInTable="ID_TRANG_THAIColumn" msprop:Generator_UserColumnName="ID_TRANG_THAI" type="xs:decimal" />
               <xs:element name="TY_LE_PHI_GD" msprop:Generator_ColumnVarNameInTable="columnTY_LE_PHI_GD" msprop:Generator_ColumnPropNameInRow="TY_LE_PHI_GD" msprop:Generator_ColumnPropNameInTable="TY_LE_PHI_GDColumn" msprop:Generator_UserColumnName="TY_LE_PHI_GD" type="xs:decimal" minOccurs="0" />
               <xs:element name="PHI_GIAO_DICH" msprop:Generator_ColumnVarNameInTable="columnPHI_GIAO_DICH" msprop:Generator_ColumnPropNameInRow="PHI_GIAO_DICH" msprop:Generator_ColumnPropNameInTable="PHI_GIAO_DICHColumn" msprop:Generator_UserColumnName="PHI_GIAO_DICH" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ID_TO_CHUC_PHAT_HANH" msprop:Generator_ColumnVarNameInTable="columnID_TO_CHUC_PHAT_HANH" msprop:Generator_ColumnPropNameInRow="ID_TO_CHUC_PHAT_HANH" msprop:Generator_ColumnPropNameInTable="ID_TO_CHUC_PHAT_HANHColumn" msprop:Generator_UserColumnName="ID_TO_CHUC_PHAT_HANH" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
