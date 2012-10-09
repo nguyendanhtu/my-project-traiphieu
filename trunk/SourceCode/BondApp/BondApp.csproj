@@ -512,6 +512,9 @@
     <EmbeddedResource Include="HeThong\f107_ht_tham_so_he_thong.resx">
       <DependentUpon>f107_ht_tham_so_he_thong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HeThong\f108_tham_so_he_thong_de.resx">
+      <DependentUpon>f108_tham_so_he_thong_de.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <SubType>Designer</SubType>
