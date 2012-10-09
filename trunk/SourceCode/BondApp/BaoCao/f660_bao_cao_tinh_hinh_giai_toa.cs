@@ -367,6 +367,7 @@ namespace BondApp
         {
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_cbo_to_chuc_phat_hanh();
+            m_dat_from_date.Value = CIPConvert.ToDatetime("01/01/2010");
             load_data_2_grid();
         }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
