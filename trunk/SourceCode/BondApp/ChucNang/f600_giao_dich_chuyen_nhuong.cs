@@ -18,6 +18,7 @@ using C1.Win.C1FlexGrid;
 using System.Data.SqlClient;
 
 using IP.Core.IPSystemAdmin;
+using WebUS;
 
 namespace BondApp
 {
@@ -57,7 +58,7 @@ namespace BondApp
         #endregion
 
         #region Members
-        US_DM_TRAI_CHU m_us_trai_chu = new US_DM_TRAI_CHU();
+        US_V_DM_TRAI_CHU m_us_trai_chu = new US_V_DM_TRAI_CHU();
         US_DM_TRAI_PHIEU m_us_trai_phieu = new US_DM_TRAI_PHIEU();
         US_GD_CHUYEN_NHUONG m_us_gd_chuyen_nhuong = new US_GD_CHUYEN_NHUONG();
 
@@ -188,7 +189,7 @@ namespace BondApp
          
             
         }
-        private void us_trai_chu_ban_2_form(US_DM_TRAI_CHU ip_us_trai_chu)
+        private void us_trai_chu_ban_2_form(US_V_DM_TRAI_CHU ip_us_trai_chu)
         {
             m_lbl_ID_nguoi_ban.Text = CIPConvert.ToStr(ip_us_trai_chu.dcID);
             if (ip_us_trai_chu.IsIDNull()) return;
@@ -210,7 +211,7 @@ namespace BondApp
             m_txt_dia_chi.Text = ip_us_trai_chu.strDIA_CHI;
             //us_trai_phieu_2_form(m_us_trai_phieu);
         }
-        private void us_trai_chu_mua_2_form(US_DM_TRAI_CHU ip_us_trai_chu_mua)
+        private void us_trai_chu_mua_2_form(US_V_DM_TRAI_CHU ip_us_trai_chu_mua)
         {
             m_lbl_ID_nguoi_mua.Text = CIPConvert.ToStr(ip_us_trai_chu_mua.dcID);
             if (ip_us_trai_chu_mua.IsIDNull()) return;

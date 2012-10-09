@@ -544,5 +544,12 @@ public class US_V_DM_TRAI_CHU : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
+    #region Public Interface
+    public void FillDatasetByIDTraiPhieu(DS_V_DM_TRAI_CHU ip_ds, decimal ip_id_trai_phieu)
+    {
+        base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu.ToString());
+    }
+
+    #endregion        
 	}
 }
