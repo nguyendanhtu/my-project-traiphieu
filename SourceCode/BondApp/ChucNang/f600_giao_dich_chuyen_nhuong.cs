@@ -35,6 +35,16 @@ namespace BondApp
             m_e_form_mode = eFormMode.LAP_CHUYEN_NHUONG;
             this.ShowDialog();
         }
+        public void display_sua_chuyen_nhuong()
+        {
+            m_e_form_mode = eFormMode.SUA_CHUYEN_NHUONG_CHUA_DUYET;
+            this.ShowDialog();
+        }
+        public void display_duyet_chuyen_nhuong()
+        {
+            m_e_form_mode = eFormMode.DUYET_CHUYEN_NHUONG;
+            this.ShowDialog();
+        }
         #endregion
 
         #region Data Structures
@@ -57,8 +67,7 @@ namespace BondApp
         #region Private Methods
         private void format_controls()
         {
-            CControlFormat.setFormStyle(this);           
-            
+            CControlFormat.setFormStyle(this);                       
             this.KeyPreview = true;
             m_lbl_title.Font = new Font("Arial", 16);
             m_lbl_title.ForeColor = Color.DarkRed;
@@ -164,13 +173,14 @@ namespace BondApp
             switch (m_e_form_mode)
             {
                 case eFormMode.LAP_CHUYEN_NHUONG:
-                     m_txt_ngay_chuyen_nhuong.Text = DateTime.Today.ToString("dd/MM/yyyy"); // dòng này KHÔNG đúng trong trường hợp hiển thị Giao dịch chuyển nhượng đã xảy ra
+                    m_date_ngay_chuyen_nhuong.Value = DateTime.Today;// dòng này KHÔNG đúng trong trường hợp hiển thị Giao dịch chuyển nhượng đã xảy ra
                     break;
-                case eFormMode.SUA_CHUYEN_NHUONG_CHUA_DUYET:
-                    m_txt_ngay_chuyen_nhuong.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.datNGAY_KY_CHUYEN_NHUONG);
+                case eFormMode.SUA_CHUYEN_NHUONG_CHUA_DUYET:                    
+                    m_date_ngay_chuyen_nhuong.Value = m_us_gd_chuyen_nhuong.datNGAY_KY_CHUYEN_NHUONG;                                        
                     break;
                 case eFormMode.DUYET_CHUYEN_NHUONG:
-                    m_txt_ngay_chuyen_nhuong.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.datNGAY_KY_CHUYEN_NHUONG);
+                    m_date_ngay_chuyen_nhuong.Value = m_us_gd_chuyen_nhuong.datNGAY_KY_CHUYEN_NHUONG;
+                    m_date_ngay_xac_nhan.Value = DateTime.Today;                    
                     break;
                 default:
                     break;
@@ -230,15 +240,15 @@ namespace BondApp
             m_us_gd_chuyen_nhuong.dcID = CIPConvert.ToDecimal(m_lbl_ID_gd_chuyen_nhuong.Text);
             m_us_gd_chuyen_nhuong.strMA_GIAO_DICH = m_txt_ma_giao_dich.Text;
 
-            if (m_txt_ngay_xac_nhan.Text.Equals(""))
+            if (!m_date_ngay_xac_nhan.Checked)
             {
                 m_us_gd_chuyen_nhuong.SetNGAY_XAC_NHANNull();
             }
             else
             {
-                m_us_gd_chuyen_nhuong.datNGAY_XAC_NHAN = CIPConvert.ToDatetime(m_txt_ngay_xac_nhan.Text);
+                m_us_gd_chuyen_nhuong.datNGAY_XAC_NHAN = m_date_ngay_xac_nhan.Value;
             }
-            m_us_gd_chuyen_nhuong.datNGAY_KY_CHUYEN_NHUONG = CIPConvert.ToDatetime(m_txt_ngay_chuyen_nhuong.Text);
+            m_us_gd_chuyen_nhuong.datNGAY_KY_CHUYEN_NHUONG = m_date_ngay_chuyen_nhuong.Value;
             m_us_gd_chuyen_nhuong.datNGAY_VAO_SO = CIPConvert.ToDatetime(m_date_ngay_vao_so.Text);
             m_us_gd_chuyen_nhuong.dcID_TRAI_CHU_MUA = CIPConvert.ToDecimal(m_lbl_ID_nguoi_mua.Text);
             m_us_gd_chuyen_nhuong.dcID_TRAI_CHU_BAN = CIPConvert.ToDecimal(m_lbl_ID_nguoi_ban.Text);
@@ -247,7 +257,7 @@ namespace BondApp
             m_us_gd_chuyen_nhuong.strSO_CMT_NGUOI_MUA = m_txt_ben_mua_cmnd_ng_dai_dien.Text;
             m_us_gd_chuyen_nhuong.strSO_CMT_NGUOI_BAN = m_txt_cmt_ng_dai_dien.Text;
             m_us_gd_chuyen_nhuong.datNGAY_CAP_CMT_NGUOI_MUA = m_date_ben_mua_ngay_cap_cmnd_ng_dai_dien.Value;
-            m_us_gd_chuyen_nhuong.datNGAY_KY_CHUYEN_NHUONG = m_date_ngay_cap_cmnd_ng_dai_dien.Value;
+            m_us_gd_chuyen_nhuong.datNGAY_CAP_CMT_NGUOI_BAN = m_date_ngay_cap_cmnd_ng_dai_dien.Value;
             m_us_gd_chuyen_nhuong.strNOI_CAP_CMT_NGUOI_MUA = m_txt_ben_mua_noi_cap_cmnd_ng_dai_dien.Text;
             m_us_gd_chuyen_nhuong.strNOI_CAP_CMT_NGUOI_BAN = m_txt_noi_cap_cmt_ng_dai_dien.Text;
             m_us_gd_chuyen_nhuong.dcSO_LUONG_CHUYEN_NHUONG = CIPConvert.ToDecimal(m_txt_so_luong_chuyen_nhuong.Text);
@@ -279,6 +289,7 @@ namespace BondApp
         
         private bool check_thong_tin_chuyen_nhuong_is_ok()
         {
+            if(!CValidateTextBox.IsValid(m_txt_ma_trai_phieu, DataType.StringType,allowNull.NO)) return false;
             if(!CValidateTextBox.IsValid( m_txt_ma_giao_dich, DataType.StringType, allowNull.NO)) return false;            
             if(!CValidateTextBox.IsValid(m_txt_so_luong_chuyen_nhuong, DataType.NumberType, allowNull.NO)) return false;
             if(!CValidateTextBox.IsValid(m_txt_ty_le_phi_gd, DataType.NumberType, allowNull.NO)) return false;
@@ -468,7 +479,7 @@ namespace BondApp
                 if (!CIPConvert.is_valid_number(m_txt_phan_tram_thue.Text)) return;
                 if (!CIPConvert.is_valid_number(m_txt_so_luong_chuyen_nhuong.Text)) return;
 
-                decimal v_dc_phan_tram_thue = CIPConvert.ToDecimal(m_txt_ty_le_phi_gd.Text)/100;
+                decimal v_dc_phan_tram_thue = CIPConvert.ToDecimal(m_txt_phan_tram_thue.Text);                
                 decimal v_dc_so_luong_chuyen_nhuong = CIPConvert.ToDecimal(m_txt_so_luong_chuyen_nhuong.Text);
                 m_txt_thue.Text = CIPConvert.ToStr(
                     v_dc_so_luong_chuyen_nhuong * v_dc_phan_tram_thue * m_us_trai_phieu.dcMENH_GIA
@@ -487,9 +498,13 @@ namespace BondApp
             try
             {
                 // Ninh phải sửa đi nhé
+                if (!CValidateTextBox.IsValid(m_txt_ty_le_phi_gd, DataType.NumberType, allowNull.YES)) return;
+                if (!CValidateTextBox.IsValid(m_txt_so_luong_chuyen_nhuong, DataType.NumberType, allowNull.YES)) return;
+                if (!CIPConvert.is_valid_number(m_txt_ty_le_phi_gd.Text)) return;
+                if (!CIPConvert.is_valid_number(m_txt_so_luong_chuyen_nhuong.Text)) return;
                 if (!m_txt_ty_le_phi_gd.Text.Equals("") && !m_txt_so_luong_chuyen_nhuong.Text.Equals(""))
                 {
-                    decimal v_ty_le_phi = decimal.Parse(m_txt_ty_le_phi_gd.Text) / 100;
+                    decimal v_ty_le_phi = decimal.Parse(m_txt_ty_le_phi_gd.Text);                    
                     decimal v_so_luong_CN = decimal.Parse(m_txt_so_luong_chuyen_nhuong.Text);
                     m_txt_phi_gd.Text = CIPConvert.ToStr(v_so_luong_CN * v_ty_le_phi * m_us_trai_phieu.dcMENH_GIA, "#,###");
                 }
