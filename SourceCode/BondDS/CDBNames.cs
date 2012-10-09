@@ -405,6 +405,7 @@ namespace BondDS.CDBNames
         public const string ID_TRANG_THAI = "ID_TRANG_THAI";
         public const string TY_LE_PHI_GD = "TY_LE_PHI_GD";
         public const string PHI_GIAO_DICH = "PHI_GIAO_DICH";
+        public const string ID_TO_CHUC_PHAT_HANH = "ID_TO_CHUC_PHAT_HANH";
     }
 
     public class GD_SO_DU_TRAI_PHIEU
