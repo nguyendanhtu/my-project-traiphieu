@@ -353,11 +353,14 @@ namespace BondApp
 			CControlFormat.setFormStyle(this);
 			CControlFormat.setC1FlexFormat(m_fg);
 			set_define_events();
+            m_lbl_header.Font = new Font("Arial", 16);
+            m_lbl_header.ForeColor = Color.DarkRed;
+            m_lbl_header.TextAlign = ContentAlignment.MiddleCenter;
 			this.KeyPreview = true;		
 		}
 		private void set_initial_form_load(){
-            load_data_2_cbo_to_chuc_phat_hanh();
             m_obj_trans = get_trans_object(m_fg);
+            load_data_2_cbo_to_chuc_phat_hanh();
 			load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
@@ -458,11 +461,15 @@ namespace BondApp
 		//	f659_bao_cao_tinh_hinh_phong_toa_DE v_fDE = new f659_bao_cao_tinh_hinh_phong_toa_DE();			
 		//	v_fDE.display(m_us);
 		}
-		private void set_define_events(){
-			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+        private void set_define_events()
+        {
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
             m_cmd_export_excel.Click += new EventHandler(m_cmd_export_excel_Click);
-		}
+            m_dat_from_date.ValueChanged += new EventHandler(m_dat_from_date_ValueChanged);
+            m_dat_to_date.ValueChanged += new EventHandler(m_dat_to_date_ValueChanged);
+            m_cbo_to_chuc_phat_hanh.SelectedIndexChanged += new EventHandler(m_cbo_to_chuc_phat_hanh_SelectedIndexChanged);
+        }
         private void load_data_2_cbo_to_chuc_phat_hanh()
         {
             US_DM_TO_CHUC_PHAT_HANH v_us_dm_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH();
@@ -534,12 +541,35 @@ namespace BondApp
 
 		private void m_cmd_view_Click(object sender, EventArgs e) {
 			try{
-				view_v_gd_phong_giai_toa();
+                load_data_2_grid();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
+        void m_dat_to_date_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_dat_from_date_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         void m_cmd_export_excel_Click(object sender, EventArgs e)
         {
             try
@@ -551,7 +581,17 @@ namespace BondApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
+        void m_cbo_to_chuc_phat_hanh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 	}
 }
 
