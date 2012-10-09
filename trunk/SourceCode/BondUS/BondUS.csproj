@@ -145,7 +145,6 @@
     <Compile Include="US_HT_BACKUP_HISTORY.cs" />
     <Compile Include="US_HT_BUSINESS_PROCESS_LOCK.cs" />
     <Compile Include="US_HT_QUYEN_USER.cs" />
-    <Compile Include="US_HT_THAM_SO_HE_THONG.cs" />
     <Compile Include="US_RPT_NHAC_VIEC.cs" />
     <Compile Include="US_UT_SEQUENCES.cs" />
     <Compile Include="US_V_DM_TRAI_CHU.cs" />
