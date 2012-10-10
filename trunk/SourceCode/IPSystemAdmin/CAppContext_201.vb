@@ -105,6 +105,6 @@ Public Class PHAN_QUYEN
     Public Const XU_LY_DAU_GIA As String = "Q15"
     Public Const NOP_TIEN_MUA_CP As String = "Q16"
     Public Const PHAN_BO As String = "Q17"
-    Public Const XUAT_THONG_TIN_DK As String = "Q18"
-    Public Const NHAP_THONG_TIN_DK As String = "Q19"
+    Public Const QUAN_LY_THAM_SO_HE_THONG As String = "Q18"
+    Public Const QUAN_LY_THAM_SO_NHAC_VIEC As String = "Q19"
 End Class
