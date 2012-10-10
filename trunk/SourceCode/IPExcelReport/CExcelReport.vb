@@ -290,9 +290,10 @@ Public Class CExcelReport
                 Dim i_iExcelCol As Integer
                 Dim v_iDataRow As System.Data.DataRow
                 v_iDataRow = i_DataSet.Tables(i_DataSet.Tables(i_TableName).TableName).NewRow()
-                For i_iExcelCol = 0 To i_DataSet.Tables(i_TableName).Columns.Count - 1
+                v_iDataRow(i_iExcelCol) = i_iExcelCol + 1
+                For i_iExcelCol = 0 To i_DataSet.Tables(i_TableName).Columns.Count - 2
                     If Not Object.ReferenceEquals(CType(m_objExcelWorksheet.Cells(i_iExcelRow + i_iSheetStartRow, 3), Excel.Range).Value(), Nothing) Then
-                        v_iDataRow(i_iExcelCol) = _
+                        v_iDataRow(i_iExcelCol + 1) = _
                             CType(m_objExcelWorksheet.Cells(i_iExcelRow + i_iSheetStartRow, i_iExcelCol + 1), Excel.Range).Value()
                     Else
                         v_bol_stop = True
