@@ -19,7 +19,7 @@ using IP.Core.IPUserService;
 
 using BondUS;
 using BondDS;
-using Bond.CDBNames;
+using BondDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
 
