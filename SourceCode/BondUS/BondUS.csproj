@@ -129,6 +129,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="US_DM_COMPANY_INFO.cs" />
+    <Compile Include="US_DM_DOT_PHAT_HANH.cs" />
     <Compile Include="US_DM_NGAY_LAM_VIEC.cs" />
     <Compile Include="US_DM_THAM_SO_NHAC_VIEC.cs" />
     <Compile Include="US_DM_TO_CHUC_PHAT_HANH.cs" />
