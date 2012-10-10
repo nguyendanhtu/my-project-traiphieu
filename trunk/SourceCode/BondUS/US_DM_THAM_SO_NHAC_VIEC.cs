@@ -127,5 +127,20 @@ public class US_DM_THAM_SO_NHAC_VIEC : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
+
+    #region Additional Functions
+    public void cap_nhat_tham_so_nhac_viec(decimal ip_dc_ngay_thanh_toan_lai
+                                         , decimal ip_dc_ngay_thanh_toan_goc
+                                         , decimal ip_dc_ngay_cap_nhat_lai_suat
+                                         , decimal ip_dc_ngay_chot_ds_lai)
+    {
+        CStoredProc v_cstore = new CStoredProc("pr_DM_THAM_SO_NHAC_VIEC_cap_nhat_tham_so_nhac_viec");
+        v_cstore.addDecimalInputParam("@NGAY_THANH_TOAN_LAI", ip_dc_ngay_thanh_toan_lai);
+        v_cstore.addDecimalInputParam("@NGAY_THANH_TOAN_GOC", ip_dc_ngay_thanh_toan_goc);
+        v_cstore.addDecimalInputParam("@NGAY_CAP_NHAT_LS", ip_dc_ngay_cap_nhat_lai_suat);
+        v_cstore.addDecimalInputParam("@NGAY_CHOT_DS_LAI", ip_dc_ngay_chot_ds_lai);
+        v_cstore.ExecuteCommand(this);
+    }
+    #endregion
 }
 }

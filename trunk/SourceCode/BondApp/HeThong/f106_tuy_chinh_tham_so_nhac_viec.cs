@@ -27,7 +27,7 @@ namespace BondApp.HeThong
         }
 
         #region Members
-
+        US_DM_THAM_SO_NHAC_VIEC m_us_dm_tham_so_nhac_viec = new US_DM_THAM_SO_NHAC_VIEC();
         #endregion
 
         #region Data Structure
@@ -66,7 +66,21 @@ namespace BondApp.HeThong
         }
         private void cap_nhat_tham_so_nhac_viec()
         {
-
+            try
+            {
+                m_us_dm_tham_so_nhac_viec.BeginTransaction();
+                m_us_dm_tham_so_nhac_viec.cap_nhat_tham_so_nhac_viec(CIPConvert.ToDecimal(m_txt_ngay_thanh_toan_lai.Text)
+                                                                    , CIPConvert.ToDecimal(m_txt_ngay_thanh_toan_goc.Text)
+                                                                    , CIPConvert.ToDecimal(m_txt_ngay_cap_nhat_ls.Text)
+                                                                    , CIPConvert.ToDecimal(m_txt_ngay_chot_ds_ls.Text));
+                m_us_dm_tham_so_nhac_viec.CommitTransaction();
+            }
+            catch (Exception v_e)
+            {
+                m_us_dm_tham_so_nhac_viec.Rollback();
+                CDBExceptionHandler v_objErrorHander = new CDBExceptionHandler(v_e, new CDBClientDBExceptionInterpret());
+                v_objErrorHander.showErrorMessage();
+            }
         }
         private bool check_du_lieu_ngay_nhap_is_ok()
         {
@@ -116,7 +130,10 @@ namespace BondApp.HeThong
         #endregion
 
         #region Public Interfaces
-
+        public void display()
+        {
+            this.ShowDialog();
+        }
         #endregion
 
         #region Events
@@ -133,8 +150,8 @@ namespace BondApp.HeThong
             try
             {
                 if (!check_du_lieu_ngay_nhap_is_ok()) return;
-                
                 cap_nhat_tham_so_nhac_viec();
+                BaseMessages.MsgBox_Infor("Bạn đã cập nhật tham số nhắc việc thành công");
             }
             catch (Exception v_e)
             {
