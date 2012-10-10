@@ -15,7 +15,7 @@ using System.Data;
 using BondDS;
 
 
-namespace WebUS{
+namespace BondUS{
 
 public class US_V_DM_TRAI_CHU : US_Object
 {
