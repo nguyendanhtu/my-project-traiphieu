@@ -90,7 +90,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="MENH_GIA" msprop:Generator_ColumnVarNameInTable="columnMENH_GIA" msprop:Generator_ColumnPropNameInRow="MENH_GIA" msprop:Generator_ColumnPropNameInTable="MENH_GIAColumn" msprop:Generator_UserColumnName="MENH_GIA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MENH_GIA" msprop:Generator_ColumnVarNameInTable="columnMENH_GIA" msprop:Generator_ColumnPropNameInRow="MENH_GIA" msprop:Generator_ColumnPropNameInTable="MENH_GIAColumn" msprop:Generator_UserColumnName="MENH_GIA" type="xs:decimal" />
               <xs:element name="KY_HAN" msprop:Generator_ColumnVarNameInTable="columnKY_HAN" msprop:Generator_ColumnPropNameInRow="KY_HAN" msprop:Generator_ColumnPropNameInTable="KY_HANColumn" msprop:Generator_UserColumnName="KY_HAN" type="xs:decimal" />
               <xs:element name="CO_SO_TINH_LAI" msprop:Generator_ColumnVarNameInTable="columnCO_SO_TINH_LAI" msprop:Generator_ColumnPropNameInRow="CO_SO_TINH_LAI" msprop:Generator_ColumnPropNameInTable="CO_SO_TINH_LAIColumn" msprop:Generator_UserColumnName="CO_SO_TINH_LAI" minOccurs="0">
                 <xs:simpleType>
@@ -141,9 +141,9 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="NGAY_PHAT_HANH" msprop:Generator_ColumnVarNameInTable="columnNGAY_PHAT_HANH" msprop:Generator_ColumnPropNameInRow="NGAY_PHAT_HANH" msprop:Generator_ColumnPropNameInTable="NGAY_PHAT_HANHColumn" msprop:Generator_UserColumnName="NGAY_PHAT_HANH" type="xs:dateTime" />
-              <xs:element name="NGAY_DAO_HAN" msprop:Generator_ColumnVarNameInTable="columnNGAY_DAO_HAN" msprop:Generator_ColumnPropNameInRow="NGAY_DAO_HAN" msprop:Generator_ColumnPropNameInTable="NGAY_DAO_HANColumn" msprop:Generator_UserColumnName="NGAY_DAO_HAN" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NGAY_DAO_HAN" msprop:Generator_ColumnVarNameInTable="columnNGAY_DAO_HAN" msprop:Generator_ColumnPropNameInRow="NGAY_DAO_HAN" msprop:Generator_ColumnPropNameInTable="NGAY_DAO_HANColumn" msprop:Generator_UserColumnName="NGAY_DAO_HAN" type="xs:dateTime" />
               <xs:element name="TONG_SL_PHAT_HANH" msprop:Generator_ColumnVarNameInTable="columnTONG_SL_PHAT_HANH" msprop:Generator_ColumnPropNameInRow="TONG_SL_PHAT_HANH" msprop:Generator_ColumnPropNameInTable="TONG_SL_PHAT_HANHColumn" msprop:Generator_UserColumnName="TONG_SL_PHAT_HANH" type="xs:decimal" />
-              <xs:element name="TONG_GIA_TRI" msprop:Generator_ColumnVarNameInTable="columnTONG_GIA_TRI" msprop:Generator_ColumnPropNameInRow="TONG_GIA_TRI" msprop:Generator_ColumnPropNameInTable="TONG_GIA_TRIColumn" msprop:Generator_UserColumnName="TONG_GIA_TRI" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TONG_GIA_TRI" msprop:Generator_ColumnVarNameInTable="columnTONG_GIA_TRI" msprop:Generator_ColumnPropNameInRow="TONG_GIA_TRI" msprop:Generator_ColumnPropNameInTable="TONG_GIA_TRIColumn" msprop:Generator_UserColumnName="TONG_GIA_TRI" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
