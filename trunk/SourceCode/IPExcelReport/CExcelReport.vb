@@ -93,6 +93,14 @@ Public Class CExcelReport
             Dim v_iGridCol As Integer
             Dim v_iNumberOfCol As Integer = 0
             Dim v_iVisibleColsCount As Integer = 0
+            Dim v_iCount As Integer = 0
+            ' Chen 1 so dong trong Excel tuong ung voi so Ban ghi can insert
+            Dim v_obj_range As Range = m_objExcelWorksheet.Range( _
+            m_objExcelWorksheet.Cells(m_iSheetStartRow + 2, m_iSheetStartCol) _
+            , m_objExcelWorksheet.Cells(m_iSheetStartRow + 2, m_iSheetStartCol))
+            For v_iCount = i_fg.Rows.Fixed To i_fg.Rows.Count - 1
+                v_obj_range.EntireRow.Insert(Excel.XlDirection.xlUp)
+            Next
             For v_iGridCol = i_iFromGridCol To i_iToGridCol
                 If i_fg.Cols(v_iGridCol).Visible Then
                     v_objExpCol = v_objFact.CreateExportColumn(v_iGridCol _
@@ -139,9 +147,9 @@ Public Class CExcelReport
             Dim v_obj_range As Range = m_objExcelWorksheet.Range( _
             m_objExcelWorksheet.Cells(m_iSheetStartRow + 2, m_iSheetStartCol) _
             , m_objExcelWorksheet.Cells(m_iSheetStartRow + 2, m_iSheetStartCol))
-            'For v_iCount = i_fg.Rows.Fixed To i_fg.Rows.Count - 1
-            '    v_obj_range.EntireRow.Insert(Excel.XlDirection.xlUp)
-            'Next
+            For v_iCount = i_fg.Rows.Fixed To i_fg.Rows.Count - 1
+                v_obj_range.EntireRow.Insert(Excel.XlDirection.xlUp)
+            Next
             For v_iGridCol = i_iFromGridCol To i_iToGridCol
                 If i_fg.Cols(v_iGridCol).Visible Then
                     v_objExpCol = v_objFact.CreateExportColumn(v_iGridCol _
