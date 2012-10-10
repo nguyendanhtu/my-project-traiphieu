@@ -17,7 +17,6 @@ using System;
 namespace BondUS
 {
 
-
     public class US_V_GD_CHUYEN_NHUONG : US_Object
     {
         private const string c_TableName = "V_GD_CHUYEN_NHUONG";
@@ -812,6 +811,72 @@ namespace BondUS
         public void SetTRA_LAI_SAU_YNNull()
         {
             pm_objDR["TRA_LAI_SAU_YN"] = System.Convert.DBNull;
+        }
+
+        public DateTime datNGAY_DAO_HAN
+        {
+            get
+            {
+                return CNull.RowNVLDate(pm_objDR, "NGAY_DAO_HAN", IPConstants.c_DefaultDate);
+            }
+            set
+            {
+                pm_objDR["NGAY_DAO_HAN"] = value;
+            }
+        }
+
+        public bool IsNGAY_DAO_HANNull()
+        {
+            return pm_objDR.IsNull("NGAY_DAO_HAN");
+        }
+
+        public void SetNGAY_DAO_HANNull()
+        {
+            pm_objDR["NGAY_DAO_HAN"] = System.Convert.DBNull;
+        }
+
+        public decimal dcTONG_SL_PHAT_HANH
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "TONG_SL_PHAT_HANH", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["TONG_SL_PHAT_HANH"] = value;
+            }
+        }
+
+        public bool IsTONG_SL_PHAT_HANHNull()
+        {
+            return pm_objDR.IsNull("TONG_SL_PHAT_HANH");
+        }
+
+        public void SetTONG_SL_PHAT_HANHNull()
+        {
+            pm_objDR["TONG_SL_PHAT_HANH"] = System.Convert.DBNull;
+        }
+
+        public decimal dcTONG_GIA_TRI
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "TONG_GIA_TRI", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["TONG_GIA_TRI"] = value;
+            }
+        }
+
+        public bool IsTONG_GIA_TRINull()
+        {
+            return pm_objDR.IsNull("TONG_GIA_TRI");
+        }
+
+        public void SetTONG_GIA_TRINull()
+        {
+            pm_objDR["TONG_GIA_TRI"] = System.Convert.DBNull;
         }
 
         public decimal dctcm_ID_NGUOI_LAP
