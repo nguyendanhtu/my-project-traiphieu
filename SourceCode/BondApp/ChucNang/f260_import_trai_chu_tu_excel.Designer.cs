@@ -96,17 +96,17 @@
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(883, 126);
+            this.panel2.Size = new System.Drawing.Size(1238, 126);
             this.panel2.TabIndex = 26;
             // 
             // m_txt_ngay_phat_hanh
             // 
             this.m_txt_ngay_phat_hanh.BackColor = System.Drawing.SystemColors.Info;
             this.m_txt_ngay_phat_hanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_txt_ngay_phat_hanh.Location = new System.Drawing.Point(685, 43);
+            this.m_txt_ngay_phat_hanh.Location = new System.Drawing.Point(858, 44);
             this.m_txt_ngay_phat_hanh.Name = "m_txt_ngay_phat_hanh";
             this.m_txt_ngay_phat_hanh.ReadOnly = true;
-            this.m_txt_ngay_phat_hanh.Size = new System.Drawing.Size(138, 22);
+            this.m_txt_ngay_phat_hanh.Size = new System.Drawing.Size(173, 22);
             this.m_txt_ngay_phat_hanh.TabIndex = 14;
             this.m_txt_ngay_phat_hanh.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -114,7 +114,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(565, 46);
+            this.label7.Location = new System.Drawing.Point(738, 47);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(102, 16);
             this.label7.TabIndex = 13;
@@ -128,7 +128,7 @@
             this.m_cmd_chon_trai_phieu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_chon_trai_phieu.ImageIndex = 14;
             this.m_cmd_chon_trai_phieu.ImageList = this.ImageList;
-            this.m_cmd_chon_trai_phieu.Location = new System.Drawing.Point(344, 42);
+            this.m_cmd_chon_trai_phieu.Location = new System.Drawing.Point(517, 43);
             this.m_cmd_chon_trai_phieu.Name = "m_cmd_chon_trai_phieu";
             this.m_cmd_chon_trai_phieu.Size = new System.Drawing.Size(89, 25);
             this.m_cmd_chon_trai_phieu.TabIndex = 3;
@@ -139,16 +139,16 @@
             // 
             this.m_txt_ten_to_chuc_phat_hanh.BackColor = System.Drawing.SystemColors.Info;
             this.m_txt_ten_to_chuc_phat_hanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_txt_ten_to_chuc_phat_hanh.Location = new System.Drawing.Point(171, 82);
+            this.m_txt_ten_to_chuc_phat_hanh.Location = new System.Drawing.Point(344, 83);
             this.m_txt_ten_to_chuc_phat_hanh.Name = "m_txt_ten_to_chuc_phat_hanh";
-            this.m_txt_ten_to_chuc_phat_hanh.Size = new System.Drawing.Size(652, 22);
+            this.m_txt_ten_to_chuc_phat_hanh.Size = new System.Drawing.Size(687, 22);
             this.m_txt_ten_to_chuc_phat_hanh.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(8, 86);
+            this.label4.Location = new System.Drawing.Point(181, 87);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(154, 18);
             this.label4.TabIndex = 7;
@@ -158,7 +158,7 @@
             // 
             this.m_txt_ma_trai_phieu.BackColor = System.Drawing.SystemColors.Info;
             this.m_txt_ma_trai_phieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_txt_ma_trai_phieu.Location = new System.Drawing.Point(171, 45);
+            this.m_txt_ma_trai_phieu.Location = new System.Drawing.Point(344, 46);
             this.m_txt_ma_trai_phieu.Name = "m_txt_ma_trai_phieu";
             this.m_txt_ma_trai_phieu.ReadOnly = true;
             this.m_txt_ma_trai_phieu.Size = new System.Drawing.Size(167, 22);
@@ -170,7 +170,7 @@
             this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(883, 25);
+            this.m_lbl_header.Size = new System.Drawing.Size(1238, 25);
             this.m_lbl_header.TabIndex = 0;
             this.m_lbl_header.Text = "F260 - Import trái chủ";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -179,7 +179,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(66, 49);
+            this.label1.Location = new System.Drawing.Point(239, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 18);
             this.label1.TabIndex = 1;
@@ -194,7 +194,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 126);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(883, 46);
+            this.panel3.Size = new System.Drawing.Size(1238, 46);
             this.panel3.TabIndex = 27;
             // 
             // m_cmd_open_template
@@ -206,7 +206,7 @@
             this.m_cmd_open_template.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_open_template.ImageIndex = 19;
             this.m_cmd_open_template.ImageList = this.ImageList;
-            this.m_cmd_open_template.Location = new System.Drawing.Point(738, 0);
+            this.m_cmd_open_template.Location = new System.Drawing.Point(1093, 0);
             this.m_cmd_open_template.Name = "m_cmd_open_template";
             this.m_cmd_open_template.Size = new System.Drawing.Size(145, 46);
             this.m_cmd_open_template.TabIndex = 6;
@@ -265,9 +265,9 @@
             // 
             this.panel1.Controls.Add(this.m_cmd_thoat);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 415);
+            this.panel1.Location = new System.Drawing.Point(0, 458);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(883, 40);
+            this.panel1.Size = new System.Drawing.Size(1238, 40);
             this.panel1.TabIndex = 29;
             // 
             // m_cmd_thoat
@@ -279,7 +279,7 @@
             this.m_cmd_thoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_thoat.ImageIndex = 12;
             this.m_cmd_thoat.ImageList = this.ImageList;
-            this.m_cmd_thoat.Location = new System.Drawing.Point(807, 0);
+            this.m_cmd_thoat.Location = new System.Drawing.Point(1162, 0);
             this.m_cmd_thoat.Name = "m_cmd_thoat";
             this.m_cmd_thoat.Size = new System.Drawing.Size(76, 40);
             this.m_cmd_thoat.TabIndex = 6;
@@ -294,17 +294,20 @@
             // 
             this.m_fg_load_file.ColumnInfo = resources.GetString("m_fg_load_file.ColumnInfo");
             this.m_fg_load_file.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_fg_load_file.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_fg_load_file.KeyActionEnter = C1.Win.C1FlexGrid.KeyActionEnum.MoveAcross;
+            this.m_fg_load_file.KeyActionTab = C1.Win.C1FlexGrid.KeyActionEnum.MoveAcross;
             this.m_fg_load_file.Location = new System.Drawing.Point(0, 172);
             this.m_fg_load_file.Name = "m_fg_load_file";
-            this.m_fg_load_file.Size = new System.Drawing.Size(883, 243);
+            this.m_fg_load_file.Size = new System.Drawing.Size(1238, 286);
             this.m_fg_load_file.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_load_file.Styles"));
-            this.m_fg_load_file.TabIndex = 34;
+            this.m_fg_load_file.TabIndex = 30;
             // 
             // f260_import_trai_chu_tu_excel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(883, 455);
+            this.ClientSize = new System.Drawing.Size(1238, 498);
             this.Controls.Add(this.m_fg_load_file);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
@@ -339,8 +342,8 @@
         private System.Windows.Forms.Panel panel1;
         private SIS.Controls.Button.SiSButton m_cmd_thoat;
         private System.Windows.Forms.OpenFileDialog m_dgl_open_file;
-        private C1.Win.C1FlexGrid.C1FlexGrid m_fg_load_file;
         private System.Windows.Forms.TextBox m_txt_ngay_phat_hanh;
+        private C1.Win.C1FlexGrid.C1FlexGrid m_fg_load_file;
 
     }
 }
