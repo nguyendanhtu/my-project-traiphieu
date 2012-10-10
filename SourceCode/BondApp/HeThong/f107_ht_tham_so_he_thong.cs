@@ -288,7 +288,15 @@ namespace BondApp
 			CControlFormat.setFormStyle(this);
 			CControlFormat.setC1FlexFormat(m_fg);
 			set_define_events();
-			this.KeyPreview = true;		
+			this.KeyPreview = true;
+
+            CGridUtils.AddSave_Excel_Handlers(m_fg);
+            CGridUtils.AddSearch_Handlers(m_fg);
+
+
+            m_lbl_title.Font = new Font("Arial", 16);
+            m_lbl_title.ForeColor = Color.DarkRed;
+            m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
@@ -338,8 +346,8 @@ namespace BondApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
 			grid2us_object(m_us, m_fg.Row);
-		//	f107_ht_tham_so_he_thong_DE v_fDE = new f107_ht_tham_so_he_thong_DE();
-		//	v_fDE.display(m_us);
+            f108_tham_so_he_thong_de v_fde = new f108_tham_so_he_thong_de();
+            v_fde.display_for_update(m_us);
 			load_data_2_grid();
 		}
 				
@@ -371,19 +379,27 @@ namespace BondApp
 		//	v_fDE.display(m_us);
 		}
 		private void set_define_events(){
+            m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			//m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			//m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
 		}
-		#endregion
+
+        #endregion
 
 //
 		//
 		//		EVENT HANLDERS
 		//
 		//
+
+        void m_fg_DoubleClick(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+        }
+
 		private void f107_ht_tham_so_he_thong_Load(object sender, System.EventArgs e) {
 			try{
 				set_initial_form_load();
