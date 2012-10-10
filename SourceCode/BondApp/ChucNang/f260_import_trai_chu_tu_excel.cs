@@ -19,6 +19,7 @@ using BondDS.CDBNames;
 using C1.Win.C1FlexGrid;
 using System.Collections;
 using IP.Core.IPExcelReport;
+using IP.Core.IPSystemAdmin;
 
 namespace BondApp.ChucNang
 {
@@ -58,8 +59,8 @@ namespace BondApp.ChucNang
             SO_CMND_NGUOI_DAI_DIEN = 16,
             CHUC_VU_NGUOI_DAI_DIEN = 17,
             NGAY_BAT_DAU_SO_HUU_TP = 18,
-            DIEN_GIAI = 20,
-            TRANG_THAI = 19
+            TRANG_THAI = 19,
+            DIEN_GIAI = 20
         }
         #endregion
 
@@ -113,11 +114,11 @@ namespace BondApp.ChucNang
 
                 CExcelReport v_xls_file = new CExcelReport(v_str_path_and_file_name);
 
-                DS_V_DM_TRAI_CHU v_ds_tmp_dm_trai_chu = new DS_V_DM_TRAI_CHU();
+                DS_DM_TRAI_CHU_IMP v_ds_tmp_dm_trai_chu = new DS_DM_TRAI_CHU_IMP();
                 try
                 {
                     v_ds_tmp_dm_trai_chu.EnforceConstraints = false;
-                    v_xls_file.Export2DatasetDSPhongThi(v_ds_tmp_dm_trai_chu, v_ds_tmp_dm_trai_chu.V_DM_TRAI_CHU.TableName, 12);
+                    v_xls_file.Export2DatasetDSPhongThi(v_ds_tmp_dm_trai_chu, v_ds_tmp_dm_trai_chu.DM_TRAI_CHU_IMP.TableName, 2);
 
                     CGridUtils.Dataset2C1Grid(v_ds_tmp_dm_trai_chu, m_fg_load_file, m_obj_tran_xls);
 
@@ -168,7 +169,7 @@ namespace BondApp.ChucNang
 
                             v_bol_co_trai_chu = v_us_trai_chu.InitByMA_TRAI_CHU(v_str_ma_trai_chu_xls);
 
-                            if (!v_bol_co_trai_chu)
+                            if (v_bol_co_trai_chu)
                             {
                                 v_dien_giai = "Mã trái chủ không tồn tại trong phần mềm";
                                 m_fg_load_file.SetCellStyle(i_stt, (int)e_col_number_xls.MA_TRAI_CHU, v_cell_style_err);
@@ -264,7 +265,9 @@ namespace BondApp.ChucNang
                 for (int v_int_row = m_fg_load_file.Rows.Fixed; v_int_row < m_fg_load_file.Rows.Count; v_int_row++)
                 {
                     form_2_us_object_hoc_vien_theo_hoc(v_us_trai_chu_imp, v_int_row);
-                    v_us_trai_chu_imp.Insert();
+                    v_us_trai_chu_imp.Insert_import(get_loai_trai_chu_by_loai_hinh_co_dong(v_us_trai_chu_imp.dcLOAI_HINH_CO_CONG)
+                                                    , CAppContext_201.getCurrentUserID()
+                                                    , m_us_trai_phieu.dcID);
                 }
                 v_us_trai_chu_imp.CommitTransaction();
             }
@@ -368,6 +371,19 @@ namespace BondApp.ChucNang
             
             v_us.dcSTT = 1;
         }
+        private decimal get_loai_trai_chu_by_loai_hinh_co_dong(decimal ip_dc_loai_hinh_co_dong)
+        {
+            decimal v_dc_loai_trai_chu = 0;
+            if(ip_dc_loai_hinh_co_dong == m_dc_ca_nhan_trong_nuoc)
+                 v_dc_loai_trai_chu = ID_LOAI_TRAI_CHU.CA_NHAN_TRONG_NUOC;
+            else if(ip_dc_loai_hinh_co_dong == m_dc_ca_nhan_trong_nuoc)
+                    v_dc_loai_trai_chu = ID_LOAI_TRAI_CHU.CA_NHAN_TRONG_NUOC;
+            else if(ip_dc_loai_hinh_co_dong == m_dc_ca_nhan_trong_nuoc)
+                    v_dc_loai_trai_chu = ID_LOAI_TRAI_CHU.CA_NHAN_TRONG_NUOC;
+            else if(ip_dc_loai_hinh_co_dong == m_dc_ca_nhan_trong_nuoc)
+                    v_dc_loai_trai_chu = ID_LOAI_TRAI_CHU.CA_NHAN_TRONG_NUOC;
+            return v_dc_loai_trai_chu;
+        }
         private ITransferDataRow get_2_us_obj_xls()
         {
             Hashtable v_hst = new Hashtable();
@@ -410,6 +426,19 @@ namespace BondApp.ChucNang
             m_cmd_kiem_tra.Click += new EventHandler(m_cmd_kiem_tra_Click);
             m_cmd_luu.Click += new EventHandler(m_cmd_luu_Click);
             m_cmd_thoat.Click += new EventHandler(m_cmd_thoat_Click);
+            this.Load += new EventHandler(f260_import_trai_chu_tu_excel_Load);
+        }
+
+        void f260_import_trai_chu_tu_excel_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                set_init_load_form();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_chon_trai_phieu_Click(object sender, EventArgs e)

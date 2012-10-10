@@ -417,7 +417,48 @@ public class US_DM_TRAI_CHU_IMP : US_Object
 	{
 		pm_objDR["NGAY_BAT_DAU_SO_HUU_TP"] = System.Convert.DBNull;
 	}
+    public string strTRANG_THAI
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "TRANG_THAI", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["TRANG_THAI"] = value;
+        }
+    }
 
+    public bool IsTRANG_THAINull()
+    {
+        return pm_objDR.IsNull("TRANG_THAI");
+    }
+
+    public void SetTRANG_THAINull()
+    {
+        pm_objDR["TRANG_THAI"] = System.Convert.DBNull;
+    }
+    public string strDIEN_GIAI
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "DIEN_GIAI", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["DIEN_GIAI"] = value;
+        }
+    }
+
+    public bool IsDIEN_GIAINull()
+    {
+        return pm_objDR.IsNull("DIEN_GIAI");
+    }
+
+    public void SetDIEN_GIAINull()
+    {
+        pm_objDR["DIEN_GIAI"] = System.Convert.DBNull;
+    }
 #endregion
 #region "Init Functions"
 	public US_DM_TRAI_CHU_IMP() 
@@ -446,9 +487,25 @@ public class US_DM_TRAI_CHU_IMP : US_Object
 #endregion
     
     #region Additional Function
-    public void Insert_import(decimal ip_dc_loai_trai_chu)
+    public void Insert_import(decimal ip_dc_loai_trai_chu
+                            ,  decimal ip_dc_id_nguoi_dung
+                            , decimal ip_dc_id_trai_phieu_so_huu)
     {
-       
+        CStoredProc v_cstore = new CStoredProc("pr_DM_TRAI_CHU_IMP_Insert_Import");
+        v_cstore.addDecimalInputParam("@ID_NGUOI_LAP", ip_dc_id_nguoi_dung);
+        v_cstore.addNVarcharInputParam("@MA_TRAI_CHU", this.strMA_TRAI_CHU);
+        v_cstore.addNVarcharInputParam("@TEN_TRAI_CHU", this.strTEN_TRAI_CHU);
+        v_cstore.addNVarcharInputParam("@DIA_CHI", this.strDIA_CHI);
+        v_cstore.addNVarcharInputParam("@DIEN_THOAI", this.strDIEN_THOAI);
+        v_cstore.addNVarcharInputParam("@DKHD_CMND", this.strDKHD_CMND);
+        v_cstore.addDatetimeInputParam("@NGAY_CAP", this.datNGAY_CAP);
+        v_cstore.addNVarcharInputParam("@NOI_CAP", this.strNOI_CAP);
+        v_cstore.addNVarcharInputParam("@ID_LOAI_TRAI_CHU", ip_dc_loai_trai_chu);
+        v_cstore.addNVarcharInputParam("@SO_TAI_KHOAN", this.strSO_TAI_KHOAN);
+        v_cstore.addNVarcharInputParam("@NOI_MO_TAI_KHOAN", this.strNOI_MO_TAI_KHOAN);
+        v_cstore.addNVarcharInputParam("@ID_TRAI_PHIEU_SO_HUU", ip_dc_id_trai_phieu_so_huu);
+        v_cstore.addNVarcharInputParam("@SO_LUONG_TRAI_PHIEU_SO_HUU", this.dcSO_LUONG_TRAI_PHIEU_SO_HUU);
+        v_cstore.addDatetimeInputParam("@NGAY_BAT_DAU_SO_HUU_TP", this.datNGAY_BAT_DAU_SO_HUU_TP);
     }
     #endregion
 }

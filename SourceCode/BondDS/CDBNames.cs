@@ -30,7 +30,13 @@ namespace BondDS.CDBNames
         public const decimal GIAO_DICH_DA_THUC_HIEN = 30;
         public const decimal CHOT_DANH_SACH_LAI = 33;
     }
-
+    public class ID_LOAI_TRAI_CHU
+    {
+        public const decimal CA_NHAN_TRONG_NUOC = 32;
+        public const decimal TO_CHUC_TRONG_NUOC = 31;
+        public const decimal CA_NHAN_NUOC_NGOAI = 40;
+        public const decimal TO_CHUC_NUOC_NGOAI = 39;
+    }
     public class CM_DM_DS_LOAI_TU_DIEN
     {
         public const string TRANG_THAI_GD = "TRANG_THAI_GD";
@@ -215,6 +221,8 @@ namespace BondDS.CDBNames
         public const string SO_CMND_NGUOI_DAI_DIEN = "SO_CMND_NGUOI_DAI_DIEN";
         public const string CHUC_VU_NGUOI_DAI_DIEN = "CHUC_VU_NGUOI_DAI_DIEN";
         public const string NGAY_BAT_DAU_SO_HUU_TP = "NGAY_BAT_DAU_SO_HUU_TP";
+        public const string TRANG_THAI = "TRANG_THAI";
+        public const string DIEN_GIAI = "DIEN_GIAI";
     }
 
     public class CM_DM_LOAI_TD
