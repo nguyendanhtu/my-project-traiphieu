@@ -19,7 +19,7 @@ using IP.Core.IPData.DBNames;
 using System.Collections;
 using C1.Win.C1FlexGrid;
 using BondApp.DanhMuc;
-using WebUS;
+using BondUS;
 namespace BondApp.ChucNang
 {
     public partial class f250_chi_tiet_giao_dich_chot_lai : Form
