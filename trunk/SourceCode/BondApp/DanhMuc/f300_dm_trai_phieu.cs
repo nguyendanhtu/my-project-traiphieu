@@ -329,8 +329,8 @@ namespace BondApp
 		#endregion
 
 		#region Data Structure
-		private enum e_col_Number{
-			DON_VI_KY_HAN = 7,DON_VI_KY_TRA_LAI = 13,MENH_GIA = 5,TONG_SL_PHAT_HANH = 17,TEN_LOAI_TRAI_PHIEU = 4,NGAY_DAO_HAN = 16,MA_TRAI_PHIEU = 2,KY_HAN = 6,KY_DIEU_CHINH_LS = 9,TRA_LAI_SAU_YN = 14,KY_TRA_LAI = 12,CO_SO_TINH_LAI = 8,TONG_GIA_TRI = 18,NGAY_PHAT_HANH = 15,TEN_TRAI_PHIEU = 3,DON_VI_DIEU_CHINH_LAI_SUAT = 10,THA_NOI_YN = 11,LAI_SUAT_DEFAULT = 8,TEN_TO_CHUC_PHAT_HANH = 1
+		private enum e_col_Number{                                    TEN_TO_CHUC_PHAT_HANH = 1                                    ,MA_TRAI_PHIEU = 2                                    ,TEN_TRAI_PHIEU = 3                                    ,TEN_LOAI_TRAI_PHIEU = 4                                    ,MENH_GIA = 5                                    ,KY_HAN = 6
+			                        ,DON_VI_KY_HAN = 7                                    ,CO_SO_TINH_LAI = 8                                    ,LAI_SUAT_DEFAULT = 9                                    ,KY_DIEU_CHINH_LS = 10                                    ,DON_VI_DIEU_CHINH_LAI_SUAT = 11                                    ,THA_NOI_YN = 12                                    ,KY_TRA_LAI = 13                                    ,DON_VI_KY_TRA_LAI = 14                                    ,TRA_LAI_SAU_YN = 15                                    ,NGAY_PHAT_HANH = 16                                    ,NGAY_DAO_HAN = 17                                    ,TONG_SL_PHAT_HANH = 18                                    ,TONG_GIA_TRI = 19
 		}			
 		#endregion
 
