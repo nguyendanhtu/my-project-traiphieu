@@ -1,4 +1,4 @@
-Option Explicit On 
+﻿Option Explicit On 
 Option Strict On
 
 Imports C1.Win.C1FlexGrid
@@ -266,5 +266,56 @@ Public Class CExcelReport
                 End With
             End If
         Next
+    End Sub
+
+    Public Sub Export2DatasetDSPhongThi(ByVal i_DataSet As System.Data.DataSet _
+                               , ByVal i_TableName As String _
+                              , ByVal i_iSheetStartRow As Integer)
+        Try
+            m_objExcelApp = New Excel.Application
+            m_objExcelApp.Workbooks.Open(m_strTemplateFileNameWithPath)
+            m_objExcelApp.Workbooks(1).Worksheets.Select(1)
+            m_objExcelWorksheet = CType(m_objExcelApp.Workbooks(1).Worksheets(1), Excel.Worksheet)
+            Dim i_iExcelRow As Integer = 0
+            Dim v_bol_stop As Boolean = False
+            While Not v_bol_stop
+                Dim i_iExcelCol As Integer
+                Dim v_iDataRow As System.Data.DataRow
+                v_iDataRow = i_DataSet.Tables(i_DataSet.Tables(i_TableName).TableName).NewRow()
+                For i_iExcelCol = 0 To i_DataSet.Tables(i_TableName).Columns.Count - 1
+                    If Not Object.ReferenceEquals(CType(m_objExcelWorksheet.Cells(i_iExcelRow + i_iSheetStartRow, 3), Excel.Range).Value(), Nothing) Then
+                        v_iDataRow(i_iExcelCol) = _
+                            CType(m_objExcelWorksheet.Cells(i_iExcelRow + i_iSheetStartRow, i_iExcelCol + 1), Excel.Range).Value()
+                    Else
+                        v_bol_stop = True
+                    End If
+                Next
+                If Not v_bol_stop Then
+                    i_DataSet.Tables(i_TableName).Rows.InsertAt(v_iDataRow, i_iExcelRow)
+                    i_iExcelRow += 1
+                End If
+            End While
+            m_objExcelApp.Workbooks.Close()
+            Unmount()
+        Catch v_e As Exception
+            m_objExcelApp.Workbooks.Close()
+            Unmount()
+            Throw v_e
+        End Try
+    End Sub
+    Public Sub OpenExcelFile()
+        Try
+            'm_objExcelApp = New Excel.Application
+            'm_objExcelApp.Visible = True
+            'm_objExcelApp.Workbooks.Open(m_strTemplatesPath & m_strTemplateFileNameWithPath)
+            'm_objExcelApp.Workbooks(1).Worksheets.Select(1)
+            'm_objExcelWorksheet = CType(m_objExcelApp.Workbooks(1).Worksheets(1), Excel.Worksheet)
+            'm_objExcelApp.Workbooks.Close()
+            Process.Start(m_strTemplatesPath & m_strTemplateFileNameWithPath)
+
+        Catch v_e As Exception
+
+            Throw v_e
+        End Try
     End Sub
 End Class
