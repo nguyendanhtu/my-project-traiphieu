@@ -379,9 +379,9 @@ namespace BondApp
 		}
 
 
-		private void insert_gd_chot_lai(){			
-		//	f200_dm_dot_chot_lai_DE v_fDE = new  f200_dm_dot_chot_lai_DE();								
-		//	v_fDE.display();
+		private void insert_gd_chot_lai(){
+            f201_dm_chot_lai_de v_fDE = new f201_dm_chot_lai_de();
+            v_fDE.display_for_insert();
 			load_data_2_grid();
 		}
 
