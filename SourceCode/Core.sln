@@ -23,6 +23,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BondUS", "BondUS\BondUS.csproj", "{A6E36F4B-6825-44A8-9396-C5BBD8630CB0}"
 EndProject
 Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		BondDebug|Any CPU = BondDebug|Any CPU
 		Debug|Any CPU = Debug|Any CPU

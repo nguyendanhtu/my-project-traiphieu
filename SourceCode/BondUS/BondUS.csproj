@@ -155,6 +155,7 @@
     <Compile Include="US_V_DM_TRAI_PHIEU.cs" />
     <Compile Include="US_V_GD_CHUYEN_NHUONG.cs" />
     <Compile Include="US_V_GD_PHONG_GIAI_TOA.cs" />
+    <Compile Include="US_V_GD_TRA_GOC.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

@@ -90,6 +90,9 @@ namespace BondApp.DanhMuc
         private void us_object_2_form(US_DM_TRAI_CHU ip_us_trai_chu)
         {
             m_us_trai_phieu = new US_DM_TRAI_PHIEU(ip_us_trai_chu.dcID_TRAI_PHIEU_SO_HUU);
+            US_GD_SO_DU_TRAI_PHIEU v_us_gd_so_du_trai_phieu = new US_GD_SO_DU_TRAI_PHIEU();
+            DS_GD_SO_DU_TRAI_PHIEU v_ds_gd_so_du_trai_phieu = new DS_GD_SO_DU_TRAI_PHIEU();
+            v_us_gd_so_du_trai_phieu.select_us_gd_so_du_trai_phieu_byTraiChuID(ip_us_trai_chu.dcID, v_ds_gd_so_du_trai_phieu);
 
             m_txt_ma_trai_chu.Text = ip_us_trai_chu.strMA_TRAI_CHU;
             m_txt_ten_khach_hang.Text = ip_us_trai_chu.strTEN_TRAI_CHU;
@@ -109,7 +112,7 @@ namespace BondApp.DanhMuc
             m_txt_id_trai_phieu_so_huu.Text = m_us_trai_phieu.strMA_TRAI_PHIEU;
             m_txt_ten_trai_phieu.Text = m_us_trai_phieu.strTEN_TRAI_PHIEU;
             m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ip_us_trai_chu.dcID_TRANG_THAI);
-            //m_txt_so_du_kha_dung.Text = CIPConvert.ToStr(ip_us_trai_chu.dcSO_DU_KHA_DUNG);
+            //m_txt_so_du_kha_dung.Text = v_ds_gd_so_du_trai_phieu.Tables["GD_SO_DU_TRAI_PHIEU"].Rows[0].ToString();
         }
 
         private void form_2_us_object(US_DM_TRAI_CHU ip_us_trai_chu)

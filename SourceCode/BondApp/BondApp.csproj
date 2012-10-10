@@ -272,7 +272,9 @@
     <Compile Include="ChucNang\f104_quan_ly_tham_so_nhac_viec.Designer.cs">
       <DependentUpon>f104_quan_ly_tham_so_nhac_viec.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChucNang\f201_dm_gd_chot_lai_detail.cs" />
+    <Compile Include="ChucNang\f201_dm_gd_chot_lai_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ChucNang\f250_chi_tiet_giao_dich_chot_lai.cs">
       <SubType>Form</SubType>
     </Compile>
