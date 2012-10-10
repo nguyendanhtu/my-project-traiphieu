@@ -238,7 +238,7 @@ namespace BondApp
             this.m_lbl_header.Name = "m_lbl_header";
             this.m_lbl_header.Size = new System.Drawing.Size(968, 31);
             this.m_lbl_header.TabIndex = 31;
-            this.m_lbl_header.Text = "F659 - BÁO CÁO TÌNH HÌNH PHONG TỎA";
+            this.m_lbl_header.Text = "F601 -BÁO CÁO TÌNH HÌNH CHUYỂN NHƯỢNG";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_pnl_out_place_dm
@@ -340,6 +340,8 @@ namespace BondApp
 		private void format_controls(){
 			CControlFormat.setFormStyle(this);
 			CControlFormat.setC1FlexFormat(m_fg);
+            CGridUtils.AddSave_Excel_Handlers(m_fg);
+            CGridUtils.AddSearch_Handlers(m_fg);
 			set_define_events();
 			this.KeyPreview = true;		
 		}
@@ -429,7 +431,7 @@ namespace BondApp
 		}
         private void export_excel()
         {
-            CExcelReport v_obj_export_excel = new CExcelReport("f600_Bao cao tong hop tinh hinh chuyen nhuong", 11, 2);
+            CExcelReport v_obj_export_excel = new CExcelReport("f600_Bao_cao_tong_hop_tinh_hinh_chuyen_nhuong", 11, 2);
             v_obj_export_excel.AddFindAndReplaceItem("<NGAY_BAT_DAU>", CIPConvert.ToStr(m_dat_from_date.Value, "dd/MM/yyyy"));
             v_obj_export_excel.AddFindAndReplaceItem("<TEN_CONG_TY>", m_cbo_to_chuc_phat_hanh.Text);
             v_obj_export_excel.AddFindAndReplaceItem("<NGAY_KET_THUC>", CIPConvert.ToStr(m_dat_to_date.Value, "dd/MM/yyyy"));
@@ -463,7 +465,6 @@ namespace BondApp
             v_dr[DM_TO_CHUC_PHAT_HANH.ID] = 0;
             v_dr[DM_TO_CHUC_PHAT_HANH.TEN_TO_CHUC_PHAT_HANH] = "Tất cả";
             v_ds_dm_to_chuc_phat_hanh.DM_TO_CHUC_PHAT_HANH.Rows.InsertAt(v_dr, 0);
-
             m_cbo_to_chuc_phat_hanh.ValueMember = DM_TO_CHUC_PHAT_HANH.ID;
             m_cbo_to_chuc_phat_hanh.DisplayMember = DM_TO_CHUC_PHAT_HANH.TEN_TO_CHUC_PHAT_HANH;
             m_cbo_to_chuc_phat_hanh.DataSource = v_ds_dm_to_chuc_phat_hanh.DM_TO_CHUC_PHAT_HANH;
