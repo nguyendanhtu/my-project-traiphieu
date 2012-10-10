@@ -202,7 +202,7 @@ namespace BondUS
         #region Init Functions
         public US_DM_DOT_PHAT_HANH()
         {
-            //pm_objDS = new DS_DM_DOT_PHAT_HANH();
+            pm_objDS = new DS_DM_DOT_PHAT_HANH();
             pm_strTableName = c_TableName;
             pm_objDR = pm_objDS.Tables[pm_strTableName].NewRow();
         }
@@ -215,7 +215,7 @@ namespace BondUS
 
         public US_DM_DOT_PHAT_HANH(decimal i_dbID)
         {
-            //pm_objDS = new DS_DM_DOT_PHAT_HANH();
+            pm_objDS = new DS_DM_DOT_PHAT_HANH();
             pm_strTableName = c_TableName;
             IMakeSelectCmd v_objMkCmd = new CMakeAndSelectCmd(pm_objDS, c_TableName);
             v_objMkCmd.AddCondition("ID", i_dbID, eKieuDuLieu.KieuNumber, eKieuSoSanh.Bang);
