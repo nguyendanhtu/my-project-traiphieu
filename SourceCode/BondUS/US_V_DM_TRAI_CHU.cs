@@ -549,7 +549,13 @@ public class US_V_DM_TRAI_CHU : US_Object
     {
         base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu.ToString());
     }
-
+    public bool InitByMA_TRAI_CHU(string ip_str_ma_trai_chu)
+    {
+        DS_V_DM_TRAI_CHU v_ds_dm_trai_chu = new DS_V_DM_TRAI_CHU();
+        this.FillDataset(v_ds_dm_trai_chu, " WHERE MA_TRAI_CHU = '" + ip_str_ma_trai_chu + "'");
+        if(v_ds_dm_trai_chu.V_DM_TRAI_CHU.Rows.Count > 0) return true;
+        return false;
+    }
     #endregion        
 	}
 }
