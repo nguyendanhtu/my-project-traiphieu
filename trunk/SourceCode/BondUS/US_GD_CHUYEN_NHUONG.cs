@@ -16,7 +16,6 @@ using System.Data;
 using System;
 namespace BondUS
 {
-
     public class US_GD_CHUYEN_NHUONG : US_Object
     {
         private const string c_TableName = "GD_CHUYEN_NHUONG";
@@ -373,6 +372,28 @@ namespace BondUS
             pm_objDR["SO_LUONG_CHUYEN_NHUONG"] = System.Convert.DBNull;
         }
 
+        public decimal dcGIA_TRI_CHUYEN_NHUONG_THUC_TE
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "GIA_TRI_CHUYEN_NHUONG_THUC_TE", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["GIA_TRI_CHUYEN_NHUONG_THUC_TE"] = value;
+            }
+        }
+
+        public bool IsGIA_TRI_CHUYEN_NHUONG_THUC_TENull()
+        {
+            return pm_objDR.IsNull("GIA_TRI_CHUYEN_NHUONG_THUC_TE");
+        }
+
+        public void SetGIA_TRI_CHUYEN_NHUONG_THUC_TENull()
+        {
+            pm_objDR["GIA_TRI_CHUYEN_NHUONG_THUC_TE"] = System.Convert.DBNull;
+        }
+
         public decimal dcTY_LE_PHI_GD
         {
             get
@@ -549,28 +570,6 @@ namespace BondUS
             pm_objDR["ID_TRANG_THAI_CHUYEN_NHUONG"] = System.Convert.DBNull;
         }
 
-        public decimal dcGIA_TRI_CHUYEN_NHUONG_THUC_TE
-        {
-            get
-            {
-                return CNull.RowNVLDecimal(pm_objDR, "GIA_TRI_CHUYEN_NHUONG_THUC_TE", IPConstants.c_DefaultDecimal);
-            }
-            set
-            {
-                pm_objDR["GIA_TRI_CHUYEN_NHUONG_THUC_TE"] = value;
-            }
-        }
-
-        public bool IsGIA_TRI_CHUYEN_NHUONG_THUC_TENull()
-        {
-            return pm_objDR.IsNull("GIA_TRI_CHUYEN_NHUONG_THUC_TE");
-        }
-
-        public void SetGIA_TRI_CHUYEN_NHUONG_THUC_TENull()
-        {
-            pm_objDR["GIA_TRI_CHUYEN_NHUONG_THUC_TE"] = System.Convert.DBNull;
-        }
-
         #endregion
 
 
@@ -600,10 +599,11 @@ namespace BondUS
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
 
+
         public void duyet_chuyen_nhuong()
         {
             throw new NotImplementedException();
         }
-        #endregion        
+        #endregion
     }
 }
