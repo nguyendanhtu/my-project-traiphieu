@@ -1833,7 +1833,21 @@ namespace BondUS
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
         }
         #endregion
+        #region Additional Functions
 
+        public void fill_dataset_by_date_and_to_chuc_phat_hanh(DS_V_GD_CHUYEN_NHUONG ip_ds_v_gd_chuyen_nhuong                                                                                                               
+                                                        , DateTime ip_dat_tu_ngay
+                                                        , DateTime ip_dat_den_ngay
+                                                        , decimal ip_dc_id_to_chuc_phat_hanh)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_V_GD_CHUYEN_NHUONG_fill_data_by_date_and_to_chuc_phat_hanh");
+            
+            v_cstore.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay);
+            v_cstore.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay);
+            v_cstore.addDecimalInputParam("@ID_TO_CHUC_PHAT_HANH", ip_dc_id_to_chuc_phat_hanh);
+            v_cstore.fillDataSetByCommand(this, ip_ds_v_gd_chuyen_nhuong);
+        }
+        #endregion
 
     }
 
