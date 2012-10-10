@@ -1760,8 +1760,6 @@ namespace BondUS
         }
 
         #endregion
-
-
         #region Init Functions
         public US_V_GD_CHUYEN_NHUONG()
         {
