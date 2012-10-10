@@ -180,7 +180,7 @@ namespace BondApp
         {
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_cbo_loai_nhac_viec();
-            m_dat_to_date.Value = m_dat_from_date.Value.AddDays(90);
+            m_dat_to_date.Value = m_dat_from_date.Value;
             load_data_2_grid();
             //this.m_lbl_intro.ForeColor = System.Drawing.Color.Black;
             //this.m_lbl_intro.BackColor = System.Drawing.Color.Transparent;
