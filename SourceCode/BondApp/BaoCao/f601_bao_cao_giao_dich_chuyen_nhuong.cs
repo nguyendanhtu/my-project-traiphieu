@@ -41,7 +41,7 @@ namespace BondApp
         private Label label2;
         private Label label1;
         private DateTimePicker m_dat_from_date;
-        private Label m_lbl_header;
+        private Label m_lbl_title;
         internal Panel m_pnl_out_place_dm;
         internal SIS.Controls.Button.SiSButton m_cmd_export_excel;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
@@ -94,7 +94,7 @@ namespace BondApp
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.m_dat_from_date = new System.Windows.Forms.DateTimePicker();
-            this.m_lbl_header = new System.Windows.Forms.Label();
+            this.m_lbl_title = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_export_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
@@ -168,6 +168,7 @@ namespace BondApp
             this.m_cbo_to_chuc_phat_hanh.Name = "m_cbo_to_chuc_phat_hanh";
             this.m_cbo_to_chuc_phat_hanh.Size = new System.Drawing.Size(483, 21);
             this.m_cbo_to_chuc_phat_hanh.TabIndex = 31;
+            this.m_cbo_to_chuc_phat_hanh.SelectedIndexChanged += new System.EventHandler(this.m_cbo_to_chuc_phat_hanh_SelectedIndexChanged);
             // 
             // m_lbl_nhom_hang
             // 
@@ -229,17 +230,17 @@ namespace BondApp
             this.m_dat_from_date.Size = new System.Drawing.Size(200, 20);
             this.m_dat_from_date.TabIndex = 24;
             // 
-            // m_lbl_header
+            // m_lbl_title
             // 
-            this.m_lbl_header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_header.ForeColor = System.Drawing.Color.DarkRed;
-            this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
-            this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(968, 31);
-            this.m_lbl_header.TabIndex = 31;
-            this.m_lbl_header.Text = "F601 -BÁO CÁO TÌNH HÌNH CHUYỂN NHƯỢNG";
-            this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.m_lbl_title.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_title.ForeColor = System.Drawing.Color.DarkRed;
+            this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
+            this.m_lbl_title.Name = "m_lbl_title";
+            this.m_lbl_title.Size = new System.Drawing.Size(968, 31);
+            this.m_lbl_title.TabIndex = 31;
+            this.m_lbl_title.Text = "F601 -BÁO CÁO TÌNH HÌNH CHUYỂN NHƯỢNG";
+            this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_pnl_out_place_dm
             // 
@@ -288,7 +289,7 @@ namespace BondApp
             this.ClientSize = new System.Drawing.Size(968, 454);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_grb_thong_tin_ban_hang);
-            this.Controls.Add(this.m_lbl_header);
+            this.Controls.Add(this.m_lbl_title);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f601_bao_cao_giao_dich_chuyen_nhuong";
             this.Text = "f601_bao_cao_giao_dich_chuyen_nhuong";
@@ -343,11 +344,16 @@ namespace BondApp
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
 			set_define_events();
+            m_lbl_title.Font = new Font("Arial", 16);
+            m_lbl_title.ForeColor = Color.DarkRed;
+            m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
 			this.KeyPreview = true;		
 		}
-		private void set_initial_form_load(){						
-			m_obj_trans = get_trans_object(m_fg);
-			load_data_2_grid();		
+		private void set_initial_form_load(){
+            m_obj_trans = get_trans_object(m_fg);
+            m_dat_from_date.Value = CIPConvert.ToDatetime("01/01/2010");
+            load_data_2_cbo_to_chuc_phat_hanh();           
+            load_data_2_grid();	
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -372,9 +378,12 @@ namespace BondApp
 			return v_obj_trans;			
 		}
 		private void load_data_2_grid(){						
-			m_ds = new DS_V_GD_CHUYEN_NHUONG();			
-			m_us.FillDataset(m_ds);
-			m_fg.Redraw = false;
+			m_ds = new DS_V_GD_CHUYEN_NHUONG();
+            m_ds.EnforceConstraints = false;
+            m_us.fill_dataset_by_date_and_to_chuc_phat_hanh(m_ds                
+                ,m_dat_from_date.Value.Date
+                ,m_dat_to_date.Value.Date
+                , CIPConvert.ToDecimal(m_cbo_to_chuc_phat_hanh.SelectedValue));
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
 			m_fg.Redraw = true;
 		}
@@ -431,7 +440,7 @@ namespace BondApp
 		}
         private void export_excel()
         {
-            CExcelReport v_obj_export_excel = new CExcelReport("f600_Bao_cao_tong_hop_tinh_hinh_chuyen_nhuong", 11, 2);
+            CExcelReport v_obj_export_excel = new CExcelReport("f600_Bao cao tong hop tinh hinh chuyen nhuong.xls", 11, 2);
             v_obj_export_excel.AddFindAndReplaceItem("<NGAY_BAT_DAU>", CIPConvert.ToStr(m_dat_from_date.Value, "dd/MM/yyyy"));
             v_obj_export_excel.AddFindAndReplaceItem("<TEN_CONG_TY>", m_cbo_to_chuc_phat_hanh.Text);
             v_obj_export_excel.AddFindAndReplaceItem("<NGAY_KET_THUC>", CIPConvert.ToStr(m_dat_to_date.Value, "dd/MM/yyyy"));
@@ -458,7 +467,6 @@ namespace BondApp
         {
             US_DM_TO_CHUC_PHAT_HANH v_us_dm_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH();
             DS_DM_TO_CHUC_PHAT_HANH v_ds_dm_to_chuc_phat_hanh = new DS_DM_TO_CHUC_PHAT_HANH();
-
             v_us_dm_to_chuc_phat_hanh.FillDataset(v_ds_dm_to_chuc_phat_hanh);
             v_ds_dm_to_chuc_phat_hanh.EnforceConstraints = false;
             DataRow v_dr = v_ds_dm_to_chuc_phat_hanh.DM_TO_CHUC_PHAT_HANH.NewDM_TO_CHUC_PHAT_HANHRow();
@@ -568,7 +576,7 @@ namespace BondApp
         {
             try
             {
-                load_data_2_grid();
+                //load_data_2_grid();
             }
             catch (Exception v_e)
             {
