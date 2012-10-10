@@ -21,6 +21,7 @@ using BondUS;
 using BondDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
+using BondApp.HeThong;
 
 namespace BondApp
 {
@@ -327,9 +328,9 @@ namespace BondApp
 		}
 
 
-		private void insert_ht_tham_so_he_thong(){			
-		//	f107_ht_tham_so_he_thong_DE v_fDE = new  f107_ht_tham_so_he_thong_DE();								
-		//	v_fDE.display();
+		private void insert_ht_tham_so_he_thong(){
+            f108_tham_so_he_thong_de v_fde = new f108_tham_so_he_thong_de();
+            v_fde.display_for_insert();
 			load_data_2_grid();
 		}
 
