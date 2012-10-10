@@ -14,6 +14,7 @@ using IP.Core.IPUserService;
 using System.Data.SqlClient;
 using System.Data;
 using System;
+using BondDS.CDBNames;
 
 
 public class US_V_GD_TRA_GOC : US_Object
@@ -525,5 +526,26 @@ public class US_V_GD_TRA_GOC : US_Object
 	}
 #endregion
 
+    #region Public Interface
+    public void FillDatasetNo(DS_V_GD_TRA_GOC ip_ds)
+    {
+        base.FillDataset(ip_ds, " WHERE ID_TRANG_THAI <> " + List_trang_thai.Da_Thuc_Hien.ToString());
+    }
 
+    public void FillDatasetYes(DS_V_GD_TRA_GOC ip_ds)
+    {
+        base.FillDataset(ip_ds, " WHERE ID_TRANG_THAI = " + List_trang_thai.Da_Thuc_Hien.ToString());
+    }
+
+    public void FillDatasetByIDTraiPhieuNo(DS_V_GD_TRA_GOC ip_ds, decimal ip_id_trai_phieu_so_huu)
+    {
+        base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu_so_huu.ToString() + "AND  ID_TRANG_THAI <> " + List_trang_thai.Da_Thuc_Hien.ToString());
+    }
+
+    public void FillDatasetByIDTraiPhieuYes(DS_V_GD_TRA_GOC ip_ds, decimal ip_id_trai_phieu_so_huu)
+    {
+        base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu_so_huu.ToString() + " AND ID_TRANG_THAI = " + List_trang_thai.Da_Thuc_Hien.ToString());
+    }
+
+    #endregion  
 }
