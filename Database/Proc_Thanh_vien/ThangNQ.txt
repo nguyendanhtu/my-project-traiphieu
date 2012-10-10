@@ -1,0 +1,147 @@
+SET NOCOUNT ON
+GO
+USE [QuanLyPhatHanhTraiPhieu]
+GO
+CREATE PROCEDURE [dbo].[pr_HT_THAM_SO_HE_THONG_Insert]
+	@ID numeric(18, 0),
+	@LOAI_THAM_SO nvarchar(15),
+	@MA_THAM_SO nvarchar(15),
+	@PHAN_HE nvarchar(35),
+	@GHI_CHU nvarchar(250),
+	@KIEU_DU_LIEU nvarchar(35),
+	@GIA_TRI nvarchar(250),
+	@CO_THE_NULL_YN nvarchar(1)
+AS
+INSERT [dbo].[HT_THAM_SO_HE_THONG]
+(
+	[ID],
+	[LOAI_THAM_SO],
+	[MA_THAM_SO],
+	[PHAN_HE],
+	[GHI_CHU],
+	[KIEU_DU_LIEU],
+	[GIA_TRI],
+	[CO_THE_NULL_YN]
+)
+VALUES
+(
+	@ID,
+	@LOAI_THAM_SO,
+	@MA_THAM_SO,
+	@PHAN_HE,
+	@GHI_CHU,
+	@KIEU_DU_LIEU,
+	@GIA_TRI,
+	@CO_THE_NULL_YN
+)
+GO
+
+CREATE PROCEDURE [dbo].[pr_HT_THAM_SO_HE_THONG_Update]
+	@ID numeric(18, 0),
+	@LOAI_THAM_SO nvarchar(15),
+	@MA_THAM_SO nvarchar(15),
+	@PHAN_HE nvarchar(35),
+	@GHI_CHU nvarchar(250),
+	@KIEU_DU_LIEU nvarchar(35),
+	@GIA_TRI nvarchar(250),
+	@CO_THE_NULL_YN nvarchar(1)
+AS
+UPDATE [dbo].[HT_THAM_SO_HE_THONG]
+SET 
+	[LOAI_THAM_SO] = @LOAI_THAM_SO,
+	[MA_THAM_SO] = @MA_THAM_SO,
+	[PHAN_HE] = @PHAN_HE,
+	[GHI_CHU] = @GHI_CHU,
+	[KIEU_DU_LIEU] = @KIEU_DU_LIEU,
+	[GIA_TRI] = @GIA_TRI,
+	[CO_THE_NULL_YN] = @CO_THE_NULL_YN
+WHERE
+	[ID] = @ID
+GO
+
+CREATE PROCEDURE [dbo].[pr_HT_THAM_SO_HE_THONG_Delete]
+	@ID numeric(18, 0)
+AS
+DELETE FROM [dbo].[HT_THAM_SO_HE_THONG]
+WHERE
+	[ID] = @ID
+GO
+
+-- //// Try-to-lock-and-compare Stored procedure.
+CREATE PROCEDURE [dbo].[pr_HT_THAM_SO_HE_THONG_IsUpdatable]
+	@ID numeric(18, 0),
+	@LOAI_THAM_SO nvarchar(15),
+	@MA_THAM_SO nvarchar(15),
+	@PHAN_HE nvarchar(35),
+	@GHI_CHU nvarchar(250),
+	@KIEU_DU_LIEU nvarchar(35),
+	@GIA_TRI nvarchar(250),
+	@CO_THE_NULL_YN nvarchar(1),
+	@op_Error_Code int OUTPUT
+/* DESCRIPTION:
+|| Procedure nay dung de check 1 record trong bang cm_dm_tu_dien
+|| 1. xem co lock duoc record nhu vay khong , 
+||	a)thu lock neu khong lock duoc thi user khac dang lock 
+||    b) neu khong co thi da bi xoa 
+|| 2. xem co giong ban dau khong, neu khong giong thi da bi thay
+*/
+AS
+BEGIN
+/*********************************************
+|| COMMON SETTINGS
+**********************************************/
+SET NOCOUNT ON
+/**********************************************************
+|| DECLARATION
+***********************************************************/
+	declare @v_ID numeric(18, 0)
+	declare @v_LOAI_THAM_SO nvarchar(15)
+	declare @v_MA_THAM_SO nvarchar(15)
+	declare @v_PHAN_HE nvarchar(35)
+	declare @v_GHI_CHU nvarchar(250)
+	declare @v_KIEU_DU_LIEU nvarchar(35)
+	declare @v_GIA_TRI nvarchar(250)
+	declare @v_CO_THE_NULL_YN nvarchar(1)
+	 -- 1.a) neu khong lock duoc => ai do dang dung du lieu
+	select 
+	@v_ID = ID ,
+	@v_LOAI_THAM_SO = LOAI_THAM_SO ,
+	@v_MA_THAM_SO = MA_THAM_SO ,
+	@v_PHAN_HE = PHAN_HE ,
+	@v_GHI_CHU = GHI_CHU ,
+	@v_KIEU_DU_LIEU = KIEU_DU_LIEU ,
+	@v_GIA_TRI = GIA_TRI ,
+	@v_CO_THE_NULL_YN = CO_THE_NULL_YN 
+	 from HT_THAM_SO_HE_THONG with (updlock, rowlock, nowait)
+	 where ID =  @ID
+	 -- 1.b) khong co du lieu  => du lieu da bi xoa mat roi 
+	if ( @v_ID is null )
+	begin
+		set @OP_ERROR_CODE = dbo.C_RECORD_DELETED()
+		raiserror ('RECORD_DELETED',16,1)
+		goto ERROR_HANDLER
+	end
+	/*2. so sanh cac gia tri co giong  nhau khong */	
+	 if (
+	isnull( @v_ID,dbo.C_Extrem_Number() ) <> isnull( @ID ,dbo.C_Extrem_Number() )  OR 
+	isnull( @v_LOAI_THAM_SO,dbo.C_Extrem_Str() ) <> isnull( @LOAI_THAM_SO ,dbo.C_Extrem_Str() )  OR 
+	isnull( @v_MA_THAM_SO,dbo.C_Extrem_Str() ) <> isnull( @MA_THAM_SO ,dbo.C_Extrem_Str() )  OR 
+	isnull( @v_PHAN_HE,dbo.C_Extrem_Str() ) <> isnull( @PHAN_HE ,dbo.C_Extrem_Str() )  OR 
+	isnull( @v_GHI_CHU,dbo.C_Extrem_Str() ) <> isnull( @GHI_CHU ,dbo.C_Extrem_Str() )  OR 
+	isnull( @v_KIEU_DU_LIEU,dbo.C_Extrem_Str() ) <> isnull( @KIEU_DU_LIEU ,dbo.C_Extrem_Str() )  OR 
+	isnull( @v_GIA_TRI,dbo.C_Extrem_Str() ) <> isnull( @GIA_TRI ,dbo.C_Extrem_Str() )  OR 
+	isnull( @v_CO_THE_NULL_YN,dbo.C_Extrem_Str() ) <> isnull( @CO_THE_NULL_YN ,dbo.C_Extrem_Str() ) 
+	)
+	begin
+		set @OP_ERROR_CODE = dbo.C_RECORD_UPDATED()
+		raiserror ('RECORD_CHANGED',16,1)
+		goto ERROR_HANDLER
+	end
+		return
+	/********************************************************* 
+	|| ERROR HANDLING
+	*********************************************************/
+	ERROR_HANDLER:
+END
+GO
+
