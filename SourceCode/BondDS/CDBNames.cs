@@ -373,6 +373,7 @@ namespace BondDS.CDBNames
         public const string NOI_CAP_CMT_NGUOI_MUA = "NOI_CAP_CMT_NGUOI_MUA";
         public const string NOI_CAP_CMT_NGUOI_BAN = "NOI_CAP_CMT_NGUOI_BAN";
         public const string SO_LUONG_CHUYEN_NHUONG = "SO_LUONG_CHUYEN_NHUONG";
+        public const string GIA_TRI_CHUYEN_NHUONG_THUC_TE = "GIA_TRI_CHUYEN_NHUONG_THUC_TE";
         public const string TY_LE_PHI_GD = "TY_LE_PHI_GD";
         public const string PHI_GD = "PHI_GD";
         public const string NOI_DUNG_GIAO_DICH = "NOI_DUNG_GIAO_DICH";
@@ -382,6 +383,7 @@ namespace BondDS.CDBNames
         public const string ID_NGUOI_DUYET = "ID_NGUOI_DUYET";
         public const string ID_TRANG_THAI_CHUYEN_NHUONG = "ID_TRANG_THAI_CHUYEN_NHUONG";
     }
+
     public class GD_LICH_THANH_TOAN_LAI_GOC
     {
         public const string ID = "ID";
