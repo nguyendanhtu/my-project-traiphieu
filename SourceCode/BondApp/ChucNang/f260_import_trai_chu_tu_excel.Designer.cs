@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // f260_import_trai_chu_tu_excel
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(759, 368);
+            this.Name = "f260_import_trai_chu_tu_excel";
             this.Text = "f260_import_trai_chu_tu_excel";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
