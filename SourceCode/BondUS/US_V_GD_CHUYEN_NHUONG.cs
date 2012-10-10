@@ -506,28 +506,6 @@ namespace BondUS
             pm_objDR["ID_TRAI_PHIEU_SO_HUU"] = System.Convert.DBNull;
         }
 
-        public decimal dcID_TO_CHUC_PHAT_HANH
-        {
-            get
-            {
-                return CNull.RowNVLDecimal(pm_objDR, "ID_TO_CHUC_PHAT_HANH", IPConstants.c_DefaultDecimal);
-            }
-            set
-            {
-                pm_objDR["ID_TO_CHUC_PHAT_HANH"] = value;
-            }
-        }
-
-        public bool IsID_TO_CHUC_PHAT_HANHNull()
-        {
-            return pm_objDR.IsNull("ID_TO_CHUC_PHAT_HANH");
-        }
-
-        public void SetID_TO_CHUC_PHAT_HANHNull()
-        {
-            pm_objDR["ID_TO_CHUC_PHAT_HANH"] = System.Convert.DBNull;
-        }
-
         public string strMA_TRAI_PHIEU
         {
             get
@@ -834,94 +812,6 @@ namespace BondUS
         public void SetTRA_LAI_SAU_YNNull()
         {
             pm_objDR["TRA_LAI_SAU_YN"] = System.Convert.DBNull;
-        }
-
-        public DateTime datNGAY_PHAT_HANH
-        {
-            get
-            {
-                return CNull.RowNVLDate(pm_objDR, "NGAY_PHAT_HANH", IPConstants.c_DefaultDate);
-            }
-            set
-            {
-                pm_objDR["NGAY_PHAT_HANH"] = value;
-            }
-        }
-
-        public bool IsNGAY_PHAT_HANHNull()
-        {
-            return pm_objDR.IsNull("NGAY_PHAT_HANH");
-        }
-
-        public void SetNGAY_PHAT_HANHNull()
-        {
-            pm_objDR["NGAY_PHAT_HANH"] = System.Convert.DBNull;
-        }
-
-        public DateTime datNGAY_DAO_HAN
-        {
-            get
-            {
-                return CNull.RowNVLDate(pm_objDR, "NGAY_DAO_HAN", IPConstants.c_DefaultDate);
-            }
-            set
-            {
-                pm_objDR["NGAY_DAO_HAN"] = value;
-            }
-        }
-
-        public bool IsNGAY_DAO_HANNull()
-        {
-            return pm_objDR.IsNull("NGAY_DAO_HAN");
-        }
-
-        public void SetNGAY_DAO_HANNull()
-        {
-            pm_objDR["NGAY_DAO_HAN"] = System.Convert.DBNull;
-        }
-
-        public decimal dcTONG_SL_PHAT_HANH
-        {
-            get
-            {
-                return CNull.RowNVLDecimal(pm_objDR, "TONG_SL_PHAT_HANH", IPConstants.c_DefaultDecimal);
-            }
-            set
-            {
-                pm_objDR["TONG_SL_PHAT_HANH"] = value;
-            }
-        }
-
-        public bool IsTONG_SL_PHAT_HANHNull()
-        {
-            return pm_objDR.IsNull("TONG_SL_PHAT_HANH");
-        }
-
-        public void SetTONG_SL_PHAT_HANHNull()
-        {
-            pm_objDR["TONG_SL_PHAT_HANH"] = System.Convert.DBNull;
-        }
-
-        public decimal dcTONG_GIA_TRI
-        {
-            get
-            {
-                return CNull.RowNVLDecimal(pm_objDR, "TONG_GIA_TRI", IPConstants.c_DefaultDecimal);
-            }
-            set
-            {
-                pm_objDR["TONG_GIA_TRI"] = value;
-            }
-        }
-
-        public bool IsTONG_GIA_TRINull()
-        {
-            return pm_objDR.IsNull("TONG_GIA_TRI");
-        }
-
-        public void SetTONG_GIA_TRINull()
-        {
-            pm_objDR["TONG_GIA_TRI"] = System.Convert.DBNull;
         }
 
         public decimal dctcm_ID_NGUOI_LAP
@@ -1782,7 +1672,30 @@ namespace BondUS
             pm_objDR["ID_TRANG_THAI_CHUYEN_NHUONG"] = System.Convert.DBNull;
         }
 
+        public string strTEN_TRUY_CAP
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "TEN_TRUY_CAP", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["TEN_TRUY_CAP"] = value;
+            }
+        }
+
+        public bool IsTEN_TRUY_CAPNull()
+        {
+            return pm_objDR.IsNull("TEN_TRUY_CAP");
+        }
+
+        public void SetTEN_TRUY_CAPNull()
+        {
+            pm_objDR["TEN_TRUY_CAP"] = System.Convert.DBNull;
+        }
+
         #endregion
+
 
         #region Init Functions
         public US_V_GD_CHUYEN_NHUONG()
@@ -1811,5 +1724,7 @@ namespace BondUS
         }
         #endregion
 
+
     }
+
 }
