@@ -1,1 +1,6 @@
-﻿
+﻿namespace BondDS
+{
+}
+namespace BondDS
+{
+}
