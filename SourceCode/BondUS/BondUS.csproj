@@ -150,6 +150,7 @@
     <Compile Include="US_UT_SEQUENCES.cs" />
     <Compile Include="US_V_DM_TRAI_CHU.cs" />
     <Compile Include="US_V_DM_TRAI_CHU_CHOT_LAI.cs" />
+    <Compile Include="US_V_DM_TRAI_PHIEU.cs" />
     <Compile Include="US_V_GD_CHUYEN_NHUONG.cs" />
     <Compile Include="US_V_GD_PHONG_GIAI_TOA.cs" />
   </ItemGroup>
