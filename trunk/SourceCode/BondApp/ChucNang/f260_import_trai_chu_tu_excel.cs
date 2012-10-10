@@ -28,80 +28,107 @@ namespace BondApp.ChucNang
             InitializeComponent();
         }
 
-        //#region Members
-        //ITransferDataRow m_obj_tran_xls;
-        //#endregion
+        #region Members
+        ITransferDataRow m_obj_tran_xls;
+        US_DM_TRAI_PHIEU m_us_trai_phieu;
+        #endregion
 
-        //#region Data Structure
-        //private enum e_col_number_xls
-        //{
-        //    stt_row = 1,
-        //    MA_TRAI_CHU = 2,
-        //    ho_dem = 3,
-        //    ten = 4,
-        //    ngay_sinh = 5,
-        //    noi_sinh = 6,
-        //    diem_chuyen_can = 7,
-        //    diem_giua_ky = 8,
-        //    diem_thi_lan1 = 9,
-        //    //
-        //    diem_tong_ket_lan1 = 10,
-        //    //
-        //    ghi_chu_diem = 11,
-        //    trang_thai = 12,
-        //    dien_giai = 13
+        #region Data Structure
+        private enum e_col_number_xls
+        {
+            stt_row = 1,
+            MA_TRAI_CHU = 2,
+            ho_dem = 3,
+            ten = 4,
+            ngay_sinh = 5,
+            noi_sinh = 6,
+            diem_chuyen_can = 7,
+            diem_giua_ky = 8,
+            diem_thi_lan1 = 9,
+            //
+            diem_tong_ket_lan1 = 10,
+            //
+            ghi_chu_diem = 11,
+            trang_thai = 12,
+            dien_giai = 13
 
-        //}
-        //#endregion
+        }
+        #endregion
 
         //#region Private Method
-        //private void format_control()
-        //{
-        //    CControlFormat.setFormStyle(this);
-            
-        //    set_define_event();
-        //}
-        //private void set_init_load_form()
-        //{
-        //    m_obj_tran_xls = get_2_us_obj_xls();
+        private void format_control()
+        {
+            CControlFormat.setFormStyle(this);
+            set_define_event();
+            m_lbl_header.Font = new Font("Arial", 14);
+            m_lbl_header.ForeColor = Color.DarkRed;
+            m_lbl_header.TextAlign = ContentAlignment.MiddleCenter;
+        }
+        private void set_init_load_form()
+        {
+            //m_obj_tran_xls = get_2_us_obj_xls();
 
-        //}
-        //private void load_db_excel()
-        //{
-        //    if (m_txt_ma_mon.Text == "")
-        //    {
-        //        BaseMessages.MsgBox_Infor("Bạn hãy chọn môn học");
-        //        m_cmd_chon_trai_phieu.Focus();
-        //        return;
-        //    }
+        }
+        private void us_trai_phieu_2_form(US_DM_TRAI_PHIEU ip_us_trai_phieu)
+        {
+            m_txt_ma_trai_phieu.Text = ip_us_trai_phieu.strMA_TRAI_PHIEU;
+            try
+            {
+                US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(ip_us_trai_phieu.dcID_DOT_PHAT_HANH);
+                US_DM_TO_CHUC_PHAT_HANH v_us_dm_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH(v_us_dm_dot_phat_hanh.dcID_TO_CHUC_PHAT_HANH);
+                m_txt_ten_to_chuc_phat_hanh.Text = v_us_dm_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HANH;
+                m_txt_ngay_phat_hanh.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH, "dd/MM/yyyy");
+            }
+            catch (Exception v_e)
+            {
+                MessageBox.Show("Trái phiếu " + m_us_trai_phieu.strTEN_TRAI_PHIEU + " không có đơn vị kỳ hạn");
+                throw v_e;
+            }
+        }
+        private void load_db_excel()
+        {
+            if (m_txt_ma_trai_phieu.Text == "")
+            {
+                BaseMessages.MsgBox_Infor("Bạn hãy chọn trái phiếu");
+                m_cmd_chon_trai_phieu.Focus();
+                return;
+            }
 
-        //    if (m_dgl_open_file.ShowDialog() == DialogResult.OK)
-        //    {
-        //        string v_str_path_and_file_name = m_dgl_open_file.FileName;
-        //        string v_str_file_name = v_str_path_and_file_name.Substring(v_str_path_and_file_name.LastIndexOf("\\") + 1, v_str_path_and_file_name.Length - v_str_path_and_file_name.LastIndexOf("\\") - 1);
-        //        if (v_str_path_and_file_name.Length == 0) return;
+            if (m_dgl_open_file.ShowDialog() == DialogResult.OK)
+            {
+                string v_str_path_and_file_name = m_dgl_open_file.FileName;
+                string v_str_file_name = v_str_path_and_file_name.Substring(v_str_path_and_file_name.LastIndexOf("\\") + 1, v_str_path_and_file_name.Length - v_str_path_and_file_name.LastIndexOf("\\") - 1);
+                if (v_str_path_and_file_name.Length == 0) return;
 
-        //        CExcelReport v_xls_file = new CExcelReport(v_str_path_and_file_name);
+                CExcelReport v_xls_file = new CExcelReport(v_str_path_and_file_name);
 
-        //        DS_V_DM_TRAI_CHU v_ds_tmp_dm_trai_chu = new DS_V_DM_TRAI_CHU();
-        //        try
-        //        {
-        //            v_ds_tmp_dm_trai_chu.EnforceConstraints = false;
-        //            v_xls_file.Export2DatasetDSPhongThi(v_ds_tmp_dm_trai_chu, v_ds_tmp_dm_trai_chu.V_DM_TRAI_CHU.TableName, 12);
+                DS_V_DM_TRAI_CHU v_ds_tmp_dm_trai_chu = new DS_V_DM_TRAI_CHU();
+                try
+                {
+                    v_ds_tmp_dm_trai_chu.EnforceConstraints = false;
+                    v_xls_file.Export2DatasetDSPhongThi(v_ds_tmp_dm_trai_chu, v_ds_tmp_dm_trai_chu.V_DM_TRAI_CHU.TableName, 12);
 
-        //            CGridUtils.Dataset2C1Grid(v_ds_tmp_dm_trai_chu, m_fg_load_file, m_obj_tran_xls);
+                    CGridUtils.Dataset2C1Grid(v_ds_tmp_dm_trai_chu, m_fg_load_file, m_obj_tran_xls);
 
-        //            BaseMessages.MsgBox_Infor("Đã load dữ liệu file excel thành công.");
-        //        }
-        //        catch (Exception v_e)
-        //        {
-        //            if (v_e.Message.ToString() == "Cannot set Column 'STT' to be null. Please use DBNull instead.")
-        //                BaseMessages.MsgBox_Error("Cột STT không được trống, kiểm tra lại đi");
-        //            else CSystemLog_301.ExceptionHandle(v_e);
-        //        }
-        //    }
+                    BaseMessages.MsgBox_Infor("Đã load dữ liệu file excel thành công.");
+                }
+                catch (Exception v_e)
+                {
+                    if (v_e.Message.ToString() == "Cannot set Column 'STT' to be null. Please use DBNull instead.")
+                        BaseMessages.MsgBox_Error("Cột STT không được trống, kiểm tra lại đi");
+                    else CSystemLog_301.ExceptionHandle(v_e);
+                }
+            }
 
-        //}
+        }
+        private void select_trai_phieu()
+        {
+            f300_dm_trai_phieu v_frm300 = new f300_dm_trai_phieu();
+            m_us_trai_phieu = new US_DM_TRAI_PHIEU();
+            m_us_trai_phieu = v_frm300.select_trai_phieu();
+            if (!m_us_trai_phieu.IsIDNull())
+                us_trai_phieu_2_form(m_us_trai_phieu);
+        }
         //private void kiem_tra_data_tren_luoi()
         //{
         //    // kiem tra so luong hoc vien
@@ -233,96 +260,97 @@ namespace BondApp.ChucNang
         //}
         //#endregion
 
-        //#region Public Interface
-        //public void display()
-        //{
-        //    this.ShowDialog();
-        //}
-        //#endregion
+        #region Public Interface
+        public void display()
+        {
+            this.ShowDialog();
+        }
+        #endregion
 
-        //#region Events
-        //private void set_define_event()
-        //{
-        //    m_cmd_open_template.Click += new EventHandler(m_cmd_open_template_Click);
-        //    m_cmd_chon_trai_phieu.Click += new EventHandler(m_cmd_chon_trai_phieu_Click);
-        //    m_cmd_load_ds_trai_chu.Click += new EventHandler(m_cmd_load_ds_trai_chu_Click);
-        //    m_cmd_kiem_tra.Click += new EventHandler(m_cmd_kiem_tra_Click);
-        //    m_cmd_luu.Click += new EventHandler(m_cmd_luu_Click);
-        //    m_cmd_thoat.Click += new EventHandler(m_cmd_thoat_Click);
-        //}
+        #region Events
+        private void set_define_event()
+        {
+            m_cmd_open_template.Click += new EventHandler(m_cmd_open_template_Click);
+            m_cmd_chon_trai_phieu.Click += new EventHandler(m_cmd_chon_trai_phieu_Click);
+            m_cmd_load_ds_trai_chu.Click += new EventHandler(m_cmd_load_ds_trai_chu_Click);
+            m_cmd_kiem_tra.Click += new EventHandler(m_cmd_kiem_tra_Click);
+            m_cmd_luu.Click += new EventHandler(m_cmd_luu_Click);
+            m_cmd_thoat.Click += new EventHandler(m_cmd_thoat_Click);
+        }
 
-        //void m_cmd_chon_trai_phieu_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
+        void m_cmd_chon_trai_phieu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                select_trai_phieu();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-        //    }
-        //    catch (Exception v_e)
-        //    {
-        //        CSystemLog_301.ExceptionHandle(v_e);
-        //    }
-        //}
+        void m_cmd_open_template_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CExcelReport v_excel = new CExcelReport("IMPORT_TEMP_BANG_DIEM_HOC_PHAN_ACC304-C9.xls");
+                v_excel.OpenExcelFile();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-        //void m_cmd_open_template_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
+        void m_cmd_luu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //add_hoc_vien_vao_lop();
+                BaseMessages.MsgBox_Infor("Đã tạo bảng điểm thành công");
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-        //    }
-        //    catch (Exception v_e)
-        //    {
-        //        CSystemLog_301.ExceptionHandle(v_e);
-        //    }
-        //}
+        void m_cmd_kiem_tra_Click(object sender, EventArgs e)
+        {
+            try
+            {
+               // kiem_tra_data_tren_luoi();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-        //void m_cmd_luu_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        add_hoc_vien_vao_lop();
-        //        BaseMessages.MsgBox_Infor("Đã tạo bảng điểm thành công");
-        //    }
-        //    catch (Exception v_e)
-        //    {
-        //        CSystemLog_301.ExceptionHandle(v_e);
-        //    }
-        //}
+        void m_cmd_load_ds_trai_chu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_db_excel();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-        //void m_cmd_kiem_tra_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        kiem_tra_data_tren_luoi();
-        //    }
-        //    catch (Exception v_e)
-        //    {
-        //        CSystemLog_301.ExceptionHandle(v_e);
-        //    }
-        //}
-
-        //void m_cmd_load_ds_trai_chu_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        load_db_excel();
-        //    }
-        //    catch (Exception v_e)
-        //    {
-        //        CSystemLog_301.ExceptionHandle(v_e);
-        //    }
-        //}
-
-        //void m_cmd_thoat_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        this.Close();
-        //    }
-        //    catch (Exception v_e)
-        //    {
-        //        CSystemLog_301.ExceptionHandle(v_e);
-        //    }
-        //}
-        //#endregion
+        void m_cmd_thoat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        #endregion
     }
 }
