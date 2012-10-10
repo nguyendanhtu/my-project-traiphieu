@@ -18,7 +18,6 @@ using C1.Win.C1FlexGrid;
 using System.Data.SqlClient;
 
 using IP.Core.IPSystemAdmin;
-using BondUS;
 
 namespace BondApp
 {
@@ -36,14 +35,25 @@ namespace BondApp
             m_e_form_mode = eFormMode.LAP_CHUYEN_NHUONG;
             this.ShowDialog();
         }
-        public void display_sua_chuyen_nhuong()
+        public void display_sua_chuyen_nhuong(decimal ip_dc_id_gd_cn)
         {
+            m_us_gd_chuyen_nhuong = new US_GD_CHUYEN_NHUONG(ip_dc_id_gd_cn);
+            us_dg_chuyen_nhuong_2_from();
             m_e_form_mode = eFormMode.SUA_CHUYEN_NHUONG_CHUA_DUYET;
             this.ShowDialog();
         }
-        public void display_duyet_chuyen_nhuong()
+        public void display_duyet_chuyen_nhuong(decimal ip_dc_id_gd_cn)
         {
+            m_us_gd_chuyen_nhuong = new US_GD_CHUYEN_NHUONG(ip_dc_id_gd_cn);
+            us_dg_chuyen_nhuong_2_from();
             m_e_form_mode = eFormMode.DUYET_CHUYEN_NHUONG;
+            this.ShowDialog();
+        }
+        public void display_xem_gd_chuyen_nhuong(decimal ip_dc_id_gd_cn)
+        {
+            m_us_gd_chuyen_nhuong = new US_GD_CHUYEN_NHUONG(ip_dc_id_gd_cn);
+            us_dg_chuyen_nhuong_2_from();
+            m_e_form_mode = eFormMode.XEM_GIAO_DICH;
             this.ShowDialog();
         }
         #endregion
@@ -54,6 +64,7 @@ namespace BondApp
             LAP_CHUYEN_NHUONG
                 , SUA_CHUYEN_NHUONG_CHUA_DUYET
             , DUYET_CHUYEN_NHUONG
+            , XEM_GIAO_DICH
         }
         #endregion
 
@@ -81,8 +92,7 @@ namespace BondApp
             DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
             v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds(CM_DM_DS_LOAI_TU_DIEN.TRANG_THAI_GD, v_ds_cm_dm_tu_dien);
             v_ds_cm_dm_tu_dien.EnforceConstraints = false;
-            DataRow v_dr = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN.NewCM_DM_TU_DIENRow();
-            v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
+            
 
             m_cbb_trang_thai_cn.ValueMember = CM_DM_TU_DIEN.ID;
             m_cbb_trang_thai_cn.DisplayMember = CM_DM_TU_DIEN.TEN;
@@ -107,6 +117,11 @@ namespace BondApp
                     m_cmd_lap_chuyen_nhuong.Enabled = false;
                     m_cmd_sua_chuyen_nhuong.Enabled = false;
                     m_cmd_duyet_chuyen_nhuong.Enabled = true;
+                    break;
+                case eFormMode.XEM_GIAO_DICH:
+                    m_cmd_lap_chuyen_nhuong.Enabled = false;
+                    m_cmd_sua_chuyen_nhuong.Enabled = false;
+                    m_cmd_duyet_chuyen_nhuong.Enabled = false;
                     break;
                 default:                    
                     break;
@@ -438,6 +453,16 @@ namespace BondApp
 
             MessageBox.Show("Cập nhập thành công!");
         }
+
+        private void Show_danh_muc_chuyen_nhuong()
+        {
+            this.Close();
+            f610_dm_giao_dien_chuyen_nhuong v_frm610 = new f610_dm_giao_dien_chuyen_nhuong();
+            if (!m_us_trai_phieu.IsIDNull())
+                v_frm610.display_theo_trai_phieu(m_us_trai_phieu.dcID);
+            else
+                v_frm610.display();
+        }
         #endregion
 
         #region Events
@@ -454,6 +479,20 @@ namespace BondApp
             m_cmd_sua_chuyen_nhuong.Click += new EventHandler(m_cmd_update_Click);
             this.Load += new EventHandler(f600_giao_dich_chuyen_nhuong_Load);
             m_cmd_duyet_chuyen_nhuong.Click += new EventHandler(m_cmd_duyet_chuyen_nhuong_Click);
+            m_cmd_danh_sach_chuyen_nhuong.Click += new EventHandler(m_cmd_danh_sach_chuyen_nhuong_Click);
+        }
+
+        void m_cmd_danh_sach_chuyen_nhuong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Show_danh_muc_chuyen_nhuong();
+            }
+            catch (Exception v_e)
+            {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_duyet_chuyen_nhuong_Click(object sender, EventArgs e)

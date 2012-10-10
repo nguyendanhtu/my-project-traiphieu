@@ -124,7 +124,7 @@
             this.m_cmd_duyet_chuyen_nhuong = new SIS.Controls.Button.SiSButton();
             this.m_cmd_lap_chuyen_nhuong = new SIS.Controls.Button.SiSButton();
             this.m_cmd_sua_chuyen_nhuong = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_in = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_danh_sach_chuyen_nhuong = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_lbl_ID_gd_chuyen_nhuong = new System.Windows.Forms.Label();
             this.m_txt_ma_giao_dich = new System.Windows.Forms.TextBox();
@@ -1097,7 +1097,7 @@
             this.panel1.Controls.Add(this.m_cmd_duyet_chuyen_nhuong);
             this.panel1.Controls.Add(this.m_cmd_lap_chuyen_nhuong);
             this.panel1.Controls.Add(this.m_cmd_sua_chuyen_nhuong);
-            this.panel1.Controls.Add(this.m_cmd_in);
+            this.panel1.Controls.Add(this.m_cmd_danh_sach_chuyen_nhuong);
             this.panel1.Controls.Add(this.m_cmd_exit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 576);
@@ -1151,20 +1151,20 @@
             this.m_cmd_sua_chuyen_nhuong.TabIndex = 23;
             this.m_cmd_sua_chuyen_nhuong.Text = "&Sửa";
             // 
-            // m_cmd_in
+            // m_cmd_danh_sach_chuyen_nhuong
             // 
-            this.m_cmd_in.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_in.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_in.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_in.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_in.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_in.ImageIndex = 18;
-            this.m_cmd_in.ImageList = this.ImageList;
-            this.m_cmd_in.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_in.Name = "m_cmd_in";
-            this.m_cmd_in.Size = new System.Drawing.Size(163, 28);
-            this.m_cmd_in.TabIndex = 25;
-            this.m_cmd_in.Text = "Danh sách chuyển nhượng";
+            this.m_cmd_danh_sach_chuyen_nhuong.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_danh_sach_chuyen_nhuong.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_danh_sach_chuyen_nhuong.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_danh_sach_chuyen_nhuong.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_danh_sach_chuyen_nhuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_danh_sach_chuyen_nhuong.ImageIndex = 18;
+            this.m_cmd_danh_sach_chuyen_nhuong.ImageList = this.ImageList;
+            this.m_cmd_danh_sach_chuyen_nhuong.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_danh_sach_chuyen_nhuong.Name = "m_cmd_danh_sach_chuyen_nhuong";
+            this.m_cmd_danh_sach_chuyen_nhuong.Size = new System.Drawing.Size(163, 28);
+            this.m_cmd_danh_sach_chuyen_nhuong.TabIndex = 25;
+            this.m_cmd_danh_sach_chuyen_nhuong.Text = "Danh sách chuyển nhượng";
             // 
             // m_cmd_exit
             // 
@@ -1541,7 +1541,7 @@
         internal System.Windows.Forms.Panel panel1;
         internal SIS.Controls.Button.SiSButton m_cmd_lap_chuyen_nhuong;
         internal SIS.Controls.Button.SiSButton m_cmd_sua_chuyen_nhuong;
-        internal SIS.Controls.Button.SiSButton m_cmd_in;
+        internal SIS.Controls.Button.SiSButton m_cmd_danh_sach_chuyen_nhuong;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
