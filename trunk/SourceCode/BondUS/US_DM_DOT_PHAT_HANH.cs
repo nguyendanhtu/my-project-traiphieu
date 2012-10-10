@@ -8,7 +8,7 @@
 /// </summary>
 
 
-using SaleDS;
+using BondDS;
 using IP.Core.IPCommon;
 using IP.Core.IPUserService;
 using System.Data.SqlClient;
@@ -59,17 +59,17 @@ public class US_DM_DOT_PHAT_HANH : US_Object
 		pm_objDR["ID_TO_CHUC_PHAT_HANH"] = System.Convert.DBNull;
 	}
 
-	public DateTime datNGAY_PHAT_HANH
-	{
-		get   
-		{
-			return CNull.RowNVLDate(pm_objDR, "NGAY_PHAT_HANH", IPConstants.c_DefaultDate);
-		}
-		set   
-		{
-			pm_objDR["NGAY_PHAT_HANH"] = value;
-		}
-	}
+    //public DateTime datNGAY_PHAT_HANH
+    //{
+    //    get   
+    //    {
+    //        return CNull.RowNVLDate(pm_objDR, "NGAY_PHAT_HANH", IPConstants.c_DefaultDate);
+    //    }
+    //    set   
+    //    {
+    //        pm_objDR["NGAY_PHAT_HANH"] = value;
+    //    }
+    //}
 
 	public bool IsNGAY_PHAT_HANHNull()
 	{
@@ -81,17 +81,17 @@ public class US_DM_DOT_PHAT_HANH : US_Object
 		pm_objDR["NGAY_PHAT_HANH"] = System.Convert.DBNull;
 	}
 
-	public DateTime datNGAY_DAO_HAN
-	{
-		get   
-		{
-			return CNull.RowNVLDate(pm_objDR, "NGAY_DAO_HAN", IPConstants.c_DefaultDate);
-		}
-		set   
-		{
-			pm_objDR["NGAY_DAO_HAN"] = value;
-		}
-	}
+    //public DateTime datNGAY_DAO_HAN
+    //{
+    //    get   
+    //    {
+    //        return CNull.RowNVLDate(pm_objDR, "NGAY_DAO_HAN", IPConstants.c_DefaultDate);
+    //    }
+    //    set   
+    //    {
+    //        pm_objDR["NGAY_DAO_HAN"] = value;
+    //    }
+    //}
 
 	public bool IsNGAY_DAO_HANNull()
 	{
@@ -190,7 +190,7 @@ public class US_DM_DOT_PHAT_HANH : US_Object
 #region Init Functions
 	public US_DM_DOT_PHAT_HANH() 
 	{
-		pm_objDS = new DS_DM_DOT_PHAT_HANH();
+		//pm_objDS = new DS_DM_DOT_PHAT_HANH();
 		pm_strTableName = c_TableName;
 		pm_objDR = pm_objDS.Tables[pm_strTableName].NewRow();
 	}
@@ -202,7 +202,7 @@ public class US_DM_DOT_PHAT_HANH : US_Object
 
 	public US_DM_DOT_PHAT_HANH(decimal i_dbID) 
 	{
-		pm_objDS = new DS_DM_DOT_PHAT_HANH();
+		//pm_objDS = new DS_DM_DOT_PHAT_HANH();
 		pm_strTableName = c_TableName;
 		IMakeSelectCmd v_objMkCmd = new CMakeAndSelectCmd(pm_objDS, c_TableName);
 		v_objMkCmd.AddCondition("ID", i_dbID, eKieuDuLieu.KieuNumber, eKieuSoSanh.Bang);
