@@ -231,21 +231,21 @@ namespace BondApp
 			this.ShowDialog();
 		}
 
-
-        public void display_danh_sach_phong_toa()
+        public void display_duyet_phong_toa()
         {
             m_e_form_mode = eFormMode.DANH_SACH_PHONG_TOA;
             this.Text = "F701 - Danh sách Giao dịch phong tỏa";
             m_lbl_title.Text = "DANH SÁCH GIAO DỊCH PHONG TỎA";
             this.ShowDialog();
         }
-        public void display_danh_sach_giai_toa()
+        public void display_duyet_giai_toa()
         {
             m_e_form_mode = eFormMode.DANH_SACH_GIAI_TOA;
             this.Text = "F701 - Danh sách Giao dịch giải tỏa";
             m_lbl_title.Text = "DANH SÁCH GIAO DỊCH GIẢI TỎA";
             this.ShowDialog();
         }
+      
 		#endregion
 
 		#region Data Structure
@@ -302,8 +302,19 @@ namespace BondApp
 			return v_obj_trans;			
 		}
 		private void load_data_2_grid(){						
-			m_ds = new DS_GD_PHONG_GIAI_TOA();			
-			m_us.FillDataset(m_ds);
+			m_ds = new DS_GD_PHONG_GIAI_TOA();
+            string a;
+            switch (m_e_form_mode)
+            { 
+                case eFormMode.DANH_SACH_GIAI_TOA:
+                    m_us.FillDataset(m_ds, " WHERE " + GD_PHONG_GIAI_TOA.PHONG_TOA_YN + "= \'N\'");
+                    break;
+                case eFormMode.DANH_SACH_PHONG_TOA:
+                    m_us.FillDataset(m_ds, " WHERE " + GD_PHONG_GIAI_TOA.PHONG_TOA_YN + "= \'Y\'");
+                    break;
+                default: break;
+            }
+			//m_us.FillDataset(m_ds," WHERE "+GD_PHONG_GIAI_TOA.PHONG_TOA_YN+"= \'Y\'");
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
 			m_fg.Redraw = true;
