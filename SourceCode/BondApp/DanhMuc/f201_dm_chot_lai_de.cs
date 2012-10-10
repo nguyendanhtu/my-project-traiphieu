@@ -54,7 +54,6 @@ namespace BondApp
 
         private void us_object_2_form(US_GD_CHOT_LAI ip_us_gd_chot_lai)
         {
-            //m_dat_to_date.Value = m_dat_from_date.Value;
             m_dat_ngay_chot_lai.Value = m_us_gd_chot_lai.datNGAY_CHOT_LAI;
             m_dat_ngay_thanh_toan.Value = m_us_gd_chot_lai.datNGAY_THANH_TOAN;
             m_txt_trai_phieu.Text = m_us_gd_chot_lai.dcID_TRAI_PHIEU.ToString();
@@ -68,7 +67,6 @@ namespace BondApp
 
         private void form_2_us_object(US_GD_CHOT_LAI op_us_gd_chot_lai)
         {
-            //op_us_trai_phieu.datNGAY_PHAT_HANH = m_dat_ngay_phat_hanh.Value.Date;
             op_us_gd_chot_lai.datNGAY_CHOT_LAI = m_dat_ngay_chot_lai.Value;
             op_us_gd_chot_lai.datNGAY_THANH_TOAN = m_dat_ngay_thanh_toan.Value;
             op_us_gd_chot_lai.dcID_TRAI_PHIEU = CIPConvert.ToDecimal(m_txt_trai_phieu.Text);
@@ -82,6 +80,18 @@ namespace BondApp
 
         private bool check_validate_data_is_ok()
         {
+            if (!CValidateTextBox.IsValid(m_txt_trai_phieu, DataType.NumberType, allowNull.NO, true))
+            { return false; }
+            if(!CValidateTextBox.IsValid(m_txt_ki_tinh_lai,DataType.NumberType,allowNull.NO,true))
+            {return false;}
+            if (!CValidateTextBox.IsValid(m_txt_muc_dich, DataType.StringType, allowNull.YES, true))
+            { return false; }
+            if (!CValidateTextBox.IsValid(m_txt_nguoi_lap, DataType.NumberType, allowNull.NO, true))
+            { return false; }
+            if (!CValidateTextBox.IsValid(m_txt_nguoi_duyet, DataType.NumberType, allowNull.NO, true))
+            { return false; }
+            if (!CValidateTextBox.IsValid(m_txt_ghi_chu, DataType.StringType, allowNull.YES, true))
+            { return false; }
             return true;
         }
 
