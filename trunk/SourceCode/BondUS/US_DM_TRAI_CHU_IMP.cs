@@ -444,5 +444,12 @@ public class US_DM_TRAI_CHU_IMP : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+    
+    #region Additional Function
+    public void Insert_import(decimal ip_dc_loai_trai_chu)
+    {
+       
+    }
+    #endregion
+}
 }
