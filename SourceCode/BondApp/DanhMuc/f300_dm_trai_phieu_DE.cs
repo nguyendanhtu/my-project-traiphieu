@@ -69,7 +69,7 @@ namespace BondApp.DanhMuc
         }
         private void us_object_2_form(US_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
-            m_us_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH(ip_us_trai_phieu.dcID_TO_CHUC_PHAT_HANH);
+            m_us_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH(ip_us_trai_phieu.dcID_DOT_PHAT_HANH);
             m_us_tu_dien = new US_CM_DM_TU_DIEN(ip_us_trai_phieu.dcID_LOAI_TRAI_PHIEU);
 
             m_txt_ten_trai_phieu.Text = m_us_trai_phieu.strTEN_TRAI_PHIEU;
@@ -77,11 +77,11 @@ namespace BondApp.DanhMuc
             m_txt_ky_han.Text = m_us_trai_phieu.dcKY_HAN.ToString();
             m_txt_ky_dieu_chinh_ls.Text = m_us_trai_phieu.dcKY_DIEU_CHINH_LS.ToString();
             m_txt_ky_tra_lai.Text = m_us_trai_phieu.dcKY_TRA_LAI.ToString();
-            m_txt_menh_gia.Text = CIPConvert.ToStr(m_us_trai_phieu.dcMENH_GIA, "#,###");
+            /*m_txt_menh_gia.Text = CIPConvert.ToStr(m_us_trai_phieu.dcMENH_GIA, "#,###");
             m_txt_tong_sl.Text = CIPConvert.ToStr(m_us_trai_phieu.dcTONG_SL_PHAT_HANH, "#,###");
             m_txt_lai_suat.Text = CIPConvert.ToStr(m_us_trai_phieu.dcLAI_SUAT_DEFAULT);
             m_dat_ngay_phat_hanh.Value = m_us_trai_phieu.datNGAY_PHAT_HANH;
-            m_dat_ngay_dao_han.Value = m_us_trai_phieu.datNGAY_DAO_HAN;
+            m_dat_ngay_dao_han.Value = m_us_trai_phieu.datNGAY_DAO_HAN;*/
 
             m_cbo_co_so_tinh_lai.SelectedText = m_us_trai_phieu.strCO_SO_TINH_LAI;
             m_cbo_loai_trai_phieu.SelectedText = m_us_tu_dien.strTEN;
@@ -113,10 +113,10 @@ namespace BondApp.DanhMuc
         private void form_2_us_object(US_DM_TRAI_PHIEU op_us_trai_phieu)
         {
             op_us_trai_phieu.strTEN_TRAI_PHIEU = m_txt_ten_trai_phieu.Text;
-            op_us_trai_phieu.dcID_TO_CHUC_PHAT_HANH = m_us_to_chuc_phat_hanh.dcID;
+           /* op_us_trai_phieu.dcID_TO_CHUC_PHAT_HANH = m_us_to_chuc_phat_hanh.dcID;
             op_us_trai_phieu.strMA_TRAI_PHIEU = m_txt_ma_trai_phieu.Text;
             op_us_trai_phieu.dcID_LOAI_TRAI_PHIEU = (decimal)m_cbo_loai_trai_phieu.SelectedValue;
-            op_us_trai_phieu.dcMENH_GIA = CIPConvert.ToDecimal(m_txt_menh_gia.Text);
+            op_us_trai_phieu.dcMENH_GIA = CIPConvert.ToDecimal(m_txt_menh_gia.Text);*/
             op_us_trai_phieu.dcKY_HAN = CIPConvert.ToDecimal(m_txt_ky_han.Text);
             op_us_trai_phieu.dcID_DV_KY_HAN = (decimal)m_cbo_don_vi_ky_han.SelectedValue;
             op_us_trai_phieu.dcLAI_SUAT_DEFAULT = CIPConvert.ToDecimal(m_txt_lai_suat.Text);
@@ -126,10 +126,10 @@ namespace BondApp.DanhMuc
             op_us_trai_phieu.dcKY_TRA_LAI = CIPConvert.ToDecimal(m_txt_ky_tra_lai.Text);
             op_us_trai_phieu.dcID_DV_KY_TRA_LAI = (decimal)m_cbo_dv_tra_lai.SelectedValue;
             op_us_trai_phieu.strTRA_LAI_SAU_YN = (string)m_cbo_tra_lai_sau.SelectedValue;
-            op_us_trai_phieu.datNGAY_PHAT_HANH = m_dat_ngay_phat_hanh.Value.Date;
+            /*op_us_trai_phieu.datNGAY_PHAT_HANH = m_dat_ngay_phat_hanh.Value.Date;
             op_us_trai_phieu.datNGAY_DAO_HAN = m_dat_ngay_dao_han.Value.Date;
             op_us_trai_phieu.dcTONG_SL_PHAT_HANH = decimal.Parse(m_txt_tong_sl.Text);
-            op_us_trai_phieu.dcTONG_GIA_TRI = op_us_trai_phieu.dcTONG_SL_PHAT_HANH * op_us_trai_phieu.dcMENH_GIA;
+            op_us_trai_phieu.dcTONG_GIA_TRI = op_us_trai_phieu.dcTONG_SL_PHAT_HANH * op_us_trai_phieu.dcMENH_GIA;*/
         }
         private void load_data_2_cbo()
         {
