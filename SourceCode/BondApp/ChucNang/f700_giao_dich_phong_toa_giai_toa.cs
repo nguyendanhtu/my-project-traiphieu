@@ -212,12 +212,14 @@ namespace BondApp
         }
         private void us_trai_phieu_2_form(US_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
+            US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(ip_us_trai_phieu.dcID_DOT_PHAT_HANH);
+          
             m_txt_ma_so_trai_phieu.Text = ip_us_trai_phieu.strMA_TRAI_PHIEU;
             m_txt_to_chuc_phat_hanh.Text = ip_us_trai_phieu.strTEN_TRAI_PHIEU;
             m_txt_menh_gia.Text = CIPConvert.ToStr( ip_us_trai_phieu.dcMENH_GIA, "#,###");
             //m_txt_tong_gia_tri.Text = ip_us_trai_phieu.dcTONG_GIA_TRI.ToString();
-            m_txt_ngay_phat_hanh.Text = ip_us_trai_phieu.datNGAY_PHAT_HANH.ToString("dd/MM/yyyy");
-            m_txt_ngay_dao_han.Text = ip_us_trai_phieu.datNGAY_DAO_HAN.ToString("dd/MM/yyyy");
+            m_txt_ngay_phat_hanh.Text = v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH.ToString("dd/MM/yyyy");
+            m_txt_ngay_dao_han.Text = v_us_dm_dot_phat_hanh.datNGAY_DAO_HAN.ToString("dd/MM/yyyy");
             m_txt_lai_suat.Text = CIPConvert.ToStr( ip_us_trai_phieu.dcLAI_SUAT_DEFAULT, "p");
             if (ip_us_trai_phieu.strTRA_LAI_SAU_YN != null)
                 switch (ip_us_trai_phieu.strTRA_LAI_SAU_YN)
