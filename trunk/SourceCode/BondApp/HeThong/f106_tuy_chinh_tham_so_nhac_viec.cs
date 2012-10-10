@@ -69,10 +69,10 @@ namespace BondApp.HeThong
             try
             {
                 m_us_dm_tham_so_nhac_viec.BeginTransaction();
-                m_us_dm_tham_so_nhac_viec.cap_nhat_tham_so_nhac_viec(CIPConvert.ToDecimal(m_txt_ngay_thanh_toan_lai.Text)
+                /*m_us_dm_tham_so_nhac_viec.cap_nhat_tham_so_nhac_viec(CIPConvert.ToDecimal(m_txt_ngay_thanh_toan_lai.Text)
                                                                     , CIPConvert.ToDecimal(m_txt_ngay_thanh_toan_goc.Text)
                                                                     , CIPConvert.ToDecimal(m_txt_ngay_cap_nhat_ls.Text)
-                                                                    , CIPConvert.ToDecimal(m_txt_ngay_chot_ds_ls.Text));
+                                                                    , CIPConvert.ToDecimal(m_txt_ngay_chot_ds_ls.Text));*/
                 m_us_dm_tham_so_nhac_viec.CommitTransaction();
             }
             catch (Exception v_e)
