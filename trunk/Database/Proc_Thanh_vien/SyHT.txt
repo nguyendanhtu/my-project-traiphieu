@@ -166,3 +166,32 @@ cl.ID_NGUOI_DUYET as ID_NGUOI_DUYET_CHOT_LAI
 FROM DM_TRAI_CHU as tc , GD_CHOT_LAI as cl , GD_CHOT_LAI_DETAIL as clde
 WHERE cl.ID = clde.ID_CHOT_LAI AND clde.ID_TRAI_CHU = tc.ID
 GO
+
+----------------11/10-------------------------------
+CREATE VIEW V_GD_TRA_GOC
+AS
+SELECT
+tc.ID,
+tc.TEN_TRAI_CHU,
+tc.MA_TRAI_CHU,
+tc.DIA_CHI,
+tc.MOBILE,
+tc.FAX,
+tc.CMT_GIAY_DKKD,
+tc.NGAY_CAP_CMT,
+tc.NOI_CAP_CMT,
+tc.ID_LOAI_TRAI_CHU,
+tc.ID_NGUOI_DUYET as ID_NGUOI_DUYET_TC,
+tc.ID_NGUOI_LAP as ID_NGUOI_LAP_TC,
+tc.ID_TRAI_PHIEU_SO_HUU,
+tp.MA_TRAI_PHIEU,
+tp.TEN_TRAI_PHIEU,
+tp.MENH_GIA,
+tc.SO_TAI_KHOAN,
+tc.MO_TAI_NGAN_HANG,
+tc.GHI_CHU1, tc.GHI_CHU2,tc.GHI_CHU3,
+tc.ID_TRANG_THAI,
+dbo.f_so_du_trai_phieu_theo_trai_chu(tc.ID, '1/1/1900') as TONG_SO_DU
+FROM DM_TRAI_CHU as tc , DM_TRAI_PHIEU as tp
+WHERE tc.ID_TRAI_PHIEU_SO_HUU = tp.ID
+GO
