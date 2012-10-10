@@ -160,6 +160,28 @@ namespace BondDS.CDBNames
         public const string ID_NGUOI_LAP_CHOT_LAI = "ID_NGUOI_LAP_CHOT_LAI";
         public const string ID_NGUOI_DUYET_CHOT_LAI = "ID_NGUOI_DUYET_CHOT_LAI";
     }
+    public class DM_TRAI_CHU_IMP
+    {
+        public const string ID = "ID";
+        public const string STT = "STT";
+        public const string MA_TRAI_CHU = "MA_TRAI_CHU";
+        public const string TEN_TRAI_CHU = "TEN_TRAI_CHU";
+        public const string LOAI_HINH_CO_CONG = "LOAI_HINH_CO_CONG";
+        public const string DKHD_CMND = "DKHD_CMND";
+        public const string NGAY_CAP = "NGAY_CAP";
+        public const string NOI_CAP = "NOI_CAP";
+        public const string QUOC_TICH = "QUOC_TICH";
+        public const string DIA_CHI = "DIA_CHI";
+        public const string DIEN_THOAI = "DIEN_THOAI";
+        public const string EMAIL = "EMAIL";
+        public const string SO_TAI_KHOAN = "SO_TAI_KHOAN";
+        public const string NOI_MO_TAI_KHOAN = "NOI_MO_TAI_KHOAN";
+        public const string SO_LUONG_TRAI_PHIEU_SO_HUU = "SO_LUONG_TRAI_PHIEU_SO_HUU";
+        public const string TEN_NGUOI_DAI_DIEN = "TEN_NGUOI_DAI_DIEN";
+        public const string SO_CMND_NGUOI_DAI_DIEN = "SO_CMND_NGUOI_DAI_DIEN";
+        public const string CHUC_VU_NGUOI_DAI_DIEN = "CHUC_VU_NGUOI_DAI_DIEN";
+        public const string NGAY_BAT_DAU_SO_HUU_TP = "NGAY_BAT_DAU_SO_HUU_TP";
+    }
 
     public class CM_DM_LOAI_TD
     {
