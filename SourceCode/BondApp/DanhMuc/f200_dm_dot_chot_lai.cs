@@ -34,8 +34,7 @@ namespace BondApp
 		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
 		private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
 		internal SIS.Controls.Button.SiSButton m_cmd_delete;
-		internal SIS.Controls.Button.SiSButton m_cmd_update;
-		internal SIS.Controls.Button.SiSButton m_cmd_insert;
+        internal SIS.Controls.Button.SiSButton m_cmd_update;
 		internal SIS.Controls.Button.SiSButton m_cmd_exit;
 		internal SIS.Controls.Button.SiSButton m_cmd_view;
         private GroupBox m_gru_tim_kiem;
@@ -84,7 +83,6 @@ namespace BondApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f200_dm_dot_chot_lai));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
@@ -129,7 +127,6 @@ namespace BondApp
             // 
             // m_pnl_out_place_dm
             // 
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
@@ -140,21 +137,6 @@ namespace BondApp
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(884, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
-            // 
-            // m_cmd_insert
-            // 
-            this.m_cmd_insert.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_insert.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_insert.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_insert.ImageIndex = 2;
-            this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(528, 4);
-            this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_insert.TabIndex = 12;
-            this.m_cmd_insert.Text = "&Thêm";
             // 
             // m_cmd_update
             // 
@@ -380,8 +362,8 @@ namespace BondApp
 
 
 		private void insert_gd_chot_lai(){
-            //f201_dm_chot_lai_de v_fDE = new f201_dm_chot_lai_de();
-            //v_fDE.display_for_insert();
+            f201_dm_chot_lai_de v_fDE = new f201_dm_chot_lai_de();
+            v_fDE.display_for_insert();
 			load_data_2_grid();
 		}
 
@@ -389,8 +371,8 @@ namespace BondApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
 			grid2us_object(m_us, m_fg.Row);
-		//	f200_dm_dot_chot_lai_DE v_fDE = new f200_dm_dot_chot_lai_DE();
-		//	v_fDE.display(m_us);
+			f201_dm_chot_lai_de v_fDE = new f201_dm_chot_lai_de();
+		    v_fDE.display_for_update(m_us);
 			load_data_2_grid();
 		}
 				
@@ -418,12 +400,12 @@ namespace BondApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
 			grid2us_object(m_us, m_fg.Row);
-		//	f200_dm_dot_chot_lai_DE v_fDE = new f200_dm_dot_chot_lai_DE();			
-		//	v_fDE.display(m_us);
+            
+            //f200_dm_dot_chot_lai_DE v_fDE = new f200_dm_dot_chot_lai_DE();
+            //v_fDE.display(m_us);
 		}
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
@@ -448,15 +430,6 @@ namespace BondApp
 		private void m_cmd_exit_Click(object sender, EventArgs e) {
 			try{
 				this.Close();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
-
-		private void m_cmd_insert_Click(object sender, EventArgs e) {
-			try{
-				insert_gd_chot_lai();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
