@@ -362,8 +362,8 @@ namespace BondApp
 
 
 		private void insert_gd_chot_lai(){
-            f201_dm_chot_lai_de v_fDE = new f201_dm_chot_lai_de();
-            v_fDE.display_for_insert();
+            //f201_dm_chot_lai_de v_fDE = new f201_dm_chot_lai_de();
+            //v_fDE.display_for_insert();
 			load_data_2_grid();
 		}
 
@@ -371,8 +371,8 @@ namespace BondApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
 			grid2us_object(m_us, m_fg.Row);
-			f201_dm_chot_lai_de v_fDE = new f201_dm_chot_lai_de();
-		    v_fDE.display_for_update(m_us);
+            //f201_dm_chot_lai_de v_fDE = new f201_dm_chot_lai_de();
+            //v_fDE.display_for_update(m_us);
 			load_data_2_grid();
 		}
 				
