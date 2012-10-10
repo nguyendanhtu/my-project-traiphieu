@@ -12,7 +12,7 @@ using IP.Core.IPUserService;
 using IP.Core.IPData;
 using BondDS.CDBNames;
 using IP.Core.IPSystemAdmin;
-using WebUS;
+using BondUS;
 
 namespace BondApp.DanhMuc
 {
