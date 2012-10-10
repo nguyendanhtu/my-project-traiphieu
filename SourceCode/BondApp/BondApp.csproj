@@ -255,6 +255,9 @@
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BaoCao\f601_bao_cao_tinh_hinh_chuyen_nhuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="BaoCao\f659_bao_cao_tinh_hinh_phong_toa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -415,6 +418,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BaoCao\f601_bao_cao_tinh_hinh_chuyen_nhuong.resx">
+      <DependentUpon>f601_bao_cao_tinh_hinh_chuyen_nhuong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f659_bao_cao_tinh_hinh_phong_toa.resx">
       <DependentUpon>f659_bao_cao_tinh_hinh_phong_toa.cs</DependentUpon>
       <SubType>Designer</SubType>
