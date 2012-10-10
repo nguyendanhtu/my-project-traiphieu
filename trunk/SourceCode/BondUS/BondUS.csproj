@@ -134,6 +134,7 @@
     <Compile Include="US_DM_THAM_SO_NHAC_VIEC.cs" />
     <Compile Include="US_DM_TO_CHUC_PHAT_HANH.cs" />
     <Compile Include="US_DM_TRAI_CHU.cs" />
+    <Compile Include="US_DM_TRAI_CHU_IMP.cs" />
     <Compile Include="US_DM_TRAI_PHIEU.cs" />
     <Compile Include="US_DOC_COLUMN_COMMENT.cs" />
     <Compile Include="US_DOC_TABLE_COMMENT.cs" />
