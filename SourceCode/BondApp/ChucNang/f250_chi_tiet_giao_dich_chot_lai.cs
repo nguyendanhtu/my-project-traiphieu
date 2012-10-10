@@ -45,7 +45,7 @@ namespace BondApp.ChucNang
         #endregion
         #region Members
         US_GD_CHOT_LAI_DETAIL m_us = new US_GD_CHOT_LAI_DETAIL();
-        US_V_DM_TRAI_CHU m_us_trai_chu = new US_V_DM_TRAI_CHU();
+        US_DM_TRAI_CHU m_us_trai_chu = new US_DM_TRAI_CHU();
         US_CM_DM_TU_DIEN m_us_tu_dien = new US_CM_DM_TU_DIEN();
         DS_CM_DM_TU_DIEN m_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
@@ -66,7 +66,7 @@ namespace BondApp.ChucNang
             us_trai_chu_2_form(m_us_trai_chu);
             m_txt_so_luong_tinh_lai.Focus();
         }
-        private void us_trai_chu_2_form(US_V_DM_TRAI_CHU ip_us_trai_chu)
+        private void us_trai_chu_2_form(US_DM_TRAI_CHU ip_us_trai_chu)
         {
             if (ip_us_trai_chu.IsIDNull()) return;
             DS_GD_SO_DU_TRAI_PHIEU v_ds = new DS_GD_SO_DU_TRAI_PHIEU();
@@ -87,7 +87,7 @@ namespace BondApp.ChucNang
         private void us_object_2_form(US_GD_CHOT_LAI_DETAIL ip_us_trai_phieu)
         {
             //m_us_tu_dien = new US_CM_DM_TU_DIEN(ip_us_trai_phieu.dcID_LOAI_TRAI_PHIEU);
-            m_us_trai_chu = new US_V_DM_TRAI_CHU(m_us.dcID_TRAI_CHU);
+            m_us_trai_chu = new US_DM_TRAI_CHU(m_us.dcID_TRAI_CHU);
             m_txt_id_chot_lai.Text = CIPConvert.ToStr(m_us.dcID_CHOT_LAI);
             m_txt_ma_trai_chu.Text = CIPConvert.ToStr(m_us.dcID_TRAI_CHU);
             m_txt_so_luong_tinh_lai.Text = CIPConvert.ToStr(m_us.dcSO_LUONG_TINH_LAI);
