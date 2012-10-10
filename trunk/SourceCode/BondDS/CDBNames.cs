@@ -12,9 +12,15 @@ namespace BondDS.CDBNames
         public const decimal DON_VI_KY_HAN = 4;
         public const decimal LOAI_NHAC_NHAC_VIEC = 5;
         public const decimal TRANG_THAI_GD = 6;
-
-
     }
+
+    public class List_trang_thai
+    {
+        public const decimal DaNhap = 21;
+        public const decimal DaDuyet = 22;
+        public const decimal DaThucHien = 23;
+    }
+
     public class ID_LOAI_NHAC_VIEC
     {
         public const decimal THANH_TOAN_LAI = 27;
@@ -23,6 +29,7 @@ namespace BondDS.CDBNames
         public const decimal GIAO_DICH_DA_THUC_HIEN = 30;
         public const decimal CHOT_DANH_SACH_LAI = 33;
     }
+
     public class CM_DM_DS_LOAI_TU_DIEN
     {
         public const string TRANG_THAI_GD = "TRANG_THAI_GD";
