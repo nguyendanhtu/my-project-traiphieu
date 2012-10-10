@@ -4,3 +4,6 @@
 namespace BondDS
 {
 }
+namespace BondDS
+{
+}
