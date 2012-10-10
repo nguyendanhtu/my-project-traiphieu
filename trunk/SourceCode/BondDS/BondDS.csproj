@@ -229,6 +229,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_UT_SEQUENCES.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_DM_DOT_PHAT_HANH.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_DM_DOT_PHAT_HANH.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_DM_TRAI_CHU.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -503,6 +508,17 @@
     </None>
     <None Include="DS_UT_SEQUENCES.xss">
       <DependentUpon>DS_UT_SEQUENCES.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DM_DOT_PHAT_HANH.xsc">
+      <DependentUpon>DS_V_DM_DOT_PHAT_HANH.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_DM_DOT_PHAT_HANH.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_DM_DOT_PHAT_HANH.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_DM_DOT_PHAT_HANH.xss">
+      <DependentUpon>DS_V_DM_DOT_PHAT_HANH.xsd</DependentUpon>
     </None>
     <None Include="DS_V_DM_TRAI_CHU.xsc">
       <DependentUpon>DS_V_DM_TRAI_CHU.xsd</DependentUpon>
