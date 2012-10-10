@@ -250,6 +250,10 @@ namespace BondApp.ChucNang
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            foreach (C1.Win.C1FlexGrid.Column col in m_fg.Cols)
+            {
+                col.AllowEditing = true;
+            }
             grid2us_object(m_us, m_fg.Row);
 
             m_us_dm_trai_chu = new US_DM_TRAI_CHU(m_us.dcID);
