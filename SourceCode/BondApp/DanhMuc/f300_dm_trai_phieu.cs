@@ -319,6 +319,13 @@ namespace BondApp
 		public void display(){			
 			this.ShowDialog();
 		}
+        public US_DM_TRAI_PHIEU select_trai_phieu()
+        {
+            m_e_form_mode = DataEntryFormMode.SelectDataState;
+            this.ShowDialog();
+
+            return m_us;
+        }
 		#endregion
 
 		#region Data Structure
@@ -330,7 +337,8 @@ namespace BondApp
 		#region Members
 		ITransferDataRow m_obj_trans;		
 		DS_V_DM_TRAI_PHIEU m_ds = new DS_V_DM_TRAI_PHIEU();
-		US_V_DM_TRAI_PHIEU m_us = new US_V_DM_TRAI_PHIEU();
+		US_DM_TRAI_PHIEU m_us = new US_DM_TRAI_PHIEU();
+        DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
 		#endregion
 
 		#region Private Methods
@@ -357,7 +365,7 @@ namespace BondApp
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
 			m_fg.Redraw = true;
 		}
-		private void grid2us_object(US_V_DM_TRAI_PHIEU i_us
+		private void grid2us_object(US_DM_TRAI_PHIEU i_us
 			, int i_grid_row) {
 			DataRow v_dr;
 			v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
@@ -393,7 +401,7 @@ namespace BondApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
 			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			US_V_DM_TRAI_PHIEU v_us = new US_V_DM_TRAI_PHIEU();
+			US_DM_TRAI_PHIEU v_us = new US_DM_TRAI_PHIEU();
 			grid2us_object(v_us, m_fg.Row);
 			try {			
 				v_us.BeginTransaction();    											
