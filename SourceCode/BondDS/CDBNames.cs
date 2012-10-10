@@ -121,7 +121,13 @@ namespace BondDS.CDBNames
         public const string TEN_TRUY_CAP = "TEN_TRUY_CAP";
     }
 
-
+    public class V_DM_DOT_PHAT_HANH
+    {
+        public const string ID = "ID";
+        public const string TEN_TO_CHUC_PHAT_HANH = "TEN_TO_CHUC_PHAT_HANH";
+        public const string NGAY_PHAT_HANH = "NGAY_PHAT_HANH";
+        public const string GHI_CHU = "GHI_CHU";
+    }
 
     public class V_DM_TRAI_CHU_CHOT_LAI
     {
