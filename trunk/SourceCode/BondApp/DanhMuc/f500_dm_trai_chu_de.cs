@@ -31,7 +31,7 @@ namespace BondApp.DanhMuc
             this.ShowDialog();
         }
 
-        public void display_for_update(US_V_DM_TRAI_CHU ip_us_v_trai_chu)
+        public void display_for_update(US_DM_TRAI_CHU ip_us_v_trai_chu)
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             m_us_v_trai_chu = ip_us_v_trai_chu;
@@ -47,7 +47,7 @@ namespace BondApp.DanhMuc
         #endregion
 
         #region Members
-        US_V_DM_TRAI_CHU m_us_v_trai_chu = new US_V_DM_TRAI_CHU();
+        US_DM_TRAI_CHU m_us_v_trai_chu = new US_DM_TRAI_CHU();
         US_DM_TRAI_PHIEU m_us_trai_phieu;
         US_CM_DM_TU_DIEN m_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
         DS_CM_DM_TU_DIEN m_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
@@ -87,7 +87,7 @@ namespace BondApp.DanhMuc
             m_cbo_loai_trai_chu.ValueMember = CM_DM_TU_DIEN.ID;
         }
 
-        private void us_object_2_form(US_V_DM_TRAI_CHU ip_us_trai_chu)
+        private void us_object_2_form(US_DM_TRAI_CHU ip_us_trai_chu)
         {
             m_us_trai_phieu = new US_DM_TRAI_PHIEU(ip_us_trai_chu.dcID_TRAI_PHIEU_SO_HUU);
 
@@ -109,10 +109,10 @@ namespace BondApp.DanhMuc
             m_txt_id_trai_phieu_so_huu.Text = m_us_trai_phieu.strMA_TRAI_PHIEU;
             m_txt_ten_trai_phieu.Text = m_us_trai_phieu.strTEN_TRAI_PHIEU;
             m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ip_us_trai_chu.dcID_TRANG_THAI);
-            m_txt_so_du_kha_dung.Text = CIPConvert.ToStr(ip_us_trai_chu.dcSO_DU_KHA_DUNG);
+            //m_txt_so_du_kha_dung.Text = CIPConvert.ToStr(ip_us_trai_chu.dcSO_DU_KHA_DUNG);
         }
 
-        private void form_2_us_object(US_V_DM_TRAI_CHU ip_us_trai_chu)
+        private void form_2_us_object(US_DM_TRAI_CHU ip_us_trai_chu)
         {
             ip_us_trai_chu.strMA_TRAI_CHU = m_txt_ma_trai_chu.Text;
             ip_us_trai_chu.strTEN_TRAI_CHU = m_txt_ten_khach_hang.Text;

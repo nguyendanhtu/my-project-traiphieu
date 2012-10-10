@@ -212,6 +212,28 @@ namespace BondApp.ChucNang
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;
+
+            //Load ma trai phieu so huu
+            DS_DM_TRAI_PHIEU v_ds_trai_phieu = new DS_DM_TRAI_PHIEU();
+            US_DM_TRAI_PHIEU v_us_trai_phieu = new US_DM_TRAI_PHIEU();
+            v_us_trai_phieu.FillDataset(v_ds_trai_phieu);
+            Hashtable v_hst_trai_phieu = new Hashtable();
+            foreach (DataRow v_dr in v_ds_trai_phieu.DM_TRAI_PHIEU.Rows)
+            {
+                v_hst_trai_phieu.Add(v_dr[DM_TRAI_PHIEU.ID], v_dr[DM_TRAI_PHIEU.MA_TRAI_PHIEU]);
+            }
+            m_fg.Cols[(int)e_col_Number.ID_TRAI_PHIEU_SO_HUU].DataMap = v_hst_trai_phieu;
+
+            //Load loai trai chu
+            US_CM_DM_TU_DIEN v_us_tu_dien = new US_CM_DM_TU_DIEN();
+            DS_CM_DM_TU_DIEN v_ds_tu_dien = new DS_CM_DM_TU_DIEN();
+            v_us_tu_dien.fill_tu_dien_cung_loai_ds("LOAI_TRAI_CHU", v_ds_tu_dien);
+            Hashtable v_hst_loai_tu_dien = new Hashtable();
+            foreach (DataRow v_dr in v_ds_tu_dien.CM_DM_TU_DIEN.Rows)
+            {
+                v_hst_loai_tu_dien.Add(v_dr[CM_DM_TU_DIEN.ID], v_dr[CM_DM_TU_DIEN.TEN]);
+            }
+            m_fg.Cols[(int)e_col_Number.ID_LOAI_TRAI_CHU].DataMap = v_hst_loai_tu_dien;
         }
 
         private void grid2us_object(US_V_DM_TRAI_CHU_CHOT_LAI i_us, int i_grid_row)
