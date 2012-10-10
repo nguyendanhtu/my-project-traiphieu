@@ -157,7 +157,7 @@ namespace BondApp
             m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcMENH_GIA, "#,###");
             m_txt_ky_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_DIEU_CHINH_LS, "#,###");
             m_txt_ngay_phat_hanh.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH);
-            m_txt_ngay_dao_han.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.datNGAY_DAO_HAN);
+            m_txt_ngay_dao_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_DAO_HAN);
             try
             {
                 v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN(ip_us_trai_phieu.dcID_DV_KY_HAN);
@@ -282,7 +282,7 @@ namespace BondApp
                 case eFormMode.LAP_CHUYEN_NHUONG:
                     m_us_gd_chuyen_nhuong.dcID_NGUOI_LAP = CAppContext_201.getCurrentUserID();
                     m_us_gd_chuyen_nhuong.SetID_NGUOI_DUYETNull();
-                    m_us_gd_chuyen_nhuong.dcID_TRANG_THAI_CHUYEN_NHUONG = List_trang_thai.DaNhap;
+                    m_us_gd_chuyen_nhuong.dcID_TRANG_THAI_CHUYEN_NHUONG = List_trang_thai.Da_Nhap;
                     break;
                 case eFormMode.SUA_CHUYEN_NHUONG_CHUA_DUYET:
                     m_us_gd_chuyen_nhuong.dcID_NGUOI_LAP = CAppContext_201.getCurrentUserID();
@@ -290,7 +290,7 @@ namespace BondApp
                     break;
                 case eFormMode.DUYET_CHUYEN_NHUONG:
                     m_us_gd_chuyen_nhuong.dcID_NGUOI_DUYET = CAppContext_201.getCurrentUserID();
-                    m_us_gd_chuyen_nhuong.dcID_TRANG_THAI_CHUYEN_NHUONG = List_trang_thai.DaDuyet;
+                    m_us_gd_chuyen_nhuong.dcID_TRANG_THAI_CHUYEN_NHUONG = List_trang_thai.Da_Duyet;
                     break;
                 default:
                     break;
@@ -501,14 +501,16 @@ namespace BondApp
                 if (!CValidateTextBox.IsValid(m_txt_so_luong_chuyen_nhuong, DataType.NumberType, allowNull.NO)) return;
                 if (!CValidateTextBox.IsValid(m_txt_so_luong_kha_dung, DataType.NumberType, allowNull.NO)) return;
                     
-                
-                if (CIPConvert.ToDecimal(m_txt_so_luong_chuyen_nhuong.Text) 
-                    > CIPConvert.ToDecimal(m_txt_so_luong_kha_dung.Text))
+                decimal v_so_luong_chuyen_nhuong = CIPConvert.ToDecimal(m_txt_so_luong_chuyen_nhuong.Text);
+                decimal v_menh_gia_trai_phieu = CIPConvert.ToDecimal(m_txt_menh_gia.Text);
+                if (v_so_luong_chuyen_nhuong > CIPConvert.ToDecimal(m_txt_so_luong_kha_dung.Text))
                 {
                     MessageBox.Show("Số lượng trái phiếu chuyển nhượng phải nhỏ hợn số trái phiếu khả dụng của trai chủ bán!");
                     m_txt_so_luong_chuyen_nhuong.Focus();
                 }
-
+                
+                m_txt_gia_tri_chuyen_nhuong.Text = CIPConvert.ToStr(v_so_luong_chuyen_nhuong*v_menh_gia_trai_phieu, "#,##");
+                m_txt_gia_tri_chuyen_nhuong_thuc_te.Text = CIPConvert.ToStr(v_so_luong_chuyen_nhuong*v_menh_gia_trai_phieu, "#,##");
             }
             catch (Exception v_e)
             {
