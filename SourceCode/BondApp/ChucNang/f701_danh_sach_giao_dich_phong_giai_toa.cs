@@ -378,8 +378,18 @@ namespace BondApp
 		//	f701_danh_sach_giao_dich_phong_giai_toa_DE v_fDE = new f701_danh_sach_giao_dich_phong_giai_toa_DE();			
 		//	v_fDE.display(m_us);
 		}
+        private void chon_trai_chu()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            
+            grid2us_object(m_us, m_fg.Row);
+            this.Close();
+
+        }
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
             //m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
             //m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
             //m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
@@ -392,6 +402,18 @@ namespace BondApp
 		//		EVENT HANLDERS
 		//
 		//
+        void m_fg_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                chon_trai_chu();
+                MessageBox.Show("abc");
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 		private void f701_danh_sach_giao_dich_phong_giai_toa_Load(object sender, System.EventArgs e) {
 			try{
 				set_initial_form_load();
