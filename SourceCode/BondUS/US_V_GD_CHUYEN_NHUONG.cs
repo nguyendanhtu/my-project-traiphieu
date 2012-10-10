@@ -17,6 +17,7 @@ using System;
 namespace BondUS
 {
 
+
     public class US_V_GD_CHUYEN_NHUONG : US_Object
     {
         private const string c_TableName = "V_GD_CHUYEN_NHUONG";
@@ -591,6 +592,50 @@ namespace BondUS
         public void SetMENH_GIA_TRAI_PHIEUNull()
         {
             pm_objDR["MENH_GIA_TRAI_PHIEU"] = System.Convert.DBNull;
+        }
+
+        public decimal dcGIA_TRI_CN_THEO_MENH_GIA
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "GIA_TRI_CN_THEO_MENH_GIA", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["GIA_TRI_CN_THEO_MENH_GIA"] = value;
+            }
+        }
+
+        public bool IsGIA_TRI_CN_THEO_MENH_GIANull()
+        {
+            return pm_objDR.IsNull("GIA_TRI_CN_THEO_MENH_GIA");
+        }
+
+        public void SetGIA_TRI_CN_THEO_MENH_GIANull()
+        {
+            pm_objDR["GIA_TRI_CN_THEO_MENH_GIA"] = System.Convert.DBNull;
+        }
+
+        public decimal dcGIA_TRI_CHUYEN_NHUONG_THUC_TE
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "GIA_TRI_CHUYEN_NHUONG_THUC_TE", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["GIA_TRI_CHUYEN_NHUONG_THUC_TE"] = value;
+            }
+        }
+
+        public bool IsGIA_TRI_CHUYEN_NHUONG_THUC_TENull()
+        {
+            return pm_objDR.IsNull("GIA_TRI_CHUYEN_NHUONG_THUC_TE");
+        }
+
+        public void SetGIA_TRI_CHUYEN_NHUONG_THUC_TENull()
+        {
+            pm_objDR["GIA_TRI_CHUYEN_NHUONG_THUC_TE"] = System.Convert.DBNull;
         }
 
         public decimal dcKY_HAN_TRAI_PHIEU
@@ -1760,6 +1805,8 @@ namespace BondUS
         }
 
         #endregion
+
+
         #region Init Functions
         public US_V_GD_CHUYEN_NHUONG()
         {
