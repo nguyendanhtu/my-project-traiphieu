@@ -317,6 +317,10 @@ namespace BondDS {
             
             private global::System.Data.DataColumn columnNGAY_BAT_DAU_SO_HUU_TP;
             
+            private global::System.Data.DataColumn columnTRANG_THAI;
+            
+            private global::System.Data.DataColumn columnDIEN_GIAI;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DM_TRAI_CHU_IMPDataTable() {
@@ -504,6 +508,22 @@ namespace BondDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TRANG_THAIColumn {
+                get {
+                    return this.columnTRANG_THAI;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DIEN_GIAIColumn {
+                get {
+                    return this.columnDIEN_GIAI;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -558,7 +578,9 @@ namespace BondDS {
                         string TEN_NGUOI_DAI_DIEN, 
                         string SO_CMND_NGUOI_DAI_DIEN, 
                         string CHUC_VU_NGUOI_DAI_DIEN, 
-                        System.DateTime NGAY_BAT_DAU_SO_HUU_TP) {
+                        System.DateTime NGAY_BAT_DAU_SO_HUU_TP, 
+                        string TRANG_THAI, 
+                        string DIEN_GIAI) {
                 DM_TRAI_CHU_IMPRow rowDM_TRAI_CHU_IMPRow = ((DM_TRAI_CHU_IMPRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
@@ -579,7 +601,9 @@ namespace BondDS {
                         TEN_NGUOI_DAI_DIEN,
                         SO_CMND_NGUOI_DAI_DIEN,
                         CHUC_VU_NGUOI_DAI_DIEN,
-                        NGAY_BAT_DAU_SO_HUU_TP};
+                        NGAY_BAT_DAU_SO_HUU_TP,
+                        TRANG_THAI,
+                        DIEN_GIAI};
                 rowDM_TRAI_CHU_IMPRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDM_TRAI_CHU_IMPRow);
                 return rowDM_TRAI_CHU_IMPRow;
@@ -627,6 +651,8 @@ namespace BondDS {
                 this.columnSO_CMND_NGUOI_DAI_DIEN = base.Columns["SO_CMND_NGUOI_DAI_DIEN"];
                 this.columnCHUC_VU_NGUOI_DAI_DIEN = base.Columns["CHUC_VU_NGUOI_DAI_DIEN"];
                 this.columnNGAY_BAT_DAU_SO_HUU_TP = base.Columns["NGAY_BAT_DAU_SO_HUU_TP"];
+                this.columnTRANG_THAI = base.Columns["TRANG_THAI"];
+                this.columnDIEN_GIAI = base.Columns["DIEN_GIAI"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -670,6 +696,10 @@ namespace BondDS {
                 base.Columns.Add(this.columnCHUC_VU_NGUOI_DAI_DIEN);
                 this.columnNGAY_BAT_DAU_SO_HUU_TP = new global::System.Data.DataColumn("NGAY_BAT_DAU_SO_HUU_TP", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNGAY_BAT_DAU_SO_HUU_TP);
+                this.columnTRANG_THAI = new global::System.Data.DataColumn("TRANG_THAI", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTRANG_THAI);
+                this.columnDIEN_GIAI = new global::System.Data.DataColumn("DIEN_GIAI", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDIEN_GIAI);
                 this.columnID.AllowDBNull = false;
                 this.columnSTT.AllowDBNull = false;
                 this.columnMA_TRAI_CHU.AllowDBNull = false;
@@ -689,6 +719,8 @@ namespace BondDS {
                 this.columnTEN_NGUOI_DAI_DIEN.MaxLength = 250;
                 this.columnSO_CMND_NGUOI_DAI_DIEN.MaxLength = 50;
                 this.columnCHUC_VU_NGUOI_DAI_DIEN.MaxLength = 250;
+                this.columnTRANG_THAI.MaxLength = 50;
+                this.columnDIEN_GIAI.MaxLength = 250;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1109,6 +1141,38 @@ namespace BondDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TRANG_THAI {
+                get {
+                    try {
+                        return ((string)(this[this.tableDM_TRAI_CHU_IMP.TRANG_THAIColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TRANG_THAI\' in table \'DM_TRAI_CHU_IMP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDM_TRAI_CHU_IMP.TRANG_THAIColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DIEN_GIAI {
+                get {
+                    try {
+                        return ((string)(this[this.tableDM_TRAI_CHU_IMP.DIEN_GIAIColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DIEN_GIAI\' in table \'DM_TRAI_CHU_IMP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDM_TRAI_CHU_IMP.DIEN_GIAIColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNGAY_CAPNull() {
                 return this.IsNull(this.tableDM_TRAI_CHU_IMP.NGAY_CAPColumn);
             }
@@ -1261,6 +1325,30 @@ namespace BondDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNGAY_BAT_DAU_SO_HUU_TPNull() {
                 this[this.tableDM_TRAI_CHU_IMP.NGAY_BAT_DAU_SO_HUU_TPColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTRANG_THAINull() {
+                return this.IsNull(this.tableDM_TRAI_CHU_IMP.TRANG_THAIColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTRANG_THAINull() {
+                this[this.tableDM_TRAI_CHU_IMP.TRANG_THAIColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDIEN_GIAINull() {
+                return this.IsNull(this.tableDM_TRAI_CHU_IMP.DIEN_GIAIColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDIEN_GIAINull() {
+                this[this.tableDM_TRAI_CHU_IMP.DIEN_GIAIColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1442,10 +1530,12 @@ namespace BondDS.DS_DM_TRAI_CHU_IMPTableAdapters {
             tableMapping.ColumnMappings.Add("SO_CMND_NGUOI_DAI_DIEN", "SO_CMND_NGUOI_DAI_DIEN");
             tableMapping.ColumnMappings.Add("CHUC_VU_NGUOI_DAI_DIEN", "CHUC_VU_NGUOI_DAI_DIEN");
             tableMapping.ColumnMappings.Add("NGAY_BAT_DAU_SO_HUU_TP", "NGAY_BAT_DAU_SO_HUU_TP");
+            tableMapping.ColumnMappings.Add("TRANG_THAI", "TRANG_THAI");
+            tableMapping.ColumnMappings.Add("DIEN_GIAI", "DIEN_GIAI");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[DM_TRAI_CHU_IMP] ([ID], [STT], [MA_TRAI_CHU], [TEN_TRAI_CHU], [LOAI_HINH_CO_CONG], [DKHD_CMND], [NGAY_CAP], [NOI_CAP], [QUOC_TICH], [DIA_CHI], [DIEN_THOAI], [EMAIL], [SO_TAI_KHOAN], [NOI_MO_TAI_KHOAN], [SO_LUONG_TRAI_PHIEU_SO_HUU], [TEN_NGUOI_DAI_DIEN], [SO_CMND_NGUOI_DAI_DIEN], [CHUC_VU_NGUOI_DAI_DIEN], [NGAY_BAT_DAU_SO_HUU_TP]) VALUES (@ID, @STT, @MA_TRAI_CHU, @TEN_TRAI_CHU, @LOAI_HINH_CO_CONG, @DKHD_CMND, @NGAY_CAP, @NOI_CAP, @QUOC_TICH, @DIA_CHI, @DIEN_THOAI, @EMAIL, @SO_TAI_KHOAN, @NOI_MO_TAI_KHOAN, @SO_LUONG_TRAI_PHIEU_SO_HUU, @TEN_NGUOI_DAI_DIEN, @SO_CMND_NGUOI_DAI_DIEN, @CHUC_VU_NGUOI_DAI_DIEN, @NGAY_BAT_DAU_SO_HUU_TP)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[DM_TRAI_CHU_IMP] ([ID], [STT], [MA_TRAI_CHU], [TEN_TRAI_CHU], [LOAI_HINH_CO_CONG], [DKHD_CMND], [NGAY_CAP], [NOI_CAP], [QUOC_TICH], [DIA_CHI], [DIEN_THOAI], [EMAIL], [SO_TAI_KHOAN], [NOI_MO_TAI_KHOAN], [SO_LUONG_TRAI_PHIEU_SO_HUU], [TEN_NGUOI_DAI_DIEN], [SO_CMND_NGUOI_DAI_DIEN], [CHUC_VU_NGUOI_DAI_DIEN], [NGAY_BAT_DAU_SO_HUU_TP], [TRANG_THAI], [DIEN_GIAI]) VALUES (@ID, @STT, @MA_TRAI_CHU, @TEN_TRAI_CHU, @LOAI_HINH_CO_CONG, @DKHD_CMND, @NGAY_CAP, @NOI_CAP, @QUOC_TICH, @DIA_CHI, @DIEN_THOAI, @EMAIL, @SO_TAI_KHOAN, @NOI_MO_TAI_KHOAN, @SO_LUONG_TRAI_PHIEU_SO_HUU, @TEN_NGUOI_DAI_DIEN, @SO_CMND_NGUOI_DAI_DIEN, @CHUC_VU_NGUOI_DAI_DIEN, @NGAY_BAT_DAU_SO_HUU_TP, @TRANG_THAI, @DIEN_GIAI)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@STT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "STT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1466,6 +1556,8 @@ namespace BondDS.DS_DM_TRAI_CHU_IMPTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SO_CMND_NGUOI_DAI_DIEN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SO_CMND_NGUOI_DAI_DIEN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CHUC_VU_NGUOI_DAI_DIEN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CHUC_VU_NGUOI_DAI_DIEN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NGAY_BAT_DAU_SO_HUU_TP", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAY_BAT_DAU_SO_HUU_TP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TRANG_THAI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TRANG_THAI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DIEN_GIAI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DIEN_GIAI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1481,7 +1573,7 @@ namespace BondDS.DS_DM_TRAI_CHU_IMPTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT ID, STT, MA_TRAI_CHU, TEN_TRAI_CHU, LOAI_HINH_CO_CONG, DKHD_CMND, NGAY_CAP, NOI_CAP, QUOC_TICH, DIA_CHI, DIEN_THOAI, EMAIL, SO_TAI_KHOAN, NOI_MO_TAI_KHOAN, SO_LUONG_TRAI_PHIEU_SO_HUU, TEN_NGUOI_DAI_DIEN, SO_CMND_NGUOI_DAI_DIEN, CHUC_VU_NGUOI_DAI_DIEN, NGAY_BAT_DAU_SO_HUU_TP FROM dbo.DM_TRAI_CHU_IMP";
+            this._commandCollection[0].CommandText = @"SELECT ID, STT, MA_TRAI_CHU, TEN_TRAI_CHU, LOAI_HINH_CO_CONG, DKHD_CMND, NGAY_CAP, NOI_CAP, QUOC_TICH, DIA_CHI, DIEN_THOAI, EMAIL, SO_TAI_KHOAN, NOI_MO_TAI_KHOAN, SO_LUONG_TRAI_PHIEU_SO_HUU, TEN_NGUOI_DAI_DIEN, SO_CMND_NGUOI_DAI_DIEN, CHUC_VU_NGUOI_DAI_DIEN, NGAY_BAT_DAU_SO_HUU_TP, TRANG_THAI, DIEN_GIAI FROM dbo.DM_TRAI_CHU_IMP";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1561,7 +1653,9 @@ namespace BondDS.DS_DM_TRAI_CHU_IMPTableAdapters {
                     string TEN_NGUOI_DAI_DIEN, 
                     string SO_CMND_NGUOI_DAI_DIEN, 
                     string CHUC_VU_NGUOI_DAI_DIEN, 
-                    global::System.Nullable<global::System.DateTime> NGAY_BAT_DAU_SO_HUU_TP) {
+                    global::System.Nullable<global::System.DateTime> NGAY_BAT_DAU_SO_HUU_TP, 
+                    string TRANG_THAI, 
+                    string DIEN_GIAI) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(ID));
             this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(STT));
             if ((MA_TRAI_CHU == null)) {
@@ -1660,6 +1754,18 @@ namespace BondDS.DS_DM_TRAI_CHU_IMPTableAdapters {
             }
             else {
                 this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((TRANG_THAI == null)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(TRANG_THAI));
+            }
+            if ((DIEN_GIAI == null)) {
+                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(DIEN_GIAI));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
