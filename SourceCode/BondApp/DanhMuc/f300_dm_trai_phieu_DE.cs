@@ -40,8 +40,6 @@ namespace BondApp.DanhMuc
             this.ShowDialog();
         }
         #endregion
-
-        
         #region Members
         US_DM_TRAI_PHIEU m_us_trai_phieu = new US_DM_TRAI_PHIEU();
         US_DM_TO_CHUC_PHAT_HANH m_us_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH();
@@ -49,11 +47,8 @@ namespace BondApp.DanhMuc
         DS_CM_DM_TU_DIEN m_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
         #endregion
-
-      
         #region Data Structures
         #endregion
-
         #region Private Methods
         private void format_controls()
         {
@@ -235,7 +230,6 @@ namespace BondApp.DanhMuc
         }
       
         #endregion
-
         #region Events
         private void set_define_events()
         {
@@ -305,7 +299,6 @@ namespace BondApp.DanhMuc
             }
         }
         #endregion
-
     }
     public class CO_SO_TINH_LAI
     { 
