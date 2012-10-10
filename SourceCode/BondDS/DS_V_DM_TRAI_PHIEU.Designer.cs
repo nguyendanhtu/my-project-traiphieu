@@ -784,6 +784,7 @@ namespace BondDS {
                 this.columnID_LOAI_TRAI_PHIEU.AllowDBNull = false;
                 this.columnTEN_LOAI_TRAI_PHIEU.ReadOnly = true;
                 this.columnTEN_LOAI_TRAI_PHIEU.MaxLength = 50;
+                this.columnMENH_GIA.AllowDBNull = false;
                 this.columnKY_HAN.AllowDBNull = false;
                 this.columnCO_SO_TINH_LAI.MaxLength = 50;
                 this.columnID_DV_KY_HAN.AllowDBNull = false;
@@ -803,7 +804,9 @@ namespace BondDS {
                 this.columnTRA_LAI_SAU_YN.AllowDBNull = false;
                 this.columnTRA_LAI_SAU_YN.MaxLength = 1;
                 this.columnNGAY_PHAT_HANH.AllowDBNull = false;
+                this.columnNGAY_DAO_HAN.AllowDBNull = false;
                 this.columnTONG_SL_PHAT_HANH.AllowDBNull = false;
+                this.columnTONG_GIA_TRI.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1030,12 +1033,7 @@ namespace BondDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal MENH_GIA {
                 get {
-                    try {
-                        return ((decimal)(this[this.tableV_DM_TRAI_PHIEU.MENH_GIAColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MENH_GIA\' in table \'V_DM_TRAI_PHIEU\' is DBNull.", e);
-                    }
+                    return ((decimal)(this[this.tableV_DM_TRAI_PHIEU.MENH_GIAColumn]));
                 }
                 set {
                     this[this.tableV_DM_TRAI_PHIEU.MENH_GIAColumn] = value;
@@ -1221,12 +1219,7 @@ namespace BondDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime NGAY_DAO_HAN {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableV_DM_TRAI_PHIEU.NGAY_DAO_HANColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NGAY_DAO_HAN\' in table \'V_DM_TRAI_PHIEU\' is DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tableV_DM_TRAI_PHIEU.NGAY_DAO_HANColumn]));
                 }
                 set {
                     this[this.tableV_DM_TRAI_PHIEU.NGAY_DAO_HANColumn] = value;
@@ -1248,12 +1241,7 @@ namespace BondDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal TONG_GIA_TRI {
                 get {
-                    try {
-                        return ((decimal)(this[this.tableV_DM_TRAI_PHIEU.TONG_GIA_TRIColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TONG_GIA_TRI\' in table \'V_DM_TRAI_PHIEU\' is DBNull.", e);
-                    }
+                    return ((decimal)(this[this.tableV_DM_TRAI_PHIEU.TONG_GIA_TRIColumn]));
                 }
                 set {
                     this[this.tableV_DM_TRAI_PHIEU.TONG_GIA_TRIColumn] = value;
@@ -1270,18 +1258,6 @@ namespace BondDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTEN_LOAI_TRAI_PHIEUNull() {
                 this[this.tableV_DM_TRAI_PHIEU.TEN_LOAI_TRAI_PHIEUColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsMENH_GIANull() {
-                return this.IsNull(this.tableV_DM_TRAI_PHIEU.MENH_GIAColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetMENH_GIANull() {
-                this[this.tableV_DM_TRAI_PHIEU.MENH_GIAColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1330,30 +1306,6 @@ namespace BondDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDON_VI_KY_TRA_LAINull() {
                 this[this.tableV_DM_TRAI_PHIEU.DON_VI_KY_TRA_LAIColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNGAY_DAO_HANNull() {
-                return this.IsNull(this.tableV_DM_TRAI_PHIEU.NGAY_DAO_HANColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNGAY_DAO_HANNull() {
-                this[this.tableV_DM_TRAI_PHIEU.NGAY_DAO_HANColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTONG_GIA_TRINull() {
-                return this.IsNull(this.tableV_DM_TRAI_PHIEU.TONG_GIA_TRIColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTONG_GIA_TRINull() {
-                this[this.tableV_DM_TRAI_PHIEU.TONG_GIA_TRIColumn] = global::System.Convert.DBNull;
             }
         }
         
