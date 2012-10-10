@@ -349,15 +349,14 @@ namespace BondApp
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
-			v_htb.Add(V_GD_CHUYEN_NHUONG.GIA_TRI_CN_THEO_MENH_GIA, e_col_Number.GIA_TRI_CN_THEO_MENH_GIA);
+			
 			v_htb.Add(V_GD_CHUYEN_NHUONG.tcb_TEN_TRAI_CHU, e_col_Number.tcb_TEN_TRAI_CHU);
 			v_htb.Add(V_GD_CHUYEN_NHUONG.PHI_GD, e_col_Number.PHI_GD);
 			v_htb.Add(V_GD_CHUYEN_NHUONG.tcm_MA_TRAI_CHU, e_col_Number.tcm_MA_TRAI_CHU);
 			v_htb.Add(V_GD_CHUYEN_NHUONG.GIA_TRI_THUE, e_col_Number.GIA_TRI_THUE);
 			v_htb.Add(V_GD_CHUYEN_NHUONG.tcb_MA_TRAI_CHU, e_col_Number.tcb_MA_TRAI_CHU);
 			v_htb.Add(V_GD_CHUYEN_NHUONG.ID_NGUOI_LAP, e_col_Number.ID_NGUOI_LAP);
-			v_htb.Add(V_GD_CHUYEN_NHUONG.MA_GIAO_DICH, e_col_Number.MA_GIAO_DICH);
-			v_htb.Add(V_GD_CHUYEN_NHUONG.GIA_TRI_CHUYEN_NHUONG_THUC_TE, e_col_Number.GIA_TRI_CHUYEN_NHUONG_THUC_TE);
+			v_htb.Add(V_GD_CHUYEN_NHUONG.MA_GIAO_DICH, e_col_Number.MA_GIAO_DICH);			
 			v_htb.Add(V_GD_CHUYEN_NHUONG.ID_TRAI_CHU_MUA, e_col_Number.ID_TRAI_CHU_MUA);
 			v_htb.Add(V_GD_CHUYEN_NHUONG.NGAY_KY_CHUYEN_NHUONG, e_col_Number.NGAY_KY_CHUYEN_NHUONG);
 			v_htb.Add(V_GD_CHUYEN_NHUONG.ID_TRANG_THAI_CHUYEN_NHUONG, e_col_Number.ID_TRANG_THAI_CHUYEN_NHUONG);
@@ -365,7 +364,8 @@ namespace BondApp
 			v_htb.Add(V_GD_CHUYEN_NHUONG.TEN_TRUY_CAP, e_col_Number.TEN_TRUY_CAP);
 			v_htb.Add(V_GD_CHUYEN_NHUONG.tcm_TEN_TRAI_CHU, e_col_Number.tcm_TEN_TRAI_CHU);
 			v_htb.Add(V_GD_CHUYEN_NHUONG.ID_TRAI_CHU_BAN, e_col_Number.ID_TRAI_CHU_BAN);
-									
+            v_htb.Add(V_GD_CHUYEN_NHUONG.GIA_TRI_CN_THEO_MENH_GIA, e_col_Number.GIA_TRI_CN_THEO_MENH_GIA);
+            v_htb.Add(V_GD_CHUYEN_NHUONG.GIA_TRI_CHUYEN_NHUONG_THUC_TE, e_col_Number.GIA_TRI_CHUYEN_NHUONG_THUC_TE);
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_GD_CHUYEN_NHUONG.NewRow());
 			return v_obj_trans;			
 		}
