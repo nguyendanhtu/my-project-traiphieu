@@ -602,7 +602,15 @@ namespace BondUS
 
         public void duyet_chuyen_nhuong()
         {
-            throw new NotImplementedException();
+            CStoredProc v_pr_obj = new CStoredProc("pr_GD_CHUYEN_NHUONG_duyet_giao_dich");
+            v_pr_obj.addDecimalInputParam("@ID", this.dcID);            
+            v_pr_obj.addDatetimeInputParam("@NGAY_XAC_NHAN", this.datNGAY_XAC_NHAN);
+            v_pr_obj.addDecimalInputParam("@ID_TRAI_CHU_MUA", this.dcID_TRANG_THAI_CHUYEN_NHUONG);
+            v_pr_obj.addDecimalInputParam("@ID_TRAI_CHU_BAN", this.dcSO_LUONG_CHUYEN_NHUONG);
+            v_pr_obj.addDecimalInputParam("@SO_LUONG_CHUYEN_NHUONG", this.dcSO_LUONG_CHUYEN_NHUONG);
+            v_pr_obj.addDecimalInputParam("@ID_TRANG_THAI_CHUYEN_NHUONG", this.dcID_TRANG_THAI_CHUYEN_NHUONG);
+            v_pr_obj.addDecimalInputParam("@ID_NGUOI_DUYET", this.dcID_NGUOI_DUYET);
+            v_pr_obj.ExecuteCommand(this);
         }
         #endregion
     }

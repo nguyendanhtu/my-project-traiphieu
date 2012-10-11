@@ -1847,6 +1847,19 @@ namespace BondUS
             v_cstore.addDecimalInputParam("@ID_TO_CHUC_PHAT_HANH", ip_dc_id_to_chuc_phat_hanh);
             v_cstore.fillDataSetByCommand(this, ip_ds_v_gd_chuyen_nhuong);
         }
+
+        public void fill_dataset_by_date_and_trai_phieu(DS_V_GD_CHUYEN_NHUONG ip_ds_v_gd_chuyen_nhuong
+                                                        , DateTime ip_dat_tu_ngay
+                                                        , DateTime ip_dat_den_ngay
+                                                        , decimal ip_dc_id_trai_phieu)
+        {
+            CStoredProc v_cstore = new CStoredProc("[pr_V_GD_CHUYEN_NHUONG_fill_data_by_date_and_trai_phieu]");
+
+            v_cstore.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay);
+            v_cstore.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay);
+            v_cstore.addDecimalInputParam("@ID_TRAI_PHIEU", ip_dc_id_trai_phieu);
+            v_cstore.fillDataSetByCommand(this, ip_ds_v_gd_chuyen_nhuong);
+        }
         #endregion
 
     }

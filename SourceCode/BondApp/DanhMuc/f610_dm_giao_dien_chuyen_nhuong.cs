@@ -50,6 +50,7 @@ namespace BondApp
 
         public f610_dm_giao_dien_chuyen_nhuong()
         {
+
             //
             // Required for Windows Form Designer support
             //
@@ -59,6 +60,8 @@ namespace BondApp
             // TODO: Add any constructor code after InitializeComponent call
             //
             format_controls();
+            load_data_2_cmb_trai_phieu();
+            Load_data_2_dat_from_to();
         }
 
         /// <summary>
@@ -294,6 +297,7 @@ namespace BondApp
             this.m_dat_from_date.Name = "m_dat_from_date";
             this.m_dat_from_date.Size = new System.Drawing.Size(200, 20);
             this.m_dat_from_date.TabIndex = 24;
+            this.m_dat_from_date.Value = new System.DateTime(2012, 10, 11, 12, 14, 59, 0);
             // 
             // m_lbl_title
             // 
@@ -339,7 +343,7 @@ namespace BondApp
 
         #region Public Interface
         public void display()
-        {
+        {            
             this.ShowDialog();
         }
         public void display_theo_trai_phieu(decimal ip_id_trai_phieu)
@@ -349,7 +353,7 @@ namespace BondApp
         }
         #endregion
 
-        #region Data Structure
+        #region Data Structure        
         private enum e_col_Number
         {
             GIA_TRI_CN_THEO_MENH_GIA = 8,
@@ -388,7 +392,7 @@ namespace BondApp
         #region Members
         ITransferDataRow m_obj_trans;
         DS_V_GD_CHUYEN_NHUONG m_ds = new DS_V_GD_CHUYEN_NHUONG();
-        US_V_GD_CHUYEN_NHUONG m_us = new US_V_GD_CHUYEN_NHUONG();
+        US_V_GD_CHUYEN_NHUONG m_us = new US_V_GD_CHUYEN_NHUONG();       
         #endregion
 
         #region Private Methods
@@ -405,9 +409,8 @@ namespace BondApp
         }
         private void set_initial_form_load()
         {
-            m_obj_trans = get_trans_object(m_fg);
-            load_data_2_cmb_trai_phieu();
-            load_data_2_grid();
+            m_obj_trans = get_trans_object(m_fg);            
+            load_data_2_grid();            
         }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
@@ -436,7 +439,8 @@ namespace BondApp
         {
             m_ds = new DS_V_GD_CHUYEN_NHUONG();      
             US_CM_DM_TU_DIEN v_tu_dien;
-            m_us.FillDataset(m_ds);
+            m_us.fill_dataset_by_date_and_trai_phieu(m_ds,m_dat_from_date.Value, m_dat_to_date.Value,CIPConvert.ToDecimal(m_cbo_trai_phieu.SelectedValue));
+            //m_us.FillDataset(m_ds);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             for (int v_i_grid_row = m_fg.Rows.Fixed; v_i_grid_row < m_fg.Rows.Count; v_i_grid_row++)
@@ -461,6 +465,11 @@ namespace BondApp
             m_cbo_trai_phieu.ValueMember = DM_TRAI_PHIEU.ID;
             m_cbo_trai_phieu.DisplayMember = DM_TRAI_PHIEU.TEN_TRAI_PHIEU;
             m_cbo_trai_phieu.DataSource = v_ds_dm_trai_phieu.DM_TRAI_PHIEU;
+        }
+        private void Load_data_2_dat_from_to()
+        {
+            m_dat_from_date.Value = DateTime.Today.AddDays(-15);
+            m_dat_to_date.Value = DateTime.Today.AddDays(15);
         }
         private void grid2us_object(US_V_GD_CHUYEN_NHUONG i_us
             , int i_grid_row)
@@ -493,6 +502,11 @@ namespace BondApp
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             grid2us_object(m_us, m_fg.Row);
+            if (m_us.dcID_TRANG_THAI_CHUYEN_NHUONG == List_trang_thai.Da_Duyet)
+            {
+                MessageBox.Show("Giao dịch đã được duyệt không được phép sửa.");
+                return;
+            }
             f600_giao_dich_chuyen_nhuong v_fm600 = new f600_giao_dich_chuyen_nhuong();
             v_fm600.display_sua_chuyen_nhuong(m_us.dcID);            
             load_data_2_grid();
