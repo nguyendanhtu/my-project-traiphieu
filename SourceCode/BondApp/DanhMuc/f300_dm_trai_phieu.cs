@@ -42,7 +42,6 @@ namespace BondApp
         private Label label1;
         private Button m_cmd_filter;
         private Label m_lbl_title;
-        internal SIS.Controls.Button.SiSButton m_cmd_xem_chi_tiet_chot_lai;
         private System.ComponentModel.IContainer components;
 
         public f300_dm_trai_phieu()
@@ -96,7 +95,6 @@ namespace BondApp
             this.label1 = new System.Windows.Forms.Label();
             this.m_cmd_filter = new System.Windows.Forms.Button();
             this.m_lbl_title = new System.Windows.Forms.Label();
-            this.m_cmd_xem_chi_tiet_chot_lai = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.m_gru_tim_kiem.SuspendLayout();
@@ -131,7 +129,6 @@ namespace BondApp
             // 
             // m_pnl_out_place_dm
             // 
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xem_chi_tiet_chot_lai);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_select);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
@@ -295,22 +292,6 @@ namespace BondApp
             this.m_lbl_title.TabIndex = 26;
             this.m_lbl_title.Text = "F300 - Danh mục trái phiếu";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // m_cmd_xem_chi_tiet_chot_lai
-            // 
-            this.m_cmd_xem_chi_tiet_chot_lai.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_xem_chi_tiet_chot_lai.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_xem_chi_tiet_chot_lai.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_xem_chi_tiet_chot_lai.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_xem_chi_tiet_chot_lai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_xem_chi_tiet_chot_lai.ImageIndex = 18;
-            this.m_cmd_xem_chi_tiet_chot_lai.ImageList = this.ImageList;
-            this.m_cmd_xem_chi_tiet_chot_lai.Location = new System.Drawing.Point(177, 4);
-            this.m_cmd_xem_chi_tiet_chot_lai.Name = "m_cmd_xem_chi_tiet_chot_lai";
-            this.m_cmd_xem_chi_tiet_chot_lai.Size = new System.Drawing.Size(173, 28);
-            this.m_cmd_xem_chi_tiet_chot_lai.TabIndex = 24;
-            this.m_cmd_xem_chi_tiet_chot_lai.Text = "Xem chi tiết chốt lãi";
-            this.m_cmd_xem_chi_tiet_chot_lai.Click += new System.EventHandler(this.m_cmd_xem_chi_tiet_chot_lai_Click);
             // 
             // f300_dm_trai_phieu
             // 
@@ -691,14 +672,6 @@ namespace BondApp
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
-        }
-
-        private void m_cmd_xem_chi_tiet_chot_lai_Click(object sender, EventArgs e)
-        {
-            US_GD_CHOT_LAI m_us = new US_GD_CHOT_LAI();
-            m_us.GenDSTraLai(6, 47);
-            f201_dm_gd_chot_lai_detail v_f = new f201_dm_gd_chot_lai_detail(6);
-            v_f.ShowDialog();
         }
     }
 }
