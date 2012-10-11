@@ -281,6 +281,8 @@ namespace BondDS {
             
             private global::System.Data.DataColumn columnID;
             
+            private global::System.Data.DataColumn columnID_TO_CHUC_PHAT_HANH;
+            
             private global::System.Data.DataColumn columnTEN_TO_CHUC_PHAT_HANH;
             
             private global::System.Data.DataColumn columnNGAY_PHAT_HANH;
@@ -325,6 +327,14 @@ namespace BondDS {
             public global::System.Data.DataColumn IDColumn {
                 get {
                     return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_TO_CHUC_PHAT_HANHColumn {
+                get {
+                    return this.columnID_TO_CHUC_PHAT_HANH;
                 }
             }
             
@@ -389,10 +399,11 @@ namespace BondDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public V_DM_DOT_PHAT_HANHRow AddV_DM_DOT_PHAT_HANHRow(string TEN_TO_CHUC_PHAT_HANH, System.DateTime NGAY_PHAT_HANH, string GHI_CHU) {
+            public V_DM_DOT_PHAT_HANHRow AddV_DM_DOT_PHAT_HANHRow(decimal ID_TO_CHUC_PHAT_HANH, string TEN_TO_CHUC_PHAT_HANH, System.DateTime NGAY_PHAT_HANH, string GHI_CHU) {
                 V_DM_DOT_PHAT_HANHRow rowV_DM_DOT_PHAT_HANHRow = ((V_DM_DOT_PHAT_HANHRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
+                        ID_TO_CHUC_PHAT_HANH,
                         TEN_TO_CHUC_PHAT_HANH,
                         NGAY_PHAT_HANH,
                         GHI_CHU};
@@ -432,6 +443,7 @@ namespace BondDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
+                this.columnID_TO_CHUC_PHAT_HANH = base.Columns["ID_TO_CHUC_PHAT_HANH"];
                 this.columnTEN_TO_CHUC_PHAT_HANH = base.Columns["TEN_TO_CHUC_PHAT_HANH"];
                 this.columnNGAY_PHAT_HANH = base.Columns["NGAY_PHAT_HANH"];
                 this.columnGHI_CHU = base.Columns["GHI_CHU"];
@@ -442,6 +454,8 @@ namespace BondDS {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
+                this.columnID_TO_CHUC_PHAT_HANH = new global::System.Data.DataColumn("ID_TO_CHUC_PHAT_HANH", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_TO_CHUC_PHAT_HANH);
                 this.columnTEN_TO_CHUC_PHAT_HANH = new global::System.Data.DataColumn("TEN_TO_CHUC_PHAT_HANH", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTEN_TO_CHUC_PHAT_HANH);
                 this.columnNGAY_PHAT_HANH = new global::System.Data.DataColumn("NGAY_PHAT_HANH", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -456,6 +470,7 @@ namespace BondDS {
                 this.columnID.AllowDBNull = false;
                 this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
+                this.columnID_TO_CHUC_PHAT_HANH.AllowDBNull = false;
                 this.columnTEN_TO_CHUC_PHAT_HANH.AllowDBNull = false;
                 this.columnTEN_TO_CHUC_PHAT_HANH.MaxLength = 250;
                 this.columnNGAY_PHAT_HANH.AllowDBNull = false;
@@ -608,6 +623,17 @@ namespace BondDS {
                 }
                 set {
                     this[this.tableV_DM_DOT_PHAT_HANH.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ID_TO_CHUC_PHAT_HANH {
+                get {
+                    return ((decimal)(this[this.tableV_DM_DOT_PHAT_HANH.ID_TO_CHUC_PHAT_HANHColumn]));
+                }
+                set {
+                    this[this.tableV_DM_DOT_PHAT_HANH.ID_TO_CHUC_PHAT_HANHColumn] = value;
                 }
             }
             
@@ -822,6 +848,7 @@ namespace BondDS.DS_V_DM_DOT_PHAT_HANHTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "V_DM_DOT_PHAT_HANH";
             tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("ID_TO_CHUC_PHAT_HANH", "ID_TO_CHUC_PHAT_HANH");
             tableMapping.ColumnMappings.Add("TEN_TO_CHUC_PHAT_HANH", "TEN_TO_CHUC_PHAT_HANH");
             tableMapping.ColumnMappings.Add("NGAY_PHAT_HANH", "NGAY_PHAT_HANH");
             tableMapping.ColumnMappings.Add("GHI_CHU", "GHI_CHU");
@@ -841,8 +868,8 @@ namespace BondDS.DS_V_DM_DOT_PHAT_HANHTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, TEN_TO_CHUC_PHAT_HANH, NGAY_PHAT_HANH, GHI_CHU FROM dbo.V_DM_DOT_PHAT_" +
-                "HANH";
+            this._commandCollection[0].CommandText = "SELECT ID, ID_TO_CHUC_PHAT_HANH, TEN_TO_CHUC_PHAT_HANH, NGAY_PHAT_HANH, GHI_CHU F" +
+                "ROM dbo.V_DM_DOT_PHAT_HANH";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
