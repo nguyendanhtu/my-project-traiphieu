@@ -36,6 +36,7 @@ namespace BondApp.ChucNang
         US_DM_TRAI_PHIEU m_us_trai_phieu;
         DS_DM_TRAI_CHU_IMP m_ds_trai_chu_imp = new DS_DM_TRAI_CHU_IMP();
         decimal m_dc_ca_nhan_trong_nuoc, m_dc_ca_nhan_nuoc_ngoai, m_dc_to_chuc_trong_nuoc, m_dc_to_chuc_nuoc_ngoai;
+        int m_i_flag = 0;
         #endregion
 
         #region Data Structure
@@ -69,7 +70,7 @@ namespace BondApp.ChucNang
         {
             CControlFormat.setFormStyle(this);
             set_define_event();
-            m_lbl_header.Font = new Font("Arial", 14);
+            m_lbl_header.Font = new Font("Arial", 16);
             m_lbl_header.ForeColor = Color.DarkRed;
             m_lbl_header.TextAlign = ContentAlignment.MiddleCenter;
         }
@@ -272,8 +273,15 @@ namespace BondApp.ChucNang
                     }
                 }
                 // 
-                if (v_count_ == m_fg_load_file.Rows.Count - 1) BaseMessages.MsgBox_Infor("Bạn đã kiểm tra dữ liệu thành công");
-                else BaseMessages.MsgBox_Infor("Tồn tại dữ liệu không hợp lệ");
+                if (v_count_ == m_fg_load_file.Rows.Count - 1)
+                {
+                    m_i_flag = 1;
+                }
+                else
+                {
+                    m_i_flag = 0;
+                    BaseMessages.MsgBox_Infor("Tồn tại dữ liệu không hợp lệ. Xem thông báo trên lưới");
+                }
             }
             catch (Exception v_e)
             {
@@ -496,6 +504,8 @@ namespace BondApp.ChucNang
         {
             try
             {
+                kiem_tra_data_tren_luoi();
+                if (m_i_flag == 0) return;
                 add_danh_sach_trai_chu();
             }
             catch (Exception v_e)
@@ -509,6 +519,7 @@ namespace BondApp.ChucNang
             try
             {
                kiem_tra_data_tren_luoi();
+               if (m_i_flag == 1) BaseMessages.MsgBox_Infor("Bạn đã kiểm tra dữ liệu thành công");
             }
             catch (Exception v_e)
             {
