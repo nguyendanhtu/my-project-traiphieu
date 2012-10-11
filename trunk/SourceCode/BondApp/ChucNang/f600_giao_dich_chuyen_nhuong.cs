@@ -369,6 +369,8 @@ namespace BondApp
                 case eFormMode.DUYET_CHUYEN_NHUONG:                    
                     m_txt_nguoi_lap.Text =  v_nguoi_dung.strTEN;
                     m_txt_nguoi_duyet.Text = CAppContext_201.getCurrentUser();
+                    m_date_ngay_xac_nhan.Checked = true;
+                    m_date_ngay_xac_nhan.Value = DateTime.Today;
                     break;
                 default:
                     break;
@@ -553,6 +555,7 @@ namespace BondApp
                 {
                     MessageBox.Show("Số lượng trái phiếu chuyển nhượng phải nhỏ hợn số trái phiếu khả dụng của trai chủ bán!");
                     m_txt_so_luong_chuyen_nhuong.Focus();
+                    return;
                 }
                 m_txt_gia_tri_chuyen_nhuong.Text = CIPConvert.ToStr(v_so_luong_chuyen_nhuong * v_menh_gia_trai_phieu, "#,##");
                 m_txt_gia_tri_chuyen_nhuong_thuc_te.Text = CIPConvert.ToStr(v_so_luong_chuyen_nhuong*v_menh_gia_trai_phieu, "#,##");
@@ -561,6 +564,7 @@ namespace BondApp
             {
                 
                 CSystemLog_301.ExceptionHandle(v_e);
+                return;
             }
         }
 
@@ -624,6 +628,7 @@ namespace BondApp
             {
                 
                 CSystemLog_301.ExceptionHandle(v_e);
+                return;
             }
         }
 
@@ -642,9 +647,9 @@ namespace BondApp
                 m_txt_phi_gd.Text = CIPConvert.ToStr(v_so_luong_CN * v_ty_le_phi * m_us_trai_phieu.dcMENH_GIA, "#,###");                
             }            
             catch (Exception v_e)
-            {
-                
+            {                
                 CSystemLog_301.ExceptionHandle(v_e);
+                return;
             }
         }
 
