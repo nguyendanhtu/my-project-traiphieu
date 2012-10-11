@@ -766,7 +766,7 @@ namespace BondDS {
                 this.columnGHI_CHU2.MaxLength = 250;
                 this.columnGHI_CHU3.MaxLength = 250;
                 this.columnID_TRANG_THAI.AllowDBNull = false;
-                this.columnTONG_SO_DU.ReadOnly = true;
+                this.columnTONG_SO_DU.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1218,12 +1218,7 @@ namespace BondDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal TONG_SO_DU {
                 get {
-                    try {
-                        return ((decimal)(this[this.tableV_GD_TRA_GOC.TONG_SO_DUColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TONG_SO_DU\' in table \'V_GD_TRA_GOC\' is DBNull.", e);
-                    }
+                    return ((decimal)(this[this.tableV_GD_TRA_GOC.TONG_SO_DUColumn]));
                 }
                 set {
                     this[this.tableV_GD_TRA_GOC.TONG_SO_DUColumn] = value;
@@ -1384,18 +1379,6 @@ namespace BondDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetGHI_CHU3Null() {
                 this[this.tableV_GD_TRA_GOC.GHI_CHU3Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTONG_SO_DUNull() {
-                return this.IsNull(this.tableV_GD_TRA_GOC.TONG_SO_DUColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTONG_SO_DUNull() {
-                this[this.tableV_GD_TRA_GOC.TONG_SO_DUColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1588,7 +1571,7 @@ namespace BondDS.DS_V_GD_TRA_GOCTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BondDS.Properties.Settings.Default.QuanLyPhatHanhTraiPhieuConnectionString3;
+            this._connection.ConnectionString = global::BondDS.Properties.Settings.Default.QuanLyPhatHanhTraiPhieuConnectionString4;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
