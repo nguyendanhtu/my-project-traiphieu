@@ -455,6 +455,7 @@
             this.m_txt_so_luong_tp_cam_co.Name = "m_txt_so_luong_tp_cam_co";
             this.m_txt_so_luong_tp_cam_co.Size = new System.Drawing.Size(140, 20);
             this.m_txt_so_luong_tp_cam_co.TabIndex = 17;
+            this.m_txt_so_luong_tp_cam_co.TextChanged += new System.EventHandler(this.m_txt_so_luong_tp_cam_co_TextChanged);
             // 
             // m_lbl_ma_so_trai_phieu
             // 
