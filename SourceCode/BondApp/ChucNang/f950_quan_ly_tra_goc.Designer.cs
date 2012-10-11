@@ -51,14 +51,14 @@
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_chua_tra = new SIS.Controls.Button.SiSButton();
             this.m_cmd_da_tra = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_thanh_toan = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_view = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.m_gru_tim_kiem = new System.Windows.Forms.GroupBox();
             this.m_txt_search = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.m_cmd_filter = new System.Windows.Forms.Button();
+            this.m_cmd_thanh_toan = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_view = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.groupBox2.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -323,50 +323,6 @@
             this.m_cmd_da_tra.TabIndex = 26;
             this.m_cmd_da_tra.Text = "Danh sách đã trả lãi";
             // 
-            // m_cmd_thanh_toan
-            // 
-            this.m_cmd_thanh_toan.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_thanh_toan.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_thanh_toan.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_thanh_toan.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_thanh_toan.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_thanh_toan.Image")));
-            this.m_cmd_thanh_toan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_thanh_toan.Location = new System.Drawing.Point(865, 4);
-            this.m_cmd_thanh_toan.Name = "m_cmd_thanh_toan";
-            this.m_cmd_thanh_toan.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_thanh_toan.TabIndex = 22;
-            this.m_cmd_thanh_toan.Text = "&Thanh toán";
-            // 
-            // m_cmd_view
-            // 
-            this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_view.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_view.ImageIndex = 18;
-            this.m_cmd_view.ImageList = this.ImageList;
-            this.m_cmd_view.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_view.Name = "m_cmd_view";
-            this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_view.TabIndex = 21;
-            this.m_cmd_view.Text = "Xem";
-            // 
-            // m_cmd_exit
-            // 
-            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_exit.ImageIndex = 12;
-            this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(953, 4);
-            this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 11;
-            this.m_cmd_exit.Text = "Thoát (Esc)";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.m_fg);
@@ -417,6 +373,50 @@
             this.m_cmd_filter.TabIndex = 29;
             this.m_cmd_filter.Text = "     Xem";
             this.m_cmd_filter.UseVisualStyleBackColor = true;
+            // 
+            // m_cmd_thanh_toan
+            // 
+            this.m_cmd_thanh_toan.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_thanh_toan.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_thanh_toan.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_thanh_toan.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_thanh_toan.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_thanh_toan.Image")));
+            this.m_cmd_thanh_toan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_thanh_toan.Location = new System.Drawing.Point(865, 4);
+            this.m_cmd_thanh_toan.Name = "m_cmd_thanh_toan";
+            this.m_cmd_thanh_toan.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_thanh_toan.TabIndex = 22;
+            this.m_cmd_thanh_toan.Text = "&Thanh toán";
+            // 
+            // m_cmd_view
+            // 
+            this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_view.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_view.ImageIndex = 18;
+            this.m_cmd_view.ImageList = this.ImageList;
+            this.m_cmd_view.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_view.Name = "m_cmd_view";
+            this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_view.TabIndex = 21;
+            this.m_cmd_view.Text = "Xem";
+            // 
+            // m_cmd_exit
+            // 
+            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_exit.ImageIndex = 12;
+            this.m_cmd_exit.ImageList = this.ImageList;
+            this.m_cmd_exit.Location = new System.Drawing.Point(953, 4);
+            this.m_cmd_exit.Name = "m_cmd_exit";
+            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_exit.TabIndex = 11;
+            this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // m_fg
             // 
