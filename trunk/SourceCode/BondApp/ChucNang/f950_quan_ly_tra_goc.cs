@@ -43,19 +43,19 @@ namespace BondApp.ChucNang
 		#region Data Structure
         private enum e_col_Number
         {
-            CMT_GIAY_DKKD = 7
+            CMT_GIAY_DKKD = 10
 ,
             TEN_TRAI_CHU = 2
                 ,
             ID_LOAI_TRAI_CHU = 13
                 ,
-            FAX = 12
+            FAX = 9
                 ,
             ID_TRANG_THAI = 16
                 ,
             MA_TRAI_PHIEU = 3
                 ,
-            NGAY_CAP_CMT = 8
+            NGAY_CAP_CMT = 11
                 ,
             MA_TRAI_CHU = 1
                 ,
@@ -63,16 +63,17 @@ namespace BondApp.ChucNang
                 ,
             TEN_TRAI_PHIEU = 4
                 ,
-            DIA_CHI = 10
+            DIA_CHI = 7
                 ,
             MO_TAI_NGAN_HANG = 15
                 ,
             MENH_GIA = 5
                 ,
-            MOBILE = 11
+            MOBILE = 8
                 ,
             TONG_SO_DU = 6
-                , NOI_CAP_CMT = 9
+                , NOI_CAP_CMT = 12
+
         }
         private enum e_Mod
         {
@@ -110,25 +111,25 @@ namespace BondApp.ChucNang
             load_data_2_grid(m_us_trai_phieu);		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
-			Hashtable v_htb = new Hashtable();
-			v_htb.Add(V_GD_TRA_GOC.CMT_GIAY_DKKD, e_col_Number.CMT_GIAY_DKKD);
-			v_htb.Add(V_GD_TRA_GOC.TEN_TRAI_CHU, e_col_Number.TEN_TRAI_CHU);
-			v_htb.Add(V_GD_TRA_GOC.ID_LOAI_TRAI_CHU, e_col_Number.ID_LOAI_TRAI_CHU);
-			v_htb.Add(V_GD_TRA_GOC.FAX, e_col_Number.FAX);
-			v_htb.Add(V_GD_TRA_GOC.ID_TRANG_THAI, e_col_Number.ID_TRANG_THAI);
-			v_htb.Add(V_GD_TRA_GOC.MA_TRAI_PHIEU, e_col_Number.MA_TRAI_PHIEU);
-			v_htb.Add(V_GD_TRA_GOC.NGAY_CAP_CMT, e_col_Number.NGAY_CAP_CMT);
-			v_htb.Add(V_GD_TRA_GOC.MA_TRAI_CHU, e_col_Number.MA_TRAI_CHU);
-			v_htb.Add(V_GD_TRA_GOC.SO_TAI_KHOAN, e_col_Number.SO_TAI_KHOAN);
-			v_htb.Add(V_GD_TRA_GOC.TEN_TRAI_PHIEU, e_col_Number.TEN_TRAI_PHIEU);
-			v_htb.Add(V_GD_TRA_GOC.DIA_CHI, e_col_Number.DIA_CHI);
-			v_htb.Add(V_GD_TRA_GOC.MO_TAI_NGAN_HANG, e_col_Number.MO_TAI_NGAN_HANG);
-			v_htb.Add(V_GD_TRA_GOC.MENH_GIA, e_col_Number.MENH_GIA);
-			v_htb.Add(V_GD_TRA_GOC.MOBILE, e_col_Number.MOBILE);
-			v_htb.Add(V_GD_TRA_GOC.TONG_SO_DU, e_col_Number.TONG_SO_DU);
-			v_htb.Add(V_GD_TRA_GOC.NOI_CAP_CMT, e_col_Number.NOI_CAP_CMT);
-									
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_GD_TRA_GOC.NewRow());
+            Hashtable v_htb = new Hashtable();
+            v_htb.Add(V_GD_TRA_GOC.CMT_GIAY_DKKD, e_col_Number.CMT_GIAY_DKKD);
+            v_htb.Add(V_GD_TRA_GOC.TEN_TRAI_CHU, e_col_Number.TEN_TRAI_CHU);
+            v_htb.Add(V_GD_TRA_GOC.ID_LOAI_TRAI_CHU, e_col_Number.ID_LOAI_TRAI_CHU);
+            v_htb.Add(V_GD_TRA_GOC.FAX, e_col_Number.FAX);
+            v_htb.Add(V_GD_TRA_GOC.ID_TRANG_THAI, e_col_Number.ID_TRANG_THAI);
+            v_htb.Add(V_GD_TRA_GOC.MA_TRAI_PHIEU, e_col_Number.MA_TRAI_PHIEU);
+            v_htb.Add(V_GD_TRA_GOC.NGAY_CAP_CMT, e_col_Number.NGAY_CAP_CMT);
+            v_htb.Add(V_GD_TRA_GOC.MA_TRAI_CHU, e_col_Number.MA_TRAI_CHU);
+            v_htb.Add(V_GD_TRA_GOC.SO_TAI_KHOAN, e_col_Number.SO_TAI_KHOAN);
+            v_htb.Add(V_GD_TRA_GOC.TEN_TRAI_PHIEU, e_col_Number.TEN_TRAI_PHIEU);
+            v_htb.Add(V_GD_TRA_GOC.DIA_CHI, e_col_Number.DIA_CHI);
+            v_htb.Add(V_GD_TRA_GOC.MO_TAI_NGAN_HANG, e_col_Number.MO_TAI_NGAN_HANG);
+            v_htb.Add(V_GD_TRA_GOC.MENH_GIA, e_col_Number.MENH_GIA);
+            v_htb.Add(V_GD_TRA_GOC.MOBILE, e_col_Number.MOBILE);
+            v_htb.Add(V_GD_TRA_GOC.TONG_SO_DU, e_col_Number.TONG_SO_DU);
+            v_htb.Add(V_GD_TRA_GOC.NOI_CAP_CMT, e_col_Number.NOI_CAP_CMT);
+
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_GD_TRA_GOC.NewRow());
 			return v_obj_trans;			
 		}
 
