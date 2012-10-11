@@ -31,7 +31,7 @@ namespace BondApp.DanhMuc
             this.ShowDialog();
         }
 
-        public void display_for_update(US_V_DM_DOT_PHAT_HANH ip_us_v_dot_phat_hanh)
+        public void display_for_update(US_DM_DOT_PHAT_HANH ip_us_v_dot_phat_hanh)
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             m_us_dot_phat_hanh = ip_us_v_dot_phat_hanh;
@@ -47,8 +47,8 @@ namespace BondApp.DanhMuc
         #endregion
 
         #region Members
-        US_V_DM_DOT_PHAT_HANH m_us_dot_phat_hanh = new US_V_DM_DOT_PHAT_HANH();
-        DS_V_DM_DOT_PHAT_HANH m_ds_dot_phat_hanh = new DS_V_DM_DOT_PHAT_HANH();
+        US_DM_DOT_PHAT_HANH m_us_dot_phat_hanh = new US_DM_DOT_PHAT_HANH();
+        DS_DM_DOT_PHAT_HANH m_ds_dot_phat_hanh = new DS_DM_DOT_PHAT_HANH();
 
         //US_DM_TO_CHUC_PHAT_HANH m_us_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH();
         //DS_DM_TO_CHUC_PHAT_HANH m_ds_to_chuc_phat_hanh = new DS_DM_TO_CHUC_PHAT_HANH();
@@ -66,15 +66,17 @@ namespace BondApp.DanhMuc
             m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
         }
         
-        private void us_object_2_form(US_V_DM_DOT_PHAT_HANH ip_us_v_dot_phat_hanh)
+        private void us_object_2_form(US_DM_DOT_PHAT_HANH ip_us_v_dot_phat_hanh)
         {
-            m_txt_ten_to_chuc_phat_hanh.Text = m_us_dot_phat_hanh.strTEN_TO_CHUC_PHAT_HANH;
+            US_DM_TO_CHUC_PHAT_HANH v_us_to_chuc_ph = new BondUS.US_DM_TO_CHUC_PHAT_HANH(ip_us_v_dot_phat_hanh.dcID_TO_CHUC_PHAT_HANH);
+            if (!v_us_to_chuc_ph.IsIDNull())
+                m_txt_ten_to_chuc_phat_hanh.Text = v_us_to_chuc_ph.strTEN_TO_CHUC_PHAT_HANH;
             m_dat_ngay_phat_hanh.Value = m_us_dot_phat_hanh.datNGAY_PHAT_HANH;
             m_txt_ghi_chu.Text = m_us_dot_phat_hanh.strGHI_CHU;
         }
-        private void form_2_us_object(US_V_DM_DOT_PHAT_HANH op_v_us_dot_phat_hanh)
+        private void form_2_us_object(US_DM_DOT_PHAT_HANH op_v_us_dot_phat_hanh)
         {
-            op_v_us_dot_phat_hanh.strTEN_TO_CHUC_PHAT_HANH = m_txt_ten_to_chuc_phat_hanh.Text;
+            //op_v_us_dot_phat_hanh.strTEN_TO_CHUC_PHAT_HANH = m_txt_ten_to_chuc_phat_hanh.Text;
             op_v_us_dot_phat_hanh.datNGAY_PHAT_HANH = m_dat_ngay_phat_hanh.Value;
             op_v_us_dot_phat_hanh.strGHI_CHU = m_txt_ghi_chu.Text;
         }
