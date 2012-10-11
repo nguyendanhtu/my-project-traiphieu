@@ -33,7 +33,7 @@ namespace BondApp.ChucNang
 			this.ShowDialog();
 		}
 
-        public void display_tra_lai_trai_phieu(US_DM_TRAI_PHIEU ip_us_trai_phieu)
+        public void display_tra_goc_trai_phieu(US_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
             m_us_trai_phieu = ip_us_trai_phieu;
             this.ShowDialog();
@@ -41,25 +41,39 @@ namespace BondApp.ChucNang
 		#endregion
 
 		#region Data Structure
-		private enum e_col_Number{
-			CMT_GIAY_DKKD = 7
-,TEN_TRAI_CHU = 2
-,ID_LOAI_TRAI_CHU = 13
-,FAX = 12
-,ID_TRANG_THAI = 16
-,MA_TRAI_PHIEU = 3
-,NGAY_CAP_CMT = 8
-,MA_TRAI_CHU = 1
-,SO_TAI_KHOAN = 14
-,TEN_TRAI_PHIEU = 4
-,DIA_CHI = 10
-,MO_TAI_NGAN_HANG = 15
-,MENH_GIA = 5
-,MOBILE = 11
-,TONG_SO_DU = 6
-,NOI_CAP_CMT = 9
-
-		}
+        private enum e_col_Number
+        {
+            CMT_GIAY_DKKD = 7
+,
+            TEN_TRAI_CHU = 2
+                ,
+            ID_LOAI_TRAI_CHU = 13
+                ,
+            FAX = 12
+                ,
+            ID_TRANG_THAI = 16
+                ,
+            MA_TRAI_PHIEU = 3
+                ,
+            NGAY_CAP_CMT = 8
+                ,
+            MA_TRAI_CHU = 1
+                ,
+            SO_TAI_KHOAN = 14
+                ,
+            TEN_TRAI_PHIEU = 4
+                ,
+            DIA_CHI = 10
+                ,
+            MO_TAI_NGAN_HANG = 15
+                ,
+            MENH_GIA = 5
+                ,
+            MOBILE = 11
+                ,
+            TONG_SO_DU = 6
+                , NOI_CAP_CMT = 9
+        }
         private enum e_Mod
         {
             DA_TRA = 1,
@@ -116,13 +130,6 @@ namespace BondApp.ChucNang
 									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_GD_TRA_GOC.NewRow());
 			return v_obj_trans;			
-		}
-		private void load_data_2_grid(){						
-			m_ds = new DS_V_GD_TRA_GOC();			
-			m_us.FillDataset(m_ds);
-			m_fg.Redraw = false;
-			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-			m_fg.Redraw = true;
 		}
 
         private void load_data_2_grid(US_DM_TRAI_PHIEU ip_us_trai_phieu)
@@ -199,7 +206,8 @@ namespace BondApp.ChucNang
         {
             m_txt_ma_trai_phieu.Text = ip_us_trai_phieu.strMA_TRAI_PHIEU;
             m_txt_ten_trai_phieu.Text = ip_us_trai_phieu.strTEN_TRAI_PHIEU;
-            //m_txt_ngay_phat_hanh.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_PHAT_HANH);
+            US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(ip_us_trai_phieu.dcID_DOT_PHAT_HANH);
+            m_txt_ngay_phat_hanh.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH);
             m_txt_ngay_dao_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_DAO_HAN);
             m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcMENH_GIA);
             m_txt_ky_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_HAN);
@@ -250,10 +258,6 @@ namespace BondApp.ChucNang
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            foreach (C1.Win.C1FlexGrid.Column col in m_fg.Cols)
-            {
-                col.AllowEditing = true;
-            }
             grid2us_object(m_us, m_fg.Row);
 
             m_us_dm_trai_chu = new US_DM_TRAI_CHU(m_us.dcID);
@@ -265,26 +269,13 @@ namespace BondApp.ChucNang
             m_us_gd_so_du_trai_phieu.dcSO_DU_KHA_DUNG = 0;
             m_us_gd_so_du_trai_phieu.dcTONG_SO_DU = 0;
 
-            BaseMessages.MsgBox_Confirm(" Khách hàng: " + m_us.strTEN_TRAI_CHU + "\n Số tiền thanh toán: ");
-            m_us_dm_trai_chu.Update();
-            m_us_gd_so_du_trai_phieu.Insert();
-            load_data_2_grid(m_us_trai_phieu);
+            if (BaseMessages.MsgBox_Confirm(" Khách hàng: " + m_us.strTEN_TRAI_CHU + "\n Số tiền thanh toán: "))
+            {
+                m_us_dm_trai_chu.Update();
+                m_us_gd_so_du_trai_phieu.Insert();
+                load_data_2_grid(m_us_trai_phieu);
+            }
         }
-
-		private void insert_v_gd_tra_goc(){			
-		//	f8888_GD_TRA_GOC_DE v_fDE = new  f8888_GD_TRA_GOC_DE();								
-		//	v_fDE.display();
-			load_data_2_grid();
-		}
-
-		private void update_v_gd_tra_goc(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
-			grid2us_object(m_us, m_fg.Row);
-		//	f8888_GD_TRA_GOC_DE v_fDE = new f8888_GD_TRA_GOC_DE();
-		//	v_fDE.display(m_us);
-			load_data_2_grid();
-		}
 
 		private void view_v_gd_tra_goc(){			
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;

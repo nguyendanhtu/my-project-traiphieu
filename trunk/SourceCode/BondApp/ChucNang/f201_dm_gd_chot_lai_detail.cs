@@ -299,7 +299,13 @@ namespace BondApp
 		#endregion
 
 		#region Data Structure
-		private enum e_col_Number{            ID_TRAI_CHU = 1            ,NGAY_NHAN_TIEN = 5            ,SO_TIEN_LAI = 3            ,DA_NHAN_TIEN_YN = 4            ,SO_LUONG_TINH_LAI = 2
+		private enum e_col_Number{
+            ID_TRAI_CHU = 1
+            ,NGAY_NHAN_TIEN = 5
+            ,SO_TIEN_LAI = 3
+            ,DA_NHAN_TIEN_YN = 4
+            ,SO_LUONG_TINH_LAI = 2
+
 		}			
 		#endregion
 
@@ -346,7 +352,12 @@ namespace BondApp
             load_data_2_grid_by_id_gd_chot_lai();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
-			Hashtable v_htb = new Hashtable();			v_htb.Add(GD_CHOT_LAI_DETAIL.ID_TRAI_CHU, e_col_Number.ID_TRAI_CHU);			v_htb.Add(GD_CHOT_LAI_DETAIL.NGAY_NHAN_TIEN, e_col_Number.NGAY_NHAN_TIEN);			v_htb.Add(GD_CHOT_LAI_DETAIL.SO_TIEN_LAI, e_col_Number.SO_TIEN_LAI);			v_htb.Add(GD_CHOT_LAI_DETAIL.DA_NHAN_TIEN_YN, e_col_Number.DA_NHAN_TIEN_YN);			v_htb.Add(GD_CHOT_LAI_DETAIL.SO_LUONG_TINH_LAI, e_col_Number.SO_LUONG_TINH_LAI);
+			Hashtable v_htb = new Hashtable();
+			v_htb.Add(GD_CHOT_LAI_DETAIL.ID_TRAI_CHU, e_col_Number.ID_TRAI_CHU);
+			v_htb.Add(GD_CHOT_LAI_DETAIL.NGAY_NHAN_TIEN, e_col_Number.NGAY_NHAN_TIEN);
+			v_htb.Add(GD_CHOT_LAI_DETAIL.SO_TIEN_LAI, e_col_Number.SO_TIEN_LAI);
+			v_htb.Add(GD_CHOT_LAI_DETAIL.DA_NHAN_TIEN_YN, e_col_Number.DA_NHAN_TIEN_YN);
+			v_htb.Add(GD_CHOT_LAI_DETAIL.SO_LUONG_TINH_LAI, e_col_Number.SO_LUONG_TINH_LAI);
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.GD_CHOT_LAI_DETAIL.NewRow());
 			return v_obj_trans;			
 		}

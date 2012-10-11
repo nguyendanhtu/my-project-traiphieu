@@ -114,7 +114,7 @@ namespace BondApp.ChucNang
         ITransferDataRow m_obj_trans;
         DS_V_DM_TRAI_CHU_CHOT_LAI m_ds = new DS_V_DM_TRAI_CHU_CHOT_LAI();
         US_V_DM_TRAI_CHU_CHOT_LAI m_us = new US_V_DM_TRAI_CHU_CHOT_LAI();
-        e_Mod m_mod = e_Mod.CHUA_TRA;
+        e_Mod m_mod;
         #endregion
 
         #region Private Method
@@ -133,14 +133,7 @@ namespace BondApp.ChucNang
 
         private void set_inital_form_load()
         {
-            /*switch (m_e_form_mode)
-            {
-                case DataEntryFormMode.InsertDataState:
-                    break;
-                case DataEntryFormMode.UpdateDataState:
-                    us_object_2_form(m_us_trai_chu);
-                    break;
-            }*/
+            m_mod = e_Mod.CHUA_TRA;
             if (m_us_trai_phieu != null)
                 us_trai_phieu_2_form(m_us_trai_phieu);
             m_obj_trans = get_trans_object(m_fg);
@@ -268,9 +261,11 @@ namespace BondApp.ChucNang
             m_us_gd_chot_lai_detail.dcSO_TIEN_LAI = m_us.dcSO_TIEN_LAI;
             m_us_gd_chot_lai_detail.datNGAY_NHAN_TIEN = m_us.datNGAY_NHAN_TIEN;
             m_us_gd_chot_lai_detail.strDA_NHAN_TIEN_YN = m_us.strDA_NHAN_TIEN_YN;
-            BaseMessages.MsgBox_Confirm(" Khách hàng: " + m_us.strTEN_TRAI_CHU + "\n Số tiền thanh toán: " + m_us.dcSO_TIEN_LAI + "\n Xác nhận thanh toán?");
-            m_us_gd_chot_lai_detail.Update();
-            load_data_2_grid(m_us_trai_phieu);
+            if (BaseMessages.MsgBox_Confirm(" Khách hàng: " + m_us.strTEN_TRAI_CHU + "\n Số tiền thanh toán: " + m_us.dcSO_TIEN_LAI + "\n Xác nhận thanh toán?"))
+            {
+                m_us_gd_chot_lai_detail.Update();
+                load_data_2_grid(m_us_trai_phieu);
+            }
         }
 
         private void hoan_tac_v_dm_trai_chu_chot_lai()
@@ -290,11 +285,11 @@ namespace BondApp.ChucNang
             m_us_gd_chot_lai_detail.dcSO_TIEN_LAI = m_us.dcSO_TIEN_LAI;
             m_us_gd_chot_lai_detail.datNGAY_NHAN_TIEN = m_us.datNGAY_NHAN_TIEN;
             m_us_gd_chot_lai_detail.strDA_NHAN_TIEN_YN = m_us.strDA_NHAN_TIEN_YN;
-
-            BaseMessages.MsgBox_Confirm(" Khách hàng: " + m_us.strTEN_TRAI_CHU + "\n Xác nhận hủy bỏ thanh toán!");
-            m_us_gd_chot_lai_detail.Update();
-            
-            view_da_tra();
+            if (BaseMessages.MsgBox_Confirm(" Khách hàng: " + m_us.strTEN_TRAI_CHU + "\n Xác nhận hủy bỏ thanh toán!"))
+            {
+                m_us_gd_chot_lai_detail.Update();
+                load_data_2_grid(m_us_trai_phieu);
+            }
         }
 
         private void view_v_dm_trai_chu_chot_lai()
@@ -350,7 +345,10 @@ namespace BondApp.ChucNang
         {
             m_txt_ma_trai_phieu.Text = ip_us_trai_phieu.strMA_TRAI_PHIEU;
             m_txt_ten_trai_phieu.Text = ip_us_trai_phieu.strTEN_TRAI_PHIEU;
-            //m_txt_ngay_phat_hanh.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_PHAT_HANH);
+
+            US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(ip_us_trai_phieu.dcID_DOT_PHAT_HANH);
+            m_txt_ngay_phat_hanh.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH);
+
             m_txt_ngay_dao_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_DAO_HAN);
             m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcMENH_GIA);
             m_txt_lai_suat.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcLAI_SUAT_DEFAULT*100) + "%";
