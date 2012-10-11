@@ -38,7 +38,7 @@ namespace BondApp
             m_lbl_title.Text = "LẬP GIAO DỊCH PHONG TỎA";
             this.ShowDialog();
         }
-        public void display_giai_toa(US_GD_PHONG_GIAI_TOA ip_us_phong_giai_toa)
+        public void display_giai_toa()
         {
             m_e_form_mode = eFormMode.LAP_GIAI_TOA;
             m_us_gd_phong_toa_giai_toa = ip_us_phong_giai_toa;
@@ -54,7 +54,7 @@ namespace BondApp
             m_lbl_title.Text = "DUYỆT GIAO DỊCH PHONG TỎA";
             this.ShowDialog();        
         }
-        public void display_duyet_giai_toa()
+        public void display_duyet_giai_toa(US_GD_PHONG_GIAI_TOA ip_us_phong_giai_toa)
         {
             m_e_form_mode = eFormMode.DUYET_GIAI_TOA;
             this.Text = "F700 - Duyệt Giao dịch giải tỏa";
