@@ -15,6 +15,12 @@ namespace BondDS.CDBNames
         public const decimal TRANG_THAI_GD = 6;
     }
 
+    public class GIOI_HAN_PHI_CHUYEN_NHUONG
+    {
+        public const decimal PHI_CN_MAX = 14;
+        public const decimal PHI_CN_MIN = 15;        
+    }
+
     public class List_trang_thai
     {
         public const decimal Da_Nhap = 21;
