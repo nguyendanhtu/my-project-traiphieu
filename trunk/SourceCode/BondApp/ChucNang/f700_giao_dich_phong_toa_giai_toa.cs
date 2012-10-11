@@ -209,6 +209,7 @@ namespace BondApp
             m_txt_so_luong_trai_phieu.Text = v_ds.GD_SO_DU_TRAI_PHIEU.Rows[0]["TONG_SO_DU"].ToString();
             m_txt_so_luong_kha_dung.Text = v_ds.GD_SO_DU_TRAI_PHIEU.Rows[0]["SO_DU_KHA_DUNG"].ToString();
             us_trai_phieu_2_form(m_us_trai_phieu);
+            
         }
         private void us_trai_phieu_2_form(US_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
@@ -217,7 +218,7 @@ namespace BondApp
             m_txt_ma_so_trai_phieu.Text = ip_us_trai_phieu.strMA_TRAI_PHIEU;
             m_txt_to_chuc_phat_hanh.Text = ip_us_trai_phieu.strTEN_TRAI_PHIEU;
             m_txt_menh_gia.Text = CIPConvert.ToStr( ip_us_trai_phieu.dcMENH_GIA, "#,###");
-            //m_txt_tong_gia_tri.Text = ip_us_trai_phieu.dcTONG_GIA_TRI.ToString();
+           
             m_txt_ngay_phat_hanh.Text = v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH.ToString("dd/MM/yyyy");
             m_txt_ngay_dao_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_DAO_HAN,"dd/MM/yyyy");
             m_txt_lai_suat.Text = CIPConvert.ToStr( ip_us_trai_phieu.dcLAI_SUAT_DEFAULT, "p");
@@ -259,7 +260,7 @@ namespace BondApp
                 default: break;
 
             }
-            m_us_gd_phong_toa_giai_toa.dcID_TRAI_CHU = CIPConvert.ToDecimal(m_txt_ma_trai_chu.Text);
+            m_us_gd_phong_toa_giai_toa.dcID_TRAI_CHU = m_us_trai_chu.dcID;
             m_us_gd_phong_toa_giai_toa.datNGAY_GIAO_DICH = m_dat_ngay.Value.Date;
             m_us_gd_phong_toa_giai_toa.strNGUOI_DAI_DIEN = m_txt_nguoi_dai_dien.Text;
             m_us_gd_phong_toa_giai_toa.strCHUC_DANH = m_txt_chuc_danh.Text;   
@@ -297,6 +298,13 @@ namespace BondApp
             v_obj_export_word.AddFindAndReplace("<LAI_SUAT>", m_txt_lai_suat.Text);
             v_obj_export_word.AddFindAndReplace("<HINH_THUC_TRA_LAI>", m_txt_hinh_thuc_tra_lai.Text);
             v_obj_export_word.AddFindAndReplace("<MA_TRAI_PHIEU>", m_txt_ma_so_trai_phieu.Text);
+            v_obj_export_word.AddFindAndReplace("<NGUOI_XAC_NHAN>", m_txt_nguoi_xac_nhan.Text);
+            v_obj_export_word.AddFindAndReplace("<CHUC_VU>", m_txt_chuc_vu.Text);
+            v_obj_export_word.AddFindAndReplace("<SO_UY_QUYEN>", m_txt_theo_giay_uy_quyen_so.Text);
+            v_obj_export_word.AddFindAndReplace("<NGAY_UY_QUYEN>", m_dat_ngay.Value.Date.ToString());
+            v_obj_export_word.AddFindAndReplace("<DON_VI_UY_QUYEN>", m_txt_cua.Text);
+            v_obj_export_word.AddFindAndReplace("<MENH_GIA_TRAI_PHIEU>", m_txt_menh_gia.Text);
+            v_obj_export_word.AddFindAndReplace("<LOAI_PHONG_TOA>","");            
             v_obj_export_word.Export2Word(true);
          
         }
@@ -398,6 +406,11 @@ namespace BondApp
 
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        private void m_txt_so_luong_tp_cam_co_TextChanged(object sender, EventArgs e)
+        {
+            m_txt_tong_gia_tri.Text = CIPConvert.ToStr((CIPConvert.ToDecimal(m_txt_menh_gia.Text) * CIPConvert.ToDecimal(m_txt_so_luong_tp_cam_co.Text)),"#,###");
         }
     }
 }
