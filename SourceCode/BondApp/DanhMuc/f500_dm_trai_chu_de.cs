@@ -59,6 +59,9 @@ namespace BondApp.DanhMuc
         {
             CControlFormat.setFormStyle(this);
             set_define_event();
+            m_lbl_title.Font = new Font("Arial", 16);
+            m_lbl_title.ForeColor = Color.DarkRed;
+            m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
         }
 
         private void set_inital_form_load()

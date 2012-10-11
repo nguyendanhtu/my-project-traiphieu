@@ -389,6 +389,7 @@ namespace BondApp
             m_lbl_title.ForeColor = Color.DarkRed;
             m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
         }
+
         private void set_initial_form_load()
         {
             switch (m_e_form_mode)
@@ -574,6 +575,16 @@ namespace BondApp
             this.Close();
 
         }
+
+        private void load_data_2_grid_search(string ip_str_search_key)
+        {
+            m_ds = new DS_DM_TRAI_CHU();
+            m_us.load_data_by_search(m_ds, ip_str_search_key);
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            m_fg.Redraw = true;
+        }
+
         private void set_define_events()
         {
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
@@ -586,6 +597,26 @@ namespace BondApp
             m_cmd_filter.Click += new EventHandler(m_cmd_filter_Click);
         }
 
+        #endregion
+
+        //
+        //
+        //		EVENT HANLDERS
+        //
+        //
+        private void f500_dm_trai_chu_Load(object sender, System.EventArgs e)
+        {
+            try
+            {
+                set_initial_form_load();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+
+        }
+
         void m_cmd_filter_Click(object sender, EventArgs e)
         {
             try
@@ -596,14 +627,6 @@ namespace BondApp
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
-        }
-        private void load_data_2_grid_search(string ip_str_search_key)
-        {
-            m_ds = new DS_DM_TRAI_CHU();
-            m_us.load_data_by_search(m_ds, ip_str_search_key);
-            m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            m_fg.Redraw = true;
         }
 
         void m_fg_DoubleClick(object sender, EventArgs e)
@@ -628,25 +651,6 @@ namespace BondApp
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
-        }
-        #endregion
-
-        //
-        //
-        //		EVENT HANLDERS
-        //
-        //
-        private void f500_dm_trai_chu_Load(object sender, System.EventArgs e)
-        {
-            try
-            {
-                set_initial_form_load();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-
         }
 
         private void m_cmd_exit_Click(object sender, EventArgs e)
