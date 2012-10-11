@@ -53,6 +53,10 @@
             this.m_txt_ky_tinh_lai = new System.Windows.Forms.TextBox();
             this.m_txt_lai_suat = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cmd_thong_bao_ls = new SIS.Controls.Button.SiSButton();
@@ -61,10 +65,7 @@
             this.m_cmd_generate = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.m_cmd_chon_trai_phieu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -286,6 +287,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.m_cmd_chon_trai_phieu);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -317,6 +319,46 @@
             this.groupBox1.TabIndex = 54;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin trái phiếu";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(225, 79);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(30, 13);
+            this.label4.TabIndex = 57;
+            this.label4.Text = "VNĐ";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(806, 79);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(30, 13);
+            this.label3.TabIndex = 56;
+            this.label3.Text = "VNĐ";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(478, 109);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 13);
+            this.label2.TabIndex = 55;
+            this.label2.Text = "tháng";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(225, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(27, 13);
+            this.label1.TabIndex = 54;
+            this.label1.Text = "năm";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ImageList
             // 
@@ -450,45 +492,14 @@
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
-            // label1
+            // m_cmd_chon_trai_phieu
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(225, 54);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 13);
-            this.label1.TabIndex = 54;
-            this.label1.Text = "năm";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(478, 109);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 13);
-            this.label2.TabIndex = 55;
-            this.label2.Text = "tháng";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(806, 79);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
-            this.label3.TabIndex = 56;
-            this.label3.Text = "VNĐ";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(225, 79);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 13);
-            this.label4.TabIndex = 57;
-            this.label4.Text = "VNĐ";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_chon_trai_phieu.Location = new System.Drawing.Point(232, 23);
+            this.m_cmd_chon_trai_phieu.Name = "m_cmd_chon_trai_phieu";
+            this.m_cmd_chon_trai_phieu.Size = new System.Drawing.Size(27, 23);
+            this.m_cmd_chon_trai_phieu.TabIndex = 58;
+            this.m_cmd_chon_trai_phieu.Text = "...";
+            this.m_cmd_chon_trai_phieu.UseVisualStyleBackColor = true;
             // 
             // f650_lich_thanh_toan_lai_goc_xem
             // 
@@ -546,6 +557,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button m_cmd_chon_trai_phieu;
 
     }
 }

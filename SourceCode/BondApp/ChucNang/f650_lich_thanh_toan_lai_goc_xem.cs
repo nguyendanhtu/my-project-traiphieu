@@ -34,6 +34,12 @@ namespace BondApp
         public void display_lich_thanh_toan_lai_goc(US_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
             m_us_trai_phieu = ip_us_trai_phieu;
+            m_e_form_mode = e_form_mode.HIEN_THI_CO_TRAI_PHIEU;
+            this.ShowDialog();
+        }
+        public void display()
+        {
+            m_e_form_mode = e_form_mode.HIEN_THI_KHONG_TRAI_PHIEU;
             this.ShowDialog();
         }
         #endregion
@@ -55,11 +61,17 @@ namespace BondApp
                 , DA_THUC_HIEN_YN = 8
             , NOI_DUNG_LICH = 2
         }
+        private enum e_form_mode
+        {
+            HIEN_THI_CO_TRAI_PHIEU = 1
+            , HIEN_THI_KHONG_TRAI_PHIEU = 2
+        }
         #endregion
 
         #region Members
         US_DM_TRAI_PHIEU m_us_trai_phieu = new US_DM_TRAI_PHIEU();
         ITransferDataRow m_obj_trans;
+        e_form_mode m_e_form_mode = e_form_mode.HIEN_THI_KHONG_TRAI_PHIEU;
         DS_GD_LICH_THANH_TOAN_LAI_GOC m_ds_gd_lich_tt_lai_goc = new DS_GD_LICH_THANH_TOAN_LAI_GOC();
         US_GD_LICH_THANH_TOAN_LAI_GOC m_us_gd_lich_tt_lai_goc = new US_GD_LICH_THANH_TOAN_LAI_GOC();
         #endregion
@@ -80,12 +92,20 @@ namespace BondApp
 
         private void set_initial_form_load()
         {
-            us_trai_phieu_2_form();
-            m_obj_trans = get_trans_object(m_fg);
-            load_data_2_grid();
+            switch (m_e_form_mode)
+            {
+                case e_form_mode.HIEN_THI_CO_TRAI_PHIEU:
+                    us_trai_phieu_2_form();
+                    m_obj_trans = get_trans_object(m_fg);
+                    load_data_2_grid();
+                    break;
+                case e_form_mode.HIEN_THI_KHONG_TRAI_PHIEU:
+                    m_obj_trans = get_trans_object(m_fg);
+                    break;
+                default:
+                    break;
+            }
         }
-
-
         private void us_trai_phieu_2_form()
         {
             m_txt_ma_trai_phieu.Text = m_us_trai_phieu.strMA_TRAI_PHIEU;
@@ -206,7 +226,17 @@ namespace BondApp
             v_obj_word_rpt.Export2Word(true);
         }
 
-
+        private void select_trai_phieu()
+        {
+            f300_dm_trai_phieu v_frm300 = new f300_dm_trai_phieu();
+            m_us_trai_phieu = new US_DM_TRAI_PHIEU();
+            m_us_trai_phieu = v_frm300.select_trai_phieu();
+            if (!m_us_trai_phieu.IsIDNull() && m_us_trai_phieu.dcID != -1)
+            {
+                us_trai_phieu_2_form();
+                load_data_2_grid();
+            }
+        }
          #endregion
 
         private void set_define_events()
@@ -216,6 +246,19 @@ namespace BondApp
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             this.m_cmd_generate.Click += new System.EventHandler(this.m_cmd_generate_Click);
             m_cmd_thong_bao_ls.Click += new EventHandler(m_cmd_thong_bao_ls_Click);
+            m_cmd_chon_trai_phieu.Click += new EventHandler(m_cmd_chon_trai_phieu_Click);
+        }
+
+        void m_cmd_chon_trai_phieu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                select_trai_phieu();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_thong_bao_ls_Click(object sender, EventArgs e)
