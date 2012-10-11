@@ -204,6 +204,7 @@ namespace BondApp.ChucNang
             }
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            load_data_2_cbo();
             m_fg.Redraw = true;
 
             //Load ma trai phieu so huu
@@ -337,7 +338,35 @@ namespace BondApp.ChucNang
         {
             if (m_us_trai_phieu != null)
             {
+                decimal v_dc_so_ky_tra_lai;
+                int v_i_current = 0;
+                double v_d_ngay = 0;
+                US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_trai_phieu.dcID_DOT_PHAT_HANH);
+                m_cbo_ky_tinh_lai.Items.Clear();
+                if(m_us_trai_phieu.dcID_DV_KY_TRA_LAI == 18)
+                {
+                    v_dc_so_ky_tra_lai = m_us_trai_phieu.dcKY_HAN / m_us_trai_phieu.dcKY_TRA_LAI * 12;
+                    v_d_ngay = (DateTime.Now - v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH).TotalDays;
+                }
+                else
+                {
+                    v_dc_so_ky_tra_lai = m_us_trai_phieu.dcKY_HAN / m_us_trai_phieu.dcKY_TRA_LAI;
+                }
+                for (int i = 1; i <= v_dc_so_ky_tra_lai; i++)
+                {
+                    m_cbo_ky_tinh_lai.Items.Add(i);
+                    DateTime v_dat = v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH;
+                    v_dat = v_dat.AddMonths(i * (int)m_us_trai_phieu.dcKY_TRA_LAI);
+                    if (v_d_ngay >= (v_dat - v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH).TotalDays)
+                    {
+                        v_i_current = i;
+                    }
+                }
 
+                if (v_i_current != 0)
+                {
+                    m_cbo_ky_tinh_lai.SelectedIndex = v_i_current - 1;
+                }
             }
         }
 
@@ -353,6 +382,7 @@ namespace BondApp.ChucNang
             m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcMENH_GIA, "#,###");
             m_txt_lai_suat.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcLAI_SUAT_DEFAULT*100) + "%";
             m_txt_ky_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_HAN);
+            m_txt_ky_tinh_lai.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_TRA_LAI, "#,###");
         }
 
         private bool check_data_is_ok()
