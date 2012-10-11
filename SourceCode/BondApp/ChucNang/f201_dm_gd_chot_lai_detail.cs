@@ -41,6 +41,7 @@ namespace BondApp
         private Button m_cmd_filter;
         private Label m_lbl_title;
         private C1FlexGrid m_fg;
+        internal SIS.Controls.Button.SiSButton m_cmd_select;
 		private System.ComponentModel.IContainer components;
 
 		public f201_dm_gd_chot_lai_detail(decimal ip_dc_id_chot_lai)
@@ -54,10 +55,23 @@ namespace BondApp
 			// TODO: Add any constructor code after InitializeComponent call
 			//
 			format_controls();
-            m_us = new US_GD_CHOT_LAI_DETAIL(ip_dc_id_chot_lai);
-
+            m_us = new US_GD_CHOT_LAI_DETAIL();
+            m_us.us2ds(6, m_ds);
+            m_e_form_mode = DataEntryFormMode.ViewDataState;
 		}
 
+        public f201_dm_gd_chot_lai_detail()
+        {
+            //
+            // Required for Windows Form Designer support
+            //
+            InitializeComponent();
+
+            //
+            // TODO: Add any constructor code after InitializeComponent call
+            //
+            format_controls();
+        }
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
@@ -95,6 +109,7 @@ namespace BondApp
             this.m_cmd_filter = new System.Windows.Forms.Button();
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_cmd_select = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.m_gru_tim_kiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -129,16 +144,17 @@ namespace BondApp
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_select);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 376);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 288);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(459, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(603, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_insert
@@ -150,7 +166,7 @@ namespace BondApp
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(103, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(247, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 12;
@@ -165,7 +181,7 @@ namespace BondApp
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(191, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(335, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 13;
@@ -195,7 +211,7 @@ namespace BondApp
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(279, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(423, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 14;
@@ -210,7 +226,7 @@ namespace BondApp
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(367, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(511, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -224,7 +240,7 @@ namespace BondApp
             this.m_gru_tim_kiem.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_gru_tim_kiem.Location = new System.Drawing.Point(0, 37);
             this.m_gru_tim_kiem.Name = "m_gru_tim_kiem";
-            this.m_gru_tim_kiem.Size = new System.Drawing.Size(459, 49);
+            this.m_gru_tim_kiem.Size = new System.Drawing.Size(603, 49);
             this.m_gru_tim_kiem.TabIndex = 28;
             this.m_gru_tim_kiem.TabStop = false;
             // 
@@ -232,7 +248,7 @@ namespace BondApp
             // 
             this.m_txt_search.Location = new System.Drawing.Point(78, 16);
             this.m_txt_search.Name = "m_txt_search";
-            this.m_txt_search.Size = new System.Drawing.Size(508, 20);
+            this.m_txt_search.Size = new System.Drawing.Size(322, 20);
             this.m_txt_search.TabIndex = 31;
             // 
             // label1
@@ -262,9 +278,9 @@ namespace BondApp
             this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(459, 37);
+            this.m_lbl_title.Size = new System.Drawing.Size(603, 37);
             this.m_lbl_title.TabIndex = 27;
-            this.m_lbl_title.Text = "F200 - Danh mục chốt lãi";
+            this.m_lbl_title.Text = "F201 - Danh sách trả lãi";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_fg
@@ -273,14 +289,29 @@ namespace BondApp
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.Location = new System.Drawing.Point(0, 86);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(459, 290);
+            this.m_fg.Size = new System.Drawing.Size(603, 202);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 29;
+            // 
+            // m_cmd_select
+            // 
+            this.m_cmd_select.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_select.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_select.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_select.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_select.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_select.ImageIndex = 2;
+            this.m_cmd_select.ImageList = this.ImageList;
+            this.m_cmd_select.Location = new System.Drawing.Point(159, 4);
+            this.m_cmd_select.Name = "m_cmd_select";
+            this.m_cmd_select.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_select.TabIndex = 22;
+            this.m_cmd_select.Text = "&Thêm";
             // 
             // f201_dm_gd_chot_lai_detail
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(459, 412);
+            this.ClientSize = new System.Drawing.Size(603, 324);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_gru_tim_kiem);
             this.Controls.Add(this.m_lbl_title);
@@ -304,8 +335,7 @@ namespace BondApp
 		#endregion
 
 		#region Data Structure
-		private enum e_col_Number{
-			ID_CHOT_LAI = 1,ID_TRAI_CHU = 2,NGAY_NHAN_TIEN = 6,SO_TIEN_LAI = 4,DA_NHAN_TIEN_YN = 5,SO_LUONG_TINH_LAI = 3
+		private enum e_col_Number{            ID_TRAI_CHU = 1            ,NGAY_NHAN_TIEN = 5            ,SO_TIEN_LAI = 3            ,DA_NHAN_TIEN_YN = 4            ,SO_LUONG_TINH_LAI = 2
 		}			
 		#endregion
 
@@ -313,97 +343,137 @@ namespace BondApp
 		ITransferDataRow m_obj_trans;		
 		DS_GD_CHOT_LAI_DETAIL m_ds = new DS_GD_CHOT_LAI_DETAIL();
 		US_GD_CHOT_LAI_DETAIL m_us = new US_GD_CHOT_LAI_DETAIL();
+        DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
 		#endregion
 
 		#region Private Methods
 		private void format_controls(){
-			CControlFormat.setFormStyle(this);
-			CControlFormat.setC1FlexFormat(m_fg);
-			set_define_events();
-			this.KeyPreview = true;		
+            CControlFormat.setFormStyle(this);
+            CControlFormat.setC1FlexFormat(m_fg);
+            CGridUtils.AddSave_Excel_Handlers(m_fg);
+            CGridUtils.AddSearch_Handlers(m_fg);
+            set_define_events();
+            this.KeyPreview = true;
+            m_lbl_title.Font = new Font("Arial", 16);
+            m_lbl_title.ForeColor = Color.DarkRed;
+            m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
 		}
-		private void set_initial_form_load(){						
+		private void set_initial_form_load(){
+            switch (m_e_form_mode)
+            {
+                case DataEntryFormMode.InsertDataState:
+                    break;
+                case DataEntryFormMode.SelectDataState:
+                    m_cmd_delete.Visible = false;
+                    m_cmd_update.Visible = false;
+                    m_cmd_insert.Visible = false;
+                    m_cmd_select.Visible = true;
+                    break;
+                case DataEntryFormMode.UpdateDataState:
+                    break;
+                case DataEntryFormMode.ViewDataState:
+                    m_cmd_delete.Visible = true;
+                    m_cmd_update.Visible = true;
+                    m_cmd_insert.Visible = true;
+
+                    m_cmd_select.Visible = false;
+                    break;
+                default:
+                    break;
+            }		
 			m_obj_trans = get_trans_object(m_fg);
-			load_data_2_grid();		
+            load_data_2_grid_by_id_gd_chot_lai();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
-			Hashtable v_htb = new Hashtable();			v_htb.Add(GD_CHOT_LAI_DETAIL.ID_TRAI_CHU, e_col_Number.ID_TRAI_CHU);			v_htb.Add(GD_CHOT_LAI_DETAIL.NGAY_NHAN_TIEN, e_col_Number.NGAY_NHAN_TIEN);			v_htb.Add(GD_CHOT_LAI_DETAIL.SO_TIEN_LAI, e_col_Number.SO_TIEN_LAI);			v_htb.Add(GD_CHOT_LAI_DETAIL.DA_NHAN_TIEN_YN, e_col_Number.DA_NHAN_TIEN_YN);			v_htb.Add(GD_CHOT_LAI_DETAIL.SO_LUONG_TINH_LAI, e_col_Number.SO_LUONG_TINH_LAI);									
+			Hashtable v_htb = new Hashtable();			v_htb.Add(GD_CHOT_LAI_DETAIL.ID_TRAI_CHU, e_col_Number.ID_TRAI_CHU);			v_htb.Add(GD_CHOT_LAI_DETAIL.NGAY_NHAN_TIEN, e_col_Number.NGAY_NHAN_TIEN);			v_htb.Add(GD_CHOT_LAI_DETAIL.SO_TIEN_LAI, e_col_Number.SO_TIEN_LAI);			v_htb.Add(GD_CHOT_LAI_DETAIL.DA_NHAN_TIEN_YN, e_col_Number.DA_NHAN_TIEN_YN);			v_htb.Add(GD_CHOT_LAI_DETAIL.SO_LUONG_TINH_LAI, e_col_Number.SO_LUONG_TINH_LAI);
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.GD_CHOT_LAI_DETAIL.NewRow());
 			return v_obj_trans;			
 		}
-		private void load_data_2_grid(){						
-			m_ds = new DS_GD_CHOT_LAI_DETAIL();			
-			m_us.FillDataset(m_ds);
-			m_fg.Redraw = false;
-			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-			m_fg.Redraw = true;
-		}
-		private void grid2us_object(US_GD_CHOT_LAI_DETAIL i_us, int i_grid_row) {
-			DataRow v_dr;
-			v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
-			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
-			i_us.DataRow2Me(v_dr);
-		}
+        //private void load_data_2_grid()
+        //{
+        //    m_ds = new DS_GD_CHOT_LAI_DETAIL();
+        //    m_us.FillDataset(m_ds);
+        //    m_fg.Redraw = false;
+        //    CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+        //    m_fg.Redraw = true;
+        //}
+        private void load_data_2_grid_by_id_gd_chot_lai()
+        {
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            m_fg.Redraw = true;
+
+            DS_DM_TRAI_CHU v_ds_trai_chu = new DS_DM_TRAI_CHU();
+            US_DM_TRAI_CHU v_us_trai_chu = new US_DM_TRAI_CHU();
+            v_us_trai_chu.FillDataset(v_ds_trai_chu);
+            Hashtable v_hst_ma_trai_chu = new Hashtable();
+            foreach (DataRow v_dr in v_ds_trai_chu.DM_TRAI_CHU.Rows)
+            {
+                v_hst_ma_trai_chu.Add(v_dr[DM_TRAI_CHU.ID], v_dr[DM_TRAI_CHU.MA_TRAI_CHU]);
+            }
+            m_fg.Cols[(int)e_col_Number.ID_TRAI_CHU].DataMap = v_hst_ma_trai_chu;
+        }
+		
+        //private void grid2us_object(US_GD_CHOT_LAI_DETAIL i_us, int i_grid_row) {
+        //    DataRow v_dr;
+        //    v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
+        //    m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
+        //    i_us.DataRow2Me(v_dr);
+        //}
 		private void us_object2grid(US_GD_CHOT_LAI_DETAIL i_us, int i_grid_row) {
 			DataRow v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
 			i_us.Me2DataRow(v_dr);
 			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
 		}
-    	private void insert_gd_chot_lai_detail(){
-            f250_chi_tiet_giao_dich_chot_lai v_fDE = new f250_chi_tiet_giao_dich_chot_lai();
-			v_fDE.display_for_insert();
-			load_data_2_grid();
-		}
-		private void update_gd_chot_lai_detail(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
-			grid2us_object(m_us, m_fg.Row);
-            f250_chi_tiet_giao_dich_chot_lai v_fDE = new f250_chi_tiet_giao_dich_chot_lai();
-			v_fDE.display_for_update(m_us);
-			load_data_2_grid();
-		}
+        //private void insert_gd_chot_lai_detail(){
+        //    f250_chi_tiet_giao_dich_chot_lai v_fDE = new f250_chi_tiet_giao_dich_chot_lai();
+        //    v_fDE.display_for_insert();
+        //    load_data_2_grid();
+        //}
+        //private void update_gd_chot_lai_detail(){			
+        //    if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+        //    if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
+        //    grid2us_object(m_us, m_fg.Row);
+        //    f250_chi_tiet_giao_dich_chot_lai v_fDE = new f250_chi_tiet_giao_dich_chot_lai();
+        //    v_fDE.display_for_update(m_us);
+        //    load_data_2_grid();
+        //}
 				
-		private void delete_gd_chot_lai_detail(){
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			US_GD_CHOT_LAI_DETAIL v_us = new US_GD_CHOT_LAI_DETAIL();
-			grid2us_object(v_us, m_fg.Row);
-			try {			
-				v_us.BeginTransaction();    											
-				v_us.Delete();                      								
-				v_us.CommitTransaction();
-				m_fg.Rows.Remove(m_fg.Row);				
-			}
-			catch (Exception v_e) {
-				v_us.Rollback();
-				CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
-					new CDBClientDBExceptionInterpret());
-				v_objErrHandler.showErrorMessage();
-			}
-		}
-
-		private void view_gd_chot_lai_detail(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			grid2us_object(m_us, m_fg.Row);
-		//	f201_dm_gd_chot_lai_detail_DE v_fDE = new f201_dm_gd_chot_lai_detail_DE();			
-		//	v_fDE.display(m_us);
-		}
-		private void set_define_events(){
+        //private void delete_gd_chot_lai_detail(){
+        //    if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+        //    if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+        //    if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
+        //    US_GD_CHOT_LAI_DETAIL v_us = new US_GD_CHOT_LAI_DETAIL();
+        //    grid2us_object(v_us, m_fg.Row);
+        //    try {			
+        //        v_us.BeginTransaction();    											
+        //        v_us.Delete();                      								
+        //        v_us.CommitTransaction();
+        //        m_fg.Rows.Remove(m_fg.Row);				
+        //    }
+        //    catch (Exception v_e) {
+        //        v_us.Rollback();
+        //        CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
+        //            new CDBClientDBExceptionInterpret());
+        //        v_objErrHandler.showErrorMessage();
+        //    }
+        //}
+        //private void view_gd_chot_lai_detail(){			
+        //    if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+        //    if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+        //    grid2us_object(m_us, m_fg.Row);
+        ////	f201_dm_gd_chot_lai_detail_DE v_fDE = new f201_dm_gd_chot_lai_detail_DE();			
+        ////	v_fDE.display(m_us);
+        //}
+#endregion
+        #region Events
+        private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
 		}
-		#endregion
-
-//
-		//
-		//		EVENT HANLDERS
-		//
-		//
 		private void f201_dm_gd_chot_lai_detail_Load(object sender, System.EventArgs e) {
 			try{
 				set_initial_form_load();
@@ -413,7 +483,6 @@ namespace BondApp
 			}
 		
 		}
-
 		private void m_cmd_exit_Click(object sender, EventArgs e) {
 			try{
 				this.Close();
@@ -422,43 +491,39 @@ namespace BondApp
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
-
 		private void m_cmd_insert_Click(object sender, EventArgs e) {
 			try{
-				insert_gd_chot_lai_detail();
+				//insert_gd_chot_lai_detail();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
-
 		private void m_cmd_update_Click(object sender, EventArgs e) {
 			try{
-				update_gd_chot_lai_detail();
+				//update_gd_chot_lai_detail();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
-
 		private void m_cmd_delete_Click(object sender, EventArgs e) {
 			try{
-				delete_gd_chot_lai_detail();
+				//delete_gd_chot_lai_detail();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
-
 		private void m_cmd_view_Click(object sender, EventArgs e) {
 			try{
-				view_gd_chot_lai_detail();
+				//view_gd_chot_lai_detail();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
-
+	    #endregion
 	}
 }
 
