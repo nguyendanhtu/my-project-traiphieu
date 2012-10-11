@@ -357,10 +357,12 @@ namespace BondApp
             m_lbl_title.ForeColor = Color.DarkRed;
             m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
 		}
+
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
 			load_data_2_grid();		
-		}	
+		}
+	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
 			v_htb.Add(V_DM_DOT_PHAT_HANH.TEN_TO_CHUC_PHAT_HANH, e_col_Number.TEN_TO_CHUC_PHAT_HANH);			v_htb.Add(V_DM_DOT_PHAT_HANH.NGAY_PHAT_HANH, e_col_Number.NGAY_PHAT_HANH);			v_htb.Add(V_DM_DOT_PHAT_HANH.GHI_CHU, e_col_Number.GHI_CHU);									
@@ -439,7 +441,29 @@ namespace BondApp
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_cmd_filter.Click += new EventHandler(m_cmd_filter_Click);
 		}
+
+        void m_cmd_filter_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid(m_txt_search.Text.Trim());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void load_data_2_grid(string ip_str_search_key)
+        {
+            m_ds = new DS_V_DM_DOT_PHAT_HANH();
+            m_us.load_data_by_search(m_ds, ip_str_search_key);
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            m_fg.Redraw = true;
+        }
+     
 		#endregion
 
 //
