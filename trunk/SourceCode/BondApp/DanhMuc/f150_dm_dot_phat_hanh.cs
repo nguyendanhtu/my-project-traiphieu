@@ -22,6 +22,7 @@ using BondDS;
 using BondDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
+using BondApp.DanhMuc;
 
 namespace BondApp
 {
@@ -286,7 +287,7 @@ namespace BondApp
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f150_dm_dot_phat_hanh";
-            this.Text = "f150_dm_dot_phat_hanh";
+            this.Text = "F150 - Danh mục đợt phát hành";
             this.Load += new System.EventHandler(this.f150_dm_dot_phat_hanh_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
@@ -320,6 +321,9 @@ namespace BondApp
 			CControlFormat.setFormStyle(this);
 			CControlFormat.setC1FlexFormat(m_fg);
 			set_define_events();
+            m_lbl_title.Font = new Font("Arial", 16);
+            m_lbl_title.ForeColor = Color.DarkRed;
+            m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
 			this.KeyPreview = true;		
 		}
 		private void set_initial_form_load(){						
@@ -337,6 +341,7 @@ namespace BondApp
 			m_us.FillDataset(m_ds);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            load_data_2_cbo_grid();
 			m_fg.Redraw = true;
 		}
 		private void grid2us_object(US_DM_DOT_PHAT_HANH i_us
@@ -400,8 +405,8 @@ namespace BondApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
 			grid2us_object(m_us, m_fg.Row);
-		//	f150_dm_dot_phat_hanh_DE v_fDE = new f150_dm_dot_phat_hanh_DE();
-		//	v_fDE.display(m_us);
+            f151_dm_dot_phat_hanh_de v_fDE = new f151_dm_dot_phat_hanh_de();
+            v_fDE.display_for_update(m_us);
 			load_data_2_grid();
 		}
 				
