@@ -287,6 +287,12 @@
     <Compile Include="ChucNang\f260_import_trai_chu_tu_excel.Designer.cs">
       <DependentUpon>f260_import_trai_chu_tu_excel.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChucNang\f310_cap_nhat_lai_suat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChucNang\f310_cap_nhat_lai_suat.Designer.cs">
+      <DependentUpon>f310_cap_nhat_lai_suat.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChucNang\f600_giao_dich_chuyen_nhuong.cs">
       <SubType>Form</SubType>
     </Compile>
