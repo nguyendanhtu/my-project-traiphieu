@@ -469,6 +469,15 @@ namespace BondUS
         }
         #endregion
 
+        #region Additional Functions
+        public void load_data_by_search(DS_DM_TRAI_PHIEU op_ds_dm_trai_phieu
+                                       , string ip_str_keyword)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_DM_TRAI_PHIEU_Fill_By_Search");
+            v_cstore.addNVarcharInputParam("@KEYWORD", ip_str_keyword);
+            v_cstore.fillDataSetByCommand(this, op_ds_dm_trai_phieu);
+        }
+        #endregion
 
     }
 }
