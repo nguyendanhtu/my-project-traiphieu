@@ -385,6 +385,14 @@ namespace BondApp
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
 			m_fg.Redraw = true;
 		}
+        private void load_data_2_grid(string ip_str_search_key)
+        {
+            m_ds = new DS_DM_TO_CHUC_PHAT_HANH();
+            m_us.load_data_by_search(m_ds, ip_str_search_key);
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            m_fg.Redraw = true;
+        }
 		private void grid2us_object(US_DM_TO_CHUC_PHAT_HANH i_us
 			, int i_grid_row) {
 			DataRow v_dr;
@@ -460,7 +468,20 @@ namespace BondApp
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
             m_cmd_select.Click +=new EventHandler(m_cmd_select_Click);
+            m_cmd_filter.Click += new EventHandler(m_cmd_filter_Click);
 		}
+
+        private void m_cmd_filter_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid(m_txt_search.Text.Trim());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 		#endregion
 
 //
