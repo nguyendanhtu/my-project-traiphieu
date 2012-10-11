@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f600_giao_dich_chuyen_nhuong));
             this.m_lbl_title = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.m_gru_thong_tin_trai_phieu = new System.Windows.Forms.GroupBox();
             this.label34 = new System.Windows.Forms.Label();
             this.m_txt_lai_suat = new System.Windows.Forms.TextBox();
             this.m_lbl_ky_han = new System.Windows.Forms.Label();
@@ -131,7 +131,7 @@
             this.label28 = new System.Windows.Forms.Label();
             this.m_txt_noi_dung_chuyen_nhuong = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.m_gru_thong_tin_chuyen_nhuong = new System.Windows.Forms.GroupBox();
             this.m_date_ngay_vao_so = new System.Windows.Forms.DateTimePicker();
             this.m_date_ngay_xac_nhan = new System.Windows.Forms.DateTimePicker();
             this.m_date_ngay_chuyen_nhuong = new System.Windows.Forms.DateTimePicker();
@@ -148,13 +148,13 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.m_gru_thong_khach_hang = new System.Windows.Forms.GroupBox();
-            this.groupBox2.SuspendLayout();
+            this.m_gru_thong_tin_khach_hang = new System.Windows.Forms.GroupBox();
+            this.m_gru_thong_tin_trai_phieu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.m_gru_thong_khach_hang.SuspendLayout();
+            this.m_gru_thong_tin_chuyen_nhuong.SuspendLayout();
+            this.m_gru_thong_tin_khach_hang.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_lbl_title
@@ -169,31 +169,31 @@
             this.m_lbl_title.Text = "F600 - Giao dịch chuyển nhượng";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // groupBox2
+            // m_gru_thong_tin_trai_phieu
             // 
-            this.groupBox2.Controls.Add(this.label34);
-            this.groupBox2.Controls.Add(this.m_txt_lai_suat);
-            this.groupBox2.Controls.Add(this.m_lbl_ky_han);
-            this.groupBox2.Controls.Add(this.m_txt_ky_han);
-            this.groupBox2.Controls.Add(this.m_lbl_lai_suat);
-            this.groupBox2.Controls.Add(this.m_lbl_ngay_dao_han);
-            this.groupBox2.Controls.Add(this.m_lbl_ma_trai_phieu);
-            this.groupBox2.Controls.Add(this.m_lbl_to_chuc_phat_hanh);
-            this.groupBox2.Controls.Add(this.m_lbl_menh_gia);
-            this.groupBox2.Controls.Add(this.m_txt_ngay_dao_han);
-            this.groupBox2.Controls.Add(this.m_lbl_ngay_phat_hanh);
-            this.groupBox2.Controls.Add(this.m_txt_ngay_phat_hanh);
-            this.groupBox2.Controls.Add(this.m_txt_menh_gia);
-            this.groupBox2.Controls.Add(this.m_cmd_chon_trai_phieu);
-            this.groupBox2.Controls.Add(this.m_txt_ten_trai_phieu);
-            this.groupBox2.Controls.Add(this.m_txt_ma_trai_phieu);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Location = new System.Drawing.Point(0, 40);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(884, 95);
-            this.groupBox2.TabIndex = 55;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thông tin trái phiếu";
+            this.m_gru_thong_tin_trai_phieu.Controls.Add(this.label34);
+            this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_txt_lai_suat);
+            this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_lbl_ky_han);
+            this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_txt_ky_han);
+            this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_lbl_lai_suat);
+            this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_lbl_ngay_dao_han);
+            this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_lbl_ma_trai_phieu);
+            this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_lbl_to_chuc_phat_hanh);
+            this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_lbl_menh_gia);
+            this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_txt_ngay_dao_han);
+            this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_lbl_ngay_phat_hanh);
+            this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_txt_ngay_phat_hanh);
+            this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_txt_menh_gia);
+            this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_cmd_chon_trai_phieu);
+            this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_txt_ten_trai_phieu);
+            this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_txt_ma_trai_phieu);
+            this.m_gru_thong_tin_trai_phieu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_gru_thong_tin_trai_phieu.Location = new System.Drawing.Point(0, 40);
+            this.m_gru_thong_tin_trai_phieu.Name = "m_gru_thong_tin_trai_phieu";
+            this.m_gru_thong_tin_trai_phieu.Size = new System.Drawing.Size(884, 95);
+            this.m_gru_thong_tin_trai_phieu.TabIndex = 55;
+            this.m_gru_thong_tin_trai_phieu.TabStop = false;
+            this.m_gru_thong_tin_trai_phieu.Text = "Thông tin trái phiếu";
             // 
             // label34
             // 
@@ -1226,48 +1226,48 @@
             this.label29.TabIndex = 5;
             this.label29.Text = "Nội dung chuyển nhượng";
             // 
-            // groupBox4
+            // m_gru_thong_tin_chuyen_nhuong
             // 
-            this.groupBox4.Controls.Add(this.m_date_ngay_vao_so);
-            this.groupBox4.Controls.Add(this.m_date_ngay_xac_nhan);
-            this.groupBox4.Controls.Add(this.m_date_ngay_chuyen_nhuong);
-            this.groupBox4.Controls.Add(this.label36);
-            this.groupBox4.Controls.Add(this.label35);
-            this.groupBox4.Controls.Add(this.m_cbb_trang_thai_cn);
-            this.groupBox4.Controls.Add(this.m_txt_noi_dung_chuyen_nhuong);
-            this.groupBox4.Controls.Add(this.m_txt_ma_giao_dich);
-            this.groupBox4.Controls.Add(this.label28);
-            this.groupBox4.Controls.Add(this.label29);
-            this.groupBox4.Controls.Add(this.m_txt_phan_tram_thue);
-            this.groupBox4.Controls.Add(this.m_txt_gia_tri_chuyen_nhuong_thuc_te);
-            this.groupBox4.Controls.Add(this.m_txt_gia_tri_chuyen_nhuong);
-            this.groupBox4.Controls.Add(this.m_txt_so_luong_chuyen_nhuong);
-            this.groupBox4.Controls.Add(this.m_txt_nguoi_duyet);
-            this.groupBox4.Controls.Add(this.m_txt_nguoi_lap);
-            this.groupBox4.Controls.Add(this.m_txt_ty_le_phi_gd);
-            this.groupBox4.Controls.Add(this.m_txt_phi_gd);
-            this.groupBox4.Controls.Add(this.label33);
-            this.groupBox4.Controls.Add(this.m_txt_thue);
-            this.groupBox4.Controls.Add(this.label32);
-            this.groupBox4.Controls.Add(this.label37);
-            this.groupBox4.Controls.Add(this.label30);
-            this.groupBox4.Controls.Add(this.label27);
-            this.groupBox4.Controls.Add(this.label31);
-            this.groupBox4.Controls.Add(this.m_lbl_tong_so_luong_trai_phieu);
-            this.groupBox4.Controls.Add(this.label20);
-            this.groupBox4.Controls.Add(this.label23);
-            this.groupBox4.Controls.Add(this.label22);
-            this.groupBox4.Controls.Add(this.label25);
-            this.groupBox4.Controls.Add(this.label21);
-            this.groupBox4.Controls.Add(this.label24);
-            this.groupBox4.Controls.Add(this.label26);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox4.Location = new System.Drawing.Point(0, 408);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(884, 168);
-            this.groupBox4.TabIndex = 60;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Thông tin chuyển nhương";
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.m_date_ngay_vao_so);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.m_date_ngay_xac_nhan);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.m_date_ngay_chuyen_nhuong);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.label36);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.label35);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.m_cbb_trang_thai_cn);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.m_txt_noi_dung_chuyen_nhuong);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.m_txt_ma_giao_dich);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.label28);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.label29);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.m_txt_phan_tram_thue);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.m_txt_gia_tri_chuyen_nhuong_thuc_te);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.m_txt_gia_tri_chuyen_nhuong);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.m_txt_so_luong_chuyen_nhuong);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.m_txt_nguoi_duyet);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.m_txt_nguoi_lap);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.m_txt_ty_le_phi_gd);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.m_txt_phi_gd);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.label33);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.m_txt_thue);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.label32);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.label37);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.label30);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.label27);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.label31);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.m_lbl_tong_so_luong_trai_phieu);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.label20);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.label23);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.label22);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.label25);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.label21);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.label24);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.label26);
+            this.m_gru_thong_tin_chuyen_nhuong.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_gru_thong_tin_chuyen_nhuong.Location = new System.Drawing.Point(0, 408);
+            this.m_gru_thong_tin_chuyen_nhuong.Name = "m_gru_thong_tin_chuyen_nhuong";
+            this.m_gru_thong_tin_chuyen_nhuong.Size = new System.Drawing.Size(884, 168);
+            this.m_gru_thong_tin_chuyen_nhuong.TabIndex = 60;
+            this.m_gru_thong_tin_chuyen_nhuong.TabStop = false;
+            this.m_gru_thong_tin_chuyen_nhuong.Text = "Thông tin chuyển nhương";
             // 
             // m_date_ngay_vao_so
             // 
@@ -1422,41 +1422,41 @@
             this.label31.TabIndex = 39;
             this.label31.Text = "Người lập";
             // 
-            // m_gru_thong_khach_hang
+            // m_gru_thong_tin_khach_hang
             // 
-            this.m_gru_thong_khach_hang.Controls.Add(this.groupBox1);
-            this.m_gru_thong_khach_hang.Controls.Add(this.groupBox3);
-            this.m_gru_thong_khach_hang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_gru_thong_khach_hang.Location = new System.Drawing.Point(0, 135);
-            this.m_gru_thong_khach_hang.Name = "m_gru_thong_khach_hang";
-            this.m_gru_thong_khach_hang.Size = new System.Drawing.Size(884, 275);
-            this.m_gru_thong_khach_hang.TabIndex = 61;
-            this.m_gru_thong_khach_hang.TabStop = false;
-            this.m_gru_thong_khach_hang.Text = "Thông tin khách hàng";
+            this.m_gru_thong_tin_khach_hang.Controls.Add(this.groupBox1);
+            this.m_gru_thong_tin_khach_hang.Controls.Add(this.groupBox3);
+            this.m_gru_thong_tin_khach_hang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_gru_thong_tin_khach_hang.Location = new System.Drawing.Point(0, 135);
+            this.m_gru_thong_tin_khach_hang.Name = "m_gru_thong_tin_khach_hang";
+            this.m_gru_thong_tin_khach_hang.Size = new System.Drawing.Size(884, 275);
+            this.m_gru_thong_tin_khach_hang.TabIndex = 61;
+            this.m_gru_thong_tin_khach_hang.TabStop = false;
+            this.m_gru_thong_tin_khach_hang.Text = "Thông tin khách hàng";
             // 
             // f600_giao_dich_chuyen_nhuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 612);
-            this.Controls.Add(this.m_gru_thong_khach_hang);
-            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.m_gru_thong_tin_khach_hang);
+            this.Controls.Add(this.m_gru_thong_tin_chuyen_nhuong);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.m_gru_thong_tin_trai_phieu);
             this.Controls.Add(this.m_lbl_title);
             this.Controls.Add(this.m_lbl_ID_gd_chuyen_nhuong);
             this.Name = "f600_giao_dich_chuyen_nhuong";
             this.Text = "F600-Giao dich chuyen nhuong";
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.m_gru_thong_tin_trai_phieu.ResumeLayout(false);
+            this.m_gru_thong_tin_trai_phieu.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.m_gru_thong_khach_hang.ResumeLayout(false);
+            this.m_gru_thong_tin_chuyen_nhuong.ResumeLayout(false);
+            this.m_gru_thong_tin_chuyen_nhuong.PerformLayout();
+            this.m_gru_thong_tin_khach_hang.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1465,7 +1465,7 @@
         #endregion
 
         private System.Windows.Forms.Label m_lbl_title;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox m_gru_thong_tin_trai_phieu;
         private System.Windows.Forms.Label m_lbl_ngay_dao_han;
         private System.Windows.Forms.Label m_lbl_ma_trai_phieu;
         private System.Windows.Forms.Label m_lbl_to_chuc_phat_hanh;
@@ -1565,12 +1565,12 @@
         private System.Windows.Forms.TextBox m_txt_ma_giao_dich;
         private System.Windows.Forms.TextBox m_txt_noi_dung_chuyen_nhuong;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox m_gru_thong_tin_chuyen_nhuong;
         private System.Windows.Forms.TextBox m_txt_nguoi_duyet;
         private System.Windows.Forms.TextBox m_txt_nguoi_lap;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.GroupBox m_gru_thong_khach_hang;
+        private System.Windows.Forms.GroupBox m_gru_thong_tin_khach_hang;
         private System.Windows.Forms.ComboBox m_cbb_trang_thai_cn;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;

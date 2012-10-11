@@ -27,6 +27,7 @@ namespace BondApp
         {
             InitializeComponent();
             format_controls();
+            load_cbb_trang_thai_chuyen_nhuong();
         }
 
         #region Public Intrface
@@ -99,8 +100,7 @@ namespace BondApp
             m_cbb_trang_thai_cn.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
         }
 
-        private void set_inital_form_load(){
-            load_cbb_trang_thai_chuyen_nhuong();
+        private void set_inital_form_load(){            
             switch (m_e_form_mode)
             {
                 case eFormMode.LAP_CHUYEN_NHUONG:
@@ -112,16 +112,23 @@ namespace BondApp
                     m_cmd_lap_chuyen_nhuong.Enabled = false;
                     m_cmd_sua_chuyen_nhuong.Enabled = true;
                     m_cmd_duyet_chuyen_nhuong.Enabled = false;
+                    m_gru_thong_tin_khach_hang.Enabled = false;
+                    m_gru_thong_tin_trai_phieu.Enabled = false;
                     break;
                 case eFormMode.DUYET_CHUYEN_NHUONG:
                     m_cmd_lap_chuyen_nhuong.Enabled = false;
                     m_cmd_sua_chuyen_nhuong.Enabled = false;
                     m_cmd_duyet_chuyen_nhuong.Enabled = true;
+                    m_gru_thong_tin_khach_hang.Enabled = false;
+                    m_gru_thong_tin_trai_phieu.Enabled = false;
                     break;
                 case eFormMode.XEM_GIAO_DICH:
                     m_cmd_lap_chuyen_nhuong.Enabled = false;
                     m_cmd_sua_chuyen_nhuong.Enabled = false;
-                    m_cmd_duyet_chuyen_nhuong.Enabled = false;
+                    m_cmd_duyet_chuyen_nhuong.Enabled = false;                    
+                    m_gru_thong_tin_trai_phieu.Enabled = false;
+                    m_gru_thong_tin_khach_hang.Enabled = false;
+                    m_gru_thong_tin_chuyen_nhuong.Enabled = false;
                     break;
                 default:                    
                     break;
