@@ -1165,6 +1165,7 @@
             this.m_cmd_danh_sach_chuyen_nhuong.Size = new System.Drawing.Size(163, 28);
             this.m_cmd_danh_sach_chuyen_nhuong.TabIndex = 25;
             this.m_cmd_danh_sach_chuyen_nhuong.Text = "Danh sách chuyển nhượng";
+            this.m_cmd_danh_sach_chuyen_nhuong.Visible = false;
             // 
             // m_cmd_exit
             // 
