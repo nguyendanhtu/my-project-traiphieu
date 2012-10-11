@@ -191,7 +191,11 @@ tc.SO_TAI_KHOAN,
 tc.MO_TAI_NGAN_HANG,
 tc.GHI_CHU1, tc.GHI_CHU2,tc.GHI_CHU3,
 tc.ID_TRANG_THAI,
-dbo.f_so_du_trai_phieu_theo_trai_chu(tc.ID, '1/1/1900') as TONG_SO_DU
-FROM DM_TRAI_CHU as tc , DM_TRAI_PHIEU as tp
-WHERE tc.ID_TRAI_PHIEU_SO_HUU = tp.ID
+tsd.TONG_SO_DU
+FROM DM_TRAI_CHU as tc , 
+	DM_TRAI_PHIEU as tp, 
+	(select sdtp.ID_TRAI_CHU, TONG_SO_DU
+		from GD_SO_DU_TRAI_PHIEU as sdtp, (SELECT ID_TRAI_CHU, MAX(NGAY) as NGAY FROM GD_SO_DU_TRAI_PHIEU GROUP BY ID_TRAI_CHU) as sd
+		where sdtp.ID_TRAI_CHU = sd.ID_TRAI_CHU AND sdtp.NGAY = sd.NGAY) as tsd
+WHERE tc.ID_TRAI_PHIEU_SO_HUU = tp.ID AND tc.ID = tsd.ID_TRAI_CHU
 GO
