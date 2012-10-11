@@ -121,11 +121,6 @@
             this.m_cmd_chon_ben_mua = new System.Windows.Forms.Button();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.m_cmd_duyet_chuyen_nhuong = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_lap_chuyen_nhuong = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_sua_chuyen_nhuong = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_danh_sach_chuyen_nhuong = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_lbl_ID_gd_chuyen_nhuong = new System.Windows.Forms.Label();
             this.m_txt_ma_giao_dich = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
@@ -149,6 +144,11 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.m_gru_thong_tin_khach_hang = new System.Windows.Forms.GroupBox();
+            this.m_cmd_duyet_chuyen_nhuong = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_lap_chuyen_nhuong = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_sua_chuyen_nhuong = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_danh_sach_chuyen_nhuong = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_gru_thong_tin_trai_phieu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -1106,82 +1106,6 @@
             this.panel1.Size = new System.Drawing.Size(884, 36);
             this.panel1.TabIndex = 6;
             // 
-            // m_cmd_duyet_chuyen_nhuong
-            // 
-            this.m_cmd_duyet_chuyen_nhuong.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_duyet_chuyen_nhuong.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_duyet_chuyen_nhuong.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_duyet_chuyen_nhuong.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_duyet_chuyen_nhuong.Enabled = false;
-            this.m_cmd_duyet_chuyen_nhuong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet_chuyen_nhuong.Image")));
-            this.m_cmd_duyet_chuyen_nhuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_duyet_chuyen_nhuong.Location = new System.Drawing.Point(528, 4);
-            this.m_cmd_duyet_chuyen_nhuong.Name = "m_cmd_duyet_chuyen_nhuong";
-            this.m_cmd_duyet_chuyen_nhuong.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_duyet_chuyen_nhuong.TabIndex = 27;
-            this.m_cmd_duyet_chuyen_nhuong.Text = "&Xác nhận";
-            // 
-            // m_cmd_lap_chuyen_nhuong
-            // 
-            this.m_cmd_lap_chuyen_nhuong.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_lap_chuyen_nhuong.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_lap_chuyen_nhuong.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_lap_chuyen_nhuong.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_lap_chuyen_nhuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_lap_chuyen_nhuong.ImageIndex = 2;
-            this.m_cmd_lap_chuyen_nhuong.ImageList = this.ImageList;
-            this.m_cmd_lap_chuyen_nhuong.Location = new System.Drawing.Point(616, 4);
-            this.m_cmd_lap_chuyen_nhuong.Name = "m_cmd_lap_chuyen_nhuong";
-            this.m_cmd_lap_chuyen_nhuong.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_lap_chuyen_nhuong.TabIndex = 25;
-            this.m_cmd_lap_chuyen_nhuong.Text = "& Lập";
-            // 
-            // m_cmd_sua_chuyen_nhuong
-            // 
-            this.m_cmd_sua_chuyen_nhuong.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_sua_chuyen_nhuong.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_sua_chuyen_nhuong.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_sua_chuyen_nhuong.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_sua_chuyen_nhuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_sua_chuyen_nhuong.ImageIndex = 3;
-            this.m_cmd_sua_chuyen_nhuong.ImageList = this.ImageList;
-            this.m_cmd_sua_chuyen_nhuong.Location = new System.Drawing.Point(704, 4);
-            this.m_cmd_sua_chuyen_nhuong.Name = "m_cmd_sua_chuyen_nhuong";
-            this.m_cmd_sua_chuyen_nhuong.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_sua_chuyen_nhuong.TabIndex = 26;
-            this.m_cmd_sua_chuyen_nhuong.Text = "&Sửa";
-            // 
-            // m_cmd_danh_sach_chuyen_nhuong
-            // 
-            this.m_cmd_danh_sach_chuyen_nhuong.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_danh_sach_chuyen_nhuong.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_danh_sach_chuyen_nhuong.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_danh_sach_chuyen_nhuong.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_danh_sach_chuyen_nhuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_danh_sach_chuyen_nhuong.ImageIndex = 18;
-            this.m_cmd_danh_sach_chuyen_nhuong.ImageList = this.ImageList;
-            this.m_cmd_danh_sach_chuyen_nhuong.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_danh_sach_chuyen_nhuong.Name = "m_cmd_danh_sach_chuyen_nhuong";
-            this.m_cmd_danh_sach_chuyen_nhuong.Size = new System.Drawing.Size(163, 28);
-            this.m_cmd_danh_sach_chuyen_nhuong.TabIndex = 29;
-            this.m_cmd_danh_sach_chuyen_nhuong.Text = "Danh sách chuyển nhượng";
-            this.m_cmd_danh_sach_chuyen_nhuong.Visible = false;
-            // 
-            // m_cmd_exit
-            // 
-            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_exit.ImageIndex = 12;
-            this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(792, 4);
-            this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 28;
-            this.m_cmd_exit.Text = "Thoát (Esc)";
-            // 
             // m_lbl_ID_gd_chuyen_nhuong
             // 
             this.m_lbl_ID_gd_chuyen_nhuong.AutoSize = true;
@@ -1435,6 +1359,82 @@
             this.m_gru_thong_tin_khach_hang.TabIndex = 2;
             this.m_gru_thong_tin_khach_hang.TabStop = false;
             this.m_gru_thong_tin_khach_hang.Text = "Thông tin khách hàng";
+            // 
+            // m_cmd_duyet_chuyen_nhuong
+            // 
+            this.m_cmd_duyet_chuyen_nhuong.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_duyet_chuyen_nhuong.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_duyet_chuyen_nhuong.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_duyet_chuyen_nhuong.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_duyet_chuyen_nhuong.Enabled = false;
+            this.m_cmd_duyet_chuyen_nhuong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet_chuyen_nhuong.Image")));
+            this.m_cmd_duyet_chuyen_nhuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_duyet_chuyen_nhuong.Location = new System.Drawing.Point(528, 4);
+            this.m_cmd_duyet_chuyen_nhuong.Name = "m_cmd_duyet_chuyen_nhuong";
+            this.m_cmd_duyet_chuyen_nhuong.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_duyet_chuyen_nhuong.TabIndex = 27;
+            this.m_cmd_duyet_chuyen_nhuong.Text = "&Duyệt";
+            // 
+            // m_cmd_lap_chuyen_nhuong
+            // 
+            this.m_cmd_lap_chuyen_nhuong.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_lap_chuyen_nhuong.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_lap_chuyen_nhuong.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_lap_chuyen_nhuong.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_lap_chuyen_nhuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_lap_chuyen_nhuong.ImageIndex = 2;
+            this.m_cmd_lap_chuyen_nhuong.ImageList = this.ImageList;
+            this.m_cmd_lap_chuyen_nhuong.Location = new System.Drawing.Point(616, 4);
+            this.m_cmd_lap_chuyen_nhuong.Name = "m_cmd_lap_chuyen_nhuong";
+            this.m_cmd_lap_chuyen_nhuong.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_lap_chuyen_nhuong.TabIndex = 25;
+            this.m_cmd_lap_chuyen_nhuong.Text = "& Lập";
+            // 
+            // m_cmd_sua_chuyen_nhuong
+            // 
+            this.m_cmd_sua_chuyen_nhuong.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_sua_chuyen_nhuong.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_sua_chuyen_nhuong.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_sua_chuyen_nhuong.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_sua_chuyen_nhuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_sua_chuyen_nhuong.ImageIndex = 3;
+            this.m_cmd_sua_chuyen_nhuong.ImageList = this.ImageList;
+            this.m_cmd_sua_chuyen_nhuong.Location = new System.Drawing.Point(704, 4);
+            this.m_cmd_sua_chuyen_nhuong.Name = "m_cmd_sua_chuyen_nhuong";
+            this.m_cmd_sua_chuyen_nhuong.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_sua_chuyen_nhuong.TabIndex = 26;
+            this.m_cmd_sua_chuyen_nhuong.Text = "&Sửa";
+            // 
+            // m_cmd_danh_sach_chuyen_nhuong
+            // 
+            this.m_cmd_danh_sach_chuyen_nhuong.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_danh_sach_chuyen_nhuong.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_danh_sach_chuyen_nhuong.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_danh_sach_chuyen_nhuong.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_danh_sach_chuyen_nhuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_danh_sach_chuyen_nhuong.ImageIndex = 18;
+            this.m_cmd_danh_sach_chuyen_nhuong.ImageList = this.ImageList;
+            this.m_cmd_danh_sach_chuyen_nhuong.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_danh_sach_chuyen_nhuong.Name = "m_cmd_danh_sach_chuyen_nhuong";
+            this.m_cmd_danh_sach_chuyen_nhuong.Size = new System.Drawing.Size(163, 28);
+            this.m_cmd_danh_sach_chuyen_nhuong.TabIndex = 29;
+            this.m_cmd_danh_sach_chuyen_nhuong.Text = "Danh sách chuyển nhượng";
+            this.m_cmd_danh_sach_chuyen_nhuong.Visible = false;
+            // 
+            // m_cmd_exit
+            // 
+            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_exit.ImageIndex = 12;
+            this.m_cmd_exit.ImageList = this.ImageList;
+            this.m_cmd_exit.Location = new System.Drawing.Point(792, 4);
+            this.m_cmd_exit.Name = "m_cmd_exit";
+            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_exit.TabIndex = 28;
+            this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // f600_giao_dich_chuyen_nhuong
             // 
