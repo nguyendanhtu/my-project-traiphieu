@@ -6,14 +6,14 @@
 <m_bNETIncludeJITSupport>false</m_bNETIncludeJITSupport>
 <m_bNETIncludeLoadBalancingSupport>false</m_bNETIncludeLoadBalancingSupport>
 <m_bNETIncludeObjectPoolingSupport>false</m_bNETIncludeObjectPoolingSupport>
-<m_bSPGenerateSelectAllSPs>false</m_bSPGenerateSelectAllSPs>
+<m_bSPGenerateSelectAllSPs>true</m_bSPGenerateSelectAllSPs>
 <m_bSPPrefixParams>false</m_bSPPrefixParams>
 <m_bSPGenerateDeleteSPs>true</m_bSPGenerateDeleteSPs>
 <m_bSPGenerateInsertSPs>true</m_bSPGenerateInsertSPs>
 <m_bSPGenerateUpdateSPs>true</m_bSPGenerateUpdateSPs>
-<m_bSPGenerateSelectSPs>false</m_bSPGenerateSelectSPs>
-<m_bSPIncludeComments>true</m_bSPIncludeComments>
-<m_bSPIncludeDrops>true</m_bSPIncludeDrops>
+<m_bSPGenerateSelectSPs>true</m_bSPGenerateSelectSPs>
+<m_bSPIncludeComments>false</m_bSPIncludeComments>
+<m_bSPIncludeDrops>false</m_bSPIncludeDrops>
 <m_bSPIncludeErrorCodeSupport>false</m_bSPIncludeErrorCodeSupport>
 <m_bNETIncludeNullValueSupport>false</m_bNETIncludeNullValueSupport>
 <m_bSPUseFieldListSelectClause>true</m_bSPUseFieldListSelectClause>
@@ -25,12 +25,12 @@
 <m_bSPIncludeNoCountStatements>false</m_bSPIncludeNoCountStatements>
 <m_bNETIncludeConnectionProviderSupport>false</m_bNETIncludeConnectionProviderSupport>
 <m_sSQLCatalog id="ref-3">QuanLyPhatHanhTraiPhieu</m_sSQLCatalog>
-<m_sSQLServer id="ref-4">.\SQLEXPRESS</m_sSQLServer>
+<m_sSQLServer id="ref-4">PURE-PC</m_sSQLServer>
 <m_sSQLUID id="ref-5">sa</m_sSQLUID>
 <m_sNETNamespace id="ref-6">QuanLyPhatHanhTraiPhieuLLBL</m_sNETNamespace>
 <m_sSPNamePrefix id="ref-7">pr_</m_sSPNamePrefix>
-<m_sSPOutputPath id="ref-8">C:\TU_WORK\PROJECT.13. BAN HANG\Tools\1. GenCodeForProcedure\StoredProcedures\</m_sSPOutputPath>
-<m_sNETOutputPath id="ref-9">C:\TU_WORK\PROJECT.13. BAN HANG\Tools\1. GenCodeForProcedure\Classes\</m_sNETOutputPath>
+<m_sSPOutputPath id="ref-8">D:\01.BKINDEX\1.Project\3.VietinBank\Database\</m_sSPOutputPath>
+<m_sNETOutputPath id="ref-9">D:\01.BKINDEX\1.Project\3.VietinBank\Database\</m_sNETOutputPath>
 <m_sNETClassPrefix id="ref-10"></m_sNETClassPrefix>
 <m_iNETConnectionStringRetrieval>0</m_iNETConnectionStringRetrieval>
 <m_iNETOutputLanguage>0</m_iNETOutputLanguage>
