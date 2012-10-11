@@ -214,5 +214,15 @@ public class US_DM_TO_CHUC_PHAT_HANH : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
+
+    #region Additional Functions
+    public void load_data_by_search(DS_DM_TO_CHUC_PHAT_HANH op_ds_dm_to_chuc_phat_hanh
+                                   , string ip_str_keyword)
+    {
+        CStoredProc v_cstore = new CStoredProc("pr_DM_TO_CHUC_PHAT_HANH_Fill_By_Search");
+        v_cstore.addNVarcharInputParam("@KEYWORD",ip_str_keyword);
+        v_cstore.fillDataSetByCommand(this, op_ds_dm_to_chuc_phat_hanh);
+    }
+    #endregion
 }
 }
