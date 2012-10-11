@@ -413,7 +413,7 @@
             this.m_cmd_thong_bao_ls.ImageList = this.ImageList;
             this.m_cmd_thong_bao_ls.Location = new System.Drawing.Point(177, 4);
             this.m_cmd_thong_bao_ls.Name = "m_cmd_thong_bao_ls";
-            this.m_cmd_thong_bao_ls.Size = new System.Drawing.Size(173, 28);
+            this.m_cmd_thong_bao_ls.Size = new System.Drawing.Size(129, 28);
             this.m_cmd_thong_bao_ls.TabIndex = 22;
             this.m_cmd_thong_bao_ls.Text = "Thông báo lãi suất";
             // 
