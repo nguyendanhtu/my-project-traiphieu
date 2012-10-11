@@ -59,11 +59,11 @@
             // m_lbl_lich_nhac_viec_tu
             // 
             this.m_lbl_lich_nhac_viec_tu.AutoSize = true;
-            this.m_lbl_lich_nhac_viec_tu.Location = new System.Drawing.Point(28, 55);
+            this.m_lbl_lich_nhac_viec_tu.Location = new System.Drawing.Point(18, 50);
             this.m_lbl_lich_nhac_viec_tu.Name = "m_lbl_lich_nhac_viec_tu";
-            this.m_lbl_lich_nhac_viec_tu.Size = new System.Drawing.Size(20, 13);
+            this.m_lbl_lich_nhac_viec_tu.Size = new System.Drawing.Size(49, 13);
             this.m_lbl_lich_nhac_viec_tu.TabIndex = 22;
-            this.m_lbl_lich_nhac_viec_tu.Text = "Từ";
+            this.m_lbl_lich_nhac_viec_tu.Text = "Hôm nay";
             // 
             // m_lbl_lich_nhac_viec_den
             // 
@@ -73,6 +73,7 @@
             this.m_lbl_lich_nhac_viec_den.Size = new System.Drawing.Size(27, 13);
             this.m_lbl_lich_nhac_viec_den.TabIndex = 23;
             this.m_lbl_lich_nhac_viec_den.Text = "Đến";
+            this.m_lbl_lich_nhac_viec_den.Visible = false;
             // 
             // m_dat_from_date
             // 

@@ -153,6 +153,12 @@ namespace BondApp.ChucNang
                 v_cell_style_err.BackColor = Color.Red;
                 C1.Win.C1FlexGrid.CellStyle v_cell_style = this.m_fg_load_file.Styles.Add("RowColor");
                 v_cell_style.BackColor = Color.White;
+
+                C1.Win.C1FlexGrid.CellStyle v_cell_style_ok = this.m_fg_load_file.Styles.Add("RowColorOk");
+                v_cell_style_ok.BackColor = Color.White;
+                C1.Win.C1FlexGrid.CellStyle v_cell_style_chu_ok = this.m_fg_load_file.Styles.Add("RowColor");
+                v_cell_style_chu_ok.BackColor = Color.Black;
+
                 for (int i_stt = 1; i_stt <= m_fg_load_file.Rows.Count - 1; i_stt++)
                 {
                     string v_dien_giai = " ";
@@ -171,10 +177,14 @@ namespace BondApp.ChucNang
 
                             if (v_bol_co_trai_chu)
                             {
-                                v_dien_giai = "Mã trái chủ không tồn tại trong phần mềm";
+                                v_dien_giai = "Mã trái chủ đã tồn tại trong hệ thống";
                                 m_fg_load_file.SetCellStyle(i_stt, (int)e_col_number_xls.MA_TRAI_CHU, v_cell_style_err);
                             }
-                            else v_dien_giai = " ";
+                            else
+                            {
+                                v_dien_giai = " ";
+                                m_fg_load_file.SetCellStyle(i_stt, (int)e_col_number_xls.MA_TRAI_CHU, v_cell_style_ok);
+                            }
                         }
                         catch (Exception v_e)
                         {
@@ -193,7 +203,10 @@ namespace BondApp.ChucNang
                         v_dien_giai += "Tên trái chủ không được null, ";
                         m_fg_load_file.SetCellStyle(i_stt, (int)e_col_number_xls.TEN_TRAI_CHU, v_cell_style_err);
                     }
-
+                    else
+                    {
+                        m_fg_load_file.SetCellStyle(i_stt, (int)e_col_number_xls.TEN_TRAI_CHU, v_cell_style_ok);
+                    }
                     // kiem tra loại hình cổ đông không được null và <0
                     if (m_fg_load_file[i_stt, (int)e_col_number_xls.LOAI_HINH_CO_CONG] != null)
                     {
@@ -201,6 +214,10 @@ namespace BondApp.ChucNang
                         {
                             v_dien_giai += "Loại hình cổ đông không hợp lệ, ";
                             m_fg_load_file.SetCellStyle(i_stt, (int)e_col_number_xls.LOAI_HINH_CO_CONG, v_cell_style_err);
+                        }
+                        else
+                        {
+                            m_fg_load_file.SetCellStyle(i_stt, (int)e_col_number_xls.LOAI_HINH_CO_CONG, v_cell_style_ok);
                         }
                     }
                     else
@@ -214,6 +231,10 @@ namespace BondApp.ChucNang
                         v_dien_giai += "Số CMND hoặc đăng ký kinh doanh không được null, ";
                         m_fg_load_file.SetCellStyle(i_stt, (int)e_col_number_xls.DKHD_CMND, v_cell_style_err);
                     }
+                    else
+                    {
+                        m_fg_load_file.SetCellStyle(i_stt, (int)e_col_number_xls.DKHD_CMND, v_cell_style_ok);
+                    }
                     // kiem tra số lượng trái phiếu sở hữu
                     if (m_fg_load_file[i_stt, (int)e_col_number_xls.SO_LUONG_TRAI_PHIEU_SO_HUU] != null)
                     {
@@ -222,6 +243,10 @@ namespace BondApp.ChucNang
 
                             v_dien_giai += "Số lượng trái phiếu sở hữu phải lớn hơn 0, ";
                             m_fg_load_file.SetCellStyle(i_stt, (int)e_col_number_xls.SO_LUONG_TRAI_PHIEU_SO_HUU, v_cell_style_err);
+                        }
+                        else
+                        {
+                            m_fg_load_file.SetCellStyle(i_stt, (int)e_col_number_xls.SO_LUONG_TRAI_PHIEU_SO_HUU, v_cell_style_ok);
                         }
                     }
                     else
@@ -270,6 +295,7 @@ namespace BondApp.ChucNang
                                                     , m_us_trai_phieu.dcID);
                 }
                 v_us_trai_chu_imp.CommitTransaction();
+                BaseMessages.MsgBox_Infor("Đã import trái chủ thành công");
             }
             catch (Exception v_e)
             {
@@ -292,7 +318,7 @@ namespace BondApp.ChucNang
                 v_us.SetNGAY_CAPNull();
             }
             else
-                v_us.datNGAY_CAP = CIPConvert.ToDatetime(m_fg_load_file[i_i_id, (int)e_col_number_xls.NGAY_CAP]);
+                v_us.datNGAY_CAP = CIPConvert.ToDatetime(CIPConvert.ToStr(m_fg_load_file[i_i_id, (int)e_col_number_xls.NGAY_CAP]));
 
 
             if ((m_fg_load_file[i_i_id, (int)e_col_number_xls.NOI_CAP] == null))
@@ -367,7 +393,7 @@ namespace BondApp.ChucNang
               v_us.SetNGAY_BAT_DAU_SO_HUU_TPNull();
           }
           else
-              v_us.datNGAY_BAT_DAU_SO_HUU_TP = CIPConvert.ToDatetime(m_fg_load_file[i_i_id, (int)e_col_number_xls.NGAY_BAT_DAU_SO_HUU_TP]);
+              v_us.datNGAY_BAT_DAU_SO_HUU_TP = CIPConvert.ToDatetime(CIPConvert.ToStr(m_fg_load_file[i_i_id, (int)e_col_number_xls.NGAY_BAT_DAU_SO_HUU_TP]));
             
             v_us.dcSTT = 1;
         }
@@ -376,12 +402,12 @@ namespace BondApp.ChucNang
             decimal v_dc_loai_trai_chu = 0;
             if(ip_dc_loai_hinh_co_dong == m_dc_ca_nhan_trong_nuoc)
                  v_dc_loai_trai_chu = ID_LOAI_TRAI_CHU.CA_NHAN_TRONG_NUOC;
-            else if(ip_dc_loai_hinh_co_dong == m_dc_ca_nhan_trong_nuoc)
-                    v_dc_loai_trai_chu = ID_LOAI_TRAI_CHU.CA_NHAN_TRONG_NUOC;
-            else if(ip_dc_loai_hinh_co_dong == m_dc_ca_nhan_trong_nuoc)
-                    v_dc_loai_trai_chu = ID_LOAI_TRAI_CHU.CA_NHAN_TRONG_NUOC;
-            else if(ip_dc_loai_hinh_co_dong == m_dc_ca_nhan_trong_nuoc)
-                    v_dc_loai_trai_chu = ID_LOAI_TRAI_CHU.CA_NHAN_TRONG_NUOC;
+            else if(ip_dc_loai_hinh_co_dong == m_dc_ca_nhan_nuoc_ngoai)
+                    v_dc_loai_trai_chu = ID_LOAI_TRAI_CHU.CA_NHAN_NUOC_NGOAI;
+            else if(ip_dc_loai_hinh_co_dong == m_dc_to_chuc_trong_nuoc)
+                    v_dc_loai_trai_chu = ID_LOAI_TRAI_CHU.TO_CHUC_TRONG_NUOC;
+            else if(ip_dc_loai_hinh_co_dong == m_dc_to_chuc_nuoc_ngoai)
+                    v_dc_loai_trai_chu = ID_LOAI_TRAI_CHU.TO_CHUC_NUOC_NGOAI;
             return v_dc_loai_trai_chu;
         }
         private ITransferDataRow get_2_us_obj_xls()
@@ -471,7 +497,6 @@ namespace BondApp.ChucNang
             try
             {
                 add_danh_sach_trai_chu();
-                BaseMessages.MsgBox_Infor("Đã import trái chủ thành công");
             }
             catch (Exception v_e)
             {
