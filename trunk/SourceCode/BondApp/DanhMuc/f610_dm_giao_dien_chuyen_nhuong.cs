@@ -59,9 +59,10 @@ namespace BondApp
             //
             // TODO: Add any constructor code after InitializeComponent call
             //
-            format_controls();
             load_data_2_cmb_trai_phieu();
             Load_data_2_dat_from_to();
+            format_controls();
+            
         }
 
         /// <summary>
@@ -554,7 +555,62 @@ namespace BondApp
             m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_cbo_trai_phieu.SelectedIndexChanged += new EventHandler(m_cbo_trai_phieu_SelectedIndexChanged);            
+            m_dat_from_date.ValueChanged += new EventHandler(m_dat_from_date_ValueChanged);
+            m_dat_to_date.ValueChanged += new EventHandler(m_dat_to_date_ValueChanged);
+            m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
         }
+
+        void m_cbo_trai_phieu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_fg_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                view_v_gd_chuyen_nhuong();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }        
+
+        void m_dat_to_date_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_dat_from_date_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }       
         private void f610_dm_giao_dien_chuyen_nhuong_Load(object sender, System.EventArgs e)
         {
             try
