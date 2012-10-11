@@ -181,6 +181,7 @@ namespace BondApp
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_cbo_loai_nhac_viec();
             m_dat_to_date.Value = m_dat_from_date.Value;
+            m_dat_to_date.Visible = false;
             load_data_2_grid();
             //this.m_lbl_intro.ForeColor = System.Drawing.Color.Black;
             //this.m_lbl_intro.BackColor = System.Drawing.Color.Transparent;
@@ -218,6 +219,19 @@ namespace BondApp
             m_cmd_filter.Click += new EventHandler(m_cmd_filter_Click);
             m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
             m_cmd_them_ghi_chu.Click += new EventHandler(m_cmd_them_ghi_chu_Click);
+            m_dat_from_date.ValueChanged += new EventHandler(m_dat_from_date_ValueChanged);
+        }
+
+        void m_dat_from_date_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                m_dat_to_date.Value = m_dat_from_date.Value;
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_them_ghi_chu_Click(object sender, EventArgs e)

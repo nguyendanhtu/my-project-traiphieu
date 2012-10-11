@@ -492,6 +492,7 @@ public class US_DM_TRAI_CHU_IMP : US_Object
                             , decimal ip_dc_id_trai_phieu_so_huu)
     {
         CStoredProc v_cstore = new CStoredProc("pr_DM_TRAI_CHU_IMP_Insert_Import");
+        v_cstore.addDecimalInputParam("@ID", 1);
         v_cstore.addDecimalInputParam("@ID_NGUOI_LAP", ip_dc_id_nguoi_dung);
         v_cstore.addNVarcharInputParam("@MA_TRAI_CHU", this.strMA_TRAI_CHU);
         v_cstore.addNVarcharInputParam("@TEN_TRAI_CHU", this.strTEN_TRAI_CHU);
@@ -506,6 +507,7 @@ public class US_DM_TRAI_CHU_IMP : US_Object
         v_cstore.addNVarcharInputParam("@ID_TRAI_PHIEU_SO_HUU", ip_dc_id_trai_phieu_so_huu);
         v_cstore.addNVarcharInputParam("@SO_LUONG_TRAI_PHIEU_SO_HUU", this.dcSO_LUONG_TRAI_PHIEU_SO_HUU);
         v_cstore.addDatetimeInputParam("@NGAY_BAT_DAU_SO_HUU_TP", this.datNGAY_BAT_DAU_SO_HUU_TP);
+        v_cstore.ExecuteCommand(this);
     }
     #endregion
 }

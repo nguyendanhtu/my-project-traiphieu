@@ -292,6 +292,7 @@
             // 
             // m_fg_load_file
             // 
+            this.m_fg_load_file.AllowDelete = true;
             this.m_fg_load_file.ColumnInfo = resources.GetString("m_fg_load_file.ColumnInfo");
             this.m_fg_load_file.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg_load_file.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
