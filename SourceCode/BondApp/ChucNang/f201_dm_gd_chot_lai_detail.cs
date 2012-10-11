@@ -43,7 +43,7 @@ namespace BondApp
         private C1FlexGrid m_fg;
 		private System.ComponentModel.IContainer components;
 
-		public f201_dm_gd_chot_lai_detail()
+		public f201_dm_gd_chot_lai_detail(decimal ip_dc_id_chot_lai)
 		{
 			//
 			// Required for Windows Form Designer support
@@ -54,6 +54,8 @@ namespace BondApp
 			// TODO: Add any constructor code after InitializeComponent call
 			//
 			format_controls();
+            m_us = new US_GD_CHOT_LAI_DETAIL(ip_dc_id_chot_lai);
+
 		}
 
 		/// <summary>
@@ -348,7 +350,7 @@ namespace BondApp
 			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
 		}
     	private void insert_gd_chot_lai_detail(){
-            f250_chi_tiet_giao_dich_chot_lai v_fDE = new f250_chi_tiet_giao_dich_chot_lai();								
+            f250_chi_tiet_giao_dich_chot_lai v_fDE = new f250_chi_tiet_giao_dich_chot_lai();
 			v_fDE.display_for_insert();
 			load_data_2_grid();
 		}
