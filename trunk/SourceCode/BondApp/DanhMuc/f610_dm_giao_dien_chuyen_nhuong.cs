@@ -253,11 +253,11 @@ namespace BondApp
             // m_lbl_nhom_hang
             // 
             this.m_lbl_nhom_hang.AutoSize = true;
-            this.m_lbl_nhom_hang.Location = new System.Drawing.Point(139, 68);
+            this.m_lbl_nhom_hang.Location = new System.Drawing.Point(165, 68);
             this.m_lbl_nhom_hang.Name = "m_lbl_nhom_hang";
-            this.m_lbl_nhom_hang.Size = new System.Drawing.Size(54, 13);
+            this.m_lbl_nhom_hang.Size = new System.Drawing.Size(72, 13);
             this.m_lbl_nhom_hang.TabIndex = 30;
-            this.m_lbl_nhom_hang.Text = "Trái phiếu";
+            this.m_lbl_nhom_hang.Text = "Tên trái phiếu";
             // 
             // m_dat_to_date
             // 
@@ -304,7 +304,7 @@ namespace BondApp
             this.m_lbl_title.Name = "m_lbl_title";
             this.m_lbl_title.Size = new System.Drawing.Size(884, 31);
             this.m_lbl_title.TabIndex = 33;
-            this.m_lbl_title.Text = "F610 - Danh mục giao dịch chuyển nhượng";
+            this.m_lbl_title.Text = "F610 -Danh sách giao dịch chuyển nhượng";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_fg
@@ -326,7 +326,7 @@ namespace BondApp
             this.Controls.Add(this.m_lbl_title);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f610_dm_giao_dien_chuyen_nhuong";
-            this.Text = "F610-Danh muc chuyen nhuong";
+            this.Text = "F610-Danh sach giao dich chuyen nhuong";
             this.Load += new System.EventHandler(this.f610_dm_giao_dien_chuyen_nhuong_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.m_grb_thong_tin_ban_hang.ResumeLayout(false);
@@ -352,44 +352,35 @@ namespace BondApp
         #region Data Structure
         private enum e_col_Number
         {
-            ID_TRAI_CHU_BAN = 4
-,
-            tcb_MA_TRAI_CHU = 4
-                ,
-            NGAY_KY_CHUYEN_NHUONG = 15
-                ,
-            MA_TRAI_PHIEU = 6
-                ,
-            ID_TRAI_PHIEU_SO_HUU = 6
-                ,
-            tcm_TEN_TRAI_CHU = 3
-                ,
-            PHI_GD = 11
-                ,
-            MA_GIAO_DICH = 1
-                ,
-            GIA_TRI_THUE = 12
-                ,
-            GIA_TRI_CN_THEO_MENH_GIA = 9
+            GIA_TRI_CN_THEO_MENH_GIA = 8,
+            tcb_TEN_TRAI_CHU = 4
                 ,
             ID = 0
                 ,
-            SO_LUONG_CHUYEN_NHUONG = 8
+            tcm_MA_TRAI_CHU = 3
                 ,
-            ID_TRAI_CHU_MUA = 2
+            GIA_TRI_THUE = 11
                 ,
-            TEN_TRAI_PHIEU = 7
+            tcb_MA_TRAI_CHU = 5
                 ,
-            tcb_TEN_TRAI_CHU = 5
+            tcm_TEN_TRAI_CHU = 2
                 ,
-            GIA_TRI_CHUYEN_NHUONG_THUC_TE = 10
+            MA_GIAO_DICH = 1
                 ,
-            tcm_MA_TRAI_CHU = 2
+            GIA_TRI_CHUYEN_NHUONG_THUC_TE = 9
                 ,
             NGAY_XAC_NHAN = 14
                 ,
-            NGAY_VAO_SO = 16
-                , ID_TRANG_THAI_CHUYEN_NHUONG = 13
+            PHI_GD = 10
+                ,
+            NGAY_KY_CHUYEN_NHUONG = 12
+                ,
+            ID_TRANG_THAI_CHUYEN_NHUONG = 15
+                ,
+            SO_LUONG_CHUYEN_NHUONG = 7
+                ,
+            TEN_TRAI_PHIEU = 6
+                , NGAY_VAO_SO = 13            
 
         }
         #endregion
@@ -421,36 +412,38 @@ namespace BondApp
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
             Hashtable v_htb = new Hashtable();
-            v_htb.Add(V_GD_CHUYEN_NHUONG.ID_TRAI_CHU_BAN, e_col_Number.ID_TRAI_CHU_BAN);
-            v_htb.Add(V_GD_CHUYEN_NHUONG.tcb_MA_TRAI_CHU, e_col_Number.tcb_MA_TRAI_CHU);
-            v_htb.Add(V_GD_CHUYEN_NHUONG.NGAY_KY_CHUYEN_NHUONG, e_col_Number.NGAY_KY_CHUYEN_NHUONG);
-            v_htb.Add(V_GD_CHUYEN_NHUONG.MA_TRAI_PHIEU, e_col_Number.MA_TRAI_PHIEU);
-            v_htb.Add(V_GD_CHUYEN_NHUONG.ID_TRAI_PHIEU_SO_HUU, e_col_Number.ID_TRAI_PHIEU_SO_HUU);
-            v_htb.Add(V_GD_CHUYEN_NHUONG.tcm_TEN_TRAI_CHU, e_col_Number.tcm_TEN_TRAI_CHU);
-            v_htb.Add(V_GD_CHUYEN_NHUONG.PHI_GD, e_col_Number.PHI_GD);
-            v_htb.Add(V_GD_CHUYEN_NHUONG.MA_GIAO_DICH, e_col_Number.MA_GIAO_DICH);
-            v_htb.Add(V_GD_CHUYEN_NHUONG.GIA_TRI_THUE, e_col_Number.GIA_TRI_THUE);
             v_htb.Add(V_GD_CHUYEN_NHUONG.GIA_TRI_CN_THEO_MENH_GIA, e_col_Number.GIA_TRI_CN_THEO_MENH_GIA);
-            v_htb.Add(V_GD_CHUYEN_NHUONG.ID, e_col_Number.ID);
-            v_htb.Add(V_GD_CHUYEN_NHUONG.SO_LUONG_CHUYEN_NHUONG, e_col_Number.SO_LUONG_CHUYEN_NHUONG);
-            v_htb.Add(V_GD_CHUYEN_NHUONG.ID_TRAI_CHU_MUA, e_col_Number.ID_TRAI_CHU_MUA);
-            v_htb.Add(V_GD_CHUYEN_NHUONG.TEN_TRAI_PHIEU, e_col_Number.TEN_TRAI_PHIEU);
             v_htb.Add(V_GD_CHUYEN_NHUONG.tcb_TEN_TRAI_CHU, e_col_Number.tcb_TEN_TRAI_CHU);
-            v_htb.Add(V_GD_CHUYEN_NHUONG.GIA_TRI_CHUYEN_NHUONG_THUC_TE, e_col_Number.GIA_TRI_CHUYEN_NHUONG_THUC_TE);
+            v_htb.Add(V_GD_CHUYEN_NHUONG.ID, e_col_Number.ID);
             v_htb.Add(V_GD_CHUYEN_NHUONG.tcm_MA_TRAI_CHU, e_col_Number.tcm_MA_TRAI_CHU);
+            v_htb.Add(V_GD_CHUYEN_NHUONG.GIA_TRI_THUE, e_col_Number.GIA_TRI_THUE);
+            v_htb.Add(V_GD_CHUYEN_NHUONG.tcb_MA_TRAI_CHU, e_col_Number.tcb_MA_TRAI_CHU);
+            v_htb.Add(V_GD_CHUYEN_NHUONG.tcm_TEN_TRAI_CHU, e_col_Number.tcm_TEN_TRAI_CHU);
+            v_htb.Add(V_GD_CHUYEN_NHUONG.MA_GIAO_DICH, e_col_Number.MA_GIAO_DICH);
+            v_htb.Add(V_GD_CHUYEN_NHUONG.GIA_TRI_CHUYEN_NHUONG_THUC_TE, e_col_Number.GIA_TRI_CHUYEN_NHUONG_THUC_TE);
             v_htb.Add(V_GD_CHUYEN_NHUONG.NGAY_XAC_NHAN, e_col_Number.NGAY_XAC_NHAN);
-            v_htb.Add(V_GD_CHUYEN_NHUONG.NGAY_VAO_SO, e_col_Number.NGAY_VAO_SO);
+            v_htb.Add(V_GD_CHUYEN_NHUONG.PHI_GD, e_col_Number.PHI_GD);
+            v_htb.Add(V_GD_CHUYEN_NHUONG.NGAY_KY_CHUYEN_NHUONG, e_col_Number.NGAY_KY_CHUYEN_NHUONG);
             v_htb.Add(V_GD_CHUYEN_NHUONG.ID_TRANG_THAI_CHUYEN_NHUONG, e_col_Number.ID_TRANG_THAI_CHUYEN_NHUONG);
+            v_htb.Add(V_GD_CHUYEN_NHUONG.SO_LUONG_CHUYEN_NHUONG, e_col_Number.SO_LUONG_CHUYEN_NHUONG);
+            v_htb.Add(V_GD_CHUYEN_NHUONG.TEN_TRAI_PHIEU, e_col_Number.TEN_TRAI_PHIEU);
+            v_htb.Add(V_GD_CHUYEN_NHUONG.NGAY_VAO_SO, e_col_Number.NGAY_VAO_SO);
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_GD_CHUYEN_NHUONG.NewRow());
             return v_obj_trans;
         }
         private void load_data_2_grid()
         {
-            m_ds = new DS_V_GD_CHUYEN_NHUONG();
+            m_ds = new DS_V_GD_CHUYEN_NHUONG();      
+            US_CM_DM_TU_DIEN v_tu_dien;
             m_us.FillDataset(m_ds);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            for (int v_i_grid_row = m_fg.Rows.Fixed; v_i_grid_row < m_fg.Rows.Count; v_i_grid_row++)
+            {              
+                v_tu_dien = new US_CM_DM_TU_DIEN(CIPConvert.ToDecimal( m_fg[v_i_grid_row, (int)e_col_Number.ID_TRANG_THAI_CHUYEN_NHUONG]));
+                m_fg[v_i_grid_row, (int)e_col_Number.ID_TRANG_THAI_CHUYEN_NHUONG] = v_tu_dien.strTEN;
+            }
             m_fg.Redraw = true;
         }
         private void load_data_2_cmb_trai_phieu()
