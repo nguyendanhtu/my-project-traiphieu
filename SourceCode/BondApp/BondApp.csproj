@@ -344,6 +344,9 @@
     <Compile Include="DanhMuc\f100_dm_to_chuc_phat_hanh_de.Designer.cs">
       <DependentUpon>f100_dm_to_chuc_phat_hanh_de.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\f150_dm_dot_phat_hanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DanhMuc\f151_dm_dot_phat_hanh_de.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -482,6 +485,9 @@
     <EmbeddedResource Include="DanhMuc\f100_dm_to_chuc_phat_hanh_de.resx">
       <DependentUpon>f100_dm_to_chuc_phat_hanh_de.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\f150_dm_dot_phat_hanh.resx">
+      <DependentUpon>f150_dm_dot_phat_hanh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f151_dm_dot_phat_hanh_de.resx">
       <DependentUpon>f151_dm_dot_phat_hanh_de.cs</DependentUpon>
