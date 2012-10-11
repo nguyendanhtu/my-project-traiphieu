@@ -474,8 +474,16 @@ namespace BondDS.CDBNames
         public const string PHONG_TOA_YN = "PHONG_TOA_YN";
         public const string ID_NGUOI_LAP = "ID_NGUOI_LAP";
         public const string ID_NGUOI_DUYET = "ID_NGUOI_DUYET";
-        public const string TRANG_THAI = "TRANG_THAI";
+        public const string ID_TRANG_THAI = "ID_TRANG_THAI";
+        public const string TY_LE_PHI_GD = "TY_LE_PHI_GD";
+        public const string PHI_GIAO_DICH = "PHI_GIAO_DICH";
+        public const string NGUOI_XAC_NHAN = "NGUOI_XAC_NHAN";
+        public const string CHUC_VU = "CHUC_VU";
+        public const string GIAY_UQ = "GIAY_UQ";
+        public const string CUA = "CUA";
+        public const string NGAY_CAP_GIAY_UQ = "NGAY_CAP_GIAY_UQ";
     }
+
     public class V_GD_PHONG_GIAI_TOA
     {
         public const string ID = "ID";
