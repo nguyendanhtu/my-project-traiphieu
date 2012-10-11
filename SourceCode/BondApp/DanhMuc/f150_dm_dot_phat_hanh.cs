@@ -22,6 +22,7 @@ using BondDS;
 using BondDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
+using BondApp.DanhMuc;
 
 namespace BondApp
 {
@@ -390,9 +391,9 @@ namespace BondApp
 		}
 
 
-		private void insert_v_dm_dot_phat_hanh(){			
-		//	f150_dm_dot_phat_hanh_DE v_fDE = new  f150_dm_dot_phat_hanh_DE();								
-		//	v_fDE.display();
+		private void insert_v_dm_dot_phat_hanh(){
+            f151_dm_dot_phat_hanh_de v_fde = new f151_dm_dot_phat_hanh_de();
+            v_fde.display_for_insert();
 			load_data_2_grid();
 		}
 
@@ -400,8 +401,8 @@ namespace BondApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
 			grid2us_object(m_us, m_fg.Row);
-		//	f150_dm_dot_phat_hanh_DE v_fDE = new f150_dm_dot_phat_hanh_DE();
-		//	v_fDE.display(m_us);
+            f151_dm_dot_phat_hanh_de v_fde = new f151_dm_dot_phat_hanh_de();
+            v_fde.display_for_update(m_us);
 			load_data_2_grid();
 		}
 				
@@ -429,8 +430,8 @@ namespace BondApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
 			grid2us_object(m_us, m_fg.Row);
-		//	f150_dm_dot_phat_hanh_DE v_fDE = new f150_dm_dot_phat_hanh_DE();			
-		//	v_fDE.display(m_us);
+            f151_dm_dot_phat_hanh_de v_fde = new f151_dm_dot_phat_hanh_de();
+            v_fde.display_for_update(m_us);
 		}
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
