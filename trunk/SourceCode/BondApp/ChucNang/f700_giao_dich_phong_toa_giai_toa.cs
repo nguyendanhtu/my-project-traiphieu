@@ -272,7 +272,7 @@ namespace BondApp
             m_us_gd_phong_toa_giai_toa.datNGAY_CAP_GIAY_UQ = m_dat_ngay_cap_giay_uq.Value.Date;
             m_us_gd_phong_toa_giai_toa.strGIAY_UQ = m_txt_theo_giay_uy_quyen_so.Text;
             m_us_gd_phong_toa_giai_toa.strNGUOI_XAC_NHAN = m_txt_nguoi_xac_nhan.Text;
-            m_us_gd_phong_toa_giai_toa.strCHUC_VU = m_txt_chuc_vu;
+            m_us_gd_phong_toa_giai_toa.strCHUC_VU = m_txt_chuc_vu.Text;
 
 
         }
