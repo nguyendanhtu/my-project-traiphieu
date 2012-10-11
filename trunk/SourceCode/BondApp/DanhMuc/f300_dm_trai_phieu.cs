@@ -674,6 +674,8 @@ namespace BondApp
 
         private void m_cmd_xem_chi_tiet_chot_lai_Click(object sender, EventArgs e)
         {
+            US_GD_CHOT_LAI m_us = new US_GD_CHOT_LAI();
+            m_us.GenDSTraLai(6, 47);
             f201_dm_gd_chot_lai_detail v_f = new f201_dm_gd_chot_lai_detail(6);
             v_f.ShowDialog();
         }
