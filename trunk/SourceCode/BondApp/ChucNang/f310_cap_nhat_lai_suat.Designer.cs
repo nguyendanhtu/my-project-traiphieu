@@ -28,11 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // f310_cap_nhat_lai_suat
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(884, 562);
+            this.Name = "f310_cap_nhat_lai_suat";
             this.Text = "f310_cap_nhat_lai_suat";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
     }
 }

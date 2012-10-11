@@ -459,6 +459,9 @@
       <DependentUpon>f260_import_trai_chu_tu_excel.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChucNang\f310_cap_nhat_lai_suat.resx">
+      <DependentUpon>f310_cap_nhat_lai_suat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f600_giao_dich_chuyen_nhuong.resx">
       <DependentUpon>f600_giao_dich_chuyen_nhuong.cs</DependentUpon>
     </EmbeddedResource>
