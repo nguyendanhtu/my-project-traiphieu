@@ -542,6 +542,14 @@ namespace BondApp
         {
             try
             {
+                if (DateTime.Compare(m_dat_to_date.Value.Date,m_dat_from_date.Value.Date)<0)
+                {
+                    MessageBox.Show("Ngày kết thúc phải sau ngày bắt đầu!");
+                    m_dat_to_date.Value = m_dat_from_date.Value;
+                    m_dat_to_date.Focus();
+                    return;
+
+                }
                 load_data_2_grid();
             }
             catch (Exception v_e)
@@ -554,6 +562,14 @@ namespace BondApp
         {
             try
             {
+                if (DateTime.Compare(m_dat_to_date.Value.Date,m_dat_from_date.Value.Date)<0)
+                {
+                    MessageBox.Show("Ngày kết thúc phải sau ngày bắt đầu!");
+                    m_dat_from_date.Value = m_dat_to_date.Value;
+                    m_dat_from_date.Focus();
+                    return;
+
+                } 
                 load_data_2_grid();
             }
             catch (Exception v_e)
@@ -576,7 +592,7 @@ namespace BondApp
         {
             try
             {
-                //load_data_2_grid();
+                load_data_2_grid();
             }
             catch (Exception v_e)
             {
