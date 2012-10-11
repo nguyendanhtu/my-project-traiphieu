@@ -253,5 +253,14 @@ public class US_GD_CHOT_LAI : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
+
+
+    public void GenDSTraLai(decimal ip_dc_id_gd_chot_lai, decimal ip_dc_id_trai_chu)
+    {
+        CStoredProc v_pr_obj = new CStoredProc("pr_GD_CHOT_LAI_Sinh_Gd_Chot_Lai");
+        v_pr_obj.addDecimalInputParam("@ID_GD_CHOT_LAI", ip_dc_id_gd_chot_lai);
+        v_pr_obj.addDecimalInputParam("@ID_DM_TRAI_CHU", ip_dc_id_trai_chu);
+        v_pr_obj.ExecuteCommand(this);
+    }
 }
 }
