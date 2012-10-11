@@ -306,7 +306,13 @@ namespace BondApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			KY_TRA_LAI = 4,ID_DV_KY_TRA_LAI = 5,ID_TO_CHUC_PHAT_HANH = 1,GHI_CHU = 6,NGAY_PHAT_HANH = 2,MENH_GIA = 3
+			KY_TRA_LAI = 4
+,ID_DV_KY_TRA_LAI = 5
+,ID_TO_CHUC_PHAT_HANH = 1
+,GHI_CHU = 6
+,NGAY_PHAT_HANH = 2
+,MENH_GIA = 3
+
 		}			
 		#endregion
 
@@ -332,7 +338,13 @@ namespace BondApp
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
-			v_htb.Add(DM_DOT_PHAT_HANH.KY_TRA_LAI, e_col_Number.KY_TRA_LAI);			v_htb.Add(DM_DOT_PHAT_HANH.ID_DV_KY_TRA_LAI, e_col_Number.ID_DV_KY_TRA_LAI);			v_htb.Add(DM_DOT_PHAT_HANH.ID_TO_CHUC_PHAT_HANH, e_col_Number.ID_TO_CHUC_PHAT_HANH);			v_htb.Add(DM_DOT_PHAT_HANH.GHI_CHU, e_col_Number.GHI_CHU);			v_htb.Add(DM_DOT_PHAT_HANH.NGAY_PHAT_HANH, e_col_Number.NGAY_PHAT_HANH);			v_htb.Add(DM_DOT_PHAT_HANH.MENH_GIA, e_col_Number.MENH_GIA);									
+			v_htb.Add(DM_DOT_PHAT_HANH.KY_TRA_LAI, e_col_Number.KY_TRA_LAI);
+			v_htb.Add(DM_DOT_PHAT_HANH.ID_DV_KY_TRA_LAI, e_col_Number.ID_DV_KY_TRA_LAI);
+			v_htb.Add(DM_DOT_PHAT_HANH.ID_TO_CHUC_PHAT_HANH, e_col_Number.ID_TO_CHUC_PHAT_HANH);
+			v_htb.Add(DM_DOT_PHAT_HANH.GHI_CHU, e_col_Number.GHI_CHU);
+			v_htb.Add(DM_DOT_PHAT_HANH.NGAY_PHAT_HANH, e_col_Number.NGAY_PHAT_HANH);
+			v_htb.Add(DM_DOT_PHAT_HANH.MENH_GIA, e_col_Number.MENH_GIA);
+									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.DM_DOT_PHAT_HANH.NewRow());
 			return v_obj_trans;			
 		}
