@@ -108,6 +108,72 @@ namespace BondUS
             pm_objDR["GHI_CHU"] = System.Convert.DBNull;
         }
 
+        public decimal dcMENH_GIA
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "MENH_GIA", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["MENH_GIA"] = value;
+            }
+        }
+
+        public bool IsMENH_GIANull()
+        {
+            return pm_objDR.IsNull("MENH_GIA");
+        }
+
+        public void SetMENH_GIANull()
+        {
+            pm_objDR["MENH_GIA"] = System.Convert.DBNull;
+        }
+
+        public decimal dcKY_TRA_LAI
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "KY_TRA_LAI", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["KY_TRA_LAI"] = value;
+            }
+        }
+
+        public bool IsKY_TRA_LAINull()
+        {
+            return pm_objDR.IsNull("KY_TRA_LAI");
+        }
+
+        public void SetKY_TRA_LAINull()
+        {
+            pm_objDR["KY_TRA_LAI"] = System.Convert.DBNull;
+        }
+
+        public decimal dcID_DV_KY_TRA_LAI
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_DV_KY_TRA_LAI", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_DV_KY_TRA_LAI"] = value;
+            }
+        }
+
+        public bool IsID_DV_KY_TRA_LAINull()
+        {
+            return pm_objDR.IsNull("ID_DV_KY_TRA_LAI");
+        }
+
+        public void SetID_DV_KY_TRA_LAINull()
+        {
+            pm_objDR["ID_DV_KY_TRA_LAI"] = System.Convert.DBNull;
+        }
+
         #endregion
 
 

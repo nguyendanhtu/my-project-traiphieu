@@ -168,6 +168,10 @@ namespace BondDS.CDBNames
         public const string TEN_TO_CHUC_PHAT_HANH = "TEN_TO_CHUC_PHAT_HANH";
         public const string NGAY_PHAT_HANH = "NGAY_PHAT_HANH";
         public const string GHI_CHU = "GHI_CHU";
+        public const string MENH_GIA = "MENH_GIA";
+        public const string KY_TRA_LAI = "KY_TRA_LAI";
+        public const string ID_DV_KY_TRA_LAI = "ID_DV_KY_TRA_LAI";
+        public const string TEN_DV_KY_TRA_LAI = "TEN_DV_KY_TRA_LAI";
     }
 
 
@@ -339,6 +343,9 @@ namespace BondDS.CDBNames
         public const string ID_TO_CHUC_PHAT_HANH = "ID_TO_CHUC_PHAT_HANH";
         public const string NGAY_PHAT_HANH = "NGAY_PHAT_HANH";
         public const string GHI_CHU = "GHI_CHU";
+        public const string MENH_GIA = "MENH_GIA";
+        public const string KY_TRA_LAI = "KY_TRA_LAI";
+        public const string ID_DV_KY_TRA_LAI = "ID_DV_KY_TRA_LAI";
     }
 
 
