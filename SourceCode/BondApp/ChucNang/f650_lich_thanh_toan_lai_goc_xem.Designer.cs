@@ -53,6 +53,7 @@
             this.m_txt_ky_tinh_lai = new System.Windows.Forms.TextBox();
             this.m_txt_lai_suat = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.m_cmd_chon_trai_phieu = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -65,7 +66,8 @@
             this.m_cmd_generate = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_chon_trai_phieu = new System.Windows.Forms.Button();
+            this.m_cmd_tra_goc = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_tra_lai = new SIS.Controls.Button.SiSButton();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -320,6 +322,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin trái phiếu";
             // 
+            // m_cmd_chon_trai_phieu
+            // 
+            this.m_cmd_chon_trai_phieu.Location = new System.Drawing.Point(232, 23);
+            this.m_cmd_chon_trai_phieu.Name = "m_cmd_chon_trai_phieu";
+            this.m_cmd_chon_trai_phieu.Size = new System.Drawing.Size(27, 23);
+            this.m_cmd_chon_trai_phieu.TabIndex = 58;
+            this.m_cmd_chon_trai_phieu.Text = "...";
+            this.m_cmd_chon_trai_phieu.UseVisualStyleBackColor = true;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -389,6 +400,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_cmd_tra_lai);
+            this.panel1.Controls.Add(this.m_cmd_tra_goc);
             this.panel1.Controls.Add(this.m_cmd_thong_bao_ls);
             this.panel1.Controls.Add(this.m_cmd_insert);
             this.panel1.Controls.Add(this.m_cmd_update);
@@ -492,14 +505,37 @@
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
-            // m_cmd_chon_trai_phieu
+            // m_cmd_tra_goc
             // 
-            this.m_cmd_chon_trai_phieu.Location = new System.Drawing.Point(232, 23);
-            this.m_cmd_chon_trai_phieu.Name = "m_cmd_chon_trai_phieu";
-            this.m_cmd_chon_trai_phieu.Size = new System.Drawing.Size(27, 23);
-            this.m_cmd_chon_trai_phieu.TabIndex = 58;
-            this.m_cmd_chon_trai_phieu.Text = "...";
-            this.m_cmd_chon_trai_phieu.UseVisualStyleBackColor = true;
+            this.m_cmd_tra_goc.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_tra_goc.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_tra_goc.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_tra_goc.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_tra_goc.Enabled = false;
+            this.m_cmd_tra_goc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_tra_goc.ImageIndex = 18;
+            this.m_cmd_tra_goc.ImageList = this.ImageList;
+            this.m_cmd_tra_goc.Location = new System.Drawing.Point(306, 4);
+            this.m_cmd_tra_goc.Name = "m_cmd_tra_goc";
+            this.m_cmd_tra_goc.Size = new System.Drawing.Size(82, 28);
+            this.m_cmd_tra_goc.TabIndex = 23;
+            this.m_cmd_tra_goc.Text = "Trả gốc";
+            // 
+            // m_cmd_tra_lai
+            // 
+            this.m_cmd_tra_lai.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_tra_lai.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_tra_lai.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_tra_lai.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_tra_lai.Enabled = false;
+            this.m_cmd_tra_lai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_tra_lai.ImageIndex = 18;
+            this.m_cmd_tra_lai.ImageList = this.ImageList;
+            this.m_cmd_tra_lai.Location = new System.Drawing.Point(388, 4);
+            this.m_cmd_tra_lai.Name = "m_cmd_tra_lai";
+            this.m_cmd_tra_lai.Size = new System.Drawing.Size(82, 28);
+            this.m_cmd_tra_lai.TabIndex = 24;
+            this.m_cmd_tra_lai.Text = "Trả lãi";
             // 
             // f650_lich_thanh_toan_lai_goc_xem
             // 
@@ -558,6 +594,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button m_cmd_chon_trai_phieu;
+        internal SIS.Controls.Button.SiSButton m_cmd_tra_goc;
+        internal SIS.Controls.Button.SiSButton m_cmd_tra_lai;
 
     }
 }

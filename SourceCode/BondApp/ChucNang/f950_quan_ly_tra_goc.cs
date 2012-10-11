@@ -210,7 +210,7 @@ namespace BondApp.ChucNang
             US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(ip_us_trai_phieu.dcID_DOT_PHAT_HANH);
             m_txt_ngay_phat_hanh.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH);
             m_txt_ngay_dao_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_DAO_HAN);
-            m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcMENH_GIA);
+            m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcMENH_GIA, "#,###");
             m_txt_ky_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_HAN);
         }
 
@@ -285,6 +285,7 @@ namespace BondApp.ChucNang
 		//	f8888_GD_TRA_GOC_DE v_fDE = new f8888_GD_TRA_GOC_DE();			
 		//	v_fDE.display(m_us);
 		}
+
 		private void set_define_events(){
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
