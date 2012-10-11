@@ -136,10 +136,10 @@ namespace BondApp
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 373);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 412);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(728, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(818, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_insert
@@ -151,7 +151,7 @@ namespace BondApp
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(372, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(462, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 12;
@@ -166,7 +166,7 @@ namespace BondApp
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(460, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(550, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 13;
@@ -196,7 +196,7 @@ namespace BondApp
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(548, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(638, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 14;
@@ -211,7 +211,7 @@ namespace BondApp
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(636, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(726, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -221,9 +221,9 @@ namespace BondApp
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 102);
+            this.m_fg.Location = new System.Drawing.Point(0, 141);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(728, 271);
+            this.m_fg.Size = new System.Drawing.Size(818, 271);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -234,7 +234,7 @@ namespace BondApp
             this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(728, 40);
+            this.m_lbl_title.Size = new System.Drawing.Size(818, 40);
             this.m_lbl_title.TabIndex = 64;
             this.m_lbl_title.Text = "DANH SÁCH ĐỢT PHÁT HÀNH";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -247,13 +247,13 @@ namespace BondApp
             this.m_gru_tim_kiem.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_gru_tim_kiem.Location = new System.Drawing.Point(0, 40);
             this.m_gru_tim_kiem.Name = "m_gru_tim_kiem";
-            this.m_gru_tim_kiem.Size = new System.Drawing.Size(728, 49);
+            this.m_gru_tim_kiem.Size = new System.Drawing.Size(818, 49);
             this.m_gru_tim_kiem.TabIndex = 65;
             this.m_gru_tim_kiem.TabStop = false;
             // 
             // m_txt_search
             // 
-            this.m_txt_search.Location = new System.Drawing.Point(78, 16);
+            this.m_txt_search.Location = new System.Drawing.Point(94, 16);
             this.m_txt_search.Name = "m_txt_search";
             this.m_txt_search.Size = new System.Drawing.Size(508, 20);
             this.m_txt_search.TabIndex = 31;
@@ -261,7 +261,7 @@ namespace BondApp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 19);
+            this.label1.Location = new System.Drawing.Point(29, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 30;
@@ -271,7 +271,7 @@ namespace BondApp
             // 
             this.m_cmd_filter.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_filter.Image")));
             this.m_cmd_filter.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.m_cmd_filter.Location = new System.Drawing.Point(601, 14);
+            this.m_cmd_filter.Location = new System.Drawing.Point(617, 14);
             this.m_cmd_filter.Name = "m_cmd_filter";
             this.m_cmd_filter.Size = new System.Drawing.Size(64, 23);
             this.m_cmd_filter.TabIndex = 29;
@@ -281,7 +281,7 @@ namespace BondApp
             // f150_dm_dot_phat_hanh
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(728, 409);
+            this.ClientSize = new System.Drawing.Size(818, 448);
             this.Controls.Add(this.m_gru_tim_kiem);
             this.Controls.Add(this.m_lbl_title);
             this.Controls.Add(this.m_fg);
@@ -299,9 +299,17 @@ namespace BondApp
 		#endregion
 
 		#region Public Interface
-		public void display(){			
+		public void display(){
+            m_e_form_mode = DataEntryFormMode.ViewDataState;
 			this.ShowDialog();
 		}
+
+        public US_DM_DOT_PHAT_HANH display_2_select()
+        {
+            m_e_form_mode = DataEntryFormMode.SelectDataState;
+            this.ShowDialog();
+            return m_us;
+        }
 		#endregion
 
 		#region Data Structure
@@ -320,6 +328,7 @@ namespace BondApp
 		ITransferDataRow m_obj_trans;		
 		DS_DM_DOT_PHAT_HANH m_ds = new DS_DM_DOT_PHAT_HANH();
 		US_DM_DOT_PHAT_HANH m_us = new US_DM_DOT_PHAT_HANH();
+        DataEntryFormMode m_e_form_mode = DataEntryFormMode.SelectDataState;
 		#endregion
 
 		#region Private Methods
@@ -397,7 +406,6 @@ namespace BondApp
             m_fg.Cols[(int)e_col_Number.ID_TO_CHUC_PHAT_HANH].DataMap = v_hst_to_chuc_phat_hanh;
         }
 
-
         private void load_data_2_grid(string ip_str_search_key)
         {
             m_ds = new DS_DM_DOT_PHAT_HANH();
@@ -407,8 +415,14 @@ namespace BondApp
             load_data_2_cbo_grid();
             m_fg.Redraw = true;
         }
-		
 
+        private void select_dot_phat_hanh()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if(!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us, m_fg.Row);
+            this.Close();
+        }
 		private void insert_dm_dot_phat_hanh(){
             f151_dm_dot_phat_hanh_de v_fDE = new f151_dm_dot_phat_hanh_de();
             v_fDE.display_for_insert();
@@ -458,6 +472,7 @@ namespace BondApp
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
             m_cmd_filter.Click += new EventHandler(m_cmd_filter_Click);
+            m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
 		}
 
         void m_cmd_filter_Click(object sender, EventArgs e)
@@ -533,6 +548,18 @@ namespace BondApp
 			}
 		}
 
+        private void m_fg_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                if(m_e_form_mode == DataEntryFormMode.SelectDataState)
+                    select_dot_phat_hanh();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 	}
 }
 
