@@ -19,6 +19,7 @@ using BondDS;
 using BondDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
+using BondApp.ChucNang;
 
 namespace BondApp
 {
@@ -111,7 +112,7 @@ namespace BondApp
             m_txt_ma_trai_phieu.Text = m_us_trai_phieu.strMA_TRAI_PHIEU;
             m_txt_ten_trai_phieu.Text = m_us_trai_phieu.strTEN_TRAI_PHIEU;
             m_txt_menh_gia.Text = CIPConvert.ToStr(m_us_trai_phieu.dcMENH_GIA, "#,###");
-            m_txt_ky_han.Text = CIPConvert.ToStr(m_us_trai_phieu.dcKY_DIEU_CHINH_LS, "#,###");
+            m_txt_ky_han.Text = CIPConvert.ToStr(m_us_trai_phieu.dcKY_HAN, "#,###");
             try
             {
                 US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_trai_phieu.dcID_DOT_PHAT_HANH);
@@ -237,6 +238,38 @@ namespace BondApp
                 load_data_2_grid();
             }
         }
+
+        private void cell_changed()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            US_GD_LICH_THANH_TOAN_LAI_GOC v_us = new US_GD_LICH_THANH_TOAN_LAI_GOC();
+            grid2us_object(v_us, m_fg.Row);
+            if (v_us.strTHANH_TOAN_GOC_YN == "Y")
+            {
+                m_cmd_tra_goc.Enabled = true;
+            }
+            else
+                m_cmd_tra_goc.Enabled = false;
+            if (v_us.strTHANH_TOAN_LAI_YN == "Y")
+            {
+                m_cmd_tra_lai.Enabled = true;
+            }
+            else
+                m_cmd_tra_lai.Enabled = false;
+        }
+
+        private void display_tra_goc()
+        {
+            f950_quan_ly_tra_goc v_frm950 = new f950_quan_ly_tra_goc();
+            v_frm950.display_tra_goc_trai_phieu(m_us_trai_phieu);
+        }
+
+        private void display_tra_lai()
+        {
+            f900_quan_ly_coupon v_frm900 = new f900_quan_ly_coupon();
+            v_frm900.display_tra_lai_trai_phieu(m_us_trai_phieu);
+        }
          #endregion
 
         private void set_define_events()
@@ -247,6 +280,45 @@ namespace BondApp
             this.m_cmd_generate.Click += new System.EventHandler(this.m_cmd_generate_Click);
             m_cmd_thong_bao_ls.Click += new EventHandler(m_cmd_thong_bao_ls_Click);
             m_cmd_chon_trai_phieu.Click += new EventHandler(m_cmd_chon_trai_phieu_Click);
+            m_fg.Click += new EventHandler(m_fg_Click);
+            m_cmd_tra_goc.Click += new EventHandler(m_cmd_tra_goc_Click);
+            m_cmd_tra_lai.Click += new EventHandler(m_cmd_tra_lai_Click);
+        }
+
+        void m_fg_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cell_changed();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_tra_lai_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                display_tra_lai();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_tra_goc_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                display_tra_goc();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_chon_trai_phieu_Click(object sender, EventArgs e)

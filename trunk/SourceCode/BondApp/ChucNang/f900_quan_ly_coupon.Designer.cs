@@ -51,6 +51,7 @@
             this.m_txt_ten_trai_phieu = new System.Windows.Forms.TextBox();
             this.m_txt_ma_trai_phieu = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cmd_chua_tra = new SIS.Controls.Button.SiSButton();
             this.m_cmd_xac_nhan = new SIS.Controls.Button.SiSButton();
             this.m_cmd_hoan_tac = new SIS.Controls.Button.SiSButton();
             this.m_cmd_da_tra = new SIS.Controls.Button.SiSButton();
@@ -61,7 +62,6 @@
             this.m_txt_search = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.m_cmd_filter = new System.Windows.Forms.Button();
-            this.m_cmd_chua_tra = new SIS.Controls.Button.SiSButton();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -310,6 +310,21 @@
             this.panel1.Size = new System.Drawing.Size(1035, 36);
             this.panel1.TabIndex = 59;
             // 
+            // m_cmd_chua_tra
+            // 
+            this.m_cmd_chua_tra.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_chua_tra.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_chua_tra.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_chua_tra.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_chua_tra.Enabled = false;
+            this.m_cmd_chua_tra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_chua_tra.ImageIndex = 18;
+            this.m_cmd_chua_tra.Location = new System.Drawing.Point(167, 4);
+            this.m_cmd_chua_tra.Name = "m_cmd_chua_tra";
+            this.m_cmd_chua_tra.Size = new System.Drawing.Size(163, 28);
+            this.m_cmd_chua_tra.TabIndex = 26;
+            this.m_cmd_chua_tra.Text = "Danh sách chưa trả lãi";
+            // 
             // m_cmd_xac_nhan
             // 
             this.m_cmd_xac_nhan.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -427,21 +442,6 @@
             this.m_cmd_filter.TabIndex = 29;
             this.m_cmd_filter.Text = "     Xem";
             this.m_cmd_filter.UseVisualStyleBackColor = true;
-            // 
-            // m_cmd_chua_tra
-            // 
-            this.m_cmd_chua_tra.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_chua_tra.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_chua_tra.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_chua_tra.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_chua_tra.Enabled = false;
-            this.m_cmd_chua_tra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_chua_tra.ImageIndex = 18;
-            this.m_cmd_chua_tra.Location = new System.Drawing.Point(167, 4);
-            this.m_cmd_chua_tra.Name = "m_cmd_chua_tra";
-            this.m_cmd_chua_tra.Size = new System.Drawing.Size(163, 28);
-            this.m_cmd_chua_tra.TabIndex = 26;
-            this.m_cmd_chua_tra.Text = "Danh sách chưa trả lãi";
             // 
             // f900_quan_ly_coupon
             // 
