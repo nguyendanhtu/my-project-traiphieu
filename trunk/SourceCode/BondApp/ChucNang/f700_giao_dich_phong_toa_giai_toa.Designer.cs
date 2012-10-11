@@ -95,6 +95,8 @@
             this.m_txt_nguoi_xac_nhan = new System.Windows.Forms.TextBox();
             this.m_lbl_chuc_vu = new System.Windows.Forms.Label();
             this.m_txt_chuc_vu = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_dat_ngay_cap_giay_uq = new System.Windows.Forms.DateTimePicker();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -478,6 +480,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.m_dat_ngay);
             this.groupBox3.Controls.Add(this.m_lbl_hinh_thuc_tra_lai);
             this.groupBox3.Controls.Add(this.m_txt_hinh_thuc_tra_lai);
             this.groupBox3.Controls.Add(this.m_lbl_lai_suat);
@@ -680,7 +684,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.m_dat_ngay);
+            this.groupBox2.Controls.Add(this.m_dat_ngay_cap_giay_uq);
             this.groupBox2.Controls.Add(this.m_lbl_cua);
             this.groupBox2.Controls.Add(this.m_txt_cua);
             this.groupBox2.Controls.Add(this.m_lbl_theo_giay_uy_quyen_so);
@@ -702,7 +706,7 @@
             // 
             this.m_dat_ngay.CustomFormat = "\"dd/MM/yyyy\"";
             this.m_dat_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.m_dat_ngay.Location = new System.Drawing.Point(314, 71);
+            this.m_dat_ngay.Location = new System.Drawing.Point(714, 75);
             this.m_dat_ngay.Name = "m_dat_ngay";
             this.m_dat_ngay.Size = new System.Drawing.Size(121, 20);
             this.m_dat_ngay.TabIndex = 10;
@@ -780,6 +784,25 @@
             this.m_txt_chuc_vu.Name = "m_txt_chuc_vu";
             this.m_txt_chuc_vu.Size = new System.Drawing.Size(173, 20);
             this.m_txt_chuc_vu.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(627, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 13);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Ngày giao dịch";
+            // 
+            // m_dat_ngay_cap_giay_uq
+            // 
+            this.m_dat_ngay_cap_giay_uq.CustomFormat = "\"dd/MM/yyyy\"";
+            this.m_dat_ngay_cap_giay_uq.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_ngay_cap_giay_uq.Location = new System.Drawing.Point(314, 71);
+            this.m_dat_ngay_cap_giay_uq.Name = "m_dat_ngay_cap_giay_uq";
+            this.m_dat_ngay_cap_giay_uq.Size = new System.Drawing.Size(121, 20);
+            this.m_dat_ngay_cap_giay_uq.TabIndex = 23;
+            this.m_dat_ngay_cap_giay_uq.Value = new System.DateTime(2012, 10, 6, 22, 35, 45, 0);
             // 
             // f700_giao_dich_phong_toa_giai_toa
             // 
@@ -873,5 +896,7 @@
         private System.Windows.Forms.Label m_lbl_cua;
         private System.Windows.Forms.TextBox m_txt_cua;
         private System.Windows.Forms.DateTimePicker m_dat_ngay;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker m_dat_ngay_cap_giay_uq;
     }
 }
