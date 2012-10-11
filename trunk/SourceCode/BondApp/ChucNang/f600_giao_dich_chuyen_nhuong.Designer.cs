@@ -1322,6 +1322,7 @@
             // m_cbb_trang_thai_cn
             // 
             this.m_cbb_trang_thai_cn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbb_trang_thai_cn.Enabled = false;
             this.m_cbb_trang_thai_cn.FormattingEnabled = true;
             this.m_cbb_trang_thai_cn.Location = new System.Drawing.Point(678, 141);
             this.m_cbb_trang_thai_cn.Name = "m_cbb_trang_thai_cn";

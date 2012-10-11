@@ -46,6 +46,7 @@ namespace BondApp
         private DateTimePicker m_dat_from_date;
         private Label m_lbl_title;
         private C1FlexGrid m_fg;
+        internal SIS.Controls.Button.SiSButton m_cmd_duyet_chuyen_nhuong;
         private System.ComponentModel.IContainer components;
 
         public f610_dm_giao_dien_chuyen_nhuong()
@@ -105,6 +106,7 @@ namespace BondApp
             this.m_dat_from_date = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_cmd_duyet_chuyen_nhuong = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.m_grb_thong_tin_ban_hang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -139,6 +141,7 @@ namespace BondApp
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_duyet_chuyen_nhuong);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
@@ -322,6 +325,20 @@ namespace BondApp
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 35;
             // 
+            // m_cmd_duyet_chuyen_nhuong
+            // 
+            this.m_cmd_duyet_chuyen_nhuong.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_duyet_chuyen_nhuong.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_duyet_chuyen_nhuong.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_duyet_chuyen_nhuong.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_duyet_chuyen_nhuong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet_chuyen_nhuong.Image")));
+            this.m_cmd_duyet_chuyen_nhuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_duyet_chuyen_nhuong.Location = new System.Drawing.Point(440, 4);
+            this.m_cmd_duyet_chuyen_nhuong.Name = "m_cmd_duyet_chuyen_nhuong";
+            this.m_cmd_duyet_chuyen_nhuong.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_duyet_chuyen_nhuong.TabIndex = 22;
+            this.m_cmd_duyet_chuyen_nhuong.Text = "&Xác nhận";
+            // 
             // f610_dm_giao_dien_chuyen_nhuong
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -477,8 +494,7 @@ namespace BondApp
         {
             DataRow v_dr;
             v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
-            m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
-            i_us.DataRow2Me(v_dr);
+            i_us.dcID = CIPConvert.ToDecimal(v_dr[0]);                        
         }
 
 
@@ -544,7 +560,38 @@ namespace BondApp
             f600_giao_dich_chuyen_nhuong v_fm600 = new f600_giao_dich_chuyen_nhuong();
             v_fm600.display_xem_gd_chuyen_nhuong(m_us.dcID);            
         }
-        
+
+        private void duyet_v_gd_chuyen_nhuong()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us, m_fg.Row);
+            if (m_us.dcID_TRANG_THAI_CHUYEN_NHUONG == List_trang_thai.Da_Duyet)
+            {
+                MessageBox.Show("Giao dịch đã được duyệt bạn có thể xem lại hoặc xóa đi nếu thấy có gì sai.");
+                return;
+            }
+            f600_giao_dich_chuyen_nhuong v_fm600 = new f600_giao_dich_chuyen_nhuong();
+            v_fm600.display_duyet_chuyen_nhuong(m_us.dcID);
+            load_data_2_grid();
+        }
+        private void Enabled_btt_duyet_voi_nhung_gd_chua_duyet()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us, m_fg.Row);
+            if (m_us.dcID_TRANG_THAI_CHUYEN_NHUONG == List_trang_thai.Da_Duyet)
+            {
+                m_cmd_duyet_chuyen_nhuong.Enabled = false;
+                m_cmd_update.Enabled = false;
+                return;
+            }
+            else
+            {
+                m_cmd_duyet_chuyen_nhuong.Enabled = true;
+                m_cmd_update.Enabled = true;
+            }
+        }
         #endregion
 
         #region Events
@@ -555,10 +602,38 @@ namespace BondApp
             m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_cmd_duyet_chuyen_nhuong.Click += new EventHandler(m_cmd_duyet_chuyen_nhuong_Click);
             m_cbo_trai_phieu.SelectedIndexChanged += new EventHandler(m_cbo_trai_phieu_SelectedIndexChanged);            
             m_dat_from_date.ValueChanged += new EventHandler(m_dat_from_date_ValueChanged);
             m_dat_to_date.ValueChanged += new EventHandler(m_dat_to_date_ValueChanged);
             m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
+            m_fg.MouseClick += new MouseEventHandler(m_fg_MouseClick);
+        }
+
+        void m_fg_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                Enabled_btt_duyet_voi_nhung_gd_chua_duyet();
+            }
+            catch (Exception v_e)
+            {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_duyet_chuyen_nhuong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                duyet_v_gd_chuyen_nhuong();
+            }
+            catch (Exception v_e)
+            {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cbo_trai_phieu_SelectedIndexChanged(object sender, EventArgs e)
