@@ -41,38 +41,11 @@ namespace BondApp
         private C1FlexGrid m_fg;
         internal SIS.Controls.Button.SiSButton m_cmd_insert;
 		private System.ComponentModel.IContainer components;
-
-		public f201_dm_gd_chot_lai_detail(decimal ip_dc_id_chot_lai)
-		{
-			//
-			// Required for Windows Form Designer support
-			//
-			InitializeComponent();
-
-			//
-			// TODO: Add any constructor code after InitializeComponent call
-			//
-			format_controls();
-            m_us = new US_GD_CHOT_LAI_DETAIL();
-            m_us.us2ds(6, m_ds);
-            m_e_form_mode = DataEntryFormMode.ViewDataState;
-		}
-
         public f201_dm_gd_chot_lai_detail()
         {
-            //
-            // Required for Windows Form Designer support
-            //
             InitializeComponent();
-
-            //
-            // TODO: Add any constructor code after InitializeComponent call
-            //
             format_controls();
         }
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
 		protected override void Dispose( bool disposing )
 		{
 			if( disposing )
@@ -84,7 +57,6 @@ namespace BondApp
 			}
 			base.Dispose( disposing );
 		}
-
 		#region Windows Form Designer generated code
 		/// <summary>
 		/// Required method for Designer support - do not modify
@@ -296,6 +268,14 @@ namespace BondApp
 		public void display(){			
 			this.ShowDialog();
 		}
+        public void display_danh_sach_chot_lai(US_GD_CHOT_LAI_DETAIL ip_us_gd_chot_lai_detail)
+        {
+            m_us = ip_us_gd_chot_lai_detail;
+            m_us.us2ds(m_ds);
+            m_e_form_mode = DataEntryFormMode.ViewDataState;
+            this.ShowDialog();
+        }
+
 		#endregion
 
 		#region Data Structure
