@@ -62,6 +62,9 @@
             this.m_txt_search = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.m_cmd_filter = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.m_txt_ky_tinh_lai = new System.Windows.Forms.TextBox();
+            this.m_lbl_ky_tinh_lai = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -83,6 +86,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.m_txt_ky_tinh_lai);
+            this.groupBox2.Controls.Add(this.m_lbl_ky_tinh_lai);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.m_cbo_ky_tinh_lai);
             this.groupBox2.Controls.Add(this.label1);
@@ -113,7 +119,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(782, 47);
+            this.label3.Location = new System.Drawing.Point(647, 47);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(27, 13);
             this.label3.TabIndex = 62;
@@ -122,6 +128,7 @@
             // 
             // m_cbo_ky_tinh_lai
             // 
+            this.m_cbo_ky_tinh_lai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_ky_tinh_lai.FormattingEnabled = true;
             this.m_cbo_ky_tinh_lai.Location = new System.Drawing.Point(107, 71);
             this.m_cbo_ky_tinh_lai.Name = "m_cbo_ky_tinh_lai";
@@ -131,11 +138,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 74);
+            this.label1.Location = new System.Drawing.Point(82, 74);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.Size = new System.Drawing.Size(19, 13);
             this.label1.TabIndex = 60;
-            this.label1.Text = "Kỳ tính lãi";
+            this.label1.Text = "Kỳ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label34
@@ -154,7 +161,7 @@
             this.m_txt_lai_suat.Location = new System.Drawing.Point(381, 44);
             this.m_txt_lai_suat.Name = "m_txt_lai_suat";
             this.m_txt_lai_suat.ReadOnly = true;
-            this.m_txt_lai_suat.Size = new System.Drawing.Size(130, 20);
+            this.m_txt_lai_suat.Size = new System.Drawing.Size(88, 20);
             this.m_txt_lai_suat.TabIndex = 44;
             this.m_txt_lai_suat.TabStop = false;
             this.m_txt_lai_suat.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -162,7 +169,7 @@
             // m_lbl_ky_han
             // 
             this.m_lbl_ky_han.AutoSize = true;
-            this.m_lbl_ky_han.Location = new System.Drawing.Point(558, 47);
+            this.m_lbl_ky_han.Location = new System.Drawing.Point(518, 47);
             this.m_lbl_ky_han.Name = "m_lbl_ky_han";
             this.m_lbl_ky_han.Size = new System.Drawing.Size(40, 13);
             this.m_lbl_ky_han.TabIndex = 54;
@@ -172,10 +179,10 @@
             // m_txt_ky_han
             // 
             this.m_txt_ky_han.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_txt_ky_han.Location = new System.Drawing.Point(606, 44);
+            this.m_txt_ky_han.Location = new System.Drawing.Point(564, 44);
             this.m_txt_ky_han.Name = "m_txt_ky_han";
             this.m_txt_ky_han.ReadOnly = true;
-            this.m_txt_ky_han.Size = new System.Drawing.Size(170, 20);
+            this.m_txt_ky_han.Size = new System.Drawing.Size(77, 20);
             this.m_txt_ky_han.TabIndex = 44;
             this.m_txt_ky_han.TabStop = false;
             this.m_txt_ky_han.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -221,7 +228,7 @@
             // m_lbl_menh_gia
             // 
             this.m_lbl_menh_gia.AutoSize = true;
-            this.m_lbl_menh_gia.Location = new System.Drawing.Point(48, 48);
+            this.m_lbl_menh_gia.Location = new System.Drawing.Point(50, 48);
             this.m_lbl_menh_gia.Name = "m_lbl_menh_gia";
             this.m_lbl_menh_gia.Size = new System.Drawing.Size(51, 13);
             this.m_lbl_menh_gia.TabIndex = 35;
@@ -443,6 +450,35 @@
             this.m_cmd_filter.Text = "     Xem";
             this.m_cmd_filter.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(838, 47);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(34, 13);
+            this.label4.TabIndex = 65;
+            this.label4.Text = "tháng";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // m_txt_ky_tinh_lai
+            // 
+            this.m_txt_ky_tinh_lai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.m_txt_ky_tinh_lai.Location = new System.Drawing.Point(749, 44);
+            this.m_txt_ky_tinh_lai.Name = "m_txt_ky_tinh_lai";
+            this.m_txt_ky_tinh_lai.ReadOnly = true;
+            this.m_txt_ky_tinh_lai.Size = new System.Drawing.Size(83, 20);
+            this.m_txt_ky_tinh_lai.TabIndex = 64;
+            this.m_txt_ky_tinh_lai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // m_lbl_ky_tinh_lai
+            // 
+            this.m_lbl_ky_tinh_lai.AutoSize = true;
+            this.m_lbl_ky_tinh_lai.Location = new System.Drawing.Point(689, 48);
+            this.m_lbl_ky_tinh_lai.Name = "m_lbl_ky_tinh_lai";
+            this.m_lbl_ky_tinh_lai.Size = new System.Drawing.Size(54, 13);
+            this.m_lbl_ky_tinh_lai.TabIndex = 63;
+            this.m_lbl_ky_tinh_lai.Text = "Kỳ tính lãi";
+            // 
             // f900_quan_ly_coupon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -501,5 +537,8 @@
         private System.Windows.Forms.Label label3;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
         internal SIS.Controls.Button.SiSButton m_cmd_chua_tra;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox m_txt_ky_tinh_lai;
+        private System.Windows.Forms.Label m_lbl_ky_tinh_lai;
     }
 }
