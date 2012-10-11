@@ -263,13 +263,11 @@ namespace BondApp
         }
         private void form_2_us_gd_chuyen_nhuong()
         {
-            Debug.Assert(m_cbb_trang_thai_cn.SelectedValue != null, "Chưa thiết lập trạng thái chuyển nhượng ở Từ điển!");
+            Debug.Assert(m_cbb_trang_thai_cn.SelectedValue != null, "Chưa thiết lập trạng thái chuyển nhượng ở Từ điển!");                                   
 
             if(!m_lbl_ID_gd_chuyen_nhuong.Text.Equals(""))
             m_us_gd_chuyen_nhuong.dcID = CIPConvert.ToDecimal(m_lbl_ID_gd_chuyen_nhuong.Text);
-            m_us_gd_chuyen_nhuong.strMA_GIAO_DICH = m_txt_ma_giao_dich.Text;
-
-            
+            m_us_gd_chuyen_nhuong.strMA_GIAO_DICH = m_txt_ma_giao_dich.Text;            
             m_us_gd_chuyen_nhuong.datNGAY_KY_CHUYEN_NHUONG = m_date_ngay_chuyen_nhuong.Value;
             m_us_gd_chuyen_nhuong.datNGAY_VAO_SO = m_date_ngay_vao_so.Value;
             m_us_gd_chuyen_nhuong.dcID_TRAI_CHU_MUA = CIPConvert.ToDecimal(m_lbl_ID_nguoi_mua.Text);
@@ -283,11 +281,16 @@ namespace BondApp
             m_us_gd_chuyen_nhuong.strNOI_CAP_CMT_NGUOI_MUA = m_txt_ben_mua_noi_cap_cmnd_ng_dai_dien.Text;
             m_us_gd_chuyen_nhuong.strNOI_CAP_CMT_NGUOI_BAN = m_txt_noi_cap_cmt_ng_dai_dien.Text;
             m_us_gd_chuyen_nhuong.dcSO_LUONG_CHUYEN_NHUONG = CIPConvert.ToDecimal(m_txt_so_luong_chuyen_nhuong.Text);
+            if (m_us_gd_chuyen_nhuong.dcSO_LUONG_CHUYEN_NHUONG > CIPConvert.ToDecimal(m_txt_so_luong_kha_dung.Text))
+            {
+                MessageBox.Show("Số lượng trái phiếu chuyển nhượng phải nhỏ hợn số trái phiếu khả dụng của trai chủ bán!");
+                return;
+            }
             m_us_gd_chuyen_nhuong.dcGIA_TRI_CHUYEN_NHUONG_THUC_TE = CIPConvert.ToDecimal(m_txt_gia_tri_chuyen_nhuong_thuc_te.Text);
-            m_us_gd_chuyen_nhuong.dcTY_LE_PHI_GD = CIPConvert.ToDecimal(m_txt_ty_le_phi_gd.Text)/100;
-            m_us_gd_chuyen_nhuong.dcPHI_GD = CIPConvert.ToDecimal(m_txt_phi_gd.Text);
+            m_us_gd_chuyen_nhuong.dcTY_LE_PHI_GD = CIPConvert.ToDecimal(m_txt_ty_le_phi_gd.Text);
+            m_us_gd_chuyen_nhuong.dcPHI_GD = CIPConvert.ToDecimal(m_txt_phi_gd.Text);            
             m_us_gd_chuyen_nhuong.strNOI_DUNG_GIAO_DICH = m_txt_noi_dung_chuyen_nhuong.Text;
-            m_us_gd_chuyen_nhuong.dcPHAN_TRAM_THUE = CIPConvert.ToDecimal(m_txt_phan_tram_thue.Text)/100;
+            m_us_gd_chuyen_nhuong.dcPHAN_TRAM_THUE = CIPConvert.ToDecimal(m_txt_phan_tram_thue.Text);
             m_us_gd_chuyen_nhuong.dcGIA_TRI_THUE = CIPConvert.ToDecimal(m_txt_thue.Text);
 
             if (!m_date_ngay_xac_nhan.Checked)
@@ -339,7 +342,7 @@ namespace BondApp
             m_txt_ben_mua_noi_cap_cmnd_ng_dai_dien.Text = m_us_gd_chuyen_nhuong.strNOI_CAP_CMT_NGUOI_MUA;
             m_date_ben_mua_ngay_cap_cmnd_ng_dai_dien.Value = m_us_gd_chuyen_nhuong.datNGAY_CAP_CMT_NGUOI_MUA;
             m_txt_ma_giao_dich.Text = m_us_gd_chuyen_nhuong.strMA_GIAO_DICH;
-            m_txt_noi_dung_chuyen_nhuong.Text = m_us_gd_chuyen_nhuong.strNOI_DUNG_GIAO_DICH;
+            m_txt_noi_dung_chuyen_nhuong.Text = m_us_gd_chuyen_nhuong.strNOI_DUNG_GIAO_DICH;            
             m_txt_so_luong_chuyen_nhuong.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcSO_LUONG_CHUYEN_NHUONG, "#,##");
             m_txt_gia_tri_chuyen_nhuong.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcSO_LUONG_CHUYEN_NHUONG * v_trai_phieu.dcMENH_GIA, "#,##");
             m_txt_gia_tri_chuyen_nhuong_thuc_te.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcGIA_TRI_CHUYEN_NHUONG_THUC_TE, "#,##");
@@ -472,6 +475,27 @@ namespace BondApp
             else
                 v_frm610.display();
         }
+        private bool kiem_tra_phi_gd()
+        {
+            US_HT_THAM_SO_HE_THONG v_us_phi_gd_max = new US_HT_THAM_SO_HE_THONG(GIOI_HAN_PHI_CHUYEN_NHUONG.PHI_CN_MAX);
+            US_HT_THAM_SO_HE_THONG v_us_phi_gd_min = new US_HT_THAM_SO_HE_THONG(GIOI_HAN_PHI_CHUYEN_NHUONG.PHI_CN_MIN);
+            if (m_us_gd_chuyen_nhuong.dcPHI_GD < CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI)
+                || m_us_gd_chuyen_nhuong.dcPHI_GD > CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI))
+            {
+                if (MessageBox.Show("Phi giao dịch vượt quá giới hạn.\nNo được giới hạn trong khoảng"
+                    + CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI), "#,##")
+                    + " đến "
+                    + CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI), "#,##")
+                    , "Ok để sửa lại", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
+                {
+                    m_txt_phi_gd.Focus();
+                    return false;
+                }
+                else
+                    return true;
+            }
+            return true;
+        }
         #endregion
 
         #region Events
@@ -483,13 +507,14 @@ namespace BondApp
             m_cmd_chon_ben_mua.Click += new EventHandler(m_cmd_chon_ben_mua_Click);
             m_cmd_chon_trai_chu.Click += new EventHandler(m_cmd_chon_trai_chu_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-            m_cmd_lap_chuyen_nhuong.Click += new EventHandler(m_cmd_insert_Click);
-            m_txt_so_luong_chuyen_nhuong.LostFocus += new EventHandler(m_txt_so_luong_chuyen_nhuong_LostFocus);
+            m_cmd_lap_chuyen_nhuong.Click += new EventHandler(m_cmd_insert_Click);            
+            m_txt_so_luong_chuyen_nhuong.LostFocus += new EventHandler(m_txt_so_luong_chuyen_nhuong_LostFocus);            
             m_cmd_sua_chuyen_nhuong.Click += new EventHandler(m_cmd_update_Click);
             this.Load += new EventHandler(f600_giao_dich_chuyen_nhuong_Load);
             m_cmd_duyet_chuyen_nhuong.Click += new EventHandler(m_cmd_duyet_chuyen_nhuong_Click);
             m_cmd_danh_sach_chuyen_nhuong.Click += new EventHandler(m_cmd_danh_sach_chuyen_nhuong_Click);
         }
+        
 
         void m_cmd_danh_sach_chuyen_nhuong_Click(object sender, EventArgs e)
         {
@@ -507,7 +532,8 @@ namespace BondApp
         void m_cmd_duyet_chuyen_nhuong_Click(object sender, EventArgs e)
         {
             try
-            {
+            {      
+                if(kiem_tra_phi_gd())
                 duyet_chuyen_nhuong();
             }
             catch (Exception v_e)
@@ -532,7 +558,8 @@ namespace BondApp
         void m_cmd_update_Click(object sender, EventArgs e)
         {
             try
-            {
+            {         
+                if(kiem_tra_phi_gd())
                 sua_thong_tin_chuyen_nhuong();
             }
             catch (Exception v_e)
@@ -546,23 +573,21 @@ namespace BondApp
         {
             try
             {
-                if (!CValidateTextBox.IsValid(m_txt_so_luong_chuyen_nhuong, DataType.NumberType, allowNull.NO)) return;
-                if (!CValidateTextBox.IsValid(m_txt_so_luong_kha_dung, DataType.NumberType, allowNull.NO)) return;
-                    
+                //if (!CValidateTextBox.IsValid(m_txt_so_luong_chuyen_nhuong, DataType.NumberType, allowNull.NO, false)) return;
+                //if (!CValidateTextBox.IsValid(m_txt_so_luong_kha_dung, DataType.NumberType, allowNull.NO, false)) return;
+
                 decimal v_so_luong_chuyen_nhuong = CIPConvert.ToDecimal(m_txt_so_luong_chuyen_nhuong.Text);
                 decimal v_menh_gia_trai_phieu = CIPConvert.ToDecimal(m_txt_menh_gia.Text);
-                if (v_so_luong_chuyen_nhuong > CIPConvert.ToDecimal(m_txt_so_luong_kha_dung.Text))
-                {
-                    MessageBox.Show("Số lượng trái phiếu chuyển nhượng phải nhỏ hợn số trái phiếu khả dụng của trai chủ bán!");
-                    m_txt_so_luong_chuyen_nhuong.Focus();
-                    return;
-                }
                 m_txt_gia_tri_chuyen_nhuong.Text = CIPConvert.ToStr(v_so_luong_chuyen_nhuong * v_menh_gia_trai_phieu, "#,##");
-                m_txt_gia_tri_chuyen_nhuong_thuc_te.Text = CIPConvert.ToStr(v_so_luong_chuyen_nhuong*v_menh_gia_trai_phieu, "#,##");
+                m_txt_gia_tri_chuyen_nhuong_thuc_te.Text = CIPConvert.ToStr(v_so_luong_chuyen_nhuong * v_menh_gia_trai_phieu, "#,##");
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Nhập sai kiểu dữ liệu, đây phải là số!");              
             }
             catch (Exception v_e)
             {
-                
+
                 CSystemLog_301.ExceptionHandle(v_e);
                 return;
             }
@@ -572,6 +597,7 @@ namespace BondApp
         {
             try
             {
+                if(kiem_tra_phi_gd())
                 lap_chuyen_nhuong();
             }
             catch (Exception v_e)
@@ -612,17 +638,21 @@ namespace BondApp
         {
             try
             {
-                if (!CValidateTextBox.IsValid(m_txt_phan_tram_thue, DataType.NumberType, allowNull.YES)) return;
-                if (!CValidateTextBox.IsValid(m_txt_so_luong_chuyen_nhuong, DataType.NumberType, allowNull.YES)) return;
-                if (!CIPConvert.is_valid_number(m_txt_phan_tram_thue.Text)) return;
-                if (!CIPConvert.is_valid_number(m_txt_so_luong_chuyen_nhuong.Text)) return;
+                //if (!CValidateTextBox.IsValid(m_txt_phan_tram_thue, DataType.NumberType, allowNull.NO, false)) return;
+                //if (!CValidateTextBox.IsValid(m_txt_so_luong_chuyen_nhuong, DataType.NumberType, allowNull.NO, false)) return;
+                //if (!CIPConvert.is_valid_number(m_txt_phan_tram_thue.Text)) return;
+                //if (!CIPConvert.is_valid_number(m_txt_so_luong_chuyen_nhuong.Text)) return;
 
                 decimal v_dc_phan_tram_thue = CIPConvert.ToDecimal(m_txt_phan_tram_thue.Text);                
                 decimal v_dc_so_luong_chuyen_nhuong = CIPConvert.ToDecimal(m_txt_so_luong_chuyen_nhuong.Text);
                 m_txt_thue.Text = CIPConvert.ToStr(
-                    v_dc_so_luong_chuyen_nhuong * v_dc_phan_tram_thue * m_us_trai_phieu.dcMENH_GIA
+                    v_dc_so_luong_chuyen_nhuong * v_dc_phan_tram_thue * CIPConvert.ToDecimal( m_txt_menh_gia.Text)
                     , "#,###");
                
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Nhập sai kiểu dữ liệu, đây phải là số!");
             }
             catch (Exception v_e)
             {
@@ -637,15 +667,19 @@ namespace BondApp
             try
             {
                 // Ninh phải sửa đi nhé
-                if (!CValidateTextBox.IsValid(m_txt_ty_le_phi_gd, DataType.NumberType, allowNull.YES)) return;
-                if (!CValidateTextBox.IsValid(m_txt_so_luong_chuyen_nhuong, DataType.NumberType, allowNull.YES)) return;
-                if (!CIPConvert.is_valid_number(m_txt_ty_le_phi_gd.Text)) return;
-                if (!CIPConvert.is_valid_number(m_txt_so_luong_chuyen_nhuong.Text)) return;
+                //if (!CValidateTextBox.IsValid(m_txt_ty_le_phi_gd, DataType.NumberType, allowNull.NO,false)) return;
+                //if (!CValidateTextBox.IsValid(m_txt_so_luong_chuyen_nhuong, DataType.NumberType, allowNull.NO, false)) return;
+                //if (!CIPConvert.is_valid_number(m_txt_ty_le_phi_gd.Text)) return;
+                //if (!CIPConvert.is_valid_number(m_txt_so_luong_chuyen_nhuong.Text)) return;
                 
                 decimal v_ty_le_phi = decimal.Parse(m_txt_ty_le_phi_gd.Text);                    
                 decimal v_so_luong_CN = decimal.Parse(m_txt_so_luong_chuyen_nhuong.Text);
-                m_txt_phi_gd.Text = CIPConvert.ToStr(v_so_luong_CN * v_ty_le_phi * m_us_trai_phieu.dcMENH_GIA, "#,###");                
-            }            
+                m_txt_phi_gd.Text = CIPConvert.ToStr(v_so_luong_CN * v_ty_le_phi * CIPConvert.ToDecimal(m_txt_menh_gia.Text), "#,###");                
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Nhập sai kiểu dữ liệu, đây phải là số!");
+            }
             catch (Exception v_e)
             {                
                 CSystemLog_301.ExceptionHandle(v_e);
