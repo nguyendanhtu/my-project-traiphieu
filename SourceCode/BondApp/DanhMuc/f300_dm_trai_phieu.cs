@@ -567,6 +567,27 @@ namespace BondApp
             m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
             m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
             m_cmd_select.Click += new EventHandler(m_cmd_select_Click);
+            m_cmd_filter.Click += new EventHandler(m_cmd_filter_Click);
+        }
+
+        void m_cmd_filter_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid(m_txt_search.Text.Trim());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void load_data_2_grid(string ip_str_search_key)
+        {
+            m_ds_trai_phieu = new DS_DM_TRAI_PHIEU();
+            m_us_trai_phieu.load_data_by_search(m_ds_trai_phieu, ip_str_search_key);
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds_trai_phieu, m_fg, m_obj_trans);
+            m_fg.Redraw = true;
         }
 
         void m_cmd_select_Click(object sender, EventArgs e)
