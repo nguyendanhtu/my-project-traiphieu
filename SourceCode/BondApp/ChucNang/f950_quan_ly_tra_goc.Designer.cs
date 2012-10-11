@@ -49,22 +49,22 @@
             this.m_txt_ma_trai_phieu = new System.Windows.Forms.TextBox();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_chua_tra = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_da_tra = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_thanh_toan = new SIS.Controls.Button.SiSButton();
             this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_gru_tim_kiem = new System.Windows.Forms.GroupBox();
             this.m_txt_search = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.m_cmd_filter = new System.Windows.Forms.Button();
-            this.m_cmd_thanh_toan = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_da_tra = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_chua_tra = new SIS.Controls.Button.SiSButton();
+            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.groupBox2.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.m_gru_tim_kiem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
             // 
             // m_lbl_title
@@ -294,6 +294,49 @@
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1045, 36);
             this.m_pnl_out_place_dm.TabIndex = 64;
             // 
+            // m_cmd_chua_tra
+            // 
+            this.m_cmd_chua_tra.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_chua_tra.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_chua_tra.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_chua_tra.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_chua_tra.Enabled = false;
+            this.m_cmd_chua_tra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_chua_tra.ImageIndex = 18;
+            this.m_cmd_chua_tra.Location = new System.Drawing.Point(255, 4);
+            this.m_cmd_chua_tra.Name = "m_cmd_chua_tra";
+            this.m_cmd_chua_tra.Size = new System.Drawing.Size(163, 28);
+            this.m_cmd_chua_tra.TabIndex = 27;
+            this.m_cmd_chua_tra.Text = "Danh sách chưa trả lãi";
+            // 
+            // m_cmd_da_tra
+            // 
+            this.m_cmd_da_tra.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_da_tra.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_da_tra.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_da_tra.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_da_tra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_da_tra.ImageIndex = 18;
+            this.m_cmd_da_tra.Location = new System.Drawing.Point(92, 4);
+            this.m_cmd_da_tra.Name = "m_cmd_da_tra";
+            this.m_cmd_da_tra.Size = new System.Drawing.Size(163, 28);
+            this.m_cmd_da_tra.TabIndex = 26;
+            this.m_cmd_da_tra.Text = "Danh sách đã trả lãi";
+            // 
+            // m_cmd_thanh_toan
+            // 
+            this.m_cmd_thanh_toan.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_thanh_toan.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_thanh_toan.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_thanh_toan.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_thanh_toan.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_thanh_toan.Image")));
+            this.m_cmd_thanh_toan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_thanh_toan.Location = new System.Drawing.Point(865, 4);
+            this.m_cmd_thanh_toan.Name = "m_cmd_thanh_toan";
+            this.m_cmd_thanh_toan.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_thanh_toan.TabIndex = 22;
+            this.m_cmd_thanh_toan.Text = "&Thanh toán";
+            // 
             // m_cmd_view
             // 
             this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -336,16 +379,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách trái chủ";
             // 
-            // m_fg
-            // 
-            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(3, 65);
-            this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1039, 236);
-            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 25;
-            // 
             // m_gru_tim_kiem
             // 
             this.m_gru_tim_kiem.Controls.Add(this.m_txt_search);
@@ -385,48 +418,15 @@
             this.m_cmd_filter.Text = "     Xem";
             this.m_cmd_filter.UseVisualStyleBackColor = true;
             // 
-            // m_cmd_thanh_toan
+            // m_fg
             // 
-            this.m_cmd_thanh_toan.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_thanh_toan.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_thanh_toan.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_thanh_toan.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_thanh_toan.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_thanh_toan.Image")));
-            this.m_cmd_thanh_toan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_thanh_toan.Location = new System.Drawing.Point(865, 4);
-            this.m_cmd_thanh_toan.Name = "m_cmd_thanh_toan";
-            this.m_cmd_thanh_toan.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_thanh_toan.TabIndex = 22;
-            this.m_cmd_thanh_toan.Text = "&Thanh toán";
-            // 
-            // m_cmd_da_tra
-            // 
-            this.m_cmd_da_tra.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_da_tra.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_da_tra.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_da_tra.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_da_tra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_da_tra.ImageIndex = 18;
-            this.m_cmd_da_tra.Location = new System.Drawing.Point(92, 4);
-            this.m_cmd_da_tra.Name = "m_cmd_da_tra";
-            this.m_cmd_da_tra.Size = new System.Drawing.Size(163, 28);
-            this.m_cmd_da_tra.TabIndex = 26;
-            this.m_cmd_da_tra.Text = "Danh sách đã trả lãi";
-            // 
-            // m_cmd_chua_tra
-            // 
-            this.m_cmd_chua_tra.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_chua_tra.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_chua_tra.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_chua_tra.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_chua_tra.Enabled = false;
-            this.m_cmd_chua_tra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_chua_tra.ImageIndex = 18;
-            this.m_cmd_chua_tra.Location = new System.Drawing.Point(255, 4);
-            this.m_cmd_chua_tra.Name = "m_cmd_chua_tra";
-            this.m_cmd_chua_tra.Size = new System.Drawing.Size(163, 28);
-            this.m_cmd_chua_tra.TabIndex = 27;
-            this.m_cmd_chua_tra.Text = "Danh sách chưa trả lãi";
+            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_fg.Location = new System.Drawing.Point(3, 65);
+            this.m_fg.Name = "m_fg";
+            this.m_fg.Size = new System.Drawing.Size(1039, 236);
+            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
+            this.m_fg.TabIndex = 25;
             // 
             // f950_quan_ly_tra_goc
             // 
@@ -444,9 +444,9 @@
             this.groupBox2.PerformLayout();
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.m_gru_tim_kiem.ResumeLayout(false);
             this.m_gru_tim_kiem.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -475,7 +475,6 @@
         internal SIS.Controls.Button.SiSButton m_cmd_view;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private System.Windows.Forms.GroupBox groupBox1;
-        private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
         private System.Windows.Forms.GroupBox m_gru_tim_kiem;
         private System.Windows.Forms.TextBox m_txt_search;
         private System.Windows.Forms.Label label2;
@@ -483,5 +482,6 @@
         internal SIS.Controls.Button.SiSButton m_cmd_thanh_toan;
         internal SIS.Controls.Button.SiSButton m_cmd_da_tra;
         internal SIS.Controls.Button.SiSButton m_cmd_chua_tra;
+        private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
     }
 }
