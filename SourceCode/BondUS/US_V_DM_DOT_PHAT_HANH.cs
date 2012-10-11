@@ -44,6 +44,28 @@ namespace BondUS
             pm_objDR["ID"] = System.Convert.DBNull;
         }
 
+        public decimal dcID_TO_CHUC_PHAT_HANH
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "ID_TO_CHUC_PHAT_HANH", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["ID_TO_CHUC_PHAT_HANH"] = value;
+            }
+        }
+
+        public bool IsID_TO_CHUC_PHAT_HANHNull()
+        {
+            return pm_objDR.IsNull("ID_TO_CHUC_PHAT_HANH");
+        }
+
+        public void SetID_TO_CHUC_PHAT_HANHNull()
+        {
+            pm_objDR["ID_TO_CHUC_PHAT_HANH"] = System.Convert.DBNull;
+        }
+
         public string strTEN_TO_CHUC_PHAT_HANH
         {
             get
