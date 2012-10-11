@@ -351,8 +351,9 @@ namespace BondApp
 		}
 		private void set_initial_form_load(){
             m_obj_trans = get_trans_object(m_fg);
+            load_data_2_cbo_to_chuc_phat_hanh();   
             m_dat_from_date.Value = CIPConvert.ToDatetime("01/01/2010");
-            load_data_2_cbo_to_chuc_phat_hanh();           
+                   
             load_data_2_grid();	
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
@@ -459,8 +460,8 @@ namespace BondApp
             //m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
             //m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
             //m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-            //m_dat_from_date.ValueChanged += new EventHandler(m_dat_from_date_ValueChanged);
-            //m_dat_to_date.ValueChanged += new EventHandler(m_dat_to_date_ValueChanged);
+            m_dat_from_date.ValueChanged += new EventHandler(m_dat_from_date_ValueChanged);
+            m_dat_to_date.ValueChanged += new EventHandler(m_dat_to_date_ValueChanged);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
             m_cmd_export_excel.Click+=new EventHandler(m_cmd_export_excel_Click);
 
@@ -547,7 +548,6 @@ namespace BondApp
                 if (DateTime.Compare(m_dat_to_date.Value.Date,m_dat_from_date.Value.Date)<0)
                 {
                     MessageBox.Show("Ngày kết thúc phải sau ngày bắt đầu!");
-                    m_dat_to_date.Value = m_dat_from_date.Value;
                     m_dat_to_date.Focus();
                     return;
 
@@ -567,7 +567,6 @@ namespace BondApp
                 if (DateTime.Compare(m_dat_to_date.Value.Date,m_dat_from_date.Value.Date)<0)
                 {
                     MessageBox.Show("Ngày kết thúc phải sau ngày bắt đầu!");
-                    m_dat_from_date.Value = m_dat_to_date.Value;
                     m_dat_from_date.Focus();
                     return;
 
