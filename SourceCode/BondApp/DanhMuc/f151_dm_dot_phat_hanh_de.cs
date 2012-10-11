@@ -50,8 +50,8 @@ namespace BondApp.DanhMuc
         US_V_DM_DOT_PHAT_HANH m_us_dot_phat_hanh = new US_V_DM_DOT_PHAT_HANH();
         DS_V_DM_DOT_PHAT_HANH m_ds_dot_phat_hanh = new DS_V_DM_DOT_PHAT_HANH();
 
-        US_DM_TO_CHUC_PHAT_HANH m_us_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH();
-        DS_DM_TO_CHUC_PHAT_HANH m_ds_to_chuc_phat_hanh = new DS_DM_TO_CHUC_PHAT_HANH();
+        //US_DM_TO_CHUC_PHAT_HANH m_us_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH();
+        //DS_DM_TO_CHUC_PHAT_HANH m_ds_to_chuc_phat_hanh = new DS_DM_TO_CHUC_PHAT_HANH();
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
         #endregion
 
@@ -68,7 +68,7 @@ namespace BondApp.DanhMuc
         
         private void us_object_2_form(US_V_DM_DOT_PHAT_HANH ip_us_v_dot_phat_hanh)
         {
-            m_txt_ten_to_chuc_phat_hanh.Text = m_us_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HANH;
+            m_txt_ten_to_chuc_phat_hanh.Text = m_us_dot_phat_hanh.strTEN_TO_CHUC_PHAT_HANH;
             m_dat_ngay_phat_hanh.Value = m_us_dot_phat_hanh.datNGAY_PHAT_HANH;
             m_txt_ghi_chu.Text = m_us_dot_phat_hanh.strGHI_CHU;
         }
