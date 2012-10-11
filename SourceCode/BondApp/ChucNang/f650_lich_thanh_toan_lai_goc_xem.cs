@@ -244,6 +244,7 @@ namespace BondApp
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             US_GD_LICH_THANH_TOAN_LAI_GOC v_us = new US_GD_LICH_THANH_TOAN_LAI_GOC();
+            if (m_fg.Rows[m_fg.Row].UserData == null) return;
             grid2us_object(v_us, m_fg.Row);
             if (v_us.strTHANH_TOAN_GOC_YN == "Y")
             {
