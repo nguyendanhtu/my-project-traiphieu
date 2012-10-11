@@ -459,6 +459,8 @@ namespace BondApp
             //m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
             //m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
             //m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
+            //m_dat_from_date.ValueChanged += new EventHandler(m_dat_from_date_ValueChanged);
+            //m_dat_to_date.ValueChanged += new EventHandler(m_dat_to_date_ValueChanged);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
             m_cmd_export_excel.Click+=new EventHandler(m_cmd_export_excel_Click);
 
