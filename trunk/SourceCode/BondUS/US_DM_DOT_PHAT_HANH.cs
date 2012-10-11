@@ -102,7 +102,7 @@ namespace BondUS
         {
             return pm_objDR.IsNull("GHI_CHU");
         }
-
+       
         public void SetGHI_CHUNull()
         {
             pm_objDR["GHI_CHU"] = System.Convert.DBNull;

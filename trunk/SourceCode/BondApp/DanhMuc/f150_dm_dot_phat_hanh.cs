@@ -326,6 +326,8 @@ namespace BondApp
 		private void format_controls(){
 			CControlFormat.setFormStyle(this);
 			CControlFormat.setC1FlexFormat(m_fg);
+            CGridUtils.AddSave_Excel_Handlers(m_fg);
+            CGridUtils.AddSearch_Handlers(m_fg);
 			set_define_events();
             m_lbl_title.Font = new Font("Arial", 16);
             m_lbl_title.ForeColor = Color.DarkRed;
@@ -407,9 +409,9 @@ namespace BondApp
         }
 		
 
-		private void insert_dm_dot_phat_hanh(){			
-		//	f150_dm_dot_phat_hanh_DE v_fDE = new  f150_dm_dot_phat_hanh_DE();								
-		//	v_fDE.display();
+		private void insert_dm_dot_phat_hanh(){
+            f151_dm_dot_phat_hanh_de v_fDE = new f151_dm_dot_phat_hanh_de();
+            v_fDE.display_for_insert();
 			load_data_2_grid();
 		}
 
@@ -455,7 +457,20 @@ namespace BondApp
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_cmd_filter.Click += new EventHandler(m_cmd_filter_Click);
 		}
+
+        void m_cmd_filter_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid(m_txt_search.Text.Trim());
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 		#endregion
 
 //
