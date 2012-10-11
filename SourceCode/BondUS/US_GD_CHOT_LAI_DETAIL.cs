@@ -191,10 +191,10 @@ public class US_GD_CHOT_LAI_DETAIL : US_Object
 	}
 #endregion
 
-    public void us2ds(decimal ip_dc_id_gd_chot_lai, DS_GD_CHOT_LAI_DETAIL ip_ds)
+    public void us2ds(DS_GD_CHOT_LAI_DETAIL ip_ds)
     {
         CStoredProc v_pr_obj = new CStoredProc("pr_GD_CHOT_LAI_DETAIL_SelectByIdChotLai");
-        v_pr_obj.addDecimalInputParam("@ID_CHOT_LAI", ip_dc_id_gd_chot_lai);
+        v_pr_obj.addDecimalInputParam("@ID_CHOT_LAI", this.dcID_CHOT_LAI);
         v_pr_obj.fillDataSetByCommand(this, ip_ds);
     }
 }
