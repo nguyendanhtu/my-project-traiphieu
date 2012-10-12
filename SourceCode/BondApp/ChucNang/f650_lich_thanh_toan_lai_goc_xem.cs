@@ -72,6 +72,7 @@ namespace BondApp
 
         #region Members
         US_DM_TRAI_PHIEU m_us_trai_phieu = new US_DM_TRAI_PHIEU();
+        US_GD_CHOT_LAI m_us_gd_chot_lai = new US_GD_CHOT_LAI();
         ITransferDataRow m_obj_trans;
         e_form_mode m_e_form_mode = e_form_mode.HIEN_THI_KHONG_TRAI_PHIEU;
         DS_GD_LICH_THANH_TOAN_LAI_GOC m_ds_gd_lich_tt_lai_goc = new DS_GD_LICH_THANH_TOAN_LAI_GOC();
@@ -242,6 +243,9 @@ namespace BondApp
             v_obj_word_rpt.AddFindAndReplace("<KY_HAN>", m_txt_ky_han.Text + " năm"); // Can phai sua
             v_obj_word_rpt.AddFindAndReplace("<KY_TINH_LAI>", m_txt_ky_tinh_lai.Text + " tháng");
             v_obj_word_rpt.AddFindAndReplace("<LAI_SUAT>", m_txt_lai_suat.Text);
+            v_obj_word_rpt.AddFindAndReplace("<NGAY_THANH_TOAN>", );
+
+
             v_obj_word_rpt.Export2Word(true);
         }
 
