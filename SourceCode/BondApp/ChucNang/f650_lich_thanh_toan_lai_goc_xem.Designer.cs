@@ -69,6 +69,7 @@
             this.m_cmd_generate = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_cap_nhat_lai_suat = new SIS.Controls.Button.SiSButton();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -401,6 +402,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_cmd_cap_nhat_lai_suat);
             this.panel1.Controls.Add(this.m_cmd_thong_bao_tien_lai);
             this.panel1.Controls.Add(this.m_cmd_tra_goc);
             this.panel1.Controls.Add(this.m_cmd_tra_lai);
@@ -554,6 +556,21 @@
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
+            // m_cmd_cap_nhat_lai_suat
+            // 
+            this.m_cmd_cap_nhat_lai_suat.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_cap_nhat_lai_suat.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_cap_nhat_lai_suat.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_cap_nhat_lai_suat.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_cap_nhat_lai_suat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_cap_nhat_lai_suat.ImageIndex = 18;
+            this.m_cmd_cap_nhat_lai_suat.ImageList = this.ImageList;
+            this.m_cmd_cap_nhat_lai_suat.Location = new System.Drawing.Point(669, 4);
+            this.m_cmd_cap_nhat_lai_suat.Name = "m_cmd_cap_nhat_lai_suat";
+            this.m_cmd_cap_nhat_lai_suat.Size = new System.Drawing.Size(118, 28);
+            this.m_cmd_cap_nhat_lai_suat.TabIndex = 27;
+            this.m_cmd_cap_nhat_lai_suat.Text = "Cập nhật lãi suất";
+            // 
             // f650_lich_thanh_toan_lai_goc_xem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -614,6 +631,7 @@
         internal SIS.Controls.Button.SiSButton m_cmd_tra_lai;
         internal SIS.Controls.Button.SiSButton m_cmd_tra_goc;
         internal SIS.Controls.Button.SiSButton m_cmd_thong_bao_tien_lai;
+        internal SIS.Controls.Button.SiSButton m_cmd_cap_nhat_lai_suat;
 
     }
 }
