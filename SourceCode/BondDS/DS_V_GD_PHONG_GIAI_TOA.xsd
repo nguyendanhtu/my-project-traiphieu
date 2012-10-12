@@ -13,7 +13,7 @@
               <DbSource ConnectionRef="QuanLyPhatHanhTraiPhieuConnectionString3 (Settings)" DbObjectName="QuanLyPhatHanhTraiPhieu.dbo.V_GD_PHONG_GIAI_TOA" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, MA_GIAO_DICH, ID_TRAI_CHU, MA_TRAI_CHU, TEN_TRAI_CHU, CMT_GIAY_DKKD, NGAY_CAP_CMT, NOI_CAP_CMT, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, SO_LUONG, MENH_GIA, GIA_TRI_GD_THEO_MENH_GIA, CHUC_DANH, PHONG_TOA_YN, ID_NGUOI_LAP, NGUOI_THUC_HIEN, ID_NGUOI_DUYET, ID_TRANG_THAI, TY_LE_PHI_GD, PHI_GIAO_DICH, ID_TO_CHUC_PHAT_HANH, NGUOI_XAC_NHAN, CHUC_VU, GIAY_UQ, NGAY_CAP_GIAY_UQ, CUA FROM dbo.V_GD_PHONG_GIAI_TOA</CommandText>
+                    <CommandText>SELECT ID, MA_GIAO_DICH, ID_TRAI_CHU, MA_TRAI_CHU, TEN_TRAI_CHU, CMT_GIAY_DKKD, NGAY_CAP_CMT, NOI_CAP_CMT, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, SO_LUONG, MENH_GIA, GIA_TRI_GD_THEO_MENH_GIA, CHUC_DANH, PHONG_TOA_YN, ID_NGUOI_LAP, NGUOI_THUC_HIEN, ID_NGUOI_DUYET, ID_TRANG_THAI, TY_LE_PHI_GD, PHI_GIAO_DICH, ID_TO_CHUC_PHAT_HANH, NGUOI_XAC_NHAN, CHUC_VU, GIAY_UQ, NGAY_CAP_GIAY_UQ, CUA, NDD_TRU_SO, NDD_DIEN_THOAI, NDD_FAX, NGAN_HANG_CAM_CO, KHOAN_DAU_TU FROM dbo.V_GD_PHONG_GIAI_TOA</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -47,6 +47,11 @@
               <Mapping SourceColumn="GIAY_UQ" DataSetColumn="GIAY_UQ" />
               <Mapping SourceColumn="NGAY_CAP_GIAY_UQ" DataSetColumn="NGAY_CAP_GIAY_UQ" />
               <Mapping SourceColumn="CUA" DataSetColumn="CUA" />
+              <Mapping SourceColumn="NDD_TRU_SO" DataSetColumn="NDD_TRU_SO" />
+              <Mapping SourceColumn="NDD_DIEN_THOAI" DataSetColumn="NDD_DIEN_THOAI" />
+              <Mapping SourceColumn="NDD_FAX" DataSetColumn="NDD_FAX" />
+              <Mapping SourceColumn="NGAN_HANG_CAM_CO" DataSetColumn="NGAN_HANG_CAM_CO" />
+              <Mapping SourceColumn="KHOAN_DAU_TU" DataSetColumn="KHOAN_DAU_TU" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -160,6 +165,41 @@
               </xs:element>
               <xs:element name="NGAY_CAP_GIAY_UQ" msprop:Generator_ColumnVarNameInTable="columnNGAY_CAP_GIAY_UQ" msprop:Generator_ColumnPropNameInRow="NGAY_CAP_GIAY_UQ" msprop:Generator_ColumnPropNameInTable="NGAY_CAP_GIAY_UQColumn" msprop:Generator_UserColumnName="NGAY_CAP_GIAY_UQ" type="xs:dateTime" minOccurs="0" />
               <xs:element name="CUA" msprop:Generator_ColumnVarNameInTable="columnCUA" msprop:Generator_ColumnPropNameInRow="CUA" msprop:Generator_ColumnPropNameInTable="CUAColumn" msprop:Generator_UserColumnName="CUA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NDD_TRU_SO" msprop:Generator_ColumnVarNameInTable="columnNDD_TRU_SO" msprop:Generator_ColumnPropNameInRow="NDD_TRU_SO" msprop:Generator_ColumnPropNameInTable="NDD_TRU_SOColumn" msprop:Generator_UserColumnName="NDD_TRU_SO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NDD_DIEN_THOAI" msprop:Generator_ColumnVarNameInTable="columnNDD_DIEN_THOAI" msprop:Generator_ColumnPropNameInRow="NDD_DIEN_THOAI" msprop:Generator_ColumnPropNameInTable="NDD_DIEN_THOAIColumn" msprop:Generator_UserColumnName="NDD_DIEN_THOAI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NDD_FAX" msprop:Generator_ColumnVarNameInTable="columnNDD_FAX" msprop:Generator_ColumnPropNameInRow="NDD_FAX" msprop:Generator_ColumnPropNameInTable="NDD_FAXColumn" msprop:Generator_UserColumnName="NDD_FAX" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NGAN_HANG_CAM_CO" msprop:Generator_ColumnVarNameInTable="columnNGAN_HANG_CAM_CO" msprop:Generator_ColumnPropNameInRow="NGAN_HANG_CAM_CO" msprop:Generator_ColumnPropNameInTable="NGAN_HANG_CAM_COColumn" msprop:Generator_UserColumnName="NGAN_HANG_CAM_CO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KHOAN_DAU_TU" msprop:Generator_ColumnVarNameInTable="columnKHOAN_DAU_TU" msprop:Generator_ColumnPropNameInRow="KHOAN_DAU_TU" msprop:Generator_ColumnPropNameInTable="KHOAN_DAU_TUColumn" msprop:Generator_UserColumnName="KHOAN_DAU_TU" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
