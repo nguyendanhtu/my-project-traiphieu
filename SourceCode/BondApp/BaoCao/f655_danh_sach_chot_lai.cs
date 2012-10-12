@@ -651,7 +651,11 @@ namespace SaleManagement
 
         private void export_excel()
         {
+            US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_trai_phieu.dcID_DOT_PHAT_HANH);
+            US_DM_TO_CHUC_PHAT_HANH v_us_dm_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH(v_us_dm_dot_phat_hanh.dcID_TO_CHUC_PHAT_HANH);
+
             CExcelReport v_obj_export_excel = new CExcelReport("f300 _Danh Sach Chot.xls", 17, 2);
+            v_obj_export_excel.AddFindAndReplaceItem("<TEN_CONG_TY>", v_us_dm_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HANH);
             v_obj_export_excel.AddFindAndReplaceItem("<TEN_TRAI_PHIEU>", m_txt_ten_trai_phieu.Text);
             v_obj_export_excel.AddFindAndReplaceItem("<MENH_GIA_TRAI_PHIEU>", m_txt_menh_gia.Text + " VND");
             v_obj_export_excel.AddFindAndReplaceItem("<NGAY_PHAT_HANH>", m_txt_ngay_phat_hanh.Text);
