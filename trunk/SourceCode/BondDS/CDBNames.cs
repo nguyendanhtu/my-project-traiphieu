@@ -43,6 +43,12 @@ namespace BondDS.CDBNames
         public const decimal CA_NHAN_NUOC_NGOAI = 40;
         public const decimal TO_CHUC_NUOC_NGOAI = 39;
     }
+    public class ID_TRANG_THAI_PGT
+    {
+        public const decimal DA_NHAP = 21;
+        public const decimal DA_DUYET = 22;
+        public const decimal DA_THUC_HIEN=23;
+    }
     public class CM_DM_DS_LOAI_TU_DIEN
     {
         public const string TRANG_THAI_GD = "TRANG_THAI_GD";
