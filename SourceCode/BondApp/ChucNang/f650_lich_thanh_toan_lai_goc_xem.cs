@@ -32,6 +32,7 @@ namespace BondApp
         }
 
         #region Public interface
+        // Dùng cho F300 - Trái phiếu
         public void display_lich_thanh_toan_lai_goc(US_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
             m_us_trai_phieu = ip_us_trai_phieu;
@@ -41,6 +42,28 @@ namespace BondApp
         public void display()
         {
             m_e_form_mode = e_form_mode.HIEN_THI_KHONG_TRAI_PHIEU;
+            this.ShowDialog();
+        }
+
+        public void display_khong_trai_phieu_sinh_lich()
+        {
+            m_e_form_mode = e_form_mode.KHONG_TRAI_PHIEU_SINH_LICH;
+            this.ShowDialog();
+        }
+
+        public void display_khong_trai_phieu_thong_bao_lai_suat()
+        {
+            m_e_form_mode = e_form_mode.KHONG_TRAI_PHIEU_THONG_BAO_LAI_SUAT;
+            this.ShowDialog();
+        }
+        public void display_khong_trai_phieu_thong_bao_ngay_chot_ds()
+        {
+            m_e_form_mode = e_form_mode.KHONG_TRAI_PHIEU_THONG_BAO_NGAY_CHOT_DS_LAI;
+            this.ShowDialog();
+        }
+        public void display_khong_trai_phieu_thong_bao_thanh_toan_lai()
+        {
+            m_e_form_mode = e_form_mode.KHONG_TRAI_PHIEU_THONG_BAO_TT_LAI;
             this.ShowDialog();
         }
         #endregion
@@ -64,9 +87,12 @@ namespace BondApp
         }
         private enum e_form_mode
         {
-            HIEN_THI_CO_TRAI_PHIEU = 1
+              HIEN_THI_CO_TRAI_PHIEU = 1
             , HIEN_THI_KHONG_TRAI_PHIEU = 2
-
+            , KHONG_TRAI_PHIEU_SINH_LICH = 3
+            , KHONG_TRAI_PHIEU_THONG_BAO_LAI_SUAT = 4
+            , KHONG_TRAI_PHIEU_THONG_BAO_NGAY_CHOT_DS_LAI = 5
+            , KHONG_TRAI_PHIEU_THONG_BAO_TT_LAI = 6
         }
         #endregion
 
@@ -105,9 +131,55 @@ namespace BondApp
                 case e_form_mode.HIEN_THI_KHONG_TRAI_PHIEU:
                     m_obj_trans = get_trans_object(m_fg);
                     break;
+                case e_form_mode.KHONG_TRAI_PHIEU_SINH_LICH:
+                    m_obj_trans = get_trans_object(m_fg);
+                    m_lbl_header.Text = "F650 - SINH LỊCH THANH TOÁN LÃI GỐC";
+                    this.Text = "F650 - Sinh lịch thanh toán lãi gốc";
+                    m_cmd_generate.Visible = false;
+                    break;
+                case e_form_mode.KHONG_TRAI_PHIEU_THONG_BAO_LAI_SUAT:
+                    m_obj_trans = get_trans_object(m_fg);
+                    m_lbl_header.Text = "F650 - THÔNG BÁO LÃI SUẤT";
+                    this.Text = "F650 - Thông báo lãi suất";
+                    m_cmd_generate.Visible = false;
+                    m_cmd_thong_bao_tien_lai.Visible = false;
+                    m_cmd_thong_bao_ls.Visible = true;
+                    m_cmd_tra_goc.Visible = false;
+                    m_cmd_tra_lai.Visible = false;
+                    m_cmd_insert.Visible = false;
+                    m_cmd_update.Visible = false;
+                    m_cmd_delete.Visible = false;
+                    break;
+                case e_form_mode.KHONG_TRAI_PHIEU_THONG_BAO_NGAY_CHOT_DS_LAI:
+                    m_obj_trans = get_trans_object(m_fg);
+                    m_lbl_header.Text = "F650 - THÔNG BÁO NGÀY CHỐT DANH SÁCH NHẬN LÃI";
+                    this.Text = "F650 - Thông báo ngày chốt danh sách nhận lãi";
+                    m_cmd_generate.Visible = false;
+                    m_cmd_thong_bao_ls.Visible = false;
+                    m_cmd_thong_bao_tien_lai.Visible = true;
+                    m_cmd_tra_goc.Visible = false;
+                    m_cmd_tra_lai.Visible = false;
+                    m_cmd_insert.Visible = false;
+                    m_cmd_update.Visible = false;
+                    m_cmd_delete.Visible = false;
+                    break;
+                case e_form_mode.KHONG_TRAI_PHIEU_THONG_BAO_TT_LAI:
+                    m_obj_trans = get_trans_object(m_fg);
+                    m_lbl_header.Text = "F650 - THÔNG BÁO THANH TOÁN LÃI TRÁI PHIẾU";
+                    this.Text = "F650 - Thông báo thanh toán lãi trái phiếu";
+                    m_cmd_generate.Visible = false;
+                    m_cmd_thong_bao_ls.Visible = false;
+                    m_cmd_thong_bao_tien_lai.Visible = false;
+                    m_cmd_tra_goc.Visible = false;
+                    m_cmd_tra_lai.Visible = false;
+                    m_cmd_insert.Visible = false;
+                    m_cmd_update.Visible = false;
+                    m_cmd_delete.Visible = false;
+                    break;
                 default:
                     break;
             }
+
         }
         private void us_trai_phieu_2_form()
         {
