@@ -467,6 +467,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f650_lich_thanh_toan_lai_goc_xem.resx">
       <DependentUpon>f650_lich_thanh_toan_lai_goc_xem.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f700_chon_trai_chu.resx">
       <DependentUpon>f700_chon_trai_chu.cs</DependentUpon>
@@ -497,6 +498,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f150_dm_dot_phat_hanh.resx">
       <DependentUpon>f150_dm_dot_phat_hanh.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f151_dm_dot_phat_hanh_de.resx">
       <DependentUpon>f151_dm_dot_phat_hanh_de.cs</DependentUpon>
@@ -510,6 +512,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f300_dm_trai_phieu_DE.resx">
       <DependentUpon>f300_dm_trai_phieu_DE.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f400_dm_loai_trai_phieu.resx">
       <DependentUpon>f400_dm_loai_trai_phieu.cs</DependentUpon>
