@@ -619,12 +619,6 @@ namespace BondApp
             m_txt_trang_thai.Text = "";
             m_txt_ky_tinh_lai.Text = "";
             m_txt_ghi_chu.Text = "";
-            m_e_form_mode = DataEntryFormMode.ViewDataState;
-
-            m_cmd_delete.Enabled = true;
-            m_cmd_gen.Enabled = true;
-            m_cmd_insert.Enabled = true;
-            m_cmd_save.Enabled = true;
         }
         private bool check_validate_data_is_ok()
         {
@@ -670,14 +664,7 @@ namespace BondApp
             us_trai_phieu_2_form();
             m_txt_ky_tinh_lai.Focus();
         }
-        private void select_nguoi_duyet()
-        {
-            f999_ht_nguoi_su_dung v_frm999 = new f999_ht_nguoi_su_dung();
-            //m_us_dm_trai_phieu = v_frm300.select_trai_phieu();
-            if (m_us_dm_trai_phieu.IsIDNull()) return;
-            us_trai_phieu_2_form();
-            m_txt_ky_tinh_lai.Focus();
-        }
+        
         private void save_data()
         {
             if (check_validate_data_is_ok() == false) return;
@@ -704,7 +691,7 @@ namespace BondApp
             m_cmd_delete.Enabled = true;
             m_cmd_gen.Enabled = true;
             m_cmd_insert.Enabled = true;
-            m_cmd_save.Enabled = true;
+            m_cmd_update.Enabled = true;
         }
         private void enableEditing()
         {
@@ -718,6 +705,7 @@ namespace BondApp
             m_txt_ky_tinh_lai.ReadOnly = false      ; m_txt_ky_tinh_lai.BackColor = Color.White;
             m_txt_ghi_chu.ReadOnly = false          ; m_txt_ghi_chu.BackColor = Color.White;
             m_cmd_chon_trai_phieu.Enabled = true;
+            m_cmd_save.Enabled = true;
         }
         private void disableEditing()
         {
@@ -732,6 +720,7 @@ namespace BondApp
             m_txt_ghi_chu.ReadOnly = true; m_txt_ghi_chu.BackColor = Color.White;
             m_cmd_chon_trai_phieu.Enabled = false;
             m_cmd_duyet.Enabled = false;
+            m_cmd_save.Enabled = false;
         }
 		private void set_initial_form_load(){
             us_trai_phieu_2_form();
@@ -844,7 +833,7 @@ namespace BondApp
 
             m_cmd_delete.Enabled = false;
             m_cmd_gen.Enabled = false;
-            m_cmd_save.Enabled = false;
+            m_cmd_update.Enabled = false;
 		}
 		private void update_gd_chot_lai(){
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
@@ -859,7 +848,11 @@ namespace BondApp
             m_cmd_gen.Enabled = false;
             m_cmd_insert.Enabled = false;
 		}
-				
+        private void duyet_gd_chot_lai()
+        {
+            m_us_gd_dot_chot_lai.dcID_NGUOI_DUYET = CAppContext_201.getCurrentUserID();
+            us_nguoi_dung_2_form();
+        }
 		private void delete_gd_chot_lai(){
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
@@ -896,9 +889,18 @@ namespace BondApp
 			m_cmd_gen.Click += new EventHandler(m_cmd_gen_Click);
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
             m_cmd_chon_trai_phieu.Click += new EventHandler(m_cmd_chon_trai_phieu_Click);
+            m_cmd_duyet.Click +=new EventHandler(m_cmd_duyet_Click);
 		}
 		#endregion
-
+        private void m_cmd_duyet_Click(object sender, EventArgs e)
+        {
+			try{
+				duyet_gd_chot_lai();
+			}
+			catch (Exception v_e){
+				CSystemLog_301.ExceptionHandle(v_e);
+			}
+		}
         private void m_cmd_insert_Click(object sender, EventArgs e)
         {
 			try{
@@ -930,18 +932,6 @@ namespace BondApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        private void m_cmd_chon_nguoi_duyet_Click(object sender, System.EventArgs e)
-        {
-            try
-            {
-                select_nguoi_duyet();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
 		private void f200_dm_dot_chot_lai_Load(object sender, System.EventArgs e) {
 			try{
 				set_initial_form_load();
@@ -953,6 +943,16 @@ namespace BondApp
 		}
 
 		private void m_cmd_exit_Click(object sender, EventArgs e) {
+            if (m_cmd_save.Enabled == true)
+            {
+                reset();
+                disableEditing();
+                m_cmd_delete.Enabled = true;
+                m_cmd_gen.Enabled = true;
+                m_cmd_insert.Enabled = true;
+                m_cmd_update.Enabled = true;
+                return;
+            }
 			try{
 				this.Close();
 			}
