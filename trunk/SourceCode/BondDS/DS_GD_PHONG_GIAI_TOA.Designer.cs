@@ -313,6 +313,16 @@ namespace BondDS {
             
             private global::System.Data.DataColumn columnNGAY_CAP_GIAY_UQ;
             
+            private global::System.Data.DataColumn columnNDD_TRU_SO;
+            
+            private global::System.Data.DataColumn columnNDD_DIEN_THOAI;
+            
+            private global::System.Data.DataColumn columnNDD_FAX;
+            
+            private global::System.Data.DataColumn columnNGAN_HANG_CAM_CO;
+            
+            private global::System.Data.DataColumn columnKHOAN_DAU_TU;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public GD_PHONG_GIAI_TOADataTable() {
@@ -484,6 +494,46 @@ namespace BondDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NDD_TRU_SOColumn {
+                get {
+                    return this.columnNDD_TRU_SO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NDD_DIEN_THOAIColumn {
+                get {
+                    return this.columnNDD_DIEN_THOAI;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NDD_FAXColumn {
+                get {
+                    return this.columnNDD_FAX;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NGAN_HANG_CAM_COColumn {
+                get {
+                    return this.columnNGAN_HANG_CAM_CO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn KHOAN_DAU_TUColumn {
+                get {
+                    return this.columnKHOAN_DAU_TU;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -535,7 +585,12 @@ namespace BondDS {
                         string CHUC_VU, 
                         string GIAY_UQ, 
                         string CUA, 
-                        System.DateTime NGAY_CAP_GIAY_UQ) {
+                        System.DateTime NGAY_CAP_GIAY_UQ, 
+                        string NDD_TRU_SO, 
+                        string NDD_DIEN_THOAI, 
+                        string NDD_FAX, 
+                        string NGAN_HANG_CAM_CO, 
+                        string KHOAN_DAU_TU) {
                 GD_PHONG_GIAI_TOARow rowGD_PHONG_GIAI_TOARow = ((GD_PHONG_GIAI_TOARow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -554,7 +609,12 @@ namespace BondDS {
                         CHUC_VU,
                         GIAY_UQ,
                         CUA,
-                        NGAY_CAP_GIAY_UQ};
+                        NGAY_CAP_GIAY_UQ,
+                        NDD_TRU_SO,
+                        NDD_DIEN_THOAI,
+                        NDD_FAX,
+                        NGAN_HANG_CAM_CO,
+                        KHOAN_DAU_TU};
                 rowGD_PHONG_GIAI_TOARow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowGD_PHONG_GIAI_TOARow);
                 return rowGD_PHONG_GIAI_TOARow;
@@ -607,6 +667,11 @@ namespace BondDS {
                 this.columnGIAY_UQ = base.Columns["GIAY_UQ"];
                 this.columnCUA = base.Columns["CUA"];
                 this.columnNGAY_CAP_GIAY_UQ = base.Columns["NGAY_CAP_GIAY_UQ"];
+                this.columnNDD_TRU_SO = base.Columns["NDD_TRU_SO"];
+                this.columnNDD_DIEN_THOAI = base.Columns["NDD_DIEN_THOAI"];
+                this.columnNDD_FAX = base.Columns["NDD_FAX"];
+                this.columnNGAN_HANG_CAM_CO = base.Columns["NGAN_HANG_CAM_CO"];
+                this.columnKHOAN_DAU_TU = base.Columns["KHOAN_DAU_TU"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -646,6 +711,16 @@ namespace BondDS {
                 base.Columns.Add(this.columnCUA);
                 this.columnNGAY_CAP_GIAY_UQ = new global::System.Data.DataColumn("NGAY_CAP_GIAY_UQ", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNGAY_CAP_GIAY_UQ);
+                this.columnNDD_TRU_SO = new global::System.Data.DataColumn("NDD_TRU_SO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNDD_TRU_SO);
+                this.columnNDD_DIEN_THOAI = new global::System.Data.DataColumn("NDD_DIEN_THOAI", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNDD_DIEN_THOAI);
+                this.columnNDD_FAX = new global::System.Data.DataColumn("NDD_FAX", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNDD_FAX);
+                this.columnNGAN_HANG_CAM_CO = new global::System.Data.DataColumn("NGAN_HANG_CAM_CO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNGAN_HANG_CAM_CO);
+                this.columnKHOAN_DAU_TU = new global::System.Data.DataColumn("KHOAN_DAU_TU", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKHOAN_DAU_TU);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -667,6 +742,11 @@ namespace BondDS {
                 this.columnCHUC_VU.MaxLength = 250;
                 this.columnGIAY_UQ.MaxLength = 250;
                 this.columnCUA.MaxLength = 250;
+                this.columnNDD_TRU_SO.MaxLength = 250;
+                this.columnNDD_DIEN_THOAI.MaxLength = 50;
+                this.columnNDD_FAX.MaxLength = 50;
+                this.columnNGAN_HANG_CAM_CO.MaxLength = 250;
+                this.columnKHOAN_DAU_TU.MaxLength = 250;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1046,6 +1126,86 @@ namespace BondDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NDD_TRU_SO {
+                get {
+                    try {
+                        return ((string)(this[this.tableGD_PHONG_GIAI_TOA.NDD_TRU_SOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NDD_TRU_SO\' in table \'GD_PHONG_GIAI_TOA\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGD_PHONG_GIAI_TOA.NDD_TRU_SOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NDD_DIEN_THOAI {
+                get {
+                    try {
+                        return ((string)(this[this.tableGD_PHONG_GIAI_TOA.NDD_DIEN_THOAIColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NDD_DIEN_THOAI\' in table \'GD_PHONG_GIAI_TOA\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGD_PHONG_GIAI_TOA.NDD_DIEN_THOAIColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NDD_FAX {
+                get {
+                    try {
+                        return ((string)(this[this.tableGD_PHONG_GIAI_TOA.NDD_FAXColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NDD_FAX\' in table \'GD_PHONG_GIAI_TOA\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGD_PHONG_GIAI_TOA.NDD_FAXColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NGAN_HANG_CAM_CO {
+                get {
+                    try {
+                        return ((string)(this[this.tableGD_PHONG_GIAI_TOA.NGAN_HANG_CAM_COColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NGAN_HANG_CAM_CO\' in table \'GD_PHONG_GIAI_TOA\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGD_PHONG_GIAI_TOA.NGAN_HANG_CAM_COColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string KHOAN_DAU_TU {
+                get {
+                    try {
+                        return ((string)(this[this.tableGD_PHONG_GIAI_TOA.KHOAN_DAU_TUColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'KHOAN_DAU_TU\' in table \'GD_PHONG_GIAI_TOA\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGD_PHONG_GIAI_TOA.KHOAN_DAU_TUColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNGUOI_DAI_DIENNull() {
                 return this.IsNull(this.tableGD_PHONG_GIAI_TOA.NGUOI_DAI_DIENColumn);
             }
@@ -1162,6 +1322,66 @@ namespace BondDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNGAY_CAP_GIAY_UQNull() {
                 this[this.tableGD_PHONG_GIAI_TOA.NGAY_CAP_GIAY_UQColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNDD_TRU_SONull() {
+                return this.IsNull(this.tableGD_PHONG_GIAI_TOA.NDD_TRU_SOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNDD_TRU_SONull() {
+                this[this.tableGD_PHONG_GIAI_TOA.NDD_TRU_SOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNDD_DIEN_THOAINull() {
+                return this.IsNull(this.tableGD_PHONG_GIAI_TOA.NDD_DIEN_THOAIColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNDD_DIEN_THOAINull() {
+                this[this.tableGD_PHONG_GIAI_TOA.NDD_DIEN_THOAIColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNDD_FAXNull() {
+                return this.IsNull(this.tableGD_PHONG_GIAI_TOA.NDD_FAXColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNDD_FAXNull() {
+                this[this.tableGD_PHONG_GIAI_TOA.NDD_FAXColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNGAN_HANG_CAM_CONull() {
+                return this.IsNull(this.tableGD_PHONG_GIAI_TOA.NGAN_HANG_CAM_COColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNGAN_HANG_CAM_CONull() {
+                this[this.tableGD_PHONG_GIAI_TOA.NGAN_HANG_CAM_COColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsKHOAN_DAU_TUNull() {
+                return this.IsNull(this.tableGD_PHONG_GIAI_TOA.KHOAN_DAU_TUColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetKHOAN_DAU_TUNull() {
+                this[this.tableGD_PHONG_GIAI_TOA.KHOAN_DAU_TUColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1341,10 +1561,38 @@ namespace BondDS.DS_GD_PHONG_GIAI_TOATableAdapters {
             tableMapping.ColumnMappings.Add("GIAY_UQ", "GIAY_UQ");
             tableMapping.ColumnMappings.Add("CUA", "CUA");
             tableMapping.ColumnMappings.Add("NGAY_CAP_GIAY_UQ", "NGAY_CAP_GIAY_UQ");
+            tableMapping.ColumnMappings.Add("NDD_TRU_SO", "NDD_TRU_SO");
+            tableMapping.ColumnMappings.Add("NDD_DIEN_THOAI", "NDD_DIEN_THOAI");
+            tableMapping.ColumnMappings.Add("NDD_FAX", "NDD_FAX");
+            tableMapping.ColumnMappings.Add("NGAN_HANG_CAM_CO", "NGAN_HANG_CAM_CO");
+            tableMapping.ColumnMappings.Add("KHOAN_DAU_TU", "KHOAN_DAU_TU");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[GD_PHONG_GIAI_TOA] WHERE (([ID] = @Original_ID) AND ([ID_TRAI_CHU] = @Original_ID_TRAI_CHU) AND ([SO_LUONG] = @Original_SO_LUONG) AND ([NGAY_GIAO_DICH] = @Original_NGAY_GIAO_DICH) AND ((@IsNull_NGUOI_DAI_DIEN = 1 AND [NGUOI_DAI_DIEN] IS NULL) OR ([NGUOI_DAI_DIEN] = @Original_NGUOI_DAI_DIEN)) AND ((@IsNull_CHUC_DANH = 1 AND [CHUC_DANH] IS NULL) OR ([CHUC_DANH] = @Original_CHUC_DANH)) AND ([PHONG_TOA_YN] = @Original_PHONG_TOA_YN) AND ([ID_NGUOI_LAP] = @Original_ID_NGUOI_LAP) AND ((@IsNull_ID_NGUOI_DUYET = 1 AND [ID_NGUOI_DUYET] IS NULL) OR ([ID_NGUOI_DUYET] = @Original_ID_NGUOI_DUYET)) AND ([ID_TRANG_THAI] = @Original_ID_TRANG_THAI) AND ((@IsNull_TY_LE_PHI_GD = 1 AND [TY_LE_PHI_GD] IS NULL) OR ([TY_LE_PHI_GD] = @Original_TY_LE_PHI_GD)) AND ((@IsNull_PHI_GIAO_DICH = 1 AND [PHI_GIAO_DICH] IS NULL) OR ([PHI_GIAO_DICH] = @Original_PHI_GIAO_DICH)) AND ((@IsNull_NGUOI_XAC_NHAN = 1 AND [NGUOI_XAC_NHAN] IS NULL) OR ([NGUOI_XAC_NHAN] = @Original_NGUOI_XAC_NHAN)) AND ((@IsNull_CHUC_VU = 1 AND [CHUC_VU] IS NULL) OR ([CHUC_VU] = @Original_CHUC_VU)) AND ((@IsNull_GIAY_UQ = 1 AND [GIAY_UQ] IS NULL) OR ([GIAY_UQ] = @Original_GIAY_UQ)) AND ((@IsNull_CUA = 1 AND [CUA] IS NULL) OR ([CUA] = @Original_CUA)) AND ((@IsNull_NGAY_CAP_GIAY_UQ = 1 AND [NGAY_CAP_GIAY_UQ] IS NULL) OR ([NGAY_CAP_GIAY_UQ] = @Original_NGAY_CAP_GIAY_UQ)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[GD_PHONG_GIAI_TOA] WHERE (([ID] = @Original_ID) AND ([ID_TRAI_" +
+                "CHU] = @Original_ID_TRAI_CHU) AND ([SO_LUONG] = @Original_SO_LUONG) AND ([NGAY_G" +
+                "IAO_DICH] = @Original_NGAY_GIAO_DICH) AND ((@IsNull_NGUOI_DAI_DIEN = 1 AND [NGUO" +
+                "I_DAI_DIEN] IS NULL) OR ([NGUOI_DAI_DIEN] = @Original_NGUOI_DAI_DIEN)) AND ((@Is" +
+                "Null_CHUC_DANH = 1 AND [CHUC_DANH] IS NULL) OR ([CHUC_DANH] = @Original_CHUC_DAN" +
+                "H)) AND ([PHONG_TOA_YN] = @Original_PHONG_TOA_YN) AND ([ID_NGUOI_LAP] = @Origina" +
+                "l_ID_NGUOI_LAP) AND ((@IsNull_ID_NGUOI_DUYET = 1 AND [ID_NGUOI_DUYET] IS NULL) O" +
+                "R ([ID_NGUOI_DUYET] = @Original_ID_NGUOI_DUYET)) AND ([ID_TRANG_THAI] = @Origina" +
+                "l_ID_TRANG_THAI) AND ((@IsNull_TY_LE_PHI_GD = 1 AND [TY_LE_PHI_GD] IS NULL) OR (" +
+                "[TY_LE_PHI_GD] = @Original_TY_LE_PHI_GD)) AND ((@IsNull_PHI_GIAO_DICH = 1 AND [P" +
+                "HI_GIAO_DICH] IS NULL) OR ([PHI_GIAO_DICH] = @Original_PHI_GIAO_DICH)) AND ((@Is" +
+                "Null_NGUOI_XAC_NHAN = 1 AND [NGUOI_XAC_NHAN] IS NULL) OR ([NGUOI_XAC_NHAN] = @Or" +
+                "iginal_NGUOI_XAC_NHAN)) AND ((@IsNull_CHUC_VU = 1 AND [CHUC_VU] IS NULL) OR ([CH" +
+                "UC_VU] = @Original_CHUC_VU)) AND ((@IsNull_GIAY_UQ = 1 AND [GIAY_UQ] IS NULL) OR" +
+                " ([GIAY_UQ] = @Original_GIAY_UQ)) AND ((@IsNull_CUA = 1 AND [CUA] IS NULL) OR ([" +
+                "CUA] = @Original_CUA)) AND ((@IsNull_NGAY_CAP_GIAY_UQ = 1 AND [NGAY_CAP_GIAY_UQ]" +
+                " IS NULL) OR ([NGAY_CAP_GIAY_UQ] = @Original_NGAY_CAP_GIAY_UQ)) AND ((@IsNull_ND" +
+                "D_TRU_SO = 1 AND [NDD_TRU_SO] IS NULL) OR ([NDD_TRU_SO] = @Original_NDD_TRU_SO))" +
+                " AND ((@IsNull_NDD_DIEN_THOAI = 1 AND [NDD_DIEN_THOAI] IS NULL) OR ([NDD_DIEN_TH" +
+                "OAI] = @Original_NDD_DIEN_THOAI)) AND ((@IsNull_NDD_FAX = 1 AND [NDD_FAX] IS NUL" +
+                "L) OR ([NDD_FAX] = @Original_NDD_FAX)) AND ((@IsNull_NGAN_HANG_CAM_CO = 1 AND [N" +
+                "GAN_HANG_CAM_CO] IS NULL) OR ([NGAN_HANG_CAM_CO] = @Original_NGAN_HANG_CAM_CO)) " +
+                "AND ((@IsNull_KHOAN_DAU_TU = 1 AND [KHOAN_DAU_TU] IS NULL) OR ([KHOAN_DAU_TU] = " +
+                "@Original_KHOAN_DAU_TU)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_TRAI_CHU", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_TRAI_CHU", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1373,10 +1621,20 @@ namespace BondDS.DS_GD_PHONG_GIAI_TOATableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CUA", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CUA", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NGAY_CAP_GIAY_UQ", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAY_CAP_GIAY_UQ", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NGAY_CAP_GIAY_UQ", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAY_CAP_GIAY_UQ", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NDD_TRU_SO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NDD_TRU_SO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NDD_TRU_SO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NDD_TRU_SO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NDD_DIEN_THOAI", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NDD_DIEN_THOAI", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NDD_DIEN_THOAI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NDD_DIEN_THOAI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NDD_FAX", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NDD_FAX", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NDD_FAX", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NDD_FAX", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NGAN_HANG_CAM_CO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAN_HANG_CAM_CO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NGAN_HANG_CAM_CO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAN_HANG_CAM_CO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_KHOAN_DAU_TU", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KHOAN_DAU_TU", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_KHOAN_DAU_TU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KHOAN_DAU_TU", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[GD_PHONG_GIAI_TOA] ([ID_TRAI_CHU], [SO_LUONG], [NGAY_GIAO_DICH], [NGUOI_DAI_DIEN], [CHUC_DANH], [PHONG_TOA_YN], [ID_NGUOI_LAP], [ID_NGUOI_DUYET], [ID_TRANG_THAI], [TY_LE_PHI_GD], [PHI_GIAO_DICH], [NGUOI_XAC_NHAN], [CHUC_VU], [GIAY_UQ], [CUA], [NGAY_CAP_GIAY_UQ]) VALUES (@ID_TRAI_CHU, @SO_LUONG, @NGAY_GIAO_DICH, @NGUOI_DAI_DIEN, @CHUC_DANH, @PHONG_TOA_YN, @ID_NGUOI_LAP, @ID_NGUOI_DUYET, @ID_TRANG_THAI, @TY_LE_PHI_GD, @PHI_GIAO_DICH, @NGUOI_XAC_NHAN, @CHUC_VU, @GIAY_UQ, @CUA, @NGAY_CAP_GIAY_UQ);
-SELECT ID, ID_TRAI_CHU, SO_LUONG, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, CHUC_DANH, PHONG_TOA_YN, ID_NGUOI_LAP, ID_NGUOI_DUYET, ID_TRANG_THAI, TY_LE_PHI_GD, PHI_GIAO_DICH, NGUOI_XAC_NHAN, CHUC_VU, GIAY_UQ, CUA, NGAY_CAP_GIAY_UQ FROM GD_PHONG_GIAI_TOA WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[GD_PHONG_GIAI_TOA] ([ID_TRAI_CHU], [SO_LUONG], [NGAY_GIAO_DICH], [NGUOI_DAI_DIEN], [CHUC_DANH], [PHONG_TOA_YN], [ID_NGUOI_LAP], [ID_NGUOI_DUYET], [ID_TRANG_THAI], [TY_LE_PHI_GD], [PHI_GIAO_DICH], [NGUOI_XAC_NHAN], [CHUC_VU], [GIAY_UQ], [CUA], [NGAY_CAP_GIAY_UQ], [NDD_TRU_SO], [NDD_DIEN_THOAI], [NDD_FAX], [NGAN_HANG_CAM_CO], [KHOAN_DAU_TU]) VALUES (@ID_TRAI_CHU, @SO_LUONG, @NGAY_GIAO_DICH, @NGUOI_DAI_DIEN, @CHUC_DANH, @PHONG_TOA_YN, @ID_NGUOI_LAP, @ID_NGUOI_DUYET, @ID_TRANG_THAI, @TY_LE_PHI_GD, @PHI_GIAO_DICH, @NGUOI_XAC_NHAN, @CHUC_VU, @GIAY_UQ, @CUA, @NGAY_CAP_GIAY_UQ, @NDD_TRU_SO, @NDD_DIEN_THOAI, @NDD_FAX, @NGAN_HANG_CAM_CO, @KHOAN_DAU_TU);
+SELECT ID, ID_TRAI_CHU, SO_LUONG, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, CHUC_DANH, PHONG_TOA_YN, ID_NGUOI_LAP, ID_NGUOI_DUYET, ID_TRANG_THAI, TY_LE_PHI_GD, PHI_GIAO_DICH, NGUOI_XAC_NHAN, CHUC_VU, GIAY_UQ, CUA, NGAY_CAP_GIAY_UQ, NDD_TRU_SO, NDD_DIEN_THOAI, NDD_FAX, NGAN_HANG_CAM_CO, KHOAN_DAU_TU FROM GD_PHONG_GIAI_TOA WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_TRAI_CHU", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_TRAI_CHU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SO_LUONG", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 4, 0, "SO_LUONG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1394,6 +1652,11 @@ SELECT ID, ID_TRAI_CHU, SO_LUONG, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, CHUC_DANH, PHO
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GIAY_UQ", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GIAY_UQ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CUA", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CUA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NGAY_CAP_GIAY_UQ", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAY_CAP_GIAY_UQ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NDD_TRU_SO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NDD_TRU_SO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NDD_DIEN_THOAI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NDD_DIEN_THOAI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NDD_FAX", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NDD_FAX", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NGAN_HANG_CAM_CO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAN_HANG_CAM_CO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KHOAN_DAU_TU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KHOAN_DAU_TU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[GD_PHONG_GIAI_TOA] SET [ID_TRAI_CHU] = @ID_TRAI_CHU, [SO_LUONG] = @" +
@@ -1402,27 +1665,36 @@ SELECT ID, ID_TRAI_CHU, SO_LUONG, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, CHUC_DANH, PHO
                 "_NGUOI_LAP, [ID_NGUOI_DUYET] = @ID_NGUOI_DUYET, [ID_TRANG_THAI] = @ID_TRANG_THAI" +
                 ", [TY_LE_PHI_GD] = @TY_LE_PHI_GD, [PHI_GIAO_DICH] = @PHI_GIAO_DICH, [NGUOI_XAC_N" +
                 "HAN] = @NGUOI_XAC_NHAN, [CHUC_VU] = @CHUC_VU, [GIAY_UQ] = @GIAY_UQ, [CUA] = @CUA" +
-                ", [NGAY_CAP_GIAY_UQ] = @NGAY_CAP_GIAY_UQ WHERE (([ID] = @Original_ID) AND ([ID_T" +
-                "RAI_CHU] = @Original_ID_TRAI_CHU) AND ([SO_LUONG] = @Original_SO_LUONG) AND ([NG" +
-                "AY_GIAO_DICH] = @Original_NGAY_GIAO_DICH) AND ((@IsNull_NGUOI_DAI_DIEN = 1 AND [" +
-                "NGUOI_DAI_DIEN] IS NULL) OR ([NGUOI_DAI_DIEN] = @Original_NGUOI_DAI_DIEN)) AND (" +
-                "(@IsNull_CHUC_DANH = 1 AND [CHUC_DANH] IS NULL) OR ([CHUC_DANH] = @Original_CHUC" +
-                "_DANH)) AND ([PHONG_TOA_YN] = @Original_PHONG_TOA_YN) AND ([ID_NGUOI_LAP] = @Ori" +
-                "ginal_ID_NGUOI_LAP) AND ((@IsNull_ID_NGUOI_DUYET = 1 AND [ID_NGUOI_DUYET] IS NUL" +
-                "L) OR ([ID_NGUOI_DUYET] = @Original_ID_NGUOI_DUYET)) AND ([ID_TRANG_THAI] = @Ori" +
-                "ginal_ID_TRANG_THAI) AND ((@IsNull_TY_LE_PHI_GD = 1 AND [TY_LE_PHI_GD] IS NULL) " +
-                "OR ([TY_LE_PHI_GD] = @Original_TY_LE_PHI_GD)) AND ((@IsNull_PHI_GIAO_DICH = 1 AN" +
-                "D [PHI_GIAO_DICH] IS NULL) OR ([PHI_GIAO_DICH] = @Original_PHI_GIAO_DICH)) AND (" +
-                "(@IsNull_NGUOI_XAC_NHAN = 1 AND [NGUOI_XAC_NHAN] IS NULL) OR ([NGUOI_XAC_NHAN] =" +
-                " @Original_NGUOI_XAC_NHAN)) AND ((@IsNull_CHUC_VU = 1 AND [CHUC_VU] IS NULL) OR " +
-                "([CHUC_VU] = @Original_CHUC_VU)) AND ((@IsNull_GIAY_UQ = 1 AND [GIAY_UQ] IS NULL" +
-                ") OR ([GIAY_UQ] = @Original_GIAY_UQ)) AND ((@IsNull_CUA = 1 AND [CUA] IS NULL) O" +
-                "R ([CUA] = @Original_CUA)) AND ((@IsNull_NGAY_CAP_GIAY_UQ = 1 AND [NGAY_CAP_GIAY" +
-                "_UQ] IS NULL) OR ([NGAY_CAP_GIAY_UQ] = @Original_NGAY_CAP_GIAY_UQ)));\r\nSELECT ID" +
-                ", ID_TRAI_CHU, SO_LUONG, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, CHUC_DANH, PHONG_TOA_YN" +
-                ", ID_NGUOI_LAP, ID_NGUOI_DUYET, ID_TRANG_THAI, TY_LE_PHI_GD, PHI_GIAO_DICH, NGUO" +
-                "I_XAC_NHAN, CHUC_VU, GIAY_UQ, CUA, NGAY_CAP_GIAY_UQ FROM GD_PHONG_GIAI_TOA WHERE" +
-                " (ID = @ID)";
+                ", [NGAY_CAP_GIAY_UQ] = @NGAY_CAP_GIAY_UQ, [NDD_TRU_SO] = @NDD_TRU_SO, [NDD_DIEN_" +
+                "THOAI] = @NDD_DIEN_THOAI, [NDD_FAX] = @NDD_FAX, [NGAN_HANG_CAM_CO] = @NGAN_HANG_" +
+                "CAM_CO, [KHOAN_DAU_TU] = @KHOAN_DAU_TU WHERE (([ID] = @Original_ID) AND ([ID_TRA" +
+                "I_CHU] = @Original_ID_TRAI_CHU) AND ([SO_LUONG] = @Original_SO_LUONG) AND ([NGAY" +
+                "_GIAO_DICH] = @Original_NGAY_GIAO_DICH) AND ((@IsNull_NGUOI_DAI_DIEN = 1 AND [NG" +
+                "UOI_DAI_DIEN] IS NULL) OR ([NGUOI_DAI_DIEN] = @Original_NGUOI_DAI_DIEN)) AND ((@" +
+                "IsNull_CHUC_DANH = 1 AND [CHUC_DANH] IS NULL) OR ([CHUC_DANH] = @Original_CHUC_D" +
+                "ANH)) AND ([PHONG_TOA_YN] = @Original_PHONG_TOA_YN) AND ([ID_NGUOI_LAP] = @Origi" +
+                "nal_ID_NGUOI_LAP) AND ((@IsNull_ID_NGUOI_DUYET = 1 AND [ID_NGUOI_DUYET] IS NULL)" +
+                " OR ([ID_NGUOI_DUYET] = @Original_ID_NGUOI_DUYET)) AND ([ID_TRANG_THAI] = @Origi" +
+                "nal_ID_TRANG_THAI) AND ((@IsNull_TY_LE_PHI_GD = 1 AND [TY_LE_PHI_GD] IS NULL) OR" +
+                " ([TY_LE_PHI_GD] = @Original_TY_LE_PHI_GD)) AND ((@IsNull_PHI_GIAO_DICH = 1 AND " +
+                "[PHI_GIAO_DICH] IS NULL) OR ([PHI_GIAO_DICH] = @Original_PHI_GIAO_DICH)) AND ((@" +
+                "IsNull_NGUOI_XAC_NHAN = 1 AND [NGUOI_XAC_NHAN] IS NULL) OR ([NGUOI_XAC_NHAN] = @" +
+                "Original_NGUOI_XAC_NHAN)) AND ((@IsNull_CHUC_VU = 1 AND [CHUC_VU] IS NULL) OR ([" +
+                "CHUC_VU] = @Original_CHUC_VU)) AND ((@IsNull_GIAY_UQ = 1 AND [GIAY_UQ] IS NULL) " +
+                "OR ([GIAY_UQ] = @Original_GIAY_UQ)) AND ((@IsNull_CUA = 1 AND [CUA] IS NULL) OR " +
+                "([CUA] = @Original_CUA)) AND ((@IsNull_NGAY_CAP_GIAY_UQ = 1 AND [NGAY_CAP_GIAY_U" +
+                "Q] IS NULL) OR ([NGAY_CAP_GIAY_UQ] = @Original_NGAY_CAP_GIAY_UQ)) AND ((@IsNull_" +
+                "NDD_TRU_SO = 1 AND [NDD_TRU_SO] IS NULL) OR ([NDD_TRU_SO] = @Original_NDD_TRU_SO" +
+                ")) AND ((@IsNull_NDD_DIEN_THOAI = 1 AND [NDD_DIEN_THOAI] IS NULL) OR ([NDD_DIEN_" +
+                "THOAI] = @Original_NDD_DIEN_THOAI)) AND ((@IsNull_NDD_FAX = 1 AND [NDD_FAX] IS N" +
+                "ULL) OR ([NDD_FAX] = @Original_NDD_FAX)) AND ((@IsNull_NGAN_HANG_CAM_CO = 1 AND " +
+                "[NGAN_HANG_CAM_CO] IS NULL) OR ([NGAN_HANG_CAM_CO] = @Original_NGAN_HANG_CAM_CO)" +
+                ") AND ((@IsNull_KHOAN_DAU_TU = 1 AND [KHOAN_DAU_TU] IS NULL) OR ([KHOAN_DAU_TU] " +
+                "= @Original_KHOAN_DAU_TU)));\r\nSELECT ID, ID_TRAI_CHU, SO_LUONG, NGAY_GIAO_DICH, " +
+                "NGUOI_DAI_DIEN, CHUC_DANH, PHONG_TOA_YN, ID_NGUOI_LAP, ID_NGUOI_DUYET, ID_TRANG_" +
+                "THAI, TY_LE_PHI_GD, PHI_GIAO_DICH, NGUOI_XAC_NHAN, CHUC_VU, GIAY_UQ, CUA, NGAY_C" +
+                "AP_GIAY_UQ, NDD_TRU_SO, NDD_DIEN_THOAI, NDD_FAX, NGAN_HANG_CAM_CO, KHOAN_DAU_TU " +
+                "FROM GD_PHONG_GIAI_TOA WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_TRAI_CHU", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_TRAI_CHU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SO_LUONG", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 4, 0, "SO_LUONG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1440,6 +1712,11 @@ SELECT ID, ID_TRAI_CHU, SO_LUONG, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, CHUC_DANH, PHO
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GIAY_UQ", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GIAY_UQ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CUA", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CUA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NGAY_CAP_GIAY_UQ", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAY_CAP_GIAY_UQ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NDD_TRU_SO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NDD_TRU_SO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NDD_DIEN_THOAI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NDD_DIEN_THOAI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NDD_FAX", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NDD_FAX", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NGAN_HANG_CAM_CO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAN_HANG_CAM_CO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KHOAN_DAU_TU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KHOAN_DAU_TU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_TRAI_CHU", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID_TRAI_CHU", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SO_LUONG", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 4, 0, "SO_LUONG", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1467,6 +1744,16 @@ SELECT ID, ID_TRAI_CHU, SO_LUONG, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, CHUC_DANH, PHO
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CUA", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CUA", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NGAY_CAP_GIAY_UQ", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAY_CAP_GIAY_UQ", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NGAY_CAP_GIAY_UQ", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAY_CAP_GIAY_UQ", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NDD_TRU_SO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NDD_TRU_SO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NDD_TRU_SO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NDD_TRU_SO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NDD_DIEN_THOAI", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NDD_DIEN_THOAI", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NDD_DIEN_THOAI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NDD_DIEN_THOAI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NDD_FAX", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NDD_FAX", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NDD_FAX", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NDD_FAX", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NGAN_HANG_CAM_CO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAN_HANG_CAM_CO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NGAN_HANG_CAM_CO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NGAN_HANG_CAM_CO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_KHOAN_DAU_TU", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KHOAN_DAU_TU", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_KHOAN_DAU_TU", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KHOAN_DAU_TU", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -1483,10 +1770,7 @@ SELECT ID, ID_TRAI_CHU, SO_LUONG, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, CHUC_DANH, PHO
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, ID_TRAI_CHU, SO_LUONG, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, CHUC_DANH, PHON" +
-                "G_TOA_YN, ID_NGUOI_LAP, ID_NGUOI_DUYET, ID_TRANG_THAI, TY_LE_PHI_GD, PHI_GIAO_DI" +
-                "CH, NGUOI_XAC_NHAN, CHUC_VU, GIAY_UQ, CUA, NGAY_CAP_GIAY_UQ FROM dbo.GD_PHONG_GI" +
-                "AI_TOA";
+            this._commandCollection[0].CommandText = @"SELECT ID, ID_TRAI_CHU, SO_LUONG, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, CHUC_DANH, PHONG_TOA_YN, ID_NGUOI_LAP, ID_NGUOI_DUYET, ID_TRANG_THAI, TY_LE_PHI_GD, PHI_GIAO_DICH, NGUOI_XAC_NHAN, CHUC_VU, GIAY_UQ, CUA, NGAY_CAP_GIAY_UQ, NDD_TRU_SO, NDD_DIEN_THOAI, NDD_FAX, NGAN_HANG_CAM_CO, KHOAN_DAU_TU FROM dbo.GD_PHONG_GIAI_TOA";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1564,7 +1848,12 @@ SELECT ID, ID_TRAI_CHU, SO_LUONG, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, CHUC_DANH, PHO
                     string Original_CHUC_VU, 
                     string Original_GIAY_UQ, 
                     string Original_CUA, 
-                    global::System.Nullable<global::System.DateTime> Original_NGAY_CAP_GIAY_UQ) {
+                    global::System.Nullable<global::System.DateTime> Original_NGAY_CAP_GIAY_UQ, 
+                    string Original_NDD_TRU_SO, 
+                    string Original_NDD_DIEN_THOAI, 
+                    string Original_NDD_FAX, 
+                    string Original_NGAN_HANG_CAM_CO, 
+                    string Original_KHOAN_DAU_TU) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_ID));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((decimal)(Original_ID_TRAI_CHU));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((decimal)(Original_SO_LUONG));
@@ -1657,6 +1946,46 @@ SELECT ID, ID_TRAI_CHU, SO_LUONG, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, CHUC_DANH, PHO
                 this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
+            if ((Original_NDD_TRU_SO == null)) {
+                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[28].Value = ((string)(Original_NDD_TRU_SO));
+            }
+            if ((Original_NDD_DIEN_THOAI == null)) {
+                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[30].Value = ((string)(Original_NDD_DIEN_THOAI));
+            }
+            if ((Original_NDD_FAX == null)) {
+                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[32].Value = ((string)(Original_NDD_FAX));
+            }
+            if ((Original_NGAN_HANG_CAM_CO == null)) {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[34].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((string)(Original_NGAN_HANG_CAM_CO));
+            }
+            if ((Original_KHOAN_DAU_TU == null)) {
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[36].Value = ((string)(Original_KHOAN_DAU_TU));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1693,7 +2022,12 @@ SELECT ID, ID_TRAI_CHU, SO_LUONG, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, CHUC_DANH, PHO
                     string CHUC_VU, 
                     string GIAY_UQ, 
                     string CUA, 
-                    global::System.Nullable<global::System.DateTime> NGAY_CAP_GIAY_UQ) {
+                    global::System.Nullable<global::System.DateTime> NGAY_CAP_GIAY_UQ, 
+                    string NDD_TRU_SO, 
+                    string NDD_DIEN_THOAI, 
+                    string NDD_FAX, 
+                    string NGAN_HANG_CAM_CO, 
+                    string KHOAN_DAU_TU) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(ID_TRAI_CHU));
             this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(SO_LUONG));
             this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(NGAY_GIAO_DICH));
@@ -1765,6 +2099,36 @@ SELECT ID, ID_TRAI_CHU, SO_LUONG, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, CHUC_DANH, PHO
             else {
                 this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
+            if ((NDD_TRU_SO == null)) {
+                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(NDD_TRU_SO));
+            }
+            if ((NDD_DIEN_THOAI == null)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(NDD_DIEN_THOAI));
+            }
+            if ((NDD_FAX == null)) {
+                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(NDD_FAX));
+            }
+            if ((NGAN_HANG_CAM_CO == null)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(NGAN_HANG_CAM_CO));
+            }
+            if ((KHOAN_DAU_TU == null)) {
+                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(KHOAN_DAU_TU));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1802,6 +2166,11 @@ SELECT ID, ID_TRAI_CHU, SO_LUONG, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, CHUC_DANH, PHO
                     string GIAY_UQ, 
                     string CUA, 
                     global::System.Nullable<global::System.DateTime> NGAY_CAP_GIAY_UQ, 
+                    string NDD_TRU_SO, 
+                    string NDD_DIEN_THOAI, 
+                    string NDD_FAX, 
+                    string NGAN_HANG_CAM_CO, 
+                    string KHOAN_DAU_TU, 
                     decimal Original_ID, 
                     decimal Original_ID_TRAI_CHU, 
                     decimal Original_SO_LUONG, 
@@ -1819,6 +2188,11 @@ SELECT ID, ID_TRAI_CHU, SO_LUONG, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, CHUC_DANH, PHO
                     string Original_GIAY_UQ, 
                     string Original_CUA, 
                     global::System.Nullable<global::System.DateTime> Original_NGAY_CAP_GIAY_UQ, 
+                    string Original_NDD_TRU_SO, 
+                    string Original_NDD_DIEN_THOAI, 
+                    string Original_NDD_FAX, 
+                    string Original_NGAN_HANG_CAM_CO, 
+                    string Original_KHOAN_DAU_TU, 
                     decimal ID) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(ID_TRAI_CHU));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(SO_LUONG));
@@ -1891,99 +2265,169 @@ SELECT ID, ID_TRAI_CHU, SO_LUONG, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, CHUC_DANH, PHO
             else {
                 this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((decimal)(Original_ID));
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((decimal)(Original_ID_TRAI_CHU));
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((decimal)(Original_SO_LUONG));
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((System.DateTime)(Original_NGAY_GIAO_DICH));
-            if ((Original_NGUOI_DAI_DIEN == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            if ((NDD_TRU_SO == null)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_NGUOI_DAI_DIEN));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(NDD_TRU_SO));
+            }
+            if ((NDD_DIEN_THOAI == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(NDD_DIEN_THOAI));
+            }
+            if ((NDD_FAX == null)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(NDD_FAX));
+            }
+            if ((NGAN_HANG_CAM_CO == null)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(NGAN_HANG_CAM_CO));
+            }
+            if ((KHOAN_DAU_TU == null)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(KHOAN_DAU_TU));
+            }
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((decimal)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((decimal)(Original_ID_TRAI_CHU));
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((decimal)(Original_SO_LUONG));
+            this.Adapter.UpdateCommand.Parameters[24].Value = ((System.DateTime)(Original_NGAY_GIAO_DICH));
+            if ((Original_NGUOI_DAI_DIEN == null)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_NGUOI_DAI_DIEN));
             }
             if ((Original_CHUC_DANH == null)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_CHUC_DANH));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_CHUC_DANH));
             }
             if ((Original_PHONG_TOA_YN == null)) {
                 throw new global::System.ArgumentNullException("Original_PHONG_TOA_YN");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_PHONG_TOA_YN));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_PHONG_TOA_YN));
             }
-            this.Adapter.UpdateCommand.Parameters[25].Value = ((decimal)(Original_ID_NGUOI_LAP));
+            this.Adapter.UpdateCommand.Parameters[30].Value = ((decimal)(Original_ID_NGUOI_LAP));
             if ((Original_ID_NGUOI_DUYET.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((decimal)(Original_ID_NGUOI_DUYET.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[28].Value = ((decimal)(Original_ID_TRANG_THAI));
-            if ((Original_TY_LE_PHI_GD.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((decimal)(Original_TY_LE_PHI_GD.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
-            }
-            if ((Original_PHI_GIAO_DICH.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((decimal)(Original_PHI_GIAO_DICH.Value));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((decimal)(Original_ID_NGUOI_DUYET.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
-            if ((Original_NGUOI_XAC_NHAN == null)) {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
+            this.Adapter.UpdateCommand.Parameters[33].Value = ((decimal)(Original_ID_TRANG_THAI));
+            if ((Original_TY_LE_PHI_GD.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((decimal)(Original_TY_LE_PHI_GD.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_NGUOI_XAC_NHAN));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PHI_GIAO_DICH.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((decimal)(Original_PHI_GIAO_DICH.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NGUOI_XAC_NHAN == null)) {
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_NGUOI_XAC_NHAN));
             }
             if ((Original_CHUC_VU == null)) {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_CHUC_VU));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_CHUC_VU));
             }
             if ((Original_GIAY_UQ == null)) {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_GIAY_UQ));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(Original_GIAY_UQ));
             }
             if ((Original_CUA == null)) {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_CUA));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((string)(Original_CUA));
             }
             if ((Original_NGAY_CAP_GIAY_UQ.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((System.DateTime)(Original_NGAY_CAP_GIAY_UQ.Value));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((System.DateTime)(Original_NGAY_CAP_GIAY_UQ.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[43].Value = ((decimal)(ID));
+            if ((Original_NDD_TRU_SO == null)) {
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((string)(Original_NDD_TRU_SO));
+            }
+            if ((Original_NDD_DIEN_THOAI == null)) {
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((string)(Original_NDD_DIEN_THOAI));
+            }
+            if ((Original_NDD_FAX == null)) {
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((string)(Original_NDD_FAX));
+            }
+            if ((Original_NGAN_HANG_CAM_CO == null)) {
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[55].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((string)(Original_NGAN_HANG_CAM_CO));
+            }
+            if ((Original_KHOAN_DAU_TU == null)) {
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[57].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((string)(Original_KHOAN_DAU_TU));
+            }
+            this.Adapter.UpdateCommand.Parameters[58].Value = ((decimal)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2021,6 +2465,11 @@ SELECT ID, ID_TRAI_CHU, SO_LUONG, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, CHUC_DANH, PHO
                     string GIAY_UQ, 
                     string CUA, 
                     global::System.Nullable<global::System.DateTime> NGAY_CAP_GIAY_UQ, 
+                    string NDD_TRU_SO, 
+                    string NDD_DIEN_THOAI, 
+                    string NDD_FAX, 
+                    string NGAN_HANG_CAM_CO, 
+                    string KHOAN_DAU_TU, 
                     decimal Original_ID, 
                     decimal Original_ID_TRAI_CHU, 
                     decimal Original_SO_LUONG, 
@@ -2037,8 +2486,13 @@ SELECT ID, ID_TRAI_CHU, SO_LUONG, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, CHUC_DANH, PHO
                     string Original_CHUC_VU, 
                     string Original_GIAY_UQ, 
                     string Original_CUA, 
-                    global::System.Nullable<global::System.DateTime> Original_NGAY_CAP_GIAY_UQ) {
-            return this.Update(ID_TRAI_CHU, SO_LUONG, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, CHUC_DANH, PHONG_TOA_YN, ID_NGUOI_LAP, ID_NGUOI_DUYET, ID_TRANG_THAI, TY_LE_PHI_GD, PHI_GIAO_DICH, NGUOI_XAC_NHAN, CHUC_VU, GIAY_UQ, CUA, NGAY_CAP_GIAY_UQ, Original_ID, Original_ID_TRAI_CHU, Original_SO_LUONG, Original_NGAY_GIAO_DICH, Original_NGUOI_DAI_DIEN, Original_CHUC_DANH, Original_PHONG_TOA_YN, Original_ID_NGUOI_LAP, Original_ID_NGUOI_DUYET, Original_ID_TRANG_THAI, Original_TY_LE_PHI_GD, Original_PHI_GIAO_DICH, Original_NGUOI_XAC_NHAN, Original_CHUC_VU, Original_GIAY_UQ, Original_CUA, Original_NGAY_CAP_GIAY_UQ, Original_ID);
+                    global::System.Nullable<global::System.DateTime> Original_NGAY_CAP_GIAY_UQ, 
+                    string Original_NDD_TRU_SO, 
+                    string Original_NDD_DIEN_THOAI, 
+                    string Original_NDD_FAX, 
+                    string Original_NGAN_HANG_CAM_CO, 
+                    string Original_KHOAN_DAU_TU) {
+            return this.Update(ID_TRAI_CHU, SO_LUONG, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, CHUC_DANH, PHONG_TOA_YN, ID_NGUOI_LAP, ID_NGUOI_DUYET, ID_TRANG_THAI, TY_LE_PHI_GD, PHI_GIAO_DICH, NGUOI_XAC_NHAN, CHUC_VU, GIAY_UQ, CUA, NGAY_CAP_GIAY_UQ, NDD_TRU_SO, NDD_DIEN_THOAI, NDD_FAX, NGAN_HANG_CAM_CO, KHOAN_DAU_TU, Original_ID, Original_ID_TRAI_CHU, Original_SO_LUONG, Original_NGAY_GIAO_DICH, Original_NGUOI_DAI_DIEN, Original_CHUC_DANH, Original_PHONG_TOA_YN, Original_ID_NGUOI_LAP, Original_ID_NGUOI_DUYET, Original_ID_TRANG_THAI, Original_TY_LE_PHI_GD, Original_PHI_GIAO_DICH, Original_NGUOI_XAC_NHAN, Original_CHUC_VU, Original_GIAY_UQ, Original_CUA, Original_NGAY_CAP_GIAY_UQ, Original_NDD_TRU_SO, Original_NDD_DIEN_THOAI, Original_NDD_FAX, Original_NGAN_HANG_CAM_CO, Original_KHOAN_DAU_TU, Original_ID);
         }
     }
     
