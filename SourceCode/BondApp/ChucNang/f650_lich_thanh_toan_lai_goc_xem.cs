@@ -400,9 +400,9 @@ namespace BondApp
             {                
                 f310_cap_nhat_lai_suat v_frm310 = new f310_cap_nhat_lai_suat();
                 if (v_us.strDA_THUC_HIEN_YN.Equals("Y"))
-                    v_frm310.display_xem_gd_cap_nhat_ls();
+                    v_frm310.display_xem_gd_cap_nhat_ls(v_us);
                 else
-                    v_frm310.display_sua_gd_cap_nhat_ls();
+                    v_frm310.display_sua_gd_cap_nhat_ls(v_us);
             }
         }
          #endregion
