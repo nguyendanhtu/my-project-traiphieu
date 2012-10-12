@@ -52,12 +52,19 @@ namespace BondApp
             m_us_gd_phong_toa_giai_toa = ip_us_phong_giai_toa;
             this.Text = "F700 - Duyệt Giao dịch phong tỏa";
             m_lbl_title.Text = "DUYỆT GIAO DỊCH PHONG TỎA";
+            m_us_gd_phong_toa_giai_toa = ip_us_phong_giai_toa;
+            US_DM_TRAI_CHU ip_us_trai_chu = new US_DM_TRAI_CHU(ip_us_phong_giai_toa.dcID_TRAI_CHU);            
+            us_trai_chu_2_form(ip_us_trai_chu);
+            m_txt_nguoi_dai_dien.Focus();
             this.ShowDialog();        
         }
         public void display_duyet_giai_toa(US_GD_PHONG_GIAI_TOA ip_us_phong_giai_toa)
         {
             m_e_form_mode = eFormMode.DUYET_GIAI_TOA;
             m_us_gd_phong_toa_giai_toa = ip_us_phong_giai_toa;
+            m_us_gd_phong_toa_giai_toa = ip_us_phong_giai_toa;
+            US_DM_TRAI_CHU ip_us_trai_chu = new US_DM_TRAI_CHU(ip_us_phong_giai_toa.dcID_TRAI_CHU);
+            us_trai_chu_2_form(ip_us_trai_chu);
             this.Text = "F700 - Duyệt Giao dịch giải tỏa";
             m_lbl_title.Text = "DUYỆT GIAO DỊCH GIẢI TỎA";
             this.ShowDialog();
@@ -165,6 +172,12 @@ namespace BondApp
                 m_txt_cua.Focus();
                 return false;
             }
+            if (CIPConvert.ToDecimal(m_txt_so_luong_tp_cam_co) > CIPConvert.ToDecimal(m_txt_so_luong_kha_dung))
+            {
+                m_txt_so_luong_tp_cam_co.Focus();
+                MessageBox.Show("Cảnh báo","Số lượng trái phiếu cầm cố vượt quá số lượng trái phiểu khả dụng! Xin hãy nhập lại.");
+                return false;
+            }
 
             return true;
         }
@@ -191,11 +204,30 @@ namespace BondApp
         }
         private void select_trai_chu()
         {
-            f500_dm_trai_chu v_frm500 = new f500_dm_trai_chu();
+            f701_danh_sach_giao_dich_phong_giai_toa vfrm701 = new f701_danh_sach_giao_dich_phong_giai_toa();
+            switch (m_e_form_mode)
+            { 
+                case eFormMode.LAP_GIAI_TOA:
+                case eFormMode.LAP_PHONG_TOA:
+                    f500_dm_trai_chu v_frm500 = new f500_dm_trai_chu();
             m_us_trai_chu = v_frm500.select_trai_chu_of_trai_phieu(null);
             if (m_us_trai_chu.IsIDNull()) return;
             us_trai_chu_2_form(m_us_trai_chu);
             m_txt_nguoi_dai_dien.Focus();
+            break;
+                case eFormMode.DUYET_GIAI_TOA:
+            this.Close();
+            vfrm701.display_giai_toa_duyet();
+            
+            break;
+                case eFormMode.DUYET_PHONG_TOA:
+            this.Close();
+            vfrm701.display_phong_toa_duyet();
+            
+            break;
+            
+            }
+            
         }
         private void us_trai_chu_2_form(US_DM_TRAI_CHU ip_us_trai_chu)
         {
@@ -212,6 +244,27 @@ namespace BondApp
             m_txt_so_luong_trai_phieu.Text = v_ds.GD_SO_DU_TRAI_PHIEU.Rows[0]["TONG_SO_DU"].ToString();
             m_txt_so_luong_kha_dung.Text = v_ds.GD_SO_DU_TRAI_PHIEU.Rows[0]["SO_DU_KHA_DUNG"].ToString();
             us_trai_phieu_2_form(m_us_trai_phieu);
+            if (m_e_form_mode == eFormMode.DUYET_GIAI_TOA || m_e_form_mode == eFormMode.DUYET_PHONG_TOA)
+            {
+                m_txt_nguoi_dai_dien.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.strNGUOI_DAI_DIEN);
+                m_txt_chuc_danh.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.strCHUC_DANH);
+                m_txt_tru_so_chinh.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.strNDD_TRU_SO);
+                m_txt_dien_thoai.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.strNDD_DIEN_THOAI);
+                m_txt_fax.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.strNDD_FAX);
+                m_txt_so_luong_tp_cam_co.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.dcSO_LUONG);
+                m_txt_tong_gia_tri.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.dcSO_LUONG * m_us_trai_phieu.dcMENH_GIA);
+                m_txt_ngan_hang_cam_co.Text = m_us_gd_phong_toa_giai_toa.strNGAN_HANG_CAM_CO;
+                m_txt_khoan_dau_tu.Text = m_us_gd_phong_toa_giai_toa.strKHOAN_DAU_TU;
+                m_txt_nguoi_xac_nhan.Text = m_us_gd_phong_toa_giai_toa.strNGUOI_XAC_NHAN;
+                m_txt_chuc_vu.Text = m_us_gd_phong_toa_giai_toa.strCHUC_VU;
+                m_txt_theo_giay_uy_quyen_so.Text = m_us_gd_phong_toa_giai_toa.strGIAY_UQ;
+                m_dat_ngay_cap_giay_uq.Value = m_us_gd_phong_toa_giai_toa.datNGAY_CAP_GIAY_UQ;
+                m_dat_ngay.Value = m_us_gd_phong_toa_giai_toa.datNGAY_GIAO_DICH;
+                m_txt_cua.Text = m_us_gd_phong_toa_giai_toa.strCUA;
+              
+
+            
+            }
             
         }
         private void us_trai_phieu_2_form(US_DM_TRAI_PHIEU ip_us_trai_phieu)
@@ -242,28 +295,10 @@ namespace BondApp
             {
                 case eFormMode.LAP_GIAI_TOA:
                     m_us_gd_phong_toa_giai_toa.strPHONG_TOA_YN = "N";
-                    m_us_gd_phong_toa_giai_toa.dcSO_LUONG = CIPConvert.ToDecimal(m_txt_so_luong_tp_cam_co.Text);
+                    m_us_gd_phong_toa_giai_toa.dcID_TRAI_CHU = m_us_trai_chu.dcID;
                     m_us_gd_phong_toa_giai_toa.SetID_NGUOI_DUYETNull();
                     m_us_gd_phong_toa_giai_toa.dcID_NGUOI_LAP = IP.Core.IPSystemAdmin.CAppContext_201.getCurrentUserID();
-                    break;
-                case eFormMode.LAP_PHONG_TOA:
-                    m_us_gd_phong_toa_giai_toa.strPHONG_TOA_YN = "Y";
-                    m_us_gd_phong_toa_giai_toa.dcSO_LUONG = -CIPConvert.ToDecimal(m_txt_so_luong_tp_cam_co.Text);
-                    m_us_gd_phong_toa_giai_toa.SetID_NGUOI_DUYETNull();
-                    m_us_gd_phong_toa_giai_toa.dcID_NGUOI_LAP = IP.Core.IPSystemAdmin.CAppContext_201.getCurrentUserID();
-                    break;
-                case eFormMode.DUYET_PHONG_TOA:
-                    m_us_gd_phong_toa_giai_toa.dcID_NGUOI_DUYET = IP.Core.IPSystemAdmin.CAppContext_201.getCurrentUserID();
-                    m_us_gd_phong_toa_giai_toa.SetID_NGUOI_LAPNull();
-                    break;
-                case eFormMode.DUYET_GIAI_TOA:
-                    m_us_gd_phong_toa_giai_toa.dcID_NGUOI_DUYET = IP.Core.IPSystemAdmin.CAppContext_201.getCurrentUserID();
-                    m_us_gd_phong_toa_giai_toa.SetID_NGUOI_LAPNull();
-                    break;
-                default: break;
-
-            }
-            m_us_gd_phong_toa_giai_toa.dcID_TRAI_CHU = m_us_trai_chu.dcID;
+                     m_us_gd_phong_toa_giai_toa.dcSO_LUONG = CIPConvert.ToDecimal(m_txt_so_luong_tp_cam_co.Text);
             m_us_gd_phong_toa_giai_toa.datNGAY_GIAO_DICH = m_dat_ngay.Value.Date;
             m_us_gd_phong_toa_giai_toa.strNGUOI_DAI_DIEN = m_txt_nguoi_dai_dien.Text;
             m_us_gd_phong_toa_giai_toa.strCHUC_DANH = m_txt_chuc_danh.Text;   
@@ -273,6 +308,35 @@ namespace BondApp
             m_us_gd_phong_toa_giai_toa.strGIAY_UQ = m_txt_theo_giay_uy_quyen_so.Text;
             m_us_gd_phong_toa_giai_toa.strNGUOI_XAC_NHAN = m_txt_nguoi_xac_nhan.Text;
             m_us_gd_phong_toa_giai_toa.strCHUC_VU = m_txt_chuc_vu.Text;
+                    break;
+                case eFormMode.LAP_PHONG_TOA:
+                    m_us_gd_phong_toa_giai_toa.strPHONG_TOA_YN = "Y";
+                    m_us_gd_phong_toa_giai_toa.dcID_TRAI_CHU = m_us_trai_chu.dcID;
+                    m_us_gd_phong_toa_giai_toa.SetID_NGUOI_DUYETNull();
+                    m_us_gd_phong_toa_giai_toa.dcID_NGUOI_LAP = IP.Core.IPSystemAdmin.CAppContext_201.getCurrentUserID();
+                    m_us_gd_phong_toa_giai_toa.dcSO_LUONG = CIPConvert.ToDecimal(m_txt_so_luong_tp_cam_co.Text);
+            m_us_gd_phong_toa_giai_toa.datNGAY_GIAO_DICH = m_dat_ngay.Value.Date;
+            m_us_gd_phong_toa_giai_toa.strNGUOI_DAI_DIEN = m_txt_nguoi_dai_dien.Text;
+            m_us_gd_phong_toa_giai_toa.strCHUC_DANH = m_txt_chuc_danh.Text;   
+            m_us_gd_phong_toa_giai_toa.dcID_TRANG_THAI = 0;
+            m_us_gd_phong_toa_giai_toa.strCUA = m_txt_cua.Text;
+            m_us_gd_phong_toa_giai_toa.datNGAY_CAP_GIAY_UQ = m_dat_ngay_cap_giay_uq.Value.Date;
+            m_us_gd_phong_toa_giai_toa.strGIAY_UQ = m_txt_theo_giay_uy_quyen_so.Text;
+            m_us_gd_phong_toa_giai_toa.strNGUOI_XAC_NHAN = m_txt_nguoi_xac_nhan.Text;
+            m_us_gd_phong_toa_giai_toa.strCHUC_VU = m_txt_chuc_vu.Text;
+                    break;
+                case eFormMode.DUYET_PHONG_TOA:
+                    m_us_gd_phong_toa_giai_toa.dcID_NGUOI_DUYET = IP.Core.IPSystemAdmin.CAppContext_201.getCurrentUserID();
+                 
+                    break;
+                case eFormMode.DUYET_GIAI_TOA:
+                    m_us_gd_phong_toa_giai_toa.dcID_NGUOI_DUYET = IP.Core.IPSystemAdmin.CAppContext_201.getCurrentUserID();
+                  
+                    break;
+                default: break;
+
+            }
+
 
 
         }
@@ -407,7 +471,26 @@ namespace BondApp
             try
             {
                 from_2_us_gd_phong_toa_giai_toa();
-                m_us_gd_phong_toa_giai_toa.CapNhatSoDuTraiPhieuPhongGiaiToan(m_us_gd_phong_toa_giai_toa.datNGAY_GIAO_DICH, m_us_gd_phong_toa_giai_toa.dcID_TRAI_CHU, 0, m_us_gd_phong_toa_giai_toa.dcSO_LUONG);
+                if (m_us_gd_phong_toa_giai_toa.dcID_TRANG_THAI == ID_TRANG_THAI_PGT.DA_DUYET)
+                {
+                    BaseMessages.MsgBox_Infor("Giao dịch này đã được duyệt rồi, hãy chọn giao dịch khác");
+                    return;
+                }
+                try
+                {
+                    m_us_gd_phong_toa_giai_toa.BeginTransaction();
+                    m_us_gd_phong_toa_giai_toa.CapNhatSoDuTraiPhieuPhongGiaiToan(m_us_gd_phong_toa_giai_toa.datNGAY_GIAO_DICH, m_us_gd_phong_toa_giai_toa.dcID_TRAI_CHU, 0, -m_us_gd_phong_toa_giai_toa.dcSO_LUONG);
+                    m_us_gd_phong_toa_giai_toa.duyet_giao_dich_pgt(m_us_gd_phong_toa_giai_toa.dcID_NGUOI_DUYET);
+                    m_us_gd_phong_toa_giai_toa.CommitTransaction();
+                    BaseMessages.MsgBox_Infor(10); 
+                }
+                catch (Exception v_e)
+                {
+                    m_us_gd_phong_toa_giai_toa.Rollback();
+                    throw v_e;
+                }
+               
+
             }
             catch (Exception v_e)
             {
