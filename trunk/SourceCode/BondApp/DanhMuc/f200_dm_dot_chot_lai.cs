@@ -105,6 +105,7 @@ namespace BondApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.m_cmd_duyet = new System.Windows.Forms.Button();
             this.m_lbl_ten_nguoi_lap = new System.Windows.Forms.Label();
             this.m_lbl_ten_nguoi_duyet = new System.Windows.Forms.Label();
             this.m_cmd_chon_trai_phieu = new System.Windows.Forms.Button();
@@ -129,7 +130,6 @@ namespace BondApp
             this.m_lbl_nguoi_lap = new System.Windows.Forms.Label();
             this.m_txt_ma_trai_phieu = new System.Windows.Forms.TextBox();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_cmd_duyet = new System.Windows.Forms.Button();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -296,6 +296,16 @@ namespace BondApp
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin trái phiếu";
+            // 
+            // m_cmd_duyet
+            // 
+            this.m_cmd_duyet.Enabled = false;
+            this.m_cmd_duyet.Location = new System.Drawing.Point(321, 102);
+            this.m_cmd_duyet.Name = "m_cmd_duyet";
+            this.m_cmd_duyet.Size = new System.Drawing.Size(120, 23);
+            this.m_cmd_duyet.TabIndex = 23;
+            this.m_cmd_duyet.Text = "Duyệt";
+            this.m_cmd_duyet.UseVisualStyleBackColor = true;
             // 
             // m_lbl_ten_nguoi_lap
             // 
@@ -531,16 +541,6 @@ namespace BondApp
             this.m_fg.Size = new System.Drawing.Size(755, 208);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 2;
-            // 
-            // m_cmd_duyet
-            // 
-            this.m_cmd_duyet.Enabled = false;
-            this.m_cmd_duyet.Location = new System.Drawing.Point(321, 102);
-            this.m_cmd_duyet.Name = "m_cmd_duyet";
-            this.m_cmd_duyet.Size = new System.Drawing.Size(120, 23);
-            this.m_cmd_duyet.TabIndex = 23;
-            this.m_cmd_duyet.Text = "Duyệt";
-            this.m_cmd_duyet.UseVisualStyleBackColor = true;
             // 
             // f200_dm_dot_chot_lai
             // 
@@ -798,6 +798,30 @@ namespace BondApp
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
 			m_fg.Redraw = true;
+
+            //Load ten nguoi dung
+            US_HT_NGUOI_SU_DUNG v_us_nguoi_dung = new US_HT_NGUOI_SU_DUNG();
+            DS_HT_NGUOI_SU_DUNG v_ds_nguoi_dung = new DS_HT_NGUOI_SU_DUNG();
+            v_us_nguoi_dung.FillDataset(v_ds_nguoi_dung);
+            Hashtable v_hst_nguoi_dung = new Hashtable();
+            foreach (DataRow v_dr in v_ds_nguoi_dung.HT_NGUOI_SU_DUNG.Rows)
+            {
+                v_hst_nguoi_dung.Add(v_dr[HT_NGUOI_SU_DUNG.ID], v_dr[HT_NGUOI_SU_DUNG.TEN]);
+            }
+            m_fg.Cols[(int)e_col_Number.ID_NGUOI_LAP].DataMap = v_hst_nguoi_dung;
+            m_fg.Cols[(int)e_col_Number.ID_NGUOI_DUYET].DataMap = v_hst_nguoi_dung;
+
+            //Load ma trai phieu
+            US_DM_TRAI_PHIEU v_us_trai_phieu= new US_DM_TRAI_PHIEU();
+            DS_DM_TRAI_PHIEU v_ds_trai_phieu = new DS_DM_TRAI_PHIEU();
+            v_us_trai_phieu.FillDataset(v_ds_trai_phieu);
+            Hashtable v_hst_trai_phieu = new Hashtable();
+            foreach (DataRow v_dr in v_ds_trai_phieu.DM_TRAI_PHIEU.Rows)
+            {
+                v_hst_nguoi_dung.Add(v_dr[DM_TRAI_PHIEU.ID], v_dr[DM_TRAI_PHIEU.MA_TRAI_PHIEU]);
+            }
+            m_fg.Cols[(int)e_col_Number.ID_TRAI_PHIEU].DataMap = v_hst_nguoi_dung;
+
 		}
 		private void grid2us_object(US_GD_CHOT_LAI i_us, int i_grid_row) {
 			DataRow v_dr;
@@ -929,11 +953,6 @@ namespace BondApp
 		}
 
 		private void m_cmd_exit_Click(object sender, EventArgs e) {
-            if ((m_e_form_mode == DataEntryFormMode.InsertDataState) || (m_e_form_mode == DataEntryFormMode.UpdateDataState))
-            {
-                reset();
-                return;
-            }
 			try{
 				this.Close();
 			}
