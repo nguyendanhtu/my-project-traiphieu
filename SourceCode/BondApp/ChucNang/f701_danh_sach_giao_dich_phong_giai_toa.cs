@@ -22,22 +22,25 @@ using BondDS;
 using BondDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
+using IP.Core.IPExcelReport;
 
-namespace SaleApp
+namespace BondApp
 {
 
 
 
 	public class f701_danh_sach_giao_dich_phong_giai_toa : System.Windows.Forms.Form
 	{
-		internal System.Windows.Forms.ImageList ImageList;
-		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
-		private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
-		internal SIS.Controls.Button.SiSButton m_cmd_delete;
-		internal SIS.Controls.Button.SiSButton m_cmd_update;
-		internal SIS.Controls.Button.SiSButton m_cmd_insert;
-		internal SIS.Controls.Button.SiSButton m_cmd_exit;
-		internal SIS.Controls.Button.SiSButton m_cmd_view;
+        internal System.Windows.Forms.ImageList ImageList;
+        private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
+        private GroupBox m_grb_thong_tin_ban_hang;
+        private DateTimePicker m_dat_to_date;
+        private Label label2;
+        private Label label1;
+        private DateTimePicker m_dat_from_date;
+        private Label m_lbl_header;
+        internal Panel m_pnl_out_place_dm;
+        internal SIS.Controls.Button.SiSButton m_cmd_exit;
 		private System.ComponentModel.IContainer components;
 
 		public f701_danh_sach_giao_dich_phong_giai_toa()
@@ -75,137 +78,163 @@ namespace SaleApp
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
-			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(f701_danh_sach_giao_dich_phong_giai_toa));
-			this.ImageList = new System.Windows.Forms.ImageList(this.components);
-			this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-			this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
-			this.m_cmd_update = new SIS.Controls.Button.SiSButton();
-			this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
-			this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-			this.m_cmd_view = new SIS.Controls.Button.SiSButton();
-			this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-			this.m_pnl_out_place_dm.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
-			this.SuspendLayout();
-			// 
-			// ImageList
-			// 
-			this.ImageList.ImageSize = new System.Drawing.Size(16, 16);
-			this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
-			this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
-			// 
-			// m_pnl_out_place_dm
-			// 
-			this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
-			this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
-			this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
-			this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
-			this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
-			this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.m_pnl_out_place_dm.DockPadding.All = 4;
-			this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 373);
-			this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
-			this.m_pnl_out_place_dm.Size = new System.Drawing.Size(686, 36);
-			this.m_pnl_out_place_dm.TabIndex = 19;
-			// 
-			// m_cmd_delete
-			// 
-			this.m_cmd_delete.AdjustImageLocation = new System.Drawing.Point(0, 0);
-			this.m_cmd_delete.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-			this.m_cmd_delete.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-			this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
-			this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.m_cmd_delete.ImageIndex = 4;
-			this.m_cmd_delete.ImageList = this.ImageList;
-			this.m_cmd_delete.Location = new System.Drawing.Point(506, 4);
-			this.m_cmd_delete.Name = "m_cmd_delete";
-			this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
-			this.m_cmd_delete.TabIndex = 14;
-			this.m_cmd_delete.Text = "&Xoá";
-			// 
-			// m_cmd_update
-			// 
-			this.m_cmd_update.AdjustImageLocation = new System.Drawing.Point(0, 0);
-			this.m_cmd_update.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-			this.m_cmd_update.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-			this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
-			this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.m_cmd_update.ImageIndex = 3;
-			this.m_cmd_update.ImageList = this.ImageList;
-			this.m_cmd_update.Location = new System.Drawing.Point(418, 4);
-			this.m_cmd_update.Name = "m_cmd_update";
-			this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
-			this.m_cmd_update.TabIndex = 13;
-			this.m_cmd_update.Text = "&Sửa";
-			// 
-			// m_cmd_insert
-			// 
-			this.m_cmd_insert.AdjustImageLocation = new System.Drawing.Point(0, 0);
-			this.m_cmd_insert.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-			this.m_cmd_insert.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-			this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
-			this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.m_cmd_insert.ImageIndex = 2;
-			this.m_cmd_insert.ImageList = this.ImageList;
-			this.m_cmd_insert.Location = new System.Drawing.Point(330, 4);
-			this.m_cmd_insert.Name = "m_cmd_insert";
-			this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
-			this.m_cmd_insert.TabIndex = 12;
-			this.m_cmd_insert.Text = "&Thêm";
-			// 
-			// m_cmd_exit
-			// 
-			this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
-			this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-			this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-			this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
-			this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.m_cmd_exit.ImageIndex = 12;
-			this.m_cmd_exit.ImageList = this.ImageList;
-			this.m_cmd_exit.Location = new System.Drawing.Point(594, 4);
-			this.m_cmd_exit.Name = "m_cmd_exit";
-			this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-			this.m_cmd_exit.TabIndex = 11;
-			this.m_cmd_exit.Text = "Thoát (Esc)";
-			// 
-			// m_cmd_view
-			// 
-			this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
-			this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-			this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-			this.m_cmd_view.Dock = System.Windows.Forms.DockStyle.Left;
-			this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.m_cmd_view.ImageIndex = 18;
-			this.m_cmd_view.ImageList = this.ImageList;
-			this.m_cmd_view.Location = new System.Drawing.Point(4, 4);
-			this.m_cmd_view.Name = "m_cmd_view";
-			this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
-			this.m_cmd_view.TabIndex = 21;
-			this.m_cmd_view.Text = "Xem";
-			// 
-			// m_fg
-			// 
-			this.m_fg.ColumnInfo = @"21,1,0,0,0,85,Columns:0{Width:13;}	 9{Caption:""Phong tỏa YN"";Visible:True;DataType:System.Boolean;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}18{Caption:""ID người lập"";Visible:True;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}13{Caption:""Người xác nhận"";Visible:True;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}2{Caption:""Số lượng"";Visible:True;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}5{Caption:""Chức danh"";Visible:True;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}15{Caption:""Giấy ủy quyền số"";Visible:True;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}17{Caption:""Ngày cấp giấy ủy quyền"";Visible:True;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}16{Caption:""Của"";Visible:True;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}9{Caption:""Ngân hàng cầm cố"";Visible:True;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}1{Caption:""ID trái chủ"";Visible:True;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}20{Caption:""ID trạng thái"";Visible:True;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}19{Caption:""ID người duyệt"";Visible:True;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}3{Caption:""Ngày giao dịch"";Visible:True;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}14{Caption:""Chức vụ"";Visible:True;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}10{Caption:""Khoản đầu tư"";Visible:True;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}7{Caption:""Điện thoại"";Visible:True;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}4{Caption:""Người đại diện"";Visible:True;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}6{Caption:""Trụ sở chính"";Visible:True;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}8{Caption:""Fax"";Visible:True;DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	";
-			this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.m_fg.Location = new System.Drawing.Point(0, 0);
-			this.m_fg.Name = "m_fg";
-			this.m_fg.Size = new System.Drawing.Size(686, 373);
-			this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(@"Normal{Font:Microsoft Sans Serif, 8.25pt;}	Alternate{BackColor:Info;}	Fixed{BackColor:Control;ForeColor:ControlText;Border:Flat,1,ControlDark,Both;}	Highlight{BackColor:Highlight;ForeColor:HighlightText;}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	EmptyArea{BackColor:AppWorkspace;Border:Flat,1,ControlDarkDark,Both;}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal2{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	");
-			this.m_fg.TabIndex = 20;
-			// 
-			// f701_danh_sach_giao_dich_phong_giai_toa
-			// 
-			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-			this.ClientSize = new System.Drawing.Size(686, 409);
-			this.Controls.Add(this.m_fg);
-			this.Controls.Add(this.m_pnl_out_place_dm);
-			this.Name = "f701_danh_sach_giao_dich_phong_giai_toa";
-			this.Text = "f701_danh_sach_giao_dich_phong_giai_toa";
-			this.Load += new System.EventHandler(this.f701_danh_sach_giao_dich_phong_giai_toa_Load);
-			this.m_pnl_out_place_dm.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
-			this.ResumeLayout(false);
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f701_danh_sach_giao_dich_phong_giai_toa));
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
+            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_grb_thong_tin_ban_hang = new System.Windows.Forms.GroupBox();
+            this.m_dat_to_date = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_dat_from_date = new System.Windows.Forms.DateTimePicker();
+            this.m_lbl_header = new System.Windows.Forms.Label();
+            this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
+            this.m_grb_thong_tin_ban_hang.SuspendLayout();
+            this.m_pnl_out_place_dm.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // ImageList
+            // 
+            this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
+            this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.ImageList.Images.SetKeyName(0, "");
+            this.ImageList.Images.SetKeyName(1, "");
+            this.ImageList.Images.SetKeyName(2, "");
+            this.ImageList.Images.SetKeyName(3, "");
+            this.ImageList.Images.SetKeyName(4, "");
+            this.ImageList.Images.SetKeyName(5, "");
+            this.ImageList.Images.SetKeyName(6, "");
+            this.ImageList.Images.SetKeyName(7, "");
+            this.ImageList.Images.SetKeyName(8, "");
+            this.ImageList.Images.SetKeyName(9, "");
+            this.ImageList.Images.SetKeyName(10, "");
+            this.ImageList.Images.SetKeyName(11, "");
+            this.ImageList.Images.SetKeyName(12, "");
+            this.ImageList.Images.SetKeyName(13, "");
+            this.ImageList.Images.SetKeyName(14, "");
+            this.ImageList.Images.SetKeyName(15, "");
+            this.ImageList.Images.SetKeyName(16, "");
+            this.ImageList.Images.SetKeyName(17, "");
+            this.ImageList.Images.SetKeyName(18, "");
+            this.ImageList.Images.SetKeyName(19, "");
+            this.ImageList.Images.SetKeyName(20, "");
+            this.ImageList.Images.SetKeyName(21, "");
+            // 
+            // m_fg
+            // 
+            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_fg.Location = new System.Drawing.Point(0, 101);
+            this.m_fg.Name = "m_fg";
+            this.m_fg.Size = new System.Drawing.Size(878, 398);
+            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
+            this.m_fg.TabIndex = 20;
+            // 
+            // m_grb_thong_tin_ban_hang
+            // 
+            this.m_grb_thong_tin_ban_hang.Controls.Add(this.m_dat_to_date);
+            this.m_grb_thong_tin_ban_hang.Controls.Add(this.label2);
+            this.m_grb_thong_tin_ban_hang.Controls.Add(this.label1);
+            this.m_grb_thong_tin_ban_hang.Controls.Add(this.m_dat_from_date);
+            this.m_grb_thong_tin_ban_hang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_grb_thong_tin_ban_hang.Location = new System.Drawing.Point(0, 31);
+            this.m_grb_thong_tin_ban_hang.Name = "m_grb_thong_tin_ban_hang";
+            this.m_grb_thong_tin_ban_hang.Size = new System.Drawing.Size(878, 70);
+            this.m_grb_thong_tin_ban_hang.TabIndex = 32;
+            this.m_grb_thong_tin_ban_hang.TabStop = false;
+            this.m_grb_thong_tin_ban_hang.Text = "Thông tin giao dịch phong tỏa";
+            // 
+            // m_dat_to_date
+            // 
+            this.m_dat_to_date.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_to_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_to_date.Location = new System.Drawing.Point(526, 26);
+            this.m_dat_to_date.Name = "m_dat_to_date";
+            this.m_dat_to_date.Size = new System.Drawing.Size(200, 20);
+            this.m_dat_to_date.TabIndex = 26;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(459, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "đến ngày";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(176, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Từ ngày";
+            // 
+            // m_dat_from_date
+            // 
+            this.m_dat_from_date.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_from_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_from_date.Location = new System.Drawing.Point(243, 26);
+            this.m_dat_from_date.Name = "m_dat_from_date";
+            this.m_dat_from_date.Size = new System.Drawing.Size(200, 20);
+            this.m_dat_from_date.TabIndex = 24;
+            // 
+            // m_lbl_header
+            // 
+            this.m_lbl_header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_header.ForeColor = System.Drawing.Color.DarkRed;
+            this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
+            this.m_lbl_header.Name = "m_lbl_header";
+            this.m_lbl_header.Size = new System.Drawing.Size(878, 31);
+            this.m_lbl_header.TabIndex = 31;
+            this.m_lbl_header.Text = "F701 - DANH SÁCH TÌNH HÌNH PHONG TỎA";
+            this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // m_pnl_out_place_dm
+            // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
+            this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 499);
+            this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
+            this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(878, 36);
+            this.m_pnl_out_place_dm.TabIndex = 30;
+            // 
+            // m_cmd_exit
+            // 
+            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_exit.ImageIndex = 12;
+            this.m_cmd_exit.ImageList = this.ImageList;
+            this.m_cmd_exit.Location = new System.Drawing.Point(786, 4);
+            this.m_cmd_exit.Name = "m_cmd_exit";
+            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_exit.TabIndex = 11;
+            this.m_cmd_exit.Text = "Thoát (Esc)";
+            // 
+            // f701_danh_sach_giao_dich_phong_giai_toa
+            // 
+            this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.ClientSize = new System.Drawing.Size(878, 535);
+            this.Controls.Add(this.m_fg);
+            this.Controls.Add(this.m_grb_thong_tin_ban_hang);
+            this.Controls.Add(this.m_lbl_header);
+            this.Controls.Add(this.m_pnl_out_place_dm);
+            this.Name = "f701_danh_sach_giao_dich_phong_giai_toa";
+            this.Text = "f701_danh_sach_giao_dich_phong_giai_toa";
+            this.Load += new System.EventHandler(this.f701_danh_sach_giao_dich_phong_giai_toa_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
+            this.m_grb_thong_tin_ban_hang.ResumeLayout(false);
+            this.m_grb_thong_tin_ban_hang.PerformLayout();
+            this.m_pnl_out_place_dm.ResumeLayout(false);
+            this.ResumeLayout(false);
 
 		}
 		#endregion
@@ -214,6 +243,20 @@ namespace SaleApp
 		public void display(){			
 			this.ShowDialog();
 		}
+        public void display_danh_sach_phong_toa()
+        {
+            this.Text = "F659 - Báo cáo tình hình phong tỏa";
+            m_lbl_header.Text = "F659 - BÁO CÁO TÌNH HÌNH PHONG TỎA";
+            m_e_form_mode = e_form_mode.DANH_SACH_PHONG_TOA;
+            this.ShowDialog();
+        }
+        public void display_danh_sach_giai_toa()
+        {
+            this.Text = "F660 - Báo cáo tình hình giải tỏa";
+            m_lbl_header.Text = "F660 - BÁO CÁO TÌNH HÌNH GIẢI TỎA";
+            m_e_form_mode = e_form_mode.DANH_SACH_GIAI_TOA;
+            this.ShowDialog();
+        }
 		#endregion
 
 		#region Data Structure
@@ -238,13 +281,19 @@ namespace SaleApp
 ,NDD_TRU_SO = 6
 ,NDD_FAX = 8
 
-		}			
+		}
+        private enum e_form_mode
+        {
+            DANH_SACH_PHONG_TOA = 1
+            , DANH_SACH_GIAI_TOA = 2
+        }
 		#endregion
 
 		#region Members
 		ITransferDataRow m_obj_trans;		
 		DS_GD_PHONG_GIAI_TOA m_ds = new DS_GD_PHONG_GIAI_TOA();
 		US_GD_PHONG_GIAI_TOA m_us = new US_GD_PHONG_GIAI_TOA();
+        e_form_mode m_e_form_mode = e_form_mode.DANH_SACH_PHONG_TOA;
 		#endregion
 
 		#region Private Methods
