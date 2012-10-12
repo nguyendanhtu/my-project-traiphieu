@@ -48,7 +48,12 @@ namespace BondApp.ChucNang
             m_us_gd_cap_nhat_ls = ip_us_cap_nhat_lai_suat;
             us_gd_cap_nhat_ls_2_from();
             this.ShowDialog();
-        }        
+        }
+        public void display_bao_cao_lai_suat()
+        {
+            m_e_form_mode = eFormMode.BAO_CAO_LAI_SUAT;            
+            this.ShowDialog();
+        }
         #endregion
 
         #region Data Structures
@@ -56,7 +61,8 @@ namespace BondApp.ChucNang
         {
             LAP_GD_THAY_DOI_LS,
             SUA_GD_THAY_DOI_LS,           
-            XEM_GIAO_DICH
+            XEM_GIAO_DICH,
+            BAO_CAO_LAI_SUAT
         }
 
         private enum e_col_Number
@@ -103,7 +109,7 @@ namespace BondApp.ChucNang
                 case eFormMode.LAP_GD_THAY_DOI_LS:
                     m_cmd_lap_gd.Enabled = true;
                     m_cmd_sua_gd.Enabled = false;
-                    m_cmd_duyet_gd.Enabled = false;                   
+                    m_cmd_duyet_gd.Enabled = false;                    
                     resetcontrl();
                     break;
                 case eFormMode.SUA_GD_THAY_DOI_LS:
@@ -117,6 +123,13 @@ namespace BondApp.ChucNang
                     m_cmd_sua_gd.Enabled = false;
                     m_cmd_duyet_gd.Enabled = false;
                     m_gru_thong_tin_trai_phieu.Enabled = false;
+                    m_gru_thong_tin_cap_nhat.Enabled = false;
+                    break;
+                case eFormMode.BAO_CAO_LAI_SUAT:
+                    m_cmd_lap_gd.Visible = false;
+                    m_cmd_sua_gd.Visible = false;
+                    m_cmd_duyet_gd.Visible = false;
+                    m_cmd_xuat_bao_cao.Visible = true;                 
                     m_gru_thong_tin_cap_nhat.Enabled = false;
                     break;
                 default:
@@ -298,7 +311,13 @@ namespace BondApp.ChucNang
                 MessageBox.Show("Chưa nhập đủ thông tin cần thiết!");
                 return;
             }
-            m_chb_xac_nhan.Checked = true;
+            if (m_chb_xac_nhan.Checked)
+            {
+                MessageBox.Show("Giao dịch đã được duyệt từ trước!");
+                return;
+            }
+            else
+                m_chb_xac_nhan.Checked = true;
             form_2_us_gd_cap_nhat_ls();
             try
             {
