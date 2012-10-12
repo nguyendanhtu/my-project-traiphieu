@@ -127,6 +127,15 @@ namespace BondApp
                     us_trai_phieu_2_form();
                     m_obj_trans = get_trans_object(m_fg);
                     load_data_2_grid();
+                    m_cmd_generate.Visible = true;
+                    m_cmd_thong_bao_tien_lai.Visible = false;
+                    m_cmd_thong_bao_ls.Visible = true;
+                    m_cmd_tra_goc.Visible = false;
+                    m_cmd_tra_lai.Visible = false;
+                    m_cmd_insert.Visible = true;
+                    m_cmd_update.Visible = true;
+                    m_cmd_delete.Visible = true;
+                    m_cmd_cap_nhat_lai_suat.Visible = true;
                     break;
                 case e_form_mode.HIEN_THI_KHONG_TRAI_PHIEU:
                     m_obj_trans = get_trans_object(m_fg);
@@ -136,6 +145,8 @@ namespace BondApp
                     m_lbl_header.Text = "F650 - SINH LỊCH THANH TOÁN LÃI GỐC";
                     this.Text = "F650 - Sinh lịch thanh toán lãi gốc";
                     m_cmd_generate.Visible = false;
+                    m_cmd_thong_bao_ls.Visible = false;
+                    m_cmd_thong_bao_tien_lai.Visible = false;
                     break;
                 case e_form_mode.KHONG_TRAI_PHIEU_THONG_BAO_LAI_SUAT:
                     m_obj_trans = get_trans_object(m_fg);
@@ -149,6 +160,7 @@ namespace BondApp
                     m_cmd_insert.Visible = false;
                     m_cmd_update.Visible = false;
                     m_cmd_delete.Visible = false;
+                    m_cmd_cap_nhat_lai_suat.Visible = false;
                     break;
                 case e_form_mode.KHONG_TRAI_PHIEU_THONG_BAO_NGAY_CHOT_DS_LAI:
                     m_obj_trans = get_trans_object(m_fg);
@@ -162,6 +174,7 @@ namespace BondApp
                     m_cmd_insert.Visible = false;
                     m_cmd_update.Visible = false;
                     m_cmd_delete.Visible = false;
+                    m_cmd_cap_nhat_lai_suat.Visible = false;
                     break;
                 case e_form_mode.KHONG_TRAI_PHIEU_THONG_BAO_TT_LAI:
                     m_obj_trans = get_trans_object(m_fg);
@@ -175,6 +188,7 @@ namespace BondApp
                     m_cmd_insert.Visible = false;
                     m_cmd_update.Visible = false;
                     m_cmd_delete.Visible = false;
+                    m_cmd_cap_nhat_lai_suat.Visible = false;
                     break;
                 default:
                     break;
@@ -356,6 +370,11 @@ namespace BondApp
             }
             else
                 m_cmd_tra_lai.Enabled = false;
+            if (v_us.strCAP_NHAT_LS_YN.Equals("Y"))
+                m_cmd_cap_nhat_lai_suat.Enabled = true;
+            else
+                m_cmd_cap_nhat_lai_suat.Enabled = false;
+
         }
 
         private void display_tra_goc()
