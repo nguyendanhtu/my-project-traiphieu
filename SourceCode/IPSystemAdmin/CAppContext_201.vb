@@ -112,8 +112,8 @@ Public Class PHAN_QUYEN
     Public Const DUYET_GIAI_TOA As String = "Q17"
     Public Const DANH_SACH_GIAI_TOA As String = "Q20"
 
-    Public Const QUAN_LY_THAM_SO_HE_THONG As String = "Q18"
-    Public Const QUAN_LY_THAM_SO_NHAC_VIEC As String = "Q19"
+    Public Const QUAN_LY_THAM_SO_HE_THONG As String = "Q051"
+    Public Const QUAN_LY_THAM_SO_NHAC_VIEC As String = "Q052"
 
     Public Const IMPORT_TRAI_CHU As String = "Q21"
     Public Const LAP_LICH_THANH_TOAN_LAI_GOC As String = "Q22"
