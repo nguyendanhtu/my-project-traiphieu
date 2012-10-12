@@ -41,10 +41,17 @@ namespace BondApp
         private C1FlexGrid m_fg;
         internal SIS.Controls.Button.SiSButton m_cmd_insert;
 		private System.ComponentModel.IContainer components;
-        public f201_dm_gd_chot_lai_detail()
+        //public f201_dm_gd_chot_lai_detail()
+        //{
+        //    InitializeComponent();
+        //    format_controls();
+        //}
+        public f201_dm_gd_chot_lai_detail(US_GD_CHOT_LAI ip_us_gd_chot_lai)
         {
             InitializeComponent();
             format_controls();
+            m_us_chot_lai = ip_us_gd_chot_lai;
+
         }
 		protected override void Dispose( bool disposing )
 		{
@@ -268,13 +275,14 @@ namespace BondApp
 		public void display(){			
 			this.ShowDialog();
 		}
-        public void display_danh_sach_chot_lai(US_GD_CHOT_LAI_DETAIL ip_us_gd_chot_lai_detail)
-        {
-            m_us = ip_us_gd_chot_lai_detail;
-            m_us.us2ds(m_ds);
-            m_e_form_mode = DataEntryFormMode.ViewDataState;
-            this.ShowDialog();
-        }
+        //public void display_danh_sach_chot_lai(US_GD_CHOT_LAI ip_us_gd_chot_lai)
+        //{
+        //    m_ds = new DS_GD_CHOT_LAI_DETAIL();
+        //    ip_us_gd_chot_lai.fillDSChotLaiDetail(m_ds);
+        //    m_us.FillDataset(m_ds);
+        //    m_e_form_mode = DataEntryFormMode.ViewDataState;
+        //    this.ShowDialog();
+        //}
 
 		#endregion
 
@@ -293,6 +301,7 @@ namespace BondApp
 		ITransferDataRow m_obj_trans;		
 		DS_GD_CHOT_LAI_DETAIL m_ds = new DS_GD_CHOT_LAI_DETAIL();
 		US_GD_CHOT_LAI_DETAIL m_us = new US_GD_CHOT_LAI_DETAIL();
+        US_GD_CHOT_LAI m_us_chot_lai = new US_GD_CHOT_LAI();
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
 		#endregion
 
@@ -329,7 +338,7 @@ namespace BondApp
                     break;
             }		
 			m_obj_trans = get_trans_object(m_fg);
-            load_data_2_grid_by_id_gd_chot_lai();		
+            load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -349,8 +358,10 @@ namespace BondApp
         //    CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
         //    m_fg.Redraw = true;
         //}
-        private void load_data_2_grid_by_id_gd_chot_lai()
+        private void load_data_2_grid()
         {
+            m_ds = new DS_GD_CHOT_LAI_DETAIL();
+            m_us_chot_lai.fillDSChotLaiDetail(m_ds);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;

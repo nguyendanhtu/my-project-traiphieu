@@ -519,7 +519,7 @@ namespace BondApp
 		ITransferDataRow m_obj_trans;		
 		DS_GD_CHOT_LAI m_ds = new DS_GD_CHOT_LAI();
 		US_GD_CHOT_LAI m_us_gd_dot_chot_lai = new US_GD_CHOT_LAI();
-        US_GD_CHOT_LAI_DETAIL m_us_gd_dot_chot_lai_detail = new US_GD_CHOT_LAI_DETAIL();
+        //US_GD_CHOT_LAI_DETAIL m_us_gd_dot_chot_lai_detail = new US_GD_CHOT_LAI_DETAIL();
         US_DM_TRAI_PHIEU m_us_dm_trai_phieu = new US_DM_TRAI_PHIEU();
 		#endregion
 
@@ -615,7 +615,14 @@ namespace BondApp
 				v_objErrHandler.showErrorMessage();
 			}
 		}
-
+        private void gen_gd_chot_lai()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us_gd_dot_chot_lai, m_fg.Row);
+            f201_dm_gd_chot_lai_detail v_f201 = new f201_dm_gd_chot_lai_detail(m_us_gd_dot_chot_lai);
+            v_f201.display();
+        }
 		private void set_define_events(){
             this.Load += new EventHandler(f200_dm_dot_chot_lai_Load);
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
@@ -663,6 +670,7 @@ namespace BondApp
 
 		private void m_cmd_gen_Click(object sender, EventArgs e) {
 			try{
+                gen_gd_chot_lai();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
