@@ -428,9 +428,9 @@
             this.m_cmd_thong_bao_tien_lai.ImageList = this.ImageList;
             this.m_cmd_thong_bao_tien_lai.Location = new System.Drawing.Point(470, 4);
             this.m_cmd_thong_bao_tien_lai.Name = "m_cmd_thong_bao_tien_lai";
-            this.m_cmd_thong_bao_tien_lai.Size = new System.Drawing.Size(129, 28);
+            this.m_cmd_thong_bao_tien_lai.Size = new System.Drawing.Size(199, 28);
             this.m_cmd_thong_bao_tien_lai.TabIndex = 26;
-            this.m_cmd_thong_bao_tien_lai.Text = "Thông báo tiền lãi";
+            this.m_cmd_thong_bao_tien_lai.Text = "Thông báo ngày chốt danh sách lãi";
             // 
             // m_cmd_tra_goc
             // 
