@@ -243,7 +243,7 @@ namespace BondApp
             v_obj_word_rpt.AddFindAndReplace("<KY_HAN>", m_txt_ky_han.Text + " năm"); // Can phai sua
             v_obj_word_rpt.AddFindAndReplace("<KY_TINH_LAI>", m_txt_ky_tinh_lai.Text + " tháng");
             v_obj_word_rpt.AddFindAndReplace("<LAI_SUAT>", m_txt_lai_suat.Text);
-            v_obj_word_rpt.AddFindAndReplace("<NGAY_THANH_TOAN>", );
+            //v_obj_word_rpt.AddFindAndReplace("<NGAY_THANH_TOAN>", );
 
 
             v_obj_word_rpt.Export2Word(true);
