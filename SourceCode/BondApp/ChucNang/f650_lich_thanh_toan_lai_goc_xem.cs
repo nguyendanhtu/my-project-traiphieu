@@ -66,6 +66,7 @@ namespace BondApp
         {
             HIEN_THI_CO_TRAI_PHIEU = 1
             , HIEN_THI_KHONG_TRAI_PHIEU = 2
+
         }
         #endregion
 
@@ -227,6 +228,24 @@ namespace BondApp
             v_obj_word_rpt.Export2Word(true);
         }
 
+        private void thong_bao_ngay_chot_tien_lai()
+        {
+            grid2us_object(m_us_gd_lich_tt_lai_goc, m_fg.Row);
+            IP.Core.IPWordReport.CWordReport v_obj_word_rpt = new CWordReport("f750_TB Trai Chu Ngay Chot.doc");
+            //v_obj_word_rpt.AddFindAndReplace("<NGAY_CAP_NHAT_LAI_SUAT>", CIPConvert.ToStr(m_us_gd_lich_tt_lai_goc.datNGAY));
+            //v_obj_word_rpt.AddFindAndReplace("<TEN_TRAI_PHIEU>", m_us_trai_phieu.strTEN_TRAI_PHIEU);
+            v_obj_word_rpt.AddFindAndReplace("<MENH_GIA>", m_txt_menh_gia.Text +"VNĐ");
+            v_obj_word_rpt.AddFindAndReplace("<NGAY_PHAT_HANH>", m_txt_ngay_phat_hanh.Text);
+            v_obj_word_rpt.AddFindAndReplace("<NGAY_DAO_HAN>", m_txt_ngay_dao_han.Text);
+            v_obj_word_rpt.AddFindAndReplace("<SO_LUONG_TRAI_PHIEU>", m_txt_tong_so_luong_trai_phieu.Text);
+            v_obj_word_rpt.AddFindAndReplace("<TONG_GIA_TRI_TRAI_PHIEU>", m_txt_tong_gia_tri_trai_phieu.Text + "VNĐ");
+            v_obj_word_rpt.AddFindAndReplace("<KY_HAN>", m_txt_ky_han.Text + " năm"); // Can phai sua
+            v_obj_word_rpt.AddFindAndReplace("<KY_TINH_LAI>", m_txt_ky_tinh_lai.Text + " tháng");
+            v_obj_word_rpt.AddFindAndReplace("<LAI_SUAT>", m_txt_lai_suat.Text);
+            v_obj_word_rpt.Export2Word(true);
+        }
+
+
         private void select_trai_phieu()
         {
             f300_dm_trai_phieu v_frm300 = new f300_dm_trai_phieu();
@@ -284,6 +303,7 @@ namespace BondApp
             m_fg.Click += new EventHandler(m_fg_Click);
             m_cmd_tra_goc.Click += new EventHandler(m_cmd_tra_goc_Click);
             m_cmd_tra_lai.Click += new EventHandler(m_cmd_tra_lai_Click);
+            m_cmd_thong_bao_tien_lai.Click += new EventHandler(m_cmd_thong_bao_tien_lai_Click);
         }
 
         void m_fg_Click(object sender, EventArgs e)
@@ -343,6 +363,19 @@ namespace BondApp
             catch (Exception v_e)
             {
                 
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_thong_bao_tien_lai_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                thong_bao_ngay_chot_tien_lai();
+            }
+            catch (Exception v_e)
+            {
+
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
