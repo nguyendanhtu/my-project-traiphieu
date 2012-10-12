@@ -266,6 +266,7 @@ namespace BondApp
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if (m_fg.Rows[m_fg.Row].UserData == null) return;
             if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
             US_GD_LICH_THANH_TOAN_LAI_GOC v_us = new US_GD_LICH_THANH_TOAN_LAI_GOC();
             grid2us_object(v_us, m_fg.Row);
@@ -286,6 +287,7 @@ namespace BondApp
         }
 
         private void thong_bao_lai_suat(){
+            if (m_fg.Rows[m_fg.Row].UserData == null) return;
             grid2us_object(m_us_gd_lich_tt_lai_goc, m_fg.Row);
             IP.Core.IPWordReport.CWordReport v_obj_word_rpt = new CWordReport("f750_ TB Lai Suat.doc");
             v_obj_word_rpt.AddFindAndReplace("<NGAY_CAP_NHAT_LAI_SUAT>", CIPConvert.ToStr(m_us_gd_lich_tt_lai_goc.datNGAY));
@@ -303,6 +305,7 @@ namespace BondApp
 
         private void thong_bao_ngay_chot_tien_lai()
         {
+            if (m_fg.Rows[m_fg.Row].UserData == null) return;
             grid2us_object(m_us_gd_lich_tt_lai_goc, m_fg.Row);
             IP.Core.IPWordReport.CWordReport v_obj_word_rpt = new CWordReport("f750_TB Trai Chu Ngay Chot.doc");
             //v_obj_word_rpt.AddFindAndReplace("<NGAY_CAP_NHAT_LAI_SUAT>", CIPConvert.ToStr(m_us_gd_lich_tt_lai_goc.datNGAY));
