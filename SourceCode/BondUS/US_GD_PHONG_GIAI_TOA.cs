@@ -544,6 +544,27 @@ namespace BondUS
 
             v_pr_obj.ExecuteCommand(this);
         }
+        public void fill_dataset_by_date_trang_thai(DS_GD_PHONG_GIAI_TOA ip_ds_gd_phong_giai_toa                                                           
+                                                            , string ip_str_phong_toa_yn
+                                                            , decimal ip_dc_trang_thai
+                                                            , DateTime ip_dat_tu_ngay
+                                                            , DateTime ip_dat_den_ngay)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_GD_PHONG_GIAI_TOAN_fill_data_by_date_trang_thai");           
+            v_cstore.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay);
+            v_cstore.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay);
+            v_cstore.addNVarcharInputParam("@PHONG_TOA_YN", ip_str_phong_toa_yn);
+            v_cstore.addDecimalInputParam("@TRANG_THAI", ip_dc_trang_thai);
+            v_cstore.fillDataSetByCommand(this, ip_ds_gd_phong_giai_toa);
+        }
+        public void duyet_giao_dich_pgt(decimal ip_dc_id_nguoi_duyet)
+        {
+            CStoredProc v_cstore = new CStoredProc("pr_GD_PHONG_GIAI_TOA_Update_nguoi_duyet");
+            v_cstore.addDecimalInputParam("@ID", this.dcID);
+            v_cstore.addDecimalInputParam("@ID_NGUOI_DUYET", ip_dc_id_nguoi_duyet);
+            v_cstore.ExecuteCommand(this);
+        }
+
         #endregion
 
 
