@@ -243,9 +243,9 @@ namespace BondApp
             v_obj_word_rpt.AddFindAndReplace("<KY_HAN>", m_txt_ky_han.Text + " năm"); // Can phai sua
             v_obj_word_rpt.AddFindAndReplace("<KY_TINH_LAI>", m_txt_ky_tinh_lai.Text + " tháng");
             v_obj_word_rpt.AddFindAndReplace("<LAI_SUAT>", m_txt_lai_suat.Text);
-            //v_obj_word_rpt.AddFindAndReplace("<NGAY_THANH_TOAN>", );
-
-
+            v_obj_word_rpt.AddFindAndReplace("<NGAY_THANH_TOAN>", CIPConvert.ToStr(m_us_gd_lich_tt_lai_goc.datNGAY));
+            v_obj_word_rpt.AddFindAndReplace("<MUC_DICH>", m_us_gd_chot_lai.strMUC_DICH);
+            v_obj_word_rpt.AddFindAndReplace("<NGAY_CHOT_DANH_SACH>", CIPConvert.ToStr(m_us_gd_chot_lai.datNGAY_CHOT_LAI));
             v_obj_word_rpt.Export2Word(true);
         }
 
