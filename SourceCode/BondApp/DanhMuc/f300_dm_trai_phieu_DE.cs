@@ -62,15 +62,15 @@ namespace BondApp.DanhMuc
         private void us_object_2_form(US_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
             m_us_tu_dien = new US_CM_DM_TU_DIEN(ip_us_trai_phieu.dcID_LOAI_TRAI_PHIEU);
-            m_txt_ten_trai_phieu.Text = m_us_trai_phieu.strTEN_TRAI_PHIEU;
-            m_txt_ma_trai_phieu.Text = m_us_trai_phieu.strMA_TRAI_PHIEU;
-            m_txt_ky_han.Text = CIPConvert.ToStr(m_us_trai_phieu.dcKY_HAN);
-            m_txt_ky_dieu_chinh_ls.Text = CIPConvert.ToStr(m_us_trai_phieu.dcKY_DIEU_CHINH_LS);
-            m_txt_ky_tra_lai.Text = CIPConvert.ToStr(m_us_trai_phieu.dcKY_TRA_LAI);
-            m_txt_menh_gia.Text = CIPConvert.ToStr(m_us_trai_phieu.dcMENH_GIA, "#,###");
-            m_txt_tong_sl.Text = CIPConvert.ToStr(m_us_trai_phieu.dcTONG_SL_PHAT_HANH, "#,###");
-            m_txt_lai_suat.Text = CIPConvert.ToStr(m_us_trai_phieu.dcLAI_SUAT_DEFAULT*100);
-            m_dat_ngay_dao_han.Value = m_us_trai_phieu.datNGAY_DAO_HAN;
+            m_txt_ten_trai_phieu.Text = ip_us_trai_phieu.strTEN_TRAI_PHIEU;
+            m_txt_ma_trai_phieu.Text = ip_us_trai_phieu.strMA_TRAI_PHIEU;
+            m_txt_ky_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_HAN);
+            m_txt_ky_dieu_chinh_ls.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_DIEU_CHINH_LS);
+            m_txt_ky_tra_lai.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_TRA_LAI);
+            m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcMENH_GIA, "#,###");
+            m_txt_tong_sl.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcTONG_SL_PHAT_HANH, "#,###");
+            m_txt_lai_suat.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcLAI_SUAT_DEFAULT*100);
+            m_dat_ngay_dao_han.Value = ip_us_trai_phieu.datNGAY_DAO_HAN;
 
             // Thông tin phát hành
             US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(ip_us_trai_phieu.dcID_DOT_PHAT_HANH);
@@ -81,30 +81,30 @@ namespace BondApp.DanhMuc
                 if(!v_us_dm_to_chuc_phat_hanh.IsIDNull()) m_txt_ten_dv_phat_hanh.Text = v_us_dm_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HANH;
             }
 
-            m_cbo_co_so_tinh_lai.SelectedText = m_us_trai_phieu.strCO_SO_TINH_LAI;
+            m_cbo_co_so_tinh_lai.SelectedText = ip_us_trai_phieu.strCO_SO_TINH_LAI;
             m_cbo_loai_trai_phieu.SelectedText = m_us_tu_dien.strTEN;
             m_cbo_loai_trai_phieu.SelectedValue = m_us_tu_dien.dcID;
 
-            m_us_tu_dien = new US_CM_DM_TU_DIEN(m_us_trai_phieu.dcID_DV_KY_HAN);
+            m_us_tu_dien = new US_CM_DM_TU_DIEN(ip_us_trai_phieu.dcID_DV_KY_HAN);
             m_cbo_don_vi_ky_han.SelectedText = m_us_tu_dien.strTEN;
             m_cbo_don_vi_ky_han.SelectedValue = m_us_tu_dien.dcID;
 
-            m_us_tu_dien = new US_CM_DM_TU_DIEN(m_us_trai_phieu.dcID_DV_DIEU_CHINH_LS);
+            m_us_tu_dien = new US_CM_DM_TU_DIEN(ip_us_trai_phieu.dcID_DV_DIEU_CHINH_LS);
             m_cbo_dv_dieu_chinh_ls.SelectedText = m_us_tu_dien.strTEN;
             m_cbo_dv_dieu_chinh_ls.SelectedValue = m_us_tu_dien.dcID;
 
-            m_us_tu_dien = new US_CM_DM_TU_DIEN(m_us_trai_phieu.dcID_DV_KY_TRA_LAI);
+            m_us_tu_dien = new US_CM_DM_TU_DIEN(ip_us_trai_phieu.dcID_DV_KY_TRA_LAI);
             m_cbo_dv_tra_lai.SelectedText = m_us_tu_dien.strTEN;
             m_cbo_dv_tra_lai.SelectedValue = m_us_tu_dien.dcID;
-            if (m_us_trai_phieu.strTRA_LAI_SAU_YN.ToUpper() == "Y")
+            if (ip_us_trai_phieu.strTRA_LAI_SAU_YN.ToUpper() == "Y")
                 m_cbo_tra_lai_sau.SelectedText = "Có";
             else
                 m_cbo_tra_lai_sau.SelectedText = "Không";
-            if (m_us_trai_phieu.strTHA_NOI_YN.ToUpper() == "Y")
+            if (ip_us_trai_phieu.strTHA_NOI_YN.ToUpper() == "Y")
                 m_cbo_tha_noi.SelectedText = "Có";
             else
                 m_cbo_tha_noi.SelectedText = "Không";
-            m_cbo_tra_lai_sau.SelectedValue = m_us_trai_phieu.strTRA_LAI_SAU_YN.ToUpper();
+            m_cbo_tra_lai_sau.SelectedValue = ip_us_trai_phieu.strTRA_LAI_SAU_YN.ToUpper();
         }
         private void form_2_us_object(US_DM_TRAI_PHIEU op_us_trai_phieu)
         {
