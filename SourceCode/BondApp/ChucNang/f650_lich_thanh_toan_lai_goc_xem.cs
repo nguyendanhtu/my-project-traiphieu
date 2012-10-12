@@ -388,6 +388,23 @@ namespace BondApp
             f900_quan_ly_coupon v_frm900 = new f900_quan_ly_coupon();
             v_frm900.display_tra_lai_trai_phieu(m_us_trai_phieu);
         }
+
+        private void show_cap_nhat_lai_suat()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if (m_fg.Rows[m_fg.Row].UserData == null) return;
+            US_GD_LICH_THANH_TOAN_LAI_GOC v_us = new US_GD_LICH_THANH_TOAN_LAI_GOC();
+            grid2us_object(v_us, m_fg.Row);
+            if (v_us.strCAP_NHAT_LS_YN.Equals("Y"))
+            {                
+                f310_cap_nhat_lai_suat v_frm310 = new f310_cap_nhat_lai_suat();
+                if (v_us.strDA_THUC_HIEN_YN.Equals("Y"))
+                    v_frm310.display_xem_gd_cap_nhat_ls();
+                else
+                    v_frm310.display_sua_gd_cap_nhat_ls();
+            }
+        }
          #endregion
 
         private void set_define_events()
@@ -409,7 +426,7 @@ namespace BondApp
         {
             try
             {
-                
+                show_cap_nhat_lai_suat();
             }
             catch (Exception v_e)
             {
