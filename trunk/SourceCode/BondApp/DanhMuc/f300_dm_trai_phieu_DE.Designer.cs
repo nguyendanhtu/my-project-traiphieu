@@ -272,18 +272,19 @@
             // 
             // m_cbo_loai_trai_phieu
             // 
+            this.m_cbo_loai_trai_phieu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_loai_trai_phieu.FormattingEnabled = true;
             this.m_cbo_loai_trai_phieu.Location = new System.Drawing.Point(141, 189);
             this.m_cbo_loai_trai_phieu.Name = "m_cbo_loai_trai_phieu";
             this.m_cbo_loai_trai_phieu.Size = new System.Drawing.Size(120, 21);
-            this.m_cbo_loai_trai_phieu.TabIndex = 5;
+            this.m_cbo_loai_trai_phieu.TabIndex = 2;
             // 
             // m_txt_tong_sl
             // 
             this.m_txt_tong_sl.Location = new System.Drawing.Point(141, 228);
             this.m_txt_tong_sl.Name = "m_txt_tong_sl";
             this.m_txt_tong_sl.Size = new System.Drawing.Size(120, 20);
-            this.m_txt_tong_sl.TabIndex = 21;
+            this.m_txt_tong_sl.TabIndex = 6;
             this.m_txt_tong_sl.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // m_lbl_tong_sl
@@ -302,7 +303,7 @@
             this.m_dat_ngay_dao_han.Location = new System.Drawing.Point(363, 189);
             this.m_dat_ngay_dao_han.Name = "m_dat_ngay_dao_han";
             this.m_dat_ngay_dao_han.Size = new System.Drawing.Size(120, 20);
-            this.m_dat_ngay_dao_han.TabIndex = 13;
+            this.m_dat_ngay_dao_han.TabIndex = 3;
             // 
             // m_lbl_ngay_dao_han
             // 
@@ -320,7 +321,7 @@
             this.m_cbo_tra_lai_sau.Location = new System.Drawing.Point(699, 271);
             this.m_cbo_tra_lai_sau.Name = "m_cbo_tra_lai_sau";
             this.m_cbo_tra_lai_sau.Size = new System.Drawing.Size(65, 21);
-            this.m_cbo_tra_lai_sau.TabIndex = 29;
+            this.m_cbo_tra_lai_sau.TabIndex = 12;
             // 
             // m_lbl_tra_lai_sau
             // 
@@ -338,7 +339,7 @@
             this.m_cbo_tha_noi.Location = new System.Drawing.Point(549, 271);
             this.m_cbo_tha_noi.Name = "m_cbo_tha_noi";
             this.m_cbo_tha_noi.Size = new System.Drawing.Size(65, 21);
-            this.m_cbo_tha_noi.TabIndex = 27;
+            this.m_cbo_tha_noi.TabIndex = 11;
             // 
             // m_lbl_lai_suat_tha_noi
             // 
@@ -356,14 +357,14 @@
             this.m_cbo_dv_dieu_chinh_ls.Location = new System.Drawing.Point(199, 270);
             this.m_cbo_dv_dieu_chinh_ls.Name = "m_cbo_dv_dieu_chinh_ls";
             this.m_cbo_dv_dieu_chinh_ls.Size = new System.Drawing.Size(62, 21);
-            this.m_cbo_dv_dieu_chinh_ls.TabIndex = 35;
+            this.m_cbo_dv_dieu_chinh_ls.TabIndex = 9;
             // 
             // m_txt_ky_dieu_chinh_ls
             // 
             this.m_txt_ky_dieu_chinh_ls.Location = new System.Drawing.Point(141, 271);
             this.m_txt_ky_dieu_chinh_ls.Name = "m_txt_ky_dieu_chinh_ls";
             this.m_txt_ky_dieu_chinh_ls.Size = new System.Drawing.Size(52, 20);
-            this.m_txt_ky_dieu_chinh_ls.TabIndex = 34;
+            this.m_txt_ky_dieu_chinh_ls.TabIndex = 8;
             this.m_txt_ky_dieu_chinh_ls.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // m_lbl_ky_dieu_chinh_ls
@@ -380,7 +381,7 @@
             this.m_txt_lai_suat.Location = new System.Drawing.Point(363, 230);
             this.m_txt_lai_suat.Name = "m_txt_lai_suat";
             this.m_txt_lai_suat.Size = new System.Drawing.Size(52, 20);
-            this.m_txt_lai_suat.TabIndex = 23;
+            this.m_txt_lai_suat.TabIndex = 7;
             this.m_txt_lai_suat.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // m_lbl_lai_suat
@@ -467,7 +468,7 @@
             this.m_cbo_don_vi_ky_han.Location = new System.Drawing.Point(699, 188);
             this.m_cbo_don_vi_ky_han.Name = "m_cbo_don_vi_ky_han";
             this.m_cbo_don_vi_ky_han.Size = new System.Drawing.Size(65, 21);
-            this.m_cbo_don_vi_ky_han.TabIndex = 16;
+            this.m_cbo_don_vi_ky_han.TabIndex = 5;
             // 
             // m_cbo_co_so_tinh_lai
             // 
@@ -476,7 +477,7 @@
             this.m_cbo_co_so_tinh_lai.Location = new System.Drawing.Point(363, 271);
             this.m_cbo_co_so_tinh_lai.Name = "m_cbo_co_so_tinh_lai";
             this.m_cbo_co_so_tinh_lai.Size = new System.Drawing.Size(73, 21);
-            this.m_cbo_co_so_tinh_lai.TabIndex = 25;
+            this.m_cbo_co_so_tinh_lai.TabIndex = 10;
             // 
             // m_lbl_ma_trai_phieu
             // 
@@ -492,14 +493,14 @@
             this.m_txt_ma_trai_phieu.Location = new System.Drawing.Point(141, 153);
             this.m_txt_ma_trai_phieu.Name = "m_txt_ma_trai_phieu";
             this.m_txt_ma_trai_phieu.Size = new System.Drawing.Size(120, 20);
-            this.m_txt_ma_trai_phieu.TabIndex = 1;
+            this.m_txt_ma_trai_phieu.TabIndex = 0;
             // 
             // m_txt_ky_han
             // 
             this.m_txt_ky_han.Location = new System.Drawing.Point(634, 189);
             this.m_txt_ky_han.Name = "m_txt_ky_han";
             this.m_txt_ky_han.Size = new System.Drawing.Size(53, 20);
-            this.m_txt_ky_han.TabIndex = 15;
+            this.m_txt_ky_han.TabIndex = 4;
             this.m_txt_ky_han.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // m_lbl_ten_trai_phieu
@@ -525,7 +526,7 @@
             this.m_txt_ten_trai_phieu.Location = new System.Drawing.Point(363, 153);
             this.m_txt_ten_trai_phieu.Name = "m_txt_ten_trai_phieu";
             this.m_txt_ten_trai_phieu.Size = new System.Drawing.Size(401, 20);
-            this.m_txt_ten_trai_phieu.TabIndex = 3;
+            this.m_txt_ten_trai_phieu.TabIndex = 1;
             // 
             // m_lbl_loai_trai_phieu
             // 

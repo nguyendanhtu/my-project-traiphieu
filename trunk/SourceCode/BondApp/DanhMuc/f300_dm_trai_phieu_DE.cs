@@ -43,6 +43,7 @@ namespace BondApp.DanhMuc
         US_DM_TRAI_PHIEU m_us_trai_phieu = new US_DM_TRAI_PHIEU();
         US_DM_TO_CHUC_PHAT_HANH m_us_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH();
         US_CM_DM_TU_DIEN m_us_tu_dien = new US_CM_DM_TU_DIEN();
+        US_DM_DOT_PHAT_HANH m_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH();
         DS_CM_DM_TU_DIEN m_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
         #endregion
@@ -113,7 +114,7 @@ namespace BondApp.DanhMuc
             op_us_trai_phieu.dcMENH_GIA = CIPConvert.ToDecimal(m_txt_menh_gia.Text);
             op_us_trai_phieu.dcKY_HAN = CIPConvert.ToDecimal(m_txt_ky_han.Text);
             op_us_trai_phieu.dcID_DV_KY_HAN = CIPConvert.ToDecimal(m_cbo_don_vi_ky_han.SelectedValue);
-            op_us_trai_phieu.dcLAI_SUAT_DEFAULT = CIPConvert.ToDecimal(m_txt_lai_suat.Text);
+            op_us_trai_phieu.dcLAI_SUAT_DEFAULT = CIPConvert.ToDecimal(m_txt_lai_suat.Text) / 100;
             op_us_trai_phieu.dcKY_DIEU_CHINH_LS = CIPConvert.ToDecimal(m_txt_ky_dieu_chinh_ls.Text);
             op_us_trai_phieu.dcID_DV_DIEU_CHINH_LS = CIPConvert.ToDecimal(m_cbo_dv_dieu_chinh_ls.SelectedValue);
             op_us_trai_phieu.strTHA_NOI_YN = (string)m_cbo_tha_noi.SelectedValue;
@@ -180,17 +181,17 @@ namespace BondApp.DanhMuc
         private void chon_dot_phat_hanh()
         {
             f150_dm_dot_phat_hanh v_frm150 = new f150_dm_dot_phat_hanh();
-            US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = v_frm150.display_2_select();
+            m_us_dm_dot_phat_hanh = v_frm150.display_2_select();
 
-            US_DM_TO_CHUC_PHAT_HANH v_dm_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH(v_us_dm_dot_phat_hanh.dcID_TO_CHUC_PHAT_HANH);
+            US_DM_TO_CHUC_PHAT_HANH v_dm_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH(m_us_dm_dot_phat_hanh.dcID_TO_CHUC_PHAT_HANH);
             if (!v_dm_to_chuc_phat_hanh.IsIDNull())
             {
                 m_txt_ten_dv_phat_hanh.Text = v_dm_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HANH;
             }
-            m_txt_menh_gia.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcMENH_GIA,"#,###");
-            m_txt_ky_tra_lai.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcKY_TRA_LAI);
-            m_cbo_dv_tra_lai.SelectedValue = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcID_DV_KY_TRA_LAI);
-            m_txt_ngay_phat_hanh.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH, "dd/MM/yyyy");
+            m_txt_menh_gia.Text = CIPConvert.ToStr(m_us_dm_dot_phat_hanh.dcMENH_GIA, "#,###");
+            m_txt_ky_tra_lai.Text = CIPConvert.ToStr(m_us_dm_dot_phat_hanh.dcKY_TRA_LAI);
+            m_cbo_dv_tra_lai.SelectedValue = CIPConvert.ToStr(m_us_dm_dot_phat_hanh.dcID_DV_KY_TRA_LAI);
+            m_txt_ngay_phat_hanh.Text = CIPConvert.ToStr(m_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH, "dd/MM/yyyy");
         }
         private bool check_validate_data_is_ok()
         {
@@ -220,6 +221,7 @@ namespace BondApp.DanhMuc
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.InsertDataState:
+                    m_us_trai_phieu.dcID_DOT_PHAT_HANH = m_us_dm_dot_phat_hanh.dcID;
                     m_us_trai_phieu.Insert();
                     break;
                 case DataEntryFormMode.SelectDataState:
