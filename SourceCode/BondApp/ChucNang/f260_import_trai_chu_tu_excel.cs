@@ -139,7 +139,7 @@ namespace BondApp.ChucNang
             f300_dm_trai_phieu v_frm300 = new f300_dm_trai_phieu();
             m_us_trai_phieu = new US_DM_TRAI_PHIEU();
             m_us_trai_phieu = v_frm300.select_trai_phieu();
-            if (!m_us_trai_phieu.IsIDNull())
+            if (!m_us_trai_phieu.IsIDNull() && m_us_trai_phieu.dcID != -1)
                 us_trai_phieu_2_form(m_us_trai_phieu);
         }
         private void kiem_tra_data_tren_luoi()
@@ -442,6 +442,11 @@ namespace BondApp.ChucNang
             CC1TransferDataRow v_obj = new CC1TransferDataRow(m_fg_load_file, v_hst, m_ds_trai_chu_imp.DM_TRAI_CHU_IMP.NewDM_TRAI_CHU_IMPRow());
             return v_obj;
         }
+        private bool chua_load_file_excel()
+        {
+            if (m_dgl_open_file.FileName != "") return false;
+            return true;
+        }
         #endregion
 
         #region Public Interface
@@ -504,6 +509,11 @@ namespace BondApp.ChucNang
         {
             try
             {
+                if (chua_load_file_excel())
+                {
+                    BaseMessages.MsgBox_Infor("Bạn chưa load file Danh sách trái chủ!");
+                    return;
+                }
                 kiem_tra_data_tren_luoi();
                 if (m_i_flag == 0) return;
                 add_danh_sach_trai_chu();
@@ -518,7 +528,12 @@ namespace BondApp.ChucNang
         {
             try
             {
-               kiem_tra_data_tren_luoi();
+                if (chua_load_file_excel())
+                {
+                    BaseMessages.MsgBox_Infor("Bạn chưa load file Danh sách trái chủ!");
+                    return;
+                }
+                kiem_tra_data_tren_luoi();
                if (m_i_flag == 1) BaseMessages.MsgBox_Infor("Bạn đã kiểm tra dữ liệu thành công");
             }
             catch (Exception v_e)
