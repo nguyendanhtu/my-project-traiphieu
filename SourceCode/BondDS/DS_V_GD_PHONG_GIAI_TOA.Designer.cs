@@ -343,6 +343,10 @@ namespace BondDS {
             
             private global::System.Data.DataColumn columnKHOAN_DAU_TU;
             
+            private global::System.Data.DataColumn columnTONG_SO_DU;
+            
+            private global::System.Data.DataColumn columnSO_DU_KHA_DUNG;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public V_GD_PHONG_GIAI_TOADataTable() {
@@ -634,6 +638,22 @@ namespace BondDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TONG_SO_DUColumn {
+                get {
+                    return this.columnTONG_SO_DU;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SO_DU_KHA_DUNGColumn {
+                get {
+                    return this.columnSO_DU_KHA_DUNG;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -700,7 +720,9 @@ namespace BondDS {
                         string NDD_DIEN_THOAI, 
                         string NDD_FAX, 
                         string NGAN_HANG_CAM_CO, 
-                        string KHOAN_DAU_TU) {
+                        string KHOAN_DAU_TU, 
+                        decimal TONG_SO_DU, 
+                        decimal SO_DU_KHA_DUNG) {
                 V_GD_PHONG_GIAI_TOARow rowV_GD_PHONG_GIAI_TOARow = ((V_GD_PHONG_GIAI_TOARow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -734,7 +756,9 @@ namespace BondDS {
                         NDD_DIEN_THOAI,
                         NDD_FAX,
                         NGAN_HANG_CAM_CO,
-                        KHOAN_DAU_TU};
+                        KHOAN_DAU_TU,
+                        TONG_SO_DU,
+                        SO_DU_KHA_DUNG};
                 rowV_GD_PHONG_GIAI_TOARow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowV_GD_PHONG_GIAI_TOARow);
                 return rowV_GD_PHONG_GIAI_TOARow;
@@ -802,6 +826,8 @@ namespace BondDS {
                 this.columnNDD_FAX = base.Columns["NDD_FAX"];
                 this.columnNGAN_HANG_CAM_CO = base.Columns["NGAN_HANG_CAM_CO"];
                 this.columnKHOAN_DAU_TU = base.Columns["KHOAN_DAU_TU"];
+                this.columnTONG_SO_DU = base.Columns["TONG_SO_DU"];
+                this.columnSO_DU_KHA_DUNG = base.Columns["SO_DU_KHA_DUNG"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -871,6 +897,10 @@ namespace BondDS {
                 base.Columns.Add(this.columnNGAN_HANG_CAM_CO);
                 this.columnKHOAN_DAU_TU = new global::System.Data.DataColumn("KHOAN_DAU_TU", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnKHOAN_DAU_TU);
+                this.columnTONG_SO_DU = new global::System.Data.DataColumn("TONG_SO_DU", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTONG_SO_DU);
+                this.columnSO_DU_KHA_DUNG = new global::System.Data.DataColumn("SO_DU_KHA_DUNG", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSO_DU_KHA_DUNG);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -910,6 +940,8 @@ namespace BondDS {
                 this.columnNDD_FAX.MaxLength = 50;
                 this.columnNGAN_HANG_CAM_CO.MaxLength = 250;
                 this.columnKHOAN_DAU_TU.MaxLength = 250;
+                this.columnTONG_SO_DU.ReadOnly = true;
+                this.columnSO_DU_KHA_DUNG.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1502,6 +1534,38 @@ namespace BondDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal TONG_SO_DU {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableV_GD_PHONG_GIAI_TOA.TONG_SO_DUColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TONG_SO_DU\' in table \'V_GD_PHONG_GIAI_TOA\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_GD_PHONG_GIAI_TOA.TONG_SO_DUColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal SO_DU_KHA_DUNG {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableV_GD_PHONG_GIAI_TOA.SO_DU_KHA_DUNGColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SO_DU_KHA_DUNG\' in table \'V_GD_PHONG_GIAI_TOA\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_GD_PHONG_GIAI_TOA.SO_DU_KHA_DUNGColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsCMT_GIAY_DKKDNull() {
                 return this.IsNull(this.tableV_GD_PHONG_GIAI_TOA.CMT_GIAY_DKKDColumn);
             }
@@ -1727,6 +1791,30 @@ namespace BondDS {
             public void SetKHOAN_DAU_TUNull() {
                 this[this.tableV_GD_PHONG_GIAI_TOA.KHOAN_DAU_TUColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTONG_SO_DUNull() {
+                return this.IsNull(this.tableV_GD_PHONG_GIAI_TOA.TONG_SO_DUColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTONG_SO_DUNull() {
+                this[this.tableV_GD_PHONG_GIAI_TOA.TONG_SO_DUColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSO_DU_KHA_DUNGNull() {
+                return this.IsNull(this.tableV_GD_PHONG_GIAI_TOA.SO_DU_KHA_DUNGColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSO_DU_KHA_DUNGNull() {
+                this[this.tableV_GD_PHONG_GIAI_TOA.SO_DU_KHA_DUNGColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -1920,6 +2008,8 @@ namespace BondDS.DS_V_GD_PHONG_GIAI_TOATableAdapters {
             tableMapping.ColumnMappings.Add("NDD_FAX", "NDD_FAX");
             tableMapping.ColumnMappings.Add("NGAN_HANG_CAM_CO", "NGAN_HANG_CAM_CO");
             tableMapping.ColumnMappings.Add("KHOAN_DAU_TU", "KHOAN_DAU_TU");
+            tableMapping.ColumnMappings.Add("TONG_SO_DU", "TONG_SO_DU");
+            tableMapping.ColumnMappings.Add("SO_DU_KHA_DUNG", "SO_DU_KHA_DUNG");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1936,7 +2026,7 @@ namespace BondDS.DS_V_GD_PHONG_GIAI_TOATableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT ID, MA_GIAO_DICH, ID_TRAI_CHU, MA_TRAI_CHU, TEN_TRAI_CHU, CMT_GIAY_DKKD, NGAY_CAP_CMT, NOI_CAP_CMT, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, SO_LUONG, MENH_GIA, GIA_TRI_GD_THEO_MENH_GIA, CHUC_DANH, PHONG_TOA_YN, ID_NGUOI_LAP, NGUOI_THUC_HIEN, ID_NGUOI_DUYET, ID_TRANG_THAI, TY_LE_PHI_GD, PHI_GIAO_DICH, ID_TO_CHUC_PHAT_HANH, NGUOI_XAC_NHAN, CHUC_VU, GIAY_UQ, NGAY_CAP_GIAY_UQ, CUA, NDD_TRU_SO, NDD_DIEN_THOAI, NDD_FAX, NGAN_HANG_CAM_CO, KHOAN_DAU_TU FROM dbo.V_GD_PHONG_GIAI_TOA";
+            this._commandCollection[0].CommandText = @"SELECT ID, MA_GIAO_DICH, ID_TRAI_CHU, MA_TRAI_CHU, TEN_TRAI_CHU, CMT_GIAY_DKKD, NGAY_CAP_CMT, NOI_CAP_CMT, NGAY_GIAO_DICH, NGUOI_DAI_DIEN, SO_LUONG, MENH_GIA, GIA_TRI_GD_THEO_MENH_GIA, CHUC_DANH, PHONG_TOA_YN, ID_NGUOI_LAP, NGUOI_THUC_HIEN, ID_NGUOI_DUYET, ID_TRANG_THAI, TY_LE_PHI_GD, PHI_GIAO_DICH, ID_TO_CHUC_PHAT_HANH, NGUOI_XAC_NHAN, CHUC_VU, GIAY_UQ, NGAY_CAP_GIAY_UQ, CUA, NDD_TRU_SO, NDD_DIEN_THOAI, NDD_FAX, NGAN_HANG_CAM_CO, KHOAN_DAU_TU, TONG_SO_DU, SO_DU_KHA_DUNG FROM dbo.V_GD_PHONG_GIAI_TOA";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
