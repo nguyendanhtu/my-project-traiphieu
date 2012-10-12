@@ -495,6 +495,7 @@ namespace BondApp
             this.m_txt_ky_tinh_lai.ReadOnly = true;
             this.m_txt_ky_tinh_lai.Size = new System.Drawing.Size(120, 20);
             this.m_txt_ky_tinh_lai.TabIndex = 9;
+            this.m_txt_ky_tinh_lai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // m_lbl_ghi_chu
             // 
