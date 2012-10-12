@@ -60,6 +60,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cmd_tra_goc = new SIS.Controls.Button.SiSButton();
             this.m_cmd_tra_lai = new SIS.Controls.Button.SiSButton();
             this.m_cmd_thong_bao_ls = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
@@ -67,7 +68,7 @@
             this.m_cmd_generate = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_tra_goc = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_thong_bao_tien_lai = new SIS.Controls.Button.SiSButton();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -80,7 +81,7 @@
             this.m_lbl_header.ForeColor = System.Drawing.Color.DarkRed;
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(868, 24);
+            this.m_lbl_header.Size = new System.Drawing.Size(918, 24);
             this.m_lbl_header.TabIndex = 23;
             this.m_lbl_header.Text = "F650 - LỊCH THANH TOÁN LÃI - GỐC";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -92,7 +93,7 @@
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.Location = new System.Drawing.Point(0, 159);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(868, 267);
+            this.m_fg.Size = new System.Drawing.Size(918, 267);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 32;
             // 
@@ -317,7 +318,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 24);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(868, 135);
+            this.groupBox1.Size = new System.Drawing.Size(918, 135);
             this.groupBox1.TabIndex = 54;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin trái phiếu";
@@ -400,6 +401,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_cmd_thong_bao_tien_lai);
             this.panel1.Controls.Add(this.m_cmd_tra_goc);
             this.panel1.Controls.Add(this.m_cmd_tra_lai);
             this.panel1.Controls.Add(this.m_cmd_thong_bao_ls);
@@ -412,8 +414,24 @@
             this.panel1.Location = new System.Drawing.Point(0, 426);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(4);
-            this.panel1.Size = new System.Drawing.Size(868, 36);
+            this.panel1.Size = new System.Drawing.Size(918, 36);
             this.panel1.TabIndex = 55;
+            // 
+            // m_cmd_tra_goc
+            // 
+            this.m_cmd_tra_goc.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_tra_goc.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_tra_goc.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_tra_goc.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_tra_goc.Enabled = false;
+            this.m_cmd_tra_goc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_tra_goc.ImageIndex = 18;
+            this.m_cmd_tra_goc.ImageList = this.ImageList;
+            this.m_cmd_tra_goc.Location = new System.Drawing.Point(388, 4);
+            this.m_cmd_tra_goc.Name = "m_cmd_tra_goc";
+            this.m_cmd_tra_goc.Size = new System.Drawing.Size(82, 28);
+            this.m_cmd_tra_goc.TabIndex = 25;
+            this.m_cmd_tra_goc.Text = "Trả gốc";
             // 
             // m_cmd_tra_lai
             // 
@@ -455,7 +473,7 @@
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(512, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(562, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 12;
@@ -470,7 +488,7 @@
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(600, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(650, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 13;
@@ -500,7 +518,7 @@
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(688, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(738, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 14;
@@ -515,33 +533,32 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(776, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(826, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
-            // m_cmd_tra_goc
+            // m_cmd_thong_bao_tien_lai
             // 
-            this.m_cmd_tra_goc.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_tra_goc.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_tra_goc.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_tra_goc.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_tra_goc.Enabled = false;
-            this.m_cmd_tra_goc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_tra_goc.ImageIndex = 18;
-            this.m_cmd_tra_goc.ImageList = this.ImageList;
-            this.m_cmd_tra_goc.Location = new System.Drawing.Point(388, 4);
-            this.m_cmd_tra_goc.Name = "m_cmd_tra_goc";
-            this.m_cmd_tra_goc.Size = new System.Drawing.Size(82, 28);
-            this.m_cmd_tra_goc.TabIndex = 25;
-            this.m_cmd_tra_goc.Text = "Trả gốc";
+            this.m_cmd_thong_bao_tien_lai.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_thong_bao_tien_lai.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_thong_bao_tien_lai.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_thong_bao_tien_lai.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_thong_bao_tien_lai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_thong_bao_tien_lai.ImageIndex = 18;
+            this.m_cmd_thong_bao_tien_lai.ImageList = this.ImageList;
+            this.m_cmd_thong_bao_tien_lai.Location = new System.Drawing.Point(470, 4);
+            this.m_cmd_thong_bao_tien_lai.Name = "m_cmd_thong_bao_tien_lai";
+            this.m_cmd_thong_bao_tien_lai.Size = new System.Drawing.Size(129, 28);
+            this.m_cmd_thong_bao_tien_lai.TabIndex = 26;
+            this.m_cmd_thong_bao_tien_lai.Text = "Thông báo tiền lãi";
             // 
             // f650_lich_thanh_toan_lai_goc_xem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(868, 462);
+            this.ClientSize = new System.Drawing.Size(918, 462);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
@@ -596,6 +613,7 @@
         private System.Windows.Forms.Button m_cmd_chon_trai_phieu;
         internal SIS.Controls.Button.SiSButton m_cmd_tra_lai;
         internal SIS.Controls.Button.SiSButton m_cmd_tra_goc;
+        internal SIS.Controls.Button.SiSButton m_cmd_thong_bao_tien_lai;
 
     }
 }
