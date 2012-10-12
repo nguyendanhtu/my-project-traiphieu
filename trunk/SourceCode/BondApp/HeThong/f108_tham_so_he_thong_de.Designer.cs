@@ -183,6 +183,7 @@
             this.m_txt_gia_tri.Name = "m_txt_gia_tri";
             this.m_txt_gia_tri.Size = new System.Drawing.Size(125, 20);
             this.m_txt_gia_tri.TabIndex = 3;
+            this.m_txt_gia_tri.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // m_lbl_loai_tham_so
             // 
