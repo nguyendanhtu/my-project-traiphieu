@@ -105,8 +105,8 @@ namespace BondApp.HeThong
             ip_us_ht_tham_so_he_thong.strGIA_TRI = m_txt_gia_tri.Text;
             ip_us_ht_tham_so_he_thong.strGHI_CHU = m_txt_ghi_chu.Text;
             ip_us_ht_tham_so_he_thong.strPHAN_HE = "SD";
-            ip_us_ht_tham_so_he_thong.strKIEU_DU_LIEU = "SD";
-            ip_us_ht_tham_so_he_thong.strCO_THE_NULL_YN = "Y";
+            ip_us_ht_tham_so_he_thong.strKIEU_DU_LIEU = "Numeric";
+            ip_us_ht_tham_so_he_thong.strCO_THE_NULL_YN = "N";
         }
 
         private bool check_data_is_ok()
@@ -144,10 +144,9 @@ namespace BondApp.HeThong
                     m_us_ht_tham_so_he_thong.Insert();
                     break;
                 case DataEntryFormMode.UpdateDataState:
-                    us_object_2_form(m_us_ht_tham_so_he_thong);
+                    m_us_ht_tham_so_he_thong.Update();
                     break;
             }
-
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
             this.Close();
         }
