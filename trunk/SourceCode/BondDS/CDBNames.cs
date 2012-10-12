@@ -523,7 +523,18 @@ namespace BondDS.CDBNames
         public const string TY_LE_PHI_GD = "TY_LE_PHI_GD";
         public const string PHI_GIAO_DICH = "PHI_GIAO_DICH";
         public const string ID_TO_CHUC_PHAT_HANH = "ID_TO_CHUC_PHAT_HANH";
+        public const string NGUOI_XAC_NHAN = "NGUOI_XAC_NHAN";
+        public const string CHUC_VU = "CHUC_VU";
+        public const string GIAY_UQ = "GIAY_UQ";
+        public const string NGAY_CAP_GIAY_UQ = "NGAY_CAP_GIAY_UQ";
+        public const string CUA = "CUA";
+        public const string NDD_TRU_SO = "NDD_TRU_SO";
+        public const string NDD_DIEN_THOAI = "NDD_DIEN_THOAI";
+        public const string NDD_FAX = "NDD_FAX";
+        public const string NGAN_HANG_CAM_CO = "NGAN_HANG_CAM_CO";
+        public const string KHOAN_DAU_TU = "KHOAN_DAU_TU";
     }
+
 
     public class GD_SO_DU_TRAI_PHIEU
     {
