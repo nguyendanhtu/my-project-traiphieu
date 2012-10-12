@@ -35,19 +35,25 @@ namespace BondApp.ChucNang
             m_e_form_mode = eFormMode.LAP_GD_THAY_DOI_LS;
             this.ShowDialog();
         }
-        public void display_sua_gd_cap_nhat_ls()
+        public void display_sua_gd_cap_nhat_ls(US_GD_LICH_THANH_TOAN_LAI_GOC ip_us_cap_nhat_lai_suat)
         {
             m_e_form_mode = eFormMode.SUA_GD_THAY_DOI_LS;
+            m_us_gd_cap_nhat_ls = ip_us_cap_nhat_lai_suat;
+            us_gd_cap_nhat_ls_2_from();
             this.ShowDialog();
         }
-        public void display_xem_gd_cap_nhat_ls()
+        public void display_xem_gd_cap_nhat_ls(US_GD_LICH_THANH_TOAN_LAI_GOC ip_us_cap_nhat_lai_suat)
         {
             m_e_form_mode = eFormMode.XEM_GIAO_DICH;
+            m_us_gd_cap_nhat_ls = ip_us_cap_nhat_lai_suat;
+            us_gd_cap_nhat_ls_2_from();
             this.ShowDialog();
         }
-        public void display_duyet_gd_cap_nhat_ls()
+        public void display_duyet_gd_cap_nhat_ls(US_GD_LICH_THANH_TOAN_LAI_GOC ip_us_cap_nhat_lai_suat)
         {
             m_e_form_mode = eFormMode.DUYET_GD_THAY_DOI_LS;
+            m_us_gd_cap_nhat_ls = ip_us_cap_nhat_lai_suat;
+            us_gd_cap_nhat_ls_2_from();
             this.ShowDialog();
         }
         #endregion
@@ -105,13 +111,14 @@ namespace BondApp.ChucNang
                     m_cmd_sua_gd.Visible = false;
                     m_cmd_duyet_gd.Visible = false;
                     m_chb_xac_nhan.Enabled = false;
+                    resetcontrl();
                     break;
                 case eFormMode.SUA_GD_THAY_DOI_LS:
                     m_cmd_lap_gd.Visible = false;
                     m_cmd_sua_gd.Visible = true;
                     m_cmd_duyet_gd.Visible = true;
                     m_chb_xac_nhan.Enabled = false;
-                    m_gru_thong_tin_trai_phieu.Enabled = false;
+                    //m_gru_thong_tin_trai_phieu.Enabled = false;
                     break;
                 case eFormMode.DUYET_GD_THAY_DOI_LS:
                     m_cmd_lap_gd.Visible = false;
@@ -453,8 +460,7 @@ namespace BondApp.ChucNang
             try
             {
                 set_inital_form_load();
-                m_obj_trans = get_trans_object(m_fg);
-                resetcontrl();
+                m_obj_trans = get_trans_object(m_fg);                
             }
             catch (Exception v_e)
             {
