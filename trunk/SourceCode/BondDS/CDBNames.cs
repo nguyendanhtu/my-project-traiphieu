@@ -539,6 +539,8 @@ namespace BondDS.CDBNames
         public const string NDD_FAX = "NDD_FAX";
         public const string NGAN_HANG_CAM_CO = "NGAN_HANG_CAM_CO";
         public const string KHOAN_DAU_TU = "KHOAN_DAU_TU";
+        public const string TONG_SO_DU = "TONG_SO_DU";
+        public const string SO_DU_KHA_DUNG = "SO_DU_KHA_DUNG";
     }
 
 
