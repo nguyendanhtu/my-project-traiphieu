@@ -243,17 +243,17 @@ namespace BondApp
 		public void display(){			
 			this.ShowDialog();
 		}
-        public void display_danh_sach_phong_toa()
+        public void display_phong_toa_duyet()
         {
-            this.Text = "F659 - Báo cáo tình hình phong tỏa";
-            m_lbl_header.Text = "F659 - BÁO CÁO TÌNH HÌNH PHONG TỎA";
+            this.Text = "F701 - Danh sách giao dịch phong tỏa";
+            m_lbl_header.Text = "F701 - DANH SÁCH GIAO DỊCH PHONG TỎA";
             m_e_form_mode = e_form_mode.DANH_SACH_PHONG_TOA;
             this.ShowDialog();
         }
-        public void display_danh_sach_giai_toa()
+        public void display_giai_toa_duyet()
         {
-            this.Text = "F660 - Báo cáo tình hình giải tỏa";
-            m_lbl_header.Text = "F660 - BÁO CÁO TÌNH HÌNH GIẢI TỎA";
+            this.Text = "F702 - DANH SÁCH GIAO DỊCH giải tỏa";
+            m_lbl_header.Text = "F702 - DANH SÁCH GIAO DỊCH GIẢI TỎA";
             m_e_form_mode = e_form_mode.DANH_SACH_GIAI_TOA;
             this.ShowDialog();
         }
