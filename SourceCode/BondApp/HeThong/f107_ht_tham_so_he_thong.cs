@@ -250,7 +250,7 @@ namespace BondApp
             this.Controls.Add(this.m_lbl_title);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f107_ht_tham_so_he_thong";
-            this.Text = "f107_ht_tham_so_he_thong";
+            this.Text = "F107 - Tham số hệ thống";
             this.Load += new System.EventHandler(this.f107_ht_tham_so_he_thong_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
@@ -314,7 +314,7 @@ namespace BondApp
 		}
 		private void load_data_2_grid(){						
 			m_ds = new DS_HT_THAM_SO_HE_THONG();			
-			m_us.FillDataset(m_ds);
+			m_us.FillDataset(m_ds, " WHERE PHAN_HE = 'SD'");
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
 			m_fg.Redraw = true;

@@ -94,7 +94,7 @@ namespace BondApp.HeThong
             m_us_ht_tham_so_he_thong = new US_HT_THAM_SO_HE_THONG(ip_us_ht_tham_so_he_thong.dcID);
             m_txt_loai_tham_so.Text = ip_us_ht_tham_so_he_thong.strLOAI_THAM_SO;
             m_txt_ma_tham_so.Text = ip_us_ht_tham_so_he_thong.strMA_THAM_SO;
-            m_txt_gia_tri.Text = ip_us_ht_tham_so_he_thong.strGIA_TRI;
+            m_txt_gia_tri.Text = CIPConvert.ToStr(CIPConvert.ToDecimal(ip_us_ht_tham_so_he_thong.strGIA_TRI),"#,###");
             m_txt_ghi_chu.Text = ip_us_ht_tham_so_he_thong.strGHI_CHU;
         }
 
