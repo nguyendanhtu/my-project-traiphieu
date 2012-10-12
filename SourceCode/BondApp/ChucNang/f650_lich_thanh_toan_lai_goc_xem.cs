@@ -402,6 +402,20 @@ namespace BondApp
             m_cmd_tra_goc.Click += new EventHandler(m_cmd_tra_goc_Click);
             m_cmd_tra_lai.Click += new EventHandler(m_cmd_tra_lai_Click);
             m_cmd_thong_bao_tien_lai.Click += new EventHandler(m_cmd_thong_bao_tien_lai_Click);
+            m_cmd_cap_nhat_lai_suat.Click += new EventHandler(m_cmd_cap_nhat_lai_suat_Click);
+        }
+
+        void m_cmd_cap_nhat_lai_suat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+            }
+            catch (Exception v_e)
+            {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_fg_Click(object sender, EventArgs e)
