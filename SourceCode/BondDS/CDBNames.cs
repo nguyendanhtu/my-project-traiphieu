@@ -497,7 +497,13 @@ namespace BondDS.CDBNames
         public const string GIAY_UQ = "GIAY_UQ";
         public const string CUA = "CUA";
         public const string NGAY_CAP_GIAY_UQ = "NGAY_CAP_GIAY_UQ";
+        public const string NDD_TRU_SO = "NDD_TRU_SO";
+        public const string NDD_DIEN_THOAI = "NDD_DIEN_THOAI";
+        public const string NDD_FAX = "NDD_FAX";
+        public const string NGAN_HANG_CAM_CO = "NGAN_HANG_CAM_CO";
+        public const string KHOAN_DAU_TU = "KHOAN_DAU_TU";
     }
+
 
     public class V_GD_PHONG_GIAI_TOA
     {
