@@ -255,12 +255,18 @@ public class US_GD_CHOT_LAI : US_Object
 #endregion
 
 
-    public void GenDSTraLai(decimal ip_dc_id_gd_chot_lai, decimal ip_dc_id_trai_chu)
+    public void GenDSTraLai(decimal ip_dc_id_trai_chu)
     {
         CStoredProc v_pr_obj = new CStoredProc("pr_GD_CHOT_LAI_Sinh_Gd_Chot_Lai");
-        v_pr_obj.addDecimalInputParam("@ID_GD_CHOT_LAI", ip_dc_id_gd_chot_lai);
+        v_pr_obj.addDecimalInputParam("@ID_GD_CHOT_LAI", this.dcID);
         v_pr_obj.addDecimalInputParam("@ID_DM_TRAI_CHU", ip_dc_id_trai_chu);
         v_pr_obj.ExecuteCommand(this);
+    }
+    public void fillDSChotLaiDetail(DS_GD_CHOT_LAI_DETAIL op_ds)
+    {
+        CStoredProc v_pr_obj = new CStoredProc("pr_GD_CHOT_LAI_DETAIL_SelectByIdChotLai");
+        v_pr_obj.addDecimalInputParam("@ID_CHOT_LAI", this.dcID);
+        v_pr_obj.fillDataSetByCommand(this, op_ds);
     }
 }
 }
