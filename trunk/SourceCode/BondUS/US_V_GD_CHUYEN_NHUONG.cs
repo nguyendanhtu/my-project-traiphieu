@@ -1860,6 +1860,13 @@ namespace BondUS
             v_cstore.addDecimalInputParam("@ID_TRAI_PHIEU", ip_dc_id_trai_phieu);
             v_cstore.fillDataSetByCommand(this, ip_ds_v_gd_chuyen_nhuong);
         }
+
+        public void delete_gd_chuyen_nhuong()
+        {
+            CStoredProc v_pr_obj = new CStoredProc("pr_GD_CHUYEN_NHUONG_Delete");
+            v_pr_obj.addDecimalInputParam("@ID", this.dcID);           
+            v_pr_obj.ExecuteCommand(this);
+        }
         #endregion
 
     }
