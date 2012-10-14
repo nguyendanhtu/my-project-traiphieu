@@ -230,6 +230,7 @@ namespace BondApp.ChucNang
                 else
                     m_chb_xac_nhan.Checked = false;
                 m_txt_ghi_chu.Text = m_us_gd_cap_nhat_ls.strGHI_CHU;
+                load_data_2_grid();
             }
         }
 
