@@ -46,11 +46,10 @@ namespace BondApp
         //    InitializeComponent();
         //    format_controls();
         //}
-        public f201_dm_gd_chot_lai_detail(US_GD_CHOT_LAI ip_us_gd_chot_lai)
+        public f201_dm_gd_chot_lai_detail()
         {
             InitializeComponent();
             format_controls();
-            m_us_chot_lai = ip_us_gd_chot_lai;
 
         }
 		protected override void Dispose( bool disposing )
@@ -272,9 +271,15 @@ namespace BondApp
 		#endregion
 
 		#region Public Interface
-		public void display(){			
+        public void display(US_GD_CHOT_LAI ip_us_gd_chot_lai)
+        {
+            m_us_chot_lai = ip_us_gd_chot_lai;
 			this.ShowDialog();
 		}
+        public void display()
+        {
+            this.ShowDialog();
+        }
         //public void display_danh_sach_chot_lai(US_GD_CHOT_LAI ip_us_gd_chot_lai)
         //{
         //    m_ds = new DS_GD_CHOT_LAI_DETAIL();
