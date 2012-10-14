@@ -495,6 +495,18 @@ namespace BondApp
                 v_hst_trai_phieu_so_huu.Add(v_dr[DM_TRAI_PHIEU.ID], v_dr[DM_TRAI_PHIEU.MA_TRAI_PHIEU]);
             }
             m_fg.Cols[(int)e_col_Number.ID_TRAI_PHIEU_SO_HUU].DataMap = v_hst_trai_phieu_so_huu;
+
+            //Load nguoi su dung
+            US_HT_NGUOI_SU_DUNG v_us_nguoi_dung = new US_HT_NGUOI_SU_DUNG();
+            DS_HT_NGUOI_SU_DUNG v_ds_nguoi_dung = new DS_HT_NGUOI_SU_DUNG();
+            v_us_nguoi_dung.FillDataset(v_ds_nguoi_dung);
+            Hashtable v_hst_nguoi_dung = new Hashtable();
+            foreach (DataRow v_dr in v_ds_nguoi_dung.HT_NGUOI_SU_DUNG.Rows)
+            {
+                v_hst_nguoi_dung.Add(v_dr[HT_NGUOI_SU_DUNG.ID], v_dr[HT_NGUOI_SU_DUNG.TEN]);
+            }
+            m_fg.Cols[(int)e_col_Number.ID_NGUOI_LAP].DataMap = v_hst_nguoi_dung;
+            m_fg.Cols[(int)e_col_Number.ID_NGUOI_DUYET].DataMap = v_hst_nguoi_dung;
         }
 
         private void grid2us_object(US_DM_TRAI_CHU i_us
