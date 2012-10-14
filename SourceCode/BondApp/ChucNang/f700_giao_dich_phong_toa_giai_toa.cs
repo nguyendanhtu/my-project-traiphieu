@@ -473,7 +473,7 @@ namespace BondApp
                 from_2_us_gd_phong_toa_giai_toa();
                 if (m_us_gd_phong_toa_giai_toa.dcID_TRANG_THAI == ID_TRANG_THAI_PGT.DA_DUYET)
                 {
-                    BaseMessages.MsgBox_Infor("Giao dịch này đã được duyệt rồi, hãy chọn giao dịch khác");
+                    BaseMessages.MsgBox_Infor("Cập nhật không thành công do giao dịch này đã được duyệt rồi, hãy chọn giao dịch khác");
                     return;
                 }
                 try
