@@ -25,11 +25,9 @@ using C1.Win.C1FlexGrid;
 
 namespace BondApp
 {
-
-
-
 	public class f200_dm_dot_chot_lai : System.Windows.Forms.Form
 	{
+        #region controls
 		internal System.Windows.Forms.ImageList ImageList;
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
 		internal SIS.Controls.Button.SiSButton m_cmd_delete;
@@ -39,7 +37,6 @@ namespace BondApp
         private Label m_lbl_title;
         private GroupBox groupBox1;
         private Label m_lbl_muc_dich;
-        private TextBox m_txt_nguoi_lap;
         private Label m_lbl_ma_trai_phieu;
         private Label m_lbl_ten_trai_phieu;
         private TextBox m_txt_trang_thai;
@@ -54,7 +51,6 @@ namespace BondApp
         private DateTimePicker m_dat_ngay_thanh_toan;
         private Label m_lbl_ngay_thanh_toan;
         private DateTimePicker m_dat_ngay_chot_lai;
-        private TextBox m_txt_nguoi_duyet;
         private Label m_lbl_nguoi_duyet;
         private Label m_lbl_ky_tinh_lai;
         private TextBox m_txt_ghi_chu;
@@ -65,13 +61,12 @@ namespace BondApp
         private Label m_lbl_ten_nguoi_duyet;
         private Button m_cmd_duyet;
 		private System.ComponentModel.IContainer components;
-
-		public f200_dm_dot_chot_lai()
+        #endregion
+        public f200_dm_dot_chot_lai()
 		{
 			InitializeComponent();
 			format_controls();
 		}
-
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
@@ -86,7 +81,6 @@ namespace BondApp
 			}
 			base.Dispose( disposing );
 		}
-
 		#region Windows Form Designer generated code
 		/// <summary>
 		/// Required method for Designer support - do not modify
@@ -111,13 +105,11 @@ namespace BondApp
             this.m_cmd_chon_trai_phieu = new System.Windows.Forms.Button();
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.m_lbl_ky_tinh_lai = new System.Windows.Forms.Label();
-            this.m_txt_nguoi_duyet = new System.Windows.Forms.TextBox();
             this.m_lbl_nguoi_duyet = new System.Windows.Forms.Label();
             this.m_dat_ngay_thanh_toan = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_ngay_thanh_toan = new System.Windows.Forms.Label();
             this.m_dat_ngay_chot_lai = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_muc_dich = new System.Windows.Forms.Label();
-            this.m_txt_nguoi_lap = new System.Windows.Forms.TextBox();
             this.m_lbl_ma_trai_phieu = new System.Windows.Forms.Label();
             this.m_lbl_ten_trai_phieu = new System.Windows.Forms.Label();
             this.m_txt_trang_thai = new System.Windows.Forms.TextBox();
@@ -271,13 +263,11 @@ namespace BondApp
             this.groupBox1.Controls.Add(this.m_cmd_chon_trai_phieu);
             this.groupBox1.Controls.Add(this.m_cmd_save);
             this.groupBox1.Controls.Add(this.m_lbl_ky_tinh_lai);
-            this.groupBox1.Controls.Add(this.m_txt_nguoi_duyet);
             this.groupBox1.Controls.Add(this.m_lbl_nguoi_duyet);
             this.groupBox1.Controls.Add(this.m_dat_ngay_thanh_toan);
             this.groupBox1.Controls.Add(this.m_lbl_ngay_thanh_toan);
             this.groupBox1.Controls.Add(this.m_dat_ngay_chot_lai);
             this.groupBox1.Controls.Add(this.m_lbl_muc_dich);
-            this.groupBox1.Controls.Add(this.m_txt_nguoi_lap);
             this.groupBox1.Controls.Add(this.m_lbl_ma_trai_phieu);
             this.groupBox1.Controls.Add(this.m_lbl_ten_trai_phieu);
             this.groupBox1.Controls.Add(this.m_txt_trang_thai);
@@ -310,7 +300,7 @@ namespace BondApp
             // m_lbl_ten_nguoi_lap
             // 
             this.m_lbl_ten_nguoi_lap.AutoSize = true;
-            this.m_lbl_ten_nguoi_lap.Location = new System.Drawing.Point(232, 79);
+            this.m_lbl_ten_nguoi_lap.Location = new System.Drawing.Point(103, 79);
             this.m_lbl_ten_nguoi_lap.Name = "m_lbl_ten_nguoi_lap";
             this.m_lbl_ten_nguoi_lap.Size = new System.Drawing.Size(72, 13);
             this.m_lbl_ten_nguoi_lap.TabIndex = 12;
@@ -320,7 +310,7 @@ namespace BondApp
             // m_lbl_ten_nguoi_duyet
             // 
             this.m_lbl_ten_nguoi_duyet.AutoSize = true;
-            this.m_lbl_ten_nguoi_duyet.Location = new System.Drawing.Point(232, 107);
+            this.m_lbl_ten_nguoi_duyet.Location = new System.Drawing.Point(103, 105);
             this.m_lbl_ten_nguoi_duyet.Name = "m_lbl_ten_nguoi_duyet";
             this.m_lbl_ten_nguoi_duyet.Size = new System.Drawing.Size(84, 13);
             this.m_lbl_ten_nguoi_duyet.TabIndex = 17;
@@ -359,16 +349,6 @@ namespace BondApp
             this.m_lbl_ky_tinh_lai.Size = new System.Drawing.Size(54, 13);
             this.m_lbl_ky_tinh_lai.TabIndex = 8;
             this.m_lbl_ky_tinh_lai.Text = "Kỳ tính lãi";
-            // 
-            // m_txt_nguoi_duyet
-            // 
-            this.m_txt_nguoi_duyet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_txt_nguoi_duyet.Location = new System.Drawing.Point(106, 102);
-            this.m_txt_nguoi_duyet.Name = "m_txt_nguoi_duyet";
-            this.m_txt_nguoi_duyet.ReadOnly = true;
-            this.m_txt_nguoi_duyet.Size = new System.Drawing.Size(120, 20);
-            this.m_txt_nguoi_duyet.TabIndex = 16;
-            this.m_txt_nguoi_duyet.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // m_lbl_nguoi_duyet
             // 
@@ -417,16 +397,6 @@ namespace BondApp
             this.m_lbl_muc_dich.Size = new System.Drawing.Size(54, 13);
             this.m_lbl_muc_dich.TabIndex = 18;
             this.m_lbl_muc_dich.Text = "Mục đích";
-            // 
-            // m_txt_nguoi_lap
-            // 
-            this.m_txt_nguoi_lap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_txt_nguoi_lap.Location = new System.Drawing.Point(106, 76);
-            this.m_txt_nguoi_lap.Name = "m_txt_nguoi_lap";
-            this.m_txt_nguoi_lap.ReadOnly = true;
-            this.m_txt_nguoi_lap.Size = new System.Drawing.Size(120, 20);
-            this.m_txt_nguoi_lap.TabIndex = 11;
-            this.m_txt_nguoi_lap.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // m_lbl_ma_trai_phieu
             // 
@@ -562,28 +532,32 @@ namespace BondApp
 
 		}
 		#endregion
-
 		#region Public Interface
 		public void display(){			
 			this.ShowDialog();
 		}
 		#endregion
-
 		#region Data Structure
-		private enum e_col_Number{
-			ID_NGUOI_LAP = 3
-,NGAY_CHOT_LAI = 1
-,ID_TRAI_PHIEU = 6
-,GHI_CHU1 = 9
-,KY_TINH_LAI = 7
-,NGAY_THANH_TOAN = 2
-,ID_NGUOI_DUYET = 4
-,MUC_DICH = 8
-,TRANG_THAI = 5
+		private enum e_col_Number
+        {
+            ID_NGUOI_LAP = 3
+            ,NGAY_CHOT_LAI = 1
+            ,ID_TRAI_PHIEU = 6
+            ,GHI_CHU1 = 9
+            ,KY_TINH_LAI = 7
+            ,NGAY_THANH_TOAN = 2
+            ,ID_NGUOI_DUYET = 4
+            ,MUC_DICH = 8
+            ,TRANG_THAI = 5
 
-		}			
+		}
+        private enum e_edit_mode
+        { 
+            LAP,
+            DUYET,
+            XEM
+        }
 		#endregion
-
 		#region Members
 		ITransferDataRow m_obj_trans;		
 		DS_GD_CHOT_LAI m_ds = new DS_GD_CHOT_LAI();
@@ -593,8 +567,8 @@ namespace BondApp
         US_HT_NGUOI_SU_DUNG m_us_nguoi_lap = new US_HT_NGUOI_SU_DUNG();
         US_HT_NGUOI_SU_DUNG m_us_nguoi_duyet = new US_HT_NGUOI_SU_DUNG();
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
+        e_edit_mode m_e_edit_mode = e_edit_mode.XEM;
 		#endregion
-
 		#region Private Methods
 		private void format_controls(){
 			CControlFormat.setFormStyle(this);
@@ -609,12 +583,12 @@ namespace BondApp
 		}
         private void reset()
         {
-            m_us_nguoi_lap = new US_HT_NGUOI_SU_DUNG(CAppContext_201.getCurrentUserID());
+            //m_us_nguoi_lap = new US_HT_NGUOI_SU_DUNG(CAppContext_201.getCurrentUserID());
             m_txt_ma_trai_phieu.Text = "";
             m_lbl_ten_trai_phieu.Text = "";
-            m_txt_nguoi_lap.Text = CIPConvert.ToStr(m_us_nguoi_lap.dcID);
-            m_lbl_ten_nguoi_lap.Text = m_us_nguoi_lap.strTEN;
-            m_txt_nguoi_duyet.Text = "";
+            m_dat_ngay_chot_lai.Text = "";
+            m_dat_ngay_thanh_toan.Text = "";
+            m_lbl_ten_nguoi_lap.Text = "";
             m_lbl_ten_nguoi_duyet.Text = "";
             m_txt_muc_dich.Text = "";
             m_txt_trang_thai.Text = "";
@@ -645,9 +619,12 @@ namespace BondApp
             op_us_gd_chot_lai.datNGAY_THANH_TOAN = m_dat_ngay_thanh_toan.Value.Date;
             op_us_gd_chot_lai.dcKY_TINH_LAI = CIPConvert.ToDecimal(m_txt_ky_tinh_lai.Text);
             op_us_gd_chot_lai.strMUC_DICH = m_txt_muc_dich.Text;
-            op_us_gd_chot_lai.dcTRANG_THAI = CIPConvert.ToDecimal(m_txt_trang_thai.Text);
-            op_us_gd_chot_lai.dcID_NGUOI_LAP = CAppContext_201.getCurrentUserID();
+            op_us_gd_chot_lai.dcTRANG_THAI = CIPConvert.ToDecimal(m_txt_trang_thai.Text);            
             op_us_gd_chot_lai.strGHI_CHU1 = m_txt_ghi_chu.Text;
+            if (m_e_form_mode == DataEntryFormMode.InsertDataState)
+                op_us_gd_chot_lai.dcID_NGUOI_LAP = CAppContext_201.getCurrentUserID();
+            if ((m_e_edit_mode == e_edit_mode.DUYET) && (op_us_gd_chot_lai.IsID_NGUOI_DUYETNull()))
+                op_us_gd_chot_lai.dcID_NGUOI_DUYET = CAppContext_201.getCurrentUserID();
         }
         private void select_trai_phieu()
         {
@@ -657,15 +634,11 @@ namespace BondApp
             us_trai_phieu_2_form();
             m_txt_ky_tinh_lai.Focus();
         }
-        private void select_nguoi_lap()
+        private void us_trai_phieu_2_form()
         {
-            f999_ht_nguoi_su_dung v_frm999 = new f999_ht_nguoi_su_dung();
-            //m_us_nguoi_lap = v_frm999.
-            if (m_us_dm_trai_phieu.IsIDNull()) return;
-            us_trai_phieu_2_form();
-            m_txt_ky_tinh_lai.Focus();
+            m_txt_ma_trai_phieu.Text = m_us_dm_trai_phieu.strMA_TRAI_PHIEU;
+            m_lbl_ten_trai_phieu.Text = m_us_dm_trai_phieu.strTEN_TRAI_PHIEU;            
         }
-        
         private void save_data()
         {
             if (check_validate_data_is_ok() == false) return;
@@ -700,13 +673,15 @@ namespace BondApp
             m_dat_ngay_chot_lai.Enabled = true      ; m_dat_ngay_chot_lai.BackColor = Color.White;
             m_dat_ngay_thanh_toan.Enabled = true    ; m_dat_ngay_thanh_toan.BackColor = Color.White;
             m_txt_muc_dich.ReadOnly = false         ; m_txt_muc_dich.BackColor = Color.White;
-            //m_txt_nguoi_lap.ReadOnly = false        ; m_txt_nguoi_lap.BackColor = Color.White;
-            //m_txt_nguoi_duyet.ReadOnly = false      ; m_txt_nguoi_duyet.BackColor = Color.White;
             m_txt_trang_thai.ReadOnly = false       ; m_txt_trang_thai.BackColor = Color.White;
             m_txt_ky_tinh_lai.ReadOnly = false      ; m_txt_ky_tinh_lai.BackColor = Color.White;
             m_txt_ghi_chu.ReadOnly = false          ; m_txt_ghi_chu.BackColor = Color.White;
             m_cmd_chon_trai_phieu.Enabled = true;
             m_cmd_save.Enabled = true;
+            m_cmd_delete.Enabled = false;
+            m_cmd_insert.Enabled = false;
+            m_cmd_update.Enabled = false;
+            m_cmd_gen.Enabled = false;
         }
         private void disableEditing()
         {
@@ -714,58 +689,62 @@ namespace BondApp
             m_dat_ngay_chot_lai.Enabled = false; m_dat_ngay_chot_lai.BackColor = Color.LightYellow;
             m_dat_ngay_thanh_toan.Enabled = false; m_dat_ngay_thanh_toan.BackColor = Color.LightYellow;
             m_txt_muc_dich.ReadOnly = true; m_txt_muc_dich.BackColor = Color.LightYellow;
-            m_txt_nguoi_lap.ReadOnly = true; m_txt_nguoi_lap.BackColor = Color.LightYellow;
-            m_txt_nguoi_duyet.ReadOnly = true; m_txt_nguoi_duyet.BackColor = Color.LightYellow;
             m_txt_trang_thai.ReadOnly = true; m_txt_trang_thai.BackColor = Color.LightYellow;
             m_txt_ky_tinh_lai.ReadOnly = true; m_txt_ky_tinh_lai.BackColor = Color.LightYellow;
             m_txt_ghi_chu.ReadOnly = true; m_txt_ghi_chu.BackColor = Color.White;
             m_cmd_chon_trai_phieu.Enabled = false;
             m_cmd_duyet.Enabled = false;
             m_cmd_save.Enabled = false;
+            m_cmd_delete.Enabled = true;
+            m_cmd_insert.Enabled = true;
+            m_cmd_update.Enabled = true;
+            m_cmd_gen.Enabled = true;
         }
 		private void set_initial_form_load(){
-            us_trai_phieu_2_form();
+            //us_trai_phieu_2_form();
 			m_obj_trans = get_trans_object(m_fg);
 			load_data_2_grid();		
 		}
-        private void us_trai_phieu_2_form()
+        private void us_nguoi_lap_2_form()
         {
-            m_txt_ma_trai_phieu.Text = m_us_dm_trai_phieu.strMA_TRAI_PHIEU;
-            m_lbl_ten_trai_phieu.Text = m_us_dm_trai_phieu.strTEN_TRAI_PHIEU;
+            m_lbl_ten_nguoi_lap.Text = m_us_nguoi_lap.strTEN;            
         }
-        private void us_nguoi_dung_2_form()
-        {
-            if (m_us_gd_dot_chot_lai.dcID_NGUOI_LAP > 0)
-            {
-                m_txt_nguoi_lap.Text = CIPConvert.ToStr(m_us_nguoi_lap.dcID);
-                m_lbl_ten_nguoi_lap.Text = m_us_nguoi_lap.strTEN;
-            }
-            if (m_us_gd_dot_chot_lai.dcID_NGUOI_DUYET > 0)
-            {
-                m_txt_nguoi_duyet.Text = CIPConvert.ToStr(m_us_nguoi_duyet.dcID);
-                m_lbl_ten_nguoi_duyet.Text = m_us_nguoi_duyet.strTEN;
-            }
+        private void us_nguoi_duyet_2_form()
+        {             
+             m_lbl_ten_nguoi_duyet.Text = m_us_nguoi_duyet.strTEN;
+             m_cmd_duyet.Visible = false;
         }
-        private void us_object_2_form(US_GD_CHOT_LAI ip_us_gd_chot_lai)
+        private void us_object_2_form()
         {
-            if (m_e_form_mode == DataEntryFormMode.InsertDataState)
+            //if (m_e_form_mode == DataEntryFormMode.InsertDataState)
+            //{
+            //    reset();
+            //    return;
+            //}
+            //US_CM_DM_TU_DIEN m_us_tu_dien = new US_CM_DM_TU_DIEN(ip_us_gd_chot_lai.dcID_TRAI_PHIEU);            
+            if (!m_us_gd_dot_chot_lai.IsID_TRAI_PHIEUNull())
             {
-                reset();
-                return;
+                m_us_dm_trai_phieu = new US_DM_TRAI_PHIEU(m_us_gd_dot_chot_lai.dcID_TRAI_PHIEU);
+                us_trai_phieu_2_form();
             }
-            //US_CM_DM_TU_DIEN m_us_tu_dien = new US_CM_DM_TU_DIEN(ip_us_gd_chot_lai.dcID_TRAI_PHIEU);
-            m_us_dm_trai_phieu = new US_DM_TRAI_PHIEU(ip_us_gd_chot_lai.dcID_TRAI_PHIEU);
-            m_us_nguoi_lap = new US_HT_NGUOI_SU_DUNG(ip_us_gd_chot_lai.dcID_NGUOI_LAP);
-            if (ip_us_gd_chot_lai.dcID_NGUOI_DUYET > 0)
-                m_us_nguoi_duyet = new US_HT_NGUOI_SU_DUNG(ip_us_gd_chot_lai.dcID_NGUOI_DUYET);
-            us_trai_phieu_2_form();
-            us_nguoi_dung_2_form();
-            m_dat_ngay_chot_lai.Value = ip_us_gd_chot_lai.datNGAY_CHOT_LAI;
-            m_dat_ngay_thanh_toan.Value = ip_us_gd_chot_lai.datNGAY_THANH_TOAN;
-            m_txt_muc_dich.Text = ip_us_gd_chot_lai.strMUC_DICH;
-            m_txt_trang_thai.Text = CIPConvert.ToStr(ip_us_gd_chot_lai.dcTRANG_THAI);
-            m_txt_ky_tinh_lai.Text = CIPConvert.ToStr(ip_us_gd_chot_lai.dcKY_TINH_LAI);
-            m_txt_ghi_chu.Text = CIPConvert.ToStr(ip_us_gd_chot_lai.strGHI_CHU1);
+            if (!m_us_gd_dot_chot_lai.IsID_NGUOI_LAPNull())
+            {
+                m_us_nguoi_lap = new US_HT_NGUOI_SU_DUNG(m_us_gd_dot_chot_lai.dcID_NGUOI_LAP);
+                us_nguoi_lap_2_form();
+            }
+            if (!m_us_gd_dot_chot_lai.IsID_NGUOI_DUYETNull())
+            {
+                m_us_nguoi_duyet = new US_HT_NGUOI_SU_DUNG(m_us_gd_dot_chot_lai.dcID_NGUOI_DUYET);
+                us_nguoi_duyet_2_form();
+            }
+            else
+                m_cmd_duyet.Visible = true;
+            m_dat_ngay_chot_lai.Value = m_us_gd_dot_chot_lai.datNGAY_CHOT_LAI;
+            m_dat_ngay_thanh_toan.Value = m_us_gd_dot_chot_lai.datNGAY_THANH_TOAN;
+            m_txt_muc_dich.Text = m_us_gd_dot_chot_lai.strMUC_DICH;
+            m_txt_trang_thai.Text = CIPConvert.ToStr(m_us_gd_dot_chot_lai.dcTRANG_THAI);
+            m_txt_ky_tinh_lai.Text = CIPConvert.ToStr(m_us_gd_dot_chot_lai.dcKY_TINH_LAI);
+            m_txt_ghi_chu.Text = m_us_gd_dot_chot_lai.strGHI_CHU1;
         }
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -819,40 +798,44 @@ namespace BondApp
 			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
 			i_us.DataRow2Me(v_dr);
 		}
-		private void us_object2grid(US_GD_CHOT_LAI i_us, int i_grid_row) {
-			DataRow v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
-			i_us.Me2DataRow(v_dr);
-			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
-		}
-		private void insert_gd_chot_lai(){
+        //private void us_object2grid(US_GD_CHOT_LAI i_us, int i_grid_row) {
+        //    DataRow v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
+        //    i_us.Me2DataRow(v_dr);
+        //    m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
+        //}
+		private void insert_gd_chot_lai()
+        {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             m_us_gd_dot_chot_lai = new US_GD_CHOT_LAI();
-            us_object_2_form(m_us_gd_dot_chot_lai);
+            m_us_dm_trai_phieu = new US_DM_TRAI_PHIEU();
+            m_us_nguoi_duyet = new US_HT_NGUOI_SU_DUNG();
+            m_us_nguoi_lap = new US_HT_NGUOI_SU_DUNG();
+            us_object_2_form();
             enableEditing();
-
             m_cmd_delete.Enabled = false;
             m_cmd_gen.Enabled = false;
             m_cmd_update.Enabled = false;
+            m_cmd_insert.Enabled = false;
 		}
 		private void update_gd_chot_lai(){
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             grid2us_object(m_us_gd_dot_chot_lai, m_fg.Row);
-            us_object_2_form(m_us_gd_dot_chot_lai);
+            us_object_2_form();
             enableEditing();
-            if (m_us_gd_dot_chot_lai.IsID_NGUOI_DUYETNull())
-                m_cmd_duyet.Enabled = true;
             m_cmd_delete.Enabled = false;
             m_cmd_gen.Enabled = false;
             m_cmd_insert.Enabled = false;
+            m_cmd_update.Enabled = false;
 		}
         private void duyet_gd_chot_lai()
         {
-            m_us_gd_dot_chot_lai.dcID_NGUOI_DUYET = CAppContext_201.getCurrentUserID();
-            us_nguoi_dung_2_form();
+            m_e_edit_mode = e_edit_mode.DUYET;
+            m_us_nguoi_duyet = new US_HT_NGUOI_SU_DUNG(CAppContext_201.getCurrentUserID());
+            us_nguoi_duyet_2_form();
         }
 		private void delete_gd_chot_lai(){
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
@@ -878,8 +861,8 @@ namespace BondApp
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             grid2us_object(m_us_gd_dot_chot_lai, m_fg.Row);
-            f201_dm_gd_chot_lai_detail v_f201 = new f201_dm_gd_chot_lai_detail(m_us_gd_dot_chot_lai);
-            v_f201.display();
+            f201_dm_gd_chot_lai_detail v_f201 = new f201_dm_gd_chot_lai_detail();
+            v_f201.display(m_us_gd_dot_chot_lai);
         }
 		private void set_define_events(){
             this.Load += new EventHandler(f200_dm_dot_chot_lai_Load);
@@ -922,17 +905,6 @@ namespace BondApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        private void m_cmd_chon_nguoi_lap_Click(object sender, System.EventArgs e)
-        {
-            try
-            {
-                select_nguoi_lap();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
 		private void f200_dm_dot_chot_lai_Load(object sender, System.EventArgs e) {
 			try{
 				set_initial_form_load();
@@ -942,16 +914,11 @@ namespace BondApp
 			}
 		
 		}
-
 		private void m_cmd_exit_Click(object sender, EventArgs e) {
             if (m_cmd_save.Enabled == true)
             {
                 reset();
                 disableEditing();
-                m_cmd_delete.Enabled = true;
-                m_cmd_gen.Enabled = true;
-                m_cmd_insert.Enabled = true;
-                m_cmd_update.Enabled = true;
                 return;
             }
 			try{
@@ -961,7 +928,6 @@ namespace BondApp
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
-
 		private void m_cmd_update_Click(object sender, EventArgs e) {
 			try{
 				update_gd_chot_lai();
@@ -970,7 +936,6 @@ namespace BondApp
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
-
 		private void m_cmd_delete_Click(object sender, EventArgs e) {
 			try{
 				delete_gd_chot_lai();
@@ -979,7 +944,6 @@ namespace BondApp
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
-
 		private void m_cmd_gen_Click(object sender, EventArgs e) {
 			try{
                 gen_gd_chot_lai();
