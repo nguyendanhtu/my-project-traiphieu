@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f900_quan_ly_coupon));
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.m_txt_ky_tinh_lai = new System.Windows.Forms.TextBox();
+            this.m_lbl_ky_tinh_lai = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.m_cbo_ky_tinh_lai = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,20 +55,18 @@
             this.m_txt_ten_trai_phieu = new System.Windows.Forms.TextBox();
             this.m_txt_ma_trai_phieu = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.m_cmd_chua_tra = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_xac_nhan = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_hoan_tac = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_da_tra = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_gru_tim_kiem = new System.Windows.Forms.GroupBox();
             this.m_txt_search = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.m_cmd_filter = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.m_txt_ky_tinh_lai = new System.Windows.Forms.TextBox();
-            this.m_lbl_ky_tinh_lai = new System.Windows.Forms.Label();
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
+            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_hoan_tac = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_xac_nhan = new SIS.Controls.Button.SiSButton();
+            this.m_cbo_trang_thai = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -115,6 +117,35 @@
             this.groupBox2.TabIndex = 56;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin trái phiếu";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(838, 47);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(34, 13);
+            this.label4.TabIndex = 65;
+            this.label4.Text = "tháng";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // m_txt_ky_tinh_lai
+            // 
+            this.m_txt_ky_tinh_lai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.m_txt_ky_tinh_lai.Location = new System.Drawing.Point(749, 44);
+            this.m_txt_ky_tinh_lai.Name = "m_txt_ky_tinh_lai";
+            this.m_txt_ky_tinh_lai.ReadOnly = true;
+            this.m_txt_ky_tinh_lai.Size = new System.Drawing.Size(83, 20);
+            this.m_txt_ky_tinh_lai.TabIndex = 64;
+            this.m_txt_ky_tinh_lai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // m_lbl_ky_tinh_lai
+            // 
+            this.m_lbl_ky_tinh_lai.AutoSize = true;
+            this.m_lbl_ky_tinh_lai.Location = new System.Drawing.Point(689, 48);
+            this.m_lbl_ky_tinh_lai.Name = "m_lbl_ky_tinh_lai";
+            this.m_lbl_ky_tinh_lai.Size = new System.Drawing.Size(54, 13);
+            this.m_lbl_ky_tinh_lai.TabIndex = 63;
+            this.m_lbl_ky_tinh_lai.Text = "Kỳ tính lãi";
             // 
             // label3
             // 
@@ -305,10 +336,8 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.m_cmd_chua_tra);
             this.panel1.Controls.Add(this.m_cmd_xac_nhan);
             this.panel1.Controls.Add(this.m_cmd_hoan_tac);
-            this.panel1.Controls.Add(this.m_cmd_da_tra);
             this.panel1.Controls.Add(this.m_cmd_exit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 442);
@@ -316,78 +345,6 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(4);
             this.panel1.Size = new System.Drawing.Size(1035, 36);
             this.panel1.TabIndex = 59;
-            // 
-            // m_cmd_chua_tra
-            // 
-            this.m_cmd_chua_tra.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_chua_tra.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_chua_tra.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_chua_tra.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_chua_tra.Enabled = false;
-            this.m_cmd_chua_tra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_chua_tra.ImageIndex = 18;
-            this.m_cmd_chua_tra.Location = new System.Drawing.Point(167, 4);
-            this.m_cmd_chua_tra.Name = "m_cmd_chua_tra";
-            this.m_cmd_chua_tra.Size = new System.Drawing.Size(163, 28);
-            this.m_cmd_chua_tra.TabIndex = 26;
-            this.m_cmd_chua_tra.Text = "Danh sách chưa trả lãi";
-            // 
-            // m_cmd_xac_nhan
-            // 
-            this.m_cmd_xac_nhan.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_xac_nhan.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_xac_nhan.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_xac_nhan.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_xac_nhan.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xac_nhan.Image")));
-            this.m_cmd_xac_nhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_xac_nhan.Location = new System.Drawing.Point(767, 4);
-            this.m_cmd_xac_nhan.Name = "m_cmd_xac_nhan";
-            this.m_cmd_xac_nhan.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_xac_nhan.TabIndex = 21;
-            this.m_cmd_xac_nhan.Text = "&Xác nhận";
-            // 
-            // m_cmd_hoan_tac
-            // 
-            this.m_cmd_hoan_tac.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_hoan_tac.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_hoan_tac.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_hoan_tac.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_hoan_tac.Enabled = false;
-            this.m_cmd_hoan_tac.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_hoan_tac.ImageIndex = 2;
-            this.m_cmd_hoan_tac.Location = new System.Drawing.Point(855, 4);
-            this.m_cmd_hoan_tac.Name = "m_cmd_hoan_tac";
-            this.m_cmd_hoan_tac.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_hoan_tac.TabIndex = 22;
-            this.m_cmd_hoan_tac.Text = "&Hoàn tác";
-            // 
-            // m_cmd_da_tra
-            // 
-            this.m_cmd_da_tra.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_da_tra.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_da_tra.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_da_tra.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_da_tra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_da_tra.ImageIndex = 18;
-            this.m_cmd_da_tra.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_da_tra.Name = "m_cmd_da_tra";
-            this.m_cmd_da_tra.Size = new System.Drawing.Size(163, 28);
-            this.m_cmd_da_tra.TabIndex = 25;
-            this.m_cmd_da_tra.Text = "Danh sách đã trả lãi";
-            // 
-            // m_cmd_exit
-            // 
-            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_exit.ImageIndex = 12;
-            this.m_cmd_exit.Location = new System.Drawing.Point(943, 4);
-            this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 24;
-            this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // groupBox1
             // 
@@ -413,6 +370,8 @@
             // 
             // m_gru_tim_kiem
             // 
+            this.m_gru_tim_kiem.Controls.Add(this.m_cbo_trang_thai);
+            this.m_gru_tim_kiem.Controls.Add(this.label5);
             this.m_gru_tim_kiem.Controls.Add(this.m_txt_search);
             this.m_gru_tim_kiem.Controls.Add(this.label2);
             this.m_gru_tim_kiem.Controls.Add(this.m_cmd_filter);
@@ -425,7 +384,7 @@
             // 
             // m_txt_search
             // 
-            this.m_txt_search.Location = new System.Drawing.Point(78, 16);
+            this.m_txt_search.Location = new System.Drawing.Point(344, 19);
             this.m_txt_search.Name = "m_txt_search";
             this.m_txt_search.Size = new System.Drawing.Size(508, 20);
             this.m_txt_search.TabIndex = 31;
@@ -433,7 +392,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 19);
+            this.label2.Location = new System.Drawing.Point(279, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 30;
@@ -443,41 +402,101 @@
             // 
             this.m_cmd_filter.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_filter.Image")));
             this.m_cmd_filter.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.m_cmd_filter.Location = new System.Drawing.Point(601, 14);
+            this.m_cmd_filter.Location = new System.Drawing.Point(867, 17);
             this.m_cmd_filter.Name = "m_cmd_filter";
             this.m_cmd_filter.Size = new System.Drawing.Size(64, 23);
             this.m_cmd_filter.TabIndex = 29;
             this.m_cmd_filter.Text = "     Xem";
             this.m_cmd_filter.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // ImageList
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(838, 47);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 13);
-            this.label4.TabIndex = 65;
-            this.label4.Text = "tháng";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
+            this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.ImageList.Images.SetKeyName(0, "");
+            this.ImageList.Images.SetKeyName(1, "");
+            this.ImageList.Images.SetKeyName(2, "");
+            this.ImageList.Images.SetKeyName(3, "");
+            this.ImageList.Images.SetKeyName(4, "");
+            this.ImageList.Images.SetKeyName(5, "");
+            this.ImageList.Images.SetKeyName(6, "");
+            this.ImageList.Images.SetKeyName(7, "");
+            this.ImageList.Images.SetKeyName(8, "");
+            this.ImageList.Images.SetKeyName(9, "");
+            this.ImageList.Images.SetKeyName(10, "");
+            this.ImageList.Images.SetKeyName(11, "");
+            this.ImageList.Images.SetKeyName(12, "");
+            this.ImageList.Images.SetKeyName(13, "");
+            this.ImageList.Images.SetKeyName(14, "");
+            this.ImageList.Images.SetKeyName(15, "");
+            this.ImageList.Images.SetKeyName(16, "");
+            this.ImageList.Images.SetKeyName(17, "");
+            this.ImageList.Images.SetKeyName(18, "");
+            this.ImageList.Images.SetKeyName(19, "");
+            this.ImageList.Images.SetKeyName(20, "");
+            this.ImageList.Images.SetKeyName(21, "");
             // 
-            // m_txt_ky_tinh_lai
+            // m_cmd_exit
             // 
-            this.m_txt_ky_tinh_lai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_txt_ky_tinh_lai.Location = new System.Drawing.Point(749, 44);
-            this.m_txt_ky_tinh_lai.Name = "m_txt_ky_tinh_lai";
-            this.m_txt_ky_tinh_lai.ReadOnly = true;
-            this.m_txt_ky_tinh_lai.Size = new System.Drawing.Size(83, 20);
-            this.m_txt_ky_tinh_lai.TabIndex = 64;
-            this.m_txt_ky_tinh_lai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_exit.ImageIndex = 12;
+            this.m_cmd_exit.ImageList = this.ImageList;
+            this.m_cmd_exit.Location = new System.Drawing.Point(943, 4);
+            this.m_cmd_exit.Name = "m_cmd_exit";
+            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_exit.TabIndex = 27;
+            this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
-            // m_lbl_ky_tinh_lai
+            // m_cmd_hoan_tac
             // 
-            this.m_lbl_ky_tinh_lai.AutoSize = true;
-            this.m_lbl_ky_tinh_lai.Location = new System.Drawing.Point(689, 48);
-            this.m_lbl_ky_tinh_lai.Name = "m_lbl_ky_tinh_lai";
-            this.m_lbl_ky_tinh_lai.Size = new System.Drawing.Size(54, 13);
-            this.m_lbl_ky_tinh_lai.TabIndex = 63;
-            this.m_lbl_ky_tinh_lai.Text = "Kỳ tính lãi";
+            this.m_cmd_hoan_tac.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_hoan_tac.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_hoan_tac.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_hoan_tac.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_hoan_tac.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_hoan_tac.ImageIndex = 2;
+            this.m_cmd_hoan_tac.Location = new System.Drawing.Point(855, 4);
+            this.m_cmd_hoan_tac.Name = "m_cmd_hoan_tac";
+            this.m_cmd_hoan_tac.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_hoan_tac.TabIndex = 28;
+            this.m_cmd_hoan_tac.Text = "&Hoàn tác";
+            // 
+            // m_cmd_xac_nhan
+            // 
+            this.m_cmd_xac_nhan.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_xac_nhan.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_xac_nhan.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_xac_nhan.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_xac_nhan.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_xac_nhan.Image")));
+            this.m_cmd_xac_nhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_xac_nhan.Location = new System.Drawing.Point(767, 4);
+            this.m_cmd_xac_nhan.Name = "m_cmd_xac_nhan";
+            this.m_cmd_xac_nhan.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_xac_nhan.TabIndex = 29;
+            this.m_cmd_xac_nhan.Text = "&Xác nhận";
+            // 
+            // m_cbo_trang_thai
+            // 
+            this.m_cbo_trang_thai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_trang_thai.FormattingEnabled = true;
+            this.m_cbo_trang_thai.Location = new System.Drawing.Point(104, 19);
+            this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
+            this.m_cbo_trang_thai.Size = new System.Drawing.Size(127, 21);
+            this.m_cbo_trang_thai.TabIndex = 65;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(43, 22);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.TabIndex = 64;
+            this.label5.Text = "Trạng thái";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // f900_quan_ly_coupon
             // 
@@ -489,7 +508,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.m_lbl_title);
             this.Name = "f900_quan_ly_coupon";
-            this.Text = "f900_quan_ly_coupon";
+            this.Text = "f900 - Quản lý trả lãi định kỳ";
             this.Load += new System.EventHandler(this.f900_quan_ly_coupon_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -523,9 +542,6 @@
         private System.Windows.Forms.TextBox m_txt_ten_trai_phieu;
         private System.Windows.Forms.TextBox m_txt_ma_trai_phieu;
         internal System.Windows.Forms.Panel panel1;
-        internal SIS.Controls.Button.SiSButton m_cmd_xac_nhan;
-        internal SIS.Controls.Button.SiSButton m_cmd_hoan_tac;
-        internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private System.Windows.Forms.ComboBox m_cbo_ky_tinh_lai;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -533,12 +549,16 @@
         private System.Windows.Forms.TextBox m_txt_search;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button m_cmd_filter;
-        internal SIS.Controls.Button.SiSButton m_cmd_da_tra;
         private System.Windows.Forms.Label label3;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
-        internal SIS.Controls.Button.SiSButton m_cmd_chua_tra;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox m_txt_ky_tinh_lai;
         private System.Windows.Forms.Label m_lbl_ky_tinh_lai;
+        internal System.Windows.Forms.ImageList ImageList;
+        internal SIS.Controls.Button.SiSButton m_cmd_xac_nhan;
+        internal SIS.Controls.Button.SiSButton m_cmd_hoan_tac;
+        internal SIS.Controls.Button.SiSButton m_cmd_exit;
+        private System.Windows.Forms.ComboBox m_cbo_trang_thai;
+        private System.Windows.Forms.Label label5;
     }
 }
