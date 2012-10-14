@@ -539,7 +539,7 @@ namespace BondApp
             try
             {
                 v_us.BeginTransaction();
-                v_us.Delete();
+                v_us.delete_gd_chuyen_nhuong();
                 v_us.CommitTransaction();
                 m_fg.Rows.Remove(m_fg.Row);
             }
