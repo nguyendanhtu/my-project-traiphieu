@@ -49,10 +49,7 @@
             this.m_txt_ma_trai_phieu = new System.Windows.Forms.TextBox();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_cmd_chua_tra = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_da_tra = new SIS.Controls.Button.SiSButton();
             this.m_cmd_thanh_toan = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
@@ -60,6 +57,8 @@
             this.m_txt_search = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.m_cmd_filter = new System.Windows.Forms.Button();
+            this.m_cbo_trang_thai = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -282,10 +281,7 @@
             // 
             // m_pnl_out_place_dm
             // 
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_chua_tra);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_da_tra);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_thanh_toan);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 443);
@@ -293,35 +289,6 @@
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1045, 36);
             this.m_pnl_out_place_dm.TabIndex = 64;
-            // 
-            // m_cmd_chua_tra
-            // 
-            this.m_cmd_chua_tra.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_chua_tra.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_chua_tra.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_chua_tra.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_chua_tra.Enabled = false;
-            this.m_cmd_chua_tra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_chua_tra.ImageIndex = 18;
-            this.m_cmd_chua_tra.Location = new System.Drawing.Point(255, 4);
-            this.m_cmd_chua_tra.Name = "m_cmd_chua_tra";
-            this.m_cmd_chua_tra.Size = new System.Drawing.Size(163, 28);
-            this.m_cmd_chua_tra.TabIndex = 27;
-            this.m_cmd_chua_tra.Text = "Danh sách chưa trả lãi";
-            // 
-            // m_cmd_da_tra
-            // 
-            this.m_cmd_da_tra.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_da_tra.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_da_tra.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_da_tra.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_da_tra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_da_tra.ImageIndex = 18;
-            this.m_cmd_da_tra.Location = new System.Drawing.Point(92, 4);
-            this.m_cmd_da_tra.Name = "m_cmd_da_tra";
-            this.m_cmd_da_tra.Size = new System.Drawing.Size(163, 28);
-            this.m_cmd_da_tra.TabIndex = 26;
-            this.m_cmd_da_tra.Text = "Danh sách đã trả lãi";
             // 
             // m_cmd_thanh_toan
             // 
@@ -336,21 +303,6 @@
             this.m_cmd_thanh_toan.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_thanh_toan.TabIndex = 22;
             this.m_cmd_thanh_toan.Text = "&Thanh toán";
-            // 
-            // m_cmd_view
-            // 
-            this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_view.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_view.ImageIndex = 18;
-            this.m_cmd_view.ImageList = this.ImageList;
-            this.m_cmd_view.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_view.Name = "m_cmd_view";
-            this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_view.TabIndex = 21;
-            this.m_cmd_view.Text = "Xem";
             // 
             // m_cmd_exit
             // 
@@ -391,6 +343,8 @@
             // 
             // m_gru_tim_kiem
             // 
+            this.m_gru_tim_kiem.Controls.Add(this.m_cbo_trang_thai);
+            this.m_gru_tim_kiem.Controls.Add(this.label1);
             this.m_gru_tim_kiem.Controls.Add(this.m_txt_search);
             this.m_gru_tim_kiem.Controls.Add(this.label2);
             this.m_gru_tim_kiem.Controls.Add(this.m_cmd_filter);
@@ -403,7 +357,7 @@
             // 
             // m_txt_search
             // 
-            this.m_txt_search.Location = new System.Drawing.Point(78, 16);
+            this.m_txt_search.Location = new System.Drawing.Point(321, 19);
             this.m_txt_search.Name = "m_txt_search";
             this.m_txt_search.Size = new System.Drawing.Size(508, 20);
             this.m_txt_search.TabIndex = 31;
@@ -411,7 +365,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 19);
+            this.label2.Location = new System.Drawing.Point(256, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 30;
@@ -421,12 +375,31 @@
             // 
             this.m_cmd_filter.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_filter.Image")));
             this.m_cmd_filter.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.m_cmd_filter.Location = new System.Drawing.Point(601, 14);
+            this.m_cmd_filter.Location = new System.Drawing.Point(844, 17);
             this.m_cmd_filter.Name = "m_cmd_filter";
             this.m_cmd_filter.Size = new System.Drawing.Size(64, 23);
             this.m_cmd_filter.TabIndex = 29;
             this.m_cmd_filter.Text = "     Xem";
             this.m_cmd_filter.UseVisualStyleBackColor = true;
+            // 
+            // m_cbo_trang_thai
+            // 
+            this.m_cbo_trang_thai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_trang_thai.FormattingEnabled = true;
+            this.m_cbo_trang_thai.Location = new System.Drawing.Point(87, 19);
+            this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
+            this.m_cbo_trang_thai.Size = new System.Drawing.Size(127, 21);
+            this.m_cbo_trang_thai.TabIndex = 63;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 62;
+            this.label1.Text = "Trạng thái";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // f950_quan_ly_tra_goc
             // 
@@ -438,7 +411,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.m_lbl_title);
             this.Name = "f950_quan_ly_tra_goc";
-            this.Text = "f950_quan_ly_tra_goc";
+            this.Text = "f950 - Quản lý trả gốc";
             this.Load += new System.EventHandler(this.f950_quan_ly_tra_goc_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -472,7 +445,6 @@
         private System.Windows.Forms.TextBox m_txt_ma_trai_phieu;
         internal System.Windows.Forms.ImageList ImageList;
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
-        internal SIS.Controls.Button.SiSButton m_cmd_view;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox m_gru_tim_kiem;
@@ -480,8 +452,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button m_cmd_filter;
         internal SIS.Controls.Button.SiSButton m_cmd_thanh_toan;
-        internal SIS.Controls.Button.SiSButton m_cmd_da_tra;
-        internal SIS.Controls.Button.SiSButton m_cmd_chua_tra;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
+        private System.Windows.Forms.ComboBox m_cbo_trang_thai;
+        private System.Windows.Forms.Label label1;
     }
 }
