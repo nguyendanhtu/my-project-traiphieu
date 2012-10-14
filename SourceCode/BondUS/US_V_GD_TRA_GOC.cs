@@ -547,6 +547,11 @@ public class US_V_GD_TRA_GOC : US_Object
         base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu_so_huu.ToString() + " AND ID_TRANG_THAI = " + List_trang_thai.Da_Thuc_Hien);
     }
 
+    public void FillDatasetByIDTraiPhieu(DS_V_GD_TRA_GOC ip_ds, decimal ip_id_trai_phieu_so_huu)
+    {
+        base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu_so_huu.ToString());
+    }
+
     #endregion  
 
 }
