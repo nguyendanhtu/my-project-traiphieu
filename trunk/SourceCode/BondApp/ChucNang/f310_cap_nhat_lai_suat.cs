@@ -201,7 +201,7 @@ namespace BondApp.ChucNang
         }
 
         private void form_2_us_gd_cap_nhat_ls()
-        {
+        {            
             m_us_gd_cap_nhat_ls.dcID_TRAI_PHIEU = m_us_trai_phieu.dcID;
             m_us_gd_cap_nhat_ls.datNGAY = m_date_ngay_cap_nhat.Value;
             m_us_gd_cap_nhat_ls.dcLAI_SUAT = CIPConvert.ToDecimal(m_txt_lai_suat_moi.Text);
@@ -247,7 +247,8 @@ namespace BondApp.ChucNang
             {
                 MessageBox.Show("Chưa nhập đủ thông tin cần thiết!");
                 return;
-            }           
+            }
+            m_us_gd_cap_nhat_ls = new US_GD_LICH_THANH_TOAN_LAI_GOC();
             form_2_us_gd_cap_nhat_ls();
             try
             {
@@ -266,7 +267,7 @@ namespace BondApp.ChucNang
             }
 
             MessageBox.Show("Cập nhập thành công!");
-            resetcontrl();
+            resetcontrl2();
             load_data_2_grid();
         }
 
