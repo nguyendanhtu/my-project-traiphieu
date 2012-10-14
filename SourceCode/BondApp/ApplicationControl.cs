@@ -37,6 +37,12 @@ namespace BondApp
                 IPConstants.HowUserWantTo_Exit_MainForm v_exitmode = IPConstants.HowUserWantTo_Exit_MainForm.ExitFromSystem;
                 // Login lan 1
                 v_frm_login_form.displayLogin(ref v_obj_login_info, ref v_login_result);
+                if (v_login_result == DialogResult.Cancel)
+                {
+                    v_frm_login_form.Dispose();
+                    v_frm_login_form.Close();
+                    return;
+                }
                 v_frm_login_form.Dispose();
                 while (!v_UserWant2ExitFromSystem)
                 {
