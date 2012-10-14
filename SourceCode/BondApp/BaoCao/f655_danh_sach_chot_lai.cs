@@ -179,7 +179,7 @@ namespace SaleManagement
             this.m_lbl_header.ForeColor = System.Drawing.Color.DarkRed;
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(866, 24);
+            this.m_lbl_header.Size = new System.Drawing.Size(968, 24);
             this.m_lbl_header.TabIndex = 24;
             this.m_lbl_header.Text = "F655- DANH SÁCH TRẢ LÃI";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -214,7 +214,7 @@ namespace SaleManagement
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 24);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(866, 135);
+            this.groupBox1.Size = new System.Drawing.Size(968, 135);
             this.groupBox1.TabIndex = 55;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin trái phiếu";
@@ -464,10 +464,10 @@ namespace SaleManagement
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_export_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 347);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 447);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(866, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(968, 36);
             this.m_pnl_out_place_dm.TabIndex = 57;
             // 
             // m_cmd_export_excel
@@ -494,7 +494,7 @@ namespace SaleManagement
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(774, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(876, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -506,20 +506,20 @@ namespace SaleManagement
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.Location = new System.Drawing.Point(0, 159);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(866, 188);
+            this.m_fg.Size = new System.Drawing.Size(968, 288);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 58;
             // 
             // f655_danh_sach_chot_lai
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(866, 383);
+            this.ClientSize = new System.Drawing.Size(968, 483);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_lbl_header);
             this.Name = "f655_danh_sach_chot_lai";
-            this.Text = "f655_danh_sach_chot_lai";
+            this.Text = "F655 - Danh sách chốt lãi";
             this.Load += new System.EventHandler(this.f655_danh_sach_chot_lai_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
