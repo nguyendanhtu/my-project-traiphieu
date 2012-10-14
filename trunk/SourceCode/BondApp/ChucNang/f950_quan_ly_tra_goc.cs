@@ -264,7 +264,7 @@ namespace BondApp.ChucNang
                 return;
             }
 
-            if (BaseMessages.MsgBox_Confirm(" Khách hàng: " + m_us.strTEN_TRAI_CHU + "\n Số tiền thanh toán: " + CIPConvert.ToStr(m_us.dcMENH_GIA * m_us.dcTONG_SO_DU, "#,###") + " VNĐ"))
+            if (BaseMessages.MsgBox_Confirm(" Khách hàng: " + m_us.strTEN_TRAI_CHU + "                Số tiền thanh toán: " + CIPConvert.ToStr(m_us.dcMENH_GIA * m_us.dcTONG_SO_DU, "#,###") + " VNĐ"))
             {
                 //Thay đổi trạng thái trái chủ
                 m_us_dm_trai_chu = new US_DM_TRAI_CHU(m_us.dcID);

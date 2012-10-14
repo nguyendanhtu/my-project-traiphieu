@@ -224,6 +224,18 @@ namespace BondApp.ChucNang
                 v_hst_loai_tu_dien.Add(v_dr[CM_DM_TU_DIEN.ID], v_dr[CM_DM_TU_DIEN.TEN]);
             }
             m_fg.Cols[(int)e_col_Number.ID_LOAI_TRAI_CHU].DataMap = v_hst_loai_tu_dien;
+
+            //Load nguoi su dung
+            US_HT_NGUOI_SU_DUNG v_us_nguoi_dung = new US_HT_NGUOI_SU_DUNG();
+            DS_HT_NGUOI_SU_DUNG v_ds_nguoi_dung = new DS_HT_NGUOI_SU_DUNG();
+            v_us_nguoi_dung.FillDataset(v_ds_nguoi_dung);
+            Hashtable v_hst_nguoi_dung = new Hashtable();
+            foreach (DataRow v_dr in v_ds_nguoi_dung.HT_NGUOI_SU_DUNG.Rows)
+            {
+                v_hst_nguoi_dung.Add(v_dr[HT_NGUOI_SU_DUNG.ID], v_dr[HT_NGUOI_SU_DUNG.TEN]);
+            }
+            m_fg.Cols[(int)e_col_Number.ID_NGUOI_LAP_CHOT_LAI].DataMap = v_hst_nguoi_dung;
+            m_fg.Cols[(int)e_col_Number.ID_NGUOI_DUYET_CHOT_LAI].DataMap = v_hst_nguoi_dung;
         }
 
         private void grid2us_object(US_V_DM_TRAI_CHU_CHOT_LAI i_us, int i_grid_row)
@@ -257,7 +269,7 @@ namespace BondApp.ChucNang
             }
 
             //Thực hiện thanh toán
-            if (BaseMessages.MsgBox_Confirm(" Khách hàng: " + m_us.strTEN_TRAI_CHU + "\n Số tiền thanh toán: " + CIPConvert.ToStr(m_us.dcSO_TIEN_LAI, "#,###") + " VNĐ"))
+            if (BaseMessages.MsgBox_Confirm(" Khách hàng: " + m_us.strTEN_TRAI_CHU + "                Số tiền thanh toán: " + CIPConvert.ToStr(m_us.dcSO_TIEN_LAI, "#,###").ToString() + " VNĐ"))
             {
                 m_us.strDA_NHAN_TIEN_YN = "Y";
                 m_us.datNGAY_NHAN_TIEN = DateTime.Now;
