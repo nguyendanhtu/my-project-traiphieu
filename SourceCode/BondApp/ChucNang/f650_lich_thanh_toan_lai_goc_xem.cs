@@ -144,7 +144,7 @@ namespace BondApp
                     m_obj_trans = get_trans_object(m_fg);
                     m_lbl_header.Text = "F650 - SINH LỊCH THANH TOÁN LÃI GỐC";
                     this.Text = "F650 - Sinh lịch thanh toán lãi gốc";
-                    m_cmd_generate.Visible = false;
+                    m_cmd_generate.Visible = true;
                     m_cmd_thong_bao_ls.Visible = false;
                     m_cmd_thong_bao_tien_lai.Visible = false;
                     break;
@@ -346,7 +346,9 @@ namespace BondApp
             m_us_trai_phieu = v_frm300.select_trai_phieu();
             if (!m_us_trai_phieu.IsIDNull() && m_us_trai_phieu.dcID != -1)
             {
+                // Load thông tin trái phiếu lên form
                 us_trai_phieu_2_form();
+                // Hiển thị lịch lên lưới
                 load_data_2_grid();
             }
         }
@@ -551,6 +553,7 @@ namespace BondApp
         {
             try
             {
+                if (m_us_trai_phieu.dcID == -1) return;
                 m_us_gd_lich_tt_lai_goc.GenLichThanhToanLaiGoc(m_us_trai_phieu.dcID);
                 load_data_2_grid();
             }
