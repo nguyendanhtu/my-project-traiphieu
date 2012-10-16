@@ -290,6 +290,12 @@
     <Compile Include="ChucNang\f310_cap_nhat_lai_suat.Designer.cs">
       <DependentUpon>f310_cap_nhat_lai_suat.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChucNang\f320_cap_nhat_lai_suat_thoa_thuan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChucNang\f320_cap_nhat_lai_suat_thoa_thuan.Designer.cs">
+      <DependentUpon>f320_cap_nhat_lai_suat_thoa_thuan.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChucNang\f600_giao_dich_chuyen_nhuong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -461,6 +467,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f310_cap_nhat_lai_suat.resx">
       <DependentUpon>f310_cap_nhat_lai_suat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChucNang\f320_cap_nhat_lai_suat_thoa_thuan.resx">
+      <DependentUpon>f320_cap_nhat_lai_suat_thoa_thuan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f600_giao_dich_chuyen_nhuong.resx">
       <DependentUpon>f600_giao_dich_chuyen_nhuong.cs</DependentUpon>
