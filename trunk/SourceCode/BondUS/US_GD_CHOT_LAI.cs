@@ -268,5 +268,10 @@ public class US_GD_CHOT_LAI : US_Object
         v_pr_obj.addDecimalInputParam("@ID_CHOT_LAI", this.dcID);
         v_pr_obj.fillDataSetByCommand(this, op_ds);
     }
+
+    public void FillDSChotLaiByIDTraiPhieuAndNgayChotLai(DS_GD_CHOT_LAI ip_ds, decimal ip_id_trai_phieu, DateTime ip_ngay_chot_lai)
+    {
+        base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU = " + " " + ip_id_trai_phieu.ToString() + " AND NGAY_CHOT_LAI = '" + ip_ngay_chot_lai + "'");
+    }
 }
 }

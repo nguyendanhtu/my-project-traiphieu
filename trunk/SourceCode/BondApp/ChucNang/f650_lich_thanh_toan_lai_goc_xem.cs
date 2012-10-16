@@ -321,6 +321,9 @@ namespace BondApp
         {
             if (m_fg.Rows[m_fg.Row].UserData == null) return;
             grid2us_object(m_us_gd_lich_tt_lai_goc, m_fg.Row);
+            DS_GD_CHOT_LAI v_ds_gd_chot_lai = new DS_GD_CHOT_LAI();
+            m_us_gd_chot_lai.FillDSChotLaiByIDTraiPhieuAndNgayChotLai(v_ds_gd_chot_lai, m_us_gd_lich_tt_lai_goc.dcID_TRAI_PHIEU, m_us_gd_lich_tt_lai_goc.datNGAY);
+
             IP.Core.IPWordReport.CWordReport v_obj_word_rpt = new CWordReport("f750_TB Trai Chu Ngay Chot.doc");
             //v_obj_word_rpt.AddFindAndReplace("<NGAY_CAP_NHAT_LAI_SUAT>", CIPConvert.ToStr(m_us_gd_lich_tt_lai_goc.datNGAY));
             //v_obj_word_rpt.AddFindAndReplace("<TEN_TRAI_PHIEU>", m_us_trai_phieu.strTEN_TRAI_PHIEU);
@@ -332,9 +335,9 @@ namespace BondApp
             v_obj_word_rpt.AddFindAndReplace("<KY_HAN>", m_txt_ky_han.Text + " năm"); // Can phai sua
             v_obj_word_rpt.AddFindAndReplace("<KY_TINH_LAI>", m_txt_ky_tinh_lai.Text + " tháng");
             v_obj_word_rpt.AddFindAndReplace("<LAI_SUAT>", m_txt_lai_suat.Text);
-            v_obj_word_rpt.AddFindAndReplace("<NGAY_THANH_TOAN>", CIPConvert.ToStr(m_us_gd_lich_tt_lai_goc.datNGAY));
-            v_obj_word_rpt.AddFindAndReplace("<MUC_DICH>", m_us_gd_chot_lai.strMUC_DICH);
-            v_obj_word_rpt.AddFindAndReplace("<NGAY_CHOT_DANH_SACH>", CIPConvert.ToStr(m_us_gd_chot_lai.datNGAY_CHOT_LAI));
+            v_obj_word_rpt.AddFindAndReplace("<NGAY_THANH_TOAN>", CIPConvert.ToStr(v_ds_gd_chot_lai.Tables["GD_CHOT_LAI"].Rows[0]["NGAY_THANH_TOAN"]));
+            v_obj_word_rpt.AddFindAndReplace("<MUC_DICH>", CIPConvert.ToStr(v_ds_gd_chot_lai.Tables["GD_CHOT_LAI"].Rows[0]["MUC_DICH"].ToString()));
+            v_obj_word_rpt.AddFindAndReplace("<NGAY_CHOT_DANH_SACH>", CIPConvert.ToStr(v_ds_gd_chot_lai.Tables["GD_CHOT_LAI"].Rows[0]["NGAY_CHOT_LAI"]));
             v_obj_word_rpt.Export2Word(true);
         }
 
