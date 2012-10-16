@@ -485,12 +485,13 @@ namespace BondDS.CDBNames
         public const string GHI_CHU = "GHI_CHU";
         public const string ID_NGUOI_LAP = "ID_NGUOI_LAP";
         public const string ID_NGUOI_DUYET = "ID_NGUOI_DUYET";
-        public const string NGAY_LAP = "NGAY_LAP";
+        public const string NGAY_BAT_DAU_AD_LS = "NGAY_BAT_DAU_AD_LS";
         public const string NGAY_DUYET = "NGAY_DUYET";
-        public const string NGAY_DEN = "NGAY_DEN";
+        public const string NGAY_KET_THUC_AD_LS = "NGAY_KET_THUC_AD_LS";
         public const string LAI_SUAT_THOA_THUAN_YN = "LAI_SUAT_THOA_THUAN_YN";
         public const string DA_DUYET_YN = "DA_DUYET_YN";
     }
+
 
     public class GD_PHONG_GIAI_TOA
     {
