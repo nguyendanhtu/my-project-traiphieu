@@ -286,26 +286,26 @@ namespace BondUS
             pm_objDR["ID_NGUOI_DUYET"] = System.Convert.DBNull;
         }
 
-        public DateTime datNGAY_LAP
+        public DateTime datNGAY_BAT_DAU_AD_LS
         {
             get
             {
-                return CNull.RowNVLDate(pm_objDR, "NGAY_LAP", IPConstants.c_DefaultDate);
+                return CNull.RowNVLDate(pm_objDR, "NGAY_BAT_DAU_AD_LS", IPConstants.c_DefaultDate);
             }
             set
             {
-                pm_objDR["NGAY_LAP"] = value;
+                pm_objDR["NGAY_BAT_DAU_AD_LS"] = value;
             }
         }
 
-        public bool IsNGAY_LAPNull()
+        public bool IsNGAY_BAT_DAU_AD_LSNull()
         {
-            return pm_objDR.IsNull("NGAY_LAP");
+            return pm_objDR.IsNull("NGAY_BAT_DAU_AD_LS");
         }
 
-        public void SetNGAY_LAPNull()
+        public void SetNGAY_BAT_DAU_AD_LSNull()
         {
-            pm_objDR["NGAY_LAP"] = System.Convert.DBNull;
+            pm_objDR["NGAY_BAT_DAU_AD_LS"] = System.Convert.DBNull;
         }
 
         public DateTime datNGAY_DUYET
@@ -330,26 +330,26 @@ namespace BondUS
             pm_objDR["NGAY_DUYET"] = System.Convert.DBNull;
         }
 
-        public DateTime datNGAY_DEN
+        public DateTime datNGAY_KET_THUC_AD_LS
         {
             get
             {
-                return CNull.RowNVLDate(pm_objDR, "NGAY_DEN", IPConstants.c_DefaultDate);
+                return CNull.RowNVLDate(pm_objDR, "NGAY_KET_THUC_AD_LS", IPConstants.c_DefaultDate);
             }
             set
             {
-                pm_objDR["NGAY_DEN"] = value;
+                pm_objDR["NGAY_KET_THUC_AD_LS"] = value;
             }
         }
 
-        public bool IsNGAY_DENNull()
+        public bool IsNGAY_KET_THUC_AD_LSNull()
         {
-            return pm_objDR.IsNull("NGAY_DEN");
+            return pm_objDR.IsNull("NGAY_KET_THUC_AD_LS");
         }
 
-        public void SetNGAY_DENNull()
+        public void SetNGAY_KET_THUC_AD_LSNull()
         {
-            pm_objDR["NGAY_DEN"] = System.Convert.DBNull;
+            pm_objDR["NGAY_KET_THUC_AD_LS"] = System.Convert.DBNull;
         }
 
         public string strLAI_SUAT_THOA_THUAN_YN
