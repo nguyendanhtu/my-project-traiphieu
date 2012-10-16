@@ -35,7 +35,7 @@ namespace BondApp
         {
             m_e_form_mode = eFormMode.LAP_PHONG_TOA;
             this.Text = "F700 - Lập Giao dịch phong tỏa";
-            m_lbl_title.Text = "LẬP GIAO DỊCH PHONG TỎA";
+            m_lbl_title.Text = "F700 - Lập Giao dịch phong tỏa";
             this.ShowDialog();
         }
         public void display_giai_toa()
@@ -43,7 +43,7 @@ namespace BondApp
             m_e_form_mode = eFormMode.LAP_GIAI_TOA;
            
             this.Text = "F700 - Lập Giao dịch giải tỏa";
-            m_lbl_title.Text = "LẬP GIAO DỊCH GIẢI TỎA";
+            m_lbl_title.Text = "F700 - Lập Giao dịch giải tỏa";
             this.ShowDialog();
         }
         public void display_duyet_phong_toa(US_GD_PHONG_GIAI_TOA ip_us_phong_giai_toa)
@@ -51,7 +51,7 @@ namespace BondApp
             m_e_form_mode = eFormMode.DUYET_PHONG_TOA;
             m_us_gd_phong_toa_giai_toa = ip_us_phong_giai_toa;
             this.Text = "F700 - Duyệt Giao dịch phong tỏa";
-            m_lbl_title.Text = "DUYỆT GIAO DỊCH PHONG TỎA";
+            m_lbl_title.Text = "F700 - Duyệt Giao dịch phong tỏa";
             m_us_gd_phong_toa_giai_toa = ip_us_phong_giai_toa;
             US_DM_TRAI_CHU ip_us_trai_chu = new US_DM_TRAI_CHU(ip_us_phong_giai_toa.dcID_TRAI_CHU);            
             us_trai_chu_2_form(ip_us_trai_chu);
@@ -66,7 +66,7 @@ namespace BondApp
             US_DM_TRAI_CHU ip_us_trai_chu = new US_DM_TRAI_CHU(ip_us_phong_giai_toa.dcID_TRAI_CHU);
             us_trai_chu_2_form(ip_us_trai_chu);
             this.Text = "F700 - Duyệt Giao dịch giải tỏa";
-            m_lbl_title.Text = "DUYỆT GIAO DỊCH GIẢI TỎA";
+            m_lbl_title.Text = "F700 - Duyệt Giao dịch giải tỏa";
             this.ShowDialog();
         }
         #endregion
