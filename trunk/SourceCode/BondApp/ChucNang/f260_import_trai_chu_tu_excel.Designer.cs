@@ -41,10 +41,10 @@
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.m_cmd_open_template = new SIS.Controls.Button.SiSButton();
             this.m_cmd_luu = new SIS.Controls.Button.SiSButton();
             this.m_cmd_kiem_tra = new SIS.Controls.Button.SiSButton();
             this.m_cmd_load_ds_trai_chu = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_open_template = new SIS.Controls.Button.SiSButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cmd_thoat = new SIS.Controls.Button.SiSButton();
             this.m_dgl_open_file = new System.Windows.Forms.OpenFileDialog();
@@ -172,7 +172,7 @@
             this.m_lbl_header.Name = "m_lbl_header";
             this.m_lbl_header.Size = new System.Drawing.Size(784, 25);
             this.m_lbl_header.TabIndex = 0;
-            this.m_lbl_header.Text = "F260 - Import trái chủ";
+            this.m_lbl_header.Text = "F260 - Nhập trái chủ và số dư sở hữu lần đầu";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
@@ -195,22 +195,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(784, 46);
             this.panel3.TabIndex = 27;
-            // 
-            // m_cmd_open_template
-            // 
-            this.m_cmd_open_template.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_open_template.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_open_template.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_open_template.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_open_template.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_open_template.ImageIndex = 19;
-            this.m_cmd_open_template.ImageList = this.ImageList;
-            this.m_cmd_open_template.Location = new System.Drawing.Point(0, 0);
-            this.m_cmd_open_template.Name = "m_cmd_open_template";
-            this.m_cmd_open_template.Size = new System.Drawing.Size(145, 40);
-            this.m_cmd_open_template.TabIndex = 6;
-            this.m_cmd_open_template.Text = "Mở file template import";
-            this.m_cmd_open_template.UseVisualStyleBackColor = true;
             // 
             // m_cmd_luu
             // 
@@ -259,6 +243,22 @@
             this.m_cmd_load_ds_trai_chu.TabIndex = 0;
             this.m_cmd_load_ds_trai_chu.Text = "1. Nhập DS trái chủ từ file excel";
             this.m_cmd_load_ds_trai_chu.UseVisualStyleBackColor = true;
+            // 
+            // m_cmd_open_template
+            // 
+            this.m_cmd_open_template.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_open_template.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_open_template.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_open_template.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_open_template.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_open_template.ImageIndex = 19;
+            this.m_cmd_open_template.ImageList = this.ImageList;
+            this.m_cmd_open_template.Location = new System.Drawing.Point(0, 0);
+            this.m_cmd_open_template.Name = "m_cmd_open_template";
+            this.m_cmd_open_template.Size = new System.Drawing.Size(145, 40);
+            this.m_cmd_open_template.TabIndex = 6;
+            this.m_cmd_open_template.Text = "Mở file template import";
+            this.m_cmd_open_template.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
