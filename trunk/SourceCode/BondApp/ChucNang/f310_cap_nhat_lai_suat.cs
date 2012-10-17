@@ -292,8 +292,7 @@ namespace BondApp.ChucNang
             try
             {
                 m_us_gd_cap_nhat_ls.BeginTransaction();
-                m_us_gd_cap_nhat_ls.Update();
-                m_us_gd_cap_nhat_ls.them_ghi_chu();
+                m_us_gd_cap_nhat_ls.Update();                
                 m_us_gd_cap_nhat_ls.CommitTransaction();
             }
             catch (Exception v_e)
@@ -327,8 +326,7 @@ namespace BondApp.ChucNang
             try
             {
                 m_us_gd_cap_nhat_ls.BeginTransaction();
-                m_us_gd_cap_nhat_ls.Update();
-                //m_us_gd_cap_nhat_ls.them_ghi_chu();
+                m_us_gd_cap_nhat_ls.Update();                
                 m_us_gd_cap_nhat_ls.CommitTransaction();
             }
             catch (Exception v_e)
