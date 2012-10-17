@@ -20,7 +20,11 @@ namespace BondDS.CDBNames
         public const decimal PHI_CN_MAX = 14;
         public const decimal PHI_CN_MIN = 15;        
     }
-
+    public class GIOI_HAN_PHI_PGT
+    {
+        public const decimal PHI_PGT_MAX = 14;
+        public const decimal PHI_PGT_MIN = 15;
+    }
     public class List_trang_thai
     {
         public const decimal Da_Nhap = 21;
