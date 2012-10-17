@@ -22,8 +22,8 @@ namespace BondDS.CDBNames
     }
     public class GIOI_HAN_PHI_PGT
     {
-        public const decimal PHI_PGT_MAX = 14;
-        public const decimal PHI_PGT_MIN = 15;
+        public const decimal PHI_PGT_MAX = 12;
+        public const decimal PHI_PGT_MIN = 13;
     }
     public class List_trang_thai
     {
