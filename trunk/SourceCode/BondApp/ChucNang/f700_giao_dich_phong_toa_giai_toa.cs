@@ -151,31 +151,31 @@ namespace BondApp
                 m_txt_ngan_hang_cam_co.Focus();
                 return false;
             }
-            if (!CValidateTextBox.IsValid(m_txt_nguoi_xac_nhan, DataType.StringType, allowNull.NO))
-            {
-                m_txt_nguoi_xac_nhan.Focus();
-                return false;
-            }
-            if (!CValidateTextBox.IsValid(m_txt_chuc_vu, DataType.StringType, allowNull.NO))
-            {
-                m_txt_chuc_vu.Focus();
-                return false;
-            }
-            if (!CValidateTextBox.IsValid(m_txt_theo_giay_uy_quyen_so, DataType.StringType, allowNull.NO))
-            {
-                m_txt_theo_giay_uy_quyen_so.Focus();
-                return false;
-            }
+            //if (!CValidateTextBox.IsValid(m_txt_nguoi_xac_nhan, DataType.StringType, allowNull.NO))
+            //{
+            //    m_txt_nguoi_xac_nhan.Focus();
+            //    return false;
+            //}
+            //if (!CValidateTextBox.IsValid(m_txt_chuc_vu, DataType.StringType, allowNull.NO))
+            //{
+            //    m_txt_chuc_vu.Focus();
+            //    return false;
+            //}
+            //if (!CValidateTextBox.IsValid(m_txt_theo_giay_uy_quyen_so, DataType.StringType, allowNull.NO))
+            //{
+            //    m_txt_theo_giay_uy_quyen_so.Focus();
+            //    return false;
+            //}
        
-            if (!CValidateTextBox.IsValid(m_txt_cua, DataType.StringType, allowNull.NO))
-            {
-                m_txt_cua.Focus();
-                return false;
-            }
+            //if (!CValidateTextBox.IsValid(m_txt_cua, DataType.StringType, allowNull.NO))
+            //{
+            //    m_txt_cua.Focus();
+            //    return false;
+            //}
             if (CIPConvert.ToDecimal(m_txt_so_luong_tp_cam_co.Text) > CIPConvert.ToDecimal(m_txt_so_luong_kha_dung.Text))
             {
                 m_txt_so_luong_tp_cam_co.Focus();
-                MessageBox.Show("Cảnh báo","Số lượng trái phiếu cầm cố vượt quá số lượng trái phiểu khả dụng! Xin hãy nhập lại.");
+                MessageBox.Show("Số lượng trái phiếu cầm cố vượt quá số lượng trái phiểu khả dụng! Xin hãy nhập lại.","Cảnh báo");
                 return false;
             }
 
