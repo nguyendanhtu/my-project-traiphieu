@@ -66,6 +66,13 @@
             this.m_lbl_ma_so_trai_phieu = new System.Windows.Forms.Label();
             this.m_txt_ma_so_trai_phieu = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.m_lbl_pgd_max_min = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.m_txt_phi_gd = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.m_txt_ty_le_phi_gd = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_dat_ngay = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_hinh_thuc_tra_lai = new System.Windows.Forms.Label();
             this.m_txt_hinh_thuc_tra_lai = new System.Windows.Forms.TextBox();
             this.m_lbl_lai_suat = new System.Windows.Forms.Label();
@@ -85,7 +92,7 @@
             this.m_lbl_ngan_hang_cam_co = new System.Windows.Forms.Label();
             this.m_txt_ngan_hang_cam_co = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.m_dat_ngay = new System.Windows.Forms.DateTimePicker();
+            this.m_dat_ngay_cap_giay_uq = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_cua = new System.Windows.Forms.Label();
             this.m_txt_cua = new System.Windows.Forms.TextBox();
             this.m_lbl_theo_giay_uy_quyen_so = new System.Windows.Forms.Label();
@@ -95,8 +102,7 @@
             this.m_txt_nguoi_xac_nhan = new System.Windows.Forms.TextBox();
             this.m_lbl_chuc_vu = new System.Windows.Forms.Label();
             this.m_txt_chuc_vu = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.m_dat_ngay_cap_giay_uq = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -190,10 +196,10 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_lap);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 526);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 544);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(884, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(886, 36);
             this.m_pnl_out_place_dm.TabIndex = 4;
             // 
             // m_cmd_print
@@ -219,7 +225,7 @@
             this.m_cmd_duyet.Enabled = false;
             this.m_cmd_duyet.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet.Image")));
             this.m_cmd_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_duyet.Location = new System.Drawing.Point(616, 4);
+            this.m_cmd_duyet.Location = new System.Drawing.Point(618, 4);
             this.m_cmd_duyet.Name = "m_cmd_duyet";
             this.m_cmd_duyet.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_duyet.TabIndex = 1;
@@ -234,7 +240,7 @@
             this.m_cmd_lap.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_lap.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_lap.Image")));
             this.m_cmd_lap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_lap.Location = new System.Drawing.Point(704, 4);
+            this.m_cmd_lap.Location = new System.Drawing.Point(706, 4);
             this.m_cmd_lap.Name = "m_cmd_lap";
             this.m_cmd_lap.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_lap.TabIndex = 2;
@@ -248,7 +254,7 @@
             this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_exit.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_exit.Image")));
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_exit.Location = new System.Drawing.Point(792, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(794, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 3;
@@ -261,7 +267,7 @@
             this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(884, 40);
+            this.m_lbl_title.Size = new System.Drawing.Size(886, 40);
             this.m_lbl_title.TabIndex = 0;
             this.m_lbl_title.Text = "F700 - Giao dịch phong tỏa, giải tỏa";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -321,7 +327,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(884, 184);
+            this.groupBox1.Size = new System.Drawing.Size(886, 184);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin trái chủ";
@@ -457,7 +463,6 @@
             this.m_txt_so_luong_tp_cam_co.Name = "m_txt_so_luong_tp_cam_co";
             this.m_txt_so_luong_tp_cam_co.Size = new System.Drawing.Size(140, 20);
             this.m_txt_so_luong_tp_cam_co.TabIndex = 17;
-            this.m_txt_so_luong_tp_cam_co.TextChanged += new System.EventHandler(this.m_txt_so_luong_tp_cam_co_TextChanged);
             // 
             // m_lbl_ma_so_trai_phieu
             // 
@@ -480,6 +485,12 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.m_lbl_pgd_max_min);
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.m_txt_phi_gd);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.m_txt_ty_le_phi_gd);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.m_dat_ngay);
             this.groupBox3.Controls.Add(this.m_lbl_hinh_thuc_tra_lai);
@@ -507,10 +518,74 @@
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox3.Location = new System.Drawing.Point(0, 224);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(884, 187);
+            this.groupBox3.Size = new System.Drawing.Size(886, 206);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin cầm cố/giải tỏa";
+            // 
+            // m_lbl_pgd_max_min
+            // 
+            this.m_lbl_pgd_max_min.AutoSize = true;
+            this.m_lbl_pgd_max_min.Location = new System.Drawing.Point(592, 174);
+            this.m_lbl_pgd_max_min.Name = "m_lbl_pgd_max_min";
+            this.m_lbl_pgd_max_min.Size = new System.Drawing.Size(136, 13);
+            this.m_lbl_pgd_max_min.TabIndex = 27;
+            this.m_lbl_pgd_max_min.Text = "Phí giao dịch trong khoảng";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(344, 174);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 13);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Phí Giao dịch";
+            // 
+            // m_txt_phi_gd
+            // 
+            this.m_txt_phi_gd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.m_txt_phi_gd.Location = new System.Drawing.Point(424, 171);
+            this.m_txt_phi_gd.Name = "m_txt_phi_gd";
+            this.m_txt_phi_gd.ReadOnly = true;
+            this.m_txt_phi_gd.Size = new System.Drawing.Size(140, 20);
+            this.m_txt_phi_gd.TabIndex = 24;
+            this.m_txt_phi_gd.TabStop = false;
+            this.m_txt_phi_gd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(72, 171);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 13);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Tỷ lệ phí GD";
+            // 
+            // m_txt_ty_le_phi_gd
+            // 
+            this.m_txt_ty_le_phi_gd.Location = new System.Drawing.Point(148, 168);
+            this.m_txt_ty_le_phi_gd.Name = "m_txt_ty_le_phi_gd";
+            this.m_txt_ty_le_phi_gd.Size = new System.Drawing.Size(140, 20);
+            this.m_txt_ty_le_phi_gd.TabIndex = 26;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(627, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 13);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Ngày giao dịch";
+            // 
+            // m_dat_ngay
+            // 
+            this.m_dat_ngay.CustomFormat = "\"dd/MM/yyyy\"";
+            this.m_dat_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_ngay.Location = new System.Drawing.Point(714, 75);
+            this.m_dat_ngay.Name = "m_dat_ngay";
+            this.m_dat_ngay.Size = new System.Drawing.Size(121, 20);
+            this.m_dat_ngay.TabIndex = 10;
+            this.m_dat_ngay.Value = new System.DateTime(2012, 10, 6, 22, 35, 45, 0);
             // 
             // m_lbl_hinh_thuc_tra_lai
             // 
@@ -695,22 +770,22 @@
             this.groupBox2.Controls.Add(this.m_lbl_chuc_vu);
             this.groupBox2.Controls.Add(this.m_txt_chuc_vu);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 411);
+            this.groupBox2.Location = new System.Drawing.Point(0, 430);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(884, 115);
+            this.groupBox2.Size = new System.Drawing.Size(886, 114);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Đơn vị xác nhận - Công ty cổ phần Chứng khoán Ngân hàng Công thương Việt Nam";
             // 
-            // m_dat_ngay
+            // m_dat_ngay_cap_giay_uq
             // 
-            this.m_dat_ngay.CustomFormat = "\"dd/MM/yyyy\"";
-            this.m_dat_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.m_dat_ngay.Location = new System.Drawing.Point(714, 75);
-            this.m_dat_ngay.Name = "m_dat_ngay";
-            this.m_dat_ngay.Size = new System.Drawing.Size(121, 20);
-            this.m_dat_ngay.TabIndex = 10;
-            this.m_dat_ngay.Value = new System.DateTime(2012, 10, 6, 22, 35, 45, 0);
+            this.m_dat_ngay_cap_giay_uq.CustomFormat = "\"dd/MM/yyyy\"";
+            this.m_dat_ngay_cap_giay_uq.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_ngay_cap_giay_uq.Location = new System.Drawing.Point(314, 71);
+            this.m_dat_ngay_cap_giay_uq.Name = "m_dat_ngay_cap_giay_uq";
+            this.m_dat_ngay_cap_giay_uq.Size = new System.Drawing.Size(121, 20);
+            this.m_dat_ngay_cap_giay_uq.TabIndex = 23;
+            this.m_dat_ngay_cap_giay_uq.Value = new System.DateTime(2012, 10, 6, 22, 35, 45, 0);
             // 
             // m_lbl_cua
             // 
@@ -785,30 +860,20 @@
             this.m_txt_chuc_vu.Size = new System.Drawing.Size(173, 20);
             this.m_txt_chuc_vu.TabIndex = 3;
             // 
-            // label1
+            // label4
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(627, 78);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Ngày giao dịch";
-            // 
-            // m_dat_ngay_cap_giay_uq
-            // 
-            this.m_dat_ngay_cap_giay_uq.CustomFormat = "\"dd/MM/yyyy\"";
-            this.m_dat_ngay_cap_giay_uq.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.m_dat_ngay_cap_giay_uq.Location = new System.Drawing.Point(314, 71);
-            this.m_dat_ngay_cap_giay_uq.Name = "m_dat_ngay_cap_giay_uq";
-            this.m_dat_ngay_cap_giay_uq.Size = new System.Drawing.Size(121, 20);
-            this.m_dat_ngay_cap_giay_uq.TabIndex = 23;
-            this.m_dat_ngay_cap_giay_uq.Value = new System.DateTime(2012, 10, 6, 22, 35, 45, 0);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(294, 171);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(15, 13);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "%";
             // 
             // f700_giao_dich_phong_toa_giai_toa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 562);
+            this.ClientSize = new System.Drawing.Size(886, 580);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
@@ -898,5 +963,11 @@
         private System.Windows.Forms.DateTimePicker m_dat_ngay;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker m_dat_ngay_cap_giay_uq;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox m_txt_phi_gd;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox m_txt_ty_le_phi_gd;
+        private System.Windows.Forms.Label m_lbl_pgd_max_min;
+        private System.Windows.Forms.Label label4;
     }
 }
