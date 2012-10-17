@@ -795,6 +795,17 @@ namespace BondApp
             v_us_gd_chot_lai.GenDSTraLai();
             load_data_2_grid();
         }
+        private void update_gd_chot_lai_detail()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            US_GD_CHOT_LAI_DETAIL v_us_gd_chot_lai_detail = new US_GD_CHOT_LAI_DETAIL();
+            grid2us_object(v_us_gd_chot_lai_detail, m_fg.Row);
+            f250_chi_tiet_giao_dich_chot_lai v_fDE = new f250_chi_tiet_giao_dich_chot_lai();
+            v_fDE.display_for_update(v_us_gd_chot_lai_detail);
+            m_us_gd_chot_lai.fillDSChotLaiDetail(m_ds_gd_chot_lai_detail);
+            load_data_2_grid();
+        }
 #endregion
         #region Events
         private void set_define_events(){
@@ -887,7 +898,7 @@ namespace BondApp
 		}
 		private void m_cmd_update_Click(object sender, EventArgs e) {
 			try{
-				//update_gd_chot_lai_detail();
+				update_gd_chot_lai_detail();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
