@@ -66,6 +66,7 @@
             this.m_lbl_ma_so_trai_phieu = new System.Windows.Forms.Label();
             this.m_txt_ma_so_trai_phieu = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.m_lbl_pgd_max_min = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.m_txt_phi_gd = new System.Windows.Forms.TextBox();
@@ -102,7 +103,6 @@
             this.m_txt_nguoi_xac_nhan = new System.Windows.Forms.TextBox();
             this.m_lbl_chuc_vu = new System.Windows.Forms.Label();
             this.m_txt_chuc_vu = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -196,7 +196,7 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_lap);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 544);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 432);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(886, 36);
@@ -523,6 +523,15 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin cầm cố/giải tỏa";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(294, 171);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(15, 13);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "%";
+            // 
             // m_lbl_pgd_max_min
             // 
             this.m_lbl_pgd_max_min.AutoSize = true;
@@ -743,11 +752,11 @@
             // m_lbl_ngan_hang_cam_co
             // 
             this.m_lbl_ngan_hang_cam_co.AutoSize = true;
-            this.m_lbl_ngan_hang_cam_co.Location = new System.Drawing.Point(320, 119);
+            this.m_lbl_ngan_hang_cam_co.Location = new System.Drawing.Point(291, 119);
             this.m_lbl_ngan_hang_cam_co.Name = "m_lbl_ngan_hang_cam_co";
-            this.m_lbl_ngan_hang_cam_co.Size = new System.Drawing.Size(98, 13);
+            this.m_lbl_ngan_hang_cam_co.Size = new System.Drawing.Size(125, 13);
             this.m_lbl_ngan_hang_cam_co.TabIndex = 18;
-            this.m_lbl_ngan_hang_cam_co.Text = "Ngân hàng cầm cố";
+            this.m_lbl_ngan_hang_cam_co.Text = "Ngân hàng nhận cầm cố";
             // 
             // m_txt_ngan_hang_cam_co
             // 
@@ -772,10 +781,11 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 430);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(886, 114);
+            this.groupBox2.Size = new System.Drawing.Size(886, 2);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Đơn vị xác nhận - Công ty cổ phần Chứng khoán Ngân hàng Công thương Việt Nam";
+            this.groupBox2.Visible = false;
             // 
             // m_dat_ngay_cap_giay_uq
             // 
@@ -860,20 +870,11 @@
             this.m_txt_chuc_vu.Size = new System.Drawing.Size(173, 20);
             this.m_txt_chuc_vu.TabIndex = 3;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(294, 171);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(15, 13);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "%";
-            // 
             // f700_giao_dich_phong_toa_giai_toa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(886, 580);
+            this.ClientSize = new System.Drawing.Size(886, 468);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
