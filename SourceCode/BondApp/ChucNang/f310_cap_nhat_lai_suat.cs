@@ -288,8 +288,7 @@ namespace BondApp.ChucNang
                 MessageBox.Show("Giao dịch đã được xác nhận bạn không được phép sửa!");
                 return;
             }
-            form_2_us_gd_cap_nhat_ls();
-            m_us_gd_cap_nhat_ls.strDA_THUC_HIEN_YN = "N";
+            form_2_us_gd_cap_nhat_ls();            
             try
             {
                 m_us_gd_cap_nhat_ls.BeginTransaction();
