@@ -189,7 +189,7 @@ namespace BondApp.ChucNang
             m_us_gd_cap_nhat_ls.dcID_TRAI_PHIEU = m_us_trai_phieu.dcID;
             m_us_gd_cap_nhat_ls.datNGAY = m_date_ngay_cap_nhat.Value;
             m_us_gd_cap_nhat_ls.datNGAY_BAT_DAU_AD_LS = m_date_ngay_ap_dung_ls.Value;
-            m_us_gd_cap_nhat_ls.dcLAI_SUAT = CIPConvert.ToDecimal(m_txt_lai_suat_moi.Text);
+            m_us_gd_cap_nhat_ls.dcLAI_SUAT = CIPConvert.ToDecimal(m_txt_lai_suat_moi.Text)/100;
             m_us_gd_cap_nhat_ls.strCAP_NHAT_LS_YN = "Y";
             m_us_gd_cap_nhat_ls.strGHI_CHU = m_txt_ghi_chu.Text;            
             m_us_gd_cap_nhat_ls.strDA_THUC_HIEN_YN = "Y";
@@ -221,7 +221,7 @@ namespace BondApp.ChucNang
                 m_us_trai_phieu = new US_DM_TRAI_PHIEU(m_us_gd_cap_nhat_ls.dcID_TRAI_PHIEU);
                 us_trai_phieu_2_form();                
                 m_date_ngay_ap_dung_ls.Value = m_us_gd_cap_nhat_ls.datNGAY_BAT_DAU_AD_LS;                
-                m_txt_lai_suat_moi.Text = CIPConvert.ToStr(m_us_gd_cap_nhat_ls.dcLAI_SUAT, "0.#####");
+                m_txt_lai_suat_moi.Text = CIPConvert.ToStr(m_us_gd_cap_nhat_ls.dcLAI_SUAT*100, "0.##");
                 m_date_ngay_ap_dung_ls.Value = m_us_gd_cap_nhat_ls.datNGAY_BAT_DAU_AD_LS;
                 m_date_ngay_cap_nhat.Value = m_us_gd_cap_nhat_ls.datNGAY;
                 if (!m_us_gd_cap_nhat_ls.IsNGAY_DUYETNull())
