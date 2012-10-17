@@ -110,6 +110,7 @@ namespace BondApp.ChucNang
                     break;                
                 case eFormMode.XEM_GIAO_DICH:
                     m_cmd_duyet_gd.Enabled = false;
+                    m_cmd_duyet_gd.Enabled = false;
                     m_gru_thong_tin_trai_phieu.Enabled = false;
                     m_gru_thong_tin_cap_nhat.Enabled = false;
                     break;                
