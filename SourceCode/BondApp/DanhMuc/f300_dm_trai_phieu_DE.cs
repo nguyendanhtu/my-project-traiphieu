@@ -188,9 +188,6 @@ namespace BondApp.DanhMuc
             {
                 m_txt_ten_dv_phat_hanh.Text = v_dm_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HANH;
             }
-            m_txt_menh_gia.Text = CIPConvert.ToStr(m_us_v_dm_dot_phat_hanh.dcMENH_GIA, "#,###");
-            m_txt_ky_tra_lai.Text = CIPConvert.ToStr(m_us_v_dm_dot_phat_hanh.dcKY_TRA_LAI);
-            m_cbo_dv_tra_lai.SelectedValue = CIPConvert.ToStr(m_us_v_dm_dot_phat_hanh.dcID_DV_KY_TRA_LAI);
             m_txt_ngay_phat_hanh.Text = CIPConvert.ToStr(m_us_v_dm_dot_phat_hanh.datNGAY_PHAT_HANH, "dd/MM/yyyy");
         }
         private bool check_validate_data_is_ok()
