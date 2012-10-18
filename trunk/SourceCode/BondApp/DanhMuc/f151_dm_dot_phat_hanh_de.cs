@@ -73,7 +73,6 @@ namespace BondApp.DanhMuc
             m_txt_ghi_chu.Text = m_us_v_dot_phat_hanh.strGHI_CHU;
             m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcMENH_GIA,"#,###");
             m_txt_ky_tra_lai.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcKY_TRA_LAI);
-            m_cbo_dv_tra_lai.SelectedValue = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcID_DV_KY_TRA_LAI);
         }
         private void form_2_us_object(US_V_DM_DOT_PHAT_HANH op_v_us_dot_phat_hanh)
         {
@@ -81,7 +80,7 @@ namespace BondApp.DanhMuc
             op_v_us_dot_phat_hanh.datNGAY_PHAT_HANH = m_dat_ngay_phat_hanh.Value;
             op_v_us_dot_phat_hanh.dcMENH_GIA = CIPConvert.ToDecimal(m_txt_menh_gia.Text);
             op_v_us_dot_phat_hanh.dcKY_TRA_LAI = CIPConvert.ToDecimal(m_txt_ky_tra_lai.Text);
-            op_v_us_dot_phat_hanh.dcID_DV_KY_TRA_LAI = CIPConvert.ToDecimal(m_cbo_dv_tra_lai.SelectedValue);
+            //op_v_us_dot_phat_hanh.dcID_DV_KY_TRA_LAI = CIPConvert.ToDecimal(m_cbo_dv_tra_lai.SelectedValue);
             op_v_us_dot_phat_hanh.strGHI_CHU = m_txt_ghi_chu.Text;
         }
         
@@ -98,14 +97,14 @@ namespace BondApp.DanhMuc
             return true;
         }
 
-        private void load_data_2_cbo_don_vi_ky_han()
+        private void load_data_2_cbo_ngan_hang_quan_ly_tk()
         {
             US_CM_DM_TU_DIEN v_us_dm_tu_dien = new US_CM_DM_TU_DIEN();
             DS_CM_DM_TU_DIEN v_ds_dm_tu_dien = new DS_CM_DM_TU_DIEN();
-            v_us_dm_tu_dien.fill_tu_dien_cung_loai_ds("DON_VI_KY_HAN", v_ds_dm_tu_dien);
-            m_cbo_dv_tra_lai.DataSource = (DataTable)v_ds_dm_tu_dien.Tables[0];
-            m_cbo_dv_tra_lai.DisplayMember = CM_DM_TU_DIEN.TEN;
-            m_cbo_dv_tra_lai.ValueMember = CM_DM_TU_DIEN.ID;
+            v_us_dm_tu_dien.fill_tu_dien_cung_loai_ds("NGAN_HANG_DL_QUAN_LY_TK", v_ds_dm_tu_dien);
+            m_cbo_ngan_hang_quan_ly_tai_khoan.DataSource = (DataTable)v_ds_dm_tu_dien.Tables[0];
+            m_cbo_ngan_hang_quan_ly_tai_khoan.DisplayMember = CM_DM_TU_DIEN.TEN;
+            m_cbo_ngan_hang_quan_ly_tai_khoan.ValueMember = CM_DM_TU_DIEN.ID;
         }
         private void save_data()
         {
@@ -157,13 +156,13 @@ namespace BondApp.DanhMuc
                 {
                     case DataEntryFormMode.InsertDataState:
                         load_data_2_cbo_to_chuc_phat_hanh();
-                        load_data_2_cbo_don_vi_ky_han();
+                        load_data_2_cbo_ngan_hang_quan_ly_tk();
                         break;
                     case DataEntryFormMode.SelectDataState:
                         break;
                     case DataEntryFormMode.UpdateDataState:
                         load_data_2_cbo_to_chuc_phat_hanh();
-                        load_data_2_cbo_don_vi_ky_han();
+                        load_data_2_cbo_ngan_hang_quan_ly_tk();
                         us_object_2_form(m_us_v_dot_phat_hanh);
                         break;
                     case DataEntryFormMode.ViewDataState:

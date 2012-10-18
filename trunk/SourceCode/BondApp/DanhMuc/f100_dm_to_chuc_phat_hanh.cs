@@ -32,8 +32,7 @@ namespace BondApp
 	public class f100_dm_to_chuc_phat_hanh : System.Windows.Forms.Form
 	{
 		internal System.Windows.Forms.ImageList ImageList;
-		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
-		private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
+        internal System.Windows.Forms.Panel m_pnl_out_place_dm;
 		internal SIS.Controls.Button.SiSButton m_cmd_delete;
 		internal SIS.Controls.Button.SiSButton m_cmd_update;
 		internal SIS.Controls.Button.SiSButton m_cmd_insert;
@@ -45,6 +44,7 @@ namespace BondApp
         private Button m_cmd_filter;
         private Label m_lbl_title;
         internal SIS.Controls.Button.SiSButton m_cmd_select;
+        private C1FlexGrid m_fg;
 		private System.ComponentModel.IContainer components;
 
 		public f100_dm_to_chuc_phat_hanh()
@@ -86,21 +86,21 @@ namespace BondApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f100_dm_to_chuc_phat_hanh));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_select = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_gru_tim_kiem = new System.Windows.Forms.GroupBox();
             this.m_txt_search = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.m_cmd_filter = new System.Windows.Forms.Button();
             this.m_lbl_title = new System.Windows.Forms.Label();
-            this.m_cmd_select = new SIS.Controls.Button.SiSButton();
+            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.m_gru_tim_kiem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
             // 
             // ImageList
@@ -144,6 +144,21 @@ namespace BondApp
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(968, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
+            // 
+            // m_cmd_select
+            // 
+            this.m_cmd_select.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_select.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_select.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_select.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_select.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_select.ImageIndex = 18;
+            this.m_cmd_select.ImageList = this.ImageList;
+            this.m_cmd_select.Location = new System.Drawing.Point(515, 4);
+            this.m_cmd_select.Name = "m_cmd_select";
+            this.m_cmd_select.Size = new System.Drawing.Size(97, 28);
+            this.m_cmd_select.TabIndex = 23;
+            this.m_cmd_select.Text = "Chọn trái chủ";
             // 
             // m_cmd_insert
             // 
@@ -220,16 +235,6 @@ namespace BondApp
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
-            // m_fg
-            // 
-            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 92);
-            this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(968, 434);
-            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 20;
-            // 
             // m_gru_tim_kiem
             // 
             this.m_gru_tim_kiem.Controls.Add(this.m_txt_search);
@@ -281,36 +286,31 @@ namespace BondApp
             this.m_lbl_title.Text = "F100 - Danh mục tổ chức phát hành";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // m_cmd_select
+            // m_fg
             // 
-            this.m_cmd_select.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_select.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_select.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_select.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_select.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_select.ImageIndex = 18;
-            this.m_cmd_select.ImageList = this.ImageList;
-            this.m_cmd_select.Location = new System.Drawing.Point(515, 4);
-            this.m_cmd_select.Name = "m_cmd_select";
-            this.m_cmd_select.Size = new System.Drawing.Size(97, 28);
-            this.m_cmd_select.TabIndex = 23;
-            this.m_cmd_select.Text = "Chọn trái chủ";
+            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_fg.Location = new System.Drawing.Point(0, 86);
+            this.m_fg.Name = "m_fg";
+            this.m_fg.Size = new System.Drawing.Size(968, 440);
+            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
+            this.m_fg.TabIndex = 26;
             // 
             // f100_dm_to_chuc_phat_hanh
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(968, 562);
+            this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_gru_tim_kiem);
             this.Controls.Add(this.m_lbl_title);
-            this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f100_dm_to_chuc_phat_hanh";
             this.Text = "F100-Quan ly to chuc phat hanh";
             this.Load += new System.EventHandler(this.f100_dm_to_chuc_phat_hanh_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.m_gru_tim_kiem.ResumeLayout(false);
             this.m_gru_tim_kiem.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
 
 		}
@@ -321,7 +321,7 @@ namespace BondApp
 			this.ShowDialog();
 		}
 
-        public US_DM_TO_CHUC_PHAT_HANH select_to_chuc_phat_hanh()
+        public US_V_DM_TO_CHUC_PHAT_HANH select_to_chuc_phat_hanh()
         {   
             m_e_form_mode = DataEntryFormMode.SelectDataState;
             this.ShowDialog();
@@ -331,13 +331,28 @@ namespace BondApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			DIA_CHI_TRU_SO_CHINH = 3
-,CHUNG_NHAN_DKDN = 7
-,MA_SO_THUE = 4
-,FAX = 6
-,DIEN_THOAI = 5
-,TEN_TO_CHUC_PHAT_HANH = 2
-,MA_TO_CHUC_PHAT_HANH = 1
+            MA_SO_THUE = 4
+    ,
+            FAX = 6
+                ,
+            MA_TO_CHUC_PHAT_HANH = 1
+                ,
+            SO_TAI_KHOAN = 8
+                ,
+            TRANG_THAI = 12
+                ,
+            DIA_CHI_TRU_SO_CHINH = 3
+                ,
+            DIEN_THOAI = 5
+                ,
+            TEN_TO_CHUC_PHAT_HANH = 2
+                ,
+            NGUOI_LAP = 10
+                ,
+            CHUNG_NHAN_DKDN = 7
+                ,
+            MO_TAI_NGAN_HANG = 9
+                , NGUOI_DUYET = 11
 
 		}			
 		#endregion
@@ -345,8 +360,8 @@ namespace BondApp
 		#region Members
 		ITransferDataRow m_obj_trans;
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
-		DS_DM_TO_CHUC_PHAT_HANH m_ds = new DS_DM_TO_CHUC_PHAT_HANH();
-		US_DM_TO_CHUC_PHAT_HANH m_us = new US_DM_TO_CHUC_PHAT_HANH();
+        DS_V_DM_TO_CHUC_PHAT_HANH m_ds = new DS_V_DM_TO_CHUC_PHAT_HANH();
+        US_V_DM_TO_CHUC_PHAT_HANH m_us = new US_V_DM_TO_CHUC_PHAT_HANH();
 		#endregion
 
 		    #region Private Methods
@@ -367,19 +382,24 @@ namespace BondApp
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
-			v_htb.Add(DM_TO_CHUC_PHAT_HANH.DIA_CHI_TRU_SO_CHINH, e_col_Number.DIA_CHI_TRU_SO_CHINH);
-			v_htb.Add(DM_TO_CHUC_PHAT_HANH.CHUNG_NHAN_DKDN, e_col_Number.CHUNG_NHAN_DKDN);
-			v_htb.Add(DM_TO_CHUC_PHAT_HANH.MA_SO_THUE, e_col_Number.MA_SO_THUE);
-			v_htb.Add(DM_TO_CHUC_PHAT_HANH.FAX, e_col_Number.FAX);
-			v_htb.Add(DM_TO_CHUC_PHAT_HANH.DIEN_THOAI, e_col_Number.DIEN_THOAI);
-			v_htb.Add(DM_TO_CHUC_PHAT_HANH.TEN_TO_CHUC_PHAT_HANH, e_col_Number.TEN_TO_CHUC_PHAT_HANH);
-			v_htb.Add(DM_TO_CHUC_PHAT_HANH.MA_TO_CHUC_PHAT_HANH, e_col_Number.MA_TO_CHUC_PHAT_HANH);
+            v_htb.Add(V_DM_TO_CHUC_PHAT_HANH.MA_SO_THUE, e_col_Number.MA_SO_THUE);
+            v_htb.Add(V_DM_TO_CHUC_PHAT_HANH.FAX, e_col_Number.FAX);
+            v_htb.Add(V_DM_TO_CHUC_PHAT_HANH.MA_TO_CHUC_PHAT_HANH, e_col_Number.MA_TO_CHUC_PHAT_HANH);
+            v_htb.Add(V_DM_TO_CHUC_PHAT_HANH.SO_TAI_KHOAN, e_col_Number.SO_TAI_KHOAN);
+            v_htb.Add(V_DM_TO_CHUC_PHAT_HANH.TRANG_THAI, e_col_Number.TRANG_THAI);
+            v_htb.Add(V_DM_TO_CHUC_PHAT_HANH.DIA_CHI_TRU_SO_CHINH, e_col_Number.DIA_CHI_TRU_SO_CHINH);
+            v_htb.Add(V_DM_TO_CHUC_PHAT_HANH.DIEN_THOAI, e_col_Number.DIEN_THOAI);
+            v_htb.Add(V_DM_TO_CHUC_PHAT_HANH.TEN_TO_CHUC_PHAT_HANH, e_col_Number.TEN_TO_CHUC_PHAT_HANH);
+            v_htb.Add(V_DM_TO_CHUC_PHAT_HANH.NGUOI_LAP, e_col_Number.NGUOI_LAP);
+            v_htb.Add(V_DM_TO_CHUC_PHAT_HANH.CHUNG_NHAN_DKDN, e_col_Number.CHUNG_NHAN_DKDN);
+            v_htb.Add(V_DM_TO_CHUC_PHAT_HANH.MO_TAI_NGAN_HANG, e_col_Number.MO_TAI_NGAN_HANG);
+            v_htb.Add(V_DM_TO_CHUC_PHAT_HANH.NGUOI_DUYET, e_col_Number.NGUOI_DUYET);
 									
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.DM_TO_CHUC_PHAT_HANH.NewRow());
+			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_DM_TO_CHUC_PHAT_HANH.NewRow());
 			return v_obj_trans;			
 		}
 		private void load_data_2_grid(){						
-			m_ds = new DS_DM_TO_CHUC_PHAT_HANH();			
+			m_ds = new DS_V_DM_TO_CHUC_PHAT_HANH();			
 			m_us.FillDataset(m_ds);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
@@ -387,13 +407,13 @@ namespace BondApp
 		}
         private void load_data_2_grid(string ip_str_search_key)
         {
-            m_ds = new DS_DM_TO_CHUC_PHAT_HANH();
+            m_ds = new DS_V_DM_TO_CHUC_PHAT_HANH();
             m_us.load_data_by_search(m_ds, ip_str_search_key);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Redraw = true;
         }
-		private void grid2us_object(US_DM_TO_CHUC_PHAT_HANH i_us
+		private void grid2us_object(US_V_DM_TO_CHUC_PHAT_HANH i_us
 			, int i_grid_row) {
 			DataRow v_dr;
 			v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
@@ -401,7 +421,7 @@ namespace BondApp
 			i_us.DataRow2Me(v_dr);
 		}
 
-		private void us_object2grid(US_DM_TO_CHUC_PHAT_HANH i_us
+		private void us_object2grid(US_V_DM_TO_CHUC_PHAT_HANH i_us
 			, int i_grid_row) {
 			DataRow v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
 			i_us.Me2DataRow(v_dr);
@@ -437,7 +457,7 @@ namespace BondApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
 			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			US_DM_TO_CHUC_PHAT_HANH v_us = new US_DM_TO_CHUC_PHAT_HANH();
+			US_V_DM_TO_CHUC_PHAT_HANH v_us = new US_V_DM_TO_CHUC_PHAT_HANH();
 			grid2us_object(v_us, m_fg.Row);
 			try {			
 				v_us.BeginTransaction();    											

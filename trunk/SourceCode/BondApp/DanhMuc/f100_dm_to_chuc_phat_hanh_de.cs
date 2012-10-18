@@ -35,7 +35,7 @@ namespace BondApp.DanhMuc
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             this.ShowDialog();
         }
-        public void display_for_update(US_DM_TO_CHUC_PHAT_HANH ip_us_to_chuc_phat_hanh)
+        public void display_for_update(US_V_DM_TO_CHUC_PHAT_HANH ip_us_to_chuc_phat_hanh)
         {
              m_e_form_mode = DataEntryFormMode.UpdateDataState;
              m_us_to_chuc_phat_hanh = ip_us_to_chuc_phat_hanh;
@@ -45,7 +45,7 @@ namespace BondApp.DanhMuc
 
     
         #region Members
-        US_DM_TO_CHUC_PHAT_HANH m_us_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH();
+        US_V_DM_TO_CHUC_PHAT_HANH m_us_to_chuc_phat_hanh = new US_V_DM_TO_CHUC_PHAT_HANH();
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
         #endregion
                
@@ -80,7 +80,7 @@ namespace BondApp.DanhMuc
                     break;
             }
         }
-        private void us_object_2_form(US_DM_TO_CHUC_PHAT_HANH ip_to_chuc_phat_hanh)
+        private void us_object_2_form(US_V_DM_TO_CHUC_PHAT_HANH ip_to_chuc_phat_hanh)
         {
             m_txt_ma_to_chuc.Text = ip_to_chuc_phat_hanh.strMA_TO_CHUC_PHAT_HANH;
             m_txt_ten_to_chuc.Text = ip_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HANH;
@@ -90,7 +90,7 @@ namespace BondApp.DanhMuc
             m_txt_fax.Text = ip_to_chuc_phat_hanh.strFAX;
             m_txt_chung_nhan_dkdn.Text = ip_to_chuc_phat_hanh.strCHUNG_NHAN_DKDN;
         }
-        private void form_2_usobject(US_DM_TO_CHUC_PHAT_HANH op_to_chuc_phat_hanh)
+        private void form_2_usobject(US_V_DM_TO_CHUC_PHAT_HANH op_to_chuc_phat_hanh)
         {
             op_to_chuc_phat_hanh.strMA_TO_CHUC_PHAT_HANH = m_txt_ma_to_chuc.Text;
             op_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HANH = m_txt_ten_to_chuc.Text;

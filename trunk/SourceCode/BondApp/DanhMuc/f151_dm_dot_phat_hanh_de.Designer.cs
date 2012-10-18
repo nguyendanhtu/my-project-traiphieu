@@ -31,6 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f151_dm_dot_phat_hanh_de));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.m_txt_ky_tra_lai = new System.Windows.Forms.TextBox();
+            this.m_lbl_ky_tra_lai = new System.Windows.Forms.Label();
+            this.m_txt_menh_gia = new System.Windows.Forms.TextBox();
+            this.m_lbl_menh_gia = new System.Windows.Forms.Label();
+            this.m_cbo_ten_to_chuc_phat_hanh = new System.Windows.Forms.ComboBox();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
@@ -41,23 +46,36 @@
             this.m_lbl_ma_trai_chu = new System.Windows.Forms.Label();
             this.m_txt_ghi_chu = new System.Windows.Forms.TextBox();
             this.m_lbl_title = new System.Windows.Forms.Label();
-            this.m_cbo_ten_to_chuc_phat_hanh = new System.Windows.Forms.ComboBox();
-            this.m_lbl_vnd = new System.Windows.Forms.Label();
-            this.m_txt_menh_gia = new System.Windows.Forms.TextBox();
-            this.m_lbl_menh_gia = new System.Windows.Forms.Label();
-            this.m_cbo_dv_tra_lai = new System.Windows.Forms.ComboBox();
-            this.m_txt_ky_tra_lai = new System.Windows.Forms.TextBox();
-            this.m_lbl_ky_tra_lai = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_cbo_ngan_hang_quan_ly_tai_khoan = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.m_cbo_dv_tra_lai);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.m_cbo_ngan_hang_quan_ly_tai_khoan);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.m_txt_ky_tra_lai);
             this.groupBox1.Controls.Add(this.m_lbl_ky_tra_lai);
-            this.groupBox1.Controls.Add(this.m_lbl_vnd);
             this.groupBox1.Controls.Add(this.m_txt_menh_gia);
             this.groupBox1.Controls.Add(this.m_lbl_menh_gia);
             this.groupBox1.Controls.Add(this.m_cbo_ten_to_chuc_phat_hanh);
@@ -70,19 +88,62 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(772, 303);
+            this.groupBox1.Size = new System.Drawing.Size(835, 372);
             this.groupBox1.TabIndex = 64;
             this.groupBox1.TabStop = false;
+            // 
+            // m_txt_ky_tra_lai
+            // 
+            this.m_txt_ky_tra_lai.Location = new System.Drawing.Point(420, 66);
+            this.m_txt_ky_tra_lai.Name = "m_txt_ky_tra_lai";
+            this.m_txt_ky_tra_lai.Size = new System.Drawing.Size(135, 20);
+            this.m_txt_ky_tra_lai.TabIndex = 43;
+            this.m_txt_ky_tra_lai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // m_lbl_ky_tra_lai
+            // 
+            this.m_lbl_ky_tra_lai.AutoSize = true;
+            this.m_lbl_ky_tra_lai.Location = new System.Drawing.Point(302, 73);
+            this.m_lbl_ky_tra_lai.Name = "m_lbl_ky_tra_lai";
+            this.m_lbl_ky_tra_lai.Size = new System.Drawing.Size(106, 13);
+            this.m_lbl_ky_tra_lai.TabIndex = 42;
+            this.m_lbl_ky_tra_lai.Text = "Tổng giá trị trái phiếu";
+            // 
+            // m_txt_menh_gia
+            // 
+            this.m_txt_menh_gia.Location = new System.Drawing.Point(148, 70);
+            this.m_txt_menh_gia.Name = "m_txt_menh_gia";
+            this.m_txt_menh_gia.Size = new System.Drawing.Size(120, 20);
+            this.m_txt_menh_gia.TabIndex = 40;
+            this.m_txt_menh_gia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // m_lbl_menh_gia
+            // 
+            this.m_lbl_menh_gia.AutoSize = true;
+            this.m_lbl_menh_gia.Location = new System.Drawing.Point(15, 73);
+            this.m_lbl_menh_gia.Name = "m_lbl_menh_gia";
+            this.m_lbl_menh_gia.Size = new System.Drawing.Size(121, 13);
+            this.m_lbl_menh_gia.TabIndex = 39;
+            this.m_lbl_menh_gia.Text = "Tổng số lượng trái phiếu";
+            // 
+            // m_cbo_ten_to_chuc_phat_hanh
+            // 
+            this.m_cbo_ten_to_chuc_phat_hanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_ten_to_chuc_phat_hanh.FormattingEnabled = true;
+            this.m_cbo_ten_to_chuc_phat_hanh.Location = new System.Drawing.Point(420, 19);
+            this.m_cbo_ten_to_chuc_phat_hanh.Name = "m_cbo_ten_to_chuc_phat_hanh";
+            this.m_cbo_ten_to_chuc_phat_hanh.Size = new System.Drawing.Size(396, 21);
+            this.m_cbo_ten_to_chuc_phat_hanh.TabIndex = 38;
             // 
             // m_pnl_out_place_dm
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(3, 264);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(3, 333);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(766, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(829, 36);
             this.m_pnl_out_place_dm.TabIndex = 37;
             // 
             // m_cmd_save
@@ -94,7 +155,7 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(586, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(649, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 0;
@@ -136,7 +197,7 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(674, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(737, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 1;
@@ -146,7 +207,7 @@
             // 
             this.m_dat_ngay_phat_hanh.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_phat_hanh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_phat_hanh.Location = new System.Drawing.Point(101, 20);
+            this.m_dat_ngay_phat_hanh.Location = new System.Drawing.Point(145, 20);
             this.m_dat_ngay_phat_hanh.Name = "m_dat_ngay_phat_hanh";
             this.m_dat_ngay_phat_hanh.Size = new System.Drawing.Size(115, 20);
             this.m_dat_ngay_phat_hanh.TabIndex = 9;
@@ -154,7 +215,7 @@
             // m_lbl_ngay_phat_hanh
             // 
             this.m_lbl_ngay_phat_hanh.AutoSize = true;
-            this.m_lbl_ngay_phat_hanh.Location = new System.Drawing.Point(8, 24);
+            this.m_lbl_ngay_phat_hanh.Location = new System.Drawing.Point(53, 23);
             this.m_lbl_ngay_phat_hanh.Name = "m_lbl_ngay_phat_hanh";
             this.m_lbl_ngay_phat_hanh.Size = new System.Drawing.Size(83, 13);
             this.m_lbl_ngay_phat_hanh.TabIndex = 9;
@@ -163,7 +224,7 @@
             // m_lbl_ghi_chu
             // 
             this.m_lbl_ghi_chu.AutoSize = true;
-            this.m_lbl_ghi_chu.Location = new System.Drawing.Point(47, 171);
+            this.m_lbl_ghi_chu.Location = new System.Drawing.Point(92, 235);
             this.m_lbl_ghi_chu.Name = "m_lbl_ghi_chu";
             this.m_lbl_ghi_chu.Size = new System.Drawing.Size(44, 13);
             this.m_lbl_ghi_chu.TabIndex = 17;
@@ -172,7 +233,7 @@
             // m_lbl_ma_trai_chu
             // 
             this.m_lbl_ma_trai_chu.AutoSize = true;
-            this.m_lbl_ma_trai_chu.Location = new System.Drawing.Point(233, 23);
+            this.m_lbl_ma_trai_chu.Location = new System.Drawing.Point(292, 23);
             this.m_lbl_ma_trai_chu.Name = "m_lbl_ma_trai_chu";
             this.m_lbl_ma_trai_chu.Size = new System.Drawing.Size(116, 13);
             this.m_lbl_ma_trai_chu.TabIndex = 0;
@@ -180,10 +241,10 @@
             // 
             // m_txt_ghi_chu
             // 
-            this.m_txt_ghi_chu.Location = new System.Drawing.Point(101, 132);
+            this.m_txt_ghi_chu.Location = new System.Drawing.Point(145, 199);
             this.m_txt_ghi_chu.Multiline = true;
             this.m_txt_ghi_chu.Name = "m_txt_ghi_chu";
-            this.m_txt_ghi_chu.Size = new System.Drawing.Size(654, 96);
+            this.m_txt_ghi_chu.Size = new System.Drawing.Size(671, 96);
             this.m_txt_ghi_chu.TabIndex = 14;
             // 
             // m_lbl_title
@@ -193,77 +254,116 @@
             this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(772, 40);
+            this.m_lbl_title.Size = new System.Drawing.Size(835, 40);
             this.m_lbl_title.TabIndex = 63;
             this.m_lbl_title.Text = "THÔNG TIN ĐỢT PHÁT HÀNH";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // m_cbo_ten_to_chuc_phat_hanh
+            // label1
             // 
-            this.m_cbo_ten_to_chuc_phat_hanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_ten_to_chuc_phat_hanh.FormattingEnabled = true;
-            this.m_cbo_ten_to_chuc_phat_hanh.Location = new System.Drawing.Point(357, 19);
-            this.m_cbo_ten_to_chuc_phat_hanh.Name = "m_cbo_ten_to_chuc_phat_hanh";
-            this.m_cbo_ten_to_chuc_phat_hanh.Size = new System.Drawing.Size(396, 21);
-            this.m_cbo_ten_to_chuc_phat_hanh.TabIndex = 38;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(561, 70);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "VNĐ";
             // 
-            // m_lbl_vnd
+            // m_cbo_ngan_hang_quan_ly_tai_khoan
             // 
-            this.m_lbl_vnd.AutoSize = true;
-            this.m_lbl_vnd.Location = new System.Drawing.Point(233, 76);
-            this.m_lbl_vnd.Name = "m_lbl_vnd";
-            this.m_lbl_vnd.Size = new System.Drawing.Size(30, 13);
-            this.m_lbl_vnd.TabIndex = 41;
-            this.m_lbl_vnd.Text = "VNĐ";
+            this.m_cbo_ngan_hang_quan_ly_tai_khoan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_ngan_hang_quan_ly_tai_khoan.FormattingEnabled = true;
+            this.m_cbo_ngan_hang_quan_ly_tai_khoan.Location = new System.Drawing.Point(145, 158);
+            this.m_cbo_ngan_hang_quan_ly_tai_khoan.Name = "m_cbo_ngan_hang_quan_ly_tai_khoan";
+            this.m_cbo_ngan_hang_quan_ly_tai_khoan.Size = new System.Drawing.Size(671, 21);
+            this.m_cbo_ngan_hang_quan_ly_tai_khoan.TabIndex = 46;
             // 
-            // m_txt_menh_gia
+            // label2
             // 
-            this.m_txt_menh_gia.Location = new System.Drawing.Point(101, 70);
-            this.m_txt_menh_gia.Name = "m_txt_menh_gia";
-            this.m_txt_menh_gia.Size = new System.Drawing.Size(120, 20);
-            this.m_txt_menh_gia.TabIndex = 40;
-            this.m_txt_menh_gia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(22, 161);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 13);
+            this.label2.TabIndex = 45;
+            this.label2.Text = "Ngân hàng quản lý TK";
             // 
-            // m_lbl_menh_gia
+            // textBox1
             // 
-            this.m_lbl_menh_gia.AutoSize = true;
-            this.m_lbl_menh_gia.Location = new System.Drawing.Point(40, 76);
-            this.m_lbl_menh_gia.Name = "m_lbl_menh_gia";
-            this.m_lbl_menh_gia.Size = new System.Drawing.Size(51, 13);
-            this.m_lbl_menh_gia.TabIndex = 39;
-            this.m_lbl_menh_gia.Text = "Mệnh giá";
+            this.textBox1.Location = new System.Drawing.Point(420, 106);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(72, 20);
+            this.textBox1.TabIndex = 50;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // m_cbo_dv_tra_lai
+            // label3
             // 
-            this.m_cbo_dv_tra_lai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_dv_tra_lai.FormattingEnabled = true;
-            this.m_cbo_dv_tra_lai.Location = new System.Drawing.Point(415, 73);
-            this.m_cbo_dv_tra_lai.Name = "m_cbo_dv_tra_lai";
-            this.m_cbo_dv_tra_lai.Size = new System.Drawing.Size(62, 21);
-            this.m_cbo_dv_tra_lai.TabIndex = 44;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(289, 113);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(119, 13);
+            this.label3.TabIndex = 49;
+            this.label3.Text = "Tỷ lệ phí phong giải tỏa";
             // 
-            // m_txt_ky_tra_lai
+            // textBox2
             // 
-            this.m_txt_ky_tra_lai.Location = new System.Drawing.Point(357, 74);
-            this.m_txt_ky_tra_lai.Name = "m_txt_ky_tra_lai";
-            this.m_txt_ky_tra_lai.Size = new System.Drawing.Size(52, 20);
-            this.m_txt_ky_tra_lai.TabIndex = 43;
-            this.m_txt_ky_tra_lai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox2.Location = new System.Drawing.Point(148, 106);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(63, 20);
+            this.textBox2.TabIndex = 48;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // m_lbl_ky_tra_lai
+            // label4
             // 
-            this.m_lbl_ky_tra_lai.AutoSize = true;
-            this.m_lbl_ky_tra_lai.Location = new System.Drawing.Point(302, 77);
-            this.m_lbl_ky_tra_lai.Name = "m_lbl_ky_tra_lai";
-            this.m_lbl_ky_tra_lai.Size = new System.Drawing.Size(47, 13);
-            this.m_lbl_ky_tra_lai.TabIndex = 42;
-            this.m_lbl_ky_tra_lai.Text = "Kỳ trả lãi";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(10, 113);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(126, 13);
+            this.label4.TabIndex = 47;
+            this.label4.Text = "Tỷ lệ phí chuyển nhượng";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(214, 109);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(15, 13);
+            this.label5.TabIndex = 51;
+            this.label5.Text = "%";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(497, 110);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(15, 13);
+            this.label6.TabIndex = 52;
+            this.label6.Text = "%";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Thứ 2 đến thứ 6",
+            "Thứ 2 đến thứ 7"});
+            this.comboBox1.Location = new System.Drawing.Point(624, 105);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(192, 21);
+            this.comboBox1.TabIndex = 54;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(543, 109);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(74, 13);
+            this.label7.TabIndex = 53;
+            this.label7.Text = "Ngày làm việc";
             // 
             // f151_dm_dot_phat_hanh_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(772, 343);
+            this.ClientSize = new System.Drawing.Size(835, 412);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_lbl_title);
             this.Name = "f151_dm_dot_phat_hanh_de";
@@ -289,11 +389,20 @@
         private System.Windows.Forms.TextBox m_txt_ghi_chu;
         private System.Windows.Forms.Label m_lbl_title;
         private System.Windows.Forms.ComboBox m_cbo_ten_to_chuc_phat_hanh;
-        private System.Windows.Forms.Label m_lbl_vnd;
         private System.Windows.Forms.TextBox m_txt_menh_gia;
         private System.Windows.Forms.Label m_lbl_menh_gia;
-        private System.Windows.Forms.ComboBox m_cbo_dv_tra_lai;
         private System.Windows.Forms.TextBox m_txt_ky_tra_lai;
         private System.Windows.Forms.Label m_lbl_ky_tra_lai;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox m_cbo_ngan_hang_quan_ly_tai_khoan;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label7;
     }
 }
