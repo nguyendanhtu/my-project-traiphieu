@@ -46,6 +46,38 @@ namespace BondApp
             m_lbl_title.Text = "F700 - Lập Giao dịch giải tỏa";
             this.ShowDialog();
         }
+        public void display_sua_phong_toa(US_GD_PHONG_GIAI_TOA ip_us_phong_giai_toa)
+        {
+            m_e_form_mode = eFormMode.SUA_PHONG_TOA;
+            m_cmd_lap.Enabled = false;
+            m_cmd_duyet.Enabled = false;
+            m_cmd_chon_trai_chu.Enabled = false;
+            m_cmd_save.Enabled = true;
+            m_us_gd_phong_toa_giai_toa = ip_us_phong_giai_toa;
+            this.Text = "F700 - Sửa Giao dịch phong tỏa";
+            m_lbl_title.Text = "F700 - Sửa Giao dịch phong tỏa";
+            m_us_gd_phong_toa_giai_toa = ip_us_phong_giai_toa;
+            US_DM_TRAI_CHU ip_us_trai_chu = new US_DM_TRAI_CHU(ip_us_phong_giai_toa.dcID_TRAI_CHU);
+            us_trai_chu_2_form(ip_us_trai_chu);
+            m_txt_nguoi_dai_dien.Focus();
+            this.ShowDialog();      
+        }
+        public void display_sua_giai_toa(US_GD_PHONG_GIAI_TOA ip_us_phong_giai_toa)
+        {
+            m_e_form_mode = eFormMode.SUA_GIAI_TOA;
+            m_cmd_lap.Enabled = false;
+            m_cmd_duyet.Enabled = false;
+            m_cmd_chon_trai_chu.Enabled = false;
+            m_cmd_save.Enabled = true;
+            m_us_gd_phong_toa_giai_toa = ip_us_phong_giai_toa;
+            this.Text = "F700 - Sửa Giao dịch giải tỏa";
+            m_lbl_title.Text = "F700 - Sửa Giao dịch giải tỏa";
+            m_us_gd_phong_toa_giai_toa = ip_us_phong_giai_toa;
+            US_DM_TRAI_CHU ip_us_trai_chu = new US_DM_TRAI_CHU(ip_us_phong_giai_toa.dcID_TRAI_CHU);
+            us_trai_chu_2_form(ip_us_trai_chu);
+            m_txt_nguoi_dai_dien.Focus();
+            this.ShowDialog();      
+        }
         public void display_duyet_phong_toa(US_GD_PHONG_GIAI_TOA ip_us_phong_giai_toa)
         {
             m_e_form_mode = eFormMode.DUYET_PHONG_TOA;
@@ -91,6 +123,8 @@ namespace BondApp
             LAP_GIAI_TOA
             , DUYET_PHONG_TOA
             , DUYET_GIAI_TOA
+            , SUA_PHONG_TOA
+            ,SUA_GIAI_TOA
         }
         #endregion
 
@@ -213,17 +247,20 @@ namespace BondApp
             US_HT_THAM_SO_HE_THONG v_us_phi_gd_min = new US_HT_THAM_SO_HE_THONG(GIOI_HAN_PHI_PGT.ID_PHI_PGT_MIN);
             m_lbl_pgd_max_min.Text = "Phí giao dịch trong khoảng " + CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI), "#,##") + " đến " + CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI), "#,##") + ".";
             m_dat_ngay.Value = DateTime.Today;
+           
             switch (m_e_form_mode)
             {
                 case eFormMode.LAP_GIAI_TOA:
                 case eFormMode.LAP_PHONG_TOA:
                     m_cmd_lap.Enabled = true;
                     m_cmd_duyet.Enabled = false;
+                    m_cmd_save.Enabled = false;
                     break;
                 case eFormMode.DUYET_GIAI_TOA:
                 case eFormMode.DUYET_PHONG_TOA:
                     m_cmd_lap.Enabled = false;
                     m_cmd_duyet.Enabled = true;
+                    m_cmd_save.Enabled = false;
                     break;
                 default:
                     break;
@@ -323,10 +360,12 @@ namespace BondApp
             {
                 case eFormMode.LAP_GIAI_TOA:
                     m_us_gd_phong_toa_giai_toa.strPHONG_TOA_YN = "N";
+                    m_us_gd_phong_toa_giai_toa.dcID_TRAI_CHU = m_us_trai_chu.dcID;
                     form_2_us_gd_lap_pgt();
                     break;
                 case eFormMode.LAP_PHONG_TOA:
                     m_us_gd_phong_toa_giai_toa.strPHONG_TOA_YN = "Y";
+                    m_us_gd_phong_toa_giai_toa.dcID_TRAI_CHU = m_us_trai_chu.dcID;
                     form_2_us_gd_lap_pgt();
                     break;
                 case eFormMode.DUYET_PHONG_TOA:
@@ -337,7 +376,8 @@ namespace BondApp
                     m_us_gd_phong_toa_giai_toa.dcID_NGUOI_DUYET = IP.Core.IPSystemAdmin.CAppContext_201.getCurrentUserID();
                   
                     break;
-                default: break;
+
+                default: form_2_us_gd_lap_pgt();  break;
 
             }
 
@@ -346,7 +386,7 @@ namespace BondApp
         }
         private void form_2_us_gd_lap_pgt()
         {
-            m_us_gd_phong_toa_giai_toa.dcID_TRAI_CHU = m_us_trai_chu.dcID;
+          
             m_us_gd_phong_toa_giai_toa.SetID_NGUOI_DUYETNull();
             m_us_gd_phong_toa_giai_toa.dcID_NGUOI_LAP = IP.Core.IPSystemAdmin.CAppContext_201.getCurrentUserID();
             m_us_gd_phong_toa_giai_toa.dcSO_LUONG = CIPConvert.ToDecimal(m_txt_so_luong_tp_cam_co.Text);
@@ -407,6 +447,15 @@ namespace BondApp
             v_obj_export_word.Export2Word(true);
          
         }
+        private void save_data()
+        {
+            if (check_thong_tin_chuyen_nhuong_is_ok() == false) return;
+            form_2_us_gd_phong_toa_giai_toa();
+            m_us_gd_phong_toa_giai_toa.Update();            
+
+            BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
+            this.Close();
+        }
         #endregion
         #region Events
 
@@ -416,6 +465,7 @@ namespace BondApp
             m_cmd_lap.Click += new EventHandler(m_cmd_lap_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_print.Click += new EventHandler(m_cmd_print_Click);
+            m_cmd_save.Click +=new EventHandler(m_cmd_save_Click);
           //  m_txt_ty_le_phi_gd.TextChanged += new EventHandler(m_txt_ty_le_phi_gd_TextChanged);
            m_txt_so_luong_tp_cam_co.TextChanged += new EventHandler(m_txt_so_luong_tp_cam_co_TextChanged);
            m_txt_ty_le_phi_gd.LostFocus += new EventHandler(m_txt_ty_le_phi_gd_LostFocus);
@@ -479,7 +529,18 @@ namespace BondApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        void m_cmd_lap_Click(object sender, EventArgs e)
+        void m_cmd_save_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                save_data();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_cmd_lap_Click(object sender, EventArgs e)
         {
             if (!check_thong_tin_chuyen_nhuong_is_ok())
             {
