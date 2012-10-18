@@ -13,7 +13,7 @@
               <DbSource ConnectionRef="QuanLyPhatHanhTraiPhieuConnectionString1 (Settings)" DbObjectName="QuanLyPhatHanhTraiPhieu.dbo.V_DM_TRAI_CHU" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, MA_TRAI_CHU, TEN_TRAI_CHU, DIA_CHI, MOBILE, FAX, CMT_GIAY_DKKD, NGAY_CAP_CMT, NOI_CAP_CMT, ID_LOAI_TRAI_CHU, ID_TRAI_PHIEU_SO_HUU, MA_TRAI_PHIEU, TEN_TRAI_PHIEU, MENH_GIA, TONG_SO_DU, SO_DU_KHA_DUNG, SO_TAI_KHOAN, MO_TAI_NGAN_HANG, GHI_CHU1, GHI_CHU2, GHI_CHU3, ID_NGUOI_DUYET_TC, ID_NGUOI_LAP_TC, ID_TRANG_THAI FROM dbo.V_DM_TRAI_CHU</CommandText>
+                    <CommandText>SELECT ID, MA_TRAI_CHU, TEN_TRAI_CHU, DIA_CHI, MOBILE, FAX, CMT_GIAY_DKKD, NGAY_CAP_CMT, NOI_CAP_CMT, ID_LOAI_TRAI_CHU, ID_TRAI_PHIEU_SO_HUU, TEN_NGUOI_DAI_DIEN, CMT_NGUOI_DAI_DIEN, NGAY_CAP_CMT_NGUOI_DAI_DIEN, NOI_CAP_CMT_NGUOI_DAI_DIEN, CHUC_VU, MA_TRAI_PHIEU, TEN_TRAI_PHIEU, MENH_GIA, TONG_SO_DU, SO_DU_KHA_DUNG, SO_TAI_KHOAN, MO_TAI_NGAN_HANG, GHI_CHU1, GHI_CHU2, GHI_CHU3, ID_NGUOI_DUYET_TC, ID_NGUOI_LAP_TC, ID_TRANG_THAI FROM dbo.V_DM_TRAI_CHU</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -31,6 +31,11 @@
               <Mapping SourceColumn="NOI_CAP_CMT" DataSetColumn="NOI_CAP_CMT" />
               <Mapping SourceColumn="ID_LOAI_TRAI_CHU" DataSetColumn="ID_LOAI_TRAI_CHU" />
               <Mapping SourceColumn="ID_TRAI_PHIEU_SO_HUU" DataSetColumn="ID_TRAI_PHIEU_SO_HUU" />
+              <Mapping SourceColumn="TEN_NGUOI_DAI_DIEN" DataSetColumn="TEN_NGUOI_DAI_DIEN" />
+              <Mapping SourceColumn="CMT_NGUOI_DAI_DIEN" DataSetColumn="CMT_NGUOI_DAI_DIEN" />
+              <Mapping SourceColumn="NGAY_CAP_CMT_NGUOI_DAI_DIEN" DataSetColumn="NGAY_CAP_CMT_NGUOI_DAI_DIEN" />
+              <Mapping SourceColumn="NOI_CAP_CMT_NGUOI_DAI_DIEN" DataSetColumn="NOI_CAP_CMT_NGUOI_DAI_DIEN" />
+              <Mapping SourceColumn="CHUC_VU" DataSetColumn="CHUC_VU" />
               <Mapping SourceColumn="MA_TRAI_PHIEU" DataSetColumn="MA_TRAI_PHIEU" />
               <Mapping SourceColumn="TEN_TRAI_PHIEU" DataSetColumn="TEN_TRAI_PHIEU" />
               <Mapping SourceColumn="MENH_GIA" DataSetColumn="MENH_GIA" />
@@ -111,6 +116,35 @@
               </xs:element>
               <xs:element name="ID_LOAI_TRAI_CHU" msprop:Generator_ColumnVarNameInTable="columnID_LOAI_TRAI_CHU" msprop:Generator_ColumnPropNameInRow="ID_LOAI_TRAI_CHU" msprop:Generator_ColumnPropNameInTable="ID_LOAI_TRAI_CHUColumn" msprop:Generator_UserColumnName="ID_LOAI_TRAI_CHU" type="xs:decimal" minOccurs="0" />
               <xs:element name="ID_TRAI_PHIEU_SO_HUU" msprop:Generator_ColumnVarNameInTable="columnID_TRAI_PHIEU_SO_HUU" msprop:Generator_ColumnPropNameInRow="ID_TRAI_PHIEU_SO_HUU" msprop:Generator_ColumnPropNameInTable="ID_TRAI_PHIEU_SO_HUUColumn" msprop:Generator_UserColumnName="ID_TRAI_PHIEU_SO_HUU" type="xs:decimal" />
+              <xs:element name="TEN_NGUOI_DAI_DIEN" msprop:Generator_ColumnVarNameInTable="columnTEN_NGUOI_DAI_DIEN" msprop:Generator_ColumnPropNameInRow="TEN_NGUOI_DAI_DIEN" msprop:Generator_ColumnPropNameInTable="TEN_NGUOI_DAI_DIENColumn" msprop:Generator_UserColumnName="TEN_NGUOI_DAI_DIEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CMT_NGUOI_DAI_DIEN" msprop:Generator_ColumnVarNameInTable="columnCMT_NGUOI_DAI_DIEN" msprop:Generator_ColumnPropNameInRow="CMT_NGUOI_DAI_DIEN" msprop:Generator_ColumnPropNameInTable="CMT_NGUOI_DAI_DIENColumn" msprop:Generator_UserColumnName="CMT_NGUOI_DAI_DIEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NGAY_CAP_CMT_NGUOI_DAI_DIEN" msprop:Generator_ColumnVarNameInTable="columnNGAY_CAP_CMT_NGUOI_DAI_DIEN" msprop:Generator_ColumnPropNameInRow="NGAY_CAP_CMT_NGUOI_DAI_DIEN" msprop:Generator_ColumnPropNameInTable="NGAY_CAP_CMT_NGUOI_DAI_DIENColumn" msprop:Generator_UserColumnName="NGAY_CAP_CMT_NGUOI_DAI_DIEN" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NOI_CAP_CMT_NGUOI_DAI_DIEN" msprop:Generator_ColumnVarNameInTable="columnNOI_CAP_CMT_NGUOI_DAI_DIEN" msprop:Generator_ColumnPropNameInRow="NOI_CAP_CMT_NGUOI_DAI_DIEN" msprop:Generator_ColumnPropNameInTable="NOI_CAP_CMT_NGUOI_DAI_DIENColumn" msprop:Generator_UserColumnName="NOI_CAP_CMT_NGUOI_DAI_DIEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CHUC_VU" msprop:Generator_ColumnVarNameInTable="columnCHUC_VU" msprop:Generator_ColumnPropNameInRow="CHUC_VU" msprop:Generator_ColumnPropNameInTable="CHUC_VUColumn" msprop:Generator_UserColumnName="CHUC_VU" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="MA_TRAI_PHIEU" msprop:Generator_ColumnVarNameInTable="columnMA_TRAI_PHIEU" msprop:Generator_ColumnPropNameInRow="MA_TRAI_PHIEU" msprop:Generator_ColumnPropNameInTable="MA_TRAI_PHIEUColumn" msprop:Generator_UserColumnName="MA_TRAI_PHIEU">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
