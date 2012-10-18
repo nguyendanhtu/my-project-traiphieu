@@ -469,6 +469,7 @@ namespace BondApp
           //  m_txt_ty_le_phi_gd.TextChanged += new EventHandler(m_txt_ty_le_phi_gd_TextChanged);
            m_txt_so_luong_tp_cam_co.TextChanged += new EventHandler(m_txt_so_luong_tp_cam_co_TextChanged);
            m_txt_ty_le_phi_gd.LostFocus += new EventHandler(m_txt_ty_le_phi_gd_LostFocus);
+           m_txt_so_luong_tp_cam_co.LostFocus += new EventHandler(m_txt_so_luong_tp_cam_co_LostFocus);
         }
         void m_cmd_exit_Click(object sender, EventArgs e)
         {
@@ -601,7 +602,7 @@ namespace BondApp
             if (m_txt_so_luong_tp_cam_co.Text != "")
             {
                 m_txt_tong_gia_tri.Text = CIPConvert.ToStr((CIPConvert.ToDecimal(m_txt_menh_gia.Text) * CIPConvert.ToDecimal(m_txt_so_luong_tp_cam_co.Text)), "#,###");
-               if(m_txt_ty_le_phi_gd.Text != "") phi_giao_dich_pgt_change();
+               //if(m_txt_ty_le_phi_gd.Text != "") phi_giao_dich_pgt_change();
             }
         }
         private void phi_giao_dich_pgt_change()
@@ -613,7 +614,27 @@ namespace BondApp
             }
             return;
         }
-      
+        private void m_txt_so_luong_tp_cam_co_LostFocus(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_txt_so_luong_tp_cam_co.Text != "")
+                {
+                   
+                    if (m_txt_ty_le_phi_gd.Text != "") phi_giao_dich_pgt_change();
+                }
+
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Nhập sai kiểu dữ liệu. Tỷ lệ phí giao dịch phải là số!");
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+                return;
+            }
+        }
         private void m_txt_ty_le_phi_gd_LostFocus(object sender, EventArgs e)
         {
             try
