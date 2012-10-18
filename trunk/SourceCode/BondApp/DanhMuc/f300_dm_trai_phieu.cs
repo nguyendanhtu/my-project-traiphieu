@@ -319,74 +319,74 @@ namespace BondApp
             this.ShowDialog();
         }
 
-        public US_DM_TRAI_PHIEU select_trai_phieu()
+        public US_V_DM_TRAI_PHIEU select_trai_phieu()
         {
             m_e_form_mode = DataEntryFormMode.SelectDataState;
             this.ShowDialog();
 
-            return m_us_trai_phieu;
+            return m_us_v_trai_phieu;
         }
         #endregion
 
         #region Data Structure
         private enum e_col_Number
         {
-            THA_NOI_YN = 14
-,
-            ID_DOT_PHAT_HANH = 4
+            DON_VI_KY_HAN = 7
+ ,
+            TRANG_THAI = 25
+                ,
+            DON_VI_KY_TRA_LAI = 14
+                ,
+            MENH_GIA = 5
                 ,
             TONG_SL_PHAT_HANH = 17
                 ,
-            ID_DV_DIEU_CHINH_LS = 8
-                ,
-            MENH_GIA = 11
-                ,
-            SO_NGAY_TCPH_CHUYEN_TIEN_TRUOC = 20
+            LOAI_TRAI_PHIEU = 3
                 ,
             NGAY_DAO_HAN = 16
                 ,
             MA_TRAI_PHIEU = 1
                 ,
-            ID_DV_KY_HAN = 6
-                ,
-            KY_HAN = 5
-                ,
-            KY_DIEU_CHINH_LS = 7
-                ,
-            ID_TRANG_THAI = 25
-                ,
             CN_HUONG_THEO_NGAY_CHUYEN_NHUONG_YN = 24
                 ,
-            ID_NGUOI_DUYET = 22
+            KY_HAN = 6
                 ,
-            CO_SO_TINH_LAI = 12
+            SO_NGAY_TCPH_CHUYEN_TIEN_TRUOC = 20
                 ,
-            TONG_GIA_TRI = 18
-                ,
-            GHI_CHU_PHUONG_THUC_XD_LAI_SUAT = 23
-                ,
-            ID_LOAI_TRAI_PHIEU = 3
+            KY_DIEU_CHINH_LS = 10
                 ,
             TRA_LAI_SAU_YN = 15
                 ,
-            ID_NGUOI_LAP = 21
+            CO_SO_TINH_LAI = 8
                 ,
-            ID_DV_KY_TRA_LAI = 10
+            NGUOI_LAP = 21
                 ,
-            LAI_SUAT_DEFAULT = 13
+            TONG_GIA_TRI = 18
+                ,
+            NGAY_PHAT_HANH = 4
+                ,
+            GHI_CHU_PHUONG_THUC_XD_LAI_SUAT = 23
                 ,
             TEN_TRAI_PHIEU = 2
                 ,
+            NGUOI_DUYET = 22
+                ,
+            THA_NOI_YN = 12
+                ,
+            LAI_SUAT_DEFAULT = 9
+                ,
+            DON_VI_DIEU_CHINH_LS = 11
+                ,
             BIEN_DO_LAI = 19
-                , KY_TRA_LAI = 9
+                , KY_TRA_LAI = 13
 
-        }	
+        }		
         #endregion
 
         #region Members
         ITransferDataRow m_obj_trans;
-        DS_DM_TRAI_PHIEU m_ds_trai_phieu = new DS_DM_TRAI_PHIEU();
-        US_DM_TRAI_PHIEU m_us_trai_phieu = new US_DM_TRAI_PHIEU();
+        DS_V_DM_TRAI_PHIEU m_ds_v_trai_phieu = new DS_V_DM_TRAI_PHIEU();
+        US_V_DM_TRAI_PHIEU m_us_v_trai_phieu = new US_V_DM_TRAI_PHIEU();
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
         #endregion
 
@@ -433,79 +433,91 @@ namespace BondApp
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
             Hashtable v_htb = new Hashtable();
-            v_htb.Add(DM_TRAI_PHIEU.THA_NOI_YN, e_col_Number.THA_NOI_YN);
-            v_htb.Add(DM_TRAI_PHIEU.ID_DOT_PHAT_HANH, e_col_Number.ID_DOT_PHAT_HANH);
-            v_htb.Add(DM_TRAI_PHIEU.TONG_SL_PHAT_HANH, e_col_Number.TONG_SL_PHAT_HANH);
-            v_htb.Add(DM_TRAI_PHIEU.ID_DV_DIEU_CHINH_LS, e_col_Number.ID_DV_DIEU_CHINH_LS);
-            v_htb.Add(DM_TRAI_PHIEU.MENH_GIA, e_col_Number.MENH_GIA);
-            v_htb.Add(DM_TRAI_PHIEU.SO_NGAY_TCPH_CHUYEN_TIEN_TRUOC, e_col_Number.SO_NGAY_TCPH_CHUYEN_TIEN_TRUOC);
-            v_htb.Add(DM_TRAI_PHIEU.NGAY_DAO_HAN, e_col_Number.NGAY_DAO_HAN);
-            v_htb.Add(DM_TRAI_PHIEU.MA_TRAI_PHIEU, e_col_Number.MA_TRAI_PHIEU);
-            v_htb.Add(DM_TRAI_PHIEU.ID_DV_KY_HAN, e_col_Number.ID_DV_KY_HAN);
-            v_htb.Add(DM_TRAI_PHIEU.KY_HAN, e_col_Number.KY_HAN);
-            v_htb.Add(DM_TRAI_PHIEU.KY_DIEU_CHINH_LS, e_col_Number.KY_DIEU_CHINH_LS);
-            v_htb.Add(DM_TRAI_PHIEU.ID_TRANG_THAI, e_col_Number.ID_TRANG_THAI);
-            v_htb.Add(DM_TRAI_PHIEU.CN_HUONG_THEO_NGAY_CHUYEN_NHUONG_YN, e_col_Number.CN_HUONG_THEO_NGAY_CHUYEN_NHUONG_YN);
-            v_htb.Add(DM_TRAI_PHIEU.ID_NGUOI_DUYET, e_col_Number.ID_NGUOI_DUYET);
-            v_htb.Add(DM_TRAI_PHIEU.CO_SO_TINH_LAI, e_col_Number.CO_SO_TINH_LAI);
-            v_htb.Add(DM_TRAI_PHIEU.TONG_GIA_TRI, e_col_Number.TONG_GIA_TRI);
-            v_htb.Add(DM_TRAI_PHIEU.GHI_CHU_PHUONG_THUC_XD_LAI_SUAT, e_col_Number.GHI_CHU_PHUONG_THUC_XD_LAI_SUAT);
-            v_htb.Add(DM_TRAI_PHIEU.ID_LOAI_TRAI_PHIEU, e_col_Number.ID_LOAI_TRAI_PHIEU);
-            v_htb.Add(DM_TRAI_PHIEU.TRA_LAI_SAU_YN, e_col_Number.TRA_LAI_SAU_YN);
-            v_htb.Add(DM_TRAI_PHIEU.ID_NGUOI_LAP, e_col_Number.ID_NGUOI_LAP);
-            v_htb.Add(DM_TRAI_PHIEU.ID_DV_KY_TRA_LAI, e_col_Number.ID_DV_KY_TRA_LAI);
-            v_htb.Add(DM_TRAI_PHIEU.LAI_SUAT_DEFAULT, e_col_Number.LAI_SUAT_DEFAULT);
-            v_htb.Add(DM_TRAI_PHIEU.TEN_TRAI_PHIEU, e_col_Number.TEN_TRAI_PHIEU);
-            v_htb.Add(DM_TRAI_PHIEU.BIEN_DO_LAI, e_col_Number.BIEN_DO_LAI);
-            v_htb.Add(DM_TRAI_PHIEU.KY_TRA_LAI, e_col_Number.KY_TRA_LAI);
+            v_htb.Add(V_DM_TRAI_PHIEU.DON_VI_KY_HAN, e_col_Number.DON_VI_KY_HAN);
+            v_htb.Add(V_DM_TRAI_PHIEU.TRANG_THAI, e_col_Number.TRANG_THAI);
+            v_htb.Add(V_DM_TRAI_PHIEU.DON_VI_KY_TRA_LAI, e_col_Number.DON_VI_KY_TRA_LAI);
+            v_htb.Add(V_DM_TRAI_PHIEU.MENH_GIA, e_col_Number.MENH_GIA);
+            v_htb.Add(V_DM_TRAI_PHIEU.TONG_SL_PHAT_HANH, e_col_Number.TONG_SL_PHAT_HANH);
+            v_htb.Add(V_DM_TRAI_PHIEU.LOAI_TRAI_PHIEU, e_col_Number.LOAI_TRAI_PHIEU);
+            v_htb.Add(V_DM_TRAI_PHIEU.NGAY_DAO_HAN, e_col_Number.NGAY_DAO_HAN);
+            v_htb.Add(V_DM_TRAI_PHIEU.MA_TRAI_PHIEU, e_col_Number.MA_TRAI_PHIEU);
+            v_htb.Add(V_DM_TRAI_PHIEU.CN_HUONG_THEO_NGAY_CHUYEN_NHUONG_YN, e_col_Number.CN_HUONG_THEO_NGAY_CHUYEN_NHUONG_YN);
+            v_htb.Add(V_DM_TRAI_PHIEU.KY_HAN, e_col_Number.KY_HAN);
+            v_htb.Add(V_DM_TRAI_PHIEU.SO_NGAY_TCPH_CHUYEN_TIEN_TRUOC, e_col_Number.SO_NGAY_TCPH_CHUYEN_TIEN_TRUOC);
+            v_htb.Add(V_DM_TRAI_PHIEU.KY_DIEU_CHINH_LS, e_col_Number.KY_DIEU_CHINH_LS);
+            v_htb.Add(V_DM_TRAI_PHIEU.TRA_LAI_SAU_YN, e_col_Number.TRA_LAI_SAU_YN);
+            v_htb.Add(V_DM_TRAI_PHIEU.CO_SO_TINH_LAI, e_col_Number.CO_SO_TINH_LAI);
+            v_htb.Add(V_DM_TRAI_PHIEU.NGUOI_LAP, e_col_Number.NGUOI_LAP);
+            v_htb.Add(V_DM_TRAI_PHIEU.TONG_GIA_TRI, e_col_Number.TONG_GIA_TRI);
+            v_htb.Add(V_DM_TRAI_PHIEU.NGAY_PHAT_HANH, e_col_Number.NGAY_PHAT_HANH);
+            v_htb.Add(V_DM_TRAI_PHIEU.GHI_CHU_PHUONG_THUC_XD_LAI_SUAT, e_col_Number.GHI_CHU_PHUONG_THUC_XD_LAI_SUAT);
+            v_htb.Add(V_DM_TRAI_PHIEU.TEN_TRAI_PHIEU, e_col_Number.TEN_TRAI_PHIEU);
+            v_htb.Add(V_DM_TRAI_PHIEU.NGUOI_DUYET, e_col_Number.NGUOI_DUYET);
+            v_htb.Add(V_DM_TRAI_PHIEU.THA_NOI_YN, e_col_Number.THA_NOI_YN);
+            v_htb.Add(V_DM_TRAI_PHIEU.LAI_SUAT_DEFAULT, e_col_Number.LAI_SUAT_DEFAULT);
+            v_htb.Add(V_DM_TRAI_PHIEU.DON_VI_DIEU_CHINH_LS, e_col_Number.DON_VI_DIEU_CHINH_LS);
+            v_htb.Add(V_DM_TRAI_PHIEU.BIEN_DO_LAI, e_col_Number.BIEN_DO_LAI);
+            v_htb.Add(V_DM_TRAI_PHIEU.KY_TRA_LAI, e_col_Number.KY_TRA_LAI);
 
-            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds_trai_phieu.DM_TRAI_PHIEU.NewRow());
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds_v_trai_phieu.V_DM_TRAI_PHIEU.NewRow());
             return v_obj_trans;
         }
         private void load_data_2_grid()
         {
-            m_ds_trai_phieu = new DS_DM_TRAI_PHIEU();
-            m_us_trai_phieu.FillDataset(m_ds_trai_phieu);
+            m_ds_v_trai_phieu = new DS_V_DM_TRAI_PHIEU();
+            m_us_v_trai_phieu.FillDataset(m_ds_v_trai_phieu);
             m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds_trai_phieu, m_fg, m_obj_trans);
-            load_data_2_cbo_grid();
+            CGridUtils.Dataset2C1Grid(m_ds_v_trai_phieu, m_fg, m_obj_trans);
+            //load_data_2_cbo_grid();
             m_fg.Redraw = true;
         }
-        private void load_data_2_cbo_grid()
-        {
-            US_CM_DM_TU_DIEN v_us_tu_dien = new US_CM_DM_TU_DIEN();
-            DS_CM_DM_TU_DIEN v_ds_tu_dien = new DS_CM_DM_TU_DIEN();
-            //load loai tu dien
-            v_us_tu_dien.fill_tu_dien_cung_loai_ds("LOAI_TRAI_PHIEU", v_ds_tu_dien);
-            Hashtable v_hst_loai_tu_dien = new Hashtable();
-            foreach (DataRow v_dr in v_ds_tu_dien.CM_DM_TU_DIEN.Rows)
-            {
-                v_hst_loai_tu_dien.Add(v_dr[CM_DM_TU_DIEN.ID], v_dr[CM_DM_TU_DIEN.TEN]);
-            }
-            m_fg.Cols[(int)e_col_Number.ID_LOAI_TRAI_PHIEU].DataMap = v_hst_loai_tu_dien;
+        //private void load_data_2_cbo_grid()
+        //{
+        //    // Mapping ngày phát hành
+        //    US_DM_DOT_PHAT_HANH v_us_dot_ph = new US_DM_DOT_PHAT_HANH();
+        //    DS_DM_DOT_PHAT_HANH v_ds_dot_ph = new DS_DM_DOT_PHAT_HANH();
+        //    //
+        //    US_CM_DM_TU_DIEN v_us_tu_dien = new US_CM_DM_TU_DIEN();
+        //    DS_CM_DM_TU_DIEN v_ds_tu_dien = new DS_CM_DM_TU_DIEN();
+        //    //load loai tu dien
+        //    v_us_tu_dien.fill_tu_dien_cung_loai_ds("LOAI_TRAI_PHIEU", v_ds_tu_dien);
+        //    Hashtable v_hst_loai_tu_dien = new Hashtable();
+        //    foreach (DataRow v_dr in v_ds_tu_dien.CM_DM_TU_DIEN.Rows)
+        //    {
+        //        v_hst_loai_tu_dien.Add(v_dr[CM_DM_TU_DIEN.ID], v_dr[CM_DM_TU_DIEN.TEN]);
+        //    }
+        //    m_fg.Cols[(int)e_col_Number.ID_LOAI_TRAI_PHIEU].DataMap = v_hst_loai_tu_dien;
 
-            //load don vi ky han
-            v_ds_tu_dien = new DS_CM_DM_TU_DIEN();
-            v_us_tu_dien.fill_tu_dien_cung_loai_ds("DON_VI_KY_HAN", v_ds_tu_dien);
+        //    //load don vi ky han
+        //    v_ds_tu_dien = new DS_CM_DM_TU_DIEN();
+        //    v_us_tu_dien.fill_tu_dien_cung_loai_ds("DON_VI_KY_HAN", v_ds_tu_dien);
+        //    Hashtable v_hst_dv_ky_han = new Hashtable();
+        //    foreach (DataRow v_dr in v_ds_tu_dien.CM_DM_TU_DIEN.Rows)
+        //    {
+        //        v_hst_dv_ky_han.Add(v_dr[CM_DM_TU_DIEN.ID], v_dr[CM_DM_TU_DIEN.TEN]);
+        //    }
+        //    m_fg.Cols[(int)e_col_Number.ID_DV_DIEU_CHINH_LS].DataMap = v_hst_dv_ky_han;
+        //    m_fg.Cols[(int)e_col_Number.ID_DV_KY_HAN].DataMap = v_hst_dv_ky_han;
+        //    m_fg.Cols[(int)e_col_Number.ID_DV_KY_TRA_LAI].DataMap = v_hst_dv_ky_han;
 
-            Hashtable v_hst_dv_ky_han = new Hashtable();
-            foreach (DataRow v_dr in v_ds_tu_dien.CM_DM_TU_DIEN.Rows)
-            {
-                v_hst_dv_ky_han.Add(v_dr[CM_DM_TU_DIEN.ID], v_dr[CM_DM_TU_DIEN.TEN]);
-            }
-            m_fg.Cols[(int)e_col_Number.ID_DV_DIEU_CHINH_LS].DataMap = v_hst_dv_ky_han;
-            m_fg.Cols[(int)e_col_Number.ID_DV_KY_HAN].DataMap = v_hst_dv_ky_han;
-            m_fg.Cols[(int)e_col_Number.ID_DV_KY_TRA_LAI].DataMap = v_hst_dv_ky_han;
-
-        }
-        private void grid2us_object(US_DM_TRAI_PHIEU i_us, int i_grid_row)
+        //    //Load trạng thái danh mục
+        //    v_ds_tu_dien = new DS_CM_DM_TU_DIEN();
+        //    v_us_tu_dien.fill_tu_dien_cung_loai_ds("TRANG_THAI_DANH_MUC", v_ds_tu_dien);
+        //    Hashtable v_hst_trang_thai_dm = new Hashtable();
+        //    foreach (DataRow v_dr in v_ds_tu_dien.CM_DM_TU_DIEN.Rows)
+        //    {
+        //        v_hst_trang_thai_dm.Add(v_dr[CM_DM_TU_DIEN.ID], v_dr[CM_DM_TU_DIEN.TEN]);
+        //    }
+        //    m_fg.Cols[(int)e_col_Number.ID_TRANG_THAI].DataMap = v_hst_trang_thai_dm;
+        //}
+        private void grid2us_object(US_V_DM_TRAI_PHIEU i_us, int i_grid_row)
         {
             DataRow v_dr;
             v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
             m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
             i_us.DataRow2Me(v_dr);
         }
-        private void us_object2grid(US_DM_TRAI_PHIEU i_us, int i_grid_row)
+        private void us_object2grid(US_V_DM_TRAI_PHIEU i_us, int i_grid_row)
         {
             DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
             i_us.Me2DataRow(v_dr);
@@ -521,9 +533,9 @@ namespace BondApp
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            grid2us_object(m_us_trai_phieu, m_fg.Row);
+            grid2us_object(m_us_v_trai_phieu, m_fg.Row);
             f300_dm_trai_phieu_DE v_fDE = new f300_dm_trai_phieu_DE();
-            v_fDE.display_for_update(m_us_trai_phieu);
+            v_fDE.display_for_update(m_us_v_trai_phieu);
             load_data_2_grid();
         }
 
@@ -532,7 +544,7 @@ namespace BondApp
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
-            US_DM_TRAI_PHIEU v_us = new US_DM_TRAI_PHIEU();
+            US_V_DM_TRAI_PHIEU v_us = new US_V_DM_TRAI_PHIEU();
             grid2us_object(v_us, m_fg.Row);
             try
             {
@@ -554,9 +566,9 @@ namespace BondApp
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            grid2us_object(m_us_trai_phieu, m_fg.Row);
+            grid2us_object(m_us_v_trai_phieu, m_fg.Row);
             f650_lich_thanh_toan_lai_goc_xem v_frm_650 = new f650_lich_thanh_toan_lai_goc_xem();
-            v_frm_650.display_lich_thanh_toan_lai_goc(m_us_trai_phieu);
+            v_frm_650.display_lich_thanh_toan_lai_goc(m_us_v_trai_phieu);
         }
 
         private void chon_trai_phieu()
@@ -564,7 +576,7 @@ namespace BondApp
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             if (m_e_form_mode != DataEntryFormMode.SelectDataState) return;
-            grid2us_object(m_us_trai_phieu, m_fg.Row);
+            grid2us_object(m_us_v_trai_phieu, m_fg.Row);
             this.Close();
         }
         private void set_define_events()
@@ -592,10 +604,10 @@ namespace BondApp
         }
         private void load_data_2_grid(string ip_str_search_key)
         {
-            m_ds_trai_phieu = new DS_DM_TRAI_PHIEU();
-            m_us_trai_phieu.load_data_by_search(m_ds_trai_phieu, ip_str_search_key);
+            m_ds_v_trai_phieu = new DS_V_DM_TRAI_PHIEU();
+            //m_us_v_trai_phieu.load_data_by_search(m_ds_v_trai_phieu, ip_str_search_key);
             m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds_trai_phieu, m_fg, m_obj_trans);
+            CGridUtils.Dataset2C1Grid(m_ds_v_trai_phieu, m_fg, m_obj_trans);
             m_fg.Redraw = true;
         }
 

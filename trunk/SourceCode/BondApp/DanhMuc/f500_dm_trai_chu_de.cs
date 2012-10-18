@@ -48,7 +48,8 @@ namespace BondApp.DanhMuc
 
         #region Members
         US_V_DM_TRAI_CHU m_us_v_trai_chu = new US_V_DM_TRAI_CHU();
-        US_DM_TRAI_PHIEU m_us_trai_phieu;
+        //US_DM_TRAI_PHIEU m_us_trai_phieu;
+        US_V_DM_TRAI_PHIEU m_us_v_trai_phieu;
         US_DM_TRAI_CHU m_us_trai_chu;
         US_CM_DM_TU_DIEN m_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
         DS_CM_DM_TU_DIEN m_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
@@ -93,7 +94,7 @@ namespace BondApp.DanhMuc
 
         private void us_object_2_form(US_V_DM_TRAI_CHU ip_us_trai_chu)
         {
-            m_us_trai_phieu = new US_DM_TRAI_PHIEU(ip_us_trai_chu.dcID_TRAI_PHIEU_SO_HUU);
+            m_us_v_trai_phieu = new US_V_DM_TRAI_PHIEU(ip_us_trai_chu.dcID_TRAI_PHIEU_SO_HUU);
 
             m_txt_ma_trai_chu.Text = ip_us_trai_chu.strMA_TRAI_CHU;
             m_txt_ten_khach_hang.Text = ip_us_trai_chu.strTEN_TRAI_CHU;
@@ -110,8 +111,8 @@ namespace BondApp.DanhMuc
             m_txt_ghi_chu_2.Text = ip_us_trai_chu.strGHI_CHU2;
             m_txt_ghi_chu_3.Text = ip_us_trai_chu.strGHI_CHU3;
             m_txt_noi_cap.Text = ip_us_trai_chu.strNOI_CAP_CMT;
-            m_txt_id_trai_phieu_so_huu.Text = m_us_trai_phieu.strMA_TRAI_PHIEU;
-            m_txt_ten_trai_phieu.Text = m_us_trai_phieu.strTEN_TRAI_PHIEU;
+            m_txt_id_trai_phieu_so_huu.Text = m_us_v_trai_phieu.strMA_TRAI_PHIEU;
+            m_txt_ten_trai_phieu.Text = m_us_v_trai_phieu.strTEN_TRAI_PHIEU;
             m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ip_us_trai_chu.dcID_TRANG_THAI);
             m_txt_so_du_kha_dung.Text = CIPConvert.ToStr(ip_us_trai_chu.dcSO_DU_KHA_DUNG);
         }
@@ -133,7 +134,7 @@ namespace BondApp.DanhMuc
             ip_us_trai_chu.strGHI_CHU2 = m_txt_ghi_chu_2.Text;
             ip_us_trai_chu.strGHI_CHU3 = m_txt_ghi_chu_3.Text;
             ip_us_trai_chu.strNOI_CAP_CMT = m_txt_noi_cap.Text;
-            ip_us_trai_chu.dcID_TRAI_PHIEU_SO_HUU = m_us_trai_phieu.dcID;
+            ip_us_trai_chu.dcID_TRAI_PHIEU_SO_HUU = m_us_v_trai_phieu.dcID;
             if (m_e_form_mode == DataEntryFormMode.InsertDataState)
                 ip_us_trai_chu.dcID_NGUOI_LAP = CAppContext_201.getCurrentUserID();
             else
@@ -223,11 +224,11 @@ namespace BondApp.DanhMuc
         private void select_trai_phieu()
         {
             f300_dm_trai_phieu v_frm300 = new f300_dm_trai_phieu();
-            m_us_trai_phieu = v_frm300.select_trai_phieu();
-            if (!m_us_trai_phieu.IsIDNull())
+            m_us_v_trai_phieu = v_frm300.select_trai_phieu();
+            if (!m_us_v_trai_phieu.IsIDNull())
             {
-                m_txt_id_trai_phieu_so_huu.Text = m_us_trai_phieu.strMA_TRAI_PHIEU;
-                m_txt_ten_trai_phieu.Text = m_us_trai_phieu.strTEN_TRAI_PHIEU;
+                m_txt_id_trai_phieu_so_huu.Text = m_us_v_trai_phieu.strMA_TRAI_PHIEU;
+                m_txt_ten_trai_phieu.Text = m_us_v_trai_phieu.strTEN_TRAI_PHIEU;
             }
         }
 

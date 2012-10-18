@@ -33,7 +33,8 @@ namespace BondApp.ChucNang
 
         #region Members
         ITransferDataRow m_obj_tran_xls;
-        US_DM_TRAI_PHIEU m_us_trai_phieu;
+        //US_DM_TRAI_PHIEU m_us_trai_phieu;
+        US_V_DM_TRAI_PHIEU m_us_v_trai_phieu;
         DS_DM_TRAI_CHU_IMP m_ds_trai_chu_imp = new DS_DM_TRAI_CHU_IMP();
         decimal m_dc_ca_nhan_trong_nuoc, m_dc_ca_nhan_nuoc_ngoai, m_dc_to_chuc_trong_nuoc, m_dc_to_chuc_nuoc_ngoai;
         int m_i_flag = 0;
@@ -82,19 +83,19 @@ namespace BondApp.ChucNang
             m_dc_ca_nhan_nuoc_ngoai = CIPConvert.ToDecimal(System.Configuration.ConfigurationSettings.AppSettings["CA_NHAN_NUOC_NGOAI"]);
             m_dc_to_chuc_nuoc_ngoai = CIPConvert.ToDecimal(System.Configuration.ConfigurationSettings.AppSettings["TO_CHUC_NUOC_NGOAI"]);
         }
-        private void us_trai_phieu_2_form(US_DM_TRAI_PHIEU ip_us_trai_phieu)
+        private void us_trai_phieu_2_form(US_V_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
             m_txt_ma_trai_phieu.Text = ip_us_trai_phieu.strMA_TRAI_PHIEU;
             try
             {
-                US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(ip_us_trai_phieu.dcID_DOT_PHAT_HANH);
-                US_DM_TO_CHUC_PHAT_HANH v_us_dm_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH(v_us_dm_dot_phat_hanh.dcID_TO_CHUC_PHAT_HANH);
-                m_txt_ten_to_chuc_phat_hanh.Text = v_us_dm_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HANH;
-                m_txt_ngay_phat_hanh.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH, "dd/MM/yyyy");
+                //US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(ip_us_trai_phieu.dcID_DOT_PHAT_HANH);
+                //US_DM_TO_CHUC_PHAT_HANH v_us_dm_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH(v_us_dm_dot_phat_hanh.dcID_TO_CHUC_PHAT_HANH);
+                m_txt_ten_to_chuc_phat_hanh.Text = ip_us_trai_phieu.strTEN_TO_CHUC_PHAT_HANH;
+                m_txt_ngay_phat_hanh.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_PHAT_HANH, "dd/MM/yyyy");
             }
             catch (Exception v_e)
             {
-                MessageBox.Show("Trái phiếu " + m_us_trai_phieu.strTEN_TRAI_PHIEU + " không có đơn vị kỳ hạn");
+                MessageBox.Show("Trái phiếu " + m_us_v_trai_phieu.strTEN_TRAI_PHIEU + " không có đơn vị kỳ hạn");
                 throw v_e;
             }
         }
@@ -137,10 +138,10 @@ namespace BondApp.ChucNang
         private void select_trai_phieu()
         {
             f300_dm_trai_phieu v_frm300 = new f300_dm_trai_phieu();
-            m_us_trai_phieu = new US_DM_TRAI_PHIEU();
-            m_us_trai_phieu = v_frm300.select_trai_phieu();
-            if (!m_us_trai_phieu.IsIDNull() && m_us_trai_phieu.dcID != -1)
-                us_trai_phieu_2_form(m_us_trai_phieu);
+            m_us_v_trai_phieu = new US_V_DM_TRAI_PHIEU();
+            m_us_v_trai_phieu = v_frm300.select_trai_phieu();
+            if (!m_us_v_trai_phieu.IsIDNull() && m_us_v_trai_phieu.dcID != -1)
+                us_trai_phieu_2_form(m_us_v_trai_phieu);
         }
         private void kiem_tra_data_tren_luoi()
         {
@@ -300,7 +301,7 @@ namespace BondApp.ChucNang
                     form_2_us_object_hoc_vien_theo_hoc(v_us_trai_chu_imp, v_int_row);
                     v_us_trai_chu_imp.Insert_import(get_loai_trai_chu_by_loai_hinh_co_dong(v_us_trai_chu_imp.dcLOAI_HINH_CO_CONG)
                                                     , CAppContext_201.getCurrentUserID()
-                                                    , m_us_trai_phieu.dcID);
+                                                    , m_us_v_trai_phieu.dcID);
                 }
                 v_us_trai_chu_imp.CommitTransaction();
                 BaseMessages.MsgBox_Infor("Đã import trái chủ thành công");

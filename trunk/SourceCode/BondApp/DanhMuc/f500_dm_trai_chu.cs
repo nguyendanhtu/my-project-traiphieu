@@ -326,10 +326,10 @@ namespace BondApp
             return m_us;
         }
 
-        public US_DM_TRAI_CHU select_trai_chu_of_trai_phieu(US_DM_TRAI_PHIEU ip_us_trai_phieu)
+        public US_DM_TRAI_CHU select_trai_chu_of_trai_phieu(US_V_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
             m_e_form_mode = DataEntryFormMode.SelectDataState;
-            m_us_trai_phieu = ip_us_trai_phieu;
+            m_us_v_trai_phieu = ip_us_trai_phieu;
             this.ShowDialog();
             US_DM_TRAI_CHU v_us = new US_DM_TRAI_CHU(m_us.dcID);
             return v_us;
@@ -399,7 +399,8 @@ namespace BondApp
         DS_V_DM_TRAI_CHU m_ds = new DS_V_DM_TRAI_CHU();
         US_V_DM_TRAI_CHU m_us = new US_V_DM_TRAI_CHU();
         US_DM_TRAI_PHIEU m_us_trai_phieu;
-        DS_DM_TRAI_PHIEU m_ds_trai_phieu;
+        US_V_DM_TRAI_PHIEU m_us_v_trai_phieu;
+        DS_V_DM_TRAI_PHIEU m_ds_v_trai_phieu;
         #endregion
 
         #region Private Methods
@@ -442,7 +443,7 @@ namespace BondApp
             }
 
             m_obj_trans = get_trans_object(m_fg);
-            load_data_2_grid(m_us_trai_phieu);
+            load_data_2_grid(m_us_v_trai_phieu);
         }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
@@ -478,7 +479,7 @@ namespace BondApp
             return v_obj_trans;
         }
 
-        private void load_data_2_grid(US_DM_TRAI_PHIEU ip_us_trai_phieu)
+        private void load_data_2_grid(US_V_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
             m_ds = new DS_V_DM_TRAI_CHU();
             if (ip_us_trai_phieu == null)

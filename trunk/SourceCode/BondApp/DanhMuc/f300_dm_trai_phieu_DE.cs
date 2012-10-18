@@ -32,7 +32,7 @@ namespace BondApp.DanhMuc
             m_e_form_mode = DataEntryFormMode.InsertDataState;
             this.ShowDialog();
         }
-        public void display_for_update(US_DM_TRAI_PHIEU ip_us)
+        public void display_for_update(US_V_DM_TRAI_PHIEU ip_us)
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             m_us_trai_phieu = ip_us;
@@ -40,7 +40,7 @@ namespace BondApp.DanhMuc
         }
         #endregion
         #region Members
-        US_DM_TRAI_PHIEU m_us_trai_phieu = new US_DM_TRAI_PHIEU();
+        US_V_DM_TRAI_PHIEU m_us_trai_phieu = new US_V_DM_TRAI_PHIEU();
         US_DM_TO_CHUC_PHAT_HANH m_us_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH();
         US_CM_DM_TU_DIEN m_us_tu_dien = new US_CM_DM_TU_DIEN();
         US_DM_DOT_PHAT_HANH m_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH();
@@ -59,9 +59,9 @@ namespace BondApp.DanhMuc
             m_lbl_title.ForeColor = Color.DarkRed;
             m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
         }
-        private void us_object_2_form(US_DM_TRAI_PHIEU ip_us_trai_phieu)
+        private void us_object_2_form(US_V_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
-            m_us_tu_dien = new US_CM_DM_TU_DIEN(ip_us_trai_phieu.dcID_LOAI_TRAI_PHIEU);
+            //m_us_tu_dien = new US_CM_DM_TU_DIEN(ip_us_trai_phieu.dcID_LOAI_TRAI_PHIEU);
             m_txt_ten_trai_phieu.Text = ip_us_trai_phieu.strTEN_TRAI_PHIEU;
             m_txt_ma_trai_phieu.Text = ip_us_trai_phieu.strMA_TRAI_PHIEU;
             m_txt_ky_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_HAN);
@@ -106,7 +106,7 @@ namespace BondApp.DanhMuc
                 m_cbo_tha_noi.SelectedText = "Không";
             m_cbo_tra_lai_sau.SelectedValue = ip_us_trai_phieu.strTRA_LAI_SAU_YN.ToUpper();
         }
-        private void form_2_us_object(US_DM_TRAI_PHIEU op_us_trai_phieu)
+        private void form_2_us_object(US_V_DM_TRAI_PHIEU op_us_trai_phieu)
         {
             op_us_trai_phieu.strTEN_TRAI_PHIEU = m_txt_ten_trai_phieu.Text;
             op_us_trai_phieu.strMA_TRAI_PHIEU = m_txt_ma_trai_phieu.Text;

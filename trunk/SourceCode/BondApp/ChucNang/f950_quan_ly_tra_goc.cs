@@ -33,9 +33,9 @@ namespace BondApp.ChucNang
 			this.ShowDialog();
 		}
 
-        public void display_tra_goc_trai_phieu(US_DM_TRAI_PHIEU ip_us_trai_phieu)
+        public void display_tra_goc_trai_phieu(US_V_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
-            m_us_trai_phieu = ip_us_trai_phieu;
+            m_us_v_trai_phieu = ip_us_trai_phieu;
             this.ShowDialog();
         }
 		#endregion
@@ -87,7 +87,8 @@ namespace BondApp.ChucNang
 		ITransferDataRow m_obj_trans;		
 		DS_V_GD_TRA_GOC m_ds = new DS_V_GD_TRA_GOC();
 		US_V_GD_TRA_GOC m_us = new US_V_GD_TRA_GOC();
-        US_DM_TRAI_PHIEU m_us_trai_phieu;
+        //US_V_DM_TRAI_PHIEU m_us_trai_phieu;
+        US_V_DM_TRAI_PHIEU m_us_v_trai_phieu;
         e_Mod m_mod = e_Mod.CHUA_TRA;
         US_GD_SO_DU_TRAI_PHIEU m_us_gd_so_du_trai_phieu;
         US_DM_TRAI_CHU m_us_dm_trai_chu;
@@ -106,10 +107,10 @@ namespace BondApp.ChucNang
             set_define_events();	
 		}
 		private void set_initial_form_load(){
-            if (m_us_trai_phieu != null)
-                us_trai_phieu_2_form(m_us_trai_phieu);
+            if (m_us_v_trai_phieu != null)
+                us_trai_phieu_2_form(m_us_v_trai_phieu);
             m_obj_trans = get_trans_object(m_fg);
-            load_data_2_grid(m_us_trai_phieu);
+            load_data_2_grid(m_us_v_trai_phieu);
             load_data_2_cbo();
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
@@ -135,21 +136,21 @@ namespace BondApp.ChucNang
 			return v_obj_trans;			
 		}
 
-        private void load_data_2_grid(US_DM_TRAI_PHIEU ip_us_trai_phieu)
+        private void load_data_2_grid(US_V_DM_TRAI_PHIEU ip_us_v_trai_phieu)
         {
             m_ds = new DS_V_GD_TRA_GOC();
-            if (m_us_trai_phieu != null)
+            if (m_us_v_trai_phieu != null)
             {
                 switch (m_mod)
                 {
                     case e_Mod.TAT_CA:
-                        m_us.FillDatasetByIDTraiPhieu(m_ds, m_us_trai_phieu.dcID);
+                        m_us.FillDatasetByIDTraiPhieu(m_ds, m_us_v_trai_phieu.dcID);
                         break;
                     case e_Mod.DA_TRA:
-                        m_us.FillDatasetByIDTraiPhieuYes(m_ds, m_us_trai_phieu.dcID);
+                        m_us.FillDatasetByIDTraiPhieuYes(m_ds, m_us_v_trai_phieu.dcID);
                         break;
                     case e_Mod.CHUA_TRA:
-                        m_us.FillDatasetByIDTraiPhieuNo(m_ds, ip_us_trai_phieu.dcID);
+                        m_us.FillDatasetByIDTraiPhieuNo(m_ds, ip_us_v_trai_phieu.dcID);
                         break;
                 }
             }
@@ -210,12 +211,12 @@ namespace BondApp.ChucNang
 			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
 		}
 
-        private void us_trai_phieu_2_form(US_DM_TRAI_PHIEU ip_us_trai_phieu)
+        private void us_trai_phieu_2_form(US_V_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
             m_txt_ma_trai_phieu.Text = ip_us_trai_phieu.strMA_TRAI_PHIEU;
             m_txt_ten_trai_phieu.Text = ip_us_trai_phieu.strTEN_TRAI_PHIEU;
-            US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(ip_us_trai_phieu.dcID_DOT_PHAT_HANH);
-            m_txt_ngay_phat_hanh.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH);
+            //US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(ip_us_trai_phieu.dcID_DOT_PHAT_HANH);
+            m_txt_ngay_phat_hanh.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_PHAT_HANH);
             m_txt_ngay_dao_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_DAO_HAN);
             m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcMENH_GIA, "#,###");
             m_txt_ky_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_HAN);
@@ -236,17 +237,17 @@ namespace BondApp.ChucNang
                     break;
             }
             
-            load_data_2_grid(m_us_trai_phieu);
+            load_data_2_grid(m_us_v_trai_phieu);
         }
 
         private void select_trai_phieu()
         {
             f300_dm_trai_phieu v_frm300 = new f300_dm_trai_phieu();
-            m_us_trai_phieu = v_frm300.select_trai_phieu();
-            if (m_us_trai_phieu.strMA_TRAI_PHIEU != "")
+            m_us_v_trai_phieu = v_frm300.select_trai_phieu();
+            if (m_us_v_trai_phieu.strMA_TRAI_PHIEU != "")
             {
-                us_trai_phieu_2_form(m_us_trai_phieu);
-                load_data_2_grid(m_us_trai_phieu);
+                us_trai_phieu_2_form(m_us_v_trai_phieu);
+                load_data_2_grid(m_us_v_trai_phieu);
             }
         }
 
@@ -255,7 +256,7 @@ namespace BondApp.ChucNang
             //Kiểm tra xem có dữ liệu hay chưa
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            if (m_us_trai_phieu == null) return;
+            if (m_us_v_trai_phieu == null) return;
             grid2us_object(m_us, m_fg.Row);
 
             //Kiểm tra xem trái chủ này đã thanh toán chưa
@@ -279,7 +280,7 @@ namespace BondApp.ChucNang
 
                 m_us_dm_trai_chu.Update();
                 m_us_gd_so_du_trai_phieu.Insert();
-                load_data_2_grid(m_us_trai_phieu);
+                load_data_2_grid(m_us_v_trai_phieu);
             }
         }
 
