@@ -426,6 +426,16 @@ namespace BondDS.CDBNames
         public const string NGAY_DAO_HAN = "NGAY_DAO_HAN";
         public const string TONG_SL_PHAT_HANH = "TONG_SL_PHAT_HANH";
         public const string TONG_GIA_TRI = "TONG_GIA_TRI";
+        public const string BIEN_DO_LAI = "BIEN_DO_LAI";
+        public const string SO_NGAY_TCPH_CHUYEN_TIEN_TRUOC = "SO_NGAY_TCPH_CHUYEN_TIEN_TRUOC";
+        public const string NGUNG_CHUYEN_NHUONG_TU_NGAY_CHOT_YN = "NGUNG_CHUYEN_NHUONG_TU_NGAY_CHOT_YN";
+        public const string NGUNG_CHUYEN_NHUONG_DEN_NGAY_THANH_TOAN_YN = "NGUNG_CHUYEN_NHUONG_DEN_NGAY_THANH_TOAN_YN";
+        public const string ID_NGUOI_LAP = "ID_NGUOI_LAP";
+        public const string NGUOI_LAP = "NGUOI_LAP";
+        public const string ID_NGUOI_DUYET = "ID_NGUOI_DUYET";
+        public const string NGUOI_DUYET = "NGUOI_DUYET";
+        public const string ID_TRANG_THAI = "ID_TRANG_THAI";
+        public const string TRANG_THAI = "TRANG_THAI";
     }
 
     public class DOC_COLUMN_COMMENT
