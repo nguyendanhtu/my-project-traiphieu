@@ -32,24 +32,35 @@ namespace BondApp.DanhMuc
         #region Public Interface
         public void display_for_insert()
         {
-            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            m_e_form_mode = e_form_mode.THEM_TO_CHUC_PHAT_HANH;
             this.ShowDialog();
         }
         public void display_for_update(US_V_DM_TO_CHUC_PHAT_HANH ip_us_to_chuc_phat_hanh)
         {
-             m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            m_e_form_mode = e_form_mode.SUA_TO_CHUC_PHAT_HANH;
              m_us_to_chuc_phat_hanh = ip_us_to_chuc_phat_hanh;
              this.ShowDialog();
+        }
+        public void display_for_duyet()
+        {
+            m_e_form_mode = e_form_mode.DUYET_DU_LIEU;
+            this.ShowDialog();
         }
         #endregion
 
     
         #region Members
         US_V_DM_TO_CHUC_PHAT_HANH m_us_to_chuc_phat_hanh = new US_V_DM_TO_CHUC_PHAT_HANH();
-        DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
+        e_form_mode m_e_form_mode = e_form_mode.THEM_TO_CHUC_PHAT_HANH;
         #endregion
                
         #region Data Structure
+        public enum e_form_mode
+        {
+           THEM_TO_CHUC_PHAT_HANH = 0
+           , SUA_TO_CHUC_PHAT_HANH = 1
+            , DUYET_DU_LIEU = 2
+        }
         #endregion
 
         #region Private Method
@@ -84,21 +95,25 @@ namespace BondApp.DanhMuc
         {
             m_txt_ma_to_chuc.Text = ip_to_chuc_phat_hanh.strMA_TO_CHUC_PHAT_HANH;
             m_txt_ten_to_chuc.Text = ip_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HANH;
+            m_txt_chung_nhan_dkdn.Text = ip_to_chuc_phat_hanh.strCHUNG_NHAN_DKDN;
             m_txt_ma_so_thue.Text = ip_to_chuc_phat_hanh.strMA_SO_THUE;
-            m_txt_dia_chi.Text = ip_to_chuc_phat_hanh.strDIA_CHI_TRU_SO_CHINH;
+            m_txt_so_tai_khoan.Text = ip_to_chuc_phat_hanh.strSO_TAI_KHOAN;
+            m_txt_mo_tai_ngan_hang.Text = ip_to_chuc_phat_hanh.strMO_TAI_NGAN_HANG;
             m_txt_dien_thoai.Text = ip_to_chuc_phat_hanh.strDIEN_THOAI;
             m_txt_fax.Text = ip_to_chuc_phat_hanh.strFAX;
-            m_txt_chung_nhan_dkdn.Text = ip_to_chuc_phat_hanh.strCHUNG_NHAN_DKDN;
+            m_txt_dia_chi.Text = ip_to_chuc_phat_hanh.strDIA_CHI_TRU_SO_CHINH;
         }
         private void form_2_usobject(US_V_DM_TO_CHUC_PHAT_HANH op_to_chuc_phat_hanh)
         {
-            op_to_chuc_phat_hanh.strMA_TO_CHUC_PHAT_HANH = m_txt_ma_to_chuc.Text;
-            op_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HANH = m_txt_ten_to_chuc.Text;
-            op_to_chuc_phat_hanh.strMA_SO_THUE = m_txt_ma_so_thue.Text;
-            op_to_chuc_phat_hanh.strDIA_CHI_TRU_SO_CHINH = m_txt_dia_chi.Text;
-            op_to_chuc_phat_hanh.strDIEN_THOAI = m_txt_dien_thoai.Text;
-            op_to_chuc_phat_hanh.strFAX = m_txt_fax.Text;
-            op_to_chuc_phat_hanh.strCHUNG_NHAN_DKDN = m_txt_chung_nhan_dkdn.Text;
+            op_to_chuc_phat_hanh.strMA_TO_CHUC_PHAT_HANH = m_txt_ma_to_chuc.Text.Trim();
+            op_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HANH = m_txt_ten_to_chuc.Text.Trim();
+            op_to_chuc_phat_hanh.strCHUNG_NHAN_DKDN = m_txt_chung_nhan_dkdn.Text.Trim();
+            op_to_chuc_phat_hanh.strMA_SO_THUE = m_txt_ma_so_thue.Text.Trim();
+            op_to_chuc_phat_hanh.strSO_TAI_KHOAN = m_txt_so_tai_khoan.Text.Trim();
+            op_to_chuc_phat_hanh.strMO_TAI_NGAN_HANG = m_txt_mo_tai_ngan_hang.Text.Trim();
+            op_to_chuc_phat_hanh.strDIEN_THOAI = m_txt_dien_thoai.Text.Trim();
+            op_to_chuc_phat_hanh.strFAX = m_txt_fax.Text.Trim();
+            op_to_chuc_phat_hanh.strDIA_CHI_TRU_SO_CHINH = m_txt_dia_chi.Text.Trim();
         }
         private bool check_validate_data_is_ok()
         {
@@ -108,6 +123,16 @@ namespace BondApp.DanhMuc
             }
 
             if (!CValidateTextBox.IsValid(m_txt_ten_to_chuc, DataType.StringType, allowNull.NO, true))
+            {
+                return false;
+            }
+
+            if (!CValidateTextBox.IsValid(m_txt_so_tai_khoan, DataType.StringType, allowNull.NO, true))
+            {
+                return false;
+            }
+
+            if (!CValidateTextBox.IsValid(m_txt_mo_tai_ngan_hang, DataType.StringType, allowNull.NO, true))
             {
                 return false;
             }
@@ -127,18 +152,12 @@ namespace BondApp.DanhMuc
                 return false;
             }
 
-            if (!CValidateTextBox.IsValid(m_txt_fax, DataType.StringType, allowNull.YES, true))
-            {
-                return false;
-            }
-            
-
             if (!CValidateTextBox.IsValid(m_txt_dia_chi, DataType.StringType, allowNull.NO, true))
             {
                 return false;
             }
 
-                        return true;
+            return true;
         }
         private void save_data()
         {
@@ -146,18 +165,15 @@ namespace BondApp.DanhMuc
             form_2_usobject(m_us_to_chuc_phat_hanh);
             switch (m_e_form_mode)
             {
-                case DataEntryFormMode.InsertDataState:
+                case e_form_mode.THEM_TO_CHUC_PHAT_HANH:
                     m_us_to_chuc_phat_hanh.Insert();
                     break;
 
-                case DataEntryFormMode.SelectDataState:
-                    break;
-
-                case DataEntryFormMode.UpdateDataState:
+                case e_form_mode.SUA_TO_CHUC_PHAT_HANH:
                     m_us_to_chuc_phat_hanh.Update();
                     break;
 
-                case DataEntryFormMode.ViewDataState:
+                case e_form_mode.DUYET_DU_LIEU:
                     break;
 
                 default:

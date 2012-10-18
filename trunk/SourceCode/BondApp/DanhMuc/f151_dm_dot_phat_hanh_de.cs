@@ -71,26 +71,26 @@ namespace BondApp.DanhMuc
             m_cbo_ten_to_chuc_phat_hanh.SelectedValue = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcID_TO_CHUC_PHAT_HANH);
             m_dat_ngay_phat_hanh.Value = m_us_v_dot_phat_hanh.datNGAY_PHAT_HANH;
             m_txt_ghi_chu.Text = m_us_v_dot_phat_hanh.strGHI_CHU;
-            m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcMENH_GIA,"#,###");
-            m_txt_ky_tra_lai.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcKY_TRA_LAI);
+            m_txt_tong_so_luong_tp.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcMENH_GIA,"#,###");
+            m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcKY_TRA_LAI);
         }
         private void form_2_us_object(US_V_DM_DOT_PHAT_HANH op_v_us_dot_phat_hanh)
         {
             op_v_us_dot_phat_hanh.dcID_TO_CHUC_PHAT_HANH = CIPConvert.ToDecimal(m_cbo_ten_to_chuc_phat_hanh.SelectedValue);
             op_v_us_dot_phat_hanh.datNGAY_PHAT_HANH = m_dat_ngay_phat_hanh.Value;
-            op_v_us_dot_phat_hanh.dcMENH_GIA = CIPConvert.ToDecimal(m_txt_menh_gia.Text);
-            op_v_us_dot_phat_hanh.dcKY_TRA_LAI = CIPConvert.ToDecimal(m_txt_ky_tra_lai.Text);
+            op_v_us_dot_phat_hanh.dcMENH_GIA = CIPConvert.ToDecimal(m_txt_tong_so_luong_tp.Text);
+            op_v_us_dot_phat_hanh.dcKY_TRA_LAI = CIPConvert.ToDecimal(m_txt_menh_gia.Text);
             //op_v_us_dot_phat_hanh.dcID_DV_KY_TRA_LAI = CIPConvert.ToDecimal(m_cbo_dv_tra_lai.SelectedValue);
             op_v_us_dot_phat_hanh.strGHI_CHU = m_txt_ghi_chu.Text;
         }
         
         private bool check_validate_data_is_ok()
         {
-            if (!CValidateTextBox.IsValid(m_txt_menh_gia, DataType.NumberType, allowNull.NO, true))
+            if (!CValidateTextBox.IsValid(m_txt_tong_so_luong_tp, DataType.NumberType, allowNull.NO, true))
             { 
                 return false; 
             }
-            if (!CValidateTextBox.IsValid(m_txt_ky_tra_lai, DataType.NumberType, allowNull.NO, true))
+            if (!CValidateTextBox.IsValid(m_txt_menh_gia, DataType.NumberType, allowNull.NO, true))
             {
                 return false;
             }

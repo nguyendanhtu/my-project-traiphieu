@@ -314,26 +314,28 @@ namespace BondApp
 
 		#region Data Structure
 		private enum e_col_Number{
-            TONG_GIA_TRI_TRAI_PHIEU_PHAT_HANH = 4
+            TONG_GIA_TRI_TRAI_PHIEU_PHAT_HANH = 5
 ,
             NGAY_PHAT_HANH = 2
                 ,
-            NGUOI_DUYET = 9
+            MENH_GIA = 4
                 ,
-            TRANG_THAI = 10
+            NGUOI_DUYET = 10
                 ,
-            NGAN_HANG_DAI_LY_QUAN_LY_TK = 7
+            TRANG_THAI = 11
+                ,
+            NGAN_HANG_DAI_LY_QUAN_LY_TK = 8
                 ,
             TEN_TO_CHUC_PHAT_HANH = 1
                 ,
-            NGUOI_LAP = 8
+            NGUOI_LAP = 9
                 ,
-            GHI_CHU = 11
+            GHI_CHU = 12
                 ,
             TONG_SO_LUONG_TRAI_PHIEU = 3
                 ,
-            TY_LE_PHI_PHONG_GIAI_TOA = 6
-                , TY_LE_PHI_CHUYEN_NHUONG = 5
+            TY_LE_PHI_PHONG_GIAI_TOA = 7
+                , TY_LE_PHI_CHUYEN_NHUONG = 6
 
 		}			
 		#endregion
@@ -364,6 +366,7 @@ namespace BondApp
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
             v_htb.Add(V_DM_DOT_PHAT_HANH.TONG_GIA_TRI_TRAI_PHIEU_PHAT_HANH, e_col_Number.TONG_GIA_TRI_TRAI_PHIEU_PHAT_HANH);
+            v_htb.Add(V_DM_DOT_PHAT_HANH.MENH_GIA, e_col_Number.MENH_GIA);
             v_htb.Add(V_DM_DOT_PHAT_HANH.NGAY_PHAT_HANH, e_col_Number.NGAY_PHAT_HANH);
             v_htb.Add(V_DM_DOT_PHAT_HANH.NGUOI_DUYET, e_col_Number.NGUOI_DUYET);
             v_htb.Add(V_DM_DOT_PHAT_HANH.TRANG_THAI, e_col_Number.TRANG_THAI);
