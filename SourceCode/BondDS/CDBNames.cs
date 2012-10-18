@@ -309,6 +309,30 @@ namespace BondDS.CDBNames
         public const string DIEN_THOAI = "DIEN_THOAI";
         public const string FAX = "FAX";
         public const string CHUNG_NHAN_DKDN = "CHUNG_NHAN_DKDN";
+        public const string SO_TAI_KHOAN = "SO_TAI_KHOAN";
+        public const string MO_TAI_NGAN_HANG = "MO_TAI_NGAN_HANG";
+        public const string ID_NGUOI_LAP = "ID_NGUOI_LAP";
+        public const string ID_NGUOI_DUYET = "ID_NGUOI_DUYET";
+        public const string ID_TRANG_THAI = "ID_TRANG_THAI";
+    }
+    public class V_DM_TO_CHUC_PHAT_HANH
+    {
+        public const string ID = "ID";
+        public const string MA_TO_CHUC_PHAT_HANH = "MA_TO_CHUC_PHAT_HANH";
+        public const string TEN_TO_CHUC_PHAT_HANH = "TEN_TO_CHUC_PHAT_HANH";
+        public const string DIA_CHI_TRU_SO_CHINH = "DIA_CHI_TRU_SO_CHINH";
+        public const string MA_SO_THUE = "MA_SO_THUE";
+        public const string DIEN_THOAI = "DIEN_THOAI";
+        public const string FAX = "FAX";
+        public const string CHUNG_NHAN_DKDN = "CHUNG_NHAN_DKDN";
+        public const string SO_TAI_KHOAN = "SO_TAI_KHOAN";
+        public const string MO_TAI_NGAN_HANG = "MO_TAI_NGAN_HANG";
+        public const string ID_NGUOI_LAP = "ID_NGUOI_LAP";
+        public const string NGUOI_LAP = "NGUOI_LAP";
+        public const string ID_NGUOI_DUYET = "ID_NGUOI_DUYET";
+        public const string NGUOI_DUYET = "NGUOI_DUYET";
+        public const string ID_TRANG_THAI = "ID_TRANG_THAI";
+        public const string TRANG_THAI = "TRANG_THAI";
     }
     public class DM_TRAI_CHU
     {
