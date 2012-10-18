@@ -13,6 +13,7 @@ namespace BondDS.CDBNames
         public const decimal DON_VI_KY_HAN = 4;
         public const decimal LOAI_NHAC_NHAC_VIEC = 5;
         public const decimal TRANG_THAI_GD = 6;
+        public const decimal TRANG_THAI_DANH_MUC = 8;
     }
 
     public class GIOI_HAN_PHI_CHUYEN_NHUONG
@@ -57,6 +58,7 @@ namespace BondDS.CDBNames
     {
         public const string TRANG_THAI_GD = "TRANG_THAI_GD";
         public const string LOAI_TRAI_CHU = "LOAI_TRAI_CHU";
+        public const string TRANG_THAI_DANH_MUC = "TRANG_THAI_DANH_MUC";
     }
 
     public class V_GD_TRA_GOC
@@ -331,20 +333,20 @@ namespace BondDS.CDBNames
         public const string NGAY_CAP_CMT = "NGAY_CAP_CMT";
         public const string NOI_CAP_CMT = "NOI_CAP_CMT";
         public const string ID_LOAI_TRAI_CHU = "ID_LOAI_TRAI_CHU";
-        public const string TEN_LOAI_TRAI_CHU = "TEN_LOAI_TRAI_CHU";
+        public const string ID_TRAI_PHIEU_SO_HUU = "ID_TRAI_PHIEU_SO_HUU";
+        public const string MA_TRAI_PHIEU = "MA_TRAI_PHIEU";
+        public const string TEN_TRAI_PHIEU = "TEN_TRAI_PHIEU";
+        public const string MENH_GIA = "MENH_GIA";
+        public const string TONG_SO_DU = "TONG_SO_DU";
+        public const string SO_DU_KHA_DUNG = "SO_DU_KHA_DUNG";
         public const string SO_TAI_KHOAN = "SO_TAI_KHOAN";
         public const string MO_TAI_NGAN_HANG = "MO_TAI_NGAN_HANG";
         public const string GHI_CHU1 = "GHI_CHU1";
         public const string GHI_CHU2 = "GHI_CHU2";
         public const string GHI_CHU3 = "GHI_CHU3";
-        public const string ID_TRAI_PHIEU_SO_HUU = "ID_TRAI_PHIEU_SO_HUU";
-        public const string TEN_TRAI_PHIEU = "TEN_TRAI_PHIEU";
-        public const string TONG_SO_DU_TRAI_PHIEU = "TONG_SO_DU_TRAI_PHIEU";
-        public const string SO_DU_KHA_DUNG = "SO_DU_KHA_DUNG";
-        public const string ID_NGUOI_LAP = "ID_NGUOI_LAP";
-        public const string ID_NGUOI_DUYET = "ID_NGUOI_DUYET";
+        public const string ID_NGUOI_DUYET_TC = "ID_NGUOI_DUYET_TC";
+        public const string ID_NGUOI_LAP_TC = "ID_NGUOI_LAP_TC";
         public const string ID_TRANG_THAI = "ID_TRANG_THAI";
-        public const string TEN_TRANG_THAI = "TEN_TRANG_THAI";
     }
 
     public class DM_DOT_PHAT_HANH
