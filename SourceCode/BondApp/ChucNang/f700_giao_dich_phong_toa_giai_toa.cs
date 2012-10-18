@@ -191,7 +191,7 @@ namespace BondApp
                     + CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI), "#,##")
                     , "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 m_txt_phi_gd.Text = CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI), "#,##");
-                m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr((CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI)/CIPConvert.ToDecimal(m_txt_tong_gia_tri.Text)*100));
+                m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr((CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI) / CIPConvert.ToDecimal(m_txt_tong_gia_tri.Text) * 100));
                 return false;
             }
             if (v_phi_gd > CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI))
@@ -200,7 +200,7 @@ namespace BondApp
                     + CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI), "#,##")
                     , "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 m_txt_phi_gd.Text = CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI), "#,##");
-                m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr((CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI) / CIPConvert.ToDecimal(m_txt_tong_gia_tri.Text)*100));
+                m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(Math.Round((CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI) / CIPConvert.ToDecimal(m_txt_tong_gia_tri.Text)*100),2));
                 return false;
             }
             return true;
@@ -535,12 +535,12 @@ namespace BondApp
                 MessageBox.Show("Số lượng trái phiếu cầm cố nhập không đúng.\n Mời nhập lại!","Cảnh báo");
                 m_txt_so_luong_tp_cam_co.Text = "";
              m_txt_so_luong_tp_cam_co.Focus();
-            
+             return;
             }
             if (m_txt_so_luong_tp_cam_co.Text != "")
             {
                 m_txt_tong_gia_tri.Text = CIPConvert.ToStr((CIPConvert.ToDecimal(m_txt_menh_gia.Text) * CIPConvert.ToDecimal(m_txt_so_luong_tp_cam_co.Text)), "#,###");
-
+               if(m_txt_ty_le_phi_gd.Text != "") phi_giao_dich_pgt_change();
             }
         }
         private void phi_giao_dich_pgt_change()
