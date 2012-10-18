@@ -555,7 +555,7 @@ namespace SaleManagement
 		ITransferDataRow m_obj_trans;		
 		DS_V_DM_TRAI_CHU_CHOT_LAI m_ds = new DS_V_DM_TRAI_CHU_CHOT_LAI();
 		US_V_DM_TRAI_CHU_CHOT_LAI m_us = new US_V_DM_TRAI_CHU_CHOT_LAI();
-        US_DM_TRAI_PHIEU m_us_trai_phieu = new US_DM_TRAI_PHIEU();
+        US_V_DM_TRAI_PHIEU m_us_trai_phieu = new US_V_DM_TRAI_PHIEU();
 		#endregion
 
 		#region Private Methods
@@ -640,7 +640,7 @@ namespace SaleManagement
         private void select_trai_phieu()
         {
             f300_dm_trai_phieu v_frm300 = new f300_dm_trai_phieu();
-            m_us_trai_phieu = new US_DM_TRAI_PHIEU();
+            m_us_trai_phieu = new US_V_DM_TRAI_PHIEU();
             m_us_trai_phieu = v_frm300.select_trai_phieu();
             if (!m_us_trai_phieu.IsIDNull() && m_us_trai_phieu.dcID != -1)
             {

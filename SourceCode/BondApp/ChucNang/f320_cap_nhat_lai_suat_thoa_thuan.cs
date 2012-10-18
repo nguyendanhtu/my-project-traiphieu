@@ -66,7 +66,7 @@ namespace BondApp.ChucNang
         #endregion
 
         #region Members
-        US_DM_TRAI_PHIEU m_us_trai_phieu = new US_DM_TRAI_PHIEU();
+        US_V_DM_TRAI_PHIEU m_us_v_trai_phieu = new US_V_DM_TRAI_PHIEU();
         US_GD_LICH_THANH_TOAN_LAI_GOC m_us_gd_cap_nhat_ls = new US_GD_LICH_THANH_TOAN_LAI_GOC();
         DS_GD_LICH_THANH_TOAN_LAI_GOC m_ds_gd_lich_tt_lai_goc = new DS_GD_LICH_THANH_TOAN_LAI_GOC();
         US_GD_LICH_THANH_TOAN_LAI_GOC m_us_gd_lich_tt_lai_goc = new US_GD_LICH_THANH_TOAN_LAI_GOC();
@@ -158,7 +158,7 @@ namespace BondApp.ChucNang
         private void load_data_2_grid()
         {
             m_ds_gd_lich_tt_lai_goc = new DS_GD_LICH_THANH_TOAN_LAI_GOC();
-            m_us_gd_lich_tt_lai_goc.FillDatasetLichSUuLaiSuatByIDTraiPhieu(m_ds_gd_lich_tt_lai_goc, m_us_trai_phieu.dcID);
+            m_us_gd_lich_tt_lai_goc.FillDatasetLichSUuLaiSuatByIDTraiPhieu(m_ds_gd_lich_tt_lai_goc, m_us_v_trai_phieu.dcID);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds_gd_lich_tt_lai_goc, m_fg, m_obj_trans);
             m_fg.Redraw = true;
@@ -167,41 +167,41 @@ namespace BondApp.ChucNang
         private void select_trai_phieu()
         {
             f300_dm_trai_phieu v_frm300 = new f300_dm_trai_phieu();
-            m_us_trai_phieu = v_frm300.select_trai_phieu();
-            if (!m_us_trai_phieu.IsIDNull())
+            m_us_v_trai_phieu = v_frm300.select_trai_phieu();
+            if (!m_us_v_trai_phieu.IsIDNull())
                 us_trai_phieu_2_form();
         }
         private void us_trai_phieu_2_form()
         {
-            if (m_us_trai_phieu != null)
+            if (m_us_v_trai_phieu != null)
             {
                 US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
-                US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_trai_phieu.dcID_DOT_PHAT_HANH);
-                m_txt_ma_trai_phieu.Text = m_us_trai_phieu.strMA_TRAI_PHIEU;
-                m_txt_ten_trai_phieu.Text = m_us_trai_phieu.strTEN_TRAI_PHIEU;
-                m_txt_menh_gia.Text = CIPConvert.ToStr(m_us_trai_phieu.dcMENH_GIA, "#,###");
-                m_txt_ky_han.Text = CIPConvert.ToStr(m_us_trai_phieu.dcKY_DIEU_CHINH_LS, "#,###");
-                m_txt_ngay_phat_hanh.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH);
-                m_txt_ngay_dao_han.Text = CIPConvert.ToStr(m_us_trai_phieu.datNGAY_DAO_HAN);
+                //US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_v_trai_phieu.dcID_DOT_PHAT_HANH);
+                m_txt_ma_trai_phieu.Text = m_us_v_trai_phieu.strMA_TRAI_PHIEU;
+                m_txt_ten_trai_phieu.Text = m_us_v_trai_phieu.strTEN_TRAI_PHIEU;
+                m_txt_menh_gia.Text = CIPConvert.ToStr(m_us_v_trai_phieu.dcMENH_GIA, "#,###");
+                m_txt_ky_han.Text = CIPConvert.ToStr(m_us_v_trai_phieu.dcKY_DIEU_CHINH_LS, "#,###");
+                m_txt_ngay_phat_hanh.Text = CIPConvert.ToStr(m_us_v_trai_phieu.datNGAY_PHAT_HANH,"dd/MM/yyyy");
+                m_txt_ngay_dao_han.Text = CIPConvert.ToStr(m_us_v_trai_phieu.datNGAY_DAO_HAN, "dd/MM/yyyy");
                 try
                 {
-                    v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN(m_us_trai_phieu.dcID_DV_KY_HAN);
+                    v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN(m_us_v_trai_phieu.dcID_DV_KY_HAN);
                 }
                 catch (Exception v_e)
                 {
-                    MessageBox.Show("Trái phiếu " + m_us_trai_phieu.strTEN_TRAI_PHIEU + " không có đơn vị kỳ hạn");
+                    MessageBox.Show("Trái phiếu " + m_us_v_trai_phieu.strTEN_TRAI_PHIEU + " không có đơn vị kỳ hạn");
                     throw v_e;
                 }
 
 
-                m_txt_ky_han.Text = CIPConvert.ToStr(m_us_trai_phieu.dcKY_HAN) + " " + CIPConvert.ToStr(v_us_cm_dm_tu_dien.strTEN);
-                m_txt_lai_suat.Text = CIPConvert.ToStr(m_us_trai_phieu.dcLAI_SUAT_DEFAULT, "p");
+                m_txt_ky_han.Text = CIPConvert.ToStr(m_us_v_trai_phieu.dcKY_HAN) + " " + CIPConvert.ToStr(v_us_cm_dm_tu_dien.strTEN);
+                m_txt_lai_suat.Text = CIPConvert.ToStr(m_us_v_trai_phieu.dcLAI_SUAT_DEFAULT, "p");
             }
         }
 
         private void form_2_us_gd_cap_nhat_ls()
         {
-            m_us_gd_cap_nhat_ls.dcID_TRAI_PHIEU = m_us_trai_phieu.dcID;
+            m_us_gd_cap_nhat_ls.dcID_TRAI_PHIEU = m_us_v_trai_phieu.dcID;
             m_us_gd_cap_nhat_ls.datNGAY = m_date_ngay_cap_nhat.Value;
             m_us_gd_cap_nhat_ls.datNGAY_BAT_DAU_AD_LS = m_date_ngay_bat_dau_ap_dung_ls.Value;
             m_us_gd_cap_nhat_ls.datNGAY_KET_THUC_AD_LS = m_date_ket_thuc_ap_dung_ls.Value;
@@ -234,7 +234,7 @@ namespace BondApp.ChucNang
         {
             if (m_us_gd_cap_nhat_ls != null)
             {
-                m_us_trai_phieu = new US_DM_TRAI_PHIEU(m_us_gd_cap_nhat_ls.dcID_TRAI_PHIEU);
+                m_us_v_trai_phieu = new US_V_DM_TRAI_PHIEU(m_us_gd_cap_nhat_ls.dcID_TRAI_PHIEU);
                 us_trai_phieu_2_form();
                 m_date_ngay_bat_dau_ap_dung_ls.Value = m_us_gd_cap_nhat_ls.datNGAY_BAT_DAU_AD_LS;
                 m_txt_lai_suat_moi.Text = CIPConvert.ToStr(m_us_gd_cap_nhat_ls.dcLAI_SUAT*100, "0.##");
@@ -435,7 +435,7 @@ namespace BondApp.ChucNang
         private void resetcontrl()
         {
             m_gru_thong_tin_trai_phieu.Enabled = true;
-            m_us_trai_phieu = null;
+            m_us_v_trai_phieu = null;
             m_us_gd_cap_nhat_ls = null;
             m_txt_ghi_chu.Text = "";
             m_txt_menh_gia.Text = "";

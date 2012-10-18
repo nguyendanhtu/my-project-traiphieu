@@ -71,7 +71,7 @@ namespace BondApp
 
         #region Members
         US_DM_TRAI_CHU m_us_trai_chu = new US_DM_TRAI_CHU();
-        US_DM_TRAI_PHIEU m_us_trai_phieu = new US_DM_TRAI_PHIEU();
+        US_V_DM_TRAI_PHIEU m_us_v_trai_phieu = new US_V_DM_TRAI_PHIEU();
         US_GD_CHUYEN_NHUONG m_us_gd_chuyen_nhuong = new US_GD_CHUYEN_NHUONG();
 
         eFormMode m_e_form_mode = eFormMode.LAP_CHUYEN_NHUONG;
@@ -138,16 +138,16 @@ namespace BondApp
         private void select_trai_phieu()
         {
             f300_dm_trai_phieu v_frm300 = new f300_dm_trai_phieu();
-            m_us_trai_phieu = new US_DM_TRAI_PHIEU();
-            m_us_trai_phieu = v_frm300.select_trai_phieu();
-            if (!m_us_trai_phieu.IsIDNull())
-                us_trai_phieu_2_form(m_us_trai_phieu);
+            m_us_v_trai_phieu = new US_V_DM_TRAI_PHIEU();
+            m_us_v_trai_phieu = v_frm300.select_trai_phieu();
+            if (!m_us_v_trai_phieu.IsIDNull())
+                us_trai_phieu_2_form(m_us_v_trai_phieu);
         }
         private void select_trai_chu_mua()
         {
             f500_dm_trai_chu v_frm500 = new f500_dm_trai_chu();
            
-            m_us_trai_chu = v_frm500.select_trai_chu_of_trai_phieu(m_us_trai_phieu);
+            m_us_trai_chu = v_frm500.select_trai_chu_of_trai_phieu(m_us_v_trai_phieu);
             if (!m_us_trai_chu.IsIDNull())
             {
                 if (!m_us_trai_chu.dcID.ToString().Equals(m_lbl_ID_nguoi_ban.Text))
@@ -160,7 +160,7 @@ namespace BondApp
         {
             f500_dm_trai_chu v_frm500 = new f500_dm_trai_chu();
             
-            m_us_trai_chu = v_frm500.select_trai_chu_of_trai_phieu(m_us_trai_phieu);
+            m_us_trai_chu = v_frm500.select_trai_chu_of_trai_phieu(m_us_v_trai_phieu);
             if (!m_us_trai_chu.IsIDNull())
             {
                 if (!m_us_trai_chu.dcID.ToString().Equals(m_lbl_ID_nguoi_mua.Text))
@@ -169,24 +169,24 @@ namespace BondApp
                     MessageBox.Show("Phải chọn bên bán không trùng với bên mua");
             }
         }
-        private void us_trai_phieu_2_form(US_DM_TRAI_PHIEU ip_us_trai_phieu)
+        private void us_trai_phieu_2_form(US_V_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
             
             US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
-            US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(ip_us_trai_phieu.dcID_DOT_PHAT_HANH);
+            //US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(ip_us_trai_phieu.dcID_DOT_PHAT_HANH);
             m_txt_ma_trai_phieu.Text = ip_us_trai_phieu.strMA_TRAI_PHIEU;
             m_txt_ten_trai_phieu.Text = ip_us_trai_phieu.strTEN_TRAI_PHIEU;
             m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcMENH_GIA, "#,###");
             m_txt_ky_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_DIEU_CHINH_LS, "#,###");
-            m_txt_ngay_phat_hanh.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH);
-            m_txt_ngay_dao_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_DAO_HAN);
+            m_txt_ngay_phat_hanh.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_PHAT_HANH,"dd/MM/yyyy");
+            m_txt_ngay_dao_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_DAO_HAN, "dd/MM/yyyy");
             try
             {
                 v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN(ip_us_trai_phieu.dcID_DV_KY_HAN);
             }
             catch (Exception v_e)
             {
-                MessageBox.Show("Trái phiếu " + m_us_trai_phieu.strTEN_TRAI_PHIEU + " không có đơn vị kỳ hạn");
+                MessageBox.Show("Trái phiếu " + m_us_v_trai_phieu.strTEN_TRAI_PHIEU + " không có đơn vị kỳ hạn");
                     throw v_e;
             }
             
@@ -326,7 +326,7 @@ namespace BondApp
         {
             US_DM_TRAI_CHU v_trai_chu_ban = new US_DM_TRAI_CHU(m_us_gd_chuyen_nhuong.dcID_TRAI_CHU_BAN);
             US_DM_TRAI_CHU v_trai_chu_mua = new US_DM_TRAI_CHU(m_us_gd_chuyen_nhuong.dcID_TRAI_CHU_MUA);
-            US_DM_TRAI_PHIEU v_trai_phieu = new US_DM_TRAI_PHIEU(v_trai_chu_ban.dcID_TRAI_PHIEU_SO_HUU);
+            US_V_DM_TRAI_PHIEU v_trai_phieu = new US_V_DM_TRAI_PHIEU(v_trai_chu_ban.dcID_TRAI_PHIEU_SO_HUU);
             if (v_trai_chu_ban.IsIDNull()) return;
             if (v_trai_chu_mua.IsIDNull()) return;
             if (v_trai_phieu.IsIDNull()) return;
@@ -470,8 +470,8 @@ namespace BondApp
         {
             this.Close();
             f610_dm_giao_dien_chuyen_nhuong v_frm610 = new f610_dm_giao_dien_chuyen_nhuong();
-            if (!m_us_trai_phieu.IsIDNull())
-                v_frm610.display_theo_trai_phieu(m_us_trai_phieu.dcID);
+            if (!m_us_v_trai_phieu.IsIDNull())
+                v_frm610.display_theo_trai_phieu(m_us_v_trai_phieu.dcID);
             else
                 v_frm610.display();
         }
@@ -691,7 +691,7 @@ namespace BondApp
         {
             try
             {
-                if (m_us_trai_phieu.IsIDNull()) {
+                if (m_us_v_trai_phieu.IsIDNull()) {
                     MessageBox.Show("Cần chọn trái phiếu trước");
                     return;
                 }
@@ -710,7 +710,7 @@ namespace BondApp
         {
             try
             {
-                 if (m_us_trai_phieu.IsIDNull()) {
+                 if (m_us_v_trai_phieu.IsIDNull()) {
                     MessageBox.Show("Cần chọn trái phiếu trước");
                     return;
                 }

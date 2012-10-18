@@ -582,7 +582,7 @@ namespace BondApp
 		DS_GD_CHOT_LAI_DETAIL m_ds_gd_chot_lai_detail = new DS_GD_CHOT_LAI_DETAIL();
 		//US_GD_CHOT_LAI_DETAIL m_us_gd_chot_lai_detail = new US_GD_CHOT_LAI_DETAIL();
         US_GD_CHOT_LAI m_us_gd_chot_lai = new US_GD_CHOT_LAI();
-        US_DM_TRAI_PHIEU m_us_dm_trai_phieu = new US_DM_TRAI_PHIEU();
+        US_V_DM_TRAI_PHIEU m_us_v_dm_trai_phieu = new US_V_DM_TRAI_PHIEU();
         US_HT_NGUOI_SU_DUNG m_us_nguoi_lap = new US_HT_NGUOI_SU_DUNG();
         US_HT_NGUOI_SU_DUNG m_us_nguoi_duyet = new US_HT_NGUOI_SU_DUNG();
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
@@ -610,7 +610,7 @@ namespace BondApp
             { return false; }
             if (!CValidateTextBox.IsValid(m_txt_ghi_chu, DataType.StringType, allowNull.YES, true))
             { return false; }
-            if (m_us_dm_trai_phieu.IsIDNull())
+            if (m_us_v_dm_trai_phieu.IsIDNull())
             {
                 MessageBox.Show("Bạn chưa chọn trái phiếu!");
                 return false;
@@ -630,7 +630,7 @@ namespace BondApp
         {
             if (!m_us_gd_chot_lai.IsID_TRAI_PHIEUNull())
             {
-                m_us_dm_trai_phieu = new US_DM_TRAI_PHIEU(m_us_gd_chot_lai.dcID_TRAI_PHIEU);
+                m_us_v_dm_trai_phieu = new US_V_DM_TRAI_PHIEU(m_us_gd_chot_lai.dcID_TRAI_PHIEU);
                 us_trai_phieu_2_form();
             }
             if ((!m_us_gd_chot_lai.IsID_NGUOI_LAPNull()) && (m_us_gd_chot_lai.dcID_NGUOI_LAP > 0))
@@ -667,7 +667,7 @@ namespace BondApp
         }
         private void form_2_us_object(US_GD_CHOT_LAI op_us_gd_chot_lai)
         {
-            op_us_gd_chot_lai.dcID_TRAI_PHIEU = m_us_dm_trai_phieu.dcID;
+            op_us_gd_chot_lai.dcID_TRAI_PHIEU = m_us_v_dm_trai_phieu.dcID;
             op_us_gd_chot_lai.datNGAY_CHOT_LAI = m_dat_ngay_chot_lai.Value.Date;
             op_us_gd_chot_lai.datNGAY_THANH_TOAN = m_dat_ngay_thanh_toan.Value.Date;
             op_us_gd_chot_lai.dcKY_TINH_LAI = CIPConvert.ToDecimal(m_txt_ky_tinh_lai.Text);
@@ -683,15 +683,15 @@ namespace BondApp
         private void select_trai_phieu()
         {
             f300_dm_trai_phieu v_frm300 = new f300_dm_trai_phieu();
-            m_us_dm_trai_phieu = v_frm300.select_trai_phieu();
-            if (m_us_dm_trai_phieu.IsIDNull()) return;
+            m_us_v_dm_trai_phieu = v_frm300.select_trai_phieu();
+            if (m_us_v_dm_trai_phieu.IsIDNull()) return;
             us_trai_phieu_2_form();
             m_txt_ky_tinh_lai.Focus();
         }
         private void us_trai_phieu_2_form()
         {
-            m_txt_ma_trai_phieu.Text = m_us_dm_trai_phieu.strMA_TRAI_PHIEU;
-            m_lbl_ten_trai_phieu.Text = m_us_dm_trai_phieu.strTEN_TRAI_PHIEU;
+            m_txt_ma_trai_phieu.Text = m_us_v_dm_trai_phieu.strMA_TRAI_PHIEU;
+            m_lbl_ten_trai_phieu.Text = m_us_v_dm_trai_phieu.strTEN_TRAI_PHIEU;
         }
         private void save_data()
         {
