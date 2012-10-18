@@ -114,7 +114,7 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="ID_NGUOI_LAP" msprop:Generator_ColumnVarNameInTable="columnID_NGUOI_LAP" msprop:Generator_ColumnPropNameInRow="ID_NGUOI_LAP" msprop:Generator_ColumnPropNameInTable="ID_NGUOI_LAPColumn" msprop:Generator_UserColumnName="ID_NGUOI_LAP" type="xs:decimal" minOccurs="0" />
-              <xs:element name="NGUOI_LAP" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNGUOI_LAP" msprop:Generator_ColumnPropNameInRow="NGUOI_LAP" msprop:Generator_ColumnPropNameInTable="NGUOI_LAPColumn" msprop:Generator_UserColumnName="NGUOI_LAP" minOccurs="0">
+              <xs:element name="NGUOI_LAP" msprop:Generator_ColumnVarNameInTable="columnNGUOI_LAP" msprop:Generator_ColumnPropNameInRow="NGUOI_LAP" msprop:Generator_ColumnPropNameInTable="NGUOI_LAPColumn" msprop:Generator_UserColumnName="NGUOI_LAP" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
@@ -122,7 +122,7 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="ID_NGUOI_DUYET" msprop:Generator_ColumnVarNameInTable="columnID_NGUOI_DUYET" msprop:Generator_ColumnPropNameInRow="ID_NGUOI_DUYET" msprop:Generator_ColumnPropNameInTable="ID_NGUOI_DUYETColumn" msprop:Generator_UserColumnName="ID_NGUOI_DUYET" type="xs:decimal" minOccurs="0" />
-              <xs:element name="NGUOI_DUYET" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNGUOI_DUYET" msprop:Generator_ColumnPropNameInRow="NGUOI_DUYET" msprop:Generator_ColumnPropNameInTable="NGUOI_DUYETColumn" msprop:Generator_UserColumnName="NGUOI_DUYET" minOccurs="0">
+              <xs:element name="NGUOI_DUYET" msprop:Generator_ColumnVarNameInTable="columnNGUOI_DUYET" msprop:Generator_ColumnPropNameInRow="NGUOI_DUYET" msprop:Generator_ColumnPropNameInTable="NGUOI_DUYETColumn" msprop:Generator_UserColumnName="NGUOI_DUYET" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
@@ -130,7 +130,7 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="ID_TRANG_THAI" msprop:Generator_ColumnVarNameInTable="columnID_TRANG_THAI" msprop:Generator_ColumnPropNameInRow="ID_TRANG_THAI" msprop:Generator_ColumnPropNameInTable="ID_TRANG_THAIColumn" msprop:Generator_UserColumnName="ID_TRANG_THAI" type="xs:decimal" minOccurs="0" />
-              <xs:element name="TRANG_THAI" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTRANG_THAI" msprop:Generator_ColumnPropNameInRow="TRANG_THAI" msprop:Generator_ColumnPropNameInTable="TRANG_THAIColumn" msprop:Generator_UserColumnName="TRANG_THAI" minOccurs="0">
+              <xs:element name="TRANG_THAI" msprop:Generator_ColumnVarNameInTable="columnTRANG_THAI" msprop:Generator_ColumnPropNameInRow="TRANG_THAI" msprop:Generator_ColumnPropNameInTable="TRANG_THAIColumn" msprop:Generator_UserColumnName="TRANG_THAI" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />

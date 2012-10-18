@@ -635,11 +635,8 @@ namespace BondDS {
                 this.columnCHUNG_NHAN_DKDN.MaxLength = 250;
                 this.columnSO_TAI_KHOAN.MaxLength = 250;
                 this.columnMO_TAI_NGAN_HANG.MaxLength = 250;
-                this.columnNGUOI_LAP.ReadOnly = true;
                 this.columnNGUOI_LAP.MaxLength = 250;
-                this.columnNGUOI_DUYET.ReadOnly = true;
                 this.columnNGUOI_DUYET.MaxLength = 250;
-                this.columnTRANG_THAI.ReadOnly = true;
                 this.columnTRANG_THAI.MaxLength = 50;
             }
             
