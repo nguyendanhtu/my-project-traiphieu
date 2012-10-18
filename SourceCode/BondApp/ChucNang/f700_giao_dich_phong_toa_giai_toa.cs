@@ -592,6 +592,7 @@ namespace BondApp
         }
         private void m_txt_so_luong_tp_cam_co_TextChanged(object sender, EventArgs e)
         {
+            if (m_txt_ma_trai_chu.Text == "") return;
             if(!CValidateTextBox.IsValid(m_txt_so_luong_tp_cam_co,DataType.NumberType,allowNull.YES))
             {
                 MessageBox.Show("Số lượng trái phiếu cầm cố nhập không đúng.\n Mời nhập lại!","Cảnh báo");
