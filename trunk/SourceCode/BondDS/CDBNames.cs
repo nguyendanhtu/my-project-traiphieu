@@ -13,6 +13,7 @@ namespace BondDS.CDBNames
         public const decimal DON_VI_KY_HAN = 4;
         public const decimal LOAI_NHAC_NHAC_VIEC = 5;
         public const decimal TRANG_THAI_GD = 6;
+        public const decimal NGAN_HANG_DL_QUAN_LY_TK = 7;
         public const decimal TRANG_THAI_DANH_MUC = 8;
     }
 
@@ -25,6 +26,11 @@ namespace BondDS.CDBNames
     {
         public const decimal ID_PHI_PGT_MAX = 12;
         public const decimal ID_PHI_PGT_MIN = 13;
+    }
+    public class TRANG_THAI_DANH_MUC
+    {
+        public const decimal DA_LAP = 60;
+        public const decimal DA_DUYET = 61;
     }
     public class List_trang_thai
     {
