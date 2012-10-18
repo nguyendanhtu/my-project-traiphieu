@@ -557,7 +557,7 @@ public class US_V_DM_TRAI_CHU : US_Object
     }
     #endregion
     #region Additional Functions
-    public void load_data_by_search(DS_DM_TRAI_CHU op_ds_dm_trai_chu
+    public void load_data_by_search(DS_V_DM_TRAI_CHU op_ds_dm_trai_chu
                                    , string ip_str_keyword)
     {
         CStoredProc v_cstore = new CStoredProc("pr_DM_TRAI_CHU_Fill_By_Search");
