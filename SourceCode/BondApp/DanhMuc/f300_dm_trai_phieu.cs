@@ -605,7 +605,7 @@ namespace BondApp
         private void load_data_2_grid(string ip_str_search_key)
         {
             m_ds_v_trai_phieu = new DS_V_DM_TRAI_PHIEU();
-            //m_us_v_trai_phieu.load_data_by_search(m_ds_v_trai_phieu, ip_str_search_key);
+            m_us_v_trai_phieu.load_data_by_search(m_ds_v_trai_phieu, ip_str_search_key);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds_v_trai_phieu, m_fg, m_obj_trans);
             m_fg.Redraw = true;
