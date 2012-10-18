@@ -134,7 +134,7 @@ namespace BondApp
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.Location = new System.Drawing.Point(0, 137);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(751, 236);
+            this.m_fg.Size = new System.Drawing.Size(871, 241);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -149,7 +149,7 @@ namespace BondApp
             this.m_grb_thong_tin_ban_hang.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_grb_thong_tin_ban_hang.Location = new System.Drawing.Point(0, 31);
             this.m_grb_thong_tin_ban_hang.Name = "m_grb_thong_tin_ban_hang";
-            this.m_grb_thong_tin_ban_hang.Size = new System.Drawing.Size(751, 106);
+            this.m_grb_thong_tin_ban_hang.Size = new System.Drawing.Size(871, 106);
             this.m_grb_thong_tin_ban_hang.TabIndex = 35;
             this.m_grb_thong_tin_ban_hang.TabStop = false;
             this.m_grb_thong_tin_ban_hang.Text = "Thông tin giao dịch phong tỏa";
@@ -171,7 +171,7 @@ namespace BondApp
             // m_lbl_nhom_hang
             // 
             this.m_lbl_nhom_hang.AutoSize = true;
-            this.m_lbl_nhom_hang.Location = new System.Drawing.Point(139, 68);
+            this.m_lbl_nhom_hang.Location = new System.Drawing.Point(167, 68);
             this.m_lbl_nhom_hang.Name = "m_lbl_nhom_hang";
             this.m_lbl_nhom_hang.Size = new System.Drawing.Size(55, 13);
             this.m_lbl_nhom_hang.TabIndex = 32;
@@ -189,7 +189,7 @@ namespace BondApp
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(459, 33);
+            this.label2.Location = new System.Drawing.Point(468, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 25;
@@ -220,7 +220,7 @@ namespace BondApp
             this.m_lbl_header.ForeColor = System.Drawing.Color.DarkRed;
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(751, 31);
+            this.m_lbl_header.Size = new System.Drawing.Size(871, 31);
             this.m_lbl_header.TabIndex = 34;
             this.m_lbl_header.Text = "F701 - DANH SÁCH TÌNH HÌNH PHONG TỎA";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -230,10 +230,10 @@ namespace BondApp
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_duyet);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 373);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 378);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(751, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(871, 36);
             this.m_pnl_out_place_dm.TabIndex = 33;
             // 
             // m_cmd_duyet
@@ -245,7 +245,7 @@ namespace BondApp
             this.m_cmd_duyet.Enabled = false;
             this.m_cmd_duyet.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet.Image")));
             this.m_cmd_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_duyet.Location = new System.Drawing.Point(571, 4);
+            this.m_cmd_duyet.Location = new System.Drawing.Point(691, 4);
             this.m_cmd_duyet.Name = "m_cmd_duyet";
             this.m_cmd_duyet.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_duyet.TabIndex = 12;
@@ -261,7 +261,7 @@ namespace BondApp
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(659, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(779, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -270,7 +270,7 @@ namespace BondApp
             // f701_danh_sach_giao_dich_phong_giai_toa
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(751, 409);
+            this.ClientSize = new System.Drawing.Size(871, 414);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_grb_thong_tin_ban_hang);
             this.Controls.Add(this.m_lbl_header);
@@ -361,6 +361,7 @@ namespace BondApp
         DS_GD_PHONG_GIAI_TOA m_ds = new DS_GD_PHONG_GIAI_TOA();
         US_GD_PHONG_GIAI_TOA m_us = new US_GD_PHONG_GIAI_TOA();
         e_form_mode m_e_form_mode = e_form_mode.DANH_SACH_PHONG_TOA;
+
         #endregion
 
         #region Private Methods
