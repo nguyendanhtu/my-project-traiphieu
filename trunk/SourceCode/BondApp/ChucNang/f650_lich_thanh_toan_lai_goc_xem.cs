@@ -66,6 +66,11 @@ namespace BondApp
             m_e_form_mode = e_form_mode.KHONG_TRAI_PHIEU_THONG_BAO_TT_LAI;
             this.ShowDialog();
         }
+        public void display_khong_trai_phieu_thong_bao_dot_thanh_toan_lai_trai_phieu()
+        {
+            m_e_form_mode = e_form_mode.KHONG_TRAI_PHIEU_THONG_BAO_DOT_THANH_TOAN_LAI_TRAI_PHIEU;
+            this.ShowDialog();
+        }
         #endregion
 
         #region Data Structure
@@ -87,12 +92,19 @@ namespace BondApp
         }
         private enum e_form_mode
         {
-              HIEN_THI_CO_TRAI_PHIEU = 1
-            , HIEN_THI_KHONG_TRAI_PHIEU = 2
-            , KHONG_TRAI_PHIEU_SINH_LICH = 3
-            , KHONG_TRAI_PHIEU_THONG_BAO_LAI_SUAT = 4
-            , KHONG_TRAI_PHIEU_THONG_BAO_NGAY_CHOT_DS_LAI = 5
-            , KHONG_TRAI_PHIEU_THONG_BAO_TT_LAI = 6
+            HIEN_THI_CO_TRAI_PHIEU = 1
+          ,
+            HIEN_THI_KHONG_TRAI_PHIEU = 2
+                ,
+            KHONG_TRAI_PHIEU_SINH_LICH = 3
+                ,
+            KHONG_TRAI_PHIEU_THONG_BAO_LAI_SUAT = 4
+                ,
+            KHONG_TRAI_PHIEU_THONG_BAO_NGAY_CHOT_DS_LAI = 5
+                , 
+            KHONG_TRAI_PHIEU_THONG_BAO_TT_LAI = 6
+                ,
+            KHONG_TRAI_PHIEU_THONG_BAO_DOT_THANH_TOAN_LAI_TRAI_PHIEU = 7
         }
         #endregion
 
@@ -137,6 +149,7 @@ namespace BondApp
                     m_cmd_update.Visible = true;
                     m_cmd_delete.Visible = true;
                     m_cmd_cap_nhat_lai_suat.Visible = true;
+                    m_cmd_thong_bao_dot_thanh_toan_lai_trai_phieu.Visible = false;
                     break;
                 case e_form_mode.HIEN_THI_KHONG_TRAI_PHIEU:
                     m_obj_trans = get_trans_object(m_fg);
@@ -148,6 +161,7 @@ namespace BondApp
                     m_cmd_generate.Visible = true;
                     m_cmd_thong_bao_ls.Visible = false;
                     m_cmd_thong_bao_tien_lai.Visible = false;
+                    m_cmd_thong_bao_dot_thanh_toan_lai_trai_phieu.Visible = false;
                     break;
                 case e_form_mode.KHONG_TRAI_PHIEU_THONG_BAO_LAI_SUAT:
                     m_obj_trans = get_trans_object(m_fg);
@@ -162,6 +176,7 @@ namespace BondApp
                     m_cmd_update.Visible = false;
                     m_cmd_delete.Visible = false;
                     m_cmd_cap_nhat_lai_suat.Visible = false;
+                    m_cmd_thong_bao_dot_thanh_toan_lai_trai_phieu.Visible = false;
                     break;
                 case e_form_mode.KHONG_TRAI_PHIEU_THONG_BAO_NGAY_CHOT_DS_LAI:
                     m_obj_trans = get_trans_object(m_fg);
@@ -176,6 +191,7 @@ namespace BondApp
                     m_cmd_update.Visible = false;
                     m_cmd_delete.Visible = false;
                     m_cmd_cap_nhat_lai_suat.Visible = false;
+                    m_cmd_thong_bao_dot_thanh_toan_lai_trai_phieu.Visible = false;
                     break;
                 case e_form_mode.KHONG_TRAI_PHIEU_THONG_BAO_TT_LAI:
                     m_obj_trans = get_trans_object(m_fg);
@@ -190,6 +206,22 @@ namespace BondApp
                     m_cmd_update.Visible = false;
                     m_cmd_delete.Visible = false;
                     m_cmd_cap_nhat_lai_suat.Visible = false;
+                    m_cmd_thong_bao_dot_thanh_toan_lai_trai_phieu.Visible = false;
+                    break;
+                case e_form_mode.KHONG_TRAI_PHIEU_THONG_BAO_DOT_THANH_TOAN_LAI_TRAI_PHIEU:
+                    m_obj_trans = get_trans_object(m_fg);
+                    m_lbl_header.Text = "F650 - THÔNG BÁO ĐỢT THANH TOÁN LÃI TRÁI PHIẾU";
+                    this.Text = "F650 - Thông báo đợt thanh toán lãi trái phiếu";
+                    m_cmd_generate.Visible = false;
+                    m_cmd_thong_bao_ls.Visible = false;
+                    m_cmd_thong_bao_tien_lai.Visible = false;
+                    m_cmd_tra_goc.Visible = false;
+                    m_cmd_tra_lai.Visible = false;
+                    m_cmd_insert.Visible = false;
+                    m_cmd_update.Visible = false;
+                    m_cmd_delete.Visible = false;
+                    m_cmd_cap_nhat_lai_suat.Visible = false;
+                    m_cmd_thong_bao_dot_thanh_toan_lai_trai_phieu.Visible = true;
                     break;
                 default:
                     break;
@@ -342,6 +374,29 @@ namespace BondApp
             v_obj_word_rpt.Export2Word(true);
         }
 
+        private void thong_bao_dot_thanh_toan_lai_trai_phieu()
+        {
+            if (m_fg.Rows[m_fg.Row].UserData == null) return;
+            grid2us_object(m_us_gd_lich_tt_lai_goc, m_fg.Row);
+            DS_GD_CHOT_LAI v_ds_gd_chot_lai = new DS_GD_CHOT_LAI();
+            m_us_gd_chot_lai.FillDSChotLaiByIDTraiPhieuAndNgayChotLai(v_ds_gd_chot_lai, m_us_gd_lich_tt_lai_goc.dcID_TRAI_PHIEU, m_us_gd_lich_tt_lai_goc.datNGAY);
+
+            IP.Core.IPWordReport.CWordReport v_obj_word_rpt = new CWordReport("f700_TB TCPH Dot Thanh Toan.doc");
+            //v_obj_word_rpt.AddFindAndReplace("<NGAY_CAP_NHAT_LAI_SUAT>", CIPConvert.ToStr(m_us_gd_lich_tt_lai_goc.datNGAY));
+            //v_obj_word_rpt.AddFindAndReplace("<TEN_TRAI_PHIEU>", m_us_trai_phieu.strTEN_TRAI_PHIEU);
+            v_obj_word_rpt.AddFindAndReplace("<MENH_GIA>", m_txt_menh_gia.Text + "VNĐ");
+            v_obj_word_rpt.AddFindAndReplace("<NGAY_PHAT_HANH>", m_txt_ngay_phat_hanh.Text);
+            v_obj_word_rpt.AddFindAndReplace("<NGAY_DAO_HAN>", m_txt_ngay_dao_han.Text);
+            v_obj_word_rpt.AddFindAndReplace("<SO_LUONG_TRAI_PHIEU>", m_txt_tong_so_luong_trai_phieu.Text);
+            v_obj_word_rpt.AddFindAndReplace("<TONG_GIA_TRI_TRAI_PHIEU>", m_txt_tong_gia_tri_trai_phieu.Text + "VNĐ");
+            v_obj_word_rpt.AddFindAndReplace("<KY_HAN>", m_txt_ky_han.Text + " năm"); // Can phai sua
+            v_obj_word_rpt.AddFindAndReplace("<KY_TINH_LAI>", m_txt_ky_tinh_lai.Text + " tháng");
+            v_obj_word_rpt.AddFindAndReplace("<LAI_SUAT>", m_txt_lai_suat.Text);
+            v_obj_word_rpt.AddFindAndReplace("<NGAY_THANH_TOAN>", CIPConvert.ToStr(v_ds_gd_chot_lai.Tables["GD_CHOT_LAI"].Rows[0]["NGAY_THANH_TOAN"]));
+            v_obj_word_rpt.AddFindAndReplace("<MUC_DICH>", CIPConvert.ToStr(v_ds_gd_chot_lai.Tables["GD_CHOT_LAI"].Rows[0]["MUC_DICH"].ToString()));
+            //v_obj_word_rpt.AddFindAndReplace("<NGAY_CHOT_DANH_SACH>", CIPConvert.ToStr(v_ds_gd_chot_lai.Tables["GD_CHOT_LAI"].Rows[0]["NGAY_CHOT_LAI"]));
+            v_obj_word_rpt.Export2Word(true);
+        }
 
         private void select_trai_phieu()
         {
@@ -426,6 +481,7 @@ namespace BondApp
             m_cmd_tra_lai.Click += new EventHandler(m_cmd_tra_lai_Click);
             m_cmd_thong_bao_tien_lai.Click += new EventHandler(m_cmd_thong_bao_tien_lai_Click);
             m_cmd_cap_nhat_lai_suat.Click += new EventHandler(m_cmd_cap_nhat_lai_suat_Click);
+            m_cmd_thong_bao_dot_thanh_toan_lai_trai_phieu.Click += new EventHandler(m_cmd_thong_bao_dot_thanh_toan_lai_trai_phieu_Click);
         }
 
         void m_cmd_cap_nhat_lai_suat_Click(object sender, EventArgs e)
@@ -507,6 +563,19 @@ namespace BondApp
             try
             {
                 thong_bao_ngay_chot_tien_lai();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_thong_bao_dot_thanh_toan_lai_trai_phieu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                thong_bao_dot_thanh_toan_lai_trai_phieu();
             }
             catch (Exception v_e)
             {
