@@ -225,7 +225,7 @@ namespace BondApp
                     + CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI), "#,##")
                     , "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 m_txt_phi_gd.Text = CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI), "#,##");
-                m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr((CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI) / CIPConvert.ToDecimal(m_txt_tong_gia_tri.Text) * 100));
+              
                 return false;
             }
             if (v_phi_gd > CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI))
@@ -234,7 +234,7 @@ namespace BondApp
                     + CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI), "#,##")
                     , "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 m_txt_phi_gd.Text = CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI), "#,##");
-                m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(Math.Round((CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI) / CIPConvert.ToDecimal(m_txt_tong_gia_tri.Text)*100),2));
+              // m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(Math.Round((CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI) / CIPConvert.ToDecimal(m_txt_tong_gia_tri.Text)*100),2));
                 return false;
             }
             return true;
