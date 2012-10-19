@@ -147,8 +147,7 @@ namespace BondApp
             m_lbl_title.Font = new Font("Arial", 16);
             m_lbl_title.ForeColor = Color.DarkRed;
             m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
-        }
-        
+        }        
         private bool check_thong_tin_chuyen_nhuong_is_ok()
         {
             if (!CValidateTextBox.IsValid(m_txt_nguoi_dai_dien, DataType.StringType, allowNull.NO))
@@ -236,9 +235,7 @@ namespace BondApp
                 return false;
             }
             return true;
-        }
-       
-        
+        }              
         private void set_inital_form_load()
         {
             US_HT_THAM_SO_HE_THONG v_us_phi_gd_max = new US_HT_THAM_SO_HE_THONG(GIOI_HAN_PHI_PGT.ID_PHI_PGT_MAX);
@@ -475,7 +472,7 @@ namespace BondApp
            m_txt_ty_le_phi_gd.LostFocus += new EventHandler(m_txt_ty_le_phi_gd_LostFocus);
            m_txt_so_luong_tp_cam_co.LostFocus += new EventHandler(m_txt_so_luong_tp_cam_co_LostFocus);
         }
-        void m_cmd_exit_Click(object sender, EventArgs e)
+        private void m_cmd_exit_Click(object sender, EventArgs e)
         {
             try
             {
@@ -487,7 +484,7 @@ namespace BondApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        void m_cmd_chon_trai_chu_Click(object sender, EventArgs e)
+        private void m_cmd_chon_trai_chu_Click(object sender, EventArgs e)
         {
             try
             {
@@ -534,7 +531,7 @@ namespace BondApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        void m_cmd_save_Click(object sender, EventArgs e)
+        private void m_cmd_save_Click(object sender, EventArgs e)
         {
             try
             {
