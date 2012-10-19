@@ -28,11 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // f000_confirm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "f000_confirm";
+            this.ClientSize = new System.Drawing.Size(335, 168);
+            this.Name = "f000_confirm";
+            this.Text = "F000 - Xác nhận bằng chữ";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
     }
 }
