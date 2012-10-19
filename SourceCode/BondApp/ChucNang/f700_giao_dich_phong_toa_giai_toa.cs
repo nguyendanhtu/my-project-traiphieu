@@ -30,6 +30,7 @@ namespace BondApp
             format_controls();
         }
 
+
         #region Public Interface
         public void display_phong_toa()
         {
@@ -102,7 +103,6 @@ namespace BondApp
             this.ShowDialog();
         }
         #endregion
-
         #region Data Structures
         private enum e_col_Number
         {
@@ -127,7 +127,6 @@ namespace BondApp
             ,SUA_GIAI_TOA
         }
         #endregion
-
         #region Members
         US_DM_TRAI_CHU m_us_trai_chu = new US_DM_TRAI_CHU();
         US_DM_TRAI_PHIEU m_us_trai_phieu = new US_DM_TRAI_PHIEU();
@@ -137,7 +136,6 @@ namespace BondApp
         DS_GD_PHONG_GIAI_TOA m_ds_gd_phong_toa_giai_toa = new DS_GD_PHONG_GIAI_TOA();
         eFormMode m_e_form_mode = eFormMode.LAP_PHONG_TOA;
         #endregion
-
         #region Private Methods
 
         private void format_controls()
