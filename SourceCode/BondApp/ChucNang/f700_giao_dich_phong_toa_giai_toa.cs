@@ -49,10 +49,10 @@ namespace BondApp
         public void display_sua_phong_toa(US_GD_PHONG_GIAI_TOA ip_us_phong_giai_toa)
         {
             m_e_form_mode = eFormMode.SUA_PHONG_TOA;
-            m_cmd_lap.Enabled = false;
-            m_cmd_duyet.Enabled = false;
-            m_cmd_chon_trai_chu.Enabled = false;
-            m_cmd_save.Enabled = true;
+            //m_cmd_lap.Enabled = false;
+            //m_cmd_duyet.Enabled = false;
+            //m_cmd_chon_trai_chu.Enabled = false;
+            //m_cmd_save.Enabled = true;
             m_us_gd_phong_toa_giai_toa = ip_us_phong_giai_toa;
             this.Text = "F700 - Sửa Giao dịch phong tỏa";
             m_lbl_title.Text = "F700 - Sửa Giao dịch phong tỏa";
@@ -65,10 +65,10 @@ namespace BondApp
         public void display_sua_giai_toa(US_GD_PHONG_GIAI_TOA ip_us_phong_giai_toa)
         {
             m_e_form_mode = eFormMode.SUA_GIAI_TOA;
-            m_cmd_lap.Enabled = false;
-            m_cmd_duyet.Enabled = false;
-            m_cmd_chon_trai_chu.Enabled = false;
-            m_cmd_save.Enabled = true;
+            //m_cmd_lap.Enabled = false;
+            //m_cmd_duyet.Enabled = false;
+            //m_cmd_chon_trai_chu.Enabled = false;
+            //m_cmd_save.Enabled = true;
             m_us_gd_phong_toa_giai_toa = ip_us_phong_giai_toa;
             this.Text = "F700 - Sửa Giao dịch giải tỏa";
             m_lbl_title.Text = "F700 - Sửa Giao dịch giải tỏa";
@@ -261,6 +261,12 @@ namespace BondApp
                     m_cmd_lap.Enabled = false;
                     m_cmd_duyet.Enabled = true;
                     m_cmd_save.Enabled = false;
+                    break;
+                case eFormMode.SUA_GIAI_TOA:
+                case eFormMode.SUA_PHONG_TOA:
+                    m_cmd_save.Enabled = true;
+                    m_cmd_lap.Enabled = false;
+                    m_cmd_duyet.Enabled = false;
                     break;
                 default:
                     break;
