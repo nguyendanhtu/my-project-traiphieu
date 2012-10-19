@@ -20,7 +20,7 @@ namespace BondUS
     public class US_DM_TRAI_CHU : US_Object
     {
         private const string c_TableName = "DM_TRAI_CHU";
-        #region Public Properties
+        #region "Public Properties"
         public decimal dcID
         {
             get
@@ -439,6 +439,116 @@ namespace BondUS
             pm_objDR["ID_TRANG_THAI"] = System.Convert.DBNull;
         }
 
+        public string strTEN_NGUOI_DAI_DIEN
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "TEN_NGUOI_DAI_DIEN", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["TEN_NGUOI_DAI_DIEN"] = value;
+            }
+        }
+
+        public bool IsTEN_NGUOI_DAI_DIENNull()
+        {
+            return pm_objDR.IsNull("TEN_NGUOI_DAI_DIEN");
+        }
+
+        public void SetTEN_NGUOI_DAI_DIENNull()
+        {
+            pm_objDR["TEN_NGUOI_DAI_DIEN"] = System.Convert.DBNull;
+        }
+
+        public string strCMT_NGUOI_DAI_DIEN
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "CMT_NGUOI_DAI_DIEN", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["CMT_NGUOI_DAI_DIEN"] = value;
+            }
+        }
+
+        public bool IsCMT_NGUOI_DAI_DIENNull()
+        {
+            return pm_objDR.IsNull("CMT_NGUOI_DAI_DIEN");
+        }
+
+        public void SetCMT_NGUOI_DAI_DIENNull()
+        {
+            pm_objDR["CMT_NGUOI_DAI_DIEN"] = System.Convert.DBNull;
+        }
+
+        public DateTime datNGAY_CAP_CMT_NGUOI_DAI_DIEN
+        {
+            get
+            {
+                return CNull.RowNVLDate(pm_objDR, "NGAY_CAP_CMT_NGUOI_DAI_DIEN", IPConstants.c_DefaultDate);
+            }
+            set
+            {
+                pm_objDR["NGAY_CAP_CMT_NGUOI_DAI_DIEN"] = value;
+            }
+        }
+
+        public bool IsNGAY_CAP_CMT_NGUOI_DAI_DIENNull()
+        {
+            return pm_objDR.IsNull("NGAY_CAP_CMT_NGUOI_DAI_DIEN");
+        }
+
+        public void SetNGAY_CAP_CMT_NGUOI_DAI_DIENNull()
+        {
+            pm_objDR["NGAY_CAP_CMT_NGUOI_DAI_DIEN"] = System.Convert.DBNull;
+        }
+
+        public string strNOI_CAP_CMT_NGUOI_DAI_DIEN
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "NOI_CAP_CMT_NGUOI_DAI_DIEN", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["NOI_CAP_CMT_NGUOI_DAI_DIEN"] = value;
+            }
+        }
+
+        public bool IsNOI_CAP_CMT_NGUOI_DAI_DIENNull()
+        {
+            return pm_objDR.IsNull("NOI_CAP_CMT_NGUOI_DAI_DIEN");
+        }
+
+        public void SetNOI_CAP_CMT_NGUOI_DAI_DIENNull()
+        {
+            pm_objDR["NOI_CAP_CMT_NGUOI_DAI_DIEN"] = System.Convert.DBNull;
+        }
+
+        public string strCHUC_VU
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "CHUC_VU", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["CHUC_VU"] = value;
+            }
+        }
+
+        public bool IsCHUC_VUNull()
+        {
+            return pm_objDR.IsNull("CHUC_VU");
+        }
+
+        public void SetCHUC_VUNull()
+        {
+            pm_objDR["CHUC_VU"] = System.Convert.DBNull;
+        }
+
         #endregion
 
 
@@ -475,6 +585,10 @@ namespace BondUS
             base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = "+" "+ip_id_trai_phieu.ToString());
         }
 
+        public void FillDatasetByMaTraiChu(DS_DM_TRAI_CHU ip_ds, string ip_ma_trai_chu)
+        {
+            base.FillDataset(ip_ds, " WHERE MA_TRAI_CHU = '" + ip_ma_trai_chu + "'");
+        }
         #endregion        
         #region Additional Functions
         public void load_data_by_search(DS_DM_TRAI_CHU op_ds_dm_trai_chu

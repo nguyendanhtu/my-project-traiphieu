@@ -42,6 +42,7 @@ namespace BondApp
         private Label label1;
         private Button m_cmd_filter;
         private C1FlexGrid m_fg;
+        internal SIS.Controls.Button.SiSButton m_cmd_duyet;
         private System.ComponentModel.IContainer components;
 
         public f500_dm_trai_chu()
@@ -83,18 +84,19 @@ namespace BondApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f500_dm_trai_chu));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_lbl_title = new System.Windows.Forms.Label();
-            this.m_gru_tim_kiem = new System.Windows.Forms.GroupBox();
-            this.m_txt_search = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.m_cmd_filter = new System.Windows.Forms.Button();
             this.m_cmd_select = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            this.m_lbl_title = new System.Windows.Forms.Label();
+            this.m_gru_tim_kiem = new System.Windows.Forms.GroupBox();
+            this.m_txt_search = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_cmd_filter = new System.Windows.Forms.Button();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_cmd_duyet = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.m_gru_tim_kiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -129,6 +131,7 @@ namespace BondApp
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_duyet);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_select);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
@@ -141,57 +144,6 @@ namespace BondApp
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1213, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
-            // 
-            // m_lbl_title
-            // 
-            this.m_lbl_title.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
-            this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(1213, 37);
-            this.m_lbl_title.TabIndex = 22;
-            this.m_lbl_title.Text = "F500 - Danh sách trái chủ";
-            this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // m_gru_tim_kiem
-            // 
-            this.m_gru_tim_kiem.Controls.Add(this.m_txt_search);
-            this.m_gru_tim_kiem.Controls.Add(this.label1);
-            this.m_gru_tim_kiem.Controls.Add(this.m_cmd_filter);
-            this.m_gru_tim_kiem.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_gru_tim_kiem.Location = new System.Drawing.Point(0, 37);
-            this.m_gru_tim_kiem.Name = "m_gru_tim_kiem";
-            this.m_gru_tim_kiem.Size = new System.Drawing.Size(1213, 49);
-            this.m_gru_tim_kiem.TabIndex = 23;
-            this.m_gru_tim_kiem.TabStop = false;
-            // 
-            // m_txt_search
-            // 
-            this.m_txt_search.Location = new System.Drawing.Point(137, 16);
-            this.m_txt_search.Name = "m_txt_search";
-            this.m_txt_search.Size = new System.Drawing.Size(508, 20);
-            this.m_txt_search.TabIndex = 31;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(72, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Tìm kiếm";
-            // 
-            // m_cmd_filter
-            // 
-            this.m_cmd_filter.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_filter.Image")));
-            this.m_cmd_filter.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.m_cmd_filter.Location = new System.Drawing.Point(660, 14);
-            this.m_cmd_filter.Name = "m_cmd_filter";
-            this.m_cmd_filter.Size = new System.Drawing.Size(64, 23);
-            this.m_cmd_filter.TabIndex = 29;
-            this.m_cmd_filter.Text = "     Xem";
-            this.m_cmd_filter.UseVisualStyleBackColor = true;
             // 
             // m_cmd_select
             // 
@@ -283,6 +235,57 @@ namespace BondApp
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
+            // m_lbl_title
+            // 
+            this.m_lbl_title.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
+            this.m_lbl_title.Name = "m_lbl_title";
+            this.m_lbl_title.Size = new System.Drawing.Size(1213, 37);
+            this.m_lbl_title.TabIndex = 22;
+            this.m_lbl_title.Text = "F500 - Danh sách trái chủ";
+            this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // m_gru_tim_kiem
+            // 
+            this.m_gru_tim_kiem.Controls.Add(this.m_txt_search);
+            this.m_gru_tim_kiem.Controls.Add(this.label1);
+            this.m_gru_tim_kiem.Controls.Add(this.m_cmd_filter);
+            this.m_gru_tim_kiem.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_gru_tim_kiem.Location = new System.Drawing.Point(0, 37);
+            this.m_gru_tim_kiem.Name = "m_gru_tim_kiem";
+            this.m_gru_tim_kiem.Size = new System.Drawing.Size(1213, 49);
+            this.m_gru_tim_kiem.TabIndex = 23;
+            this.m_gru_tim_kiem.TabStop = false;
+            // 
+            // m_txt_search
+            // 
+            this.m_txt_search.Location = new System.Drawing.Point(137, 16);
+            this.m_txt_search.Name = "m_txt_search";
+            this.m_txt_search.Size = new System.Drawing.Size(508, 20);
+            this.m_txt_search.TabIndex = 31;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(72, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Tìm kiếm";
+            // 
+            // m_cmd_filter
+            // 
+            this.m_cmd_filter.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_filter.Image")));
+            this.m_cmd_filter.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.m_cmd_filter.Location = new System.Drawing.Point(660, 14);
+            this.m_cmd_filter.Name = "m_cmd_filter";
+            this.m_cmd_filter.Size = new System.Drawing.Size(64, 23);
+            this.m_cmd_filter.TabIndex = 29;
+            this.m_cmd_filter.Text = "     Xem";
+            this.m_cmd_filter.UseVisualStyleBackColor = true;
+            // 
             // m_fg
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
@@ -292,6 +295,21 @@ namespace BondApp
             this.m_fg.Size = new System.Drawing.Size(1213, 440);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 24;
+            // 
+            // m_cmd_duyet
+            // 
+            this.m_cmd_duyet.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_duyet.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_duyet.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_duyet.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_duyet.Enabled = false;
+            this.m_cmd_duyet.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet.Image")));
+            this.m_cmd_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_duyet.Location = new System.Drawing.Point(92, 4);
+            this.m_cmd_duyet.Name = "m_cmd_duyet";
+            this.m_cmd_duyet.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_duyet.TabIndex = 28;
+            this.m_cmd_duyet.Text = "&Duyệt";
             // 
             // f500_dm_trai_chu
             // 
@@ -331,8 +349,7 @@ namespace BondApp
             m_e_form_mode = DataEntryFormMode.SelectDataState;
             m_us_v_trai_phieu = ip_us_trai_phieu;
             this.ShowDialog();
-            US_DM_TRAI_CHU v_us = new US_DM_TRAI_CHU(m_us.dcID);
-            return v_us;
+            return m_us_trai_chu;
         }
         #endregion
 
@@ -401,6 +418,7 @@ namespace BondApp
         US_DM_TRAI_PHIEU m_us_trai_phieu;
         US_V_DM_TRAI_PHIEU m_us_v_trai_phieu;
         DS_V_DM_TRAI_PHIEU m_ds_v_trai_phieu;
+        US_DM_TRAI_CHU m_us_trai_chu = new US_DM_TRAI_CHU();
         #endregion
 
         #region Private Methods
@@ -609,8 +627,34 @@ namespace BondApp
             if (m_e_form_mode != DataEntryFormMode.SelectDataState) return;
 
             grid2us_object(m_us, m_fg.Row);
+            m_us_trai_chu = new US_DM_TRAI_CHU(m_us.dcID);
             this.Close();
 
+        }
+
+        private void duyet_trai_chu()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us, m_fg.Row);
+            f500_dm_trai_chu_de v_frm500 = new f500_dm_trai_chu_de();
+            v_frm500.display_for_duyet(m_us);
+            load_data_2_grid(null);
+        }
+
+        private void cell_changed()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if (m_fg.Rows[m_fg.Row].UserData == null) return;
+            US_V_DM_TRAI_CHU v_us = new US_V_DM_TRAI_CHU();
+            grid2us_object(v_us, m_fg.Row);
+            if (v_us.dcID_TRANG_THAI == TRANG_THAI_DANH_MUC.DA_LAP)
+            {
+                m_cmd_duyet.Enabled = true;
+            }
+            else
+                m_cmd_duyet.Enabled = false;
         }
 
         private void load_data_2_grid_search(string ip_str_search_key)
@@ -632,6 +676,8 @@ namespace BondApp
             m_cmd_select.Click += new EventHandler(m_cmd_select_Click);
             m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
             m_cmd_filter.Click += new EventHandler(m_cmd_filter_Click);
+            m_fg.Click += new EventHandler(m_fg_Click);
+            m_cmd_duyet.Click += new EventHandler(m_cmd_duyet_Click);
         }
 
         #endregion
@@ -652,6 +698,31 @@ namespace BondApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
 
+        }
+
+
+        void m_cmd_duyet_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                duyet_trai_chu();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_fg_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cell_changed();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_filter_Click(object sender, EventArgs e)
