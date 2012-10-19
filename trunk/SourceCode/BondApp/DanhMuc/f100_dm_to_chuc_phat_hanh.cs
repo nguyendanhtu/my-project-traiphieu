@@ -86,6 +86,7 @@ namespace BondApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f100_dm_to_chuc_phat_hanh));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_duyet = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_view = new SIS.Controls.Button.SiSButton();
@@ -97,7 +98,6 @@ namespace BondApp
             this.m_cmd_filter = new System.Windows.Forms.Button();
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_cmd_duyet = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.m_gru_tim_kiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -144,6 +144,20 @@ namespace BondApp
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(968, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
+            // 
+            // m_cmd_duyet
+            // 
+            this.m_cmd_duyet.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_duyet.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_duyet.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_duyet.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_duyet.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet.Image")));
+            this.m_cmd_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_duyet.Location = new System.Drawing.Point(524, 4);
+            this.m_cmd_duyet.Name = "m_cmd_duyet";
+            this.m_cmd_duyet.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_duyet.TabIndex = 28;
+            this.m_cmd_duyet.Text = "&Duyệt";
             // 
             // m_cmd_insert
             // 
@@ -281,21 +295,6 @@ namespace BondApp
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 26;
             // 
-            // m_cmd_duyet
-            // 
-            this.m_cmd_duyet.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_duyet.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_duyet.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_duyet.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_duyet.Enabled = false;
-            this.m_cmd_duyet.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet.Image")));
-            this.m_cmd_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_duyet.Location = new System.Drawing.Point(524, 4);
-            this.m_cmd_duyet.Name = "m_cmd_duyet";
-            this.m_cmd_duyet.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_duyet.TabIndex = 28;
-            this.m_cmd_duyet.Text = "&Duyệt";
-            // 
             // f100_dm_to_chuc_phat_hanh
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -379,7 +378,6 @@ namespace BondApp
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
 			load_data_2_grid();
-            m_cmd_select.Visible = false;
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -453,11 +451,27 @@ namespace BondApp
             frm100.display_for_update(m_us);
 			load_data_2_grid();
 		}
-				
+
+        private void duyet_dm_to_chuc_phat_hanh()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us, m_fg.Row);
+            if (m_us.dcID_TRANG_THAI == TRANG_THAI_DANH_MUC.DA_DUYET)
+            {
+                BaseMessages.MsgBox_Infor("Thông tin tổ chức phát hành này đã được duyệt");
+                return;
+            }
+            f100_dm_to_chuc_phat_hanh_de frm100 = new f100_dm_to_chuc_phat_hanh_de();
+            frm100.display_for_duyet(m_us);
+            load_data_2_grid();
+        }
+
 		private void delete_dm_to_chuc_phat_hanh(){
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
+			//if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
+            if (!BaseMessages.MsgBox_Confirm("Việc xóa tổ chức phát hành sẽ xóa toàn bộ các đợt phát hành, trái phiếu mà tổ chức này phát hành và các trái chủ đã mua trái phiếu của tổ chức này. \n Bạn có chắc chắn muốn xóa dữ liệu không?")) return;
 			US_V_DM_TO_CHUC_PHAT_HANH v_us = new US_V_DM_TO_CHUC_PHAT_HANH();
 			grid2us_object(v_us, m_fg.Row);
 			try {			
@@ -488,7 +502,7 @@ namespace BondApp
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
-            m_cmd_select.Click +=new EventHandler(m_cmd_select_Click);
+            m_cmd_duyet.Click += new EventHandler(m_cmd_duyet_Click);
             m_cmd_filter.Click += new EventHandler(m_cmd_filter_Click);
 		}
 
@@ -530,11 +544,11 @@ namespace BondApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        void m_cmd_select_Click(object sender, EventArgs e)
+        void m_cmd_duyet_Click(object sender, EventArgs e)
         {
             try
             {
-                chon_to_chuc();
+                duyet_dm_to_chuc_phat_hanh();
             }
             catch (Exception v_e)
             {

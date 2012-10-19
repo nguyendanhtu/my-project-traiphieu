@@ -10,6 +10,7 @@ using IP.Core.IPCommon;
 using IP.Core.IPException;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
+using IP.Core.IPSystemAdmin;
 
 using BondUS;
 using BondDS;
@@ -41,9 +42,10 @@ namespace BondApp.DanhMuc
              m_us_to_chuc_phat_hanh = ip_us_to_chuc_phat_hanh;
              this.ShowDialog();
         }
-        public void display_for_duyet()
+        public void display_for_duyet(US_V_DM_TO_CHUC_PHAT_HANH ip_us_to_chuc_phat_hanh)
         {
             m_e_form_mode = e_form_mode.DUYET_DU_LIEU;
+            m_us_to_chuc_phat_hanh = ip_us_to_chuc_phat_hanh;
             this.ShowDialog();
         }
         #endregion
@@ -78,14 +80,16 @@ namespace BondApp.DanhMuc
         {
             switch (m_e_form_mode)
             {
-                case DataEntryFormMode.InsertDataState:
+                case e_form_mode.THEM_TO_CHUC_PHAT_HANH:
+                    m_cmd_luu.Text = "Lưu";
                     break;
-                case DataEntryFormMode.SelectDataState:
-                    break;
-                case DataEntryFormMode.UpdateDataState:
+                case e_form_mode.SUA_TO_CHUC_PHAT_HANH:
+                    m_cmd_luu.Text = "Lưu";
                     us_object_2_form(m_us_to_chuc_phat_hanh);
                     break;
-                case DataEntryFormMode.ViewDataState:
+                case e_form_mode.DUYET_DU_LIEU:
+                    m_cmd_luu.Text = "Duyệt";
+                    us_object_2_form(m_us_to_chuc_phat_hanh);
                     break;
                 default:
                     break;
@@ -127,22 +131,22 @@ namespace BondApp.DanhMuc
                 return false;
             }
 
-            if (!CValidateTextBox.IsValid(m_txt_so_tai_khoan, DataType.StringType, allowNull.NO, true))
-            {
-                return false;
-            }
-
-            if (!CValidateTextBox.IsValid(m_txt_mo_tai_ngan_hang, DataType.StringType, allowNull.NO, true))
-            {
-                return false;
-            }
-
             if (!CValidateTextBox.IsValid(m_txt_chung_nhan_dkdn, DataType.StringType, allowNull.NO, true))
             {
                 return false;
             }
 
             if (!CValidateTextBox.IsValid(m_txt_ma_so_thue, DataType.StringType, allowNull.NO, true))
+            {
+                return false;
+            }
+
+            if (!CValidateTextBox.IsValid(m_txt_so_tai_khoan, DataType.StringType, allowNull.NO, true))
+            {
+                return false;
+            }
+
+            if (!CValidateTextBox.IsValid(m_txt_mo_tai_ngan_hang, DataType.StringType, allowNull.NO, true))
             {
                 return false;
             }
@@ -166,6 +170,9 @@ namespace BondApp.DanhMuc
             switch (m_e_form_mode)
             {
                 case e_form_mode.THEM_TO_CHUC_PHAT_HANH:
+                    m_us_to_chuc_phat_hanh.dcID_NGUOI_LAP = CAppContext_201.getCurrentUserID();
+                    m_us_to_chuc_phat_hanh.SetID_NGUOI_DUYETNull();
+                    m_us_to_chuc_phat_hanh.dcID_TRANG_THAI = TRANG_THAI_DANH_MUC.DA_LAP;
                     m_us_to_chuc_phat_hanh.Insert();
                     break;
 
@@ -174,6 +181,9 @@ namespace BondApp.DanhMuc
                     break;
 
                 case e_form_mode.DUYET_DU_LIEU:
+                    m_us_to_chuc_phat_hanh.dcID_NGUOI_DUYET = CAppContext_201.getCurrentUserID();
+                    m_us_to_chuc_phat_hanh.dcID_TRANG_THAI = TRANG_THAI_DANH_MUC.DA_DUYET;
+                    m_us_to_chuc_phat_hanh.Update();
                     break;
 
                 default:
