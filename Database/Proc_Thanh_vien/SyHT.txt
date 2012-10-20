@@ -199,3 +199,57 @@ FROM DM_TRAI_CHU as tc ,
 		where sdtp.ID_TRAI_CHU = sd.ID_TRAI_CHU AND sdtp.NGAY = sd.NGAY) as tsd
 WHERE tc.ID_TRAI_PHIEU_SO_HUU = tp.ID AND tc.ID = tsd.ID_TRAI_CHU
 GO
+
+-----------------------------18/10----------------------------------------------------
+USE [QuanLyPhatHanhTraiPhieu]
+GO
+
+/****** Object:  View [dbo].[V_DM_TRAI_CHU]    Script Date: 10/18/2012 13:56:28 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER VIEW [dbo].[V_DM_TRAI_CHU]
+AS
+SELECT
+tc.ID,
+tc.MA_TRAI_CHU,
+tc.TEN_TRAI_CHU,
+tc.DIA_CHI,
+tc.MOBILE,
+tc.FAX,
+tc.CMT_GIAY_DKKD,
+tc.NGAY_CAP_CMT,
+tc.NOI_CAP_CMT,
+tc.ID_LOAI_TRAI_CHU,
+tc.ID_TRAI_PHIEU_SO_HUU,
+tc.TEN_NGUOI_DAI_DIEN,
+tc.CMT_NGUOI_DAI_DIEN,
+tc.NGAY_CAP_CMT_NGUOI_DAI_DIEN,
+tc.NOI_CAP_CMT_NGUOI_DAI_DIEN,
+tc.CHUC_VU,
+tp.MA_TRAI_PHIEU,
+tp.TEN_TRAI_PHIEU,
+tp.MENH_GIA,
+tsd.TONG_SO_DU,
+tsd.SO_DU_KHA_DUNG,
+tc.SO_TAI_KHOAN,
+tc.MO_TAI_NGAN_HANG,
+tc.GHI_CHU1, tc.GHI_CHU2,tc.GHI_CHU3,
+tc.ID_NGUOI_DUYET as ID_NGUOI_DUYET_TC,
+tc.ID_NGUOI_LAP as ID_NGUOI_LAP_TC,
+tc.ID_TRANG_THAI
+FROM DM_TRAI_CHU as tc , 
+	DM_TRAI_PHIEU as tp, 
+	(select sdtp.ID_TRAI_CHU, TONG_SO_DU, SO_DU_KHA_DUNG
+		from GD_SO_DU_TRAI_PHIEU as sdtp, (SELECT ID_TRAI_CHU, MAX(NGAY) as NGAY FROM GD_SO_DU_TRAI_PHIEU GROUP BY ID_TRAI_CHU) as sd
+		where sdtp.ID_TRAI_CHU = sd.ID_TRAI_CHU AND sdtp.NGAY = sd.NGAY) as tsd
+WHERE tc.ID_TRAI_PHIEU_SO_HUU = tp.ID AND tc.ID = tsd.ID_TRAI_CHU
+
+
+GO
+
+
