@@ -706,6 +706,12 @@ public class US_V_DM_TRAI_CHU : US_Object
         v_cstore.addNVarcharInputParam("@KEYWORD", ip_str_keyword);
         v_cstore.fillDataSetByCommand(this, op_ds_dm_trai_chu);
     }
+    public void load_data_by_pgt(DS_V_DM_TRAI_CHU op_ds_dm_trai_chu)
+    {
+
+        CStoredProc v_cstore = new CStoredProc("pr_V_DM_TRAI_CHU_Select_from_pgt");
+        v_cstore.fillDataSetByCommand(this,op_ds_dm_trai_chu);
+    }
     #endregion
 
 }
