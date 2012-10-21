@@ -168,3 +168,46 @@ WHERE ( vgdcn.ID_TRAI_PHIEU_SO_HUU =vdtp.ID
 AND vdtp.ID_TO_CHUC_PHAT_HANH = @ID_TO_CHUC_PHAT_HANH OR @ID_TO_CHUC_PHAT_HANH = 0)
 AND vgdcn.NGAY_KY_CHUYEN_NHUONG >= @TU_NGAY
 AND vgdcn.NGAY_KY_CHUYEN_NHUONG <= @DEN_NGAY
+
+--21/20/2012
+CREATE PROCEDURE [dbo].[pr_V_DM_TRAI_CHU_Select_from_pgt]
+AS
+SELECT DISTINCT
+		vtc.[ID]
+      ,vtc.[MA_TRAI_CHU]
+      ,vtc.[TEN_TRAI_CHU]
+      ,vtc.[DIA_CHI]
+      ,vtc.[MOBILE]
+      ,vtc.[FAX]
+      ,vtc.[CMT_GIAY_DKKD]
+      ,vtc.[NGAY_CAP_CMT]
+      ,vtc.[NOI_CAP_CMT]
+      ,vtc.[ID_LOAI_TRAI_CHU]
+      ,vtc.[ID_TRAI_PHIEU_SO_HUU]
+      ,vtc.[TEN_NGUOI_DAI_DIEN]
+      ,vtc.[CMT_NGUOI_DAI_DIEN]
+      ,vtc.[NGAY_CAP_CMT_NGUOI_DAI_DIEN]
+      ,vtc.[NOI_CAP_CMT_NGUOI_DAI_DIEN]
+      ,vtc.[CHUC_VU]
+      ,vtc.[MA_TRAI_PHIEU]
+      ,vtc.[TEN_TRAI_PHIEU]
+      ,vtc.[MENH_GIA]
+      ,vtc.[TONG_SO_DU]
+      ,vtc.[SO_DU_KHA_DUNG]
+      ,vtc.[SO_TAI_KHOAN]
+      ,vtc.[MO_TAI_NGAN_HANG]
+      ,vtc.[GHI_CHU1]
+      ,vtc.[GHI_CHU2]
+      ,vtc.[GHI_CHU3]
+      ,vtc.[ID_NGUOI_DUYET_TC]
+      ,vtc.[ID_NGUOI_LAP_TC]
+      ,vtc.[ID_TRANG_THAI]
+  FROM [dbo].[V_DM_TRAI_CHU] vtc,[dbo].GD_PHONG_GIAI_TOA pgt
+WHERE vtc.ID=pgt.ID_TRAI_CHU
+AND pgt.PHONG_TOA_YN= 'Y'
+ORDER BY 
+	vtc.[ID] ASC
+GO
+
+
+
