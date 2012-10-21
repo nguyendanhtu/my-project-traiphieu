@@ -1861,6 +1861,21 @@ namespace BondUS
             v_cstore.fillDataSetByCommand(this, ip_ds_v_gd_chuyen_nhuong);
         }
 
+        public void fill_dataset_by_date_and_trai_phieu_and_trang_thai(DS_V_GD_CHUYEN_NHUONG ip_ds_v_gd_chuyen_nhuong
+                                                        , DateTime ip_dat_tu_ngay
+                                                        , DateTime ip_dat_den_ngay
+                                                        , decimal ip_dc_id_trai_phieu
+                                                        , decimal ip_dc_id_trang_thai)
+        {
+            CStoredProc v_cstore = new CStoredProc("[pr_V_GD_CHUYEN_NHUONG_fill_data_by_date_and_trai_phieu_and_trang_thai]");
+
+            v_cstore.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay);
+            v_cstore.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay);
+            v_cstore.addDecimalInputParam("@ID_TRAI_PHIEU", ip_dc_id_trai_phieu);
+            v_cstore.addDecimalInputParam("@ID_TRANG_THAI", ip_dc_id_trang_thai);
+            v_cstore.fillDataSetByCommand(this, ip_ds_v_gd_chuyen_nhuong);
+        }
+
         public void delete_gd_chuyen_nhuong()
         {
             CStoredProc v_pr_obj = new CStoredProc("pr_GD_CHUYEN_NHUONG_Delete");
