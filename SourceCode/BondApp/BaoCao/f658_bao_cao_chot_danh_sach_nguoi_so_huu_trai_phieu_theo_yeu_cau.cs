@@ -25,6 +25,7 @@ using C1.Win.C1FlexGrid;
 using BondApp.ChucNang;
 using BondApp;
 using IP.Core.IPExcelReport;
+using IP.Core.IPWordReport;
 
 namespace BondApp
 {
@@ -65,6 +66,9 @@ namespace BondApp
         private TextBox m_txt_ma_trai_phieu;
         private C1FlexGrid m_fg;
         internal SIS.Controls.Button.SiSButton m_cmd_export_excel;
+        private ComboBox m_cbo_ky_tinh_lai;
+        private Label label5;
+        internal SIS.Controls.Button.SiSButton m_cmd_yeu_cau_ngan_hang_thanh_toan;
 		private System.ComponentModel.IContainer components;
 
 		public f658_bao_cao_chot_danh_sach_nguoi_so_huu_trai_phieu_theo_yeu_cau()
@@ -136,6 +140,9 @@ namespace BondApp
             this.m_lbl_lai_suat = new System.Windows.Forms.Label();
             this.m_txt_ma_trai_phieu = new System.Windows.Forms.TextBox();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_cbo_ky_tinh_lai = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.m_cmd_yeu_cau_ngan_hang_thanh_toan = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -170,6 +177,7 @@ namespace BondApp
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_yeu_cau_ngan_hang_thanh_toan);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_export_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -223,6 +231,8 @@ namespace BondApp
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.m_cbo_ky_tinh_lai);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.m_cmd_chon_trai_phieu);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -506,6 +516,40 @@ namespace BondApp
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 60;
             // 
+            // m_cbo_ky_tinh_lai
+            // 
+            this.m_cbo_ky_tinh_lai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_ky_tinh_lai.FormattingEnabled = true;
+            this.m_cbo_ky_tinh_lai.Location = new System.Drawing.Point(680, 102);
+            this.m_cbo_ky_tinh_lai.Name = "m_cbo_ky_tinh_lai";
+            this.m_cbo_ky_tinh_lai.Size = new System.Drawing.Size(74, 21);
+            this.m_cbo_ky_tinh_lai.TabIndex = 63;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(655, 105);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(19, 13);
+            this.label5.TabIndex = 62;
+            this.label5.Text = "Kỳ";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // m_cmd_yeu_cau_ngan_hang_thanh_toan
+            // 
+            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.ImageIndex = 19;
+            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.ImageList = this.ImageList;
+            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.Location = new System.Drawing.Point(92, 4);
+            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.Name = "m_cmd_yeu_cau_ngan_hang_thanh_toan";
+            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.Size = new System.Drawing.Size(238, 28);
+            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.TabIndex = 24;
+            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.Text = "Thông báo yêu cầu ngân hàng thanh toán";
+            // 
             // f658_bao_cao_chot_danh_sach_nguoi_so_huu_trai_phieu_theo_yeu_cau
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -530,6 +574,13 @@ namespace BondApp
 		public void display(){			
 			this.ShowDialog();
 		}
+
+        public void display_for_yeu_cau_ngan_hang_thanh_toan()
+        {
+            m_form_mode = e_form_mode.YEU_CAU_NGAN_HANG_THANH_TOAN;
+            this.ShowDialog();
+        }
+
 		#endregion
 
 		#region Data Structure
@@ -543,7 +594,13 @@ namespace BondApp
 ,MENH_GIA = 8
 ,NOI_CAP_CMT = 5
 
-		}			
+		}
+
+        private enum e_form_mode
+        {
+            YEU_CAU_NGAN_HANG_THANH_TOAN = 2,
+            CHOT_DANH_SACH_NGUOI_SO_HUU = 1
+        }
 		#endregion
 
 		#region Members
@@ -551,6 +608,7 @@ namespace BondApp
 		DS_V_DM_TRAI_CHU m_ds = new DS_V_DM_TRAI_CHU();
 		US_V_DM_TRAI_CHU m_us = new US_V_DM_TRAI_CHU();
         US_V_DM_TRAI_PHIEU m_us_trai_phieu = new US_V_DM_TRAI_PHIEU();
+        e_form_mode m_form_mode = e_form_mode.CHOT_DANH_SACH_NGUOI_SO_HUU;
 		#endregion
 
 		#region Private Methods
@@ -563,7 +621,17 @@ namespace BondApp
             m_lbl_header.ForeColor = Color.DarkRed;
             m_lbl_header.TextAlign = ContentAlignment.MiddleCenter;	
 		}
-		private void set_initial_form_load(){						
+		private void set_initial_form_load(){
+            switch (m_form_mode)
+            {
+                case e_form_mode.CHOT_DANH_SACH_NGUOI_SO_HUU:
+                    m_cmd_yeu_cau_ngan_hang_thanh_toan.Visible = false;
+                    break;
+                case e_form_mode.YEU_CAU_NGAN_HANG_THANH_TOAN:
+                    m_cmd_export_excel.Visible = false;
+                    m_lbl_header.Text = "F658 - YÊU CẦU NGÂN HÀNG THANH TOÁN";
+                    break;
+            }
 			m_obj_trans = get_trans_object(m_fg);
 			//load_data_2_grid();		
 		}	
@@ -590,8 +658,46 @@ namespace BondApp
             }
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            load_data_2_cbo();
 			m_fg.Redraw = true;
 		}
+
+        private void load_data_2_cbo()
+        {
+            if (m_us_trai_phieu != null)
+            {
+                decimal v_dc_so_ky_tra_lai;
+                int v_i_current = 0;
+                double v_d_ngay = 0;
+                US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_trai_phieu.dcID_DOT_PHAT_HANH);
+                m_cbo_ky_tinh_lai.Items.Clear();
+                if (m_us_trai_phieu.dcID_DV_KY_TRA_LAI == 18)
+                {
+                    v_dc_so_ky_tra_lai = m_us_trai_phieu.dcKY_HAN / m_us_trai_phieu.dcKY_TRA_LAI * 12;
+                    v_d_ngay = (DateTime.Now - v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH).TotalDays;
+                }
+                else
+                {
+                    v_dc_so_ky_tra_lai = m_us_trai_phieu.dcKY_HAN / m_us_trai_phieu.dcKY_TRA_LAI;
+                }
+                for (int i = 1; i <= v_dc_so_ky_tra_lai; i++)
+                {
+                    m_cbo_ky_tinh_lai.Items.Add(i);
+                    DateTime v_dat = v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH;
+                    v_dat = v_dat.AddMonths(i * (int)m_us_trai_phieu.dcKY_TRA_LAI);
+                    if (v_d_ngay >= (v_dat - v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH).TotalDays)
+                    {
+                        v_i_current = i;
+                    }
+                }
+
+                if (v_i_current != 0)
+                {
+                    m_cbo_ky_tinh_lai.SelectedIndex = v_i_current - 1;
+                }
+            }
+        }
+
 		private void grid2us_object(US_V_DM_TRAI_CHU i_us
 			, int i_grid_row) {
 			DataRow v_dr;
@@ -664,13 +770,29 @@ namespace BondApp
 
         }
 
+        private void export_yeu_cau_ngan_hang_thanh_toan()
+        {
+            IP.Core.IPWordReport.CWordReport v_obj_word_rpt = new CWordReport("f800_Yeu Cau Ngan Hang Thanh Toan.doc");
+            v_obj_word_rpt.AddFindAndReplace("<TEN_TRAI_PHIEU>", m_us_trai_phieu.strTEN_TRAI_PHIEU);
+            v_obj_word_rpt.AddFindAndReplace("<NGAY_PHAT_HANH>", m_txt_ngay_phat_hanh.Text);
+
+            US_GD_CHOT_LAI v_us = new US_GD_CHOT_LAI();
+            DS_GD_CHOT_LAI v_ds = new DS_GD_CHOT_LAI();
+            v_us.FillDSChotLaiByIDTraiPhieuAndNgayChotLai(v_ds, m_us_trai_phieu.dcID, CIPConvert.ToDatetime("25/09/2012"));
+            v_obj_word_rpt.AddFindAndReplace("<DOT_TRA_LAI>", v_ds.GD_CHOT_LAI.Rows[0]["KY_TINH_LAI"].ToString());
+            v_obj_word_rpt.AddFindAndReplace("<NGAY_TRA_LAI>", CIPConvert.ToStr(v_ds.GD_CHOT_LAI.Rows[0]["NGAY_THANH_TOAN"]));
+            v_obj_word_rpt.AddFindAndReplace("<NGAY_CHOT_DANH_SACH>", CIPConvert.ToStr(v_ds.GD_CHOT_LAI.Rows[0]["NGAY_CHOT_LAI"]));
+            v_obj_word_rpt.Export2Word(true);
+        }
+
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_chon_trai_phieu.Click += new EventHandler(m_cmd_chon_trai_phieu_Click);
             m_cmd_export_excel.Click += new EventHandler(m_cmd_export_excel_Click);
+            m_cmd_yeu_cau_ngan_hang_thanh_toan.Click += new EventHandler(m_cmd_yeu_cau_ngan_hang_thanh_toan_Click);
 		}
 
-
+        
         #endregion
         //
 		//
@@ -686,6 +808,18 @@ namespace BondApp
 			}
 		
 		}
+
+        void m_cmd_yeu_cau_ngan_hang_thanh_toan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                export_yeu_cau_ngan_hang_thanh_toan();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
         void m_cmd_export_excel_Click(object sender, EventArgs e)
         {
