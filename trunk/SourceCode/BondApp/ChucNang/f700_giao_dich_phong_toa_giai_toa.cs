@@ -272,7 +272,13 @@ namespace BondApp
             f701_danh_sach_giao_dich_phong_giai_toa vfrm701 = new f701_danh_sach_giao_dich_phong_giai_toa();
             switch (m_e_form_mode)
             { 
-                case eFormMode.LAP_GIAI_TOA:  
+                case eFormMode.LAP_GIAI_TOA:
+                    f500_dm_trai_chu v_f500 = new f500_dm_trai_chu();
+                    m_us_trai_chu = v_f500.select_trai_chu_giai_toa_of_trai_phieu(null);
+                     if (m_us_trai_chu.IsIDNull()) return;
+            us_trai_chu_2_form(m_us_trai_chu);
+            m_txt_nguoi_dai_dien.Focus();
+                    break;
                 case eFormMode.LAP_PHONG_TOA:
                     f500_dm_trai_chu v_frm500 = new f500_dm_trai_chu();
             m_us_trai_chu = v_frm500.select_trai_chu_of_trai_phieu(null);
@@ -624,6 +630,24 @@ namespace BondApp
                 {
                    
                     if (m_txt_ty_le_phi_gd.Text != "") phi_giao_dich_pgt_change();
+                    if (m_e_form_mode == eFormMode.LAP_GIAI_TOA)
+                    {
+                        if (CIPConvert.ToDecimal(m_txt_so_luong_tp_cam_co.Text) > CIPConvert.ToDecimal(m_txt_so_luong_trai_phieu.Text) - CIPConvert.ToDecimal(m_txt_so_luong_kha_dung.Text))
+                        {
+                            MessageBox.Show("Số lượng trái phiếu giải tỏa cần bé hơn số lượng trái phiếu đã phong tỏa.");
+                            m_txt_so_luong_tp_cam_co.Focus();
+                            return;
+                        }
+                    }
+                    if (m_e_form_mode == eFormMode.LAP_PHONG_TOA)
+                    {
+                        if (CIPConvert.ToDecimal(m_txt_so_luong_tp_cam_co.Text) >  CIPConvert.ToDecimal(m_txt_so_luong_kha_dung.Text))
+                        {
+                            MessageBox.Show("Số lượng trái phiếu phong tỏa cần bé hơn số lượng trái phiếu khả dụng.");
+                            m_txt_so_luong_tp_cam_co.Focus();
+                            return;
+                        }
+                    }
                 }
 
             }
