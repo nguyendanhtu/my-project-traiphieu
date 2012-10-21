@@ -63,7 +63,7 @@ namespace BondApp
         public enum eFormMode
         {
             LAP_CHUYEN_NHUONG
-                , SUA_CHUYEN_NHUONG_CHUA_DUYET
+            , SUA_CHUYEN_NHUONG_CHUA_DUYET
             , DUYET_CHUYEN_NHUONG
             , XEM_GIAO_DICH
         }
@@ -285,7 +285,7 @@ namespace BondApp
             m_us_gd_chuyen_nhuong.dcID_TRAI_CHU_MUA = CIPConvert.ToDecimal(m_lbl_ID_nguoi_mua.Text);
             m_us_gd_chuyen_nhuong.dcID_TRAI_CHU_BAN = CIPConvert.ToDecimal(m_lbl_ID_nguoi_ban.Text);
             m_us_gd_chuyen_nhuong.strTEN_NGUOI_UY_QUYEN_MUA = m_txt_ben_mua_ten_nguoi_dai_dien.Text;
-            m_us_gd_chuyen_nhuong.strTEN_NGUOI_UY_QUYEN_BAN = m_txt_nguoi_dai_dien.Text;
+            m_us_gd_chuyen_nhuong.strTEN_NGUOI_UY_QUYEN_BAN = m_txt_nguoi_dai_dien.Text;           
             m_us_gd_chuyen_nhuong.strSO_CMT_NGUOI_MUA = m_txt_ben_mua_cmnd_ng_dai_dien.Text;
             m_us_gd_chuyen_nhuong.strSO_CMT_NGUOI_BAN = m_txt_cmt_ng_dai_dien.Text;
             m_us_gd_chuyen_nhuong.datNGAY_CAP_CMT_NGUOI_MUA = m_date_ben_mua_ngay_cap_cmnd_ng_dai_dien.Value;
