@@ -272,7 +272,7 @@ namespace BondApp
             f701_danh_sach_giao_dich_phong_giai_toa vfrm701 = new f701_danh_sach_giao_dich_phong_giai_toa();
             switch (m_e_form_mode)
             { 
-                case eFormMode.LAP_GIAI_TOA:
+                case eFormMode.LAP_GIAI_TOA:  
                 case eFormMode.LAP_PHONG_TOA:
                     f500_dm_trai_chu v_frm500 = new f500_dm_trai_chu();
             m_us_trai_chu = v_frm500.select_trai_chu_of_trai_phieu(null);
