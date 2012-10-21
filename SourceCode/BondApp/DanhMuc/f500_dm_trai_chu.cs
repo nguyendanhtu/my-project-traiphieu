@@ -343,6 +343,14 @@ namespace BondApp
             this.ShowDialog();
             return m_us;
         }
+        public US_DM_TRAI_CHU select_trai_chu_giai_toa_of_trai_phieu(US_V_DM_TRAI_PHIEU ip_us_trai_phieu)
+        {
+            m_e_form_mode = DataEntryFormMode.SelectDataState;
+            eform_mode = e_form_mode.DANH_SACH_LAP_GIAI_TOA;
+            m_us_v_trai_phieu = ip_us_trai_phieu;
+            this.ShowDialog();
+            return m_us_trai_chu;
+        }
 
         public US_DM_TRAI_CHU select_trai_chu_of_trai_phieu(US_V_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
@@ -350,6 +358,12 @@ namespace BondApp
             m_us_v_trai_phieu = ip_us_trai_phieu;
             this.ShowDialog();
             return m_us_trai_chu;
+        }
+
+        public enum e_form_mode
+        { 
+            DANH_SACH_LAP_PHONG_TOA,
+            DANH_SACH_LAP_GIAI_TOA
         }
         #endregion
 
@@ -419,6 +433,7 @@ namespace BondApp
         US_V_DM_TRAI_PHIEU m_us_v_trai_phieu;
         DS_V_DM_TRAI_PHIEU m_ds_v_trai_phieu;
         US_DM_TRAI_CHU m_us_trai_chu = new US_DM_TRAI_CHU();
+        e_form_mode eform_mode = e_form_mode.DANH_SACH_LAP_PHONG_TOA;
         #endregion
 
         #region Private Methods
@@ -453,7 +468,6 @@ namespace BondApp
                     m_cmd_delete.Visible = true;
                     m_cmd_update.Visible = true;
                     m_cmd_insert.Visible = true;
-
                     m_cmd_select.Visible = false;
                     break;
                 default:
@@ -502,8 +516,16 @@ namespace BondApp
             m_ds = new DS_V_DM_TRAI_CHU();
             if (ip_us_trai_phieu == null)
             {
+                switch (eform_mode)
+                {
+                    case e_form_mode.DANH_SACH_LAP_PHONG_TOA:
+                            m_us.FillDataset(m_ds);
+                            break;
+                    case e_form_mode.DANH_SACH_LAP_GIAI_TOA:
+                            m_us.load_data_by_pgt(m_ds);
+                            break;
 
-                m_us.FillDataset(m_ds);
+                }
             }
             else
             {
@@ -765,6 +787,7 @@ namespace BondApp
         {
             try
             {
+                m_us_trai_chu.SetIDNull();
                 this.Close();
             }
             catch (Exception v_e)
