@@ -595,13 +595,22 @@ namespace BondApp
             }
         }
 
-        private void view_v_gd_chuyen_nhuong()
+        private void show_bao_cao_gd_chuyen_nhuong()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us, m_fg.Row);            
+            f601_bao_cao_giao_dich_chuyen_nhuong v_frm601 = new f601_bao_cao_giao_dich_chuyen_nhuong();
+            v_frm601.display();                       
+        }
+
+        private void  view_v_gd_chuyen_nhuong()
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             grid2us_object(m_us, m_fg.Row);
-            f600_giao_dich_chuyen_nhuong v_fm600 = new f600_giao_dich_chuyen_nhuong();
-            v_fm600.display_xem_gd_chuyen_nhuong(m_us.dcID);            
+            f600_giao_dich_chuyen_nhuong v_frm600 = new f600_giao_dich_chuyen_nhuong();
+            v_frm600.display_xem_gd_chuyen_nhuong(m_us.dcID);
         }
 
         private void duyet_v_gd_chuyen_nhuong()
@@ -794,7 +803,7 @@ namespace BondApp
         {
             try
             {
-                view_v_gd_chuyen_nhuong();
+                show_bao_cao_gd_chuyen_nhuong();
             }
             catch (Exception v_e)
             {
