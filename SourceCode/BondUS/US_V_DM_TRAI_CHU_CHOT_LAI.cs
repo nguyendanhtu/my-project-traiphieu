@@ -778,9 +778,9 @@ public class US_V_DM_TRAI_CHU_CHOT_LAI : US_Object
         base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu_so_huu.ToString());
     }
 
-    public void FillDatasetByIDTraiPhieuAndIdChotLai(DS_V_DM_TRAI_CHU_CHOT_LAI ip_ds, decimal ip_id_trai_phieu_so_huu, int ip_id_chot_lai)
+    public void FillDatasetByIdChotLai(DS_V_DM_TRAI_CHU_CHOT_LAI ip_ds, string ip_id_chot_lai)
     {
-        base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu_so_huu.ToString() + " AND ID_CHOT_LAI = " + ip_id_chot_lai.ToString());
+        base.FillDataset(ip_ds, " WHERE ID_CHOT_LAI = " + ip_id_chot_lai);
     }
 
     public void FillDatasetByIDTraiPhieuAndKy(DS_V_DM_TRAI_CHU_CHOT_LAI ip_ds, decimal ip_id_trai_phieu_so_huu, int ip_ky_tinh_lai)
