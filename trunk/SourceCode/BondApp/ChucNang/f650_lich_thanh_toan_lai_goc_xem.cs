@@ -382,8 +382,11 @@ namespace BondApp
             m_us_gd_chot_lai.FillDSChotLaiByIDTraiPhieuAndNgayChotLai(v_ds_gd_chot_lai, m_us_gd_lich_tt_lai_goc.dcID_TRAI_PHIEU, m_us_gd_lich_tt_lai_goc.datNGAY);
 
             IP.Core.IPWordReport.CWordReport v_obj_word_rpt = new CWordReport("f700_TB TCPH Dot Thanh Toan.doc");
+            US_V_DM_TO_CHUC_PHAT_HANH v_dm_to_chuc_phat_hanh = new US_V_DM_TO_CHUC_PHAT_HANH(m_us_v_trai_phieu.dcID_TO_CHUC_PHAT_HANH);
             //v_obj_word_rpt.AddFindAndReplace("<NGAY_CAP_NHAT_LAI_SUAT>", CIPConvert.ToStr(m_us_gd_lich_tt_lai_goc.datNGAY));
             //v_obj_word_rpt.AddFindAndReplace("<TEN_TRAI_PHIEU>", m_us_trai_phieu.strTEN_TRAI_PHIEU);
+            v_obj_word_rpt.AddFindAndReplace("<TO_CHUC_PHAT_HANH>", v_dm_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HANH);
+            v_obj_word_rpt.AddFindAndReplace("<TEN_TRAI_PHIEU>", m_us_v_trai_phieu.strTEN_TRAI_PHIEU);
             v_obj_word_rpt.AddFindAndReplace("<MENH_GIA>", m_txt_menh_gia.Text + "VNĐ");
             v_obj_word_rpt.AddFindAndReplace("<NGAY_PHAT_HANH>", m_txt_ngay_phat_hanh.Text);
             v_obj_word_rpt.AddFindAndReplace("<NGAY_DAO_HAN>", m_txt_ngay_dao_han.Text);
@@ -392,9 +395,23 @@ namespace BondApp
             v_obj_word_rpt.AddFindAndReplace("<KY_HAN>", m_txt_ky_han.Text + " năm"); // Can phai sua
             v_obj_word_rpt.AddFindAndReplace("<KY_TINH_LAI>", m_txt_ky_tinh_lai.Text + " tháng");
             v_obj_word_rpt.AddFindAndReplace("<LAI_SUAT>", m_txt_lai_suat.Text);
-            v_obj_word_rpt.AddFindAndReplace("<NGAY_THANH_TOAN>", CIPConvert.ToStr(v_ds_gd_chot_lai.Tables["GD_CHOT_LAI"].Rows[0]["NGAY_THANH_TOAN"]));
+            v_obj_word_rpt.AddFindAndReplace("<NGAY_THANH_TOAN_LAI>", CIPConvert.ToStr(v_ds_gd_chot_lai.Tables["GD_CHOT_LAI"].Rows[0]["NGAY_THANH_TOAN"]));
             v_obj_word_rpt.AddFindAndReplace("<MUC_DICH>", CIPConvert.ToStr(v_ds_gd_chot_lai.Tables["GD_CHOT_LAI"].Rows[0]["MUC_DICH"].ToString()));
-            //v_obj_word_rpt.AddFindAndReplace("<NGAY_CHOT_DANH_SACH>", CIPConvert.ToStr(v_ds_gd_chot_lai.Tables["GD_CHOT_LAI"].Rows[0]["NGAY_CHOT_LAI"]));
+
+            US_V_DM_TRAI_CHU_CHOT_LAI v_us_gd_trai_chu_chot_lai = new US_V_DM_TRAI_CHU_CHOT_LAI();
+            DS_V_DM_TRAI_CHU_CHOT_LAI v_ds_gd_trai_chu_chot_lai = new DS_V_DM_TRAI_CHU_CHOT_LAI();
+            v_us_gd_trai_chu_chot_lai.FillDatasetByIdChotLai(v_ds_gd_trai_chu_chot_lai, v_ds_gd_chot_lai.Tables["GD_CHOT_LAI"].Rows[0]["ID"].ToString());
+            decimal v_d_sum = 0;
+            foreach (DataRow v_dr in v_ds_gd_trai_chu_chot_lai.V_DM_TRAI_CHU_CHOT_LAI.Rows)
+            {
+                v_d_sum += CIPConvert.ToDecimal(v_dr["SO_TIEN_LAI"]);
+            }
+            v_obj_word_rpt.AddFindAndReplace("<TONG_SO_TIEN_PHAI_THANH_TOAN>", CIPConvert.ToStr(v_d_sum, "#,###") + " VNĐ");
+
+            v_obj_word_rpt.AddFindAndReplace("<NGAY_CHOT_DANH_SACH>", CIPConvert.ToStr(v_ds_gd_chot_lai.Tables["GD_CHOT_LAI"].Rows[0]["NGAY_CHOT_LAI"]));
+            v_obj_word_rpt.AddFindAndReplace("<SO_TAI_KHOAN>", v_dm_to_chuc_phat_hanh.strSO_TAI_KHOAN);
+            v_obj_word_rpt.AddFindAndReplace("<TEN_NGAN_HANG>", v_dm_to_chuc_phat_hanh.strMO_TAI_NGAN_HANG);
+            v_obj_word_rpt.AddFindAndReplace("<SO_NGAY_TRA_LAI>", CIPConvert.ToStr(m_us_v_trai_phieu.dcSO_NGAY_TCPH_CHUYEN_TIEN_TRUOC, "#,###"));
             v_obj_word_rpt.Export2Word(true);
         }
 
