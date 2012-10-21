@@ -158,7 +158,7 @@ namespace BondApp.ChucNang
         private void load_data_2_grid()
         {
             m_ds_gd_lich_tt_lai_goc = new DS_GD_LICH_THANH_TOAN_LAI_GOC();
-            m_us_gd_lich_tt_lai_goc.FillDatasetLichSUuLaiSuatByIDTraiPhieu(m_ds_gd_lich_tt_lai_goc, m_us_v_trai_phieu.dcID);
+            m_us_gd_lich_tt_lai_goc.FillDatasetLichSUuLaiSuatThoaThuanByIDTraiPhieu(m_ds_gd_lich_tt_lai_goc, m_us_v_trai_phieu.dcID);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds_gd_lich_tt_lai_goc, m_fg, m_obj_trans);
             m_fg.Redraw = true;
