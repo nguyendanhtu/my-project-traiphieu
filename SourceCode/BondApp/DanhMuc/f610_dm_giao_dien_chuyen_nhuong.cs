@@ -34,9 +34,8 @@ namespace BondApp
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         internal SIS.Controls.Button.SiSButton m_cmd_delete;
         internal SIS.Controls.Button.SiSButton m_cmd_update;
-        internal SIS.Controls.Button.SiSButton m_cmd_insert;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
-        internal SIS.Controls.Button.SiSButton m_cmd_view;
+        internal SIS.Controls.Button.SiSButton m_cmd_bao_cao;
         private GroupBox m_grb_thong_tin_ban_hang;
         private ComboBox m_cbo_trai_phieu;
         private Label m_lbl_nhom_hang;
@@ -47,6 +46,8 @@ namespace BondApp
         private Label m_lbl_title;
         private C1FlexGrid m_fg;
         internal SIS.Controls.Button.SiSButton m_cmd_duyet_chuyen_nhuong;
+        private ComboBox m_cbb_trang_thai_cn;
+        private Label label3;
         private System.ComponentModel.IContainer components;
 
         public f610_dm_giao_dien_chuyen_nhuong()
@@ -93,9 +94,8 @@ namespace BondApp
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_duyet_chuyen_nhuong = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_view = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_bao_cao = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_grb_thong_tin_ban_hang = new System.Windows.Forms.GroupBox();
@@ -107,6 +107,8 @@ namespace BondApp
             this.m_dat_from_date = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.label3 = new System.Windows.Forms.Label();
+            this.m_cbb_trang_thai_cn = new System.Windows.Forms.ComboBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.m_grb_thong_tin_ban_hang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -142,9 +144,8 @@ namespace BondApp
             // m_pnl_out_place_dm
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_duyet_chuyen_nhuong);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_bao_cao);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -162,26 +163,11 @@ namespace BondApp
             this.m_cmd_duyet_chuyen_nhuong.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_duyet_chuyen_nhuong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet_chuyen_nhuong.Image")));
             this.m_cmd_duyet_chuyen_nhuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_duyet_chuyen_nhuong.Location = new System.Drawing.Point(540, 4);
+            this.m_cmd_duyet_chuyen_nhuong.Location = new System.Drawing.Point(628, 4);
             this.m_cmd_duyet_chuyen_nhuong.Name = "m_cmd_duyet_chuyen_nhuong";
             this.m_cmd_duyet_chuyen_nhuong.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_duyet_chuyen_nhuong.TabIndex = 22;
             this.m_cmd_duyet_chuyen_nhuong.Text = "&Duyệt";
-            // 
-            // m_cmd_insert
-            // 
-            this.m_cmd_insert.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_insert.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_insert.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_insert.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_insert.ImageIndex = 2;
-            this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(628, 4);
-            this.m_cmd_insert.Name = "m_cmd_insert";
-            this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_insert.TabIndex = 12;
-            this.m_cmd_insert.Text = "&Thêm";
             // 
             // m_cmd_update
             // 
@@ -198,20 +184,20 @@ namespace BondApp
             this.m_cmd_update.TabIndex = 13;
             this.m_cmd_update.Text = "&Sửa";
             // 
-            // m_cmd_view
+            // m_cmd_bao_cao
             // 
-            this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_view.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_view.ImageIndex = 18;
-            this.m_cmd_view.ImageList = this.ImageList;
-            this.m_cmd_view.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_view.Name = "m_cmd_view";
-            this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_view.TabIndex = 21;
-            this.m_cmd_view.Text = "Xem";
+            this.m_cmd_bao_cao.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_bao_cao.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_bao_cao.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_bao_cao.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_bao_cao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_bao_cao.ImageIndex = 18;
+            this.m_cmd_bao_cao.ImageList = this.ImageList;
+            this.m_cmd_bao_cao.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_bao_cao.Name = "m_cmd_bao_cao";
+            this.m_cmd_bao_cao.Size = new System.Drawing.Size(103, 28);
+            this.m_cmd_bao_cao.TabIndex = 21;
+            this.m_cmd_bao_cao.Text = "Suất báo cáo";
             // 
             // m_cmd_delete
             // 
@@ -245,6 +231,8 @@ namespace BondApp
             // 
             // m_grb_thong_tin_ban_hang
             // 
+            this.m_grb_thong_tin_ban_hang.Controls.Add(this.m_cbb_trang_thai_cn);
+            this.m_grb_thong_tin_ban_hang.Controls.Add(this.label3);
             this.m_grb_thong_tin_ban_hang.Controls.Add(this.m_cbo_trai_phieu);
             this.m_grb_thong_tin_ban_hang.Controls.Add(this.m_lbl_nhom_hang);
             this.m_grb_thong_tin_ban_hang.Controls.Add(this.m_dat_to_date);
@@ -265,7 +253,7 @@ namespace BondApp
             this.m_cbo_trai_phieu.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.m_cbo_trai_phieu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_trai_phieu.FormattingEnabled = true;
-            this.m_cbo_trai_phieu.Location = new System.Drawing.Point(243, 65);
+            this.m_cbo_trai_phieu.Location = new System.Drawing.Point(84, 65);
             this.m_cbo_trai_phieu.MaxDropDownItems = 5;
             this.m_cbo_trai_phieu.Name = "m_cbo_trai_phieu";
             this.m_cbo_trai_phieu.Size = new System.Drawing.Size(483, 21);
@@ -274,7 +262,7 @@ namespace BondApp
             // m_lbl_nhom_hang
             // 
             this.m_lbl_nhom_hang.AutoSize = true;
-            this.m_lbl_nhom_hang.Location = new System.Drawing.Point(165, 68);
+            this.m_lbl_nhom_hang.Location = new System.Drawing.Point(6, 68);
             this.m_lbl_nhom_hang.Name = "m_lbl_nhom_hang";
             this.m_lbl_nhom_hang.Size = new System.Drawing.Size(72, 13);
             this.m_lbl_nhom_hang.TabIndex = 30;
@@ -338,6 +326,27 @@ namespace BondApp
             this.m_fg.Size = new System.Drawing.Size(984, 397);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 35;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(669, 68);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "Trạng thái";
+            // 
+            // m_cbb_trang_thai_cn
+            // 
+            this.m_cbb_trang_thai_cn.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_cbb_trang_thai_cn.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.m_cbb_trang_thai_cn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbb_trang_thai_cn.FormattingEnabled = true;
+            this.m_cbb_trang_thai_cn.Location = new System.Drawing.Point(747, 65);
+            this.m_cbb_trang_thai_cn.MaxDropDownItems = 5;
+            this.m_cbb_trang_thai_cn.Name = "m_cbb_trang_thai_cn";
+            this.m_cbb_trang_thai_cn.Size = new System.Drawing.Size(122, 21);
+            this.m_cbb_trang_thai_cn.TabIndex = 31;
             // 
             // f610_dm_giao_dien_chuyen_nhuong
             // 
@@ -405,12 +414,20 @@ namespace BondApp
                 , NGAY_VAO_SO = 13            
 
         }
+
+        public enum eFormMode
+        {
+            DANH_SACH_CHUYEN_NHUONG
+                ,
+            DUYET_CHUYEN_NHUONG                
+        }
         #endregion
 
         #region Members
         ITransferDataRow m_obj_trans;
         DS_V_GD_CHUYEN_NHUONG m_ds = new DS_V_GD_CHUYEN_NHUONG();
-        US_V_GD_CHUYEN_NHUONG m_us = new US_V_GD_CHUYEN_NHUONG();       
+        US_V_GD_CHUYEN_NHUONG m_us = new US_V_GD_CHUYEN_NHUONG();
+        eFormMode m_e_form_mode = eFormMode.DANH_SACH_CHUYEN_NHUONG;
         #endregion
 
         #region Private Methods
@@ -428,7 +445,24 @@ namespace BondApp
         private void set_initial_form_load()
         {
             m_obj_trans = get_trans_object(m_fg);            
-            load_data_2_grid();            
+            load_data_2_grid();
+            switch (m_e_form_mode)
+            {
+                case eFormMode.DANH_SACH_CHUYEN_NHUONG:
+                    m_cmd_bao_cao.Visible = true;
+                    m_cmd_delete.Visible = true;
+                    m_cmd_duyet_chuyen_nhuong.Visible = false;
+                    m_cmd_update.Visible = true;
+                    break;
+                case eFormMode.DUYET_CHUYEN_NHUONG:
+                    m_cmd_bao_cao.Visible = false;
+                    m_cmd_delete.Visible = false;
+                    m_cmd_duyet_chuyen_nhuong.Visible = true;
+                    m_cmd_update.Visible = false;
+                    break;
+                default:
+                    break;
+            }
         }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
@@ -457,7 +491,7 @@ namespace BondApp
         {
             m_ds = new DS_V_GD_CHUYEN_NHUONG();      
             US_CM_DM_TU_DIEN v_tu_dien;
-            m_us.fill_dataset_by_date_and_trai_phieu(m_ds,m_dat_from_date.Value, m_dat_to_date.Value,CIPConvert.ToDecimal(m_cbo_trai_phieu.SelectedValue));
+            m_us.fill_dataset_by_date_and_trai_phieu_and_trang_thai(m_ds,m_dat_from_date.Value, m_dat_to_date.Value,CIPConvert.ToDecimal(m_cbo_trai_phieu.SelectedValue), CIPConvert.ToDecimal(m_cbb_trang_thai_cn.SelectedValue));
             //m_us.FillDataset(m_ds);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
@@ -484,6 +518,23 @@ namespace BondApp
             m_cbo_trai_phieu.DisplayMember = DM_TRAI_PHIEU.TEN_TRAI_PHIEU;
             m_cbo_trai_phieu.DataSource = v_ds_dm_trai_phieu.DM_TRAI_PHIEU;
         }
+        private void load_cbb_trang_thai_chuyen_nhuong()
+        {
+            US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
+            DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
+            v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds(CM_DM_DS_LOAI_TU_DIEN.TRANG_THAI_GD, v_ds_cm_dm_tu_dien);
+            v_ds_cm_dm_tu_dien.EnforceConstraints = false;
+
+            DataRow v_dr = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN.NewCM_DM_TU_DIENRow();
+            v_dr[CM_DM_TU_DIEN.ID] = -1;
+            v_dr[CM_DM_TU_DIEN.TEN] = "Tất cả";
+            v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
+
+            m_cbb_trang_thai_cn.ValueMember = CM_DM_TU_DIEN.ID;
+            m_cbb_trang_thai_cn.DisplayMember = CM_DM_TU_DIEN.TEN;
+            m_cbb_trang_thai_cn.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
+        }
+
         private void Load_data_2_dat_from_to()
         {
             m_dat_from_date.Value = DateTime.Today.AddDays(-15);
@@ -504,15 +555,7 @@ namespace BondApp
             DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
             i_us.Me2DataRow(v_dr);
             m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
-        }
-
-
-        private void insert_v_gd_chuyen_nhuong()
-        {
-            f600_giao_dich_chuyen_nhuong v_fm600 = new f600_giao_dich_chuyen_nhuong();
-            v_fm600.display_lap_chuyen_nhuong();           
-            load_data_2_grid();
-        }
+        }        
 
         private void update_v_gd_chuyen_nhuong()
         {
@@ -575,20 +618,19 @@ namespace BondApp
             v_fm600.display_duyet_chuyen_nhuong(m_us.dcID);
             load_data_2_grid();
         }
-        private void Enabled_btt_duyet_voi_nhung_gd_chua_duyet()
+
+        private void Enabled_btt_sua_voi_nhung_gd_chua_duyet()
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             grid2us_object(m_us, m_fg.Row);
             if (m_us.dcID_TRANG_THAI_CHUYEN_NHUONG == List_trang_thai.Da_Duyet)
             {
-                m_cmd_duyet_chuyen_nhuong.Enabled = false;
-                m_cmd_update.Enabled = false;
+                m_cmd_update.Enabled = false;                
                 return;
             }
             else
-            {
-                m_cmd_duyet_chuyen_nhuong.Enabled = true;
+            {                
                 m_cmd_update.Enabled = true;
             }
         }
@@ -597,24 +639,37 @@ namespace BondApp
         #region Events
         private void set_define_events()
         {
-            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-            m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);            
             m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-            m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_cmd_bao_cao.Click += new EventHandler(m_cmd_bao_cao_Click);
             m_cmd_duyet_chuyen_nhuong.Click += new EventHandler(m_cmd_duyet_chuyen_nhuong_Click);
-            m_cbo_trai_phieu.SelectedIndexChanged += new EventHandler(m_cbo_trai_phieu_SelectedIndexChanged);            
+            m_cbo_trai_phieu.SelectedIndexChanged += new EventHandler(m_cbo_trai_phieu_SelectedIndexChanged);
+            m_cbb_trang_thai_cn.SelectedIndexChanged += new EventHandler(m_cbb_trang_thai_cn_SelectedIndexChanged);
             m_dat_from_date.ValueChanged += new EventHandler(m_dat_from_date_ValueChanged);
             m_dat_to_date.ValueChanged += new EventHandler(m_dat_to_date_ValueChanged);
             m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
             m_fg.MouseClick += new MouseEventHandler(m_fg_MouseClick);
         }
 
+        void m_cbb_trang_thai_cn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
         void m_fg_MouseClick(object sender, MouseEventArgs e)
         {
             try
             {
-                Enabled_btt_duyet_voi_nhung_gd_chua_duyet();
+                Enabled_btt_sua_voi_nhung_gd_chua_duyet();
             }
             catch (Exception v_e)
             {
@@ -709,19 +764,7 @@ namespace BondApp
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
-        }
-
-        private void m_cmd_insert_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                insert_v_gd_chuyen_nhuong();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
+        }        
 
         private void m_cmd_update_Click(object sender, EventArgs e)
         {
@@ -747,7 +790,7 @@ namespace BondApp
             }
         }
 
-        private void m_cmd_view_Click(object sender, EventArgs e)
+        private void m_cmd_bao_cao_Click(object sender, EventArgs e)
         {
             try
             {
