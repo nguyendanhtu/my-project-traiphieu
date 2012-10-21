@@ -370,13 +370,21 @@ namespace BondApp
 
         #region Public Interface
         public void display()
-        {            
+        {
+            m_e_form_mode = eFormMode.DANH_SACH_CHUYEN_NHUONG;
             this.ShowDialog();
         }
         public void display_theo_trai_phieu(decimal ip_id_trai_phieu)
         {
             m_cbo_trai_phieu.SelectedValue = ip_id_trai_phieu;
+            m_e_form_mode = eFormMode.DANH_SACH_CHUYEN_NHUONG;
             this.ShowDialog();            
+        }
+
+        public void display_duyet_gd(decimal ip_id_trai_phieu)
+        {            
+            m_e_form_mode = eFormMode.DUYET_CHUYEN_NHUONG;
+            this.ShowDialog();
         }
         #endregion
 
