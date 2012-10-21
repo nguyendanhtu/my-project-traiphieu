@@ -261,6 +261,9 @@
     <Compile Include="BaoCao\f655_danh_sach_chot_lai.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BaoCao\f658_bao_cao_chot_danh_sach_nguoi_so_huu_trai_phieu_theo_yeu_cau.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="BaoCao\f659_bao_cao_tinh_hinh_phong_toa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -452,6 +455,9 @@
     <EmbeddedResource Include="BaoCao\f655_danh_sach_chot_lai.resx">
       <DependentUpon>f655_danh_sach_chot_lai.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f658_bao_cao_chot_danh_sach_nguoi_so_huu_trai_phieu_theo_yeu_cau.resx">
+      <DependentUpon>f658_bao_cao_chot_danh_sach_nguoi_so_huu_trai_phieu_theo_yeu_cau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f659_bao_cao_tinh_hinh_phong_toa.resx">
       <DependentUpon>f659_bao_cao_tinh_hinh_phong_toa.cs</DependentUpon>
