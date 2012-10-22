@@ -92,6 +92,26 @@ namespace BondApp.DanhMuc
             {
                 return false;
             }
+            if (!CValidateTextBox.IsValid(m_txt_tong_so_luong_tp, DataType.NumberType, allowNull.NO, true))
+            {
+                return false;
+            }
+            if (!CValidateTextBox.IsValid(m_txt_tong_gia_tri, DataType.NumberType, allowNull.NO, true))
+            {
+                return false;
+            }
+            if (!CValidateTextBox.IsValid(m_txt_ghi_chu, DataType.StringType, allowNull.YES, true))
+            {
+                return false;
+            }
+            if (!CValidateTextBox.IsValid(m_txt_ty_le_phi_chuyen_nhuong, DataType.NumberType, allowNull.NO, true))
+            {
+                return false;
+            }
+            if (!CValidateTextBox.IsValid(m_txt_ty_le_phi_phong_giai_toa, DataType.NumberType, allowNull.NO, true))
+            {
+                return false;
+            }
             return true;
         }
         private void load_data_2_cbo_to_chuc_phat_hanh()
