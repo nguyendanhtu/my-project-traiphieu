@@ -64,11 +64,13 @@ namespace BondApp
         private TextBox m_txt_ten_trai_phieu;
         private Label m_lbl_lai_suat;
         private TextBox m_txt_ma_trai_phieu;
-        private C1FlexGrid m_fg;
         internal SIS.Controls.Button.SiSButton m_cmd_export_excel;
         private ComboBox m_cbo_ky_tinh_lai;
         private Label label5;
         internal SIS.Controls.Button.SiSButton m_cmd_yeu_cau_ngan_hang_thanh_toan;
+        private Label label6;
+        private TextBox m_txt_ngay_chot;
+        private C1FlexGrid m_fg;
 		private System.ComponentModel.IContainer components;
 
 		public f658_bao_cao_chot_danh_sach_nguoi_so_huu_trai_phieu_theo_yeu_cau()
@@ -110,10 +112,10 @@ namespace BondApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f658_bao_cao_chot_danh_sach_nguoi_so_huu_trai_phieu_theo_yeu_cau));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_cmd_export_excel = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.m_cbo_ky_tinh_lai = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.m_cmd_chon_trai_phieu = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -139,10 +141,12 @@ namespace BondApp
             this.m_txt_ten_trai_phieu = new System.Windows.Forms.TextBox();
             this.m_lbl_lai_suat = new System.Windows.Forms.Label();
             this.m_txt_ma_trai_phieu = new System.Windows.Forms.TextBox();
-            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_cbo_ky_tinh_lai = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.m_txt_ngay_chot = new System.Windows.Forms.TextBox();
             this.m_cmd_yeu_cau_ngan_hang_thanh_toan = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_export_excel = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -181,41 +185,11 @@ namespace BondApp
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_export_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 432);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 481);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(958, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
-            // 
-            // m_cmd_export_excel
-            // 
-            this.m_cmd_export_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_export_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_export_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_export_excel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_export_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_export_excel.ImageIndex = 19;
-            this.m_cmd_export_excel.ImageList = this.ImageList;
-            this.m_cmd_export_excel.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_export_excel.Name = "m_cmd_export_excel";
-            this.m_cmd_export_excel.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_export_excel.TabIndex = 23;
-            this.m_cmd_export_excel.Text = "Xuất excel";
-            // 
-            // m_cmd_exit
-            // 
-            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_exit.ImageIndex = 12;
-            this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(866, 4);
-            this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 11;
-            this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // m_lbl_header
             // 
@@ -231,6 +205,8 @@ namespace BondApp
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.m_txt_ngay_chot);
             this.groupBox1.Controls.Add(this.m_cbo_ky_tinh_lai);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.m_cmd_chon_trai_phieu);
@@ -261,10 +237,29 @@ namespace BondApp
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 45);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(958, 135);
+            this.groupBox1.Size = new System.Drawing.Size(958, 168);
             this.groupBox1.TabIndex = 59;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin trái phiếu";
+            // 
+            // m_cbo_ky_tinh_lai
+            // 
+            this.m_cbo_ky_tinh_lai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_ky_tinh_lai.FormattingEnabled = true;
+            this.m_cbo_ky_tinh_lai.Location = new System.Drawing.Point(134, 128);
+            this.m_cbo_ky_tinh_lai.Name = "m_cbo_ky_tinh_lai";
+            this.m_cbo_ky_tinh_lai.Size = new System.Drawing.Size(120, 21);
+            this.m_cbo_ky_tinh_lai.TabIndex = 63;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(49, 131);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(19, 13);
+            this.label5.TabIndex = 62;
+            this.label5.Text = "Kỳ";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // m_cmd_chon_trai_phieu
             // 
@@ -426,7 +421,7 @@ namespace BondApp
             // m_lbl_ngay_phat_hanh
             // 
             this.m_lbl_ngay_phat_hanh.AutoSize = true;
-            this.m_lbl_ngay_phat_hanh.Location = new System.Drawing.Point(342, 50);
+            this.m_lbl_ngay_phat_hanh.Location = new System.Drawing.Point(342, 54);
             this.m_lbl_ngay_phat_hanh.Name = "m_lbl_ngay_phat_hanh";
             this.m_lbl_ngay_phat_hanh.Size = new System.Drawing.Size(83, 13);
             this.m_lbl_ngay_phat_hanh.TabIndex = 37;
@@ -506,34 +501,24 @@ namespace BondApp
             this.m_txt_ma_trai_phieu.Size = new System.Drawing.Size(120, 20);
             this.m_txt_ma_trai_phieu.TabIndex = 44;
             // 
-            // m_fg
+            // label6
             // 
-            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 180);
-            this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(958, 252);
-            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 60;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(369, 135);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.TabIndex = 64;
+            this.label6.Text = "Ngày chốt";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // m_cbo_ky_tinh_lai
+            // m_txt_ngay_chot
             // 
-            this.m_cbo_ky_tinh_lai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_ky_tinh_lai.FormattingEnabled = true;
-            this.m_cbo_ky_tinh_lai.Location = new System.Drawing.Point(680, 102);
-            this.m_cbo_ky_tinh_lai.Name = "m_cbo_ky_tinh_lai";
-            this.m_cbo_ky_tinh_lai.Size = new System.Drawing.Size(74, 21);
-            this.m_cbo_ky_tinh_lai.TabIndex = 63;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(655, 105);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(19, 13);
-            this.label5.TabIndex = 62;
-            this.label5.Text = "Kỳ";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_txt_ngay_chot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.m_txt_ngay_chot.Location = new System.Drawing.Point(431, 132);
+            this.m_txt_ngay_chot.Name = "m_txt_ngay_chot";
+            this.m_txt_ngay_chot.ReadOnly = true;
+            this.m_txt_ngay_chot.Size = new System.Drawing.Size(130, 20);
+            this.m_txt_ngay_chot.TabIndex = 65;
             // 
             // m_cmd_yeu_cau_ngan_hang_thanh_toan
             // 
@@ -550,10 +535,50 @@ namespace BondApp
             this.m_cmd_yeu_cau_ngan_hang_thanh_toan.TabIndex = 24;
             this.m_cmd_yeu_cau_ngan_hang_thanh_toan.Text = "Thông báo yêu cầu ngân hàng thanh toán";
             // 
+            // m_cmd_export_excel
+            // 
+            this.m_cmd_export_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_export_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_export_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_export_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_export_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_export_excel.ImageIndex = 19;
+            this.m_cmd_export_excel.ImageList = this.ImageList;
+            this.m_cmd_export_excel.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_export_excel.Name = "m_cmd_export_excel";
+            this.m_cmd_export_excel.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_export_excel.TabIndex = 23;
+            this.m_cmd_export_excel.Text = "Xuất excel";
+            // 
+            // m_cmd_exit
+            // 
+            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_exit.ImageIndex = 12;
+            this.m_cmd_exit.ImageList = this.ImageList;
+            this.m_cmd_exit.Location = new System.Drawing.Point(866, 4);
+            this.m_cmd_exit.Name = "m_cmd_exit";
+            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_exit.TabIndex = 11;
+            this.m_cmd_exit.Text = "Thoát (Esc)";
+            // 
+            // m_fg
+            // 
+            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_fg.Location = new System.Drawing.Point(0, 213);
+            this.m_fg.Name = "m_fg";
+            this.m_fg.Size = new System.Drawing.Size(958, 268);
+            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
+            this.m_fg.TabIndex = 60;
+            // 
             // f658_bao_cao_chot_danh_sach_nguoi_so_huu_trai_phieu_theo_yeu_cau
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(958, 468);
+            this.ClientSize = new System.Drawing.Size(958, 517);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_lbl_header);
@@ -584,17 +609,24 @@ namespace BondApp
 		#endregion
 
 		#region Data Structure
-		private enum e_col_Number{
-			CMT_GIAY_DKKD = 3
-,TEN_TRAI_CHU = 2
-,TONG_SO_DU = 7
-,NGAY_CAP_CMT = 4
-,MA_TRAI_CHU = 1
-,DIA_CHI = 6
-,MENH_GIA = 8
-,NOI_CAP_CMT = 5
+        private enum e_col_Number
+        {
+            CMT_GIAY_DKKD = 3
+,
+            TEN_TRAI_CHU = 2
+                ,
+            TONG_SO_DU = 7
+                ,
+            NGAY_CAP_CMT = 4
+                ,
+            MA_TRAI_CHU = 1
+                ,
+            DIA_CHI = 6
+                ,
+            ID_TRAI_PHIEU = 8
+                , NOI_CAP_CMT = 5
 
-		}
+        }
 
         private enum e_form_mode
         {
@@ -604,9 +636,9 @@ namespace BondApp
 		#endregion
 
 		#region Members
-		ITransferDataRow m_obj_trans;		
-		DS_V_DM_TRAI_CHU m_ds = new DS_V_DM_TRAI_CHU();
-		US_V_DM_TRAI_CHU m_us = new US_V_DM_TRAI_CHU();
+		ITransferDataRow m_obj_trans;
+        DS_V_DM_TRAI_CHU_CHOT_LAI m_ds = new DS_V_DM_TRAI_CHU_CHOT_LAI();
+        US_V_DM_TRAI_CHU_CHOT_LAI m_us = new US_V_DM_TRAI_CHU_CHOT_LAI();
         US_V_DM_TRAI_PHIEU m_us_trai_phieu = new US_V_DM_TRAI_PHIEU();
         e_form_mode m_form_mode = e_form_mode.CHOT_DANH_SACH_NGUOI_SO_HUU;
 		#endregion
@@ -636,29 +668,29 @@ namespace BondApp
 			//load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
-			Hashtable v_htb = new Hashtable();
-			v_htb.Add(V_DM_TRAI_CHU.CMT_GIAY_DKKD, e_col_Number.CMT_GIAY_DKKD);
-			v_htb.Add(V_DM_TRAI_CHU.TEN_TRAI_CHU, e_col_Number.TEN_TRAI_CHU);
-			v_htb.Add(V_DM_TRAI_CHU.TONG_SO_DU, e_col_Number.TONG_SO_DU);
-			v_htb.Add(V_DM_TRAI_CHU.NGAY_CAP_CMT, e_col_Number.NGAY_CAP_CMT);
-			v_htb.Add(V_DM_TRAI_CHU.MA_TRAI_CHU, e_col_Number.MA_TRAI_CHU);
-			v_htb.Add(V_DM_TRAI_CHU.DIA_CHI, e_col_Number.DIA_CHI);
-            v_htb.Add(V_DM_TRAI_CHU.MENH_GIA, e_col_Number.MENH_GIA);
-			v_htb.Add(V_DM_TRAI_CHU.NOI_CAP_CMT, e_col_Number.NOI_CAP_CMT);
-            							
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_DM_TRAI_CHU.NewRow());
+            Hashtable v_htb = new Hashtable();
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.CMT_GIAY_DKKD, e_col_Number.CMT_GIAY_DKKD);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.TEN_TRAI_CHU, e_col_Number.TEN_TRAI_CHU);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.TONG_SO_DU, e_col_Number.TONG_SO_DU);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.NGAY_CAP_CMT, e_col_Number.NGAY_CAP_CMT);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.MA_TRAI_CHU, e_col_Number.MA_TRAI_CHU);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.DIA_CHI, e_col_Number.DIA_CHI);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.ID_TRAI_PHIEU, e_col_Number.ID_TRAI_PHIEU);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.NOI_CAP_CMT, e_col_Number.NOI_CAP_CMT);
+
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_DM_TRAI_CHU_CHOT_LAI.NewRow());
             return v_obj_trans;	
 		}
-		private void load_data_2_grid(){						
-			m_ds = new DS_V_DM_TRAI_CHU();
-            m_us.FillDatasetByIDTraiPhieu(m_ds, m_us_trai_phieu.dcID);
-            foreach (DataRow v_dr in m_ds.V_DM_TRAI_CHU.Rows)
+		private void load_data_2_grid(){
+            m_ds = new DS_V_DM_TRAI_CHU_CHOT_LAI();
+            //load_data_2_cbo();
+            m_us.FillDatasetByIDTraiPhieuAndNgayChotLai(m_ds, m_us_trai_phieu.dcID, CIPConvert.ToDatetime(m_txt_ngay_chot.Text));
+            foreach (DataRow v_dr in m_ds.V_DM_TRAI_CHU_CHOT_LAI.Rows)
             {
-                v_dr["MENH_GIA"] = m_us_trai_phieu.dcMENH_GIA * CIPConvert.ToDecimal(v_dr["TONG_SO_DU"]);
+                v_dr["ID_TRAI_PHIEU"] = m_us_trai_phieu.dcMENH_GIA * CIPConvert.ToDecimal(v_dr["TONG_SO_DU"]);
             }
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            load_data_2_cbo();
 			m_fg.Redraw = true;
 		}
 
@@ -694,11 +726,22 @@ namespace BondApp
                 if (v_i_current != 0)
                 {
                     m_cbo_ky_tinh_lai.SelectedIndex = v_i_current - 1;
+                    load_ngay_chot_theo_ky(v_i_current);
                 }
             }
         }
 
-		private void grid2us_object(US_V_DM_TRAI_CHU i_us
+        private void load_ngay_chot_theo_ky(int i_ky_chot_lai)
+        {
+            US_HT_THAM_SO_HE_THONG v_us_ht = new US_HT_THAM_SO_HE_THONG(ID_THAM_SO_HE_THONG.CHOT_LAI_TRUOC);
+            US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_trai_phieu.dcID_DOT_PHAT_HANH);
+            DateTime v_dat_ngay_chot_tuong_ung = v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH;
+            v_dat_ngay_chot_tuong_ung = v_dat_ngay_chot_tuong_ung.AddMonths(i_ky_chot_lai * (int)m_us_trai_phieu.dcKY_TRA_LAI);
+            v_dat_ngay_chot_tuong_ung = v_dat_ngay_chot_tuong_ung.AddDays(-(int)CIPConvert.ToDecimal(v_us_ht.strGIA_TRI));
+            m_txt_ngay_chot.Text = CIPConvert.ToStr(v_dat_ngay_chot_tuong_ung, "dd/MM/yyyy");
+        }
+
+        private void grid2us_object(US_V_DM_TRAI_CHU_CHOT_LAI i_us
 			, int i_grid_row) {
 			DataRow v_dr;
 			v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
@@ -706,8 +749,8 @@ namespace BondApp
 			i_us.DataRow2Me(v_dr);
 		}
 
-	
-		private void us_object2grid(US_V_DM_TRAI_CHU i_us
+
+        private void us_object2grid(US_V_DM_TRAI_CHU_CHOT_LAI i_us
 			, int i_grid_row) {
 			DataRow v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
 			i_us.Me2DataRow(v_dr);
@@ -747,8 +790,15 @@ namespace BondApp
             if (!m_us_trai_phieu.IsIDNull() && m_us_trai_phieu.dcID != -1)
             {
                 us_trai_phieu_2_form();
+                load_data_2_cbo();
                 load_data_2_grid();
             }
+        }
+
+        private void load_data_theo_ky()
+        {
+            load_ngay_chot_theo_ky(m_cbo_ky_tinh_lai.SelectedIndex + 1);
+            load_data_2_grid();
         }
 
         private void export_excel()
@@ -763,7 +813,7 @@ namespace BondApp
             v_obj_export_excel.AddFindAndReplaceItem("<KY_HAN>", m_txt_ky_han.Text + " năm");
             v_obj_export_excel.AddFindAndReplaceItem("<NGAY_PHAT_HANH>", m_txt_ngay_phat_hanh.Text);
             v_obj_export_excel.AddFindAndReplaceItem("<NGAY_DAO_HAN>", m_txt_ngay_dao_han.Text);
-            v_obj_export_excel.AddFindAndReplaceItem("<NGAY_CHOT>", CIPConvert.ToStr(DateTime.Now, "dd/MM/yyyy"));
+            v_obj_export_excel.AddFindAndReplaceItem("<NGAY_CHOT>", m_txt_ngay_chot.Text);
             v_obj_export_excel.AddFindAndReplaceItem("<LAI_SUAT>", m_txt_lai_suat.Text);
             v_obj_export_excel.FindAndReplace(false);
             v_obj_export_excel.Export2ExcelWithoutFixedRows(m_fg, (int)e_col_Number.MA_TRAI_CHU, m_fg.Cols.Count - 1, false);
@@ -774,11 +824,12 @@ namespace BondApp
         {
             IP.Core.IPWordReport.CWordReport v_obj_word_rpt = new CWordReport("f800_Yeu Cau Ngan Hang Thanh Toan.doc");
             v_obj_word_rpt.AddFindAndReplace("<TEN_TRAI_PHIEU>", m_us_trai_phieu.strTEN_TRAI_PHIEU);
+            v_obj_word_rpt.AddFindAndReplace("<MA_TRAI_PHIEU>", m_us_trai_phieu.strMA_TRAI_PHIEU);
             v_obj_word_rpt.AddFindAndReplace("<NGAY_PHAT_HANH>", m_txt_ngay_phat_hanh.Text);
 
             US_GD_CHOT_LAI v_us = new US_GD_CHOT_LAI();
             DS_GD_CHOT_LAI v_ds = new DS_GD_CHOT_LAI();
-            v_us.FillDSChotLaiByIDTraiPhieuAndNgayChotLai(v_ds, m_us_trai_phieu.dcID, CIPConvert.ToDatetime("25/09/2012"));
+            v_us.FillDSChotLaiByIDTraiPhieuAndNgayChotLai(v_ds, m_us_trai_phieu.dcID, CIPConvert.ToDatetime(m_txt_ngay_chot.Text));
             v_obj_word_rpt.AddFindAndReplace("<DOT_TRA_LAI>", v_ds.GD_CHOT_LAI.Rows[0]["KY_TINH_LAI"].ToString());
             v_obj_word_rpt.AddFindAndReplace("<NGAY_TRA_LAI>", CIPConvert.ToStr(v_ds.GD_CHOT_LAI.Rows[0]["NGAY_THANH_TOAN"]));
             v_obj_word_rpt.AddFindAndReplace("<NGAY_CHOT_DANH_SACH>", CIPConvert.ToStr(v_ds.GD_CHOT_LAI.Rows[0]["NGAY_CHOT_LAI"]));
@@ -790,9 +841,8 @@ namespace BondApp
             m_cmd_chon_trai_phieu.Click += new EventHandler(m_cmd_chon_trai_phieu_Click);
             m_cmd_export_excel.Click += new EventHandler(m_cmd_export_excel_Click);
             m_cmd_yeu_cau_ngan_hang_thanh_toan.Click += new EventHandler(m_cmd_yeu_cau_ngan_hang_thanh_toan_Click);
+            m_cbo_ky_tinh_lai.SelectedIndexChanged += new EventHandler(m_cbo_ky_tinh_lai_SelectedIndexChanged);
 		}
-
-        
         #endregion
         //
 		//
@@ -808,6 +858,18 @@ namespace BondApp
 			}
 		
 		}
+
+        void m_cbo_ky_tinh_lai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_theo_ky();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
         void m_cmd_yeu_cau_ngan_hang_thanh_toan_Click(object sender, EventArgs e)
         {
