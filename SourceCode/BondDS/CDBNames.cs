@@ -17,6 +17,11 @@ namespace BondDS.CDBNames
         public const decimal TRANG_THAI_DANH_MUC = 8;
     }
 
+    public class ID_THAM_SO_HE_THONG
+    {
+        public const decimal CHOT_LAI_TRUOC = 16;
+    }
+
     public class GIOI_HAN_PHI_CHUYEN_NHUONG
     {
         public const decimal PHI_CN_MAX = 14;
