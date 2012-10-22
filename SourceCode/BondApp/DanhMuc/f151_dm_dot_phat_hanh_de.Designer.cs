@@ -34,7 +34,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.m_txt_tong_gia_tri = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.m_cbo_loai_ngay_lam_viec = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -69,7 +69,7 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.m_txt_tong_gia_tri);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.m_cbo_loai_ngay_lam_viec);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -109,7 +109,7 @@
             // 
             // m_txt_tong_gia_tri
             // 
-            this.m_txt_tong_gia_tri.Location = new System.Drawing.Point(661, 63);
+            this.m_txt_tong_gia_tri.Location = new System.Drawing.Point(661, 60);
             this.m_txt_tong_gia_tri.Name = "m_txt_tong_gia_tri";
             this.m_txt_tong_gia_tri.Size = new System.Drawing.Size(135, 20);
             this.m_txt_tong_gia_tri.TabIndex = 56;
@@ -124,22 +124,22 @@
             this.label9.TabIndex = 55;
             this.label9.Text = "Tổng giá trị trái phiếu";
             // 
-            // comboBox1
+            // m_cbo_loai_ngay_lam_viec
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.m_cbo_loai_ngay_lam_viec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_loai_ngay_lam_viec.FormattingEnabled = true;
+            this.m_cbo_loai_ngay_lam_viec.Items.AddRange(new object[] {
             "Thứ 2 đến thứ 6",
             "Thứ 2 đến thứ 7"});
-            this.comboBox1.Location = new System.Drawing.Point(661, 105);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(171, 21);
-            this.comboBox1.TabIndex = 54;
+            this.m_cbo_loai_ngay_lam_viec.Location = new System.Drawing.Point(661, 105);
+            this.m_cbo_loai_ngay_lam_viec.Name = "m_cbo_loai_ngay_lam_viec";
+            this.m_cbo_loai_ngay_lam_viec.Size = new System.Drawing.Size(171, 21);
+            this.m_cbo_loai_ngay_lam_viec.TabIndex = 54;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(581, 110);
+            this.label7.Location = new System.Drawing.Point(581, 113);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 13);
             this.label7.TabIndex = 53;
@@ -148,7 +148,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(483, 108);
+            this.label6.Location = new System.Drawing.Point(483, 113);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(15, 13);
             this.label6.TabIndex = 52;
@@ -157,7 +157,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(214, 109);
+            this.label5.Location = new System.Drawing.Point(214, 113);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(15, 13);
             this.label5.TabIndex = 51;
@@ -218,7 +218,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(561, 70);
+            this.label1.Location = new System.Drawing.Point(561, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 13);
             this.label1.TabIndex = 44;
@@ -226,7 +226,7 @@
             // 
             // m_txt_menh_gia
             // 
-            this.m_txt_menh_gia.Location = new System.Drawing.Point(405, 66);
+            this.m_txt_menh_gia.Location = new System.Drawing.Point(405, 60);
             this.m_txt_menh_gia.Name = "m_txt_menh_gia";
             this.m_txt_menh_gia.Size = new System.Drawing.Size(135, 20);
             this.m_txt_menh_gia.TabIndex = 43;
@@ -243,7 +243,7 @@
             // 
             // m_txt_tong_so_luong_tp
             // 
-            this.m_txt_tong_so_luong_tp.Location = new System.Drawing.Point(148, 70);
+            this.m_txt_tong_so_luong_tp.Location = new System.Drawing.Point(148, 60);
             this.m_txt_tong_so_luong_tp.Name = "m_txt_tong_so_luong_tp";
             this.m_txt_tong_so_luong_tp.Size = new System.Drawing.Size(120, 20);
             this.m_txt_tong_so_luong_tp.TabIndex = 40;
@@ -252,7 +252,7 @@
             // m_lbl_menh_gia
             // 
             this.m_lbl_menh_gia.AutoSize = true;
-            this.m_lbl_menh_gia.Location = new System.Drawing.Point(15, 73);
+            this.m_lbl_menh_gia.Location = new System.Drawing.Point(15, 67);
             this.m_lbl_menh_gia.Name = "m_lbl_menh_gia";
             this.m_lbl_menh_gia.Size = new System.Drawing.Size(121, 13);
             this.m_lbl_menh_gia.TabIndex = 39;
@@ -434,7 +434,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox m_cbo_loai_ngay_lam_viec;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox m_txt_tong_gia_tri;
