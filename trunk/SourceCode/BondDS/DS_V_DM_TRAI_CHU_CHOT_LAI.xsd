@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="QuanLyPhatHanhTraiPhieuConnectionString1 (Settings)" DbObjectName="QuanLyPhatHanhTraiPhieu.dbo.V_DM_TRAI_CHU_CHOT_LAI" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, ID_CHOT_LAI, ID_TRAI_CHU, SO_LUONG_TINH_LAI, SO_TIEN_LAI, DA_NHAN_TIEN_YN, NGAY_NHAN_TIEN, TEN_TRAI_CHU, MA_TRAI_CHU, DIA_CHI, MOBILE, FAX, CMT_GIAY_DKKD, NGAY_CAP_CMT, NOI_CAP_CMT, ID_LOAI_TRAI_CHU, ID_NGUOI_DUYET_TC, ID_NGUOI_LAP_TC, ID_TRAI_PHIEU_SO_HUU, SO_TAI_KHOAN, MO_TAI_NGAN_HANG, GHI_CHU1, GHI_CHU2, GHI_CHU3, ID_TRANG_THAI, NGAY_CHOT_LAI, NGAY_THANH_TOAN, ID_TRAI_PHIEU, KY_TINH_LAI, TRANG_THAI_CHOT_LAI, MUC_DICH, GHI_CHU_CHOT_LAI, ID_NGUOI_LAP_CHOT_LAI, ID_NGUOI_DUYET_CHOT_LAI FROM dbo.V_DM_TRAI_CHU_CHOT_LAI</CommandText>
+                    <CommandText>SELECT ID, ID_CHOT_LAI, ID_TRAI_CHU, SO_LUONG_TINH_LAI, SO_TIEN_LAI, DA_NHAN_TIEN_YN, NGAY_NHAN_TIEN, TEN_TRAI_CHU, MA_TRAI_CHU, DIA_CHI, MOBILE, FAX, CMT_GIAY_DKKD, NGAY_CAP_CMT, NOI_CAP_CMT, ID_LOAI_TRAI_CHU, ID_NGUOI_DUYET_TC, ID_NGUOI_LAP_TC, ID_TRAI_PHIEU_SO_HUU, SO_TAI_KHOAN, MO_TAI_NGAN_HANG, GHI_CHU1, GHI_CHU2, GHI_CHU3, ID_TRANG_THAI, NGAY_CHOT_LAI, NGAY_THANH_TOAN, ID_TRAI_PHIEU, KY_TINH_LAI, TRANG_THAI_CHOT_LAI, MUC_DICH, GHI_CHU_CHOT_LAI, ID_NGUOI_LAP_CHOT_LAI, ID_NGUOI_DUYET_CHOT_LAI, TONG_SO_DU, SO_DU_KHA_DUNG FROM dbo.V_DM_TRAI_CHU_CHOT_LAI</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -53,6 +53,8 @@
               <Mapping SourceColumn="GHI_CHU_CHOT_LAI" DataSetColumn="GHI_CHU_CHOT_LAI" />
               <Mapping SourceColumn="ID_NGUOI_LAP_CHOT_LAI" DataSetColumn="ID_NGUOI_LAP_CHOT_LAI" />
               <Mapping SourceColumn="ID_NGUOI_DUYET_CHOT_LAI" DataSetColumn="ID_NGUOI_DUYET_CHOT_LAI" />
+              <Mapping SourceColumn="TONG_SO_DU" DataSetColumn="TONG_SO_DU" />
+              <Mapping SourceColumn="SO_DU_KHA_DUNG" DataSetColumn="SO_DU_KHA_DUNG" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -191,6 +193,8 @@
               </xs:element>
               <xs:element name="ID_NGUOI_LAP_CHOT_LAI" msprop:Generator_ColumnVarNameInTable="columnID_NGUOI_LAP_CHOT_LAI" msprop:Generator_ColumnPropNameInRow="ID_NGUOI_LAP_CHOT_LAI" msprop:Generator_ColumnPropNameInTable="ID_NGUOI_LAP_CHOT_LAIColumn" msprop:Generator_UserColumnName="ID_NGUOI_LAP_CHOT_LAI" type="xs:decimal" />
               <xs:element name="ID_NGUOI_DUYET_CHOT_LAI" msprop:Generator_ColumnVarNameInTable="columnID_NGUOI_DUYET_CHOT_LAI" msprop:Generator_ColumnPropNameInRow="ID_NGUOI_DUYET_CHOT_LAI" msprop:Generator_ColumnPropNameInTable="ID_NGUOI_DUYET_CHOT_LAIColumn" msprop:Generator_UserColumnName="ID_NGUOI_DUYET_CHOT_LAI" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TONG_SO_DU" msprop:Generator_ColumnVarNameInTable="columnTONG_SO_DU" msprop:Generator_ColumnPropNameInRow="TONG_SO_DU" msprop:Generator_ColumnPropNameInTable="TONG_SO_DUColumn" msprop:Generator_UserColumnName="TONG_SO_DU" type="xs:decimal" />
+              <xs:element name="SO_DU_KHA_DUNG" msprop:Generator_ColumnVarNameInTable="columnSO_DU_KHA_DUNG" msprop:Generator_ColumnPropNameInRow="SO_DU_KHA_DUNG" msprop:Generator_ColumnPropNameInTable="SO_DU_KHA_DUNGColumn" msprop:Generator_UserColumnName="SO_DU_KHA_DUNG" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
