@@ -69,8 +69,8 @@ namespace BondApp.DanhMuc
             m_cbo_ten_to_chuc_phat_hanh.SelectedValue = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcID_TO_CHUC_PHAT_HANH);
             m_dat_ngay_phat_hanh.Value = m_us_v_dot_phat_hanh.datNGAY_PHAT_HANH;
             m_txt_ghi_chu.Text = m_us_v_dot_phat_hanh.strGHI_CHU;
-            m_txt_tong_so_luong_tp.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcMENH_GIA,"#,###");
-            m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcKY_TRA_LAI);
+            m_txt_tong_so_luong_tp.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcTONG_SO_LUONG_TRAI_PHIEU);
+            m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcMENH_GIA);
             m_txt_ty_le_phi_chuyen_nhuong.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcTY_LE_PHI_CHUYEN_NHUONG);
             m_txt_ty_le_phi_phong_giai_toa.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcTY_LE_PHI_PHONG_GIAI_TOA);
         }
@@ -94,7 +94,17 @@ namespace BondApp.DanhMuc
             }
             return true;
         }
+        private void load_data_2_cbo_to_chuc_phat_hanh()
+        {
+            US_DM_TO_CHUC_PHAT_HANH v_us_dm_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH();
+            DS_DM_TO_CHUC_PHAT_HANH v_ds_dm_to_chuc_phat_hanh = new DS_DM_TO_CHUC_PHAT_HANH();
 
+            v_us_dm_to_chuc_phat_hanh.FillDataset(v_ds_dm_to_chuc_phat_hanh);
+
+            m_cbo_ten_to_chuc_phat_hanh.ValueMember = DM_TO_CHUC_PHAT_HANH.ID;
+            m_cbo_ten_to_chuc_phat_hanh.DisplayMember = DM_TO_CHUC_PHAT_HANH.TEN_TO_CHUC_PHAT_HANH;
+            m_cbo_ten_to_chuc_phat_hanh.DataSource = v_ds_dm_to_chuc_phat_hanh.DM_TO_CHUC_PHAT_HANH;
+        }
         private void load_data_2_cbo_ngan_hang_quan_ly_tk()
         {
             US_CM_DM_TU_DIEN v_us_dm_tu_dien = new US_CM_DM_TU_DIEN();
@@ -103,6 +113,15 @@ namespace BondApp.DanhMuc
             m_cbo_ngan_hang_quan_ly_tai_khoan.DataSource = (DataTable)v_ds_dm_tu_dien.Tables[0];
             m_cbo_ngan_hang_quan_ly_tai_khoan.DisplayMember = CM_DM_TU_DIEN.TEN;
             m_cbo_ngan_hang_quan_ly_tai_khoan.ValueMember = CM_DM_TU_DIEN.ID;
+        }
+        private void load_data_2_cbo_laoai_ngay_lam_viec()
+        {
+            US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
+            DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
+            v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds("LOAI_NGAY_LAM_VIEC", v_ds_cm_dm_tu_dien);
+            m_cbo_loai_ngay_lam_viec.DataSource = (DataTable)v_ds_cm_dm_tu_dien.Tables[0];
+            m_cbo_loai_ngay_lam_viec.DisplayMember = CM_DM_TU_DIEN.TEN;
+            m_cbo_loai_ngay_lam_viec.ValueMember = CM_DM_TU_DIEN.ID;
         }
         private void save_data()
         {
@@ -127,17 +146,7 @@ namespace BondApp.DanhMuc
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
             this.Close();
         }
-        private void load_data_2_cbo_to_chuc_phat_hanh()
-        {
-            US_DM_TO_CHUC_PHAT_HANH v_us_dm_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH();
-            DS_DM_TO_CHUC_PHAT_HANH v_ds_dm_to_chuc_phat_hanh = new DS_DM_TO_CHUC_PHAT_HANH();
-
-            v_us_dm_to_chuc_phat_hanh.FillDataset(v_ds_dm_to_chuc_phat_hanh);
-
-            m_cbo_ten_to_chuc_phat_hanh.ValueMember = DM_TO_CHUC_PHAT_HANH.ID;
-            m_cbo_ten_to_chuc_phat_hanh.DisplayMember = DM_TO_CHUC_PHAT_HANH.TEN_TO_CHUC_PHAT_HANH;
-            m_cbo_ten_to_chuc_phat_hanh.DataSource = v_ds_dm_to_chuc_phat_hanh.DM_TO_CHUC_PHAT_HANH;
-        }
+        
         #endregion
         #region Events
         private void set_define_events()
@@ -197,7 +206,5 @@ namespace BondApp.DanhMuc
             }
         }
         #endregion
-
-
     }
 }
