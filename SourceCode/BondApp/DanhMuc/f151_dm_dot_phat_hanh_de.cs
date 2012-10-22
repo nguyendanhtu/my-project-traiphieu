@@ -71,6 +71,8 @@ namespace BondApp.DanhMuc
             m_txt_ghi_chu.Text = m_us_v_dot_phat_hanh.strGHI_CHU;
             m_txt_tong_so_luong_tp.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcMENH_GIA,"#,###");
             m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcKY_TRA_LAI);
+            m_txt_ty_le_phi_chuyen_nhuong.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcTY_LE_PHI_CHUYEN_NHUONG);
+            m_txt_ty_le_phi_phong_giai_toa.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcTY_LE_PHI_PHONG_GIAI_TOA);
         }
         private void form_2_us_object(US_V_DM_DOT_PHAT_HANH op_v_us_dot_phat_hanh)
         {
@@ -79,16 +81,13 @@ namespace BondApp.DanhMuc
             op_v_us_dot_phat_hanh.dcMENH_GIA = CIPConvert.ToDecimal(m_txt_menh_gia.Text);
             op_v_us_dot_phat_hanh.dcTONG_GIA_TRI_TRAI_PHIEU_PHAT_HANH = CIPConvert.ToDecimal(m_txt_tong_gia_tri.Text);
             op_v_us_dot_phat_hanh.dcTONG_SO_LUONG_TRAI_PHIEU = CIPConvert.ToDecimal(m_txt_tong_so_luong_tp.Text);
-            //op_v_us_dot_phat_hanh.dcID_DV_KY_TRA_LAI = CIPConvert.ToDecimal(m_cbo_dv_tra_lai.SelectedValue);
             op_v_us_dot_phat_hanh.strGHI_CHU = m_txt_ghi_chu.Text;
+            op_v_us_dot_phat_hanh.dcTY_LE_PHI_CHUYEN_NHUONG = CIPConvert.ToDecimal(m_txt_ty_le_phi_chuyen_nhuong.Text);
+            op_v_us_dot_phat_hanh.dcTY_LE_PHI_PHONG_GIAI_TOA = CIPConvert.ToDecimal(m_txt_ty_le_phi_chuyen_nhuong.Text);
         }
         
         private bool check_validate_data_is_ok()
         {
-            if (!CValidateTextBox.IsValid(m_txt_tong_so_luong_tp, DataType.NumberType, allowNull.NO, true))
-            { 
-                return false; 
-            }
             if (!CValidateTextBox.IsValid(m_txt_menh_gia, DataType.NumberType, allowNull.NO, true))
             {
                 return false;

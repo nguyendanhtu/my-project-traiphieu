@@ -277,6 +277,7 @@ namespace BondApp
             this.m_fg.Size = new System.Drawing.Size(818, 323);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 66;
+            this.m_fg.Click += new System.EventHandler(this.m_fg_Click);
             // 
             // f150_dm_dot_phat_hanh
             // 
@@ -557,6 +558,11 @@ namespace BondApp
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        private void m_fg_Click(object sender, EventArgs e)
+        {
+
         }
 	}
 }
