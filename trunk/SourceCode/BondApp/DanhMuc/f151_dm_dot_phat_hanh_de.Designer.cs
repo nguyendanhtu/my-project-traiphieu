@@ -38,9 +38,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.m_txt_ty_le_phi_phong_giai_toa = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.m_txt_ty_le_phi_chuyen_nhuong = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.m_cbo_ngan_hang_quan_ly_tai_khoan = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -73,9 +73,9 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.m_txt_ty_le_phi_phong_giai_toa);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.m_txt_ty_le_phi_chuyen_nhuong);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.m_cbo_ngan_hang_quan_ly_tai_khoan);
             this.groupBox1.Controls.Add(this.label2);
@@ -148,7 +148,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(497, 110);
+            this.label6.Location = new System.Drawing.Point(483, 108);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(15, 13);
             this.label6.TabIndex = 52;
@@ -163,13 +163,13 @@
             this.label5.TabIndex = 51;
             this.label5.Text = "%";
             // 
-            // textBox1
+            // m_txt_ty_le_phi_phong_giai_toa
             // 
-            this.textBox1.Location = new System.Drawing.Point(405, 106);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(72, 20);
-            this.textBox1.TabIndex = 50;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.m_txt_ty_le_phi_phong_giai_toa.Location = new System.Drawing.Point(405, 106);
+            this.m_txt_ty_le_phi_phong_giai_toa.Name = "m_txt_ty_le_phi_phong_giai_toa";
+            this.m_txt_ty_le_phi_phong_giai_toa.Size = new System.Drawing.Size(72, 20);
+            this.m_txt_ty_le_phi_phong_giai_toa.TabIndex = 50;
+            this.m_txt_ty_le_phi_phong_giai_toa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
             // 
@@ -180,13 +180,13 @@
             this.label3.TabIndex = 49;
             this.label3.Text = "Tỷ lệ phí phong giải tỏa";
             // 
-            // textBox2
+            // m_txt_ty_le_phi_chuyen_nhuong
             // 
-            this.textBox2.Location = new System.Drawing.Point(148, 106);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(63, 20);
-            this.textBox2.TabIndex = 48;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.m_txt_ty_le_phi_chuyen_nhuong.Location = new System.Drawing.Point(148, 106);
+            this.m_txt_ty_le_phi_chuyen_nhuong.Name = "m_txt_ty_le_phi_chuyen_nhuong";
+            this.m_txt_ty_le_phi_chuyen_nhuong.Size = new System.Drawing.Size(63, 20);
+            this.m_txt_ty_le_phi_chuyen_nhuong.TabIndex = 48;
+            this.m_txt_ty_le_phi_chuyen_nhuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label4
             // 
@@ -428,9 +428,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox m_cbo_ngan_hang_quan_ly_tai_khoan;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox m_txt_ty_le_phi_phong_giai_toa;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox m_txt_ty_le_phi_chuyen_nhuong;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
