@@ -39,12 +39,13 @@ namespace BondApp.HeThong
         private void set_ini_form_load()
         {
             m_bool_is_confirm = false;
+            m_txt_xac_nhan.Focus();
         }
         private void xac_nhan_cua_nguoi_dung()
         {
             if (!check_dieu_kien_is_ok()) return;
-            string v_str_xac_nhan_nguoi_dung = m_txt_xac_nhan.Text.Trim();
-            if (v_str_xac_nhan_nguoi_dung.Equals("Co")) m_bool_is_confirm = true;
+            string v_str_xac_nhan_nguoi_dung = m_txt_xac_nhan.Text.Trim().ToLower();
+            if (v_str_xac_nhan_nguoi_dung.Equals("co")) m_bool_is_confirm = true;
             else m_bool_is_confirm = false;
             this.Close();
         }

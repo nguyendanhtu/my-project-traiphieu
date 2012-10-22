@@ -20,6 +20,7 @@ using BondDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
 using BondApp.ChucNang;
+using BondApp.HeThong;
 
 namespace BondApp
 {
@@ -643,9 +644,24 @@ namespace BondApp
         {
             try
             {
+                // nếu chưa chọn trái phiếu để gen --> ko thực hiện
                 if (m_us_v_trai_phieu.dcID == -1) return;
-                m_us_gd_lich_tt_lai_goc.GenLichThanhToanLaiGoc(m_us_v_trai_phieu.dcID);
-                load_data_2_grid();
+                // Kiểm tra xem đã gen lịch thanh toán lãi gốc cho Trái phiếu này chưa? Nếu đã có thì phải xác nhận
+                US_GD_LICH_THANH_TOAN_LAI_GOC v_us_lich = new US_GD_LICH_THANH_TOAN_LAI_GOC();
+                DS_GD_LICH_THANH_TOAN_LAI_GOC v_ds_lich = new DS_GD_LICH_THANH_TOAN_LAI_GOC();
+                v_us_lich.FillDatasetLichSUuLaiSuatByIDTraiPhieu(v_ds_lich, m_us_v_trai_phieu.dcID);
+                bool v_bool_xac_nhan = false;
+                if (v_ds_lich.GD_LICH_THANH_TOAN_LAI_GOC.Rows.Count > 0)
+                {
+                    f000_confirm v_confirm = new f000_confirm();
+                    v_bool_xac_nhan = v_confirm.display_to_confirm();
+                }
+                // nếu đồng ý or chưa có thì cho gen
+                if (v_bool_xac_nhan || v_ds_lich.GD_LICH_THANH_TOAN_LAI_GOC.Rows.Count == 0)
+                {
+                    m_us_gd_lich_tt_lai_goc.GenLichThanhToanLaiGoc(m_us_v_trai_phieu.dcID);
+                    load_data_2_grid();
+                }
             }
             catch (Exception v_e)
             {

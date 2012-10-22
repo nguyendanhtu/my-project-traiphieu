@@ -73,10 +73,10 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xac_nhan);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 134);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 141);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(347, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(397, 36);
             this.m_pnl_out_place_dm.TabIndex = 38;
             // 
             // m_cmd_xac_nhan
@@ -88,7 +88,7 @@
             this.m_cmd_xac_nhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_xac_nhan.ImageIndex = 10;
             this.m_cmd_xac_nhan.ImageList = this.ImageList;
-            this.m_cmd_xac_nhan.Location = new System.Drawing.Point(167, 4);
+            this.m_cmd_xac_nhan.Location = new System.Drawing.Point(217, 4);
             this.m_cmd_xac_nhan.Name = "m_cmd_xac_nhan";
             this.m_cmd_xac_nhan.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_xac_nhan.TabIndex = 0;
@@ -103,7 +103,7 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(255, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(305, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 1;
@@ -112,17 +112,17 @@
             // m_lbl_xac_nhan_text
             // 
             this.m_lbl_xac_nhan_text.AutoSize = true;
-            this.m_lbl_xac_nhan_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_xac_nhan_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_xac_nhan_text.ForeColor = System.Drawing.Color.DarkRed;
             this.m_lbl_xac_nhan_text.Location = new System.Drawing.Point(12, 21);
             this.m_lbl_xac_nhan_text.Name = "m_lbl_xac_nhan_text";
-            this.m_lbl_xac_nhan_text.Size = new System.Drawing.Size(320, 15);
+            this.m_lbl_xac_nhan_text.Size = new System.Drawing.Size(372, 17);
             this.m_lbl_xac_nhan_text.TabIndex = 40;
             this.m_lbl_xac_nhan_text.Text = "Bạn có chắc chắn muốn thực hiện hành động này không?";
             // 
             // m_txt_xac_nhan
             // 
-            this.m_txt_xac_nhan.Location = new System.Drawing.Point(54, 81);
+            this.m_txt_xac_nhan.Location = new System.Drawing.Point(78, 89);
             this.m_txt_xac_nhan.Name = "m_txt_xac_nhan";
             this.m_txt_xac_nhan.Size = new System.Drawing.Size(120, 20);
             this.m_txt_xac_nhan.TabIndex = 41;
@@ -130,7 +130,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(51, 51);
+            this.label1.Location = new System.Drawing.Point(12, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 13);
             this.label1.TabIndex = 40;
@@ -139,17 +139,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(161, 51);
+            this.label2.Location = new System.Drawing.Point(144, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 13);
+            this.label2.Size = new System.Drawing.Size(218, 13);
             this.label2.TabIndex = 40;
-            this.label2.Text = "Nhập Khong: Không đồng ý";
+            this.label2.Text = "Nhập Khong hay nhấn Thoát: Không đồng ý";
             // 
             // f000_confirm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(347, 170);
+            this.ClientSize = new System.Drawing.Size(397, 177);
             this.Controls.Add(this.m_txt_xac_nhan);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
