@@ -50,8 +50,6 @@ namespace BondApp.DanhMuc
         US_V_DM_DOT_PHAT_HANH m_us_v_dot_phat_hanh = new US_V_DM_DOT_PHAT_HANH();
         DS_V_DM_DOT_PHAT_HANH m_ds_v_dot_phat_hanh = new DS_V_DM_DOT_PHAT_HANH();
 
-        //US_DM_TO_CHUC_PHAT_HANH m_us_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH();
-        //DS_DM_TO_CHUC_PHAT_HANH m_ds_to_chuc_phat_hanh = new DS_DM_TO_CHUC_PHAT_HANH();
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
         #endregion
 
@@ -78,8 +76,9 @@ namespace BondApp.DanhMuc
         {
             op_v_us_dot_phat_hanh.dcID_TO_CHUC_PHAT_HANH = CIPConvert.ToDecimal(m_cbo_ten_to_chuc_phat_hanh.SelectedValue);
             op_v_us_dot_phat_hanh.datNGAY_PHAT_HANH = m_dat_ngay_phat_hanh.Value;
-            op_v_us_dot_phat_hanh.dcMENH_GIA = CIPConvert.ToDecimal(m_txt_tong_so_luong_tp.Text);
-            op_v_us_dot_phat_hanh.dcKY_TRA_LAI = CIPConvert.ToDecimal(m_txt_menh_gia.Text);
+            op_v_us_dot_phat_hanh.dcMENH_GIA = CIPConvert.ToDecimal(m_txt_menh_gia.Text);
+            op_v_us_dot_phat_hanh.dcTONG_GIA_TRI_TRAI_PHIEU_PHAT_HANH = CIPConvert.ToDecimal(m_txt_tong_gia_tri.Text);
+            op_v_us_dot_phat_hanh.dcTONG_SO_LUONG_TRAI_PHIEU = CIPConvert.ToDecimal(m_txt_tong_so_luong_tp.Text);
             //op_v_us_dot_phat_hanh.dcID_DV_KY_TRA_LAI = CIPConvert.ToDecimal(m_cbo_dv_tra_lai.SelectedValue);
             op_v_us_dot_phat_hanh.strGHI_CHU = m_txt_ghi_chu.Text;
         }
