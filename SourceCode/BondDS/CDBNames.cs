@@ -241,6 +241,8 @@ namespace BondDS.CDBNames
         public const string GHI_CHU_CHOT_LAI = "GHI_CHU_CHOT_LAI";
         public const string ID_NGUOI_LAP_CHOT_LAI = "ID_NGUOI_LAP_CHOT_LAI";
         public const string ID_NGUOI_DUYET_CHOT_LAI = "ID_NGUOI_DUYET_CHOT_LAI";
+        public const string TONG_SO_DU = "TONG_SO_DU";
+        public const string SO_DU_KHA_DUNG = "SO_DU_KHA_DUNG";
     }
     public class DM_TRAI_CHU_IMP
     {
