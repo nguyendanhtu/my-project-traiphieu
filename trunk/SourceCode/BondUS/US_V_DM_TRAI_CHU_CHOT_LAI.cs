@@ -876,5 +876,10 @@ public class US_V_DM_TRAI_CHU_CHOT_LAI : US_Object
     {
         base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu_so_huu.ToString() + " AND KY_TINH_LAI = " + ip_ky_tinh_lai.ToString());
     }
+
+    public void FillDatasetByIDTraiPhieuAndNgayChotLai(DS_V_DM_TRAI_CHU_CHOT_LAI ip_ds, decimal ip_id_trai_phieu_so_huu, DateTime ip_ngay_chot_lai)
+    {
+        base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu_so_huu.ToString() + " AND NGAY_CHOT_LAI = '" + ip_ngay_chot_lai + "'");
+    }
     #endregion  
 }
