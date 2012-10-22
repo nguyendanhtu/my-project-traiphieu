@@ -126,25 +126,24 @@
             this.m_txt_xac_nhan.Name = "m_txt_xac_nhan";
             this.m_txt_xac_nhan.Size = new System.Drawing.Size(120, 20);
             this.m_txt_xac_nhan.TabIndex = 41;
-            this.m_txt_xac_nhan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(51, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.Size = new System.Drawing.Size(89, 13);
             this.label1.TabIndex = 40;
-            this.label1.Text = "Yes: Đồng ý";
+            this.label1.Text = "Nhập Co: Đồng ý";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(161, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 13);
+            this.label2.Size = new System.Drawing.Size(140, 13);
             this.label2.TabIndex = 40;
-            this.label2.Text = "No: Không đồng ý";
+            this.label2.Text = "Nhập Khong: Không đồng ý";
             // 
             // f000_confirm
             // 
