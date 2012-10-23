@@ -71,7 +71,7 @@ namespace BondApp.ChucNang
                 ,
             MOBILE = 8
                 ,
-            TONG_SO_DU = 6
+            SO_DU_KHA_DUNG = 6
                 , NOI_CAP_CMT = 12
 
         }
@@ -129,7 +129,7 @@ namespace BondApp.ChucNang
             v_htb.Add(V_GD_TRA_GOC.MO_TAI_NGAN_HANG, e_col_Number.MO_TAI_NGAN_HANG);
             v_htb.Add(V_GD_TRA_GOC.MENH_GIA, e_col_Number.MENH_GIA);
             v_htb.Add(V_GD_TRA_GOC.MOBILE, e_col_Number.MOBILE);
-            v_htb.Add(V_GD_TRA_GOC.TONG_SO_DU, e_col_Number.TONG_SO_DU);
+            v_htb.Add(V_GD_TRA_GOC.SO_DU_KHA_DUNG, e_col_Number.SO_DU_KHA_DUNG);
             v_htb.Add(V_GD_TRA_GOC.NOI_CAP_CMT, e_col_Number.NOI_CAP_CMT);
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_GD_TRA_GOC.NewRow());
@@ -192,7 +192,7 @@ namespace BondApp.ChucNang
             m_cbo_trang_thai.Items.Add("Đã thanh toán");
             m_cbo_trang_thai.Items.Add("Chưa thanh toán");
 
-            m_cbo_trang_thai.SelectedIndex = 2;
+            m_cbo_trang_thai.SelectedIndex = 0;
         }
 
 		private void grid2us_object(US_V_GD_TRA_GOC i_us
@@ -256,7 +256,7 @@ namespace BondApp.ChucNang
             //Kiểm tra xem có dữ liệu hay chưa
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            if (m_us_v_trai_phieu == null) return;
+            if (m_us_v_trai_phieu == null || m_us_v_trai_phieu.strMA_TRAI_PHIEU == "") return;
             grid2us_object(m_us, m_fg.Row);
 
             //Kiểm tra xem trái chủ này đã thanh toán chưa
