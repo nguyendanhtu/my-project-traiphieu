@@ -2,17 +2,18 @@
 <xs:schema id="DS_V_GD_TRA_GOC" targetNamespace="http://tempuri.org/DS_V_GD_TRA_GOC.xsd" xmlns:mstns="http://tempuri.org/DS_V_GD_TRA_GOC.xsd" xmlns="http://tempuri.org/DS_V_GD_TRA_GOC.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QuanLyPhatHanhTraiPhieuConnectionString4" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QuanLyPhatHanhTraiPhieuConnectionString4 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BondDS.Properties.Settings.GlobalReference.Default.QuanLyPhatHanhTraiPhieuConnectionString4" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QuanLyPhatHanhTraiPhieuConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QuanLyPhatHanhTraiPhieuConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BondDS.Properties.Settings.GlobalReference.Default.QuanLyPhatHanhTraiPhieuConnectionString1" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_GD_TRA_GOCTableAdapter" GeneratorDataComponentClassName="V_GD_TRA_GOCTableAdapter" Name="V_GD_TRA_GOC" UserDataComponentName="V_GD_TRA_GOCTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QuanLyPhatHanhTraiPhieuConnectionString4 (Settings)" DbObjectName="QuanLyPhatHanhTraiPhieu.dbo.V_GD_TRA_GOC" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QuanLyPhatHanhTraiPhieuConnectionString1 (Settings)" DbObjectName="QuanLyPhatHanhTraiPhieu.dbo.V_GD_TRA_GOC" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, TEN_TRAI_CHU, MA_TRAI_CHU, DIA_CHI, MOBILE, FAX, CMT_GIAY_DKKD, NGAY_CAP_CMT, NOI_CAP_CMT, ID_LOAI_TRAI_CHU, ID_NGUOI_DUYET_TC, ID_NGUOI_LAP_TC, ID_TRAI_PHIEU_SO_HUU, MA_TRAI_PHIEU, TEN_TRAI_PHIEU, MENH_GIA, SO_TAI_KHOAN, MO_TAI_NGAN_HANG, GHI_CHU1, GHI_CHU2, GHI_CHU3, ID_TRANG_THAI, TONG_SO_DU FROM dbo.V_GD_TRA_GOC</CommandText>
+                    <CommandText>SELECT ID, TEN_TRAI_CHU, MA_TRAI_CHU, DIA_CHI, MOBILE, FAX, CMT_GIAY_DKKD, NGAY_CAP_CMT, NOI_CAP_CMT, ID_LOAI_TRAI_CHU, ID_NGUOI_DUYET_TC, ID_NGUOI_LAP_TC, ID_TRAI_PHIEU_SO_HUU, MA_TRAI_PHIEU, TEN_TRAI_PHIEU, MENH_GIA, SO_TAI_KHOAN, MO_TAI_NGAN_HANG, GHI_CHU1, GHI_CHU2, GHI_CHU3, ID_TRANG_THAI, TONG_SO_DU, SO_DU_KHA_DUNG FROM dbo.V_GD_TRA_GOC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -42,6 +43,7 @@
               <Mapping SourceColumn="GHI_CHU3" DataSetColumn="GHI_CHU3" />
               <Mapping SourceColumn="ID_TRANG_THAI" DataSetColumn="ID_TRANG_THAI" />
               <Mapping SourceColumn="TONG_SO_DU" DataSetColumn="TONG_SO_DU" />
+              <Mapping SourceColumn="SO_DU_KHA_DUNG" DataSetColumn="SO_DU_KHA_DUNG" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -163,6 +165,7 @@
               </xs:element>
               <xs:element name="ID_TRANG_THAI" msprop:Generator_ColumnVarNameInTable="columnID_TRANG_THAI" msprop:Generator_ColumnPropNameInRow="ID_TRANG_THAI" msprop:Generator_ColumnPropNameInTable="ID_TRANG_THAIColumn" msprop:Generator_UserColumnName="ID_TRANG_THAI" type="xs:decimal" />
               <xs:element name="TONG_SO_DU" msprop:Generator_ColumnVarNameInTable="columnTONG_SO_DU" msprop:Generator_ColumnPropNameInRow="TONG_SO_DU" msprop:Generator_ColumnPropNameInTable="TONG_SO_DUColumn" msprop:Generator_UserColumnName="TONG_SO_DU" type="xs:decimal" />
+              <xs:element name="SO_DU_KHA_DUNG" msprop:Generator_ColumnVarNameInTable="columnSO_DU_KHA_DUNG" msprop:Generator_ColumnPropNameInRow="SO_DU_KHA_DUNG" msprop:Generator_ColumnPropNameInTable="SO_DU_KHA_DUNGColumn" msprop:Generator_UserColumnName="SO_DU_KHA_DUNG" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

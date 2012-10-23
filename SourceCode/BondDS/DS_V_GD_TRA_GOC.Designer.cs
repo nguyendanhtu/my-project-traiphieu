@@ -325,6 +325,8 @@ namespace BondDS {
             
             private global::System.Data.DataColumn columnTONG_SO_DU;
             
+            private global::System.Data.DataColumn columnSO_DU_KHA_DUNG;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public V_GD_TRA_GOCDataTable() {
@@ -544,6 +546,14 @@ namespace BondDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SO_DU_KHA_DUNGColumn {
+                get {
+                    return this.columnSO_DU_KHA_DUNG;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -601,7 +611,8 @@ namespace BondDS {
                         string GHI_CHU2, 
                         string GHI_CHU3, 
                         decimal ID_TRANG_THAI, 
-                        decimal TONG_SO_DU) {
+                        decimal TONG_SO_DU, 
+                        decimal SO_DU_KHA_DUNG) {
                 V_GD_TRA_GOCRow rowV_GD_TRA_GOCRow = ((V_GD_TRA_GOCRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -626,7 +637,8 @@ namespace BondDS {
                         GHI_CHU2,
                         GHI_CHU3,
                         ID_TRANG_THAI,
-                        TONG_SO_DU};
+                        TONG_SO_DU,
+                        SO_DU_KHA_DUNG};
                 rowV_GD_TRA_GOCRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowV_GD_TRA_GOCRow);
                 return rowV_GD_TRA_GOCRow;
@@ -685,6 +697,7 @@ namespace BondDS {
                 this.columnGHI_CHU3 = base.Columns["GHI_CHU3"];
                 this.columnID_TRANG_THAI = base.Columns["ID_TRANG_THAI"];
                 this.columnTONG_SO_DU = base.Columns["TONG_SO_DU"];
+                this.columnSO_DU_KHA_DUNG = base.Columns["SO_DU_KHA_DUNG"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -736,6 +749,8 @@ namespace BondDS {
                 base.Columns.Add(this.columnID_TRANG_THAI);
                 this.columnTONG_SO_DU = new global::System.Data.DataColumn("TONG_SO_DU", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTONG_SO_DU);
+                this.columnSO_DU_KHA_DUNG = new global::System.Data.DataColumn("SO_DU_KHA_DUNG", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSO_DU_KHA_DUNG);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -767,6 +782,7 @@ namespace BondDS {
                 this.columnGHI_CHU3.MaxLength = 250;
                 this.columnID_TRANG_THAI.AllowDBNull = false;
                 this.columnTONG_SO_DU.AllowDBNull = false;
+                this.columnSO_DU_KHA_DUNG.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1227,6 +1243,17 @@ namespace BondDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal SO_DU_KHA_DUNG {
+                get {
+                    return ((decimal)(this[this.tableV_GD_TRA_GOC.SO_DU_KHA_DUNGColumn]));
+                }
+                set {
+                    this[this.tableV_GD_TRA_GOC.SO_DU_KHA_DUNGColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDIA_CHINull() {
                 return this.IsNull(this.tableV_GD_TRA_GOC.DIA_CHIColumn);
             }
@@ -1564,6 +1591,7 @@ namespace BondDS.DS_V_GD_TRA_GOCTableAdapters {
             tableMapping.ColumnMappings.Add("GHI_CHU3", "GHI_CHU3");
             tableMapping.ColumnMappings.Add("ID_TRANG_THAI", "ID_TRANG_THAI");
             tableMapping.ColumnMappings.Add("TONG_SO_DU", "TONG_SO_DU");
+            tableMapping.ColumnMappings.Add("SO_DU_KHA_DUNG", "SO_DU_KHA_DUNG");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1571,7 +1599,7 @@ namespace BondDS.DS_V_GD_TRA_GOCTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BondDS.Properties.Settings.Default.QuanLyPhatHanhTraiPhieuConnectionString4;
+            this._connection.ConnectionString = global::BondDS.Properties.Settings.Default.QuanLyPhatHanhTraiPhieuConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1580,7 +1608,7 @@ namespace BondDS.DS_V_GD_TRA_GOCTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT ID, TEN_TRAI_CHU, MA_TRAI_CHU, DIA_CHI, MOBILE, FAX, CMT_GIAY_DKKD, NGAY_CAP_CMT, NOI_CAP_CMT, ID_LOAI_TRAI_CHU, ID_NGUOI_DUYET_TC, ID_NGUOI_LAP_TC, ID_TRAI_PHIEU_SO_HUU, MA_TRAI_PHIEU, TEN_TRAI_PHIEU, MENH_GIA, SO_TAI_KHOAN, MO_TAI_NGAN_HANG, GHI_CHU1, GHI_CHU2, GHI_CHU3, ID_TRANG_THAI, TONG_SO_DU FROM dbo.V_GD_TRA_GOC";
+            this._commandCollection[0].CommandText = @"SELECT ID, TEN_TRAI_CHU, MA_TRAI_CHU, DIA_CHI, MOBILE, FAX, CMT_GIAY_DKKD, NGAY_CAP_CMT, NOI_CAP_CMT, ID_LOAI_TRAI_CHU, ID_NGUOI_DUYET_TC, ID_NGUOI_LAP_TC, ID_TRAI_PHIEU_SO_HUU, MA_TRAI_PHIEU, TEN_TRAI_PHIEU, MENH_GIA, SO_TAI_KHOAN, MO_TAI_NGAN_HANG, GHI_CHU1, GHI_CHU2, GHI_CHU3, ID_TRANG_THAI, TONG_SO_DU, SO_DU_KHA_DUNG FROM dbo.V_GD_TRA_GOC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
