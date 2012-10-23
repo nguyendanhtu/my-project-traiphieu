@@ -855,6 +855,50 @@ public class US_V_DM_TRAI_PHIEU : US_Object
         pm_objDR["TRANG_THAI"] = System.Convert.DBNull;
     }
 
+    public string strSO_HOP_DONG_DL_DK_LUU_KY
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "SO_HOP_DONG_DL_DK_LUU_KY", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["SO_HOP_DONG_DL_DK_LUU_KY"] = value;
+        }
+    }
+
+    public bool IsSO_HOP_DONG_DL_DK_LUU_KYNull()
+    {
+        return pm_objDR.IsNull("SO_HOP_DONG_DL_DK_LUU_KY");
+    }
+
+    public void SetSO_HOP_DONG_DL_DK_LUU_KYNull()
+    {
+        pm_objDR["SO_HOP_DONG_DL_DK_LUU_KY"] = System.Convert.DBNull;
+    }
+
+    public DateTime datNGAY_KY_HD
+    {
+        get
+        {
+            return CNull.RowNVLDate(pm_objDR, "NGAY_KY_HD", IPConstants.c_DefaultDate);
+        }
+        set
+        {
+            pm_objDR["NGAY_KY_HD"] = value;
+        }
+    }
+
+    public bool IsNGAY_KY_HDNull()
+    {
+        return pm_objDR.IsNull("NGAY_KY_HD");
+    }
+
+    public void SetNGAY_KY_HDNull()
+    {
+        pm_objDR["NGAY_KY_HD"] = System.Convert.DBNull;
+    }
+
     #endregion
 
 
