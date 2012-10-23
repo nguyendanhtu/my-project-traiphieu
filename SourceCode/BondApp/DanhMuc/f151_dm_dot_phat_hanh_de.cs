@@ -71,8 +71,8 @@ namespace BondApp.DanhMuc
             m_txt_ghi_chu.Text = m_us_v_dot_phat_hanh.strGHI_CHU;
             m_txt_tong_so_luong_tp.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcTONG_SO_LUONG_TRAI_PHIEU);
             m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcMENH_GIA);
-            m_txt_ty_le_phi_chuyen_nhuong.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcTY_LE_PHI_CHUYEN_NHUONG);
-            m_txt_ty_le_phi_phong_giai_toa.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcTY_LE_PHI_PHONG_GIAI_TOA);
+            m_txt_ty_le_phi_chuyen_nhuong.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcTY_LE_PHI_CHUYEN_NHUONG*100);
+            m_txt_ty_le_phi_phong_giai_toa.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcTY_LE_PHI_PHONG_GIAI_TOA*100);
         }
         private void form_2_us_object(US_V_DM_DOT_PHAT_HANH op_v_us_dot_phat_hanh)
         {
@@ -82,8 +82,8 @@ namespace BondApp.DanhMuc
             op_v_us_dot_phat_hanh.dcTONG_GIA_TRI_TRAI_PHIEU_PHAT_HANH = CIPConvert.ToDecimal(m_txt_tong_gia_tri.Text);
             op_v_us_dot_phat_hanh.dcTONG_SO_LUONG_TRAI_PHIEU = CIPConvert.ToDecimal(m_txt_tong_so_luong_tp.Text);
             op_v_us_dot_phat_hanh.strGHI_CHU = m_txt_ghi_chu.Text;
-            op_v_us_dot_phat_hanh.dcTY_LE_PHI_CHUYEN_NHUONG = CIPConvert.ToDecimal(m_txt_ty_le_phi_chuyen_nhuong.Text);
-            op_v_us_dot_phat_hanh.dcTY_LE_PHI_PHONG_GIAI_TOA = CIPConvert.ToDecimal(m_txt_ty_le_phi_chuyen_nhuong.Text);
+            op_v_us_dot_phat_hanh.dcTY_LE_PHI_CHUYEN_NHUONG = CIPConvert.ToDecimal(m_txt_ty_le_phi_chuyen_nhuong.Text)/100;
+            op_v_us_dot_phat_hanh.dcTY_LE_PHI_PHONG_GIAI_TOA = CIPConvert.ToDecimal(m_txt_ty_le_phi_phong_giai_toa.Text)/100;
         }
         
         private bool check_validate_data_is_ok()
@@ -166,7 +166,19 @@ namespace BondApp.DanhMuc
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
             this.Close();
         }
-        
+        private void computeTotalValue()
+        {
+            try
+            {
+                decimal v_d_menhgia = CIPConvert.ToDecimal(m_txt_menh_gia.Text);
+                decimal v_d_tongsl = CIPConvert.ToDecimal(m_txt_tong_so_luong_tp.Text);
+                m_txt_tong_gia_tri.Text = CIPConvert.ToStr(v_d_menhgia * v_d_tongsl);
+            }
+            catch
+            { 
+
+            }
+        }
         #endregion
         #region Events
         private void set_define_events()
@@ -174,6 +186,16 @@ namespace BondApp.DanhMuc
             this.Load += new EventHandler(f151_dm_dot_phat_hanh_Load);
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_txt_menh_gia.TextChanged +=new EventHandler(m_txt_menh_gia_TextChanged);
+            m_txt_tong_so_luong_tp.TextChanged += new EventHandler(m_txt_tong_so_luong_tp_TextChanged);
+        }
+        private void m_txt_tong_so_luong_tp_TextChanged(object sender, EventArgs e)
+        {
+            computeTotalValue();
+        }
+        private void m_txt_menh_gia_TextChanged(object sender, EventArgs e)
+        {
+            computeTotalValue();
         }
         void f151_dm_dot_phat_hanh_Load(object sender, EventArgs e)
         {

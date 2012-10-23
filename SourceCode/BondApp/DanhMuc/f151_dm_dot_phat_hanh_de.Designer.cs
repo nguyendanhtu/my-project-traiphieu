@@ -109,8 +109,10 @@
             // 
             // m_txt_tong_gia_tri
             // 
+            this.m_txt_tong_gia_tri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.m_txt_tong_gia_tri.Location = new System.Drawing.Point(661, 60);
             this.m_txt_tong_gia_tri.Name = "m_txt_tong_gia_tri";
+            this.m_txt_tong_gia_tri.ReadOnly = true;
             this.m_txt_tong_gia_tri.Size = new System.Drawing.Size(135, 20);
             this.m_txt_tong_gia_tri.TabIndex = 56;
             this.m_txt_tong_gia_tri.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
