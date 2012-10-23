@@ -126,7 +126,7 @@ namespace BondApp.BaoCao
                 if (v_i_current != 0)
                 {
                     m_cbo_ky_tinh_lai.SelectedIndex = v_i_current - 1;
-                    load_ngay_chot_theo_ky(v_i_current);
+                    load_ngay_chot_theo_ky(v_i_current - 1);
                 }
             }
         }
@@ -203,7 +203,7 @@ namespace BondApp.BaoCao
 
         private void load_data_theo_ky()
         {
-            load_ngay_chot_theo_ky(m_cbo_ky_tinh_lai.SelectedIndex + 1);
+            load_ngay_chot_theo_ky(m_cbo_ky_tinh_lai.SelectedIndex);
             //load_data_2_grid();
         }
 
