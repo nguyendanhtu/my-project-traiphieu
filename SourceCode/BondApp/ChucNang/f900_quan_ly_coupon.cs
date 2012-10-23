@@ -138,7 +138,13 @@ namespace BondApp.ChucNang
             if (m_us_v_trai_phieu != null)
                 us_trai_phieu_2_form(m_us_v_trai_phieu);
             m_obj_trans = get_trans_object(m_fg);
-            load_data_2_grid(m_us_v_trai_phieu);
+            load_data_2_cbo();
+            load_data_2_grid();
+
+            m_cbo_trang_thai.Items.Add("Tất cả");
+            m_cbo_trang_thai.Items.Add("Đã thanh toán");
+            m_cbo_trang_thai.Items.Add("Chưa thanh toán");
+            m_cbo_trang_thai.SelectedIndex = 0;
         }
 
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
@@ -176,7 +182,7 @@ namespace BondApp.ChucNang
             return v_obj_trans;
         }
 
-        private void load_data_2_grid(US_V_DM_TRAI_PHIEU ip_us_trai_phieu)
+        private void load_data_2_grid()
         {
             m_ds = new DS_V_DM_TRAI_CHU_CHOT_LAI();
             if (m_us_v_trai_phieu != null)
@@ -184,13 +190,13 @@ namespace BondApp.ChucNang
                 switch (m_mod)
                 {
                     case e_Mod.TAT_CA:
-                        m_us.FillDatasetByIDTraiPhieu(m_ds, m_us_v_trai_phieu.dcID);
+                        m_us.FillDatasetByIDTraiPhieuAndNgayChotLai(m_ds, m_us_v_trai_phieu.dcID, CIPConvert.ToDatetime(m_txt_ngay_chot.Text));
                         break;
                     case e_Mod.DA_TRA:
-                        m_us.FillDatasetByIDTraiPhieuYes(m_ds, m_us_v_trai_phieu.dcID);
+                        m_us.FillDatasetByIDTraiPhieuAndNgayChotLaiYes(m_ds, m_us_v_trai_phieu.dcID, CIPConvert.ToDatetime(m_txt_ngay_chot.Text));
                         break;
                     case e_Mod.CHUA_TRA:
-                        m_us.FillDatasetByIDTraiPhieuNo(m_ds, ip_us_trai_phieu.dcID);
+                        m_us.FillDatasetByIDTraiPhieuAndNgayChotLaiNo(m_ds, m_us_v_trai_phieu.dcID, CIPConvert.ToDatetime(m_txt_ngay_chot.Text));
                         break;
                 }
             }
@@ -200,7 +206,7 @@ namespace BondApp.ChucNang
             }
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            load_data_2_cbo();
+            
             m_fg.Redraw = true;
 
             //Load ma trai phieu so huu
@@ -258,33 +264,19 @@ namespace BondApp.ChucNang
             //Kiểm tra xem có dữ liệu hay chưa
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            if (m_us_v_trai_phieu == null) return;
-            grid2us_object(m_us, m_fg.Row);
+            if (m_us_v_trai_phieu == null || m_us_v_trai_phieu.strMA_TRAI_PHIEU == "") return;
+            //grid2us_object(m_us, m_fg.Row);
 
-            //Kiểm tra xem trái chủ này đã thanh toán chưa
-            if (m_us.strDA_NHAN_TIEN_YN == "Y")
+            if (BaseMessages.MsgBox_Confirm("Thanh toán lãi cho các trái chủ sở hữu trái phiếu " + m_us_v_trai_phieu.strMA_TRAI_PHIEU + "        Kỳ tính lãi: " + m_cbo_ky_tinh_lai.Text))
             {
-                BaseMessages.MsgBox_Infor("Trái chủ này đã thanh toán!");
-                return;
-            }
-
-            //Thực hiện thanh toán
-            if (BaseMessages.MsgBox_Confirm(" Khách hàng: " + m_us.strTEN_TRAI_CHU + "                Số tiền thanh toán: " + CIPConvert.ToStr(m_us.dcSO_TIEN_LAI, "#,###").ToString() + " VNĐ"))
-            {
-                m_us.strDA_NHAN_TIEN_YN = "Y";
-                m_us.datNGAY_NHAN_TIEN = DateTime.Now;
-
-                m_us_gd_chot_lai_detail = new US_GD_CHOT_LAI_DETAIL();
-                m_us_gd_chot_lai_detail.dcID = m_us.dcID;
-                m_us_gd_chot_lai_detail.dcID_CHOT_LAI = m_us.dcID_CHOT_LAI;
-                m_us_gd_chot_lai_detail.dcID_TRAI_CHU = m_us.dcID_TRAI_CHU;
-                m_us_gd_chot_lai_detail.dcSO_LUONG_TINH_LAI = m_us.dcSO_LUONG_TINH_LAI;
-                m_us_gd_chot_lai_detail.dcSO_TIEN_LAI = m_us.dcSO_TIEN_LAI;
-                m_us_gd_chot_lai_detail.datNGAY_NHAN_TIEN = m_us.datNGAY_NHAN_TIEN;
-                m_us_gd_chot_lai_detail.strDA_NHAN_TIEN_YN = m_us.strDA_NHAN_TIEN_YN;
-
-                m_us_gd_chot_lai_detail.Update();
-                load_data_2_grid(m_us_v_trai_phieu);
+                foreach (DataRow v_dr in m_ds.V_DM_TRAI_CHU_CHOT_LAI.Rows)
+                {
+                    m_us_gd_chot_lai_detail = new US_GD_CHOT_LAI_DETAIL(CIPConvert.ToDecimal(v_dr["ID"]));
+                    m_us_gd_chot_lai_detail.strDA_NHAN_TIEN_YN = "Y";
+                    m_us_gd_chot_lai_detail.Update();
+                }
+                BaseMessages.MsgBox_Infor("Đã thanh toán thành công!");
+                load_data_2_grid();
             }
         }
 
@@ -307,17 +299,12 @@ namespace BondApp.ChucNang
                 m_us.strDA_NHAN_TIEN_YN = "N";
                 m_us.datNGAY_NHAN_TIEN = (DateTime)SqlDateTime.Null;
 
-                m_us_gd_chot_lai_detail = new US_GD_CHOT_LAI_DETAIL();
-                m_us_gd_chot_lai_detail.dcID = m_us.dcID;
-                m_us_gd_chot_lai_detail.dcID_CHOT_LAI = m_us.dcID_CHOT_LAI;
-                m_us_gd_chot_lai_detail.dcID_TRAI_CHU = m_us.dcID_TRAI_CHU;
-                m_us_gd_chot_lai_detail.dcSO_LUONG_TINH_LAI = m_us.dcSO_LUONG_TINH_LAI;
-                m_us_gd_chot_lai_detail.dcSO_TIEN_LAI = m_us.dcSO_TIEN_LAI;
+                m_us_gd_chot_lai_detail = new US_GD_CHOT_LAI_DETAIL(m_us.dcID);
                 m_us_gd_chot_lai_detail.datNGAY_NHAN_TIEN = m_us.datNGAY_NHAN_TIEN;
                 m_us_gd_chot_lai_detail.strDA_NHAN_TIEN_YN = m_us.strDA_NHAN_TIEN_YN;
 
                 m_us_gd_chot_lai_detail.Update();
-                load_data_2_grid(m_us_v_trai_phieu);
+                load_data_2_grid();
             }
         }
 
@@ -343,19 +330,11 @@ namespace BondApp.ChucNang
                     break;
             }
 
-            load_data_2_grid(m_us_v_trai_phieu);
+            load_data_2_grid();
         }
 
         private void load_data_2_cbo()
         {
-            if (m_cbo_trang_thai.Items.Count == 0)
-            {
-                m_cbo_trang_thai.Items.Add("Tất cả");
-                m_cbo_trang_thai.Items.Add("Đã thanh toán");
-                m_cbo_trang_thai.Items.Add("Chưa thanh toán");
-
-                m_cbo_trang_thai.SelectedIndex = 2;
-            }
             if (m_us_v_trai_phieu != null)
             {
                 decimal v_dc_so_ky_tra_lai;
@@ -386,8 +365,19 @@ namespace BondApp.ChucNang
                 if (v_i_current != 0)
                 {
                     m_cbo_ky_tinh_lai.SelectedIndex = v_i_current - 1;
+                    load_ngay_chot_theo_ky(v_i_current);
                 }
             }
+        }
+
+        private void load_ngay_chot_theo_ky(int i_ky_chot_lai)
+        {
+            US_HT_THAM_SO_HE_THONG v_us_ht = new US_HT_THAM_SO_HE_THONG(ID_THAM_SO_HE_THONG.CHOT_LAI_TRUOC);
+            US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_v_trai_phieu.dcID_DOT_PHAT_HANH);
+            DateTime v_dat_ngay_chot_tuong_ung = v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH;
+            v_dat_ngay_chot_tuong_ung = v_dat_ngay_chot_tuong_ung.AddMonths(i_ky_chot_lai * (int)m_us_v_trai_phieu.dcKY_TRA_LAI);
+            v_dat_ngay_chot_tuong_ung = v_dat_ngay_chot_tuong_ung.AddDays(-(int)CIPConvert.ToDecimal(v_us_ht.strGIA_TRI));
+            m_txt_ngay_chot.Text = CIPConvert.ToStr(v_dat_ngay_chot_tuong_ung, "dd/MM/yyyy");
         }
 
         private void us_trai_phieu_2_form(US_V_DM_TRAI_PHIEU ip_us_trai_phieu)
@@ -421,8 +411,15 @@ namespace BondApp.ChucNang
             if (m_us_v_trai_phieu.strMA_TRAI_PHIEU != "")
             {
                 us_trai_phieu_2_form(m_us_v_trai_phieu);
-                load_data_2_grid(m_us_v_trai_phieu);	
+                load_data_2_cbo();
+                load_data_2_grid();	
             }
+        }
+
+        private void load_data_theo_ky()
+        {
+            load_ngay_chot_theo_ky(m_cbo_ky_tinh_lai.SelectedIndex + 1);
+            load_data_2_grid();
         }
 
         private void filter()
@@ -430,7 +427,7 @@ namespace BondApp.ChucNang
             if (m_txt_search.Text == "")
             {
                 m_us_v_trai_phieu = null;
-                load_data_2_grid(null);
+                load_data_2_grid();
             }
         }
 
@@ -442,6 +439,7 @@ namespace BondApp.ChucNang
             m_cmd_filter.Click += new EventHandler(m_cmd_filter_Click);
             m_cmd_hoan_tac.Click += new EventHandler(m_cmd_hoan_tac_Click);
             m_cbo_trang_thai.SelectedIndexChanged += new EventHandler(m_cbo_trang_thai_SelectedIndexChanged);
+            m_cbo_ky_tinh_lai.SelectedIndexChanged += new EventHandler(m_cbo_ky_tinh_lai_SelectedIndexChanged);
         }
 
         #endregion
@@ -453,6 +451,18 @@ namespace BondApp.ChucNang
              try
              {
                  set_inital_form_load();
+             }
+             catch (Exception v_e)
+             {
+                 CSystemLog_301.ExceptionHandle(v_e);
+             }
+         }
+
+         void m_cbo_ky_tinh_lai_SelectedIndexChanged(object sender, EventArgs e)
+         {
+             try
+             {
+                 load_data_theo_ky();
              }
              catch (Exception v_e)
              {
