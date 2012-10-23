@@ -258,6 +258,12 @@
     <Compile Include="BaoCao\f601_bao_cao_giao_dich_chuyen_nhuong.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BaoCao\f654_xin_lai_suat_ky_tiep_theo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\f654_xin_lai_suat_ky_tiep_theo.Designer.cs">
+      <DependentUpon>f654_xin_lai_suat_ky_tiep_theo.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaoCao\f655_danh_sach_chot_lai.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -451,6 +457,9 @@
     <EmbeddedResource Include="BaoCao\f601_bao_cao_giao_dich_chuyen_nhuong.resx">
       <DependentUpon>f601_bao_cao_giao_dich_chuyen_nhuong.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f654_xin_lai_suat_ky_tiep_theo.resx">
+      <DependentUpon>f654_xin_lai_suat_ky_tiep_theo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f655_danh_sach_chot_lai.resx">
       <DependentUpon>f655_danh_sach_chot_lai.cs</DependentUpon>
