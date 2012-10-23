@@ -488,6 +488,8 @@ namespace BondDS.CDBNames
         public const string CN_HUONG_THEO_NGAY_CHUYEN_NHUONG_YN = "CN_HUONG_THEO_NGAY_CHUYEN_NHUONG_YN";
         public const string ID_TRANG_THAI = "ID_TRANG_THAI";
         public const string TRANG_THAI = "TRANG_THAI";
+        public const string SO_HOP_DONG_DL_DK_LUU_KY = "SO_HOP_DONG_DL_DK_LUU_KY";
+        public const string NGAY_KY_HD = "NGAY_KY_HD";
     }
 
     public class DOC_COLUMN_COMMENT
