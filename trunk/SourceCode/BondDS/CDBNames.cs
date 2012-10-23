@@ -97,6 +97,7 @@ namespace BondDS.CDBNames
         public const string GHI_CHU3 = "GHI_CHU3";
         public const string ID_TRANG_THAI = "ID_TRANG_THAI";
         public const string TONG_SO_DU = "TONG_SO_DU";
+        public const string SO_DU_KHA_DUNG = "SO_DU_KHA_DUNG";
     }
 
     public class V_GD_CHUYEN_NHUONG
