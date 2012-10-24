@@ -7,7 +7,7 @@
 /// Create User Service Class for V_DM_TRAI_PHIEU
 /// </summary>
 
-
+using BondDS.CDBNames;
 using BondDS;
 using IP.Core.IPCommon;
 using IP.Core.IPUserService;
@@ -936,6 +936,18 @@ public class US_V_DM_TRAI_PHIEU : US_Object
         CStoredProc v_cstore = new CStoredProc("pr_DM_TRAI_PHIEU_Fill_By_Search");
         v_cstore.addNVarcharInputParam("@KEYWORD", ip_str_keyword);
         v_cstore.fillDataSetByCommand(this, op_ds_dm_trai_phieu);
+    }
+    public void FillDatasetByIDDotPhatHanh(DS_V_DM_TRAI_PHIEU ip_ds_dm_trai_phieu, decimal ip_id_dot_ph)
+    {
+        CMakeAndSelectCmd v_obj_mak_cmd = new CMakeAndSelectCmd(ip_ds_dm_trai_phieu, c_TableName);
+        v_obj_mak_cmd.AddCondition(V_DM_TRAI_PHIEU.ID_DOT_PHAT_HANH
+            , ip_id_dot_ph
+            , eKieuDuLieu.KieuNumber
+            , eKieuSoSanh.Bang);
+        SqlCommand v_obj_cmd = v_obj_mak_cmd.getSelectCmd();
+
+        this.FillDatasetByCommand(ip_ds_dm_trai_phieu, v_obj_cmd);
+
     }
     #endregion
 }
