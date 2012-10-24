@@ -80,6 +80,8 @@ namespace BondApp.DanhMuc
         
         private void us_object_2_form(US_V_DM_DOT_PHAT_HANH ip_us_v_dot_phat_hanh)
         {
+            US_DM_TO_CHUC_PHAT_HANH v_us_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH(ip_us_v_dot_phat_hanh.dcID_TO_CHUC_PHAT_HANH);
+            m_cbo_ten_to_chuc_phat_hanh.SelectedText = v_us_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HANH;
             m_cbo_ten_to_chuc_phat_hanh.SelectedValue = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcID_TO_CHUC_PHAT_HANH);
             m_dat_ngay_phat_hanh.Value = m_us_v_dot_phat_hanh.datNGAY_PHAT_HANH;
             m_txt_ghi_chu.Text = m_us_v_dot_phat_hanh.strGHI_CHU;
@@ -93,6 +95,10 @@ namespace BondApp.DanhMuc
                 m_cbo_ngan_hang_quan_ly_tai_khoan.SelectedText = v_us_dm_tu_dien.strTEN;
                 m_cbo_ngan_hang_quan_ly_tai_khoan.SelectedValue = v_us_dm_tu_dien.dcID;
             }
+
+            if (ip_us_v_dot_phat_hanh.strNGAY_LAM_VIEC_HAI_SAU_YN.Equals("Y"))
+                m_cbo_loai_ngay_lam_viec.SelectedIndex = 0;
+            else m_cbo_loai_ngay_lam_viec.SelectedIndex = 1;
         }
         private void form_2_us_object(US_V_DM_DOT_PHAT_HANH op_v_us_dot_phat_hanh)
         {
@@ -106,6 +112,9 @@ namespace BondApp.DanhMuc
             op_v_us_dot_phat_hanh.dcTY_LE_PHI_PHONG_GIAI_TOA = CIPConvert.ToDecimal(m_txt_ty_le_phi_phong_giai_toa.Text)/100;
             if (m_cbo_ngan_hang_quan_ly_tai_khoan.SelectedValue != null)
                 op_v_us_dot_phat_hanh.dcID_NGAN_HANG_DAI_LY_QUAN_LY_TK = CIPConvert.ToDecimal(m_cbo_ngan_hang_quan_ly_tai_khoan.SelectedValue);
+            if (m_cbo_loai_ngay_lam_viec.SelectedIndex == 0)
+                op_v_us_dot_phat_hanh.strNGAY_LAM_VIEC_HAI_SAU_YN = "Y";
+            else op_v_us_dot_phat_hanh.strNGAY_LAM_VIEC_HAI_SAU_YN = "N";
         }
         
         private bool check_validate_data_is_ok()
@@ -163,14 +172,14 @@ namespace BondApp.DanhMuc
             m_cbo_ngan_hang_quan_ly_tai_khoan.ValueMember = CM_DM_TU_DIEN.ID;
             m_cbo_ngan_hang_quan_ly_tai_khoan.Text = "";
         }
-        private void load_data_2_cbo_laoai_ngay_lam_viec()
+        private void load_data_2_cbo_loai_ngay_lam_viec()
         {
-            US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
-            DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
-            v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds("LOAI_NGAY_LAM_VIEC", v_ds_cm_dm_tu_dien);
-            m_cbo_loai_ngay_lam_viec.DataSource = (DataTable)v_ds_cm_dm_tu_dien.Tables[0];
+            US_CM_DM_TU_DIEN v_us_cm_dm_tu_diem = new US_CM_DM_TU_DIEN();
+            DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = v_us_cm_dm_tu_diem.getLoaiTuDienDS(CM_DM_LOAI_TD_LIST.LOAI_NGAY_LAM_VIEC);
+            m_cbo_loai_ngay_lam_viec.DataSource = v_ds_cm_dm_tu_dien.Tables[0];
             m_cbo_loai_ngay_lam_viec.DisplayMember = CM_DM_TU_DIEN.TEN;
             m_cbo_loai_ngay_lam_viec.ValueMember = CM_DM_TU_DIEN.ID;
+            m_cbo_loai_ngay_lam_viec.Text = "";
         }
         private void save_data()
         {
