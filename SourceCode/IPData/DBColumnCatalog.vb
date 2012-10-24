@@ -63,6 +63,7 @@ Namespace DBNames
         Public Const LOAI_TRAI_CHU As String = "LOAI_TRAI_CHU"
         Public Const DON_VI_KY_HAN As String = "DON_VI_KY_HAN"
         Public Const LOAI_NHAC_NHAC_VIEC As String = "LOAI_NHAC_NHAC_VIEC"
+        Public Const NGAN_HANG_DL_QUAN_LY_TK As String = "NGAN_HANG_DL_QUAN_LY_TK"
 
     End Class
 
