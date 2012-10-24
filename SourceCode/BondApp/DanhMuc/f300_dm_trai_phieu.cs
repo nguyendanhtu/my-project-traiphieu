@@ -23,6 +23,7 @@ using BondDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
 using BondApp.DanhMuc;
+using BondApp.HeThong;
 
 namespace BondApp
 {
@@ -578,7 +579,11 @@ namespace BondApp
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
+            if (!BaseMessages.MsgBox_Confirm("Việc xóa trái phiếu đã chọn sẽ xóa toàn bộ các trái chủ đã mua trái phiếu này. \n Bạn có chắc chắn muốn xóa dữ liệu không?")) return;
+            bool v_bool_xac_nhan = false;
+            f000_confirm v_frm000 = new f000_confirm();
+            v_bool_xac_nhan = v_frm000.display_to_confirm();
+            if (!v_bool_xac_nhan) return;
             US_V_DM_TRAI_PHIEU v_us = new US_V_DM_TRAI_PHIEU();
             grid2us_object(v_us, m_fg.Row);
             try
