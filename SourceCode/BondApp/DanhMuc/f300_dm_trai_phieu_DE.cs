@@ -81,9 +81,12 @@ namespace BondApp.DanhMuc
             // Thông tin phát hành
             m_txt_ngay_phat_hanh.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_PHAT_HANH, "dd/MM/yyyy");
             m_txt_ten_dv_phat_hanh.Text = ip_us_trai_phieu.strTEN_TO_CHUC_PHAT_HANH;
-            m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcMENH_GIA, "#,###");
             US_DM_DOT_PHAT_HANH v_dm_dot_ph = new US_DM_DOT_PHAT_HANH(ip_us_trai_phieu.dcID_DOT_PHAT_HANH);
-            if (!v_dm_dot_ph.IsIDNull()) m_txt_so_luong_phat_hanh.Text = CIPConvert.ToStr(v_dm_dot_ph.dcTONG_SO_LUONG_TRAI_PHIEU,"#,###");
+            if (!v_dm_dot_ph.IsIDNull())
+            {
+                m_txt_menh_gia.Text = CIPConvert.ToStr(v_dm_dot_ph.dcMENH_GIA, "#,###");
+                m_txt_so_luong_phat_hanh.Text = CIPConvert.ToStr(v_dm_dot_ph.dcTONG_SO_LUONG_TRAI_PHIEU, "#,###");
+            }
             // Thông tin về HĐ
             m_txt_so_hd.Text = ip_us_trai_phieu.strSO_HOP_DONG_DL_DK_LUU_KY;
             m_dat_ngay_ky_hd.Value = ip_us_trai_phieu.datNGAY_KY_HD;
@@ -251,7 +254,19 @@ namespace BondApp.DanhMuc
         }
         private void tinh_ngay_dao_han(int ip_i_ky_han, int id_dv_ky_han)
         {
-            DateTime v_dat_ngay_phat_hanh = m_us_v_dm_dot_phat_hanh.datNGAY_PHAT_HANH.Date;
+            DateTime v_dat_ngay_phat_hanh = DateTime.Today;
+            switch (m_e_formmode)
+            {
+                case e_form_mode.THEM_TRAI_PHIEU:
+                    v_dat_ngay_phat_hanh = m_us_v_dm_dot_phat_hanh.datNGAY_PHAT_HANH.Date;
+                    break;
+                case e_form_mode.CAP_NHAT_TRAI_PHIEU:
+                    v_dat_ngay_phat_hanh = CIPConvert.ToDatetime(m_txt_ngay_phat_hanh.Text);
+                    break;
+                case e_form_mode.DUYET_DU_LIEU:
+                    v_dat_ngay_phat_hanh = CIPConvert.ToDatetime(m_txt_ngay_phat_hanh.Text);
+                    break;
+            }
             if(id_dv_ky_han == ID_DON_VI_KY_HAN.THANG)
                 m_dat_ngay_dao_han.Value = v_dat_ngay_phat_hanh.AddMonths(ip_i_ky_han);
             else m_dat_ngay_dao_han.Value = v_dat_ngay_phat_hanh.AddYears(ip_i_ky_han);
@@ -296,7 +311,18 @@ namespace BondApp.DanhMuc
                 }
             }
             v_i_so_luong_hien_tai += v_i_so_luong;
-            if (v_i_so_luong_hien_tai > m_us_v_dm_dot_phat_hanh.dcTONG_SO_LUONG_TRAI_PHIEU) return false;
+            switch (m_e_formmode)
+            {
+                case e_form_mode.THEM_TRAI_PHIEU:
+                    if (v_i_so_luong_hien_tai > m_us_v_dm_dot_phat_hanh.dcTONG_SO_LUONG_TRAI_PHIEU) return false;
+                    break;
+                case e_form_mode.CAP_NHAT_TRAI_PHIEU:
+                    if (v_i_so_luong_hien_tai > CIPConvert.ToDecimal(m_txt_so_luong_phat_hanh.Text)) return false;
+                    break;
+                case e_form_mode.DUYET_DU_LIEU:
+                    if (v_i_so_luong_hien_tai > CIPConvert.ToDecimal(m_txt_so_luong_phat_hanh.Text)) return false;
+                    break;
+            }
             return true;
         }
         private void save_data()
@@ -346,14 +372,14 @@ namespace BondApp.DanhMuc
                     m_cmd_save.Text = "Lưu";
                     break;
                 case e_form_mode.CAP_NHAT_TRAI_PHIEU:
+                    us_object_2_form(m_us_trai_phieu);
                     m_cmd_save.Text = "Lưu";
                     break;
                 case e_form_mode.DUYET_DU_LIEU:
                     m_cmd_save.Text = "Duyệt";
+                    us_object_2_form(m_us_trai_phieu);
                     break;
                 case e_form_mode.VIEW_DU_LIEU:
-                    break;
-                default:
                     break;
             }
         }
@@ -376,24 +402,7 @@ namespace BondApp.DanhMuc
         {
             try
             {
-                switch (m_e_formmode)
-                {
-                    case e_form_mode.THEM_TRAI_PHIEU:
-                        set_ini_form_load();
-                        break;
-                    case e_form_mode.CAP_NHAT_TRAI_PHIEU:
-                        set_ini_form_load();
-                        us_object_2_form(m_us_trai_phieu);
-                        break;
-                    case e_form_mode.DUYET_DU_LIEU:
-                        set_ini_form_load();
-                        us_object_2_form(m_us_trai_phieu);
-                        break;
-                    case e_form_mode.VIEW_DU_LIEU:
-                        break;
-                    default:
-                        break;
-                }
+                set_ini_form_load();
             }
             catch (Exception v_e)
             {
@@ -438,6 +447,7 @@ namespace BondApp.DanhMuc
             try
             {
                 if (m_txt_ky_han.Text.Trim() == "") return;
+                if (m_txt_so_luong_phat_hanh.Text == "") return;
                 tinh_ngay_dao_han(int.Parse(m_txt_ky_han.Text), int.Parse(CIPConvert.ToStr(m_cbo_don_vi_ky_han.SelectedValue)));
             }
             catch (Exception v_e)
@@ -482,6 +492,7 @@ namespace BondApp.DanhMuc
             try
             {
                 if (m_txt_tong_sl.Text.Trim() == "") return;
+                if (m_txt_so_luong_phat_hanh.Text == "") return;
                 // Kiểm tra sô lượng
                 if (!check_so_luong_is_ok())
                 {
