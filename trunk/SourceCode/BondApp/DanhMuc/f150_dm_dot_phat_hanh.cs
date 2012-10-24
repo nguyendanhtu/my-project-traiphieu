@@ -44,6 +44,7 @@ namespace BondApp
         private Label label1;
         private Button m_cmd_filter;
         private C1FlexGrid m_fg;
+        internal SIS.Controls.Button.SiSButton m_cmd_duyet;
 		private System.ComponentModel.IContainer components;
 
 		public f150_dm_dot_phat_hanh()
@@ -96,6 +97,7 @@ namespace BondApp
             this.label1 = new System.Windows.Forms.Label();
             this.m_cmd_filter = new System.Windows.Forms.Button();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_cmd_duyet = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.m_gru_tim_kiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -130,6 +132,7 @@ namespace BondApp
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_duyet);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
@@ -278,6 +281,20 @@ namespace BondApp
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 66;
             this.m_fg.Click += new System.EventHandler(this.m_fg_Click);
+            // 
+            // m_cmd_duyet
+            // 
+            this.m_cmd_duyet.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_duyet.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_duyet.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_duyet.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_duyet.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet.Image")));
+            this.m_cmd_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_duyet.Location = new System.Drawing.Point(374, 4);
+            this.m_cmd_duyet.Name = "m_cmd_duyet";
+            this.m_cmd_duyet.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_duyet.TabIndex = 29;
+            this.m_cmd_duyet.Text = "&Duyệt";
             // 
             // f150_dm_dot_phat_hanh
             // 
@@ -464,6 +481,20 @@ namespace BondApp
 		//	f150_dm_dot_phat_hanh_DE v_fDE = new f150_dm_dot_phat_hanh_DE();			
 		//	v_fDE.display(m_us);
 		}
+        private void duyet_dm_dot_phat_hanh()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us, m_fg.Row);
+            if (m_us.dcID_TRANG_THAI == TRANG_THAI_DANH_MUC.DA_DUYET)
+            {
+                BaseMessages.MsgBox_Infor("Thông tin tổ chức phát hành này đã được duyệt");
+                return;
+            }
+            f151_dm_dot_phat_hanh_de frm151 = new f151_dm_dot_phat_hanh_de();
+            frm151.display_for_duyet(m_us);
+            load_data_2_grid();
+        }
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
@@ -472,8 +503,20 @@ namespace BondApp
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
             m_cmd_filter.Click += new EventHandler(m_cmd_filter_Click);
             m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
+            m_cmd_duyet.Click += new EventHandler(m_cmd_duyet_Click);
 		}
 
+        void m_cmd_duyet_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                duyet_dm_dot_phat_hanh();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         void m_cmd_filter_Click(object sender, EventArgs e)
         {
             try

@@ -13,6 +13,7 @@ using IP.Core.IPData;
 using BondDS.CDBNames;
 using IP.Core.IPSystemAdmin;
 using BondUS;
+using IP.Core.IPData.DBNames;
 
 namespace BondApp.DanhMuc
 {
@@ -27,13 +28,20 @@ namespace BondApp.DanhMuc
         #region Public interface
         public void display_for_insert()
         {
-            m_e_form_mode = DataEntryFormMode.InsertDataState;
+            m_e_form_mode = e_form_mode.THEM_TO_CHUC_PHAT_HANH;
             this.ShowDialog();
         }
 
         public void display_for_update(US_V_DM_DOT_PHAT_HANH ip_us_v_dot_phat_hanh)
         {
-            m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            m_e_form_mode = e_form_mode.SUA_TO_CHUC_PHAT_HANH;
+            m_us_v_dot_phat_hanh = ip_us_v_dot_phat_hanh;
+            this.ShowDialog();
+        }
+
+        public void display_for_duyet(US_V_DM_DOT_PHAT_HANH ip_us_v_dot_phat_hanh)
+        {
+            m_e_form_mode = e_form_mode.DUYET_DU_LIEU;
             m_us_v_dot_phat_hanh = ip_us_v_dot_phat_hanh;
             this.ShowDialog();
         }
@@ -44,13 +52,19 @@ namespace BondApp.DanhMuc
         {
             
         }
+        public enum e_form_mode
+        {
+            THEM_TO_CHUC_PHAT_HANH = 0
+            ,
+            SUA_TO_CHUC_PHAT_HANH = 1
+                , DUYET_DU_LIEU = 2
+        }
         #endregion
 
         #region Members
         US_V_DM_DOT_PHAT_HANH m_us_v_dot_phat_hanh = new US_V_DM_DOT_PHAT_HANH();
         DS_V_DM_DOT_PHAT_HANH m_ds_v_dot_phat_hanh = new DS_V_DM_DOT_PHAT_HANH();
-
-        DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
+        e_form_mode m_e_form_mode = e_form_mode.THEM_TO_CHUC_PHAT_HANH;
         #endregion
 
         #region Private Methods
@@ -73,6 +87,12 @@ namespace BondApp.DanhMuc
             m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcMENH_GIA);
             m_txt_ty_le_phi_chuyen_nhuong.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcTY_LE_PHI_CHUYEN_NHUONG*100);
             m_txt_ty_le_phi_phong_giai_toa.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcTY_LE_PHI_PHONG_GIAI_TOA*100);
+            if (ip_us_v_dot_phat_hanh.dcID_NGAN_HANG_DAI_LY_QUAN_LY_TK > 0)
+            {
+                US_CM_DM_TU_DIEN v_us_dm_tu_dien = new US_CM_DM_TU_DIEN(ip_us_v_dot_phat_hanh.dcID_NGAN_HANG_DAI_LY_QUAN_LY_TK);
+                m_cbo_ngan_hang_quan_ly_tai_khoan.SelectedText = v_us_dm_tu_dien.strTEN;
+                m_cbo_ngan_hang_quan_ly_tai_khoan.SelectedValue = v_us_dm_tu_dien.dcID;
+            }
         }
         private void form_2_us_object(US_V_DM_DOT_PHAT_HANH op_v_us_dot_phat_hanh)
         {
@@ -84,6 +104,8 @@ namespace BondApp.DanhMuc
             op_v_us_dot_phat_hanh.strGHI_CHU = m_txt_ghi_chu.Text;
             op_v_us_dot_phat_hanh.dcTY_LE_PHI_CHUYEN_NHUONG = CIPConvert.ToDecimal(m_txt_ty_le_phi_chuyen_nhuong.Text)/100;
             op_v_us_dot_phat_hanh.dcTY_LE_PHI_PHONG_GIAI_TOA = CIPConvert.ToDecimal(m_txt_ty_le_phi_phong_giai_toa.Text)/100;
+            if (m_cbo_ngan_hang_quan_ly_tai_khoan.SelectedValue != null)
+                op_v_us_dot_phat_hanh.dcID_NGAN_HANG_DAI_LY_QUAN_LY_TK = CIPConvert.ToDecimal(m_cbo_ngan_hang_quan_ly_tai_khoan.SelectedValue);
         }
         
         private bool check_validate_data_is_ok()
@@ -127,12 +149,19 @@ namespace BondApp.DanhMuc
         }
         private void load_data_2_cbo_ngan_hang_quan_ly_tk()
         {
-            US_CM_DM_TU_DIEN v_us_dm_tu_dien = new US_CM_DM_TU_DIEN();
-            DS_CM_DM_TU_DIEN v_ds_dm_tu_dien = new DS_CM_DM_TU_DIEN();
-            v_us_dm_tu_dien.fill_tu_dien_cung_loai_ds("NGAN_HANG_DL_QUAN_LY_TK", v_ds_dm_tu_dien);
-            m_cbo_ngan_hang_quan_ly_tai_khoan.DataSource = (DataTable)v_ds_dm_tu_dien.Tables[0];
+            //US_CM_DM_TU_DIEN v_us_dm_tu_dien = new US_CM_DM_TU_DIEN();
+            //DS_CM_DM_TU_DIEN v_ds_dm_tu_dien = new DS_CM_DM_TU_DIEN();
+            //v_us_dm_tu_dien.fill_tu_dien_cung_loai_ds("NGAN_HANG_DL_QUAN_LY_TK", v_ds_dm_tu_dien);
+            //m_cbo_ngan_hang_quan_ly_tai_khoan.DataSource = (DataTable)v_ds_dm_tu_dien.Tables[0];
+            //m_cbo_ngan_hang_quan_ly_tai_khoan.DisplayMember = CM_DM_TU_DIEN.TEN;
+            //m_cbo_ngan_hang_quan_ly_tai_khoan.ValueMember = CM_DM_TU_DIEN.ID;
+
+            US_CM_DM_TU_DIEN v_us_cm_dm_tu_diem = new US_CM_DM_TU_DIEN();
+            DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = v_us_cm_dm_tu_diem.getLoaiTuDienDS(CM_DM_LOAI_TD_LIST.NGAN_HANG_DL_QUAN_LY_TK);
+            m_cbo_ngan_hang_quan_ly_tai_khoan.DataSource = v_ds_cm_dm_tu_dien.Tables[0];
             m_cbo_ngan_hang_quan_ly_tai_khoan.DisplayMember = CM_DM_TU_DIEN.TEN;
             m_cbo_ngan_hang_quan_ly_tai_khoan.ValueMember = CM_DM_TU_DIEN.ID;
+            m_cbo_ngan_hang_quan_ly_tai_khoan.Text = "";
         }
         private void load_data_2_cbo_laoai_ngay_lam_viec()
         {
@@ -149,15 +178,16 @@ namespace BondApp.DanhMuc
             form_2_us_object(m_us_v_dot_phat_hanh);
             switch (m_e_form_mode)
             {
-                case DataEntryFormMode.InsertDataState:
+                case e_form_mode.THEM_TO_CHUC_PHAT_HANH:
                     m_us_v_dot_phat_hanh.Insert();
                     break;
-                case DataEntryFormMode.SelectDataState:
-                    break;
-                case DataEntryFormMode.UpdateDataState:
+                case e_form_mode.SUA_TO_CHUC_PHAT_HANH:
                     m_us_v_dot_phat_hanh.Update();
                     break;
-                case DataEntryFormMode.ViewDataState:
+                case e_form_mode.DUYET_DU_LIEU:
+                    m_us_v_dot_phat_hanh.dcID_NGUOI_DUYET = CAppContext_201.getCurrentUserID();
+                    m_us_v_dot_phat_hanh.dcID_TRANG_THAI = TRANG_THAI_DANH_MUC.DA_DUYET;
+                    m_us_v_dot_phat_hanh.Update();
                     break;
                 default:
                     break;
@@ -203,18 +233,22 @@ namespace BondApp.DanhMuc
             {
                 switch (m_e_form_mode)
                 {
-                    case DataEntryFormMode.InsertDataState:
+                    case e_form_mode.THEM_TO_CHUC_PHAT_HANH:
                         load_data_2_cbo_to_chuc_phat_hanh();
                         load_data_2_cbo_ngan_hang_quan_ly_tk();
+                        m_cmd_save.Text = "Lưu";
                         break;
-                    case DataEntryFormMode.SelectDataState:
-                        break;
-                    case DataEntryFormMode.UpdateDataState:
+                    case e_form_mode.SUA_TO_CHUC_PHAT_HANH:
                         load_data_2_cbo_to_chuc_phat_hanh();
                         load_data_2_cbo_ngan_hang_quan_ly_tk();
                         us_object_2_form(m_us_v_dot_phat_hanh);
+                        m_cmd_save.Text = "Lưu";
                         break;
-                    case DataEntryFormMode.ViewDataState:
+                    case e_form_mode.DUYET_DU_LIEU:
+                        m_cmd_save.Text = "Duyệt";
+                        load_data_2_cbo_to_chuc_phat_hanh();
+                        load_data_2_cbo_ngan_hang_quan_ly_tk();
+                        us_object_2_form(m_us_v_dot_phat_hanh);
                         break;
                     default:
                         break;
