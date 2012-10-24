@@ -23,6 +23,7 @@ using BondDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
 using BondApp.DanhMuc;
+using BondApp.HeThong;
 
 namespace BondApp
 {
@@ -457,7 +458,12 @@ namespace BondApp
 		private void delete_dm_dot_phat_hanh(){
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
+			//if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
+            if (!BaseMessages.MsgBox_Confirm("Việc xóa đợt phát hành sẽ xóa toàn bộ các trái phiếu mà tổ chức này phát hành và các trái chủ đã mua trái phiếu của tổ chức này (kèm các giao dịch) . \n Bạn có chắc chắn muốn xóa dữ liệu không?")) return;
+            bool v_bool_xac_nhan = false;
+            f000_confirm v_frm000 = new f000_confirm();
+            v_bool_xac_nhan = v_frm000.display_to_confirm();
+            if (!v_bool_xac_nhan) return;
 			US_V_DM_DOT_PHAT_HANH v_us = new US_V_DM_DOT_PHAT_HANH();
 			grid2us_object(v_us, m_fg.Row);
 			try {			
