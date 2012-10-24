@@ -46,14 +46,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.m_txt_tcph_chuyen_tien_trc = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.m_dat_ngay_dao_han = new System.Windows.Forms.DateTimePicker();
+            this.m_lbl_ngay_dao_han = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.m_txt_bien_do_lai = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.m_gru_thong_tin_trai_phieu = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.m_lbl_ngay_phat_hanh = new System.Windows.Forms.Label();
             this.m_txt_ngay_phat_hanh = new System.Windows.Forms.TextBox();
+            this.m_txt_so_luong_phat_hanh = new System.Windows.Forms.TextBox();
             this.m_txt_menh_gia = new System.Windows.Forms.TextBox();
             this.m_cmd_chon_dot_phat_hanh = new System.Windows.Forms.Button();
             this.m_txt_ten_dv_phat_hanh = new System.Windows.Forms.TextBox();
@@ -61,12 +65,12 @@
             this.m_lbl_phan_tram = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.m_cbo_loai_trai_phieu = new System.Windows.Forms.ComboBox();
+            this.m_txt_tong_gia_tri = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.m_txt_tong_sl = new System.Windows.Forms.TextBox();
             this.m_lbl_tong_sl = new System.Windows.Forms.Label();
-            this.m_dat_ngay_dao_han = new System.Windows.Forms.DateTimePicker();
             this.m_cbo_dv_tra_lai = new System.Windows.Forms.ComboBox();
             this.m_lbl_ky_tra_lai = new System.Windows.Forms.Label();
-            this.m_lbl_ngay_dao_han = new System.Windows.Forms.Label();
             this.m_txt_ky_tra_lai = new System.Windows.Forms.TextBox();
             this.m_cbo_tra_lai_sau = new System.Windows.Forms.ComboBox();
             this.m_lbl_tra_lai_sau = new System.Windows.Forms.Label();
@@ -90,10 +94,6 @@
             this.m_lbl_ky_han = new System.Windows.Forms.Label();
             this.m_txt_ten_trai_phieu = new System.Windows.Forms.TextBox();
             this.m_lbl_loai_trai_phieu = new System.Windows.Forms.Label();
-            this.m_txt_so_luong_phat_hanh = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.m_txt_tong_gia_tri = new System.Windows.Forms.TextBox();
             this.m.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.m_gru_thong_tin_trai_phieu.SuspendLayout();
@@ -298,6 +298,24 @@
             this.label7.TabIndex = 61;
             this.label7.Text = "TCPH chuyển tiền trước";
             // 
+            // m_dat_ngay_dao_han
+            // 
+            this.m_dat_ngay_dao_han.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_dao_han.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_ngay_dao_han.Location = new System.Drawing.Point(704, 234);
+            this.m_dat_ngay_dao_han.Name = "m_dat_ngay_dao_han";
+            this.m_dat_ngay_dao_han.Size = new System.Drawing.Size(130, 20);
+            this.m_dat_ngay_dao_han.TabIndex = 5;
+            // 
+            // m_lbl_ngay_dao_han
+            // 
+            this.m_lbl_ngay_dao_han.AutoSize = true;
+            this.m_lbl_ngay_dao_han.Location = new System.Drawing.Point(624, 238);
+            this.m_lbl_ngay_dao_han.Name = "m_lbl_ngay_dao_han";
+            this.m_lbl_ngay_dao_han.Size = new System.Drawing.Size(75, 13);
+            this.m_lbl_ngay_dao_han.TabIndex = 12;
+            this.m_lbl_ngay_dao_han.Text = "Ngày đáo hạn";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -354,6 +372,16 @@
             this.label5.Text = "Đơn vị phát hành";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(44, 75);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(100, 13);
+            this.label13.TabIndex = 35;
+            this.label13.Text = "Số lượng phát hành";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -383,6 +411,16 @@
             this.m_txt_ngay_phat_hanh.Size = new System.Drawing.Size(130, 20);
             this.m_txt_ngay_phat_hanh.TabIndex = 44;
             this.m_txt_ngay_phat_hanh.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // m_txt_so_luong_phat_hanh
+            // 
+            this.m_txt_so_luong_phat_hanh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.m_txt_so_luong_phat_hanh.Location = new System.Drawing.Point(162, 73);
+            this.m_txt_so_luong_phat_hanh.Name = "m_txt_so_luong_phat_hanh";
+            this.m_txt_so_luong_phat_hanh.ReadOnly = true;
+            this.m_txt_so_luong_phat_hanh.Size = new System.Drawing.Size(170, 20);
+            this.m_txt_so_luong_phat_hanh.TabIndex = 44;
+            this.m_txt_so_luong_phat_hanh.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // m_txt_menh_gia
             // 
@@ -448,6 +486,25 @@
             this.m_cbo_loai_trai_phieu.Size = new System.Drawing.Size(120, 21);
             this.m_cbo_loai_trai_phieu.TabIndex = 2;
             // 
+            // m_txt_tong_gia_tri
+            // 
+            this.m_txt_tong_gia_tri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.m_txt_tong_gia_tri.Location = new System.Drawing.Point(387, 277);
+            this.m_txt_tong_gia_tri.Name = "m_txt_tong_gia_tri";
+            this.m_txt_tong_gia_tri.ReadOnly = true;
+            this.m_txt_tong_gia_tri.Size = new System.Drawing.Size(120, 20);
+            this.m_txt_tong_gia_tri.TabIndex = 6;
+            this.m_txt_tong_gia_tri.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(311, 283);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(60, 13);
+            this.label14.TabIndex = 20;
+            this.label14.Text = "Tổng giá trị";
+            // 
             // m_txt_tong_sl
             // 
             this.m_txt_tong_sl.Location = new System.Drawing.Point(165, 279);
@@ -464,15 +521,6 @@
             this.m_lbl_tong_sl.Size = new System.Drawing.Size(75, 13);
             this.m_lbl_tong_sl.TabIndex = 20;
             this.m_lbl_tong_sl.Text = "Tổng số lượng";
-            // 
-            // m_dat_ngay_dao_han
-            // 
-            this.m_dat_ngay_dao_han.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_ngay_dao_han.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_dao_han.Location = new System.Drawing.Point(704, 234);
-            this.m_dat_ngay_dao_han.Name = "m_dat_ngay_dao_han";
-            this.m_dat_ngay_dao_han.Size = new System.Drawing.Size(130, 20);
-            this.m_dat_ngay_dao_han.TabIndex = 5;
             // 
             // m_cbo_dv_tra_lai
             // 
@@ -491,15 +539,6 @@
             this.m_lbl_ky_tra_lai.Size = new System.Drawing.Size(47, 13);
             this.m_lbl_ky_tra_lai.TabIndex = 30;
             this.m_lbl_ky_tra_lai.Text = "Kỳ trả lãi";
-            // 
-            // m_lbl_ngay_dao_han
-            // 
-            this.m_lbl_ngay_dao_han.AutoSize = true;
-            this.m_lbl_ngay_dao_han.Location = new System.Drawing.Point(624, 238);
-            this.m_lbl_ngay_dao_han.Name = "m_lbl_ngay_dao_han";
-            this.m_lbl_ngay_dao_han.Size = new System.Drawing.Size(75, 13);
-            this.m_lbl_ngay_dao_han.TabIndex = 12;
-            this.m_lbl_ngay_dao_han.Text = "Ngày đáo hạn";
             // 
             // m_txt_ky_tra_lai
             // 
@@ -738,45 +777,6 @@
             this.m_lbl_loai_trai_phieu.Size = new System.Drawing.Size(73, 13);
             this.m_lbl_loai_trai_phieu.TabIndex = 4;
             this.m_lbl_loai_trai_phieu.Text = "Loại trái phiếu";
-            // 
-            // m_txt_so_luong_phat_hanh
-            // 
-            this.m_txt_so_luong_phat_hanh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_txt_so_luong_phat_hanh.Location = new System.Drawing.Point(162, 73);
-            this.m_txt_so_luong_phat_hanh.Name = "m_txt_so_luong_phat_hanh";
-            this.m_txt_so_luong_phat_hanh.ReadOnly = true;
-            this.m_txt_so_luong_phat_hanh.Size = new System.Drawing.Size(170, 20);
-            this.m_txt_so_luong_phat_hanh.TabIndex = 44;
-            this.m_txt_so_luong_phat_hanh.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(44, 75);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(100, 13);
-            this.label13.TabIndex = 35;
-            this.label13.Text = "Số lượng phát hành";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(311, 283);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(60, 13);
-            this.label14.TabIndex = 20;
-            this.label14.Text = "Tổng giá trị";
-            // 
-            // m_txt_tong_gia_tri
-            // 
-            this.m_txt_tong_gia_tri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_txt_tong_gia_tri.Location = new System.Drawing.Point(387, 277);
-            this.m_txt_tong_gia_tri.Name = "m_txt_tong_gia_tri";
-            this.m_txt_tong_gia_tri.ReadOnly = true;
-            this.m_txt_tong_gia_tri.Size = new System.Drawing.Size(120, 20);
-            this.m_txt_tong_gia_tri.TabIndex = 6;
-            this.m_txt_tong_gia_tri.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // f300_dm_trai_phieu_DE
             // 
