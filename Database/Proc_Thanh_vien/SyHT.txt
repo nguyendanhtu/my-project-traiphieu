@@ -353,6 +353,211 @@ WHERE tc.ID_TRAI_PHIEU_SO_HUU = tp.ID AND tc.ID = tsd.ID_TRAI_CHU
 GO
 
 
+-----------------------------
+USE [QuanLyPhatHanhTraiPhieu]
+GO
+
+/****** Object:  StoredProcedure [dbo].[pr_DM_TRAI_CHU_Insert]    Script Date: 10/24/2012 18:06:59 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[pr_DM_TRAI_CHU_Insert]
+	@MA_TRAI_CHU nvarchar(35),
+	@TEN_TRAI_CHU nvarchar(250),
+	@DIA_CHI nvarchar(250),
+	@MOBILE nvarchar(250),
+	@FAX nvarchar(250),
+	@CMT_GIAY_DKKD nvarchar(250),
+	@NGAY_CAP_CMT datetime,
+	@NOI_CAP_CMT nvarchar(50),
+	@ID_LOAI_TRAI_CHU numeric(18, 0),
+	@SO_TAI_KHOAN nvarchar(250),
+	@MO_TAI_NGAN_HANG nvarchar(250),
+	@GHI_CHU1 nvarchar(250),
+	@GHI_CHU2 nvarchar(250),
+	@GHI_CHU3 nvarchar(250),
+	@ID_TRAI_PHIEU_SO_HUU numeric(18, 0),
+	@ID_NGUOI_LAP numeric(18, 0),
+	@ID_NGUOI_DUYET numeric(18, 0),
+	@ID_TRANG_THAI numeric(18, 0),
+	@TEN_NGUOI_DAI_DIEN nvarchar(250),
+	@CMT_NGUOI_DAI_DIEN nvarchar(50),
+	@NGAY_CAP_CMT_NGUOI_DAI_DIEN datetime,
+	@NOI_CAP_CMT_NGUOI_DAI_DIEN nvarchar(250),
+	@CHUC_VU nvarchar(250),
+	@ID numeric(18, 0) OUTPUT
+AS
+INSERT [dbo].[DM_TRAI_CHU]
+(
+	[MA_TRAI_CHU],
+	[TEN_TRAI_CHU],
+	[DIA_CHI],
+	[MOBILE],
+	[FAX],
+	[CMT_GIAY_DKKD],
+	[NGAY_CAP_CMT],
+	[NOI_CAP_CMT],
+	[ID_LOAI_TRAI_CHU],
+	[SO_TAI_KHOAN],
+	[MO_TAI_NGAN_HANG],
+	[GHI_CHU1],
+	[GHI_CHU2],
+	[GHI_CHU3],
+	[ID_TRAI_PHIEU_SO_HUU],
+	[ID_NGUOI_LAP],
+	[ID_NGUOI_DUYET],
+	[ID_TRANG_THAI],
+	[TEN_NGUOI_DAI_DIEN],
+	[CMT_NGUOI_DAI_DIEN],
+	[NGAY_CAP_CMT_NGUOI_DAI_DIEN],
+	[NOI_CAP_CMT_NGUOI_DAI_DIEN],
+	[CHUC_VU]
+)
+VALUES
+(
+	@MA_TRAI_CHU,
+	@TEN_TRAI_CHU,
+	@DIA_CHI,
+	@MOBILE,
+	@FAX,
+	@CMT_GIAY_DKKD,
+	@NGAY_CAP_CMT,
+	@NOI_CAP_CMT,
+	@ID_LOAI_TRAI_CHU,
+	@SO_TAI_KHOAN,
+	@MO_TAI_NGAN_HANG,
+	@GHI_CHU1,
+	@GHI_CHU2,
+	@GHI_CHU3,
+	@ID_TRAI_PHIEU_SO_HUU,
+	@ID_NGUOI_LAP,
+	@ID_NGUOI_DUYET,
+	@ID_TRANG_THAI,
+	@TEN_NGUOI_DAI_DIEN,
+	@CMT_NGUOI_DAI_DIEN,
+	@NGAY_CAP_CMT_NGUOI_DAI_DIEN,
+	@NOI_CAP_CMT_NGUOI_DAI_DIEN,
+	@CHUC_VU
+)
+SELECT @ID=SCOPE_IDENTITY()
+GO
+
+
+-------------------------------
+USE [QuanLyPhatHanhTraiPhieu]
+GO
+
+/****** Object:  StoredProcedure [dbo].[pr_DM_TRAI_CHU_Update]    Script Date: 10/24/2012 18:08:25 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[pr_DM_TRAI_CHU_Update]
+	@ID numeric(18, 0),
+	@MA_TRAI_CHU nvarchar(35),
+	@TEN_TRAI_CHU nvarchar(250),
+	@DIA_CHI nvarchar(250),
+	@MOBILE nvarchar(250),
+	@FAX nvarchar(250),
+	@CMT_GIAY_DKKD nvarchar(250),
+	@NGAY_CAP_CMT datetime,
+	@NOI_CAP_CMT nvarchar(50),
+	@ID_LOAI_TRAI_CHU numeric(18, 0),
+	@SO_TAI_KHOAN nvarchar(250),
+	@MO_TAI_NGAN_HANG nvarchar(250),
+	@GHI_CHU1 nvarchar(250),
+	@GHI_CHU2 nvarchar(250),
+	@GHI_CHU3 nvarchar(250),
+	@ID_TRAI_PHIEU_SO_HUU numeric(18, 0),
+	@ID_NGUOI_LAP numeric(18, 0),
+	@ID_NGUOI_DUYET numeric(18, 0),
+	@ID_TRANG_THAI numeric(18, 0),
+	@TEN_NGUOI_DAI_DIEN nvarchar(250),
+	@CMT_NGUOI_DAI_DIEN nvarchar(50),
+	@NGAY_CAP_CMT_NGUOI_DAI_DIEN datetime,
+	@NOI_CAP_CMT_NGUOI_DAI_DIEN nvarchar(250),
+	@CHUC_VU nvarchar(250)
+AS
+UPDATE [dbo].[DM_TRAI_CHU]
+SET 
+	[MA_TRAI_CHU] = @MA_TRAI_CHU,
+	[TEN_TRAI_CHU] = @TEN_TRAI_CHU,
+	[DIA_CHI] = @DIA_CHI,
+	[MOBILE] = @MOBILE,
+	[FAX] = @FAX,
+	[CMT_GIAY_DKKD] = @CMT_GIAY_DKKD,
+	[NGAY_CAP_CMT] = @NGAY_CAP_CMT,
+	[NOI_CAP_CMT] = @NOI_CAP_CMT,
+	[ID_LOAI_TRAI_CHU] = @ID_LOAI_TRAI_CHU,
+	[SO_TAI_KHOAN] = @SO_TAI_KHOAN,
+	[MO_TAI_NGAN_HANG] = @MO_TAI_NGAN_HANG,
+	[GHI_CHU1] = @GHI_CHU1,
+	[GHI_CHU2] = @GHI_CHU2,
+	[GHI_CHU3] = @GHI_CHU3,
+	[ID_TRAI_PHIEU_SO_HUU] = @ID_TRAI_PHIEU_SO_HUU,
+	[ID_NGUOI_LAP] = @ID_NGUOI_LAP,
+	[ID_NGUOI_DUYET] = @ID_NGUOI_DUYET,
+	[ID_TRANG_THAI] = @ID_TRANG_THAI,
+	[TEN_NGUOI_DAI_DIEN] = @TEN_NGUOI_DAI_DIEN,
+	[CMT_NGUOI_DAI_DIEN] = @CMT_NGUOI_DAI_DIEN,
+	[NGAY_CAP_CMT_NGUOI_DAI_DIEN] = @NGAY_CAP_CMT_NGUOI_DAI_DIEN,
+	[NOI_CAP_CMT_NGUOI_DAI_DIEN] = @NOI_CAP_CMT_NGUOI_DAI_DIEN,
+	[CHUC_VU] = @CHUC_VU
+WHERE
+	[ID] = @ID
+GO
+
+
+-----------------
+USE [QuanLyPhatHanhTraiPhieu]
+GO
+
+/****** Object:  StoredProcedure [dbo].[pr_DM_TRAI_CHU_SelectAll]    Script Date: 10/24/2012 18:09:30 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER PROCEDURE [dbo].[pr_DM_TRAI_CHU_SelectAll]
+AS
+SELECT
+	[ID],
+	[MA_TRAI_CHU],
+	[TEN_TRAI_CHU],
+	[DIA_CHI],
+	[MOBILE],
+	[FAX],
+	[CMT_GIAY_DKKD],
+	[NGAY_CAP_CMT],
+	[NOI_CAP_CMT],
+	[ID_LOAI_TRAI_CHU],
+	[SO_TAI_KHOAN],
+	[MO_TAI_NGAN_HANG],
+	[GHI_CHU1],
+	[GHI_CHU2],
+	[GHI_CHU3],
+	[ID_TRAI_PHIEU_SO_HUU],
+	[ID_NGUOI_LAP],
+	[ID_NGUOI_DUYET],
+	[ID_TRANG_THAI],
+	[TEN_NGUOI_DAI_DIEN],
+	[CMT_NGUOI_DAI_DIEN],
+	[NGAY_CAP_CMT_NGUOI_DAI_DIEN],
+	[NOI_CAP_CMT_NGUOI_DAI_DIEN],
+	[CHUC_VU]
+FROM [dbo].[DM_TRAI_CHU]
+ORDER BY 
+	[ID] ASC
+GO
+
+
 
 
 
