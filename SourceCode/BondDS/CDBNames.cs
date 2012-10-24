@@ -26,6 +26,12 @@ namespace BondDS.CDBNames
         public const decimal THANG = 18;
         public const decimal NAM = 19;
     }
+    public class ID_LOAI_TRAI_PHIEU
+    {
+        public const decimal LS_THA_NOI= 24;
+        public const decimal LS_CO_DINH= 25;
+        public const decimal LS_BANG_0= 26;
+    }
     public class GIOI_HAN_PHI_CHUYEN_NHUONG
     {
         public const decimal PHI_CN_MAX = 14;
