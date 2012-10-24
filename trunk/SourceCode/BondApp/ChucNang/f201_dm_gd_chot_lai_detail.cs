@@ -205,7 +205,7 @@ namespace BondApp
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 15;
-            this.m_cmd_save.Text = "Lưu";
+            this.m_cmd_save.Text = "Thêm";
             // 
             // m_cmd_gen
             // 

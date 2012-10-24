@@ -97,7 +97,7 @@
             this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(819, 40);
+            this.m_lbl_title.Size = new System.Drawing.Size(824, 40);
             this.m_lbl_title.TabIndex = 0;
             this.m_lbl_title.Text = "F300 - Thông tin trái phiếu";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -149,7 +149,7 @@
             this.m.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m.Location = new System.Drawing.Point(0, 40);
             this.m.Name = "m";
-            this.m.Size = new System.Drawing.Size(819, 487);
+            this.m.Size = new System.Drawing.Size(824, 522);
             this.m.TabIndex = 1;
             this.m.TabStop = false;
             // 
@@ -159,7 +159,7 @@
             this.m_cbo_chuyen_nhuong_huong_theo.FormattingEnabled = true;
             this.m_cbo_chuyen_nhuong_huong_theo.Items.AddRange(new object[] {
             "Ngày chuyển nhượng",
-            "Chọn cả kỳ"});
+            "Trọn cả kỳ"});
             this.m_cbo_chuyen_nhuong_huong_theo.Location = new System.Drawing.Point(573, 331);
             this.m_cbo_chuyen_nhuong_huong_theo.Name = "m_cbo_chuyen_nhuong_huong_theo";
             this.m_cbo_chuyen_nhuong_huong_theo.Size = new System.Drawing.Size(215, 21);
@@ -276,7 +276,7 @@
             this.m_gru_thong_tin_trai_phieu.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_gru_thong_tin_trai_phieu.Location = new System.Drawing.Point(3, 16);
             this.m_gru_thong_tin_trai_phieu.Name = "m_gru_thong_tin_trai_phieu";
-            this.m_gru_thong_tin_trai_phieu.Size = new System.Drawing.Size(813, 100);
+            this.m_gru_thong_tin_trai_phieu.Size = new System.Drawing.Size(818, 100);
             this.m_gru_thong_tin_trai_phieu.TabIndex = 56;
             this.m_gru_thong_tin_trai_phieu.TabStop = false;
             this.m_gru_thong_tin_trai_phieu.Text = "Thông tin đợt phát hành";
@@ -532,10 +532,10 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(3, 448);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(3, 483);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(813, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(818, 36);
             this.m_pnl_out_place_dm.TabIndex = 36;
             // 
             // m_cmd_save
@@ -547,7 +547,7 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(633, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(638, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 0;
@@ -589,7 +589,7 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(721, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(726, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 1;
@@ -675,7 +675,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(819, 527);
+            this.ClientSize = new System.Drawing.Size(824, 562);
             this.Controls.Add(this.m);
             this.Controls.Add(this.m_lbl_title);
             this.Name = "f300_dm_trai_phieu_DE";
