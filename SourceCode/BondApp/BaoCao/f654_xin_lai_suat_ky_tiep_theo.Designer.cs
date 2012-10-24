@@ -82,7 +82,7 @@
             this.m_lbl_header.Name = "m_lbl_header";
             this.m_lbl_header.Size = new System.Drawing.Size(867, 45);
             this.m_lbl_header.TabIndex = 60;
-            this.m_lbl_header.Text = "F654- XIN LÃI SUẤT KỲ TIẾP THEO";
+            this.m_lbl_header.Text = "F654- PHIẾU ĐỀ SUẤT KÌ TRẢ LÃI TIẾP THEO";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ImageList
@@ -520,7 +520,7 @@
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_lbl_header);
             this.Name = "f654_xin_lai_suat_ky_tiep_theo";
-            this.Text = "f654_xin_lai_suat_ky_tiep_theo";
+            this.Text = "f654 - Phiếu đề suất kì trả lãi tiếp theo";
             this.Load += new System.EventHandler(this.f654_xin_lai_suat_ky_tiep_theo_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
