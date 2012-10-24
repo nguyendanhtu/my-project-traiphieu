@@ -185,7 +185,7 @@ namespace BondApp.DanhMuc
             m_us_gd_so_du_trai_phieu = new US_GD_SO_DU_TRAI_PHIEU();
             US_DM_TRAI_CHU v_us = new US_DM_TRAI_CHU();
             v_us.FillDatasetByMaTraiChu(m_ds_trai_chu, m_us_trai_chu.strMA_TRAI_CHU);
-            m_us_gd_so_du_trai_phieu.dcID_TRAI_CHU = CIPConvert.ToDecimal(m_ds_trai_chu.Tables["DM_TRAI_CHU"].Rows[0]["ID"]);
+            m_us_gd_so_du_trai_phieu.dcID_TRAI_CHU = CIPConvert.ToDecimal(m_ds_trai_chu.DM_TRAI_CHU.Rows[0]["ID"]);
             m_us_gd_so_du_trai_phieu.dcTONG_SO_DU = CIPConvert.ToDecimal(m_txt_so_trai_phieu_so_huu.Text);
             m_us_gd_so_du_trai_phieu.dcSO_DU_KHA_DUNG = CIPConvert.ToDecimal(m_txt_so_trai_phieu_so_huu.Text);
             m_us_gd_so_du_trai_phieu.datNGAY = DateTime.Now;
