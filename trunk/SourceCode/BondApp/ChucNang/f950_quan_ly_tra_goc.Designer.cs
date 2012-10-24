@@ -54,11 +54,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_gru_tim_kiem = new System.Windows.Forms.GroupBox();
+            this.m_cbo_trang_thai = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.m_txt_search = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.m_cmd_filter = new System.Windows.Forms.Button();
-            this.m_cbo_trang_thai = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.m_lbl_trang_thai = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -81,6 +83,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.m_lbl_trang_thai);
+            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label34);
             this.groupBox2.Controls.Add(this.m_lbl_ky_han);
@@ -99,7 +103,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Location = new System.Drawing.Point(0, 40);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1045, 99);
+            this.groupBox2.Size = new System.Drawing.Size(1045, 112);
             this.groupBox2.TabIndex = 61;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin trái phiếu";
@@ -324,9 +328,9 @@
             this.groupBox1.Controls.Add(this.m_fg);
             this.groupBox1.Controls.Add(this.m_gru_tim_kiem);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 139);
+            this.groupBox1.Location = new System.Drawing.Point(0, 152);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1045, 304);
+            this.groupBox1.Size = new System.Drawing.Size(1045, 291);
             this.groupBox1.TabIndex = 65;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách trái chủ";
@@ -337,7 +341,7 @@
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.Location = new System.Drawing.Point(3, 65);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1039, 236);
+            this.m_fg.Size = new System.Drawing.Size(1039, 223);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 25;
             // 
@@ -354,6 +358,25 @@
             this.m_gru_tim_kiem.Size = new System.Drawing.Size(1039, 49);
             this.m_gru_tim_kiem.TabIndex = 24;
             this.m_gru_tim_kiem.TabStop = false;
+            // 
+            // m_cbo_trang_thai
+            // 
+            this.m_cbo_trang_thai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_trang_thai.FormattingEnabled = true;
+            this.m_cbo_trang_thai.Location = new System.Drawing.Point(87, 19);
+            this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
+            this.m_cbo_trang_thai.Size = new System.Drawing.Size(127, 21);
+            this.m_cbo_trang_thai.TabIndex = 63;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 62;
+            this.label1.Text = "Trạng thái";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // m_txt_search
             // 
@@ -382,24 +405,24 @@
             this.m_cmd_filter.Text = "     Xem";
             this.m_cmd_filter.UseVisualStyleBackColor = true;
             // 
-            // m_cbo_trang_thai
+            // label4
             // 
-            this.m_cbo_trang_thai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_trang_thai.FormattingEnabled = true;
-            this.m_cbo_trang_thai.Location = new System.Drawing.Point(87, 19);
-            this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
-            this.m_cbo_trang_thai.Size = new System.Drawing.Size(127, 21);
-            this.m_cbo_trang_thai.TabIndex = 63;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(41, 80);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.TabIndex = 63;
+            this.label4.Text = "Trạng thái:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label1
+            // m_lbl_trang_thai
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 62;
-            this.label1.Text = "Trạng thái";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_lbl_trang_thai.AutoSize = true;
+            this.m_lbl_trang_thai.Location = new System.Drawing.Point(107, 72);
+            this.m_lbl_trang_thai.Name = "m_lbl_trang_thai";
+            this.m_lbl_trang_thai.Size = new System.Drawing.Size(0, 13);
+            this.m_lbl_trang_thai.TabIndex = 64;
+            this.m_lbl_trang_thai.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // f950_quan_ly_tra_goc
             // 
@@ -452,8 +475,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button m_cmd_filter;
         internal SIS.Controls.Button.SiSButton m_cmd_thanh_toan;
-        private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
         private System.Windows.Forms.ComboBox m_cbo_trang_thai;
         private System.Windows.Forms.Label label1;
+        private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
+        private System.Windows.Forms.Label m_lbl_trang_thai;
+        private System.Windows.Forms.Label label4;
     }
 }
