@@ -413,6 +413,15 @@ namespace BondDS.CDBNames
         public const string MENH_GIA = "MENH_GIA";
         public const string KY_TRA_LAI = "KY_TRA_LAI";
         public const string ID_DV_KY_TRA_LAI = "ID_DV_KY_TRA_LAI";
+        public const string TONG_SO_LUONG_TRAI_PHIEU = "TONG_SO_LUONG_TRAI_PHIEU";
+        public const string TONG_GIA_TRI_TRAI_PHIEU_PHAT_HANH = "TONG_GIA_TRI_TRAI_PHIEU_PHAT_HANH";
+        public const string ID_NGAN_HANG_DAI_LY_QUAN_LY_TK = "ID_NGAN_HANG_DAI_LY_QUAN_LY_TK";
+        public const string TY_LE_PHI_CHUYEN_NHUONG = "TY_LE_PHI_CHUYEN_NHUONG";
+        public const string TY_LE_PHI_PHONG_GIAI_TOA = "TY_LE_PHI_PHONG_GIAI_TOA";
+        public const string ID_NGUOI_LAP = "ID_NGUOI_LAP";
+        public const string ID_NGUOI_DUYET = "ID_NGUOI_DUYET";
+        public const string NGAY_LAM_VIEC_HAI_SAU_YN = "NGAY_LAM_VIEC_HAI_SAU_YN";
+        public const string ID_TRANG_THAI = "ID_TRANG_THAI";
     }
 
 
