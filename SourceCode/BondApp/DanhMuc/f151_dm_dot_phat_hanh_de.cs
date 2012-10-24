@@ -141,7 +141,7 @@ namespace BondApp.DanhMuc
             US_DM_TO_CHUC_PHAT_HANH v_us_dm_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH();
             DS_DM_TO_CHUC_PHAT_HANH v_ds_dm_to_chuc_phat_hanh = new DS_DM_TO_CHUC_PHAT_HANH();
 
-            v_us_dm_to_chuc_phat_hanh.FillDataset(v_ds_dm_to_chuc_phat_hanh);
+            v_us_dm_to_chuc_phat_hanh.FillDataset(v_ds_dm_to_chuc_phat_hanh, " WHERE ID_TRANG_THAI = " + TRANG_THAI_DANH_MUC.DA_DUYET);
 
             m_cbo_ten_to_chuc_phat_hanh.ValueMember = DM_TO_CHUC_PHAT_HANH.ID;
             m_cbo_ten_to_chuc_phat_hanh.DisplayMember = DM_TO_CHUC_PHAT_HANH.TEN_TO_CHUC_PHAT_HANH;
@@ -210,6 +210,7 @@ namespace BondApp.DanhMuc
             }
         }
         #endregion
+
         #region Events
         private void set_define_events()
         {
