@@ -246,11 +246,13 @@ namespace BondApp.DanhMuc
                     case e_form_mode.THEM_TO_CHUC_PHAT_HANH:
                         load_data_2_cbo_to_chuc_phat_hanh();
                         load_data_2_cbo_ngan_hang_quan_ly_tk();
+                        load_data_2_cbo_loai_ngay_lam_viec();
                         m_cmd_save.Text = "Lưu";
                         break;
                     case e_form_mode.SUA_TO_CHUC_PHAT_HANH:
                         load_data_2_cbo_to_chuc_phat_hanh();
                         load_data_2_cbo_ngan_hang_quan_ly_tk();
+                        load_data_2_cbo_loai_ngay_lam_viec();
                         us_object_2_form(m_us_v_dot_phat_hanh);
                         m_cmd_save.Text = "Lưu";
                         break;
@@ -258,6 +260,7 @@ namespace BondApp.DanhMuc
                         m_cmd_save.Text = "Duyệt";
                         load_data_2_cbo_to_chuc_phat_hanh();
                         load_data_2_cbo_ngan_hang_quan_ly_tk();
+                        load_data_2_cbo_loai_ngay_lam_viec();
                         us_object_2_form(m_us_v_dot_phat_hanh);
                         break;
                     default:
