@@ -240,7 +240,6 @@ namespace BondApp.DanhMuc
             m_cbo_tra_lai_sau.ValueMember = CO_SO_TINH_LAI.VALUE;
             m_cbo_tra_lai_sau.Text = "";
         }
-
         private void chon_dot_phat_hanh()
         {
             f150_dm_dot_phat_hanh v_frm150 = new f150_dm_dot_phat_hanh();
@@ -282,9 +281,33 @@ namespace BondApp.DanhMuc
                 return false; }
             return true;
         }
+        private bool check_so_luong_is_ok()
+        {
+            int v_i_so_luong = int.Parse(m_txt_tong_sl.Text.Trim());
+            US_V_DM_TRAI_PHIEU v_us_dm_trai_phieu = new US_V_DM_TRAI_PHIEU();
+            DS_V_DM_TRAI_PHIEU v_ds_dm_trai_phieu = new DS_V_DM_TRAI_PHIEU();
+            v_us_dm_trai_phieu.FillDatasetByIDDotPhatHanh(v_ds_dm_trai_phieu, m_us_v_dm_dot_phat_hanh.dcID);
+            int v_i_so_luong_hien_tai = 0;
+            if (v_ds_dm_trai_phieu.V_DM_TRAI_PHIEU.Rows.Count > 0)
+            {
+                for (int v_i = 0; v_i < v_ds_dm_trai_phieu.V_DM_TRAI_PHIEU.Rows.Count; v_i++)
+                {
+                    v_i_so_luong_hien_tai += int.Parse(CIPConvert.ToStr(v_ds_dm_trai_phieu.V_DM_TRAI_PHIEU.Rows[v_i][V_DM_TRAI_PHIEU.TONG_SL_PHAT_HANH]));
+                }
+            }
+            v_i_so_luong_hien_tai += v_i_so_luong;
+            if (v_i_so_luong_hien_tai > m_us_v_dm_dot_phat_hanh.dcTONG_SO_LUONG_TRAI_PHIEU) return false;
+            return true;
+        }
         private void save_data()
         {
             if (check_validate_data_is_ok() == false) return;
+            // Kiểm tra sô lượng
+            if (!check_so_luong_is_ok())
+            {
+                BaseMessages.MsgBox_Infor("Số lượng trái phiếu đã vượt quá số lượng trái phiếu phát hành trong đợt");
+                return;
+            }
             form_2_us_object(m_us_trai_phieu);
 
             switch (m_e_formmode)
@@ -459,6 +482,13 @@ namespace BondApp.DanhMuc
             try
             {
                 if (m_txt_tong_sl.Text.Trim() == "") return;
+                // Kiểm tra sô lượng
+                if (!check_so_luong_is_ok())
+                {
+                    BaseMessages.MsgBox_Infor("Số lượng trái phiếu đã vượt quá số lượng trái phiếu phát hành trong đợt");
+                    return;
+                }
+                // Ra được tổng giá trị
                 m_txt_tong_gia_tri.Text = CIPConvert.ToStr(CIPConvert.ToDecimal(m_txt_tong_sl.Text.Trim()) * CIPConvert.ToDecimal(m_txt_menh_gia.Text.Trim()),"#,###");
             }
             catch (Exception v_e)
