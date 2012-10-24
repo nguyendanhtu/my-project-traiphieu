@@ -14,6 +14,7 @@ using IP.Core.IPUserService;
 using System.Data.SqlClient;
 using System.Data;
 using System;
+using BondDS.CDBNames;
 
 
 public class US_V_DM_TRAI_CHU_CHOT_LAI : US_Object
@@ -880,6 +881,16 @@ public class US_V_DM_TRAI_CHU_CHOT_LAI : US_Object
     public void FillDatasetByIDTraiPhieuAndNgayChotLaiNo(DS_V_DM_TRAI_CHU_CHOT_LAI ip_ds, decimal ip_id_trai_phieu_so_huu, DateTime ip_ngay_chot_lai)
     {
         base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu_so_huu.ToString() + " AND NGAY_CHOT_LAI = '" + ip_ngay_chot_lai + "'" + "AND DA_NHAN_TIEN_YN = 'N'");
+    }
+
+    public void FillDatasetByIDTraiPhieuAndNgayChotLaiAndTrangThaiYes(DS_V_DM_TRAI_CHU_CHOT_LAI ip_ds, decimal ip_id_trai_phieu_so_huu, DateTime ip_ngay_chot_lai)
+    {
+        base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu_so_huu.ToString() + " AND NGAY_CHOT_LAI = '" + ip_ngay_chot_lai + "'" + " AND ID_TRANG_THAI = " + List_trang_thai.Da_Thuc_Hien);
+    }
+
+    public void FillDatasetByIDTraiPhieuAndNgayChotLaiAndTrangThaiNo(DS_V_DM_TRAI_CHU_CHOT_LAI ip_ds, decimal ip_id_trai_phieu_so_huu, DateTime ip_ngay_chot_lai)
+    {
+        base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu_so_huu.ToString() + " AND NGAY_CHOT_LAI = '" + ip_ngay_chot_lai + "'" + " AND ID_TRANG_THAI <> " + List_trang_thai.Da_Thuc_Hien);
     }
     #endregion  
 }
