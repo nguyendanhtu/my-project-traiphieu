@@ -35,13 +35,14 @@ namespace BondApp
         internal SIS.Controls.Button.SiSButton m_cmd_insert;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         internal SIS.Controls.Button.SiSButton m_cmd_view;
-        internal SIS.Controls.Button.SiSButton m_cmd_select;
         private GroupBox m_gru_tim_kiem;
         private TextBox m_txt_search;
         private Label label1;
         private Button m_cmd_filter;
         private Label m_lbl_title;
         private C1FlexGrid m_fg;
+        internal SIS.Controls.Button.SiSButton m_cmd_select;
+        internal SIS.Controls.Button.SiSButton m_cmd_duyet;
         private System.ComponentModel.IContainer components;
 
         public f300_dm_trai_phieu()
@@ -83,7 +84,6 @@ namespace BondApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f300_dm_trai_phieu));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_cmd_select = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_view = new SIS.Controls.Button.SiSButton();
@@ -95,6 +95,8 @@ namespace BondApp
             this.m_cmd_filter = new System.Windows.Forms.Button();
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_cmd_duyet = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_select = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.m_gru_tim_kiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -130,6 +132,7 @@ namespace BondApp
             // m_pnl_out_place_dm
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_select);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_duyet);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
@@ -141,21 +144,6 @@ namespace BondApp
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(884, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
-            // 
-            // m_cmd_select
-            // 
-            this.m_cmd_select.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_select.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_select.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_select.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_select.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_select.ImageIndex = 18;
-            this.m_cmd_select.ImageList = this.ImageList;
-            this.m_cmd_select.Location = new System.Drawing.Point(425, 4);
-            this.m_cmd_select.Name = "m_cmd_select";
-            this.m_cmd_select.Size = new System.Drawing.Size(103, 28);
-            this.m_cmd_select.TabIndex = 23;
-            this.m_cmd_select.Text = "Chọn trái phiếu";
             // 
             // m_cmd_insert
             // 
@@ -293,6 +281,35 @@ namespace BondApp
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 28;
             // 
+            // m_cmd_duyet
+            // 
+            this.m_cmd_duyet.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_duyet.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_duyet.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_duyet.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_duyet.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet.Image")));
+            this.m_cmd_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_duyet.Location = new System.Drawing.Point(440, 4);
+            this.m_cmd_duyet.Name = "m_cmd_duyet";
+            this.m_cmd_duyet.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_duyet.TabIndex = 29;
+            this.m_cmd_duyet.Text = "&Duyệt";
+            // 
+            // m_cmd_select
+            // 
+            this.m_cmd_select.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_select.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_select.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_select.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_select.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_select.ImageIndex = 18;
+            this.m_cmd_select.ImageList = this.ImageList;
+            this.m_cmd_select.Location = new System.Drawing.Point(337, 4);
+            this.m_cmd_select.Name = "m_cmd_select";
+            this.m_cmd_select.Size = new System.Drawing.Size(103, 28);
+            this.m_cmd_select.TabIndex = 30;
+            this.m_cmd_select.Text = "Chọn trái phiếu";
+            // 
             // f300_dm_trai_phieu
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -331,54 +348,60 @@ namespace BondApp
         #region Data Structure
         private enum e_col_Number
         {
-            DON_VI_KY_HAN = 7
- ,
-            TRANG_THAI = 25
+            DON_VI_KY_HAN = 8
+,
+            TRANG_THAI = 28
                 ,
-            DON_VI_KY_TRA_LAI = 14
+            DON_VI_KY_TRA_LAI = 15
                 ,
-            MENH_GIA = 5
+            MENH_GIA = 6
                 ,
-            TONG_SL_PHAT_HANH = 17
+            TONG_SL_PHAT_HANH = 18
                 ,
             LOAI_TRAI_PHIEU = 3
                 ,
-            NGAY_DAO_HAN = 16
+            SO_HOP_DONG_DL_DK_LUU_KY = 26
+                ,
+            NGAY_DAO_HAN = 17
                 ,
             MA_TRAI_PHIEU = 1
                 ,
-            CN_HUONG_THEO_NGAY_CHUYEN_NHUONG_YN = 24
+            CN_HUONG_THEO_NGAY_CHUYEN_NHUONG_YN = 25
                 ,
-            KY_HAN = 6
+            KY_HAN = 7
                 ,
-            SO_NGAY_TCPH_CHUYEN_TIEN_TRUOC = 20
+            SO_NGAY_TCPH_CHUYEN_TIEN_TRUOC = 21
                 ,
-            KY_DIEU_CHINH_LS = 10
+            KY_DIEU_CHINH_LS = 11
                 ,
-            TRA_LAI_SAU_YN = 15
+            TRA_LAI_SAU_YN = 16
                 ,
-            CO_SO_TINH_LAI = 8
+            CO_SO_TINH_LAI = 9
                 ,
-            NGUOI_LAP = 21
+            NGUOI_LAP = 22
                 ,
-            TONG_GIA_TRI = 18
+            TONG_GIA_TRI = 19
                 ,
             NGAY_PHAT_HANH = 4
                 ,
-            GHI_CHU_PHUONG_THUC_XD_LAI_SUAT = 23
+            GHI_CHU_PHUONG_THUC_XD_LAI_SUAT = 24
                 ,
             TEN_TRAI_PHIEU = 2
                 ,
-            NGUOI_DUYET = 22
+            NGUOI_DUYET = 23
                 ,
-            THA_NOI_YN = 12
+            THA_NOI_YN = 13
                 ,
-            LAI_SUAT_DEFAULT = 9
+            NGAY_KY_HD = 27
                 ,
-            DON_VI_DIEU_CHINH_LS = 11
+            TEN_TO_CHUC_PHAT_HANH = 5
                 ,
-            BIEN_DO_LAI = 19
-                , KY_TRA_LAI = 13
+            DON_VI_DIEU_CHINH_LS = 12
+                ,
+            LAI_SUAT_DEFAULT = 10
+                ,
+            BIEN_DO_LAI = 20
+                , KY_TRA_LAI = 14
 
         }		
         #endregion
@@ -439,6 +462,7 @@ namespace BondApp
             v_htb.Add(V_DM_TRAI_PHIEU.MENH_GIA, e_col_Number.MENH_GIA);
             v_htb.Add(V_DM_TRAI_PHIEU.TONG_SL_PHAT_HANH, e_col_Number.TONG_SL_PHAT_HANH);
             v_htb.Add(V_DM_TRAI_PHIEU.LOAI_TRAI_PHIEU, e_col_Number.LOAI_TRAI_PHIEU);
+            v_htb.Add(V_DM_TRAI_PHIEU.SO_HOP_DONG_DL_DK_LUU_KY, e_col_Number.SO_HOP_DONG_DL_DK_LUU_KY);
             v_htb.Add(V_DM_TRAI_PHIEU.NGAY_DAO_HAN, e_col_Number.NGAY_DAO_HAN);
             v_htb.Add(V_DM_TRAI_PHIEU.MA_TRAI_PHIEU, e_col_Number.MA_TRAI_PHIEU);
             v_htb.Add(V_DM_TRAI_PHIEU.CN_HUONG_THEO_NGAY_CHUYEN_NHUONG_YN, e_col_Number.CN_HUONG_THEO_NGAY_CHUYEN_NHUONG_YN);
@@ -454,8 +478,10 @@ namespace BondApp
             v_htb.Add(V_DM_TRAI_PHIEU.TEN_TRAI_PHIEU, e_col_Number.TEN_TRAI_PHIEU);
             v_htb.Add(V_DM_TRAI_PHIEU.NGUOI_DUYET, e_col_Number.NGUOI_DUYET);
             v_htb.Add(V_DM_TRAI_PHIEU.THA_NOI_YN, e_col_Number.THA_NOI_YN);
-            v_htb.Add(V_DM_TRAI_PHIEU.LAI_SUAT_DEFAULT, e_col_Number.LAI_SUAT_DEFAULT);
+            v_htb.Add(V_DM_TRAI_PHIEU.NGAY_KY_HD, e_col_Number.NGAY_KY_HD);
+            v_htb.Add(V_DM_TRAI_PHIEU.TEN_TO_CHUC_PHAT_HANH, e_col_Number.TEN_TO_CHUC_PHAT_HANH);
             v_htb.Add(V_DM_TRAI_PHIEU.DON_VI_DIEU_CHINH_LS, e_col_Number.DON_VI_DIEU_CHINH_LS);
+            v_htb.Add(V_DM_TRAI_PHIEU.LAI_SUAT_DEFAULT, e_col_Number.LAI_SUAT_DEFAULT);
             v_htb.Add(V_DM_TRAI_PHIEU.BIEN_DO_LAI, e_col_Number.BIEN_DO_LAI);
             v_htb.Add(V_DM_TRAI_PHIEU.KY_TRA_LAI, e_col_Number.KY_TRA_LAI);
 
@@ -539,6 +565,15 @@ namespace BondApp
             load_data_2_grid();
         }
 
+        private void duyet_thong_tin_trai_phieu()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us_v_trai_phieu, m_fg.Row);
+            f300_dm_trai_phieu_DE v_fDE = new f300_dm_trai_phieu_DE();
+            v_fDE.display_for_duyet(m_us_v_trai_phieu);
+            load_data_2_grid();
+        }
         private void delete_dm_trai_phieu()
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
@@ -589,6 +624,19 @@ namespace BondApp
             m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
             m_cmd_select.Click += new EventHandler(m_cmd_select_Click);
             m_cmd_filter.Click += new EventHandler(m_cmd_filter_Click);
+            m_cmd_duyet.Click += new EventHandler(m_cmd_duyet_Click);
+        }
+
+        void m_cmd_duyet_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                duyet_thong_tin_trai_phieu();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_filter_Click(object sender, EventArgs e)
