@@ -130,9 +130,9 @@
             // 
             this.m_cbo_loai_ngay_lam_viec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_loai_ngay_lam_viec.FormattingEnabled = true;
-            this.m_cbo_loai_ngay_lam_viec.Items.AddRange(new object[] {
-            "Thứ 2 đến thứ 6",
-            "Thứ 2 đến thứ 7"});
+            //this.m_cbo_loai_ngay_lam_viec.Items.AddRange(new object[] {
+            //"Thứ 2 đến thứ 6",
+            //"Thứ 2 đến thứ 7"});
             this.m_cbo_loai_ngay_lam_viec.Location = new System.Drawing.Point(661, 105);
             this.m_cbo_loai_ngay_lam_viec.Name = "m_cbo_loai_ngay_lam_viec";
             this.m_cbo_loai_ngay_lam_viec.Size = new System.Drawing.Size(171, 21);
