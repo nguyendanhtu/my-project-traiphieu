@@ -492,7 +492,15 @@ namespace BondApp
         private void load_data_2_grid()
         {
             m_ds_v_trai_phieu = new DS_V_DM_TRAI_PHIEU();
-            m_us_v_trai_phieu.FillDataset(m_ds_v_trai_phieu);
+            switch (m_e_form_mode)
+            {
+                case DataEntryFormMode.SelectDataState:
+                    m_us_v_trai_phieu.FillDataset(m_ds_v_trai_phieu, " WHERE ID_TRANG_THAI =" + TRANG_THAI_DANH_MUC.DA_DUYET);
+                    break;
+                default:
+                    m_us_v_trai_phieu.FillDataset(m_ds_v_trai_phieu);
+                    break;
+            }
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds_v_trai_phieu, m_fg, m_obj_trans);
             //load_data_2_cbo_grid();
