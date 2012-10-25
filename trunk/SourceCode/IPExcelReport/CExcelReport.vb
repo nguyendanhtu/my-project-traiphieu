@@ -293,8 +293,10 @@ Public Class CExcelReport
                 v_iDataRow(i_iExcelCol) = i_iExcelCol + 1
                 For i_iExcelCol = 0 To i_DataSet.Tables(i_TableName).Columns.Count - 2
                     If Not Object.ReferenceEquals(CType(m_objExcelWorksheet.Cells(i_iExcelRow + i_iSheetStartRow, 3), Excel.Range).Value(), Nothing) Then
-                        v_iDataRow(i_iExcelCol + 1) = _
-                            CType(m_objExcelWorksheet.Cells(i_iExcelRow + i_iSheetStartRow, i_iExcelCol + 1), Excel.Range).Value()
+                        If Not CType(m_objExcelWorksheet.Cells(i_iExcelRow + i_iSheetStartRow, i_iExcelCol + 1), Excel.Range).Value() Is Nothing Then
+                            v_iDataRow(i_iExcelCol + 1) = _
+                                CType(m_objExcelWorksheet.Cells(i_iExcelRow + i_iSheetStartRow, i_iExcelCol + 1), Excel.Range).Value()
+                        End If
                     Else
                         v_bol_stop = True
                     End If
@@ -304,10 +306,10 @@ Public Class CExcelReport
                     i_iExcelRow += 1
                 End If
             End While
-            m_objExcelApp.Workbooks.Close()
+            'm_objExcelApp.Workbooks.Close()
             Unmount()
         Catch v_e As Exception
-            m_objExcelApp.Workbooks.Close()
+            'm_objExcelApp.Workbooks.Close()
             Unmount()
             Throw v_e
         End Try
