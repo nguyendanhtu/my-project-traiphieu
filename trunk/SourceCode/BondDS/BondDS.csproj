@@ -274,6 +274,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="V_DM_THAM_SO_NHAC_VIEC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>V_DM_THAM_SO_NHAC_VIEC.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -610,6 +615,17 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="V_DM_THAM_SO_NHAC_VIEC.xsc">
+      <DependentUpon>V_DM_THAM_SO_NHAC_VIEC.xsd</DependentUpon>
+    </None>
+    <None Include="V_DM_THAM_SO_NHAC_VIEC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>V_DM_THAM_SO_NHAC_VIEC.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="V_DM_THAM_SO_NHAC_VIEC.xss">
+      <DependentUpon>V_DM_THAM_SO_NHAC_VIEC.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="V_DM_THAM_SO_NHAC_VIEC" targetNamespace="http://tempuri.org/V_DM_THAM_SO_NHAC_VIEC.xsd" xmlns:mstns="http://tempuri.org/V_DM_THAM_SO_NHAC_VIEC.xsd" xmlns="http://tempuri.org/V_DM_THAM_SO_NHAC_VIEC.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QuanLyPhatHanhTraiPhieuConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QuanLyPhatHanhTraiPhieuConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BondDS.Properties.Settings.GlobalReference.Default.QuanLyPhatHanhTraiPhieuConnectionString2" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_DM_THAM_SO_NHAC_VIECTableAdapter" GeneratorDataComponentClassName="V_DM_THAM_SO_NHAC_VIECTableAdapter" Name="V_DM_THAM_SO_NHAC_VIEC" UserDataComponentName="V_DM_THAM_SO_NHAC_VIECTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QuanLyPhatHanhTraiPhieuConnectionString2 (Settings)" DbObjectName="QuanLyPhatHanhTraiPhieu.dbo.V_DM_THAM_SO_NHAC_VIEC" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, ID_TRAI_PHIEU, ID_LOAI_NHAC_VIEC, LOAI_NHAC_VIEC, SO_NGAY_NHAC_TRUOC, NOI_DUNG_NHAC FROM dbo.V_DM_THAM_SO_NHAC_VIEC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="ID_TRAI_PHIEU" DataSetColumn="ID_TRAI_PHIEU" />
+              <Mapping SourceColumn="ID_LOAI_NHAC_VIEC" DataSetColumn="ID_LOAI_NHAC_VIEC" />
+              <Mapping SourceColumn="LOAI_NHAC_VIEC" DataSetColumn="LOAI_NHAC_VIEC" />
+              <Mapping SourceColumn="SO_NGAY_NHAC_TRUOC" DataSetColumn="SO_NGAY_NHAC_TRUOC" />
+              <Mapping SourceColumn="NOI_DUNG_NHAC" DataSetColumn="NOI_DUNG_NHAC" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="V_DM_THAM_SO_NHAC_VIEC" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="V_DM_THAM_SO_NHAC_VIEC" msprop:Generator_UserDSName="V_DM_THAM_SO_NHAC_VIEC">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_DM_THAM_SO_NHAC_VIEC" msprop:Generator_TableClassName="V_DM_THAM_SO_NHAC_VIECDataTable" msprop:Generator_TableVarName="tableV_DM_THAM_SO_NHAC_VIEC" msprop:Generator_TablePropName="_V_DM_THAM_SO_NHAC_VIEC" msprop:Generator_RowDeletingName="V_DM_THAM_SO_NHAC_VIECRowDeleting" msprop:Generator_UserTableName="V_DM_THAM_SO_NHAC_VIEC" msprop:Generator_RowChangingName="V_DM_THAM_SO_NHAC_VIECRowChanging" msprop:Generator_RowEvHandlerName="V_DM_THAM_SO_NHAC_VIECRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DM_THAM_SO_NHAC_VIECRowDeleted" msprop:Generator_RowEvArgName="V_DM_THAM_SO_NHAC_VIECRowChangeEvent" msprop:Generator_RowChangedName="V_DM_THAM_SO_NHAC_VIECRowChanged" msprop:Generator_RowClassName="V_DM_THAM_SO_NHAC_VIECRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="ID_TRAI_PHIEU" msprop:Generator_ColumnVarNameInTable="columnID_TRAI_PHIEU" msprop:Generator_ColumnPropNameInRow="ID_TRAI_PHIEU" msprop:Generator_ColumnPropNameInTable="ID_TRAI_PHIEUColumn" msprop:Generator_UserColumnName="ID_TRAI_PHIEU" type="xs:decimal" />
+              <xs:element name="ID_LOAI_NHAC_VIEC" msprop:Generator_ColumnVarNameInTable="columnID_LOAI_NHAC_VIEC" msprop:Generator_ColumnPropNameInRow="ID_LOAI_NHAC_VIEC" msprop:Generator_ColumnPropNameInTable="ID_LOAI_NHAC_VIECColumn" msprop:Generator_UserColumnName="ID_LOAI_NHAC_VIEC" type="xs:decimal" />
+              <xs:element name="LOAI_NHAC_VIEC" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnLOAI_NHAC_VIEC" msprop:Generator_ColumnPropNameInRow="LOAI_NHAC_VIEC" msprop:Generator_ColumnPropNameInTable="LOAI_NHAC_VIECColumn" msprop:Generator_UserColumnName="LOAI_NHAC_VIEC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SO_NGAY_NHAC_TRUOC" msprop:Generator_ColumnVarNameInTable="columnSO_NGAY_NHAC_TRUOC" msprop:Generator_ColumnPropNameInRow="SO_NGAY_NHAC_TRUOC" msprop:Generator_ColumnPropNameInTable="SO_NGAY_NHAC_TRUOCColumn" msprop:Generator_UserColumnName="SO_NGAY_NHAC_TRUOC" type="xs:decimal" />
+              <xs:element name="NOI_DUNG_NHAC" msprop:Generator_ColumnVarNameInTable="columnNOI_DUNG_NHAC" msprop:Generator_ColumnPropNameInRow="NOI_DUNG_NHAC" msprop:Generator_ColumnPropNameInTable="NOI_DUNG_NHACColumn" msprop:Generator_UserColumnName="NOI_DUNG_NHAC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:V_DM_THAM_SO_NHAC_VIEC" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
