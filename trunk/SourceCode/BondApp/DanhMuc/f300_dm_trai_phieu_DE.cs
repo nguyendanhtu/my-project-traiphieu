@@ -254,22 +254,10 @@ namespace BondApp.DanhMuc
         }
         private void tinh_ngay_dao_han(int ip_i_ky_han, int id_dv_ky_han)
         {
-            DateTime v_dat_ngay_phat_hanh = DateTime.Today;
-            switch (m_e_formmode)
-            {
-                case e_form_mode.THEM_TRAI_PHIEU:
-                    v_dat_ngay_phat_hanh = m_us_v_dm_dot_phat_hanh.datNGAY_PHAT_HANH.Date;
-                    break;
-                case e_form_mode.CAP_NHAT_TRAI_PHIEU:
-                    v_dat_ngay_phat_hanh = CIPConvert.ToDatetime(m_txt_ngay_phat_hanh.Text);
-                    break;
-                case e_form_mode.DUYET_DU_LIEU:
-                    v_dat_ngay_phat_hanh = CIPConvert.ToDatetime(m_txt_ngay_phat_hanh.Text);
-                    break;
-            }
+            DateTime v_dat_ngay_phat_hanh = CIPConvert.ToDatetime(m_txt_ngay_phat_hanh.Text);
             if(id_dv_ky_han == ID_DON_VI_KY_HAN.THANG)
-                m_dat_ngay_dao_han.Value = v_dat_ngay_phat_hanh.AddMonths(ip_i_ky_han);
-            else m_dat_ngay_dao_han.Value = v_dat_ngay_phat_hanh.AddYears(ip_i_ky_han);
+                m_dat_ngay_dao_han.Value = CIPConvert.ToDatetime(CIPConvert.ToStr(v_dat_ngay_phat_hanh.AddMonths(ip_i_ky_han)));
+            else m_dat_ngay_dao_han.Value = CIPConvert.ToDatetime(CIPConvert.ToStr(v_dat_ngay_phat_hanh.AddYears(ip_i_ky_han)));
         }
         private bool check_validate_data_is_ok()
         {
