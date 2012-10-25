@@ -59,10 +59,12 @@ namespace BondApp.ChucNang
             SO_LUONG_TRAI_PHIEU_SO_HUU = 14,
             TEN_NGUOI_DAI_DIEN = 15,
             SO_CMND_NGUOI_DAI_DIEN = 16,
-            CHUC_VU_NGUOI_DAI_DIEN = 17,
-            NGAY_BAT_DAU_SO_HUU_TP = 18,
-            TRANG_THAI = 19,
-            DIEN_GIAI = 20
+            NGAY_CAP_CMND_NGUOI_DAI_DIEN = 17,
+            NOI_CAP_CMND_NGUOI_DAI_DIEN = 18,
+            CHUC_VU_NGUOI_DAI_DIEN = 19,
+            NGAY_BAT_DAU_SO_HUU_TP = 20,
+            TRANG_THAI = 21,
+            DIEN_GIAI = 22
         }
         #endregion
 
@@ -438,6 +440,8 @@ namespace BondApp.ChucNang
             v_hst.Add(DM_TRAI_CHU_IMP.SO_LUONG_TRAI_PHIEU_SO_HUU, e_col_number_xls.SO_LUONG_TRAI_PHIEU_SO_HUU);
             v_hst.Add(DM_TRAI_CHU_IMP.TEN_NGUOI_DAI_DIEN, e_col_number_xls.TEN_NGUOI_DAI_DIEN);
             v_hst.Add(DM_TRAI_CHU_IMP.SO_CMND_NGUOI_DAI_DIEN, e_col_number_xls.SO_CMND_NGUOI_DAI_DIEN);
+            v_hst.Add(DM_TRAI_CHU_IMP.NGAY_CAP_CMND_NGUOI_DAI_DIEN, e_col_number_xls.NGAY_CAP_CMND_NGUOI_DAI_DIEN);
+            v_hst.Add(DM_TRAI_CHU_IMP.NOI_CAP_CMND_NGUOI_DAI_DIEN, e_col_number_xls.NOI_CAP_CMND_NGUOI_DAI_DIEN);
             v_hst.Add(DM_TRAI_CHU_IMP.CHUC_VU_NGUOI_DAI_DIEN, e_col_number_xls.CHUC_VU_NGUOI_DAI_DIEN);
             v_hst.Add(DM_TRAI_CHU_IMP.NGAY_BAT_DAU_SO_HUU_TP, e_col_number_xls.NGAY_BAT_DAU_SO_HUU_TP);
             CC1TransferDataRow v_obj = new CC1TransferDataRow(m_fg_load_file, v_hst, m_ds_trai_chu_imp.DM_TRAI_CHU_IMP.NewDM_TRAI_CHU_IMPRow());

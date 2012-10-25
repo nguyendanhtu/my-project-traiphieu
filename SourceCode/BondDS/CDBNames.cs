@@ -279,6 +279,8 @@ namespace BondDS.CDBNames
         public const string SO_LUONG_TRAI_PHIEU_SO_HUU = "SO_LUONG_TRAI_PHIEU_SO_HUU";
         public const string TEN_NGUOI_DAI_DIEN = "TEN_NGUOI_DAI_DIEN";
         public const string SO_CMND_NGUOI_DAI_DIEN = "SO_CMND_NGUOI_DAI_DIEN";
+        public const string NGAY_CAP_CMND_NGUOI_DAI_DIEN = "NGAY_CAP_CMND_NGUOI_DAI_DIEN";
+        public const string NOI_CAP_CMND_NGUOI_DAI_DIEN = "NOI_CAP_CMND_NGUOI_DAI_DIEN";
         public const string CHUC_VU_NGUOI_DAI_DIEN = "CHUC_VU_NGUOI_DAI_DIEN";
         public const string NGAY_BAT_DAU_SO_HUU_TP = "NGAY_BAT_DAU_SO_HUU_TP";
         public const string TRANG_THAI = "TRANG_THAI";
