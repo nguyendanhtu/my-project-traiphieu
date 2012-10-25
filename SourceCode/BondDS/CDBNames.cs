@@ -80,6 +80,7 @@ namespace BondDS.CDBNames
         public const string TRANG_THAI_GD = "TRANG_THAI_GD";
         public const string LOAI_TRAI_CHU = "LOAI_TRAI_CHU";
         public const string TRANG_THAI_DANH_MUC = "TRANG_THAI_DANH_MUC";
+        public const string LOAI_NHAC_NHAC_VIEC = "LOAI_NHAC_NHAC_VIEC";
     }
 
     public class V_GD_TRA_GOC
