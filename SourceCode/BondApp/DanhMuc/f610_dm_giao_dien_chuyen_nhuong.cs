@@ -587,6 +587,7 @@ namespace BondApp
             if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
             US_V_GD_CHUYEN_NHUONG v_us = new US_V_GD_CHUYEN_NHUONG();
             grid2us_object(v_us, m_fg.Row);
+            US_V_GD_CHUYEN_NHUONG v_us_gd_cn = new US_V_GD_CHUYEN_NHUONG(v_us.dcID);
             try
             {
                 v_us.BeginTransaction();
