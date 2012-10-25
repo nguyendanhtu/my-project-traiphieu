@@ -393,6 +393,18 @@ namespace BondApp.ChucNang
           }
           else
               v_us.strSO_CMND_NGUOI_DAI_DIEN = CIPConvert.ToStr(m_fg_load_file[i_i_id, (int)e_col_number_xls.SO_CMND_NGUOI_DAI_DIEN]);
+          if (m_fg_load_file[i_i_id, (int)e_col_number_xls.NGAY_CAP_CMND_NGUOI_DAI_DIEN] == null)
+          {
+              v_us.SetNGAY_CAP_CMND_NGUOI_DAI_DIENNull();
+          }
+          else
+              v_us.datNGAY_CAP_CMND_NGUOI_DAI_DIEN = CIPConvert.ToDatetime(CIPConvert.ToStr(m_fg_load_file[i_i_id, (int)e_col_number_xls.NGAY_CAP_CMND_NGUOI_DAI_DIEN]));
+          if (m_fg_load_file[i_i_id, (int)e_col_number_xls.NOI_CAP_CMND_NGUOI_DAI_DIEN] == null)
+          {
+              v_us.SetNOI_CAP_CMND_NGUOI_DAI_DIENNull();
+          }
+          else
+              v_us.strNOI_CAP_CMND_NGUOI_DAI_DIEN = CIPConvert.ToStr(m_fg_load_file[i_i_id, (int)e_col_number_xls.NOI_CAP_CMND_NGUOI_DAI_DIEN]);
           if (m_fg_load_file[i_i_id, (int)e_col_number_xls.CHUC_VU_NGUOI_DAI_DIEN] == null)
           {
               v_us.SetCHUC_VU_NGUOI_DAI_DIENNull();
