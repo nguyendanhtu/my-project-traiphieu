@@ -16,6 +16,15 @@ namespace BondDS.CDBNames
         public const decimal NGAN_HANG_DL_QUAN_LY_TK = 7;
         public const decimal TRANG_THAI_DANH_MUC = 8;
     }
+    public class GD_THONG_BAO_LAI_SUAT_IN_TIMES
+    {
+        public const string ID = "ID";
+        public const string NGAY_DAU = "NGAY_DAU";
+        public const string NGAY_KET_THUC = "NGAY_KET_THUC";
+        public const string SO_NGAY_AP_DUNG = "SO_NGAY_AP_DUNG";
+        public const string LAI_SUAT = "LAI_SUAT";
+        public const string GHI_CHU = "GHI_CHU";
+    }
 
     public class ID_THAM_SO_HE_THONG
     {
