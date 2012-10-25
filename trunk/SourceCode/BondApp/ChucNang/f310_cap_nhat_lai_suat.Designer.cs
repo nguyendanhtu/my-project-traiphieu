@@ -58,6 +58,7 @@
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_gru_thong_tin_cap_nhat = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.m_chb_xac_nhan = new System.Windows.Forms.CheckBox();
             this.m_date_ngay_duyet = new System.Windows.Forms.DateTimePicker();
             this.m_date_ngay_cap_nhat = new System.Windows.Forms.DateTimePicker();
@@ -75,7 +76,6 @@
             this.m_txt_ghi_chu = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.m_gru_thong_tin_trai_phieu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -449,6 +449,16 @@
             this.m_gru_thong_tin_cap_nhat.TabStop = false;
             this.m_gru_thong_tin_cap_nhat.Text = "Thông tin cập nhật lãi suất";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(275, 22);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(16, 13);
+            this.label11.TabIndex = 58;
+            this.label11.Text = "%";
+            // 
             // m_chb_xac_nhan
             // 
             this.m_chb_xac_nhan.AutoSize = true;
@@ -510,10 +520,11 @@
             // 
             // m_txt_nguoi_duyet
             // 
-            this.m_txt_nguoi_duyet.BackColor = System.Drawing.Color.White;
+            this.m_txt_nguoi_duyet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.m_txt_nguoi_duyet.Enabled = false;
             this.m_txt_nguoi_duyet.Location = new System.Drawing.Point(420, 68);
             this.m_txt_nguoi_duyet.Name = "m_txt_nguoi_duyet";
+            this.m_txt_nguoi_duyet.ReadOnly = true;
             this.m_txt_nguoi_duyet.Size = new System.Drawing.Size(130, 20);
             this.m_txt_nguoi_duyet.TabIndex = 44;
             this.m_txt_nguoi_duyet.TabStop = false;
@@ -521,10 +532,10 @@
             // 
             // m_txt_nguoi_lap
             // 
-            this.m_txt_nguoi_lap.BackColor = System.Drawing.Color.White;
-            this.m_txt_nguoi_lap.Enabled = false;
+            this.m_txt_nguoi_lap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.m_txt_nguoi_lap.Location = new System.Drawing.Point(161, 68);
             this.m_txt_nguoi_lap.Name = "m_txt_nguoi_lap";
+            this.m_txt_nguoi_lap.ReadOnly = true;
             this.m_txt_nguoi_lap.Size = new System.Drawing.Size(130, 20);
             this.m_txt_nguoi_lap.TabIndex = 44;
             this.m_txt_nguoi_lap.TabStop = false;
@@ -614,16 +625,6 @@
             this.label3.TabIndex = 34;
             this.label3.Text = "Ghi chú";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(275, 22);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(16, 13);
-            this.label11.TabIndex = 58;
-            this.label11.Text = "%";
             // 
             // f310_cap_nhat_lai_suat
             // 

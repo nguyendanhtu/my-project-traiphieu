@@ -234,7 +234,7 @@ namespace BondApp.ChucNang
                 if (!m_us_gd_cap_nhat_ls.IsID_NGUOI_LAPNull())
                 {
                     US_HT_NGUOI_SU_DUNG v_nguoi_lap = new US_HT_NGUOI_SU_DUNG(m_us_gd_cap_nhat_ls.dcID_NGUOI_LAP);
-                    m_txt_nguoi_duyet.Text = v_nguoi_lap.strTEN;
+                    m_txt_nguoi_lap.Text = v_nguoi_lap.strTEN;
                 }
                 if (m_us_gd_cap_nhat_ls.strDA_DUYET_YN.Equals("Y"))
                     m_chb_xac_nhan.Checked = true;
@@ -261,15 +261,15 @@ namespace BondApp.ChucNang
             {
                 case eFormMode.CAP_NHAT_LAI_SUAT:
                     m_cmd_cap_nhat.Visible = true;
-                    m_chb_xac_nhan.Visible = false;
+                    m_cmd_duyet_gd.Visible = false;
                     break;
                 case eFormMode.XEM_GIAO_DICH:
                     m_cmd_cap_nhat.Visible = false;
-                    m_chb_xac_nhan.Visible = false;
+                    m_cmd_duyet_gd.Visible = false;
                     break;
                 case eFormMode.DUYET_LAI_SUAT:
                     m_cmd_cap_nhat.Visible = false;
-                    m_chb_xac_nhan.Visible = true;
+                    m_cmd_duyet_gd.Visible = true;
                     break;
                 default:
                     break;
@@ -422,7 +422,11 @@ namespace BondApp.ChucNang
             m_cmd_chon_cap_nhat.Visible = true;
             m_cmd_chon_duyet.Visible = true;
             m_txt_lai_suat_moi.Text = "";
-            m_txt_ghi_chu.Text = "";            
+            m_txt_ghi_chu.Text = "";
+            m_txt_nguoi_lap.Text = "";
+            m_txt_nguoi_duyet.Text = "";
+            m_chb_xac_nhan.Checked = false;
+            m_date_ngay_ap_dung_ls.Value = DateTime.Today;
             load_data_2_grid();
         }
         #endregion
