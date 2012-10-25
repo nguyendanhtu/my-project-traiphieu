@@ -293,6 +293,8 @@ namespace BondApp.DanhMuc
                     break;
                 case DataEntryFormMode.ViewDataState:
                     m_us_trai_chu.dcID = m_us_v_trai_chu.dcID;
+                    form_2_us_gd_so_du_trai_phieu();
+                    m_us_gd_so_du_trai_phieu.Insert();
                     m_us_trai_chu.dcID_TRANG_THAI = TRANG_THAI_DANH_MUC.DA_DUYET;
                     m_us_trai_chu.Update();
                     break;
