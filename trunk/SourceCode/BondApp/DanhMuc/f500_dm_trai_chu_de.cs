@@ -88,8 +88,6 @@ namespace BondApp.DanhMuc
                     us_object_2_form(m_us_v_trai_chu);
                     break;
                 case DataEntryFormMode.ViewDataState:
-                    m_txt_so_trai_phieu_so_huu.Visible = false;
-                    m_lbl_so_trai_phieu_so_huu.Visible = false;
                     m_cmd_save.Visible = false;
                     m_cmd_duyet.Visible = true;
                     us_object_2_form(m_us_v_trai_chu);
