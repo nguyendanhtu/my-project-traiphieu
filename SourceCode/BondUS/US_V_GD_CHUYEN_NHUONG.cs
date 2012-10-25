@@ -1879,7 +1879,11 @@ namespace BondUS
         public void delete_gd_chuyen_nhuong()
         {
             CStoredProc v_pr_obj = new CStoredProc("pr_GD_CHUYEN_NHUONG_Delete");
-            v_pr_obj.addDecimalInputParam("@ID", this.dcID);           
+            v_pr_obj.addDecimalInputParam("@ID", this.dcID);
+            v_pr_obj.addDatetimeInputParam("@NGAY_CAP_NHAT", DateTime.Today);
+            v_pr_obj.addDecimalInputParam("@ID_TRAI_CHU_MUA", this.dcID_TRAI_CHU_MUA);
+            v_pr_obj.addDecimalInputParam("@ID_TRAI_CHU_BAN", this.dcID_TRAI_CHU_BAN);
+            v_pr_obj.addDecimalInputParam("@SO_LUONG_CHUYEN_NHUONG", this.dcSO_LUONG_CHUYEN_NHUONG);                      
             v_pr_obj.ExecuteCommand(this);
         }
         #endregion
