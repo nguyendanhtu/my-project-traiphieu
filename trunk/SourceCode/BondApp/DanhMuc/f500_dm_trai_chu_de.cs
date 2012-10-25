@@ -83,11 +83,11 @@ namespace BondApp.DanhMuc
                 case DataEntryFormMode.InsertDataState:
                     break;
                 case DataEntryFormMode.UpdateDataState:
-                    m_txt_so_trai_phieu_so_huu.Visible = false;
-                    m_lbl_so_trai_phieu_so_huu.Visible = false;
                     us_object_2_form(m_us_v_trai_chu);
                     break;
                 case DataEntryFormMode.ViewDataState:
+                    m_txt_so_trai_phieu_so_huu.Visible = false;
+                    m_lbl_so_trai_phieu_so_huu.Visible = false;
                     m_cmd_save.Visible = false;
                     m_cmd_duyet.Visible = true;
                     us_object_2_form(m_us_v_trai_chu);
@@ -289,12 +289,12 @@ namespace BondApp.DanhMuc
                     break;
                 case DataEntryFormMode.UpdateDataState:
                     m_us_trai_chu.dcID = m_us_v_trai_chu.dcID;
+                    form_2_us_gd_so_du_trai_phieu();
+                    m_us_gd_so_du_trai_phieu.Insert();
                     m_us_trai_chu.Update();
                     break;
                 case DataEntryFormMode.ViewDataState:
                     m_us_trai_chu.dcID = m_us_v_trai_chu.dcID;
-                    form_2_us_gd_so_du_trai_phieu();
-                    m_us_gd_so_du_trai_phieu.Insert();
                     m_us_trai_chu.dcID_TRANG_THAI = TRANG_THAI_DANH_MUC.DA_DUYET;
                     m_us_trai_chu.Update();
                     break;
