@@ -469,10 +469,11 @@ namespace BondUS
 
 
         }
-        public void GenLichThanhToanLaiGoc(decimal ip_dc_id_trai_phieu)
+        public void GenLichThanhToanLaiGoc(decimal ip_dc_id_trai_phieu, decimal ip_dc_id_nguoi_dung)
         {
             CStoredProc v_pr_obj = new CStoredProc("pr_GD_LICH_THANH_TOAN_LAI_GOC_Sinh_Lich_TT_Lai_Goc");
             v_pr_obj.addDecimalInputParam("@ID_TRAI_PHIEU", ip_dc_id_trai_phieu);
+            v_pr_obj.addDecimalInputParam("@ID_NGUOI_DUNG", ip_dc_id_nguoi_dung);
 
             v_pr_obj.ExecuteCommand(this);
         }
