@@ -267,7 +267,7 @@ namespace BondApp.DanhMuc
 
             if (CIPConvert.ToDecimal(m_txt_so_trai_phieu_so_huu.Text) > m_us_v_trai_phieu.dcTONG_SL_PHAT_HANH )
             {
-                BaseMessages.MsgBox_Infor("Số trái phiếu sở hữu không được vượt quá số lượng trái phiuế phát hành!");
+                BaseMessages.MsgBox_Infor("Số trái phiếu sở hữu không được vượt quá số lượng trái phiếu phát hành!");
                 m_txt_so_trai_phieu_so_huu.Focus();
                 return false;
             }
