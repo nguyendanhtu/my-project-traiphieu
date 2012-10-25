@@ -155,8 +155,8 @@ namespace BondApp.DanhMuc
             if (m_cbo_tra_lai_sau.SelectedIndex == 0)
                 op_us_trai_phieu.strTRA_LAI_SAU_YN = "Y";
             else op_us_trai_phieu.strTRA_LAI_SAU_YN = "N";
-
-            op_us_trai_phieu.dcBIEN_DO_LAI = CIPConvert.ToDecimal(m_txt_bien_do_lai.Text) / 100;
+            if (m_txt_bien_do_lai.Text != "")
+                op_us_trai_phieu.dcBIEN_DO_LAI = CIPConvert.ToDecimal(m_txt_bien_do_lai.Text) / 100;
             op_us_trai_phieu.dcSO_NGAY_TCPH_CHUYEN_TIEN_TRUOC = CIPConvert.ToDecimal(m_txt_tcph_chuyen_tien_trc.Text);
             if (m_cbo_ngung_chuyen_nhuong_tu_ngay.SelectedIndex == 1)
             {
