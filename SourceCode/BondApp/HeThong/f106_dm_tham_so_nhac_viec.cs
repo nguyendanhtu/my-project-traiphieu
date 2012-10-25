@@ -38,7 +38,7 @@ namespace BondApp
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private Label m_lbl_title;
         private GroupBox m_gru_thong_tin_trai_phieu;
-        private Label m_lbl_to_chuc_phat_hanh;
+        private Label label;
         private Label m_lbl_ngay_phat_hanh;
         private TextBox m_txt_ngay_nhac_truoc;
         private ComboBox m_cbo_loai_nhac_viec;
@@ -93,14 +93,14 @@ namespace BondApp
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.m_gru_thong_tin_trai_phieu = new System.Windows.Forms.GroupBox();
+            this.m_cmd_luu = new SIS.Controls.Button.SiSButton();
             this.m_cbo_loai_nhac_viec = new System.Windows.Forms.ComboBox();
-            this.m_lbl_to_chuc_phat_hanh = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.m_lbl_ngay_phat_hanh = new System.Windows.Forms.Label();
             this.m_txt_noi_dung_nhac = new System.Windows.Forms.TextBox();
             this.m_txt_ngay_nhac_truoc = new System.Windows.Forms.TextBox();
-            this.m_cmd_luu = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.m_gru_thong_tin_trai_phieu.SuspendLayout();
@@ -216,7 +216,7 @@ namespace BondApp
             // 
             this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_cmd_luu);
             this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_cbo_loai_nhac_viec);
-            this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_lbl_to_chuc_phat_hanh);
+            this.m_gru_thong_tin_trai_phieu.Controls.Add(this.label);
             this.m_gru_thong_tin_trai_phieu.Controls.Add(this.label1);
             this.m_gru_thong_tin_trai_phieu.Controls.Add(this.label2);
             this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_lbl_ngay_phat_hanh);
@@ -229,6 +229,20 @@ namespace BondApp
             this.m_gru_thong_tin_trai_phieu.TabIndex = 22;
             this.m_gru_thong_tin_trai_phieu.TabStop = false;
             this.m_gru_thong_tin_trai_phieu.Text = "Thông tin nhắc việc";
+            // 
+            // m_cmd_luu
+            // 
+            this.m_cmd_luu.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_luu.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_luu.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_luu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_luu.ImageIndex = 10;
+            this.m_cmd_luu.ImageList = this.ImageList;
+            this.m_cmd_luu.Location = new System.Drawing.Point(40, 116);
+            this.m_cmd_luu.Name = "m_cmd_luu";
+            this.m_cmd_luu.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_luu.TabIndex = 3;
+            this.m_cmd_luu.Text = "&Lưu";
             // 
             // m_cbo_loai_nhac_viec
             // 
@@ -243,15 +257,15 @@ namespace BondApp
             this.m_cbo_loai_nhac_viec.Size = new System.Drawing.Size(290, 21);
             this.m_cbo_loai_nhac_viec.TabIndex = 0;
             // 
-            // m_lbl_to_chuc_phat_hanh
+            // label
             // 
-            this.m_lbl_to_chuc_phat_hanh.AutoSize = true;
-            this.m_lbl_to_chuc_phat_hanh.Location = new System.Drawing.Point(37, 36);
-            this.m_lbl_to_chuc_phat_hanh.Name = "m_lbl_to_chuc_phat_hanh";
-            this.m_lbl_to_chuc_phat_hanh.Size = new System.Drawing.Size(77, 13);
-            this.m_lbl_to_chuc_phat_hanh.TabIndex = 34;
-            this.m_lbl_to_chuc_phat_hanh.Text = "Loại nhắc việc";
-            this.m_lbl_to_chuc_phat_hanh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(37, 36);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(77, 13);
+            this.label.TabIndex = 34;
+            this.label.Text = "Loại nhắc việc";
+            this.label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
@@ -300,20 +314,7 @@ namespace BondApp
             this.m_txt_ngay_nhac_truoc.Size = new System.Drawing.Size(53, 20);
             this.m_txt_ngay_nhac_truoc.TabIndex = 1;
             this.m_txt_ngay_nhac_truoc.TabStop = false;
-            // 
-            // m_cmd_luu
-            // 
-            this.m_cmd_luu.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_luu.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_luu.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_luu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_luu.ImageIndex = 10;
-            this.m_cmd_luu.ImageList = this.ImageList;
-            this.m_cmd_luu.Location = new System.Drawing.Point(40, 116);
-            this.m_cmd_luu.Name = "m_cmd_luu";
-            this.m_cmd_luu.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_luu.TabIndex = 3;
-            this.m_cmd_luu.Text = "&Lưu";
+            this.m_txt_ngay_nhac_truoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // f106_dm_tham_so_nhac_viec
             // 
@@ -343,7 +344,7 @@ namespace BondApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			LOAI_NHAC_VIEC = 1,NOI_DUNG_NHAC = 3,SO_NGAY_NHAC_TRUOC = 2
+			LOAI_NHAC_VIEC = 1,NOI_DUNG_NHAC = 2,SO_NGAY_NHAC_TRUOC = 3
 		}			
 		#endregion
 
@@ -358,14 +359,18 @@ namespace BondApp
 		private void format_controls(){
 			CControlFormat.setFormStyle(this);
 			CControlFormat.setC1FlexFormat(m_fg);
-            m_lbl_to_chuc_phat_hanh.Font = new Font("Arial", 16);
-            m_lbl_to_chuc_phat_hanh.ForeColor = Color.DarkRed;
-            m_lbl_to_chuc_phat_hanh.TextAlign = ContentAlignment.MiddleCenter;
+            m_lbl_title.Font = new Font("Arial", 16);
+            m_lbl_title.ForeColor = Color.DarkRed;
+            m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
+            m_fg.Tree.Column = (int)e_col_Number.NOI_DUNG_NHAC;
+            m_fg.Tree.Style = TreeStyleFlags.SimpleLeaf;
+            m_fg.Cols[(int)e_col_Number.LOAI_NHAC_VIEC].Visible = false;
 			set_define_events();
 			this.KeyPreview = true;		
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
+            load_data_2_cbo_loai_nhac_viec();
 			load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
@@ -394,16 +399,39 @@ namespace BondApp
 			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
 			i_us.DataRow2Me(v_dr);
 		}
-
-	
+        private void us_obj_2_form(US_V_DM_THAM_SO_NHAC_VIEC ip_us_tham_so_nhac_viec)
+        {
+            m_txt_noi_dung_nhac.Text = ip_us_tham_so_nhac_viec.strNOI_DUNG_NHAC;
+            m_txt_ngay_nhac_truoc.Text = CIPConvert.ToStr(ip_us_tham_so_nhac_viec.dcSO_NGAY_NHAC_TRUOC,"#,###");
+            m_cbo_loai_nhac_viec.SelectedValue = ip_us_tham_so_nhac_viec.dcID_LOAI_NHAC_VIEC;
+        }
+        private void form_2_us_object(US_V_DM_THAM_SO_NHAC_VIEC op_us_tham_so_nhac_viec)
+        {
+            op_us_tham_so_nhac_viec.strNOI_DUNG_NHAC = m_txt_noi_dung_nhac.Text.Trim();
+            op_us_tham_so_nhac_viec.dcSO_NGAY_NHAC_TRUOC = CIPConvert.ToDecimal(m_txt_ngay_nhac_truoc.Text);
+            op_us_tham_so_nhac_viec.dcID_LOAI_NHAC_VIEC = CIPConvert.ToDecimal(m_cbo_loai_nhac_viec.SelectedValue);
+        }
+        private void load_data_2_cbo_loai_nhac_viec()
+        {
+            US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
+            DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
+            v_ds_cm_dm_tu_dien = v_us_cm_dm_tu_dien.getLoaiTuDienDS(CM_DM_DS_LOAI_TU_DIEN.LOAI_NHAC_NHAC_VIEC);
+            m_cbo_loai_nhac_viec.DataSource = v_ds_cm_dm_tu_dien.Tables[0];
+            m_cbo_loai_nhac_viec.DisplayMember = CM_DM_TU_DIEN.TEN;
+            m_cbo_loai_nhac_viec.ValueMember = CM_DM_TU_DIEN.ID;
+        }
+        private void reset_controls()
+        {
+            m_txt_ngay_nhac_truoc.Text = "";
+            m_txt_noi_dung_nhac.Text = "";
+            m_cbo_loai_nhac_viec.SelectedIndex = 0;
+        }
 		private void us_object2grid(US_V_DM_THAM_SO_NHAC_VIEC i_us
 			, int i_grid_row) {
 			DataRow v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
 			i_us.Me2DataRow(v_dr);
 			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
-		}
-
-
+		}        
 		private void insert_v_dm_tham_so_nhac_viec(){			
 		//	f106_dm_tham_so_nhac_viec_DE v_fDE = new  f106_dm_tham_so_nhac_viec_DE();								
 		//	v_fDE.display();
@@ -412,11 +440,10 @@ namespace BondApp
 
 		private void update_v_dm_tham_so_nhac_viec(){			
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
+			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if (m_fg.Rows[m_fg.Row].IsNode == true) return;
 			grid2us_object(m_us, m_fg.Row);
-		//	f106_dm_tham_so_nhac_viec_DE v_fDE = new f106_dm_tham_so_nhac_viec_DE();
-		//	v_fDE.display(m_us);
-			load_data_2_grid();
+            us_obj_2_form(m_us);
 		}
 				
 		private void delete_v_dm_tham_so_nhac_viec(){
@@ -511,15 +538,19 @@ namespace BondApp
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.UpdateDataState:
+                    form_2_us_object(m_us);
                     m_us.Update();
                     m_e_form_mode = DataEntryFormMode.ViewDataState;
                     load_data_2_grid();
                     break;
                 case DataEntryFormMode.ViewDataState:
+                    form_2_us_object(m_us);
                     m_us.Insert();
                     load_data_2_grid();
                     break;
             }
+            BaseMessages.MsgBox_Infor("Dữ liệu được cập nhật thành công!");
+            reset_controls();
         }
 
         void m_cmd_luu_Click(object sender, EventArgs e)
