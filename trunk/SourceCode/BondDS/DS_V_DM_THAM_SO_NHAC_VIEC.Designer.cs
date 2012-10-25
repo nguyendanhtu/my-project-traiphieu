@@ -486,7 +486,6 @@ namespace BondDS {
                 this.columnID.Unique = true;
                 this.columnID_TRAI_PHIEU.AllowDBNull = false;
                 this.columnID_LOAI_NHAC_VIEC.AllowDBNull = false;
-                this.columnLOAI_NHAC_VIEC.ReadOnly = true;
                 this.columnLOAI_NHAC_VIEC.MaxLength = 50;
                 this.columnSO_NGAY_NHAC_TRUOC.AllowDBNull = false;
                 this.columnNOI_DUNG_NHAC.MaxLength = 250;
