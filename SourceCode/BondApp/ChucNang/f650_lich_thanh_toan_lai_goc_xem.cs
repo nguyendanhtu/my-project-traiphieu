@@ -13,6 +13,7 @@ using IP.Core.IPException;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
 using IP.Core.IPWordReport;
+using IP.Core.IPSystemAdmin;
 
 using BondUS;
 using BondDS;
@@ -659,7 +660,7 @@ namespace BondApp
                 // nếu đồng ý or chưa có thì cho gen
                 if (v_bool_xac_nhan || v_ds_lich.GD_LICH_THANH_TOAN_LAI_GOC.Rows.Count == 0)
                 {
-                    m_us_gd_lich_tt_lai_goc.GenLichThanhToanLaiGoc(m_us_v_trai_phieu.dcID);
+                    m_us_gd_lich_tt_lai_goc.GenLichThanhToanLaiGoc(m_us_v_trai_phieu.dcID, CAppContext_201.getCurrentUserID());
                     load_data_2_grid();
                 }
             }
