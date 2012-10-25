@@ -1640,7 +1640,6 @@ namespace BondDS {
                 this.columnTEN_TRAI_PHIEU.MaxLength = 250;
                 this.columnID_LOAI_TRAI_PHIEU.AllowDBNull = false;
                 this.columnMENH_GIA_TRAI_PHIEU.AllowDBNull = false;
-                this.columnGIA_TRI_CN_THEO_MENH_GIA.ReadOnly = true;
                 this.columnKY_HAN_TRAI_PHIEU.AllowDBNull = false;
                 this.columnID_DV_KY_HAN.AllowDBNull = false;
                 this.columnCO_SO_TINH_LAI.MaxLength = 50;
