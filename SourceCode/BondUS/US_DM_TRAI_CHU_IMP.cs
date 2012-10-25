@@ -569,11 +569,16 @@ public class US_DM_TRAI_CHU_IMP : US_Object
         v_cstore.addNVarcharInputParam("@DKHD_CMND", this.strDKHD_CMND);
         v_cstore.addDatetimeInputParam("@NGAY_CAP", this.datNGAY_CAP);
         v_cstore.addNVarcharInputParam("@NOI_CAP", this.strNOI_CAP);
-        v_cstore.addNVarcharInputParam("@ID_LOAI_TRAI_CHU", ip_dc_loai_trai_chu);
+        v_cstore.addDecimalInputParam("@ID_LOAI_TRAI_CHU", ip_dc_loai_trai_chu);
         v_cstore.addNVarcharInputParam("@SO_TAI_KHOAN", this.strSO_TAI_KHOAN);
         v_cstore.addNVarcharInputParam("@NOI_MO_TAI_KHOAN", this.strNOI_MO_TAI_KHOAN);
-        v_cstore.addNVarcharInputParam("@ID_TRAI_PHIEU_SO_HUU", ip_dc_id_trai_phieu_so_huu);
-        v_cstore.addNVarcharInputParam("@SO_LUONG_TRAI_PHIEU_SO_HUU", this.dcSO_LUONG_TRAI_PHIEU_SO_HUU);
+        v_cstore.addDecimalInputParam("@ID_TRAI_PHIEU_SO_HUU", ip_dc_id_trai_phieu_so_huu);
+        v_cstore.addNVarcharInputParam("@TEN_NGUOI_DAI_DIEN", this.strTEN_NGUOI_DAI_DIEN);
+        v_cstore.addNVarcharInputParam("@CMT_NGUOI_DAI_DIEN", this.strSO_CMND_NGUOI_DAI_DIEN);
+        v_cstore.addDatetimeInputParam("@NGAY_CAP_CMT_NGUOI_DAI_DIEN", this.datNGAY_CAP_CMND_NGUOI_DAI_DIEN);
+        v_cstore.addNVarcharInputParam("@NOI_CAP_CMT_NGUOI_DAI_DIEN", this.strNOI_CAP_CMND_NGUOI_DAI_DIEN);
+        v_cstore.addNVarcharInputParam("@CHUC_VU", this.strCHUC_VU_NGUOI_DAI_DIEN);
+        v_cstore.addDecimalInputParam("@SO_LUONG_TRAI_PHIEU_SO_HUU", this.dcSO_LUONG_TRAI_PHIEU_SO_HUU);
         v_cstore.addDatetimeInputParam("@NGAY_BAT_DAU_SO_HUU_TP", this.datNGAY_BAT_DAU_SO_HUU_TP);
         v_cstore.ExecuteCommand(this);
     }
