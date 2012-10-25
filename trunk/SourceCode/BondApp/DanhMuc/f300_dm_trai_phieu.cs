@@ -85,6 +85,8 @@ namespace BondApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f300_dm_trai_phieu));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_select = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_duyet = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_view = new SIS.Controls.Button.SiSButton();
@@ -96,8 +98,6 @@ namespace BondApp
             this.m_cmd_filter = new System.Windows.Forms.Button();
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_cmd_duyet = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_select = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.m_gru_tim_kiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -145,6 +145,35 @@ namespace BondApp
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(884, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
+            // 
+            // m_cmd_select
+            // 
+            this.m_cmd_select.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_select.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_select.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_select.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_select.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_select.ImageIndex = 18;
+            this.m_cmd_select.ImageList = this.ImageList;
+            this.m_cmd_select.Location = new System.Drawing.Point(337, 4);
+            this.m_cmd_select.Name = "m_cmd_select";
+            this.m_cmd_select.Size = new System.Drawing.Size(103, 28);
+            this.m_cmd_select.TabIndex = 30;
+            this.m_cmd_select.Text = "Chọn trái phiếu";
+            // 
+            // m_cmd_duyet
+            // 
+            this.m_cmd_duyet.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_duyet.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_duyet.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_duyet.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_duyet.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet.Image")));
+            this.m_cmd_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_duyet.Location = new System.Drawing.Point(440, 4);
+            this.m_cmd_duyet.Name = "m_cmd_duyet";
+            this.m_cmd_duyet.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_duyet.TabIndex = 29;
+            this.m_cmd_duyet.Text = "&Duyệt";
             // 
             // m_cmd_insert
             // 
@@ -281,35 +310,6 @@ namespace BondApp
             this.m_fg.Size = new System.Drawing.Size(884, 440);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 28;
-            // 
-            // m_cmd_duyet
-            // 
-            this.m_cmd_duyet.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_duyet.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_duyet.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_duyet.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_duyet.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet.Image")));
-            this.m_cmd_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_duyet.Location = new System.Drawing.Point(440, 4);
-            this.m_cmd_duyet.Name = "m_cmd_duyet";
-            this.m_cmd_duyet.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_duyet.TabIndex = 29;
-            this.m_cmd_duyet.Text = "&Duyệt";
-            // 
-            // m_cmd_select
-            // 
-            this.m_cmd_select.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_select.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_select.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_select.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_select.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_select.ImageIndex = 18;
-            this.m_cmd_select.ImageList = this.ImageList;
-            this.m_cmd_select.Location = new System.Drawing.Point(337, 4);
-            this.m_cmd_select.Name = "m_cmd_select";
-            this.m_cmd_select.Size = new System.Drawing.Size(103, 28);
-            this.m_cmd_select.TabIndex = 30;
-            this.m_cmd_select.Text = "Chọn trái phiếu";
             // 
             // f300_dm_trai_phieu
             // 
