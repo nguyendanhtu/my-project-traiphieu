@@ -240,7 +240,7 @@ namespace BondApp
         {
             US_HT_THAM_SO_HE_THONG v_us_phi_gd_max = new US_HT_THAM_SO_HE_THONG(GIOI_HAN_PHI_PGT.ID_PHI_PGT_MAX);
             US_HT_THAM_SO_HE_THONG v_us_phi_gd_min = new US_HT_THAM_SO_HE_THONG(GIOI_HAN_PHI_PGT.ID_PHI_PGT_MIN);
-            m_lbl_pgd_max_min.Text = "Phí giao dịch trong khoảng " + CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI), "#,##") + " đến " + CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI), "#,##") + ".";
+            m_lbl_pgd_max_min.Text = "Phí giao dịch trong khoảng " + CIPConvert.ToStr(v_us_phi_gd_min.strGIA_TRI, "#,##") + " đến " + CIPConvert.ToStr(v_us_phi_gd_max.strGIA_TRI, "#,##") + ".";
             m_dat_ngay.Value = DateTime.Today;
            
             switch (m_e_form_mode)
@@ -345,7 +345,8 @@ namespace BondApp
           
             m_txt_ma_so_trai_phieu.Text = ip_us_trai_phieu.strMA_TRAI_PHIEU;
             m_txt_to_chuc_phat_hanh.Text = ip_us_trai_phieu.strTEN_TRAI_PHIEU;
-            m_txt_menh_gia.Text = CIPConvert.ToStr( ip_us_trai_phieu.dcMENH_GIA, "#,###");
+            if (ip_us_trai_phieu.dcMENH_GIA == 0) m_txt_menh_gia.Text = "0";
+            m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcMENH_GIA, "#,###");
            
             m_txt_ngay_phat_hanh.Text = v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH.ToString("dd/MM/yyyy");
             m_txt_ngay_dao_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_DAO_HAN,"dd/MM/yyyy");
@@ -557,7 +558,8 @@ namespace BondApp
             try
             {
                 lap_giao_dich_phong_toa_giai_toa();
-                BaseMessages.MsgBox_Infor(10); 
+                BaseMessages.MsgBox_Infor(10);
+                this.Close();
             }
             catch (Exception v_e)
             {
@@ -610,6 +612,7 @@ namespace BondApp
             if (m_txt_so_luong_tp_cam_co.Text != "")
             {
                 m_txt_tong_gia_tri.Text = CIPConvert.ToStr((CIPConvert.ToDecimal(m_txt_menh_gia.Text) * CIPConvert.ToDecimal(m_txt_so_luong_tp_cam_co.Text)), "#,###");
+                return;
                //if(m_txt_ty_le_phi_gd.Text != "") phi_giao_dich_pgt_change();
             }
         }
@@ -623,7 +626,7 @@ namespace BondApp
             return;
         }
         private void m_txt_so_luong_tp_cam_co_LostFocus(object sender, EventArgs e)
-        {
+            {
             try
             {
                 if (m_txt_so_luong_tp_cam_co.Text != "")
@@ -646,15 +649,16 @@ namespace BondApp
                             MessageBox.Show("Số lượng trái phiếu phong tỏa cần bé hơn số lượng trái phiếu khả dụng.");
                             m_txt_so_luong_tp_cam_co.Focus();
                             return;
+                           
                         }
                     }
                 }
 
             }
-            catch (FormatException)
-            {
-                MessageBox.Show("Nhập sai kiểu dữ liệu. Tỷ lệ phí giao dịch phải là số!");
-            }
+            //catch (FormatException)
+            //{
+            //    MessageBox.Show("Nhập sai kiểu dữ liệu. Tỷ lệ phí giao dịch phải là số!");
+            //}
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
