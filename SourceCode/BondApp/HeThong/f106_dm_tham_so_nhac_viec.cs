@@ -41,7 +41,6 @@ namespace BondApp
         private Label m_lbl_ngay_phat_hanh;
         private TextBox m_txt_ngay_thuc_hien_truoc;
         private ComboBox m_cbo_loai_nhac_viec;
-        private Label label1;
         private Label label2;
         private TextBox m_txt_noi_dung_nhac;
         internal SIS.Controls.Button.SiSButton m_cmd_luu;
@@ -52,6 +51,7 @@ namespace BondApp
         private C1FlexGrid m_fg;
         private Label label5;
         private TextBox m_txt_ghi_chu;
+        private ComboBox m_cbo_ngay_lam_viec_yn;
 		private System.ComponentModel.IContainer components;
 
 		public f106_dm_tham_so_nhac_viec()
@@ -105,7 +105,6 @@ namespace BondApp
             this.m_cmd_luu = new SIS.Controls.Button.SiSButton();
             this.m_cbo_loai_nhac_viec = new System.Windows.Forms.ComboBox();
             this.label = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.m_lbl_ngay_phat_hanh = new System.Windows.Forms.Label();
@@ -113,6 +112,7 @@ namespace BondApp
             this.m_txt_noi_dung_nhac = new System.Windows.Forms.TextBox();
             this.m_txt_ngay_thuc_hien_truoc = new System.Windows.Forms.TextBox();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_cbo_ngay_lam_viec_yn = new System.Windows.Forms.ComboBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.m_gru_thong_tin_trai_phieu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -216,6 +216,7 @@ namespace BondApp
             // 
             // m_gru_thong_tin_trai_phieu
             // 
+            this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_cbo_ngay_lam_viec_yn);
             this.m_gru_thong_tin_trai_phieu.Controls.Add(this.label3);
             this.m_gru_thong_tin_trai_phieu.Controls.Add(this.label4);
             this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_txt_so_ngay_nhac_truoc);
@@ -223,7 +224,6 @@ namespace BondApp
             this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_cmd_luu);
             this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_cbo_loai_nhac_viec);
             this.m_gru_thong_tin_trai_phieu.Controls.Add(this.label);
-            this.m_gru_thong_tin_trai_phieu.Controls.Add(this.label1);
             this.m_gru_thong_tin_trai_phieu.Controls.Add(this.label5);
             this.m_gru_thong_tin_trai_phieu.Controls.Add(this.label2);
             this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_lbl_ngay_phat_hanh);
@@ -278,7 +278,7 @@ namespace BondApp
             this.m_cbo_truoc_sau.Items.AddRange(new object[] {
             "Trước",
             "Sau"});
-            this.m_cbo_truoc_sau.Location = new System.Drawing.Point(648, 30);
+            this.m_cbo_truoc_sau.Location = new System.Drawing.Point(547, 29);
             this.m_cbo_truoc_sau.MaxDropDownItems = 5;
             this.m_cbo_truoc_sau.Name = "m_cbo_truoc_sau";
             this.m_cbo_truoc_sau.Size = new System.Drawing.Size(66, 21);
@@ -308,7 +308,7 @@ namespace BondApp
             this.m_cbo_loai_nhac_viec.Location = new System.Drawing.Point(128, 31);
             this.m_cbo_loai_nhac_viec.MaxDropDownItems = 5;
             this.m_cbo_loai_nhac_viec.Name = "m_cbo_loai_nhac_viec";
-            this.m_cbo_loai_nhac_viec.Size = new System.Drawing.Size(370, 21);
+            this.m_cbo_loai_nhac_viec.Size = new System.Drawing.Size(327, 21);
             this.m_cbo_loai_nhac_viec.TabIndex = 0;
             // 
             // label
@@ -320,16 +320,6 @@ namespace BondApp
             this.label.TabIndex = 34;
             this.label.Text = "Loại nhắc việc";
             this.label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(780, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
-            this.label1.TabIndex = 37;
-            this.label1.Text = "ngày";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label5
             // 
@@ -354,7 +344,7 @@ namespace BondApp
             // m_lbl_ngay_phat_hanh
             // 
             this.m_lbl_ngay_phat_hanh.AutoSize = true;
-            this.m_lbl_ngay_phat_hanh.Location = new System.Drawing.Point(585, 35);
+            this.m_lbl_ngay_phat_hanh.Location = new System.Drawing.Point(484, 34);
             this.m_lbl_ngay_phat_hanh.Name = "m_lbl_ngay_phat_hanh";
             this.m_lbl_ngay_phat_hanh.Size = new System.Drawing.Size(55, 13);
             this.m_lbl_ngay_phat_hanh.TabIndex = 37;
@@ -382,7 +372,7 @@ namespace BondApp
             // m_txt_ngay_thuc_hien_truoc
             // 
             this.m_txt_ngay_thuc_hien_truoc.BackColor = System.Drawing.Color.White;
-            this.m_txt_ngay_thuc_hien_truoc.Location = new System.Drawing.Point(720, 30);
+            this.m_txt_ngay_thuc_hien_truoc.Location = new System.Drawing.Point(619, 29);
             this.m_txt_ngay_thuc_hien_truoc.Name = "m_txt_ngay_thuc_hien_truoc";
             this.m_txt_ngay_thuc_hien_truoc.Size = new System.Drawing.Size(53, 20);
             this.m_txt_ngay_thuc_hien_truoc.TabIndex = 2;
@@ -398,6 +388,22 @@ namespace BondApp
             this.m_fg.Size = new System.Drawing.Size(860, 241);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 23;
+            // 
+            // m_cbo_ngay_lam_viec_yn
+            // 
+            this.m_cbo_ngay_lam_viec_yn.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_cbo_ngay_lam_viec_yn.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.m_cbo_ngay_lam_viec_yn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_ngay_lam_viec_yn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.m_cbo_ngay_lam_viec_yn.FormattingEnabled = true;
+            this.m_cbo_ngay_lam_viec_yn.Items.AddRange(new object[] {
+            "Ngày thường",
+            "Ngày làm việc"});
+            this.m_cbo_ngay_lam_viec_yn.Location = new System.Drawing.Point(694, 29);
+            this.m_cbo_ngay_lam_viec_yn.MaxDropDownItems = 5;
+            this.m_cbo_ngay_lam_viec_yn.Name = "m_cbo_ngay_lam_viec_yn";
+            this.m_cbo_ngay_lam_viec_yn.Size = new System.Drawing.Size(124, 21);
+            this.m_cbo_ngay_lam_viec_yn.TabIndex = 42;
             // 
             // f106_dm_tham_so_nhac_viec
             // 
@@ -519,6 +525,8 @@ namespace BondApp
             m_cbo_loai_nhac_viec.SelectedValue = ip_us_tham_so_nhac_viec.dcID_LOAI_NHAC_VIEC;
             m_txt_so_ngay_nhac_truoc.Text = CIPConvert.ToStr(ip_us_tham_so_nhac_viec.dcSO_NGAY_NHAC_TRUOC,"#,###");
             m_txt_ghi_chu.Text = ip_us_tham_so_nhac_viec.strGHI_CHU;
+            if (ip_us_tham_so_nhac_viec.strNGAY_LAM_VIEC_YN == "Y") m_cbo_ngay_lam_viec_yn.SelectedIndex = 1;
+            else m_cbo_ngay_lam_viec_yn.SelectedIndex = 0;
         }
         private void form_2_us_object(US_V_DM_THAM_SO_NHAC_VIEC op_us_tham_so_nhac_viec)
         {
@@ -529,6 +537,8 @@ namespace BondApp
             if(m_cbo_truoc_sau.SelectedIndex == 0)
                 op_us_tham_so_nhac_viec.dcSO_NGAY_LAM_TRUOC_NGAY_CHINH = CIPConvert.ToDecimal(m_txt_ngay_thuc_hien_truoc.Text);
             else op_us_tham_so_nhac_viec.dcSO_NGAY_LAM_TRUOC_NGAY_CHINH = CIPConvert.ToDecimal(m_txt_ngay_thuc_hien_truoc.Text) * (-1);
+            if (m_cbo_ngay_lam_viec_yn.SelectedIndex == 0) op_us_tham_so_nhac_viec.strNGAY_LAM_VIEC_YN = "N";
+            else op_us_tham_so_nhac_viec.strNGAY_LAM_VIEC_YN = "Y";
         }
         private void load_data_2_cbo_loai_nhac_viec()
         {
