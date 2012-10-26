@@ -469,6 +469,8 @@ namespace BondApp
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
             load_data_2_cbo_loai_nhac_viec();
+            m_cbo_ngay_lam_viec_yn.SelectedIndex = 0;
+            m_cbo_truoc_sau.SelectedIndex = 0;
 			load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){

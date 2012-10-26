@@ -22,6 +22,7 @@ using BondDS.CDBNames;
 using C1.Win.C1FlexGrid;
 using BondApp.ChucNang;
 using BondApp.HeThong;
+using IP.Core.IPData.DBNames;
 
 namespace BondApp
 {
@@ -228,7 +229,7 @@ namespace BondApp
                 default:
                     break;
             }
-
+            load_data_2_cbo_dv_ky_tinh_lai();
         }
         private void us_trai_phieu_2_form()
         {
@@ -252,8 +253,18 @@ namespace BondApp
             m_txt_tong_gia_tri_trai_phieu.Text = CIPConvert.ToStr(m_us_v_trai_phieu.dcTONG_GIA_TRI, "#,###");
             m_txt_lai_suat.Text = CIPConvert.ToStr(m_us_v_trai_phieu.dcLAI_SUAT_DEFAULT, "p");
             m_txt_ky_tinh_lai.Text = CIPConvert.ToStr(m_us_v_trai_phieu.dcKY_TRA_LAI, "#,###");
+            m_cbo_don_vi_ky_tinh_lai.SelectedValue = m_us_v_trai_phieu.dcID_DV_KY_TRA_LAI;
         }
 
+        private void load_data_2_cbo_dv_ky_tinh_lai()
+        {
+            DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
+            US_CM_DM_TU_DIEN v_us_tu_dien = new US_CM_DM_TU_DIEN();
+            v_ds_cm_dm_tu_dien = v_us_tu_dien.getLoaiTuDienDS(CM_DM_LOAI_TD_LIST.DON_VI_KY_HAN);
+            m_cbo_don_vi_ky_tinh_lai.DataSource = v_ds_cm_dm_tu_dien.Tables[0];
+            m_cbo_don_vi_ky_tinh_lai.DisplayMember = CM_DM_TU_DIEN.TEN;
+            m_cbo_don_vi_ky_tinh_lai.ValueMember = CM_DM_TU_DIEN.ID;
+        }
 
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
