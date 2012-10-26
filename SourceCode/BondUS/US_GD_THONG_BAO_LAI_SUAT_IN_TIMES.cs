@@ -187,9 +187,9 @@ namespace BondUS
                                                         , decimal ip_id_trai_phieu)
         {
             CStoredProc v_cstore = new CStoredProc("pr_GD_LICH_THANH_TOAN_LAI_GOC_select_in_times");
-            v_cstore.addDecimalInputParam("@ID_TO_CHUC_PHAT_HANH", ip_id_trai_phieu);
-            v_cstore.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay);
-            v_cstore.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay);           
+            v_cstore.addDecimalInputParam("@ID_TRAI_PHIEU", ip_id_trai_phieu);
+            v_cstore.addDatetimeInputParam("@NGAY_BAT_DAU", ip_dat_tu_ngay);
+            v_cstore.addDatetimeInputParam("@NGAY_KET_THUC", ip_dat_den_ngay);           
             v_cstore.fillDataSetByCommand(this, ip_ds_gd_thong_bao_lai_suat);
         }
         #endregion
