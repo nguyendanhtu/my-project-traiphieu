@@ -123,6 +123,27 @@ public class US_V_DM_THAM_SO_NHAC_VIEC : US_Object
 		pm_objDR["SO_NGAY_NHAC_TRUOC"] = System.Convert.DBNull;
 	}
 
+    public string strNGAY_LAM_VIEC_YN
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "NGAY_LAM_VIEC_YN", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["NGAY_LAM_VIEC_YN"] = value;
+        }
+    }
+
+    public bool IsNGAY_LAM_VIEC_YNNull()
+    {
+        return pm_objDR.IsNull("NGAY_LAM_VIEC_YN");
+    }
+
+    public void SetNGAY_LAM_VIEC_YNNull()
+    {
+        pm_objDR["NGAY_LAM_VIEC_YN"] = System.Convert.DBNull;
+    }
 	public string strNOI_DUNG_NHAC 
 	{
 		get 
@@ -143,7 +164,6 @@ public class US_V_DM_THAM_SO_NHAC_VIEC : US_Object
 	public void SetNOI_DUNG_NHACNull() {
 		pm_objDR["NOI_DUNG_NHAC"] = System.Convert.DBNull;
 	}
-
 #endregion
 #region "Init Functions"
 	public US_V_DM_THAM_SO_NHAC_VIEC() 

@@ -31,8 +31,7 @@ namespace BondApp
 	public class f106_dm_tham_so_nhac_viec : System.Windows.Forms.Form
 	{
 		internal System.Windows.Forms.ImageList ImageList;
-		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
-		private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
+        internal System.Windows.Forms.Panel m_pnl_out_place_dm;
 		internal SIS.Controls.Button.SiSButton m_cmd_delete;
         internal SIS.Controls.Button.SiSButton m_cmd_update;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
@@ -46,6 +45,7 @@ namespace BondApp
         private Label label2;
         private TextBox m_txt_noi_dung_nhac;
         internal SIS.Controls.Button.SiSButton m_cmd_luu;
+        private C1FlexGrid m_fg;
 		private System.ComponentModel.IContainer components;
 
 		public f106_dm_tham_so_nhac_viec()
@@ -90,7 +90,6 @@ namespace BondApp
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.m_gru_thong_tin_trai_phieu = new System.Windows.Forms.GroupBox();
             this.m_cmd_luu = new SIS.Controls.Button.SiSButton();
@@ -101,9 +100,10 @@ namespace BondApp
             this.m_lbl_ngay_phat_hanh = new System.Windows.Forms.Label();
             this.m_txt_noi_dung_nhac = new System.Windows.Forms.TextBox();
             this.m_txt_ngay_nhac_truoc = new System.Windows.Forms.TextBox();
+            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.m_gru_thong_tin_trai_phieu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
             // 
             // ImageList
@@ -189,16 +189,6 @@ namespace BondApp
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 2;
             this.m_cmd_exit.Text = "Thoát (Esc)";
-            // 
-            // m_fg
-            // 
-            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 187);
-            this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(686, 239);
-            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 20;
             // 
             // m_lbl_title
             // 
@@ -316,6 +306,16 @@ namespace BondApp
             this.m_txt_ngay_nhac_truoc.TabStop = false;
             this.m_txt_ngay_nhac_truoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // m_fg
+            // 
+            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_fg.Location = new System.Drawing.Point(0, 187);
+            this.m_fg.Name = "m_fg";
+            this.m_fg.Size = new System.Drawing.Size(686, 239);
+            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
+            this.m_fg.TabIndex = 23;
+            // 
             // f106_dm_tham_so_nhac_viec
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -328,9 +328,9 @@ namespace BondApp
             this.Text = "F106 - Tham số nhắc việc";
             this.Load += new System.EventHandler(this.f106_dm_tham_so_nhac_viec_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.m_gru_thong_tin_trai_phieu.ResumeLayout(false);
             this.m_gru_thong_tin_trai_phieu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
 
 		}
@@ -344,7 +344,9 @@ namespace BondApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			LOAI_NHAC_VIEC = 1,NOI_DUNG_NHAC = 2,SO_NGAY_NHAC_TRUOC = 3
+            NGAY_LAM_VIEC_YN = 4,
+            LOAI_NHAC_VIEC = 1,
+            NOI_DUNG_NHAC = 2,            SO_NGAY_NHAC_TRUOC = 3
 		}			
 		#endregion
 
@@ -375,7 +377,10 @@ namespace BondApp
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
-			v_htb.Add(V_DM_THAM_SO_NHAC_VIEC.LOAI_NHAC_VIEC, e_col_Number.LOAI_NHAC_VIEC);			v_htb.Add(V_DM_THAM_SO_NHAC_VIEC.NOI_DUNG_NHAC, e_col_Number.NOI_DUNG_NHAC);			v_htb.Add(V_DM_THAM_SO_NHAC_VIEC.SO_NGAY_NHAC_TRUOC, e_col_Number.SO_NGAY_NHAC_TRUOC);									
+            v_htb.Add(V_DM_THAM_SO_NHAC_VIEC.NGAY_LAM_VIEC_YN, e_col_Number.NGAY_LAM_VIEC_YN);
+            v_htb.Add(V_DM_THAM_SO_NHAC_VIEC.LOAI_NHAC_VIEC, e_col_Number.LOAI_NHAC_VIEC);
+            v_htb.Add(V_DM_THAM_SO_NHAC_VIEC.NOI_DUNG_NHAC, e_col_Number.NOI_DUNG_NHAC);
+            v_htb.Add(V_DM_THAM_SO_NHAC_VIEC.SO_NGAY_NHAC_TRUOC, e_col_Number.SO_NGAY_NHAC_TRUOC);									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_DM_THAM_SO_NHAC_VIEC.NewRow());
 			return v_obj_trans;			
 		}
@@ -384,6 +389,12 @@ namespace BondApp
             m_us.FillDataset(m_ds, " ORDER BY " + V_DM_THAM_SO_NHAC_VIEC.ID_LOAI_NHAC_VIEC);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+
+            for (int v_i_grid_row = m_fg.Rows.Fixed; v_i_grid_row < m_fg.Rows.Count; v_i_grid_row++)
+            {
+                m_fg[v_i_grid_row, (int)e_col_Number.NGAY_LAM_VIEC_YN] = convert_ngay_lam_viec_yn_to_string(v_i_grid_row);
+                m_fg[v_i_grid_row, (int)e_col_Number.SO_NGAY_NHAC_TRUOC] = convert_truoc_hay_sau_ngay(v_i_grid_row);
+            }
             m_fg.Subtotal(AggregateEnum.None
              ,0
              , (int)e_col_Number.LOAI_NHAC_VIEC
@@ -425,6 +436,46 @@ namespace BondApp
             m_txt_ngay_nhac_truoc.Text = "";
             m_txt_noi_dung_nhac.Text = "";
             m_cbo_loai_nhac_viec.SelectedIndex = 0;
+        }
+        private bool check_data_is_ok()
+        {
+            if (!CValidateTextBox.IsValid(m_txt_ngay_nhac_truoc, DataType.NumberType, allowNull.NO, true))
+            {
+                m_txt_ngay_nhac_truoc.Focus();
+                return false;
+            }
+            if (!CValidateTextBox.IsValid(m_txt_ngay_nhac_truoc, DataType.StringType, allowNull.NO, true))
+            {
+                m_txt_noi_dung_nhac.Focus();
+                return false;
+            }
+            return true;
+        }
+        private string convert_truoc_hay_sau_ngay(int ip_grid_row)
+        {
+            string v_str_content;
+            if (CIPConvert.ToDecimal(m_fg[ip_grid_row, (int)e_col_Number.SO_NGAY_NHAC_TRUOC]) > 0)
+            {
+                v_str_content = "trước " + CIPConvert.ToStr(m_fg[ip_grid_row, (int)e_col_Number.SO_NGAY_NHAC_TRUOC]);
+            }
+            else
+            {
+                v_str_content =  "sau " + CIPConvert.ToDecimal(m_fg[ip_grid_row, (int)e_col_Number.SO_NGAY_NHAC_TRUOC]) * (-1);
+            }
+            return v_str_content;
+        }
+        private string convert_ngay_lam_viec_yn_to_string(int ip_grid_row)
+        {
+            string v_str_content;
+            if (CIPConvert.ToStr(m_fg[ip_grid_row, (int)e_col_Number.NGAY_LAM_VIEC_YN]) == "Y")
+            {
+                v_str_content = " ngày làm việc";
+            }
+            else
+            {
+                v_str_content = " ngày thường";
+            }
+            return v_str_content;
         }
 		private void us_object2grid(US_V_DM_THAM_SO_NHAC_VIEC i_us
 			, int i_grid_row) {
@@ -481,7 +532,7 @@ namespace BondApp
 		}
 		#endregion
 
-//
+
 		//
 		//		EVENT HANLDERS
 		//
@@ -557,6 +608,7 @@ namespace BondApp
         {
             try
             {
+                if (!check_data_is_ok()) return;
                 save_data();
             }
             catch (Exception v_e)
