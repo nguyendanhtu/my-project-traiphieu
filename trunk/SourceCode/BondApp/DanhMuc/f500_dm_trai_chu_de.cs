@@ -169,13 +169,21 @@ namespace BondApp.DanhMuc
             ip_us_trai_chu.strGHI_CHU2 = m_txt_ghi_chu_2.Text;
             ip_us_trai_chu.strGHI_CHU3 = m_txt_ghi_chu_3.Text;
             if (m_e_form_mode == DataEntryFormMode.InsertDataState)
+            {
                 ip_us_trai_chu.dcID_NGUOI_LAP = CAppContext_201.getCurrentUserID();
-            else
+                ip_us_trai_chu.dcID_TRANG_THAI = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
+            }
+            if (m_e_form_mode == DataEntryFormMode.UpdateDataState)
+            {
+                ip_us_trai_chu.dcID_NGUOI_LAP = m_us_v_trai_chu.dcID_NGUOI_LAP_TC;
+                ip_us_trai_chu.dcID_TRANG_THAI = TRANG_THAI_DANH_MUC.DA_LAP;
+            }
+            if (m_e_form_mode == DataEntryFormMode.ViewDataState)
             {
                 ip_us_trai_chu.dcID_NGUOI_LAP = m_us_v_trai_chu.dcID_NGUOI_LAP_TC;
                 ip_us_trai_chu.dcID_NGUOI_DUYET = CAppContext_201.getCurrentUserID();
+                ip_us_trai_chu.dcID_TRANG_THAI = TRANG_THAI_DANH_MUC.DA_DUYET;
             }
-            ip_us_trai_chu.dcID_TRANG_THAI = CIPConvert.ToDecimal(m_cbo_trang_thai.SelectedValue);
         }
 
         private void form_2_us_gd_so_du_trai_phieu()
@@ -295,7 +303,6 @@ namespace BondApp.DanhMuc
                     break;
                 case DataEntryFormMode.ViewDataState:
                     m_us_trai_chu.dcID = m_us_v_trai_chu.dcID;
-                    m_us_trai_chu.dcID_TRANG_THAI = TRANG_THAI_DANH_MUC.DA_DUYET;
                     m_us_trai_chu.Update();
                     break;
             }

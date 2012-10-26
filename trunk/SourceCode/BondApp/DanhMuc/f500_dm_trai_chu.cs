@@ -536,6 +536,7 @@ namespace BondApp
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             load_data_2_cbo_grid();
             m_fg.Redraw = true;
+            cell_changed();
         }
 
         private void load_data_2_cbo_grid()
@@ -677,12 +678,16 @@ namespace BondApp
             if (m_fg.Rows[m_fg.Row].UserData == null) return;
             US_V_DM_TRAI_CHU v_us = new US_V_DM_TRAI_CHU();
             grid2us_object(v_us, m_fg.Row);
-            if (v_us.dcID_TRANG_THAI == TRANG_THAI_DANH_MUC.DA_LAP)
+            if (v_us.dcID_TRANG_THAI != TRANG_THAI_DANH_MUC.DA_DUYET)
             {
                 m_cmd_duyet.Enabled = true;
+                m_cmd_update.Enabled = true;
             }
             else
+            {
+                m_cmd_update.Enabled = false;
                 m_cmd_duyet.Enabled = false;
+            }
         }
 
         private void load_data_2_grid_search(string ip_str_search_key)
