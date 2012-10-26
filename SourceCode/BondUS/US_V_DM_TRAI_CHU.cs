@@ -13,6 +13,7 @@ using IP.Core.IPUserService;
 using System.Data.SqlClient;
 using System.Data;
 using System;
+using BondDS.CDBNames;
 
 public class US_V_DM_TRAI_CHU : US_Object
 {
@@ -688,7 +689,7 @@ public class US_V_DM_TRAI_CHU : US_Object
     #region Public Interface
     public void FillDatasetByIDTraiPhieu(DS_V_DM_TRAI_CHU ip_ds, decimal ip_id_trai_phieu)
     {
-        base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu.ToString());
+        base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu.ToString() +" AND ID_TRANG_THAI = "+ TRANG_THAI_DANH_MUC.DA_DUYET);
     }
     public bool InitByMA_TRAI_CHU(string ip_str_ma_trai_chu)
     {
