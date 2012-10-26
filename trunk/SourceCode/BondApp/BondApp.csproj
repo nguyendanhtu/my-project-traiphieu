@@ -466,6 +466,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f654_xin_lai_suat_ky_tiep_theo.resx">
       <DependentUpon>f654_xin_lai_suat_ky_tiep_theo.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f655_danh_sach_chot_lai.resx">
       <DependentUpon>f655_danh_sach_chot_lai.cs</DependentUpon>
@@ -476,6 +477,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f658_bao_cao_chot_danh_sach_nguoi_so_huu_trai_phieu_theo_yeu_cau.resx">
       <DependentUpon>f658_bao_cao_chot_danh_sach_nguoi_so_huu_trai_phieu_theo_yeu_cau.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\f659_bao_cao_tinh_hinh_phong_toa.resx">
       <DependentUpon>f659_bao_cao_tinh_hinh_phong_toa.cs</DependentUpon>
@@ -487,6 +489,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f201_dm_gd_chot_lai_detail.resx">
       <DependentUpon>f201_dm_gd_chot_lai_detail.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f250_chi_tiet_giao_dich_chot_lai.resx">
       <DependentUpon>f250_chi_tiet_giao_dich_chot_lai.cs</DependentUpon>
@@ -576,6 +579,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\f850_dm_ngay_lam_viec.resx">
       <DependentUpon>f850_dm_ngay_lam_viec.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="f001_main_form.resx">
       <DependentUpon>f001_main_form.cs</DependentUpon>
@@ -607,6 +611,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HeThong\f106_dm_tham_so_nhac_viec.resx">
       <DependentUpon>f106_dm_tham_so_nhac_viec.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="HeThong\f106_tuy_chinh_tham_so_nhac_viec.resx">
       <DependentUpon>f106_tuy_chinh_tham_so_nhac_viec.cs</DependentUpon>
