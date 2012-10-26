@@ -61,6 +61,7 @@ namespace BondApp
             //
             // TODO: Add any constructor code after InitializeComponent call
             //
+            load_cbb_trang_thai_chuyen_nhuong();
             load_data_2_cmb_trai_phieu();
             Load_data_2_dat_from_to();
             format_controls();
@@ -99,6 +100,8 @@ namespace BondApp
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_grb_thong_tin_ban_hang = new System.Windows.Forms.GroupBox();
+            this.m_cbb_trang_thai_cn = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.m_cbo_trai_phieu = new System.Windows.Forms.ComboBox();
             this.m_lbl_nhom_hang = new System.Windows.Forms.Label();
             this.m_dat_to_date = new System.Windows.Forms.DateTimePicker();
@@ -107,8 +110,6 @@ namespace BondApp
             this.m_dat_from_date = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.label3 = new System.Windows.Forms.Label();
-            this.m_cbb_trang_thai_cn = new System.Windows.Forms.ComboBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.m_grb_thong_tin_ban_hang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -247,6 +248,27 @@ namespace BondApp
             this.m_grb_thong_tin_ban_hang.TabStop = false;
             this.m_grb_thong_tin_ban_hang.Text = "Thông tin giao dịch phong tỏa";
             // 
+            // m_cbb_trang_thai_cn
+            // 
+            this.m_cbb_trang_thai_cn.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_cbb_trang_thai_cn.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.m_cbb_trang_thai_cn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbb_trang_thai_cn.FormattingEnabled = true;
+            this.m_cbb_trang_thai_cn.Location = new System.Drawing.Point(747, 65);
+            this.m_cbb_trang_thai_cn.MaxDropDownItems = 5;
+            this.m_cbb_trang_thai_cn.Name = "m_cbb_trang_thai_cn";
+            this.m_cbb_trang_thai_cn.Size = new System.Drawing.Size(122, 21);
+            this.m_cbb_trang_thai_cn.TabIndex = 31;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(669, 68);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "Trạng thái";
+            // 
             // m_cbo_trai_phieu
             // 
             this.m_cbo_trai_phieu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
@@ -326,27 +348,6 @@ namespace BondApp
             this.m_fg.Size = new System.Drawing.Size(984, 397);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 35;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(669, 68);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 13);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "Trạng thái";
-            // 
-            // m_cbb_trang_thai_cn
-            // 
-            this.m_cbb_trang_thai_cn.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.m_cbb_trang_thai_cn.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.m_cbb_trang_thai_cn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbb_trang_thai_cn.FormattingEnabled = true;
-            this.m_cbb_trang_thai_cn.Location = new System.Drawing.Point(747, 65);
-            this.m_cbb_trang_thai_cn.MaxDropDownItems = 5;
-            this.m_cbb_trang_thai_cn.Name = "m_cbb_trang_thai_cn";
-            this.m_cbb_trang_thai_cn.Size = new System.Drawing.Size(122, 21);
-            this.m_cbb_trang_thai_cn.TabIndex = 31;
             // 
             // f610_dm_giao_dien_chuyen_nhuong
             // 
@@ -499,7 +500,7 @@ namespace BondApp
         {
             m_ds = new DS_V_GD_CHUYEN_NHUONG();      
             US_CM_DM_TU_DIEN v_tu_dien;
-            m_us.fill_dataset_by_date_and_trai_phieu_and_trang_thai(m_ds,m_dat_from_date.Value, m_dat_to_date.Value,CIPConvert.ToDecimal(m_cbo_trai_phieu.SelectedValue), CIPConvert.ToDecimal(m_cbb_trang_thai_cn.SelectedValue));
+            m_us.fill_dataset_by_date_and_trai_phieu_and_trang_thai(m_ds,m_dat_from_date.Value, m_dat_to_date.Value,CIPConvert.ToDecimal(m_cbo_trai_phieu.SelectedValue.ToString()), CIPConvert.ToDecimal(m_cbb_trang_thai_cn.SelectedValue.ToString()));
             //m_us.FillDataset(m_ds);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
@@ -518,7 +519,7 @@ namespace BondApp
             DataRow v_dr = v_ds_dm_trai_phieu.DM_TRAI_PHIEU.NewDM_TRAI_PHIEURow();
             v_ds_dm_trai_phieu.EnforceConstraints = false;
             v_dr[DM_TRAI_PHIEU.ID] = 0;
-            v_dr[DM_TRAI_PHIEU.TEN_TRAI_PHIEU] = "ALL";
+            v_dr[DM_TRAI_PHIEU.TEN_TRAI_PHIEU] = "Tất cả";
             v_ds_dm_trai_phieu.DM_TRAI_PHIEU.Rows.InsertAt(v_dr, 0);
 
 
@@ -534,7 +535,7 @@ namespace BondApp
             v_ds_cm_dm_tu_dien.EnforceConstraints = false;
 
             DataRow v_dr = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN.NewCM_DM_TU_DIENRow();
-            v_dr[CM_DM_TU_DIEN.ID] = -1;
+            v_dr[CM_DM_TU_DIEN.ID] = 0;
             v_dr[CM_DM_TU_DIEN.TEN] = "Tất cả";
             v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
 
