@@ -343,6 +343,7 @@ namespace BondDS.CDBNames
         public const string LOAI_NHAC_VIEC = "LOAI_NHAC_VIEC";
         public const string SO_NGAY_NHAC_TRUOC = "SO_NGAY_NHAC_TRUOC";
         public const string NOI_DUNG_NHAC = "NOI_DUNG_NHAC";
+        public const string NGAY_LAM_VIEC_YN = "NGAY_LAM_VIEC_YN";
     }
 
     public class DM_TO_CHUC_PHAT_HANH
