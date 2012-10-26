@@ -142,6 +142,7 @@
     <Compile Include="US_GD_CHOT_LAI_DETAIL.cs" />
     <Compile Include="US_GD_CHUYEN_NHUONG.cs" />
     <Compile Include="US_GD_LICH_THANH_TOAN_LAI_GOC.cs" />
+    <Compile Include="US_GD_NHAC_VIEC.cs" />
     <Compile Include="US_GD_PHONG_GIAI_TOA.cs" />
     <Compile Include="US_GD_SO_DU_TRAI_PHIEU.cs" />
     <Compile Include="US_GD_THONG_BAO_LAI_SUAT_IN_TIMES.cs" />
