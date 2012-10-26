@@ -170,5 +170,20 @@ public class US_GD_NHAC_VIEC : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+
+    #region Addtitional Function
+    public void FillDataset_Lich_nhac_viec(DS_GD_NHAC_VIEC ip_gd_lich_nhac_viec
+                                        , DateTime ip_from_date
+                                        , DateTime ip_to_date
+                                        , decimal ip_id_loai_nhac_viec)
+    {
+        CStoredProc v_pr_obj = new CStoredProc("pr_LICH_NHAC_VIEC_filter");
+        v_pr_obj.addDatetimeInputParam("@ip_from_date", ip_from_date);
+        v_pr_obj.addDatetimeInputParam("@ip_to_date", ip_to_date);
+        v_pr_obj.addDecimalInputParam("@ip_id_loai_nhac_viec", ip_id_loai_nhac_viec);
+
+        v_pr_obj.fillDataSetByCommand(this, ip_gd_lich_nhac_viec);
+    }
+    #endregion
+}
 }
