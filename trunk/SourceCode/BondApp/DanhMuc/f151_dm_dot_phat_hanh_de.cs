@@ -178,6 +178,9 @@ namespace BondApp.DanhMuc
             switch (m_e_form_mode)
             {
                 case e_form_mode.THEM_TO_CHUC_PHAT_HANH:
+                    m_us_v_dot_phat_hanh.dcID_NGUOI_LAP = CAppContext_201.getCurrentUserID();
+                    m_us_v_dot_phat_hanh.SetID_NGUOI_DUYETNull();
+                    m_us_v_dot_phat_hanh.dcID_TRANG_THAI = TRANG_THAI_DANH_MUC.DA_LAP;
                     m_us_v_dot_phat_hanh.Insert();
                     break;
                 case e_form_mode.SUA_TO_CHUC_PHAT_HANH:
@@ -191,7 +194,6 @@ namespace BondApp.DanhMuc
                 default:
                     break;
             }
-
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
             this.Close();
         }
