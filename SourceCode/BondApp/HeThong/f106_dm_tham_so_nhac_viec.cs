@@ -264,7 +264,7 @@ namespace BondApp
             this.m_txt_so_ngay_nhac_truoc.Location = new System.Drawing.Point(128, 112);
             this.m_txt_so_ngay_nhac_truoc.Name = "m_txt_so_ngay_nhac_truoc";
             this.m_txt_so_ngay_nhac_truoc.Size = new System.Drawing.Size(53, 20);
-            this.m_txt_so_ngay_nhac_truoc.TabIndex = 39;
+            this.m_txt_so_ngay_nhac_truoc.TabIndex = 4;
             this.m_txt_so_ngay_nhac_truoc.TabStop = false;
             this.m_txt_so_ngay_nhac_truoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -282,7 +282,7 @@ namespace BondApp
             this.m_cbo_truoc_sau.MaxDropDownItems = 5;
             this.m_cbo_truoc_sau.Name = "m_cbo_truoc_sau";
             this.m_cbo_truoc_sau.Size = new System.Drawing.Size(66, 21);
-            this.m_cbo_truoc_sau.TabIndex = 38;
+            this.m_cbo_truoc_sau.TabIndex = 1;
             // 
             // m_cmd_luu
             // 
@@ -295,7 +295,7 @@ namespace BondApp
             this.m_cmd_luu.Location = new System.Drawing.Point(59, 148);
             this.m_cmd_luu.Name = "m_cmd_luu";
             this.m_cmd_luu.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_luu.TabIndex = 3;
+            this.m_cmd_luu.TabIndex = 6;
             this.m_cmd_luu.Text = "&Lưu";
             // 
             // m_cbo_loai_nhac_viec
@@ -367,7 +367,7 @@ namespace BondApp
             this.m_txt_ghi_chu.Location = new System.Drawing.Point(297, 114);
             this.m_txt_ghi_chu.Name = "m_txt_ghi_chu";
             this.m_txt_ghi_chu.Size = new System.Drawing.Size(521, 20);
-            this.m_txt_ghi_chu.TabIndex = 2;
+            this.m_txt_ghi_chu.TabIndex = 5;
             this.m_txt_ghi_chu.TabStop = false;
             // 
             // m_txt_noi_dung_nhac
@@ -376,7 +376,7 @@ namespace BondApp
             this.m_txt_noi_dung_nhac.Location = new System.Drawing.Point(128, 72);
             this.m_txt_noi_dung_nhac.Name = "m_txt_noi_dung_nhac";
             this.m_txt_noi_dung_nhac.Size = new System.Drawing.Size(690, 20);
-            this.m_txt_noi_dung_nhac.TabIndex = 2;
+            this.m_txt_noi_dung_nhac.TabIndex = 3;
             this.m_txt_noi_dung_nhac.TabStop = false;
             // 
             // m_txt_ngay_thuc_hien_truoc
@@ -385,7 +385,7 @@ namespace BondApp
             this.m_txt_ngay_thuc_hien_truoc.Location = new System.Drawing.Point(720, 30);
             this.m_txt_ngay_thuc_hien_truoc.Name = "m_txt_ngay_thuc_hien_truoc";
             this.m_txt_ngay_thuc_hien_truoc.Size = new System.Drawing.Size(53, 20);
-            this.m_txt_ngay_thuc_hien_truoc.TabIndex = 1;
+            this.m_txt_ngay_thuc_hien_truoc.TabIndex = 2;
             this.m_txt_ngay_thuc_hien_truoc.TabStop = false;
             this.m_txt_ngay_thuc_hien_truoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
