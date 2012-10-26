@@ -401,8 +401,16 @@ namespace BondApp
 			return v_obj_trans;			
 		}
 		private void load_data_2_grid(){						
-			m_ds = new DS_V_DM_DOT_PHAT_HANH();			
-			m_us.FillDataset(m_ds);
+			m_ds = new DS_V_DM_DOT_PHAT_HANH();
+            switch (m_e_form_mode)
+            {
+                case DataEntryFormMode.SelectDataState:
+                    m_us.FillDataset(m_ds, " WHERE ID_TRANG_THAI = " + TRANG_THAI_DANH_MUC.DA_DUYET);
+                    break;
+                case DataEntryFormMode.ViewDataState:
+                    m_us.FillDataset(m_ds);
+                    break;
+            }
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
 			m_fg.Redraw = true;
