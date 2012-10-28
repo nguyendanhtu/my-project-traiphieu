@@ -119,26 +119,38 @@ namespace BondApp.DanhMuc
         {
             if (!CValidateTextBox.IsValid(m_txt_menh_gia, DataType.NumberType, allowNull.NO, true))
             {
+                m_txt_menh_gia.Focus();
                 return false;
             }
             if (!CValidateTextBox.IsValid(m_txt_tong_so_luong_tp, DataType.NumberType, allowNull.NO, true))
             {
-                return false;
-            }
-            if (!CValidateTextBox.IsValid(m_txt_tong_gia_tri, DataType.NumberType, allowNull.NO, true))
-            {
-                return false;
-            }
-            if (!CValidateTextBox.IsValid(m_txt_ghi_chu, DataType.StringType, allowNull.YES, true))
-            {
+                m_txt_tong_so_luong_tp.Focus();
                 return false;
             }
             if (!CValidateTextBox.IsValid(m_txt_ty_le_phi_chuyen_nhuong, DataType.NumberType, allowNull.NO, true))
             {
+                m_txt_ty_le_phi_chuyen_nhuong.Focus();
                 return false;
             }
             if (!CValidateTextBox.IsValid(m_txt_ty_le_phi_phong_giai_toa, DataType.NumberType, allowNull.NO, true))
             {
+                m_txt_ty_le_phi_phong_giai_toa.Focus();
+                return false;
+            }
+            return true;
+        }
+        private bool check_ty_le_phi_is_ok(ref string op_str_ty_le_phi_nao)
+        {
+            if (CIPConvert.ToDecimal(m_txt_ty_le_phi_chuyen_nhuong.Text.Trim()) > 100)
+            {
+                m_txt_ty_le_phi_chuyen_nhuong.Focus();
+                op_str_ty_le_phi_nao = "CN";
+                return false;
+            }
+            if (CIPConvert.ToDecimal(m_txt_ty_le_phi_phong_giai_toa.Text.Trim()) > 100)
+            {
+                m_txt_ty_le_phi_chuyen_nhuong.Focus();
+                op_str_ty_le_phi_nao = "PGT";
                 return false;
             }
             return true;
@@ -173,7 +185,14 @@ namespace BondApp.DanhMuc
         }
         private void save_data()
         {
+            string v_str_loai_phi_cn = "";
             if (check_validate_data_is_ok() == false) return;
+            if(!check_ty_le_phi_is_ok(ref v_str_loai_phi_cn))
+            {
+                if (v_str_loai_phi_cn.Equals("CN")) BaseMessages.MsgBox_Error("Tỷ lệ phí chuyển nhượng phải nhỏ hơn 100%");
+                if (v_str_loai_phi_cn.Equals("PGT")) BaseMessages.MsgBox_Error("Tỷ lệ phí phong giải tỏa phải nhỏ hơn 100%");
+                return;
+            }
             form_2_us_object(m_us_v_dot_phat_hanh);
             switch (m_e_form_mode)
             {
@@ -203,7 +222,7 @@ namespace BondApp.DanhMuc
             {
                 decimal v_d_menhgia = CIPConvert.ToDecimal(m_txt_menh_gia.Text);
                 decimal v_d_tongsl = CIPConvert.ToDecimal(m_txt_tong_so_luong_tp.Text);
-                m_txt_tong_gia_tri.Text = CIPConvert.ToStr(v_d_menhgia * v_d_tongsl);
+                m_txt_tong_gia_tri.Text = CIPConvert.ToStr(v_d_menhgia * v_d_tongsl,"#,###");
             }
             catch
             { 
