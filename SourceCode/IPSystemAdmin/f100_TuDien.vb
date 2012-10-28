@@ -380,10 +380,10 @@ Public Class f100_TuDien
         v_usTuDien.DataRow2Me(v_drTuDien)
         Try
             v_usTuDien.BeginTransaction()
-            If v_usTuDien.isUpdatable() Then
-                v_usTuDien.Delete()
-                m_fg.Rows.Remove(m_fg.Row)
-            End If
+            'If v_usTuDien.isUpdatable() Then
+            v_usTuDien.Delete()
+            m_fg.Rows.Remove(m_fg.Row)
+            'End If
             v_usTuDien.CommitTransaction()
         Catch v_e As System.Exception
             v_usTuDien.Rollback()
