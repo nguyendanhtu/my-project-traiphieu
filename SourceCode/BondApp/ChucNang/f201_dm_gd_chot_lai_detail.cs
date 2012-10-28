@@ -734,7 +734,7 @@ namespace BondApp
 			v_htb.Add(GD_CHOT_LAI_DETAIL.SO_TIEN_LAI, e_col_Number.SO_TIEN_LAI);
 			v_htb.Add(GD_CHOT_LAI_DETAIL.DA_NHAN_TIEN_YN, e_col_Number.DA_NHAN_TIEN_YN);
 			v_htb.Add(GD_CHOT_LAI_DETAIL.SO_LUONG_TINH_LAI, e_col_Number.SO_LUONG_TINH_LAI);
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds_gd_chot_lai_detail.GD_CHOT_LAI_DETAIL.NewRow());
+			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds_gd_chot_lai_detail.GD_CHOT_LAI_DETAIL.NewRow());            
 			return v_obj_trans;			
 		}
         //private void load_data_2_grid()
@@ -748,17 +748,17 @@ namespace BondApp
         private void load_data_2_grid()
         {
             m_fg.Redraw = false;
+            US_DM_TRAI_CHU v_us_trai_chu;
             if (m_ds_gd_chot_lai_detail.IsInitialized)
-                CGridUtils.Dataset2C1Grid(m_ds_gd_chot_lai_detail, m_fg, m_obj_trans);
-            m_fg.Redraw = true;
-
-            DS_DM_TRAI_CHU v_ds_trai_chu = new DS_DM_TRAI_CHU();
-            Hashtable v_hst_ma_trai_chu = new Hashtable();
-            foreach (DataRow v_dr in v_ds_trai_chu.DM_TRAI_CHU.Rows)
             {
-                v_hst_ma_trai_chu.Add(v_dr[DM_TRAI_CHU.ID], v_dr[DM_TRAI_CHU.MA_TRAI_CHU]);
-            }
-            m_fg.Cols[(int)e_col_Number.ID_TRAI_CHU].DataMap = v_hst_ma_trai_chu;
+                CGridUtils.Dataset2C1Grid(m_ds_gd_chot_lai_detail, m_fg, m_obj_trans);
+                for (int v_i_grid_row = m_fg.Rows.Fixed; v_i_grid_row < m_fg.Rows.Count; v_i_grid_row++)
+                {
+                    v_us_trai_chu = new US_DM_TRAI_CHU(CIPConvert.ToDecimal(m_fg[v_i_grid_row, (int)e_col_Number.ID_TRAI_CHU]));
+                    m_fg[v_i_grid_row, (int)e_col_Number.ID_TRAI_CHU] = v_us_trai_chu.strTEN_TRAI_CHU;
+                }
+            }   
+            m_fg.Redraw = true;            
         }
 
         private void grid2us_object(US_GD_CHOT_LAI_DETAIL i_us, int i_grid_row)
@@ -786,7 +786,7 @@ namespace BondApp
             m_us_nguoi_duyet = new US_HT_NGUOI_SU_DUNG(CAppContext_201.getCurrentUserID());
             us_nguoi_duyet_2_form();
         }
-        private void gen()
+        private void gen_danh_sach_tra_lai()
         {
             US_GD_CHOT_LAI v_us_gd_chot_lai = new US_GD_CHOT_LAI();
             if (!check_validate_data_is_ok()) return;
@@ -821,7 +821,7 @@ namespace BondApp
         {
             try
             {
-                gen();
+                gen_danh_sach_tra_lai();
             }
             catch (Exception v_e)
             {
