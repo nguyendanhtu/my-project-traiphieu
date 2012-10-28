@@ -37,7 +37,6 @@
             this.m_lbl_xac_nhan_text = new System.Windows.Forms.Label();
             this.m_txt_xac_nhan = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,10 +72,10 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_xac_nhan);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 141);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 143);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(397, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(386, 36);
             this.m_pnl_out_place_dm.TabIndex = 38;
             // 
             // m_cmd_xac_nhan
@@ -88,7 +87,7 @@
             this.m_cmd_xac_nhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_xac_nhan.ImageIndex = 10;
             this.m_cmd_xac_nhan.ImageList = this.ImageList;
-            this.m_cmd_xac_nhan.Location = new System.Drawing.Point(217, 4);
+            this.m_cmd_xac_nhan.Location = new System.Drawing.Point(206, 4);
             this.m_cmd_xac_nhan.Name = "m_cmd_xac_nhan";
             this.m_cmd_xac_nhan.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_xac_nhan.TabIndex = 0;
@@ -103,7 +102,7 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(305, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(294, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 1;
@@ -122,9 +121,9 @@
             // 
             // m_txt_xac_nhan
             // 
-            this.m_txt_xac_nhan.Location = new System.Drawing.Point(78, 89);
+            this.m_txt_xac_nhan.Location = new System.Drawing.Point(92, 51);
             this.m_txt_xac_nhan.Name = "m_txt_xac_nhan";
-            this.m_txt_xac_nhan.Size = new System.Drawing.Size(120, 20);
+            this.m_txt_xac_nhan.Size = new System.Drawing.Size(195, 20);
             this.m_txt_xac_nhan.TabIndex = 41;
             // 
             // label1
@@ -132,26 +131,16 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 13);
+            this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 40;
-            this.label1.Text = "Nhập Co: Đồng ý";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(144, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(218, 13);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Nhập Khong hay nhấn Thoát: Không đồng ý";
+            this.label1.Text = "Nhập: OK";
             // 
             // f000_confirm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 177);
+            this.ClientSize = new System.Drawing.Size(386, 179);
             this.Controls.Add(this.m_txt_xac_nhan);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_lbl_xac_nhan_text);
             this.Controls.Add(this.m_pnl_out_place_dm);
@@ -172,7 +161,6 @@
         private System.Windows.Forms.Label m_lbl_xac_nhan_text;
         private System.Windows.Forms.TextBox m_txt_xac_nhan;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
 
 
     }
