@@ -607,6 +607,11 @@ namespace BondApp
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             grid2us_object(m_us, m_fg.Row);
+            if (m_us.dcID_TRANG_THAI == TRANG_THAI_DANH_MUC.DA_DUYET)
+            {
+                MessageBox.Show("Giao dịch đã được duyệt không được phép sửa.");
+                return;
+            }
             f500_dm_trai_chu_de v_frm500 = new f500_dm_trai_chu_de();
             v_frm500.display_for_update(m_us);
             load_data_2_grid(null);
