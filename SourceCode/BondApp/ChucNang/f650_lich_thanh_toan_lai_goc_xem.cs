@@ -661,7 +661,7 @@ namespace BondApp
                 // Kiểm tra xem đã gen lịch thanh toán lãi gốc cho Trái phiếu này chưa? Nếu đã có thì phải xác nhận
                 US_GD_LICH_THANH_TOAN_LAI_GOC v_us_lich = new US_GD_LICH_THANH_TOAN_LAI_GOC();
                 DS_GD_LICH_THANH_TOAN_LAI_GOC v_ds_lich = new DS_GD_LICH_THANH_TOAN_LAI_GOC();
-                v_us_lich.FillDatasetLichSUuLaiSuatByIDTraiPhieu(v_ds_lich, m_us_v_trai_phieu.dcID);
+                v_us_lich.FillDatasetByIDTraiPhieu(v_ds_lich, m_us_v_trai_phieu.dcID);
                 bool v_bool_xac_nhan = false;
                 if (v_ds_lich.GD_LICH_THANH_TOAN_LAI_GOC.Rows.Count > 0)
                 {
@@ -671,13 +671,18 @@ namespace BondApp
                 // nếu đồng ý or chưa có thì cho gen
                 if (v_bool_xac_nhan || v_ds_lich.GD_LICH_THANH_TOAN_LAI_GOC.Rows.Count == 0)
                 {
+                    m_us_gd_lich_tt_lai_goc.BeginTransaction();
                     m_us_gd_lich_tt_lai_goc.GenLichThanhToanLaiGoc(m_us_v_trai_phieu.dcID, CAppContext_201.getCurrentUserID());
                     load_data_2_grid();
+                    m_us_gd_lich_tt_lai_goc.CommitTransaction();
                 }
             }
             catch (Exception v_e)
             {
-                CSystemLog_301.ExceptionHandle(v_e);
+                m_us_gd_lich_tt_lai_goc.Rollback();
+                CDBExceptionHandler v_exceptionHander = new CDBExceptionHandler(v_e,
+                    new CDBClientDBExceptionInterpret());
+                v_exceptionHander.showErrorMessage();
             }
         }
        
