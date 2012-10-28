@@ -330,7 +330,7 @@ namespace BondApp
             this.Controls.Add(this.m_lbl_header);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f701_danh_sach_giao_dich_phong_giai_toa";
-            this.Text = "f701_danh_sach_giao_dich_phong_giai_toa";
+            this.Text = "f701-danh sach giao dich phong giai toa";
             this.Load += new System.EventHandler(this.f701_danh_sach_giao_dich_phong_giai_toa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.m_grb_thong_tin_ban_hang.ResumeLayout(false);
@@ -625,16 +625,7 @@ namespace BondApp
             //	f701_danh_sach_giao_dich_phong_giai_toa_DE v_fDE = new f701_danh_sach_giao_dich_phong_giai_toa_DE();			
             //	v_fDE.display(m_us);
         }
-        private void set_define_events()
-        {
-            m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
-            m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
-            m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-               m_dat_from_date.ValueChanged += new EventHandler(m_dat_from_date_ValueChanged);
-            m_dat_to_date.ValueChanged += new EventHandler(m_dat_to_date_ValueChanged);
-            m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
-        }
+        
         #endregion
 
         //
@@ -642,6 +633,18 @@ namespace BondApp
         //		EVENT HANLDERS
         //
         //
+        #region Events
+        private void set_define_events()
+        {
+            m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
+            m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
+            m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_dat_from_date.ValueChanged += new EventHandler(m_dat_from_date_ValueChanged);
+            m_dat_to_date.ValueChanged += new EventHandler(m_dat_to_date_ValueChanged);
+            m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
+        }
+
         private void f701_danh_sach_giao_dich_phong_giai_toa_Load(object sender, System.EventArgs e)
         {
             try
@@ -772,6 +775,8 @@ namespace BondApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        #endregion
     }
 }
 
