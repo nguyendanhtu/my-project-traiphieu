@@ -173,7 +173,7 @@ namespace BondApp
         {
             
             US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
-            //US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(ip_us_trai_phieu.dcID_DOT_PHAT_HANH);
+            US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(ip_us_trai_phieu.dcID_DOT_PHAT_HANH);
             m_txt_ma_trai_phieu.Text = ip_us_trai_phieu.strMA_TRAI_PHIEU;
             m_txt_ten_trai_phieu.Text = ip_us_trai_phieu.strTEN_TRAI_PHIEU;
             m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcMENH_GIA, "#,###");
@@ -189,8 +189,8 @@ namespace BondApp
                 MessageBox.Show("Trái phiếu " + m_us_v_trai_phieu.strTEN_TRAI_PHIEU + " không có đơn vị kỳ hạn");
                     throw v_e;
             }
-            
-            
+
+            m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcTY_LE_PHI_CHUYEN_NHUONG * 100, "0,###");
             m_txt_ky_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_HAN) + " " + CIPConvert.ToStr(v_us_cm_dm_tu_dien.strTEN);
             m_txt_lai_suat.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcLAI_SUAT_DEFAULT, "p");
             switch (m_e_form_mode)
@@ -500,6 +500,10 @@ namespace BondApp
                     + CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI), "#,##")
                     , "Ok để sửa lại", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
                 {
+                    if (m_us_gd_chuyen_nhuong.dcPHI_GD < CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI))
+                        m_txt_phi_gd.Text = CIPConvert.ToStr(v_us_phi_gd_min.strGIA_TRI, "#,##");
+                    if (m_us_gd_chuyen_nhuong.dcPHI_GD > CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI))
+                        m_txt_phi_gd.Text = CIPConvert.ToStr(v_us_phi_gd_max.strGIA_TRI, "#,##");
                     m_txt_phi_gd.Focus();
                     return false;
                 }
@@ -515,7 +519,7 @@ namespace BondApp
         {
             m_cmd_chon_trai_phieu.Click += new EventHandler(m_cmd_chon_trai_phieu_Click);
             m_txt_phan_tram_thue.LostFocus += new EventHandler(m_txt_phan_tram_thue_LostFocus);
-            m_txt_ty_le_phi_gd.LostFocus += new EventHandler(m_txt_ty_le_phi_gd_LostFocus);
+            //m_txt_ty_le_phi_gd.LostFocus += new EventHandler(m_txt_ty_le_phi_gd_LostFocus);
             m_cmd_chon_ben_mua.Click += new EventHandler(m_cmd_chon_ben_mua_Click);
             m_cmd_chon_trai_chu.Click += new EventHandler(m_cmd_chon_trai_chu_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
@@ -592,6 +596,7 @@ namespace BondApp
                 decimal v_menh_gia_trai_phieu = CIPConvert.ToDecimal(m_txt_menh_gia.Text);
                 m_txt_gia_tri_chuyen_nhuong.Text = CIPConvert.ToStr(v_so_luong_chuyen_nhuong * v_menh_gia_trai_phieu, "#,##");
                 m_txt_gia_tri_chuyen_nhuong_thuc_te.Text = CIPConvert.ToStr(v_so_luong_chuyen_nhuong * v_menh_gia_trai_phieu, "#,##");
+                m_txt_phi_gd.Text = CIPConvert.ToStr(v_so_luong_chuyen_nhuong*v_menh_gia_trai_phieu*CIPConvert.ToDecimal(m_txt_ty_le_phi_gd.Text)/100 ,"#,##");
             }
             catch (FormatException)
             {
@@ -674,30 +679,30 @@ namespace BondApp
             }
         }
 
-        void m_txt_ty_le_phi_gd_LostFocus(object sender, EventArgs e)
-        {
-            try
-            {
-                // Ninh phải sửa đi nhé
-                //if (!CValidateTextBox.IsValid(m_txt_ty_le_phi_gd, DataType.NumberType, allowNull.NO,false)) return;
-                //if (!CValidateTextBox.IsValid(m_txt_so_luong_chuyen_nhuong, DataType.NumberType, allowNull.NO, false)) return;
-                //if (!CIPConvert.is_valid_number(m_txt_ty_le_phi_gd.Text)) return;
-                //if (!CIPConvert.is_valid_number(m_txt_so_luong_chuyen_nhuong.Text)) return;
+        //void m_txt_ty_le_phi_gd_LostFocus(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        // Ninh phải sửa đi nhé
+        //        //if (!CValidateTextBox.IsValid(m_txt_ty_le_phi_gd, DataType.NumberType, allowNull.NO,false)) return;
+        //        //if (!CValidateTextBox.IsValid(m_txt_so_luong_chuyen_nhuong, DataType.NumberType, allowNull.NO, false)) return;
+        //        //if (!CIPConvert.is_valid_number(m_txt_ty_le_phi_gd.Text)) return;
+        //        //if (!CIPConvert.is_valid_number(m_txt_so_luong_chuyen_nhuong.Text)) return;
                 
-                decimal v_ty_le_phi = decimal.Parse(m_txt_ty_le_phi_gd.Text);                    
-                decimal v_so_luong_CN = decimal.Parse(m_txt_so_luong_chuyen_nhuong.Text);
-                m_txt_phi_gd.Text = CIPConvert.ToStr(v_so_luong_CN * v_ty_le_phi * CIPConvert.ToDecimal(m_txt_menh_gia.Text), "#,###");                
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Nhập sai kiểu dữ liệu, đây phải là số!");
-            }
-            catch (Exception v_e)
-            {                
-                CSystemLog_301.ExceptionHandle(v_e);
-                return;
-            }
-        }
+        //        decimal v_ty_le_phi = decimal.Parse(m_txt_ty_le_phi_gd.Text);                    
+        //        decimal v_so_luong_CN = decimal.Parse(m_txt_so_luong_chuyen_nhuong.Text);
+        //        m_txt_phi_gd.Text = CIPConvert.ToStr(v_so_luong_CN * v_ty_le_phi * CIPConvert.ToDecimal(m_txt_menh_gia.Text), "#,###");                
+        //    }
+        //    catch (FormatException)
+        //    {
+        //        MessageBox.Show("Nhập sai kiểu dữ liệu, đây phải là số!");
+        //    }
+        //    catch (Exception v_e)
+        //    {                
+        //        CSystemLog_301.ExceptionHandle(v_e);
+        //        return;
+        //    }
+        //}
 
         void m_cmd_chon_ben_mua_Click(object sender, EventArgs e)
         {
