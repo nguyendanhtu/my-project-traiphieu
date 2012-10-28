@@ -364,7 +364,8 @@ namespace BondApp
         public enum e_form_mode
         { 
             DANH_SACH_LAP_PHONG_TOA,
-            DANH_SACH_LAP_GIAI_TOA
+            DANH_SACH_LAP_GIAI_TOA,
+            DANH_SACH_TRAI_CHU
         }
         #endregion
 
@@ -519,8 +520,11 @@ namespace BondApp
             {
                 switch (eform_mode)
                 {
+                    case e_form_mode.DANH_SACH_TRAI_CHU:
+                        m_us.FillDataset(m_ds);
+                            break;
                     case e_form_mode.DANH_SACH_LAP_PHONG_TOA:
-                            m_us.FillDataset(m_ds);
+                            m_us.FillDatasetByIDTrangThai(m_ds, TRANG_THAI_DANH_MUC.DA_DUYET);
                             break;
                     case e_form_mode.DANH_SACH_LAP_GIAI_TOA:
                             m_us.load_data_by_pgt(m_ds);
