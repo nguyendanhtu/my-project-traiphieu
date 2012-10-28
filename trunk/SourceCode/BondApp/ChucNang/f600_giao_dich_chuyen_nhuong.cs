@@ -103,7 +103,7 @@ namespace BondApp
         private void set_inital_form_load(){            
             switch (m_e_form_mode)
             {
-                case eFormMode.LAP_CHUYEN_NHUONG:
+                case eFormMode.LAP_CHUYEN_NHUONG:                    
                     m_cmd_lap_chuyen_nhuong.Visible = true;
                     m_cmd_sua_chuyen_nhuong.Visible = false;
                     m_cmd_duyet_chuyen_nhuong.Visible = false;
@@ -171,7 +171,7 @@ namespace BondApp
         }
         private void us_trai_phieu_2_form(US_V_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
-            
+            US_GD_CHUYEN_NHUONG v_us_gd_chuyen_nhuong = new US_GD_CHUYEN_NHUONG();
             US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
             US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(ip_us_trai_phieu.dcID_DOT_PHAT_HANH);
             m_txt_ma_trai_phieu.Text = ip_us_trai_phieu.strMA_TRAI_PHIEU;
@@ -180,6 +180,7 @@ namespace BondApp
             m_txt_ky_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_DIEU_CHINH_LS, "#,###");
             m_txt_ngay_phat_hanh.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_PHAT_HANH,"dd/MM/yyyy");
             m_txt_ngay_dao_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_DAO_HAN, "dd/MM/yyyy");
+            m_txt_ma_giao_dich.Text = v_us_gd_chuyen_nhuong.get_ma_dich_chuyen_nhuong();
             try
             {
                 v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN(ip_us_trai_phieu.dcID_DV_KY_HAN);
@@ -190,7 +191,7 @@ namespace BondApp
                     throw v_e;
             }
 
-            m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcTY_LE_PHI_CHUYEN_NHUONG * 100, "0,###");
+            m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcTY_LE_PHI_CHUYEN_NHUONG * 100, "#,###");
             m_txt_ky_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_HAN) + " " + CIPConvert.ToStr(v_us_cm_dm_tu_dien.strTEN);
             m_txt_lai_suat.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcLAI_SUAT_DEFAULT, "p");
             switch (m_e_form_mode)
