@@ -612,6 +612,23 @@ namespace BondUS
             v_pr_obj.addDecimalInputParam("@ID_NGUOI_DUYET", this.dcID_NGUOI_DUYET);
             v_pr_obj.ExecuteCommand(this);
         }
+        public string get_ma_dich_chuyen_nhuong()
+        {
+            string v_str_ma_gd = "CN";
+            string v_str_ma_gd_cu;
+            DS_GD_CHUYEN_NHUONG v_ds = new DS_GD_CHUYEN_NHUONG();
+            CStoredProc v_cstore = new CStoredProc("pr_GD_CHUYEN_NHUONG_get_ma_gd");
+            v_cstore.fillDataSetByCommand(this, v_ds);
+            if(v_ds.GD_CHUYEN_NHUONG == null || v_ds.GD_CHUYEN_NHUONG.Count == 0)
+                return "CN0001";
+            this.DataRow2Me(getRowClone(v_ds.Tables[pm_strTableName].Rows[0]));
+            v_str_ma_gd_cu = this.strMA_GIAO_DICH;                     
+            decimal v_so_ma_gd = CIPConvert.ToDecimal(v_str_ma_gd_cu.Substring(2)) + 1;
+            v_str_ma_gd = v_str_ma_gd + v_so_ma_gd.ToString("0000:0");
+                return v_str_ma_gd;
+        }
         #endregion
+
+        
     }
 }
