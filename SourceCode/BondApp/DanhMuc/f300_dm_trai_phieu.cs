@@ -144,7 +144,7 @@ namespace BondApp
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(884, 36);
-            this.m_pnl_out_place_dm.TabIndex = 19;
+            this.m_pnl_out_place_dm.TabIndex = 3;
             // 
             // m_cmd_select
             // 
@@ -158,7 +158,7 @@ namespace BondApp
             this.m_cmd_select.Location = new System.Drawing.Point(337, 4);
             this.m_cmd_select.Name = "m_cmd_select";
             this.m_cmd_select.Size = new System.Drawing.Size(103, 28);
-            this.m_cmd_select.TabIndex = 30;
+            this.m_cmd_select.TabIndex = 4;
             this.m_cmd_select.Text = "Chọn trái phiếu";
             // 
             // m_cmd_duyet
@@ -172,7 +172,7 @@ namespace BondApp
             this.m_cmd_duyet.Location = new System.Drawing.Point(440, 4);
             this.m_cmd_duyet.Name = "m_cmd_duyet";
             this.m_cmd_duyet.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_duyet.TabIndex = 29;
+            this.m_cmd_duyet.TabIndex = 3;
             this.m_cmd_duyet.Text = "&Duyệt";
             // 
             // m_cmd_insert
@@ -187,7 +187,7 @@ namespace BondApp
             this.m_cmd_insert.Location = new System.Drawing.Point(528, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_insert.TabIndex = 12;
+            this.m_cmd_insert.TabIndex = 0;
             this.m_cmd_insert.Text = "&Thêm";
             // 
             // m_cmd_update
@@ -202,7 +202,7 @@ namespace BondApp
             this.m_cmd_update.Location = new System.Drawing.Point(616, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_update.TabIndex = 13;
+            this.m_cmd_update.TabIndex = 1;
             this.m_cmd_update.Text = "&Sửa";
             // 
             // m_cmd_view
@@ -217,7 +217,7 @@ namespace BondApp
             this.m_cmd_view.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_view.Name = "m_cmd_view";
             this.m_cmd_view.Size = new System.Drawing.Size(173, 28);
-            this.m_cmd_view.TabIndex = 21;
+            this.m_cmd_view.TabIndex = 5;
             this.m_cmd_view.Text = "Xem lịch thanh toán lãi gốc";
             // 
             // m_cmd_delete
@@ -232,7 +232,7 @@ namespace BondApp
             this.m_cmd_delete.Location = new System.Drawing.Point(704, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_delete.TabIndex = 14;
+            this.m_cmd_delete.TabIndex = 2;
             this.m_cmd_delete.Text = "&Xoá";
             // 
             // m_cmd_exit
@@ -247,7 +247,7 @@ namespace BondApp
             this.m_cmd_exit.Location = new System.Drawing.Point(792, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 11;
+            this.m_cmd_exit.TabIndex = 6;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // m_gru_tim_kiem
@@ -259,7 +259,7 @@ namespace BondApp
             this.m_gru_tim_kiem.Location = new System.Drawing.Point(0, 37);
             this.m_gru_tim_kiem.Name = "m_gru_tim_kiem";
             this.m_gru_tim_kiem.Size = new System.Drawing.Size(884, 49);
-            this.m_gru_tim_kiem.TabIndex = 27;
+            this.m_gru_tim_kiem.TabIndex = 1;
             this.m_gru_tim_kiem.TabStop = false;
             // 
             // m_txt_search
@@ -267,7 +267,7 @@ namespace BondApp
             this.m_txt_search.Location = new System.Drawing.Point(78, 16);
             this.m_txt_search.Name = "m_txt_search";
             this.m_txt_search.Size = new System.Drawing.Size(508, 20);
-            this.m_txt_search.TabIndex = 31;
+            this.m_txt_search.TabIndex = 0;
             // 
             // label1
             // 
@@ -285,7 +285,7 @@ namespace BondApp
             this.m_cmd_filter.Location = new System.Drawing.Point(601, 14);
             this.m_cmd_filter.Name = "m_cmd_filter";
             this.m_cmd_filter.Size = new System.Drawing.Size(64, 23);
-            this.m_cmd_filter.TabIndex = 29;
+            this.m_cmd_filter.TabIndex = 1;
             this.m_cmd_filter.Text = "     Xem";
             this.m_cmd_filter.UseVisualStyleBackColor = true;
             // 
@@ -297,7 +297,7 @@ namespace BondApp
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
             this.m_lbl_title.Size = new System.Drawing.Size(884, 37);
-            this.m_lbl_title.TabIndex = 26;
+            this.m_lbl_title.TabIndex = 0;
             this.m_lbl_title.Text = "F300 - Danh mục trái phiếu";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -309,7 +309,7 @@ namespace BondApp
             this.m_fg.Name = "m_fg";
             this.m_fg.Size = new System.Drawing.Size(884, 440);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 28;
+            this.m_fg.TabIndex = 2;
             // 
             // f300_dm_trai_phieu
             // 
