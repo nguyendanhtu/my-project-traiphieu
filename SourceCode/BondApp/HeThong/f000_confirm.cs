@@ -45,7 +45,7 @@ namespace BondApp.HeThong
         {
             if (!check_dieu_kien_is_ok()) return;
             string v_str_xac_nhan_nguoi_dung = m_txt_xac_nhan.Text.Trim().ToLower();
-            if (v_str_xac_nhan_nguoi_dung.Equals("co")) m_bool_is_confirm = true;
+            if (v_str_xac_nhan_nguoi_dung.Equals("OK")) m_bool_is_confirm = true;
             else m_bool_is_confirm = false;
             this.Close();
         }
