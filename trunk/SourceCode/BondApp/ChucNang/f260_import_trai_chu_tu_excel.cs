@@ -119,13 +119,18 @@ namespace BondApp.ChucNang
                 CExcelReport v_xls_file = new CExcelReport(v_str_path_and_file_name);
 
                 DS_DM_TRAI_CHU_IMP v_ds_tmp_dm_trai_chu = new DS_DM_TRAI_CHU_IMP();
+                US_CM_DM_TU_DIEN v_tu_dien;
                 try
                 {
                     v_ds_tmp_dm_trai_chu.EnforceConstraints = false;
                     v_xls_file.Export2DatasetDSPhongThi(v_ds_tmp_dm_trai_chu, v_ds_tmp_dm_trai_chu.DM_TRAI_CHU_IMP.TableName, 2);
 
                     CGridUtils.Dataset2C1Grid(v_ds_tmp_dm_trai_chu, m_fg_load_file, m_obj_tran_xls);
-
+                    for (int v_i_grid_row = m_fg_load_file.Rows.Fixed; v_i_grid_row < m_fg_load_file.Rows.Count; v_i_grid_row++)
+                    {
+                        v_tu_dien = new US_CM_DM_TU_DIEN(CIPConvert.ToDecimal(m_fg_load_file[v_i_grid_row, (int)e_col_number_xls.TRANG_THAI]));
+                        m_fg_load_file[v_i_grid_row, (int)e_col_number_xls.TRANG_THAI] = v_tu_dien.strTEN;
+                    }
                     BaseMessages.MsgBox_Infor("Đã load dữ liệu file excel thành công.");
                 }
                 catch (Exception v_e)
