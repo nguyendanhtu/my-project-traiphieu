@@ -707,6 +707,11 @@ public class US_V_DM_TRAI_CHU : US_Object
         v_cstore.addNVarcharInputParam("@KEYWORD", ip_str_keyword);
         v_cstore.fillDataSetByCommand(this, op_ds_dm_trai_chu);
     }
+    public void FillDatasetByIDTrangThai(DS_V_DM_TRAI_CHU ip_ds, decimal ip_dc_id_trang_thai)
+    {
+        base.FillDataset(ip_ds, " WHERE ID_TRANG_THAI = " + ip_dc_id_trang_thai);
+    }
+
     public void load_data_by_pgt(DS_V_DM_TRAI_CHU op_ds_dm_trai_chu)
     {
 
