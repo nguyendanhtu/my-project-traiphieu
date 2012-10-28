@@ -76,7 +76,7 @@
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(386, 36);
-            this.m_pnl_out_place_dm.TabIndex = 38;
+            this.m_pnl_out_place_dm.TabIndex = 1;
             // 
             // m_cmd_xac_nhan
             // 
@@ -124,7 +124,7 @@
             this.m_txt_xac_nhan.Location = new System.Drawing.Point(92, 51);
             this.m_txt_xac_nhan.Name = "m_txt_xac_nhan";
             this.m_txt_xac_nhan.Size = new System.Drawing.Size(195, 20);
-            this.m_txt_xac_nhan.TabIndex = 41;
+            this.m_txt_xac_nhan.TabIndex = 0;
             // 
             // label1
             // 
