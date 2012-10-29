@@ -22,6 +22,7 @@ using BondDS;
 using BondDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
+using IP.Core.IPSystemAdmin;
 
 namespace BondApp
 {
@@ -48,6 +49,7 @@ namespace BondApp
         internal SIS.Controls.Button.SiSButton m_cmd_duyet_chuyen_nhuong;
         private ComboBox m_cbb_trang_thai_cn;
         private Label label3;
+        internal SIS.Controls.Button.SiSButton m_cmd_lap_chuyen_nhuong;
         private System.ComponentModel.IContainer components;
 
         public f610_dm_giao_dien_chuyen_nhuong()
@@ -110,6 +112,7 @@ namespace BondApp
             this.m_dat_from_date = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_cmd_lap_chuyen_nhuong = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.m_grb_thong_tin_ban_hang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -144,6 +147,7 @@ namespace BondApp
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_lap_chuyen_nhuong);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_duyet_chuyen_nhuong);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_bao_cao);
@@ -349,6 +353,21 @@ namespace BondApp
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 35;
             // 
+            // m_cmd_lap_chuyen_nhuong
+            // 
+            this.m_cmd_lap_chuyen_nhuong.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_lap_chuyen_nhuong.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_lap_chuyen_nhuong.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_lap_chuyen_nhuong.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_lap_chuyen_nhuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_lap_chuyen_nhuong.ImageIndex = 2;
+            this.m_cmd_lap_chuyen_nhuong.ImageList = this.ImageList;
+            this.m_cmd_lap_chuyen_nhuong.Location = new System.Drawing.Point(540, 4);
+            this.m_cmd_lap_chuyen_nhuong.Name = "m_cmd_lap_chuyen_nhuong";
+            this.m_cmd_lap_chuyen_nhuong.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_lap_chuyen_nhuong.TabIndex = 26;
+            this.m_cmd_lap_chuyen_nhuong.Text = "& Lập";
+            // 
             // f610_dm_giao_dien_chuyen_nhuong
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -458,12 +477,14 @@ namespace BondApp
             switch (m_e_form_mode)
             {
                 case eFormMode.DANH_SACH_CHUYEN_NHUONG:
+                    m_cmd_lap_chuyen_nhuong.Visible = true;
                     m_cmd_bao_cao.Visible = true;
                     m_cmd_delete.Visible = true;
                     m_cmd_duyet_chuyen_nhuong.Visible = false;
                     m_cmd_update.Visible = true;
                     break;
                 case eFormMode.DUYET_CHUYEN_NHUONG:
+                    m_cmd_lap_chuyen_nhuong.Visible = false;
                     m_cmd_bao_cao.Visible = false;
                     m_cmd_delete.Visible = false;
                     m_cmd_duyet_chuyen_nhuong.Visible = true;
@@ -549,12 +570,12 @@ namespace BondApp
             m_dat_from_date.Value = DateTime.Today.AddDays(-15);
             m_dat_to_date.Value = DateTime.Today.AddDays(15);
         }
-        private void grid2us_object(US_V_GD_CHUYEN_NHUONG i_us
-            , int i_grid_row)
+        private US_V_GD_CHUYEN_NHUONG grid2us_object(int i_grid_row)
         {
             DataRow v_dr;
             v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
-            i_us.dcID = CIPConvert.ToDecimal(v_dr[0]);                        
+            decimal v_id = CIPConvert.ToDecimal(v_dr[0]);
+            return new US_V_GD_CHUYEN_NHUONG(v_id);
         }
 
 
@@ -570,7 +591,7 @@ namespace BondApp
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            grid2us_object(m_us, m_fg.Row);
+            m_us = grid2us_object(m_fg.Row);
             if (m_us.dcID_TRANG_THAI_CHUYEN_NHUONG == List_trang_thai.Da_Duyet)
             {
                 MessageBox.Show("Giao dịch đã được duyệt không được phép sửa.");
@@ -585,20 +606,18 @@ namespace BondApp
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
-            US_V_GD_CHUYEN_NHUONG v_us = new US_V_GD_CHUYEN_NHUONG();
-            grid2us_object(v_us, m_fg.Row);
-            US_V_GD_CHUYEN_NHUONG v_us_gd_cn = new US_V_GD_CHUYEN_NHUONG(v_us.dcID);
+            if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;            
+            m_us = grid2us_object(m_fg.Row);            
             try
             {
-                v_us.BeginTransaction();
-                v_us.delete_gd_chuyen_nhuong();
-                v_us.CommitTransaction();
+                m_us.BeginTransaction();
+                m_us.delete_gd_chuyen_nhuong();
+                m_us.CommitTransaction();
                 m_fg.Rows.Remove(m_fg.Row);
             }
             catch (Exception v_e)
             {
-                v_us.Rollback();
+                m_us.Rollback();
                 CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
                     new CDBClientDBExceptionInterpret());
                 v_objErrHandler.showErrorMessage();
@@ -609,16 +628,25 @@ namespace BondApp
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            grid2us_object(m_us, m_fg.Row);            
+            m_us = grid2us_object(m_fg.Row);            
             f601_bao_cao_giao_dich_chuyen_nhuong v_frm601 = new f601_bao_cao_giao_dich_chuyen_nhuong();
             v_frm601.display();                       
         }
-
+        private void show_lap_gd_chuyen_nhuong()
+        {
+            if (!CAppContext_201.IsHavingQuyen(IP.Core.IPSystemAdmin.PHAN_QUYEN.LAP_LICH_THANH_TOAN_LAI_GOC))
+            {
+                BaseMessages.MsgBox_Infor(" Người sử dụng không được phép truy nhập phần này !!! ");
+                return;
+            }            
+            f600_giao_dich_chuyen_nhuong v_frm600 = new f600_giao_dich_chuyen_nhuong();
+            v_frm600.display_lap_chuyen_nhuong();
+        }
         private void  view_v_gd_chuyen_nhuong()
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            grid2us_object(m_us, m_fg.Row);
+            m_us = grid2us_object(m_fg.Row);
             f600_giao_dich_chuyen_nhuong v_frm600 = new f600_giao_dich_chuyen_nhuong();
             v_frm600.display_xem_gd_chuyen_nhuong(m_us.dcID);
         }
@@ -627,7 +655,7 @@ namespace BondApp
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            grid2us_object(m_us, m_fg.Row);
+            m_us = grid2us_object(m_fg.Row);
             if (m_us.dcID_TRANG_THAI_CHUYEN_NHUONG == List_trang_thai.Da_Duyet)
             {
                 MessageBox.Show("Giao dịch đã được duyệt bạn có thể xem lại hoặc xóa đi nếu thấy có gì sai.");
@@ -642,7 +670,7 @@ namespace BondApp
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            grid2us_object(m_us, m_fg.Row);
+            m_us = grid2us_object(m_fg.Row);
             if (m_us.dcID_TRANG_THAI_CHUYEN_NHUONG == List_trang_thai.Da_Duyet)
             {
                 m_cmd_update.Enabled = false;                
@@ -669,6 +697,20 @@ namespace BondApp
             m_dat_to_date.ValueChanged += new EventHandler(m_dat_to_date_ValueChanged);
             m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
             m_fg.MouseClick += new MouseEventHandler(m_fg_MouseClick);
+            m_cmd_lap_chuyen_nhuong.Click += new EventHandler(m_cmd_lap_chuyen_nhuong_Click);
+        }
+
+        void m_cmd_lap_chuyen_nhuong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                show_lap_gd_chuyen_nhuong();
+            }
+            catch (Exception v_e)
+            {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cbb_trang_thai_cn_SelectedIndexChanged(object sender, EventArgs e)
