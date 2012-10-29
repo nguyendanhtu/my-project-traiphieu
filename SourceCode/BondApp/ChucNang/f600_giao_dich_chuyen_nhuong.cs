@@ -411,45 +411,54 @@ namespace BondApp
         {
             if (!check_thong_tin_chuyen_nhuong_is_ok()) return;
             form_2_us_gd_chuyen_nhuong();
-            try
+            if (kiem_tra_phi_gd())
             {
-                m_us_gd_chuyen_nhuong.BeginTransaction();
-                m_us_gd_chuyen_nhuong.Insert();
-                m_us_gd_chuyen_nhuong.CommitTransaction();
-            }
-            catch (Exception v_e)
-            {
-                if (m_us_gd_chuyen_nhuong.is_having_transaction())
+                try
                 {
-                    m_us_gd_chuyen_nhuong.Rollback();
+                    m_us_gd_chuyen_nhuong.BeginTransaction();
+                    m_us_gd_chuyen_nhuong.Insert();
+                    m_us_gd_chuyen_nhuong.CommitTransaction();
                 }
-                throw v_e;
+                catch (Exception v_e)
+                {
+                    if (m_us_gd_chuyen_nhuong.is_having_transaction())
+                    {
+                        m_us_gd_chuyen_nhuong.Rollback();
+                    }
+                    throw v_e;
+                }
+
+                MessageBox.Show("Cập nhập thành công!");
+                this.Close();
+                f610_dm_giao_dien_chuyen_nhuong v_fm610 = new f610_dm_giao_dien_chuyen_nhuong();
+                v_fm610.display();
             }
-            
-            MessageBox.Show("Cập nhập thành công!");
         }
 
         private void sua_thong_tin_chuyen_nhuong()
         {
             if (!check_thong_tin_chuyen_nhuong_is_ok()) return;
             form_2_us_gd_chuyen_nhuong();
-            
-            try
+            if (kiem_tra_phi_gd())
             {
-                m_us_gd_chuyen_nhuong.BeginTransaction();
-                m_us_gd_chuyen_nhuong.Update();
-                m_us_gd_chuyen_nhuong.CommitTransaction();
-            }
-            catch (Exception v_e)
-            {
-                if (m_us_gd_chuyen_nhuong.is_having_transaction())
+                try
                 {
-                    m_us_gd_chuyen_nhuong.Rollback();
+                    m_us_gd_chuyen_nhuong.BeginTransaction();
+                    m_us_gd_chuyen_nhuong.Update();
+                    m_us_gd_chuyen_nhuong.CommitTransaction();
                 }
+                catch (Exception v_e)
+                {
+                    if (m_us_gd_chuyen_nhuong.is_having_transaction())
+                    {
+                        m_us_gd_chuyen_nhuong.Rollback();
+                    }
 
-                throw v_e;
+                    throw v_e;
+                }
+                MessageBox.Show("Cập nhập thành công!");
+                this.Close();
             }
-            MessageBox.Show("Cập nhập thành công!");
         }
 
         private void duyet_chuyen_nhuong()
@@ -460,23 +469,27 @@ namespace BondApp
              * */
             if (!check_thong_tin_chuyen_nhuong_is_ok()) return;
             form_2_us_gd_chuyen_nhuong();
-            try
+            if (kiem_tra_phi_gd())
             {
-                m_us_gd_chuyen_nhuong.BeginTransaction();
-                m_us_gd_chuyen_nhuong.duyet_chuyen_nhuong();
-                m_us_gd_chuyen_nhuong.CommitTransaction();
-            }
-            catch (Exception v_e)
-            {
-                if (m_us_gd_chuyen_nhuong.is_having_transaction())
+                try
                 {
-                    m_us_gd_chuyen_nhuong.Rollback();
+                    m_us_gd_chuyen_nhuong.BeginTransaction();
+                    m_us_gd_chuyen_nhuong.duyet_chuyen_nhuong();
+                    m_us_gd_chuyen_nhuong.CommitTransaction();
+                }
+                catch (Exception v_e)
+                {
+                    if (m_us_gd_chuyen_nhuong.is_having_transaction())
+                    {
+                        m_us_gd_chuyen_nhuong.Rollback();
+                    }
+
+                    throw v_e;
                 }
 
-                throw v_e;
+                MessageBox.Show("Cập nhập thành công!");
+                this.Close();
             }
-
-            MessageBox.Show("Cập nhập thành công!");
         }
 
         private void Show_danh_muc_chuyen_nhuong()
@@ -504,8 +517,7 @@ namespace BondApp
                     if (m_us_gd_chuyen_nhuong.dcPHI_GD < CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI))
                         m_txt_phi_gd.Text = CIPConvert.ToStr(v_us_phi_gd_min.strGIA_TRI, "#,##");
                     if (m_us_gd_chuyen_nhuong.dcPHI_GD > CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI))
-                        m_txt_phi_gd.Text = CIPConvert.ToStr(v_us_phi_gd_max.strGIA_TRI, "#,##");
-                    m_txt_phi_gd.Focus();
+                        m_txt_phi_gd.Text = CIPConvert.ToStr(v_us_phi_gd_max.strGIA_TRI, "#,##");                    
                     return false;
                 }
                 else
@@ -520,7 +532,7 @@ namespace BondApp
         {
             m_cmd_chon_trai_phieu.Click += new EventHandler(m_cmd_chon_trai_phieu_Click);
             m_txt_phan_tram_thue.LostFocus += new EventHandler(m_txt_phan_tram_thue_LostFocus);
-            //m_txt_ty_le_phi_gd.LostFocus += new EventHandler(m_txt_ty_le_phi_gd_LostFocus);
+            m_txt_ty_le_phi_gd.LostFocus += new EventHandler(m_txt_ty_le_phi_gd_LostFocus);
             m_cmd_chon_ben_mua.Click += new EventHandler(m_cmd_chon_ben_mua_Click);
             m_cmd_chon_trai_chu.Click += new EventHandler(m_cmd_chon_trai_chu_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
@@ -549,8 +561,7 @@ namespace BondApp
         void m_cmd_duyet_chuyen_nhuong_Click(object sender, EventArgs e)
         {
             try
-            {      
-                if(kiem_tra_phi_gd())
+            {                      
                 duyet_chuyen_nhuong();
             }
             catch (Exception v_e)
@@ -575,8 +586,7 @@ namespace BondApp
         void m_cmd_update_Click(object sender, EventArgs e)
         {
             try
-            {         
-                if(kiem_tra_phi_gd())
+            {                         
                 sua_thong_tin_chuyen_nhuong();
             }
             catch (Exception v_e)
@@ -595,6 +605,13 @@ namespace BondApp
 
                 decimal v_so_luong_chuyen_nhuong = CIPConvert.ToDecimal(m_txt_so_luong_chuyen_nhuong.Text);
                 decimal v_menh_gia_trai_phieu = CIPConvert.ToDecimal(m_txt_menh_gia.Text);
+                decimal v_so_luong_kha_dung = CIPConvert.ToDecimal(m_txt_so_luong_kha_dung.Text);
+                if (v_so_luong_chuyen_nhuong > v_so_luong_kha_dung)
+                {
+                    MessageBox.Show("Số lượng chuyển nhượng vượt quá số lượng khả dụng của bên bán.");
+                    v_so_luong_chuyen_nhuong = v_so_luong_kha_dung;
+                    m_txt_so_luong_chuyen_nhuong.Text = CIPConvert.ToStr(v_so_luong_chuyen_nhuong);
+                }
                 m_txt_gia_tri_chuyen_nhuong.Text = CIPConvert.ToStr(v_so_luong_chuyen_nhuong * v_menh_gia_trai_phieu, "#,##");
                 m_txt_gia_tri_chuyen_nhuong_thuc_te.Text = CIPConvert.ToStr(v_so_luong_chuyen_nhuong * v_menh_gia_trai_phieu, "#,##");
                 m_txt_phi_gd.Text = CIPConvert.ToStr(v_so_luong_chuyen_nhuong*v_menh_gia_trai_phieu*CIPConvert.ToDecimal(m_txt_ty_le_phi_gd.Text)/100 ,"#,##");
@@ -614,8 +631,7 @@ namespace BondApp
         void m_cmd_insert_Click(object sender, EventArgs e)
         {
             try
-            {
-                if(kiem_tra_phi_gd())
+            {                
                 lap_chuyen_nhuong();
             }
             catch (Exception v_e)
@@ -680,30 +696,30 @@ namespace BondApp
             }
         }
 
-        //void m_txt_ty_le_phi_gd_LostFocus(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        // Ninh phải sửa đi nhé
-        //        //if (!CValidateTextBox.IsValid(m_txt_ty_le_phi_gd, DataType.NumberType, allowNull.NO,false)) return;
-        //        //if (!CValidateTextBox.IsValid(m_txt_so_luong_chuyen_nhuong, DataType.NumberType, allowNull.NO, false)) return;
-        //        //if (!CIPConvert.is_valid_number(m_txt_ty_le_phi_gd.Text)) return;
-        //        //if (!CIPConvert.is_valid_number(m_txt_so_luong_chuyen_nhuong.Text)) return;
-                
-        //        decimal v_ty_le_phi = decimal.Parse(m_txt_ty_le_phi_gd.Text);                    
-        //        decimal v_so_luong_CN = decimal.Parse(m_txt_so_luong_chuyen_nhuong.Text);
-        //        m_txt_phi_gd.Text = CIPConvert.ToStr(v_so_luong_CN * v_ty_le_phi * CIPConvert.ToDecimal(m_txt_menh_gia.Text), "#,###");                
-        //    }
-        //    catch (FormatException)
-        //    {
-        //        MessageBox.Show("Nhập sai kiểu dữ liệu, đây phải là số!");
-        //    }
-        //    catch (Exception v_e)
-        //    {                
-        //        CSystemLog_301.ExceptionHandle(v_e);
-        //        return;
-        //    }
-        //}
+        void m_txt_ty_le_phi_gd_LostFocus(object sender, EventArgs e)
+        {
+            try
+            {
+                // Ninh phải sửa đi nhé
+                //if (!CValidateTextBox.IsValid(m_txt_ty_le_phi_gd, DataType.NumberType, allowNull.NO,false)) return;
+                //if (!CValidateTextBox.IsValid(m_txt_so_luong_chuyen_nhuong, DataType.NumberType, allowNull.NO, false)) return;
+                //if (!CIPConvert.is_valid_number(m_txt_ty_le_phi_gd.Text)) return;
+                //if (!CIPConvert.is_valid_number(m_txt_so_luong_chuyen_nhuong.Text)) return;
+
+                decimal v_ty_le_phi =  CIPConvert.ToDecimal(m_txt_ty_le_phi_gd.Text);
+                decimal v_so_luong_CN = CIPConvert.ToDecimal(m_txt_so_luong_chuyen_nhuong.Text);
+                m_txt_phi_gd.Text = CIPConvert.ToStr(v_so_luong_CN * v_ty_le_phi * CIPConvert.ToDecimal(m_txt_menh_gia.Text), "#,###");
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Nhập sai kiểu dữ liệu, đây phải là số!");
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+                return;
+            }
+        }
 
         void m_cmd_chon_ben_mua_Click(object sender, EventArgs e)
         {
