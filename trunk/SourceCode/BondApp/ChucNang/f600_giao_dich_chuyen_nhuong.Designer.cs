@@ -82,10 +82,12 @@
             this.m_lbl_noi_cap = new System.Windows.Forms.Label();
             this.m_txt_noi_cap_cmt_ng_dai_dien = new System.Windows.Forms.TextBox();
             this.m_txt_noi_cap = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.m_lbl_cmnd_dkkd = new System.Windows.Forms.Label();
             this.m_txt_cmt_ng_dai_dien = new System.Windows.Forms.TextBox();
             this.m_txt_so_cmnd_dkkd = new System.Windows.Forms.TextBox();
+            this.m_txt_chuc_vu_ng_dai_dien = new System.Windows.Forms.TextBox();
             this.m_lbl_ID_nguoi_ban = new System.Windows.Forms.Label();
             this.m_lbl_ten_khach_hang = new System.Windows.Forms.Label();
             this.m_txt_ten_khach_hang = new System.Windows.Forms.TextBox();
@@ -111,10 +113,12 @@
             this.label16 = new System.Windows.Forms.Label();
             this.m_txt_ben_mua_noi_cap_cmnd_ng_dai_dien = new System.Windows.Forms.TextBox();
             this.m_txt_ben_mua_noi_cap_cmnd = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.m_txt_ben_mua_cmnd_ng_dai_dien = new System.Windows.Forms.TextBox();
             this.m_txt_ben_mua_cmnd = new System.Windows.Forms.TextBox();
+            this.m_txt_ben_mua_chuc_vu_ng_dai_dien = new System.Windows.Forms.TextBox();
             this.m_lbl_ID_nguoi_mua = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.m_txt_ben_mua_ten = new System.Windows.Forms.TextBox();
@@ -151,10 +155,6 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.m_gru_thong_tin_khach_hang = new System.Windows.Forms.GroupBox();
-            this.m_txt_ben_mua_chuc_vu_ng_dai_dien = new System.Windows.Forms.TextBox();
-            this.label40 = new System.Windows.Forms.Label();
-            this.m_txt_chuc_vu_ng_dai_dien = new System.Windows.Forms.TextBox();
-            this.label41 = new System.Windows.Forms.Label();
             this.m_gru_thong_tin_trai_phieu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -436,7 +436,6 @@
             this.m_txt_thue.BackColor = System.Drawing.Color.White;
             this.m_txt_thue.Location = new System.Drawing.Point(438, 95);
             this.m_txt_thue.Name = "m_txt_thue";
-            this.m_txt_thue.ReadOnly = true;
             this.m_txt_thue.Size = new System.Drawing.Size(136, 20);
             this.m_txt_thue.TabIndex = 22;
             this.m_txt_thue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -704,6 +703,15 @@
             this.m_txt_noi_cap.TabIndex = 44;
             this.m_txt_noi_cap.TabStop = false;
             // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(217, 204);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(47, 13);
+            this.label41.TabIndex = 5;
+            this.label41.Text = "Chức vụ";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -738,6 +746,14 @@
             this.m_txt_so_cmnd_dkkd.ReadOnly = true;
             this.m_txt_so_cmnd_dkkd.Size = new System.Drawing.Size(140, 20);
             this.m_txt_so_cmnd_dkkd.TabIndex = 3;
+            // 
+            // m_txt_chuc_vu_ng_dai_dien
+            // 
+            this.m_txt_chuc_vu_ng_dai_dien.BackColor = System.Drawing.Color.White;
+            this.m_txt_chuc_vu_ng_dai_dien.Location = new System.Drawing.Point(276, 202);
+            this.m_txt_chuc_vu_ng_dai_dien.Name = "m_txt_chuc_vu_ng_dai_dien";
+            this.m_txt_chuc_vu_ng_dai_dien.Size = new System.Drawing.Size(126, 20);
+            this.m_txt_chuc_vu_ng_dai_dien.TabIndex = 7;
             // 
             // m_lbl_ID_nguoi_ban
             // 
@@ -1003,6 +1019,15 @@
             this.m_txt_ben_mua_noi_cap_cmnd.TabIndex = 8;
             this.m_txt_ben_mua_noi_cap_cmnd.TabStop = false;
             // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(230, 207);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(47, 13);
+            this.label40.TabIndex = 5;
+            this.label40.Text = "Chức vụ";
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -1037,6 +1062,14 @@
             this.m_txt_ben_mua_cmnd.ReadOnly = true;
             this.m_txt_ben_mua_cmnd.Size = new System.Drawing.Size(140, 20);
             this.m_txt_ben_mua_cmnd.TabIndex = 9;
+            // 
+            // m_txt_ben_mua_chuc_vu_ng_dai_dien
+            // 
+            this.m_txt_ben_mua_chuc_vu_ng_dai_dien.BackColor = System.Drawing.Color.White;
+            this.m_txt_ben_mua_chuc_vu_ng_dai_dien.Location = new System.Drawing.Point(286, 202);
+            this.m_txt_ben_mua_chuc_vu_ng_dai_dien.Name = "m_txt_ben_mua_chuc_vu_ng_dai_dien";
+            this.m_txt_ben_mua_chuc_vu_ng_dai_dien.Size = new System.Drawing.Size(126, 20);
+            this.m_txt_ben_mua_chuc_vu_ng_dai_dien.TabIndex = 13;
             // 
             // m_lbl_ID_nguoi_mua
             // 
@@ -1465,40 +1498,6 @@
             this.m_gru_thong_tin_khach_hang.TabIndex = 2;
             this.m_gru_thong_tin_khach_hang.TabStop = false;
             this.m_gru_thong_tin_khach_hang.Text = "Thông tin khách hàng";
-            // 
-            // m_txt_ben_mua_chuc_vu_ng_dai_dien
-            // 
-            this.m_txt_ben_mua_chuc_vu_ng_dai_dien.BackColor = System.Drawing.Color.White;
-            this.m_txt_ben_mua_chuc_vu_ng_dai_dien.Location = new System.Drawing.Point(286, 202);
-            this.m_txt_ben_mua_chuc_vu_ng_dai_dien.Name = "m_txt_ben_mua_chuc_vu_ng_dai_dien";
-            this.m_txt_ben_mua_chuc_vu_ng_dai_dien.Size = new System.Drawing.Size(126, 20);
-            this.m_txt_ben_mua_chuc_vu_ng_dai_dien.TabIndex = 13;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(230, 207);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(47, 13);
-            this.label40.TabIndex = 5;
-            this.label40.Text = "Chức vụ";
-            // 
-            // m_txt_chuc_vu_ng_dai_dien
-            // 
-            this.m_txt_chuc_vu_ng_dai_dien.BackColor = System.Drawing.Color.White;
-            this.m_txt_chuc_vu_ng_dai_dien.Location = new System.Drawing.Point(276, 202);
-            this.m_txt_chuc_vu_ng_dai_dien.Name = "m_txt_chuc_vu_ng_dai_dien";
-            this.m_txt_chuc_vu_ng_dai_dien.Size = new System.Drawing.Size(126, 20);
-            this.m_txt_chuc_vu_ng_dai_dien.TabIndex = 7;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(217, 204);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(47, 13);
-            this.label41.TabIndex = 5;
-            this.label41.Text = "Chức vụ";
             // 
             // f600_giao_dich_chuyen_nhuong
             // 
