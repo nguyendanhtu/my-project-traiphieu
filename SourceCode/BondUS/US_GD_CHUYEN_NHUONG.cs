@@ -624,7 +624,7 @@ namespace BondUS
             this.DataRow2Me(getRowClone(v_ds.Tables[pm_strTableName].Rows[0]));
             v_str_ma_gd_cu = this.strMA_GIAO_DICH;                     
             decimal v_so_ma_gd = CIPConvert.ToDecimal(v_str_ma_gd_cu.Substring(2)) + 1;
-            v_str_ma_gd = v_str_ma_gd + v_so_ma_gd.ToString("0000:0");
+            v_str_ma_gd = v_str_ma_gd + v_so_ma_gd.ToString("0000");
                 return v_str_ma_gd;
         }
         #endregion
