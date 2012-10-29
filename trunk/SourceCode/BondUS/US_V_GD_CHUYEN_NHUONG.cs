@@ -14,6 +14,7 @@ using IP.Core.IPUserService;
 using System.Data.SqlClient;
 using System.Data;
 using System;
+using BondDS.CDBNames;
 namespace BondUS
 {
 
@@ -1878,12 +1879,21 @@ namespace BondUS
 
         public void delete_gd_chuyen_nhuong()
         {
-            CStoredProc v_pr_obj = new CStoredProc("pr_GD_CHUYEN_NHUONG_Delete");
-            v_pr_obj.addDecimalInputParam("@ID", this.dcID);
-            v_pr_obj.addDatetimeInputParam("@NGAY_CAP_NHAT", DateTime.Today);
-            v_pr_obj.addDecimalInputParam("@ID_TRAI_CHU_MUA", this.dcID_TRAI_CHU_MUA);
-            v_pr_obj.addDecimalInputParam("@ID_TRAI_CHU_BAN", this.dcID_TRAI_CHU_BAN);
-            v_pr_obj.addDecimalInputParam("@SO_LUONG_CHUYEN_NHUONG", this.dcSO_LUONG_CHUYEN_NHUONG);                      
+            CStoredProc v_pr_obj;
+            if (this.dcID_TRANG_THAI_CHUYEN_NHUONG == List_trang_thai.Da_Duyet)
+            {
+                v_pr_obj = new CStoredProc("[pr_GD_CHUYEN_NHUONG_Delete_and_Xoa_so_du]");
+                v_pr_obj.addDecimalInputParam("@ID", this.dcID);
+                v_pr_obj.addDatetimeInputParam("@NGAY_CAP_NHAT", DateTime.Today);
+                v_pr_obj.addDecimalInputParam("@ID_TRAI_CHU_MUA", this.dcID_TRAI_CHU_MUA);
+                v_pr_obj.addDecimalInputParam("@ID_TRAI_CHU_BAN", this.dcID_TRAI_CHU_BAN);
+                v_pr_obj.addDecimalInputParam("@SO_LUONG_CHUYEN_NHUONG", this.dcSO_LUONG_CHUYEN_NHUONG);
+            }
+            else
+            {
+                v_pr_obj = new CStoredProc("pr_GD_CHUYEN_NHUONG_Delete");
+                v_pr_obj.addDecimalInputParam("@ID", this.dcID);
+            }
             v_pr_obj.ExecuteCommand(this);
         }
         #endregion
