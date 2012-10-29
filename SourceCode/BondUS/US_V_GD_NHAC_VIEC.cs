@@ -12,10 +12,10 @@ using IP.Core.IPCommon;
 using IP.Core.IPUserService;
 using System.Data.SqlClient;
 using System.Data;
-using WebDS;
+using BondDS;
 
 
-namespace WebUS{
+namespace BondUS{
 
 public class US_V_GD_NHAC_VIEC : US_Object
 {
