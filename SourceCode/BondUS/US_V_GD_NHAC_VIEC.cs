@@ -249,6 +249,6 @@ public class US_V_GD_NHAC_VIEC : US_Object
 
         v_pr_obj.fillDataSetByCommand(this, ip_gd_lich_nhac_viec);
     }
-    #endregion
-	}
+    #endregion   
+}
 }
