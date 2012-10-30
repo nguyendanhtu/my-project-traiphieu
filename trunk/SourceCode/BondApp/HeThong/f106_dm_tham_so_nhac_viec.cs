@@ -496,7 +496,7 @@ namespace BondApp
                 m_fg[v_i_grid_row, (int)e_col_Number.SO_NGAY_LAM_TRUOC_NGAY_CHINH] = convert_ngay_thuc_hien(v_i_grid_row);
             }
             m_fg.Subtotal(AggregateEnum.None
-             ,0
+             , 0
              , (int)e_col_Number.LOAI_NHAC_VIEC
              , (int)e_col_Number.NOI_DUNG_NHAC
              , "{0}");
