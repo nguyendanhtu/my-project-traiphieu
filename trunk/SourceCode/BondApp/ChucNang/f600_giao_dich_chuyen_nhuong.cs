@@ -542,6 +542,23 @@ namespace BondApp
             this.Load += new EventHandler(f600_giao_dich_chuyen_nhuong_Load);
             m_cmd_duyet_chuyen_nhuong.Click += new EventHandler(m_cmd_duyet_chuyen_nhuong_Click);
             m_cmd_danh_sach_chuyen_nhuong.Click += new EventHandler(m_cmd_danh_sach_chuyen_nhuong_Click);
+            this.KeyDown += new KeyEventHandler(f600_giao_dich_chuyen_nhuong_KeyDown);
+        }
+
+        void f600_giao_dich_chuyen_nhuong_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
         
 

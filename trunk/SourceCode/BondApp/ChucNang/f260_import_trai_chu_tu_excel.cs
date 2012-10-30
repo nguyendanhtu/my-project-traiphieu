@@ -488,6 +488,23 @@ namespace BondApp.ChucNang
             m_cmd_luu.Click += new EventHandler(m_cmd_luu_Click);
             m_cmd_thoat.Click += new EventHandler(m_cmd_thoat_Click);
             this.Load += new EventHandler(f260_import_trai_chu_tu_excel_Load);
+            this.KeyDown += new KeyEventHandler(f260_import_trai_chu_tu_excel_KeyDown);
+        }
+
+        void f260_import_trai_chu_tu_excel_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void f260_import_trai_chu_tu_excel_Load(object sender, EventArgs e)

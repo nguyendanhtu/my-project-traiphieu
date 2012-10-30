@@ -479,6 +479,23 @@ namespace BondApp.ChucNang
             m_cmd_reset.Click += new EventHandler(m_cmd_reset_Click);
             m_cmd_chon_sua.Click += new EventHandler(m_cmd_chon_cap_nhat_Click);
             m_cmd_chon_duyet.Click += new EventHandler(m_cmd_chon_duyet_Click);
+            this.KeyDown += new KeyEventHandler(f320_cap_nhat_lai_suat_thoa_thuan_KeyDown);
+        }
+
+        void f320_cap_nhat_lai_suat_thoa_thuan_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_delete_Click(object sender, EventArgs e)

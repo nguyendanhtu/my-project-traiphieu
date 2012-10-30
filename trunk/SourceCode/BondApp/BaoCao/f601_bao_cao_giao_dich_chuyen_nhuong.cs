@@ -464,8 +464,22 @@ namespace BondApp
             m_dat_to_date.ValueChanged += new EventHandler(m_dat_to_date_ValueChanged);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
             m_cmd_export_excel.Click+=new EventHandler(m_cmd_export_excel_Click);
+            this.KeyDown += new KeyEventHandler(f601_bao_cao_giao_dich_chuyen_nhuong_KeyDown);
 
 		}
+
+        void f601_bao_cao_giao_dich_chuyen_nhuong_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                    this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         private void load_data_2_cbo_to_chuc_phat_hanh()
         {
             US_DM_TO_CHUC_PHAT_HANH v_us_dm_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH();

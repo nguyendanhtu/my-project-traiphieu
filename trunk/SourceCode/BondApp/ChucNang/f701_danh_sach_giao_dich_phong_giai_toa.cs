@@ -643,6 +643,23 @@ namespace BondApp
             m_dat_from_date.ValueChanged += new EventHandler(m_dat_from_date_ValueChanged);
             m_dat_to_date.ValueChanged += new EventHandler(m_dat_to_date_ValueChanged);
             m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
+            this.KeyDown += new KeyEventHandler(f701_danh_sach_giao_dich_phong_giai_toa_KeyDown);
+        }
+
+        void f701_danh_sach_giao_dich_phong_giai_toa_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         private void f701_danh_sach_giao_dich_phong_giai_toa_Load(object sender, System.EventArgs e)

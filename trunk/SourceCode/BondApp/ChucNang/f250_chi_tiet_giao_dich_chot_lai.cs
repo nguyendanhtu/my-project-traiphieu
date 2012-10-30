@@ -101,6 +101,23 @@ namespace BondApp.ChucNang
             this.Load += new EventHandler(f300_dm_trai_phieu_DE_Load);
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            this.KeyDown += new KeyEventHandler(f250_chi_tiet_giao_dich_chot_lai_KeyDown);
+        }
+
+        void f250_chi_tiet_giao_dich_chot_lai_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
         void f300_dm_trai_phieu_DE_Load(object sender, EventArgs e)
         {

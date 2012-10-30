@@ -479,6 +479,23 @@ namespace BondApp
            m_txt_so_luong_tp_cam_co.TextChanged += new EventHandler(m_txt_so_luong_tp_cam_co_TextChanged);
            m_txt_ty_le_phi_gd.LostFocus += new EventHandler(m_txt_ty_le_phi_gd_LostFocus);
            m_txt_so_luong_tp_cam_co.LostFocus += new EventHandler(m_txt_so_luong_tp_cam_co_LostFocus);
+           this.KeyDown += new KeyEventHandler(f700_giao_dich_phong_toa_giai_toa_KeyDown);
+        }
+
+        void f700_giao_dich_phong_toa_giai_toa_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
         private void m_cmd_exit_Click(object sender, EventArgs e)
         {
