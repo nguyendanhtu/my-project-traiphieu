@@ -32,7 +32,6 @@ namespace BondApp
 	public class f800_rpt_nhac_viec : System.Windows.Forms.Form
 	{
         internal System.Windows.Forms.ImageList ImageList;
-        private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
         private GroupBox groupBox1;
         private Button m_cmd_them_ghi_chu;
         private Label m_lbl_title;
@@ -44,6 +43,7 @@ namespace BondApp
         private Label label3;
         private DateTimePicker m_dat_to_date;
         private ComboBox m_cbo_loai_nhac_viec;
+        private C1FlexGrid m_fg;
 		private System.ComponentModel.IContainer components;
 
 		public f800_rpt_nhac_viec()
@@ -84,20 +84,20 @@ namespace BondApp
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f800_rpt_nhac_viec));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
-            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.m_cmd_them_ghi_chu = new System.Windows.Forms.Button();
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.m_lbl_lich_nhac_viec_tu = new System.Windows.Forms.Label();
             this.m_chk_da_thuc_hien = new System.Windows.Forms.CheckBox();
             this.m_lbl_lich_nhac_viec_den = new System.Windows.Forms.Label();
-            this.m_cmd_filter = new System.Windows.Forms.Button();
             this.m_dat_from_date = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.m_dat_to_date = new System.Windows.Forms.DateTimePicker();
             this.m_cbo_loai_nhac_viec = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
+            this.m_cmd_them_ghi_chu = new System.Windows.Forms.Button();
+            this.m_cmd_filter = new System.Windows.Forms.Button();
+            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
             // 
             // ImageList
@@ -127,16 +127,6 @@ namespace BondApp
             this.ImageList.Images.SetKeyName(20, "");
             this.ImageList.Images.SetKeyName(21, "");
             // 
-            // m_fg
-            // 
-            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 88);
-            this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(945, 321);
-            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 20;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.m_cmd_them_ghi_chu);
@@ -156,17 +146,6 @@ namespace BondApp
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin lọc";
-            // 
-            // m_cmd_them_ghi_chu
-            // 
-            this.m_cmd_them_ghi_chu.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_them_ghi_chu.Image")));
-            this.m_cmd_them_ghi_chu.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.m_cmd_them_ghi_chu.Location = new System.Drawing.Point(825, 43);
-            this.m_cmd_them_ghi_chu.Name = "m_cmd_them_ghi_chu";
-            this.m_cmd_them_ghi_chu.Size = new System.Drawing.Size(104, 23);
-            this.m_cmd_them_ghi_chu.TabIndex = 32;
-            this.m_cmd_them_ghi_chu.Text = "     Thêm ghi chú";
-            this.m_cmd_them_ghi_chu.UseVisualStyleBackColor = true;
             // 
             // m_lbl_title
             // 
@@ -210,17 +189,6 @@ namespace BondApp
             this.m_lbl_lich_nhac_viec_den.Text = "Đến";
             this.m_lbl_lich_nhac_viec_den.Visible = false;
             // 
-            // m_cmd_filter
-            // 
-            this.m_cmd_filter.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_filter.Image")));
-            this.m_cmd_filter.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.m_cmd_filter.Location = new System.Drawing.Point(735, 43);
-            this.m_cmd_filter.Name = "m_cmd_filter";
-            this.m_cmd_filter.Size = new System.Drawing.Size(64, 23);
-            this.m_cmd_filter.TabIndex = 28;
-            this.m_cmd_filter.Text = "     Xem";
-            this.m_cmd_filter.UseVisualStyleBackColor = true;
-            // 
             // m_dat_from_date
             // 
             this.m_dat_from_date.CustomFormat = "dd/MM/yyyy";
@@ -260,6 +228,38 @@ namespace BondApp
             this.m_cbo_loai_nhac_viec.TabIndex = 26;
             this.m_cbo_loai_nhac_viec.ValueMember = "Tất cả";
             // 
+            // m_cmd_them_ghi_chu
+            // 
+            this.m_cmd_them_ghi_chu.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_them_ghi_chu.Image")));
+            this.m_cmd_them_ghi_chu.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.m_cmd_them_ghi_chu.Location = new System.Drawing.Point(825, 43);
+            this.m_cmd_them_ghi_chu.Name = "m_cmd_them_ghi_chu";
+            this.m_cmd_them_ghi_chu.Size = new System.Drawing.Size(104, 23);
+            this.m_cmd_them_ghi_chu.TabIndex = 32;
+            this.m_cmd_them_ghi_chu.Text = "     Thêm ghi chú";
+            this.m_cmd_them_ghi_chu.UseVisualStyleBackColor = true;
+            // 
+            // m_cmd_filter
+            // 
+            this.m_cmd_filter.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_filter.Image")));
+            this.m_cmd_filter.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.m_cmd_filter.Location = new System.Drawing.Point(735, 43);
+            this.m_cmd_filter.Name = "m_cmd_filter";
+            this.m_cmd_filter.Size = new System.Drawing.Size(64, 23);
+            this.m_cmd_filter.TabIndex = 28;
+            this.m_cmd_filter.Text = "     Xem";
+            this.m_cmd_filter.UseVisualStyleBackColor = true;
+            // 
+            // m_fg
+            // 
+            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_fg.Location = new System.Drawing.Point(0, 88);
+            this.m_fg.Name = "m_fg";
+            this.m_fg.Size = new System.Drawing.Size(945, 321);
+            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
+            this.m_fg.TabIndex = 34;
+            // 
             // f800_rpt_nhac_viec
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -269,9 +269,9 @@ namespace BondApp
             this.Name = "f800_rpt_nhac_viec";
             this.Text = "F800 - Lịch nhắc việc";
             this.Load += new System.EventHandler(this.f800_rpt_nhac_viec_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
 
 		}
@@ -300,10 +300,14 @@ namespace BondApp
 
 		#region Data Structure
 		private enum e_col_Number{
-            NGAY = 2,
-            TEN_TRAI_PHIEU = 4,
-            GHI_CHU = 5,
-            LOAI_NHAC_VIEC = 1,             NOI_DUNG_NHAC = 3
+            NGAY = 2
+,
+            TEN_TRAI_PHIEU = 4
+                ,
+            GHI_CHU = 5
+                ,
+            LOAI_NHAC_VIEC = 1
+                , NOI_DUNG_NHAC = 3
 		}			
 		#endregion
 
@@ -318,6 +322,9 @@ namespace BondApp
 		private void format_controls(){
 			CControlFormat.setFormStyle(this);
 			CControlFormat.setC1FlexFormat(m_fg);
+            m_fg.Tree.Column = (int)e_col_Number.NGAY;
+            m_fg.Tree.Style = TreeStyleFlags.SimpleLeaf;
+            m_fg.Cols[(int)e_col_Number.LOAI_NHAC_VIEC].Visible = false;
 			set_define_events();
 			this.KeyPreview = true;		
 		}
@@ -337,13 +344,20 @@ namespace BondApp
 		}
 		private void load_data_2_grid(){						
 			m_ds = new DS_V_GD_NHAC_VIEC();
+            m_ds.EnforceConstraints = false;
             m_us.FillDataset_Lich_nhac_viec(m_ds
                 , m_dat_from_date.Value.Date
                 , m_dat_to_date.Value.Date
                 , CIPConvert.ToDecimal(m_cbo_loai_nhac_viec.SelectedValue));
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            m_fg.Subtotal(AggregateEnum.None
+                , 0
+                , (int)e_col_Number.LOAI_NHAC_VIEC
+                , (int)e_col_Number.NGAY
+                , "{0}");
 			m_fg.Redraw = true;
+            CGridUtils.stand_on_TopLeft_Cell(m_fg);
 		}
 		private void grid2us_object(US_V_GD_NHAC_VIEC i_us
 			, int i_grid_row) {
@@ -426,7 +440,33 @@ namespace BondApp
 		//	v_fDE.display(m_us);
 		}
 		private void set_define_events(){
+            m_cmd_filter.Click += new EventHandler(m_cmd_filter_Click);
+            m_dat_from_date.ValueChanged += new EventHandler(m_dat_from_date_ValueChanged);
 		}
+
+        void m_dat_from_date_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                m_dat_to_date.Value = m_dat_from_date.Value;
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_filter_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 		#endregion
 
 //
