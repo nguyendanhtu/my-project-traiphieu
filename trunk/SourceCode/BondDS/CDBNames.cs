@@ -110,6 +110,7 @@ namespace BondDS.CDBNames
         public const string NGAY = "NGAY";
         public const string NOI_DUNG_NHAC = "NOI_DUNG_NHAC";
         public const string GHI_CHU = "GHI_CHU";
+        public const string SO_NGAY_NHAC_TRUOC = "SO_NGAY_NHAC_TRUOC";
     }
 
     public class V_GD_TRA_GOC

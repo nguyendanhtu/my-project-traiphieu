@@ -187,6 +187,29 @@ public class US_V_GD_NHAC_VIEC : US_Object
 		pm_objDR["GHI_CHU"] = System.Convert.DBNull;
 	}
 
+    public string strSO_NGAY_NHAC_TRUOC 
+	{
+		get 
+		{
+            return CNull.RowNVLString(pm_objDR, "SO_NGAY_NHAC_TRUOC", IPConstants.c_DefaultString);
+		}
+		set 
+		{
+            pm_objDR["SO_NGAY_NHAC_TRUOC"] = value;
+		}
+	}
+
+    public bool IsSO_NGAY_NHAC_TRUOCNull() 
+	{
+        return pm_objDR.IsNull("SO_NGAY_NHAC_TRUOC");
+	}
+
+    public void SetSO_NGAY_NHAC_TRUOCNull()
+    {
+        pm_objDR["SO_NGAY_NHAC_TRUOC"] = System.Convert.DBNull;
+	}
+    
+
 #endregion
 #region "Init Functions"
 	public US_V_GD_NHAC_VIEC() 
