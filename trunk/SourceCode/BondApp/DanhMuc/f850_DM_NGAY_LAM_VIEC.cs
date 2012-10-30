@@ -22,6 +22,7 @@ using BondDS;
 using BondDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
+using BondApp.DanhMuc;
 
 namespace BondApp
 {
@@ -293,8 +294,8 @@ namespace BondApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
 			grid2us_object(m_us, m_fg.Row);
-		//	f850_DM_NGAY_LAM_VIEC_DE v_fDE = new f850_DM_NGAY_LAM_VIEC_DE();
-		//	v_fDE.display(m_us);
+            f851_dm_ngay_lam_viec_de v_frn851 = new f851_dm_ngay_lam_viec_de();
+            v_frn851.display_for_update(m_us);
 			load_data_2_grid();
 		}
 				
