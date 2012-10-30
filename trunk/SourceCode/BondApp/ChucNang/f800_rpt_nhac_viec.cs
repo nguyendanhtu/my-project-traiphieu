@@ -23,6 +23,7 @@ using BondDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
 using IP.Core.IPSystemAdmin;
+using BondApp.ChucNang;
 
 namespace BondApp
 {
@@ -366,7 +367,6 @@ namespace BondApp
 			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
 			i_us.DataRow2Me(v_dr);
 		}
-
         private void set_start_form()
         {
             m_obj_trans = get_trans_object(m_fg);
@@ -439,10 +439,50 @@ namespace BondApp
 		//	f800_rpt_nhac_viec_DE v_fDE = new f800_rpt_nhac_viec_DE();			
 		//	v_fDE.display(m_us);
 		}
-		private void set_define_events(){
+
+        private void them_ghi_chu()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if (m_fg.Rows[m_fg.Row].IsNode) return;
+
+            grid2us_object(m_us,m_fg.Row);
+            f801_them_ghi_chu_lich_nhac_viec v_frm801 = new f801_them_ghi_chu_lich_nhac_viec();
+            v_frm801.display_2_them_ghi_chu(m_us);
+        }
+        
+        private void set_define_events(){
             m_cmd_filter.Click += new EventHandler(m_cmd_filter_Click);
             m_dat_from_date.ValueChanged += new EventHandler(m_dat_from_date_ValueChanged);
+            m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
+            m_cmd_them_ghi_chu.Click += new EventHandler(m_cmd_them_ghi_chu_Click);
 		}
+
+        void m_cmd_them_ghi_chu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                them_ghi_chu();
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_fg_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                them_ghi_chu();
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
         void m_dat_from_date_ValueChanged(object sender, EventArgs e)
         {

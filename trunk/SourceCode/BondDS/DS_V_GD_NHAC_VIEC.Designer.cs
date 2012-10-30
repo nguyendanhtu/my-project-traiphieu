@@ -524,13 +524,11 @@ namespace BondDS {
                 this.columnID.AutoIncrementSeed = -1;
                 this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
-                this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
                 this.columnID_TRAI_PHIEU.AllowDBNull = false;
                 this.columnTEN_TRAI_PHIEU.AllowDBNull = false;
                 this.columnTEN_TRAI_PHIEU.MaxLength = 250;
                 this.columnID_LOAI_NHAC_VIEC.AllowDBNull = false;
-                this.columnLOAI_NHAC_VIEC.ReadOnly = true;
                 this.columnLOAI_NHAC_VIEC.MaxLength = 50;
                 this.columnNGAY.AllowDBNull = false;
                 this.columnNOI_DUNG_NHAC.MaxLength = 250;
