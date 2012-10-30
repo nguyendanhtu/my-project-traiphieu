@@ -65,6 +65,20 @@ namespace BondApp.HeThong
             m_cmd_xac_nhan.Click += new EventHandler(m_cmd_xac_nhan_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             this.Load += new EventHandler(f000_confirm_Load);
+            m_txt_xac_nhan.KeyPress += new KeyPressEventHandler(m_txt_xac_nhan_KeyPress);
+        }
+
+        void m_txt_xac_nhan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if(e.KeyChar == (char)13)
+                    xac_nhan_cua_nguoi_dung();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void f000_confirm_Load(object sender, EventArgs e)
