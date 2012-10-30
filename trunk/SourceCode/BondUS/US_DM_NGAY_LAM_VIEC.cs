@@ -84,6 +84,28 @@ public class US_DM_NGAY_LAM_VIEC : US_Object
 		pm_objDR["NGAY_LAM_VIEC_YN"] = System.Convert.DBNull;
 	}
 
+    public string strNGAY_LAM_VIEC_HAI_BAY_YN
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "NGAY_LAM_VIEC_HAI_BAY_YN", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["NGAY_LAM_VIEC_HAI_BAY_YN"] = value;
+        }
+    }
+
+    public bool IsNGAY_LAM_VIEC_HAI_BAY_YNNull()
+    {
+        return pm_objDR.IsNull("NGAY_LAM_VIEC_HAI_BAY_YN");
+    }
+
+    public void SetNGAY_LAM_VIEC_HAI_BAY_YNNull()
+    {
+        pm_objDR["NGAY_LAM_VIEC_HAI_BAY_YN"] = System.Convert.DBNull;
+    }
+
 #endregion
 #region "Init Functions"
 	public US_DM_NGAY_LAM_VIEC() 

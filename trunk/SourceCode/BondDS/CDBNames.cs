@@ -348,6 +348,7 @@ namespace BondDS.CDBNames
         public const string ID = "ID";
         public const string NGAY = "NGAY";
         public const string NGAY_LAM_VIEC_YN = "NGAY_LAM_VIEC_YN";
+        public const string NGAY_LAM_VIEC_HAI_BAY_YN = "NGAY_LAM_VIEC_HAI_BAY_YN";
     }
     public class DM_THAM_SO_NHAC_VIEC
     {
