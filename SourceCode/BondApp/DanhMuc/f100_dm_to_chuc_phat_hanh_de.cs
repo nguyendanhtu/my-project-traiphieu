@@ -203,6 +203,23 @@ namespace BondApp.DanhMuc
             this.Load += new EventHandler(f100_dm_to_chuc_phat_hanh_de_Load);
             m_cmd_luu.Click += new EventHandler(m_cmd_luu_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            this.KeyDown += new KeyEventHandler(f100_dm_to_chuc_phat_hanh_de_KeyDown);
+        }
+
+        void f100_dm_to_chuc_phat_hanh_de_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
         void m_cmd_exit_Click(object sender, EventArgs e)
         {
