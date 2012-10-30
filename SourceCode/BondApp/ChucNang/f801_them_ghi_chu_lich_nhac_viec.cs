@@ -48,6 +48,23 @@ namespace BondApp.ChucNang
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_insert_note.Click += new EventHandler(m_cmd_insert_note_Click);
             this.Load += new EventHandler(f801_them_ghi_chu_lich_nhac_viec_Load);
+            this.KeyDown += new KeyEventHandler(f801_them_ghi_chu_lich_nhac_viec_KeyDown);
+        }
+
+        void f801_them_ghi_chu_lich_nhac_viec_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
         private void them_ghi_chu()
         {

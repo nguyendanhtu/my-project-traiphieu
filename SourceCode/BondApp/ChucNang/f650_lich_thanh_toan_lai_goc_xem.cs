@@ -512,6 +512,23 @@ namespace BondApp
             m_cmd_thong_bao_tien_lai.Click += new EventHandler(m_cmd_thong_bao_tien_lai_Click);
             m_cmd_cap_nhat_lai_suat.Click += new EventHandler(m_cmd_cap_nhat_lai_suat_Click);
             m_cmd_thong_bao_dot_thanh_toan_lai_trai_phieu.Click += new EventHandler(m_cmd_thong_bao_dot_thanh_toan_lai_trai_phieu_Click);
+            this.KeyDown += new KeyEventHandler(f650_lich_thanh_toan_lai_goc_xem_KeyDown);
+        }
+
+        void f650_lich_thanh_toan_lai_goc_xem_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_cap_nhat_lai_suat_Click(object sender, EventArgs e)
