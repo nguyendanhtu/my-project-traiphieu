@@ -126,11 +126,6 @@ namespace BondApp.ChucNang
                     v_xls_file.Export2DatasetDSPhongThi(v_ds_tmp_dm_trai_chu, v_ds_tmp_dm_trai_chu.DM_TRAI_CHU_IMP.TableName, 2);
 
                     CGridUtils.Dataset2C1Grid(v_ds_tmp_dm_trai_chu, m_fg_load_file, m_obj_tran_xls);
-                    for (int v_i_grid_row = m_fg_load_file.Rows.Fixed; v_i_grid_row < m_fg_load_file.Rows.Count; v_i_grid_row++)
-                    {
-                        v_tu_dien = new US_CM_DM_TU_DIEN(CIPConvert.ToDecimal(m_fg_load_file[v_i_grid_row, (int)e_col_number_xls.TRANG_THAI]));
-                        m_fg_load_file[v_i_grid_row, (int)e_col_number_xls.TRANG_THAI] = v_tu_dien.strTEN;
-                    }
                     BaseMessages.MsgBox_Infor("Đã load dữ liệu file excel thành công.");
                 }
                 catch (Exception v_e)
@@ -149,6 +144,16 @@ namespace BondApp.ChucNang
             m_us_v_trai_phieu = v_frm300.select_trai_phieu();
             if (!m_us_v_trai_phieu.IsIDNull() && m_us_v_trai_phieu.dcID != -1)
                 us_trai_phieu_2_form(m_us_v_trai_phieu);
+        }
+        private bool check_so_luong_is_ok()
+        {
+            decimal v_i_tong_so_luong_trai_phieu_nhap_vao= 0;
+            for (int i_stt = 1; i_stt <= m_fg_load_file.Rows.Count - 1; i_stt++)
+            {
+                v_i_tong_so_luong_trai_phieu_nhap_vao += CIPConvert.ToDecimal(m_fg_load_file[i_stt, (int)e_col_number_xls.SO_LUONG_TRAI_PHIEU_SO_HUU]);
+            }
+            if (v_i_tong_so_luong_trai_phieu_nhap_vao > m_us_v_trai_phieu.dcTONG_SL_PHAT_HANH) return false;
+            return true;
         }
         private void kiem_tra_data_tren_luoi()
         {
@@ -283,7 +288,12 @@ namespace BondApp.ChucNang
                 // 
                 if (v_count_ == m_fg_load_file.Rows.Count - 1)
                 {
-                    m_i_flag = 1;
+                    if (!check_so_luong_is_ok())
+                    {
+                        BaseMessages.MsgBox_Infor("Tổng số lượng trái phiếu nhập vào lớn hơn tổng số lượng trái phiếu này phát hành");
+                        m_i_flag = 0;
+                    }
+                    else m_i_flag = 1;
                 }
                 else
                 {
