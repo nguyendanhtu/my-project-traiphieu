@@ -119,6 +119,7 @@ namespace BondApp
                     m_cmd_lap_chuyen_nhuong.Visible = false;
                     m_cmd_sua_chuyen_nhuong.Visible = false;
                     m_cmd_duyet_chuyen_nhuong.Visible = true;
+                    m_cmd_duyet_chuyen_nhuong.Enabled = true;
                     m_gru_thong_tin_khach_hang.Enabled = false;
                     m_gru_thong_tin_trai_phieu.Enabled = false;
                     break;
@@ -180,7 +181,7 @@ namespace BondApp
             m_txt_ky_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_DIEU_CHINH_LS, "#,###");
             m_txt_ngay_phat_hanh.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_PHAT_HANH,"dd/MM/yyyy");
             m_txt_ngay_dao_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_DAO_HAN, "dd/MM/yyyy");
-            m_txt_ma_giao_dich.Text = v_us_gd_chuyen_nhuong.get_ma_dich_chuyen_nhuong();
+            //m_txt_ma_giao_dich.Text = v_us_gd_chuyen_nhuong.get_ma_dich_chuyen_nhuong();
             try
             {
                 v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN(ip_us_trai_phieu.dcID_DV_KY_HAN);
@@ -199,6 +200,7 @@ namespace BondApp
                 case eFormMode.LAP_CHUYEN_NHUONG:
                     m_date_ngay_chuyen_nhuong.Value = DateTime.Today;// dòng này KHÔNG đúng trong trường hợp hiển thị Giao dịch chuyển nhượng đã xảy ra
                     m_date_ngay_vao_so.Value = DateTime.Today;
+                    m_txt_ma_giao_dich.Text = sinh_ma_giao_dich();
                     break;
                 case eFormMode.SUA_CHUYEN_NHUONG_CHUA_DUYET:                    
                     m_date_ngay_chuyen_nhuong.Value = m_us_gd_chuyen_nhuong.datNGAY_KY_CHUYEN_NHUONG;
@@ -321,10 +323,6 @@ namespace BondApp
                     m_us_gd_chuyen_nhuong.dcID_NGUOI_LAP = CAppContext_201.getCurrentUserID();
                     m_us_gd_chuyen_nhuong.SetID_NGUOI_DUYETNull();
                     m_us_gd_chuyen_nhuong.dcID_TRANG_THAI_CHUYEN_NHUONG = List_trang_thai.Da_Nhap;
-                    break;
-                case eFormMode.SUA_CHUYEN_NHUONG_CHUA_DUYET:
-                    m_us_gd_chuyen_nhuong.dcID_NGUOI_LAP = CAppContext_201.getCurrentUserID();
-                    m_us_gd_chuyen_nhuong.SetID_NGUOI_DUYETNull();
                     break;
                 case eFormMode.DUYET_CHUYEN_NHUONG:
                     m_us_gd_chuyen_nhuong.dcID_NGUOI_DUYET = CAppContext_201.getCurrentUserID();
@@ -524,6 +522,21 @@ namespace BondApp
                     return true;
             }
             return true;
+        }
+        private string sinh_ma_giao_dich()
+        {
+            string v_str_ma_tu_sinh ="CN_" + m_us_v_trai_phieu.strMA_TRAI_PHIEU+"_";
+            US_V_GD_CHUYEN_NHUONG v_us_gd_chuyen_nhuong = new US_V_GD_CHUYEN_NHUONG();
+            DS_V_GD_CHUYEN_NHUONG v_ds_gd_chuyen_nhuong = new DS_V_GD_CHUYEN_NHUONG();
+            v_us_gd_chuyen_nhuong.FillDataset(v_ds_gd_chuyen_nhuong, " WHERE ID = (SELECT MAX(ID) FROM GD_CHUYEN_NHUONG)");
+            if (v_ds_gd_chuyen_nhuong.V_GD_CHUYEN_NHUONG.Rows.Count == 0)
+                v_str_ma_tu_sinh += "00001";
+            else
+            {
+                string[] v_str_ma_gd_arr = CIPConvert.ToStr(v_ds_gd_chuyen_nhuong.V_GD_CHUYEN_NHUONG.Rows[0][GD_CHUYEN_NHUONG.MA_GIAO_DICH]).Split('_');
+                v_str_ma_tu_sinh += v_str_ma_gd_arr[v_str_ma_gd_arr.Length - 1];
+            }
+            return v_str_ma_tu_sinh;
         }
         #endregion
 
