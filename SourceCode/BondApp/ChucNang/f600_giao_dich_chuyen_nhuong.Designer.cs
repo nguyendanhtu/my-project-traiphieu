@@ -400,9 +400,9 @@
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(9, 95);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(77, 13);
+            this.label25.Size = new System.Drawing.Size(79, 13);
             this.label25.TabIndex = 39;
-            this.label25.Text = "Phần trăn thuế";
+            this.label25.Text = "Phần trăm thuế";
             // 
             // label23
             // 
@@ -1237,9 +1237,10 @@
             // 
             // m_txt_ma_giao_dich
             // 
-            this.m_txt_ma_giao_dich.BackColor = System.Drawing.Color.White;
+            this.m_txt_ma_giao_dich.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.m_txt_ma_giao_dich.Location = new System.Drawing.Point(141, 15);
             this.m_txt_ma_giao_dich.Name = "m_txt_ma_giao_dich";
+            this.m_txt_ma_giao_dich.ReadOnly = true;
             this.m_txt_ma_giao_dich.Size = new System.Drawing.Size(136, 20);
             this.m_txt_ma_giao_dich.TabIndex = 15;
             // 
