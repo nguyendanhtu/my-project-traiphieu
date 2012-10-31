@@ -533,8 +533,8 @@ namespace BondApp
                 v_str_ma_tu_sinh += "00001";
             else
             {
-                string[] v_str_ma_gd_arr = CIPConvert.ToStr(v_ds_gd_chuyen_nhuong.V_GD_CHUYEN_NHUONG.Rows[0][GD_CHUYEN_NHUONG.MA_GIAO_DICH]).Split('_');
-                v_str_ma_tu_sinh += v_str_ma_gd_arr[v_str_ma_gd_arr.Length - 1];
+                decimal v_dc_stt = CIPConvert.ToDecimal(CIPConvert.ToStr(v_ds_gd_chuyen_nhuong.V_GD_CHUYEN_NHUONG.Rows[0][GD_CHUYEN_NHUONG.ID])) + 1;
+                v_str_ma_tu_sinh += v_dc_stt.ToString("00000");
             }
             return v_str_ma_tu_sinh;
         }

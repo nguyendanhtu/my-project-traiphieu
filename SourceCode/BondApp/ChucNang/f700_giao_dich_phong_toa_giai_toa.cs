@@ -465,6 +465,21 @@ namespace BondApp
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
             this.Close();
         }
+        //private string sinh_ma_giao_dich()
+        //{
+        //    string v_str_ma_tu_sinh = "CN_" + m_us_v_trai_phieu.strMA_TRAI_PHIEU + "_";
+        //    US_V_GD_CHUYEN_NHUONG v_us_gd_chuyen_nhuong = new US_V_GD_CHUYEN_NHUONG();
+        //    DS_V_GD_CHUYEN_NHUONG v_ds_gd_chuyen_nhuong = new DS_V_GD_CHUYEN_NHUONG();
+        //    v_us_gd_chuyen_nhuong.FillDataset(v_ds_gd_chuyen_nhuong, " WHERE ID = (SELECT MAX(ID) FROM GD_CHUYEN_NHUONG)");
+        //    if (v_ds_gd_chuyen_nhuong.V_GD_CHUYEN_NHUONG.Rows.Count == 0)
+        //        v_str_ma_tu_sinh += "00001";
+        //    else
+        //    {
+        //        decimal v_dc_stt = CIPConvert.ToDecimal(CIPConvert.ToStr(v_ds_gd_chuyen_nhuong.V_GD_CHUYEN_NHUONG.Rows[0][GD_CHUYEN_NHUONG.ID])) + 1;
+        //        v_str_ma_tu_sinh += v_dc_stt.ToString("00000");
+        //    }
+        //    return v_str_ma_tu_sinh;
+        //}
         #endregion
         #region Events
 
