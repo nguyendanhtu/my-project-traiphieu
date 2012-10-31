@@ -37,6 +37,7 @@ namespace BondApp.ChucNang
         US_V_DM_TRAI_PHIEU m_us_v_trai_phieu;
         DS_DM_TRAI_CHU_IMP m_ds_trai_chu_imp = new DS_DM_TRAI_CHU_IMP();
         decimal m_dc_ca_nhan_trong_nuoc, m_dc_ca_nhan_nuoc_ngoai, m_dc_to_chuc_trong_nuoc, m_dc_to_chuc_nuoc_ngoai;
+        // cờ dùng để xác định dữ liệu có ok hay ko? 0: ko ok; 1: ok
         int m_i_flag = 0;
         #endregion
 
