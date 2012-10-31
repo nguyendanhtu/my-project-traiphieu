@@ -335,6 +335,7 @@ namespace BondApp
         #region Public Interface
         public void display()
         {
+            eform_mode = e_form_mode.DANH_SACH_TRAI_CHU;
             this.ShowDialog();
         }
         public US_V_DM_TRAI_CHU select_v_trai_chu_of_trai_phieu(US_DM_TRAI_PHIEU ip_us_trai_phieu)
