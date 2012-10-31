@@ -87,8 +87,8 @@ namespace BondApp.DanhMuc
             m_txt_ghi_chu.Text = m_us_v_dot_phat_hanh.strGHI_CHU;
             m_txt_tong_so_luong_tp.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcTONG_SO_LUONG_TRAI_PHIEU,"#,###");
             m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcMENH_GIA, "#,###");
-            m_txt_ty_le_phi_chuyen_nhuong.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcTY_LE_PHI_CHUYEN_NHUONG * 100, "#,###");
-            m_txt_ty_le_phi_phong_giai_toa.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcTY_LE_PHI_PHONG_GIAI_TOA * 100, "#,###");
+            m_txt_ty_le_phi_chuyen_nhuong.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcTY_LE_PHI_CHUYEN_NHUONG * 100, "#,##0.00");
+            m_txt_ty_le_phi_phong_giai_toa.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcTY_LE_PHI_PHONG_GIAI_TOA * 100, "#,##0.00");
             if (ip_us_v_dot_phat_hanh.dcID_NGAN_HANG_DAI_LY_QUAN_LY_TK > 0)
             {
                 m_cbo_ngan_hang_quan_ly_tai_khoan.SelectedValue = ip_us_v_dot_phat_hanh.dcID_NGAN_HANG_DAI_LY_QUAN_LY_TK;
