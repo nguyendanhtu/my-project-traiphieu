@@ -156,7 +156,7 @@ namespace BondApp
             f300_dm_trai_phieu v_frm300 = new f300_dm_trai_phieu();
             m_us_v_trai_phieu = new US_V_DM_TRAI_PHIEU();
             m_us_v_trai_phieu = v_frm300.select_trai_phieu();
-            if (!m_us_v_trai_phieu.IsIDNull())
+            if (m_us_v_trai_phieu.dcID != -1)
                 us_trai_phieu_2_form(m_us_v_trai_phieu);
         }
         private void select_trai_chu_mua()
@@ -164,12 +164,12 @@ namespace BondApp
             f500_dm_trai_chu v_frm500 = new f500_dm_trai_chu();
            
             m_us_trai_chu = v_frm500.select_trai_chu_of_trai_phieu(m_us_v_trai_phieu);
-            if (!m_us_trai_chu.IsIDNull())
+            if (m_us_trai_chu.dcID != -1)
             {
                 if (!m_us_trai_chu.dcID.ToString().Equals(m_lbl_ID_nguoi_ban.Text))
                     us_trai_chu_mua_2_form(m_us_trai_chu);
                 else
-                    MessageBox.Show("Phải chọn bên mmua không trùng với bên bán");
+                    MessageBox.Show("Phải chọn bên mua không trùng với bên bán");
             }
         }
         private void select_trai_chu_ban()
@@ -177,7 +177,7 @@ namespace BondApp
             f500_dm_trai_chu v_frm500 = new f500_dm_trai_chu();
             
             m_us_trai_chu = v_frm500.select_trai_chu_of_trai_phieu(m_us_v_trai_phieu);
-            if (!m_us_trai_chu.IsIDNull())
+            if (m_us_trai_chu.dcID != -1)
             {
                 if (!m_us_trai_chu.dcID.ToString().Equals(m_lbl_ID_nguoi_mua.Text))
                     us_trai_chu_ban_2_form(m_us_trai_chu);
