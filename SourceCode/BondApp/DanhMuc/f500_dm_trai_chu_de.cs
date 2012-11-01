@@ -146,7 +146,7 @@ namespace BondApp.DanhMuc
             m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ip_us_trai_chu.dcID_TRANG_THAI);
         }
 
-        private void form_2_us_object(US_DM_TRAI_CHU ip_us_trai_chu)
+        private void form_2_us_object(US_V_DM_TRAI_CHU ip_us_trai_chu)
         {
             ip_us_trai_chu.strMA_TRAI_CHU = m_txt_ma_trai_chu.Text;
             ip_us_trai_chu.strTEN_TRAI_CHU = m_txt_ten_khach_hang.Text;
@@ -178,7 +178,7 @@ namespace BondApp.DanhMuc
         {
             m_us_gd_so_du_trai_phieu = new US_GD_SO_DU_TRAI_PHIEU();
             US_DM_TRAI_CHU v_us = new US_DM_TRAI_CHU();
-            v_us.FillDatasetByMaTraiChu(m_ds_trai_chu, m_us_trai_chu.strMA_TRAI_CHU);
+            v_us.FillDatasetByMaTraiChu(m_ds_trai_chu, m_us_v_trai_chu.strMA_TRAI_CHU);
             m_us_gd_so_du_trai_phieu.dcID_TRAI_CHU = CIPConvert.ToDecimal(m_ds_trai_chu.DM_TRAI_CHU.Rows[0]["ID"]);
             m_us_gd_so_du_trai_phieu.dcTONG_SO_DU = CIPConvert.ToDecimal(m_txt_so_trai_phieu_so_huu.Text);
             m_us_gd_so_du_trai_phieu.dcSO_DU_KHA_DUNG = CIPConvert.ToDecimal(m_txt_so_trai_phieu_so_huu.Text);
@@ -275,25 +275,25 @@ namespace BondApp.DanhMuc
                 return;
             }
             
-            form_2_us_object(m_us_trai_chu);
+            form_2_us_object(m_us_v_trai_chu);
             switch (m_e_form_mode)
             {
                 case e_formmode.HIEN_THI_DE_THEM:
-                    m_us_trai_chu.dcID_TRANG_THAI = TRANG_THAI_DANH_MUC.DA_LAP;
-                    m_us_trai_chu.dcID_NGUOI_LAP = CAppContext_201.getCurrentUserID();
-                    m_us_trai_chu.SetID_NGUOI_DUYETNull();
-                    m_us_trai_chu.Insert();
+                    m_us_v_trai_chu.dcID_TRANG_THAI = TRANG_THAI_DANH_MUC.DA_LAP;
+                    m_us_v_trai_chu.dcID_NGUOI_LAP_TC = CAppContext_201.getCurrentUserID();
+                    m_us_v_trai_chu.SetID_NGUOI_DUYET_TCNull();
+                    m_us_v_trai_chu.Insert();
                     break;
                 case e_formmode.HIEN_THI_DE_SUA:
-                    m_us_trai_chu.dcID = m_us_v_trai_chu.dcID;
-                    m_us_trai_chu.SetID_NGUOI_DUYETNull();
-                    form_2_us_gd_so_du_trai_phieu();
-                    m_us_trai_chu.Update();
+                    //m_us_trai_chu.dcID = m_us_v_trai_chu.dcID;
+                    m_us_v_trai_chu.SetID_NGUOI_DUYET_TCNull();
+                    //form_2_us_gd_so_du_trai_phieu();
+                    m_us_v_trai_chu.Update();
                     break;
                 case e_formmode.HIEN_THI_DE_DUYET:
-                    m_us_trai_chu.dcID = m_us_v_trai_chu.dcID;
-                    m_us_trai_chu.dcID_NGUOI_DUYET = CAppContext_201.getCurrentUserID();
-                    m_us_trai_chu.Update();
+                    m_us_v_trai_chu.dcID_TRANG_THAI = TRANG_THAI_DANH_MUC.DA_DUYET;
+                    m_us_v_trai_chu.dcID_NGUOI_DUYET_TC = CAppContext_201.getCurrentUserID();
+                    m_us_v_trai_chu.Update();
                     break;
             }
 

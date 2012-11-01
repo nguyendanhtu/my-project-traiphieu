@@ -764,7 +764,7 @@ namespace BondApp
         {
             try
             {
-                cell_changed();
+                //cell_changed();
             }
             catch (Exception v_e)
             {
