@@ -154,8 +154,8 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.m_gru_thong_tin_khach_hang = new System.Windows.Forms.GroupBox();
             this.m_lbl_phi_gd_max_min = new System.Windows.Forms.Label();
+            this.m_gru_thong_tin_khach_hang = new System.Windows.Forms.GroupBox();
             this.m_gru_thong_tin_trai_phieu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -1490,6 +1490,15 @@
             this.label31.TabIndex = 39;
             this.label31.Text = "Người lập";
             // 
+            // m_lbl_phi_gd_max_min
+            // 
+            this.m_lbl_phi_gd_max_min.AutoSize = true;
+            this.m_lbl_phi_gd_max_min.Location = new System.Drawing.Point(617, 70);
+            this.m_lbl_phi_gd_max_min.Name = "m_lbl_phi_gd_max_min";
+            this.m_lbl_phi_gd_max_min.Size = new System.Drawing.Size(16, 13);
+            this.m_lbl_phi_gd_max_min.TabIndex = 39;
+            this.m_lbl_phi_gd_max_min.Text = "...";
+            // 
             // m_gru_thong_tin_khach_hang
             // 
             this.m_gru_thong_tin_khach_hang.Controls.Add(this.groupBox1);
@@ -1501,15 +1510,6 @@
             this.m_gru_thong_tin_khach_hang.TabIndex = 2;
             this.m_gru_thong_tin_khach_hang.TabStop = false;
             this.m_gru_thong_tin_khach_hang.Text = "Thông tin khách hàng";
-            // 
-            // m_lbl_phi_gd_max_min
-            // 
-            this.m_lbl_phi_gd_max_min.AutoSize = true;
-            this.m_lbl_phi_gd_max_min.Location = new System.Drawing.Point(628, 70);
-            this.m_lbl_phi_gd_max_min.Name = "m_lbl_phi_gd_max_min";
-            this.m_lbl_phi_gd_max_min.Size = new System.Drawing.Size(16, 13);
-            this.m_lbl_phi_gd_max_min.TabIndex = 39;
-            this.m_lbl_phi_gd_max_min.Text = "...";
             // 
             // f600_giao_dich_chuyen_nhuong
             // 

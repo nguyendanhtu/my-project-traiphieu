@@ -195,7 +195,7 @@ namespace BondApp.ChucNang
 
 
                 m_txt_ky_han.Text = CIPConvert.ToStr(m_us_v_trai_phieu.dcKY_HAN) + " " + CIPConvert.ToStr(v_us_cm_dm_tu_dien.strTEN);
-                m_txt_lai_suat.Text = CIPConvert.ToStr(m_us_v_trai_phieu.dcLAI_SUAT_DEFAULT, "p");
+                m_txt_lai_suat.Text = CIPConvert.ToStr(m_us_v_trai_phieu.dcLAI_SUAT_DEFAULT, "#,##0.00");
             }
         }
 
@@ -237,7 +237,7 @@ namespace BondApp.ChucNang
                 m_us_v_trai_phieu = new US_V_DM_TRAI_PHIEU(m_us_gd_cap_nhat_ls.dcID_TRAI_PHIEU);
                 us_trai_phieu_2_form();
                 m_date_ngay_bat_dau_ap_dung_ls.Value = m_us_gd_cap_nhat_ls.datNGAY_BAT_DAU_AD_LS;
-                m_txt_lai_suat_moi.Text = CIPConvert.ToStr(m_us_gd_cap_nhat_ls.dcLAI_SUAT*100, "0.##");
+                m_txt_lai_suat_moi.Text = CIPConvert.ToStr(m_us_gd_cap_nhat_ls.dcLAI_SUAT * 100, "#,##0.00");
                 m_date_ngay_bat_dau_ap_dung_ls.Value = m_us_gd_cap_nhat_ls.datNGAY_BAT_DAU_AD_LS;
                 m_date_ket_thuc_ap_dung_ls.Value = m_us_gd_cap_nhat_ls.datNGAY_KET_THUC_AD_LS;
                 m_date_ngay_cap_nhat.Value = m_us_gd_cap_nhat_ls.datNGAY;

@@ -137,6 +137,7 @@ namespace BondApp
 
         private void set_initial_form_load()
         {
+            load_data_2_cbo_dv_ky_tinh_lai();
             switch (m_e_form_mode)
             {
                 case e_form_mode.HIEN_THI_CO_TRAI_PHIEU:
@@ -229,7 +230,6 @@ namespace BondApp
                 default:
                     break;
             }
-            load_data_2_cbo_dv_ky_tinh_lai();
         }
         private void us_trai_phieu_2_form()
         {
