@@ -331,28 +331,29 @@ namespace BondApp
 
 		#region Data Structure
 		private enum e_col_Number{
-            MA_SO_THUE = 4
+            MA_SO_THUE = 5
     ,
-            FAX = 6
+            FAX = 7
                 ,
-            MA_TO_CHUC_PHAT_HANH = 1
+            MA_TO_CHUC_PHAT_HANH = 2
                 ,
-            SO_TAI_KHOAN = 8
+            SO_TAI_KHOAN = 9
                 ,
-            TRANG_THAI = 12
+            TRANG_THAI = 13
                 ,
-            DIA_CHI_TRU_SO_CHINH = 3
+            DIA_CHI_TRU_SO_CHINH = 4
                 ,
-            DIEN_THOAI = 5
+            DIEN_THOAI = 6
                 ,
-            TEN_TO_CHUC_PHAT_HANH = 2
+            STT = 1,
+            TEN_TO_CHUC_PHAT_HANH = 3
                 ,
-            NGUOI_LAP = 10
+            NGUOI_LAP = 11
                 ,
-            CHUNG_NHAN_DKDN = 7
+            CHUNG_NHAN_DKDN = 8
                 ,
-            MO_TAI_NGAN_HANG = 9
-                , NGUOI_DUYET = 11
+            MO_TAI_NGAN_HANG = 10
+                , NGUOI_DUYET = 12
 
 		}			
 		#endregion
@@ -403,6 +404,7 @@ namespace BondApp
 			m_us.FillDataset(m_ds);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
 			m_fg.Redraw = true;
 		}
         private void load_data_2_grid(string ip_str_search_key)

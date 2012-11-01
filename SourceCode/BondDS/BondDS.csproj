@@ -150,6 +150,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_DM_TRAI_CHU_IMP.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_DM_TRAI_CHU_TEMP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_DM_TRAI_CHU_TEMP.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_DM_TRAI_PHIEU.cs">
       <DependentUpon>DS_DM_TRAI_PHIEU.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -373,6 +378,17 @@
     </None>
     <None Include="DS_DM_TRAI_CHU_IMP.xss">
       <DependentUpon>DS_DM_TRAI_CHU_IMP.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_TRAI_CHU_TEMP.xsc">
+      <DependentUpon>DS_DM_TRAI_CHU_TEMP.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_TRAI_CHU_TEMP.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_DM_TRAI_CHU_TEMP.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_DM_TRAI_CHU_TEMP.xss">
+      <DependentUpon>DS_DM_TRAI_CHU_TEMP.xsd</DependentUpon>
     </None>
     <None Include="DS_DM_TRAI_PHIEU.xsc">
       <DependentUpon>DS_DM_TRAI_PHIEU.xsd</DependentUpon>
