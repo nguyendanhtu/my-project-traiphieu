@@ -673,7 +673,7 @@ namespace BondApp
                 decimal v_so_luong_kha_dung = CIPConvert.ToDecimal(m_txt_so_luong_kha_dung.Text);
                 if (v_so_luong_chuyen_nhuong > v_so_luong_kha_dung)
                 {
-                    MessageBox.Show("Số lượng chuyển nhượng vượt quá số lượng khả dụng của bên bán.");
+                    MessageBox.Show("Số lượng chuyển nhượng vượt quá số lượng khả dụng của bên bán");
                     v_so_luong_chuyen_nhuong = v_so_luong_kha_dung;
                     m_txt_so_luong_chuyen_nhuong.Text = CIPConvert.ToStr(v_so_luong_chuyen_nhuong);
                 }
