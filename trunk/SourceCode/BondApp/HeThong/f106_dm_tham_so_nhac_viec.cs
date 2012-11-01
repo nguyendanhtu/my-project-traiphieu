@@ -541,6 +541,7 @@ namespace BondApp
             else op_us_tham_so_nhac_viec.dcSO_NGAY_LAM_TRUOC_NGAY_CHINH = CIPConvert.ToDecimal(m_txt_ngay_thuc_hien_truoc.Text) * (-1);
             if (m_cbo_ngay_lam_viec_yn.SelectedIndex == 0) op_us_tham_so_nhac_viec.strNGAY_LAM_VIEC_YN = "N";
             else op_us_tham_so_nhac_viec.strNGAY_LAM_VIEC_YN = "Y";
+            op_us_tham_so_nhac_viec.dcID_TRAI_PHIEU = 1;
         }
         private void load_data_2_cbo_loai_nhac_viec()
         {

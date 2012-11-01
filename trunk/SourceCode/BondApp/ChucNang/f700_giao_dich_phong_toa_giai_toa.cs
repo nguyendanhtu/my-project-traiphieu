@@ -245,7 +245,7 @@ namespace BondApp
         {
             US_HT_THAM_SO_HE_THONG v_us_phi_gd_max = new US_HT_THAM_SO_HE_THONG(GIOI_HAN_PHI_PGT.ID_PHI_PGT_MAX);
             US_HT_THAM_SO_HE_THONG v_us_phi_gd_min = new US_HT_THAM_SO_HE_THONG(GIOI_HAN_PHI_PGT.ID_PHI_PGT_MIN);
-            m_lbl_pgd_max_min.Text = "Phí giao dịch trong khoảng " + CIPConvert.ToStr(v_us_phi_gd_min.strGIA_TRI, "#,##") + " đến " + CIPConvert.ToStr(v_us_phi_gd_max.strGIA_TRI, "#,##") + ".";
+            m_lbl_pgd_max_min.Text = "Phí giao dịch trong khoảng " + CIPConvert.ToStr(v_us_phi_gd_min.strGIA_TRI, "#,###") + " đến " + CIPConvert.ToStr(v_us_phi_gd_max.strGIA_TRI, "#,###") + ".";
             m_dat_ngay.Value = DateTime.Today;
 
             switch (m_e_form_mode)
@@ -286,7 +286,7 @@ namespace BondApp
                     break;
                 case eFormMode.LAP_PHONG_TOA:
                     f500_dm_trai_chu v_frm500 = new f500_dm_trai_chu();
-                    m_us_trai_chu = v_frm500.select_trai_chu_of_trai_phieu(null);
+                    m_us_trai_chu = v_frm500.select_trai_chu_giai_toa_of_trai_phieu(null);
                     if (m_us_trai_chu.IsIDNull()) return;
                     us_trai_chu_2_form(m_us_trai_chu);
                     m_txt_nguoi_dai_dien.Focus();
@@ -335,10 +335,16 @@ namespace BondApp
                 m_txt_cua.Text = m_us_gd_phong_toa_giai_toa.strCUA;
                 m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.dcTY_LE_PHI_GD);
                 m_txt_phi_gd.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.dcPHI_GIAO_DICH);
-
-
             }
-
+             if (m_e_form_mode == eFormMode.LAP_GIAI_TOA || m_e_form_mode == eFormMode.LAP_PHONG_TOA
+                || m_e_form_mode == eFormMode.SUA_GIAI_TOA || m_e_form_mode == eFormMode.SUA_PHONG_TOA)
+            {
+                m_txt_nguoi_dai_dien.Text = ip_us_trai_chu.strTEN_NGUOI_DAI_DIEN;
+                m_txt_chuc_danh.Text = ip_us_trai_chu.strCHUC_VU;
+                m_txt_tru_so_chinh.Text = ip_us_trai_chu.strDIA_CHI;
+                m_txt_dien_thoai.Text = ip_us_trai_chu.strMOBILE;
+                m_txt_fax.Text = ip_us_trai_chu.strFAX;
+            }
         }
         private void us_trai_phieu_2_form(US_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
@@ -346,13 +352,14 @@ namespace BondApp
 
             m_txt_ma_so_trai_phieu.Text = ip_us_trai_phieu.strMA_TRAI_PHIEU;
             m_txt_to_chuc_phat_hanh.Text = ip_us_trai_phieu.strTEN_TRAI_PHIEU;
+            m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcTY_LE_PHI_PHONG_GIAI_TOA, "#,##0.00");
             if (ip_us_trai_phieu.dcMENH_GIA == 0) m_txt_menh_gia.Text = "0";
             else
                 m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcMENH_GIA, "#,###");
 
             m_txt_ngay_phat_hanh.Text = v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH.ToString("dd/MM/yyyy");
             m_txt_ngay_dao_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_DAO_HAN, "dd/MM/yyyy");
-            m_txt_lai_suat.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcLAI_SUAT_DEFAULT, "p");
+            m_txt_lai_suat.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcLAI_SUAT_DEFAULT, "#,##0.00");
             if (ip_us_trai_phieu.strTRA_LAI_SAU_YN != null)
                 switch (ip_us_trai_phieu.strTRA_LAI_SAU_YN)
                 {
