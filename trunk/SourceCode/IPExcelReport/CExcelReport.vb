@@ -306,10 +306,10 @@ Public Class CExcelReport
                     i_iExcelRow += 1
                 End If
             End While
-            'm_objExcelApp.Workbooks.Close()
+            m_objExcelApp.Workbooks.Close()
             Unmount()
         Catch v_e As Exception
-            'm_objExcelApp.Workbooks.Close()
+            m_objExcelApp.Workbooks.Close()
             Unmount()
             Throw v_e
         End Try
