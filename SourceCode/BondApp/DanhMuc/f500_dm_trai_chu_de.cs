@@ -281,12 +281,13 @@ namespace BondApp.DanhMuc
                 case e_formmode.HIEN_THI_DE_THEM:
                     m_us_trai_chu.dcID_TRANG_THAI = TRANG_THAI_DANH_MUC.DA_LAP;
                     m_us_trai_chu.dcID_NGUOI_LAP = CAppContext_201.getCurrentUserID();
+                    m_us_trai_chu.SetID_NGUOI_DUYETNull();
                     m_us_trai_chu.Insert();
                     break;
                 case e_formmode.HIEN_THI_DE_SUA:
                     m_us_trai_chu.dcID = m_us_v_trai_chu.dcID;
+                    m_us_trai_chu.SetID_NGUOI_DUYETNull();
                     form_2_us_gd_so_du_trai_phieu();
-                    //m_us_gd_so_du_trai_phieu.Insert();
                     m_us_trai_chu.Update();
                     break;
                 case e_formmode.HIEN_THI_DE_DUYET:
