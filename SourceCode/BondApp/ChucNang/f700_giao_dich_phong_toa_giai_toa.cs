@@ -30,7 +30,6 @@ namespace BondApp
             format_controls();
         }
 
-
         #region Public Interface
         public void display_phong_toa()
         {
@@ -42,7 +41,7 @@ namespace BondApp
         public void display_giai_toa()
         {
             m_e_form_mode = eFormMode.LAP_GIAI_TOA;
-           
+
             this.Text = "F700 - Lập Giao dịch giải tỏa";
             m_lbl_title.Text = "F700 - Lập Giao dịch giải tỏa";
             this.ShowDialog();
@@ -61,7 +60,7 @@ namespace BondApp
             US_DM_TRAI_CHU ip_us_trai_chu = new US_DM_TRAI_CHU(ip_us_phong_giai_toa.dcID_TRAI_CHU);
             us_trai_chu_2_form(ip_us_trai_chu);
             m_txt_nguoi_dai_dien.Focus();
-            this.ShowDialog();      
+            this.ShowDialog();
         }
         public void display_sua_giai_toa(US_GD_PHONG_GIAI_TOA ip_us_phong_giai_toa)
         {
@@ -77,7 +76,7 @@ namespace BondApp
             US_DM_TRAI_CHU ip_us_trai_chu = new US_DM_TRAI_CHU(ip_us_phong_giai_toa.dcID_TRAI_CHU);
             us_trai_chu_2_form(ip_us_trai_chu);
             m_txt_nguoi_dai_dien.Focus();
-            this.ShowDialog();      
+            this.ShowDialog();
         }
         public void display_duyet_phong_toa(US_GD_PHONG_GIAI_TOA ip_us_phong_giai_toa)
         {
@@ -86,10 +85,10 @@ namespace BondApp
             this.Text = "F700 - Duyệt Giao dịch phong tỏa";
             m_lbl_title.Text = "F700 - Duyệt Giao dịch phong tỏa";
             m_us_gd_phong_toa_giai_toa = ip_us_phong_giai_toa;
-            US_DM_TRAI_CHU ip_us_trai_chu = new US_DM_TRAI_CHU(ip_us_phong_giai_toa.dcID_TRAI_CHU);            
+            US_DM_TRAI_CHU ip_us_trai_chu = new US_DM_TRAI_CHU(ip_us_phong_giai_toa.dcID_TRAI_CHU);
             us_trai_chu_2_form(ip_us_trai_chu);
             m_txt_nguoi_dai_dien.Focus();
-            this.ShowDialog();        
+            this.ShowDialog();
         }
         public void display_duyet_giai_toa(US_GD_PHONG_GIAI_TOA ip_us_phong_giai_toa)
         {
@@ -103,6 +102,7 @@ namespace BondApp
             this.ShowDialog();
         }
         #endregion
+
         #region Data Structures
         private enum e_col_Number
         {
@@ -121,12 +121,16 @@ namespace BondApp
             LAP_PHONG_TOA
                 ,
             LAP_GIAI_TOA
-            , DUYET_PHONG_TOA
-            , DUYET_GIAI_TOA
-            , SUA_PHONG_TOA
-            ,SUA_GIAI_TOA
+            ,
+            DUYET_PHONG_TOA
+                ,
+            DUYET_GIAI_TOA
+                ,
+            SUA_PHONG_TOA
+                , SUA_GIAI_TOA
         }
         #endregion
+
         #region Members
         US_DM_TRAI_CHU m_us_trai_chu = new US_DM_TRAI_CHU();
         US_DM_TRAI_PHIEU m_us_trai_phieu = new US_DM_TRAI_PHIEU();
@@ -136,6 +140,7 @@ namespace BondApp
         DS_GD_PHONG_GIAI_TOA m_ds_gd_phong_toa_giai_toa = new DS_GD_PHONG_GIAI_TOA();
         eFormMode m_e_form_mode = eFormMode.LAP_PHONG_TOA;
         #endregion
+
         #region Private Methods
 
         private void format_controls()
@@ -147,7 +152,7 @@ namespace BondApp
             m_lbl_title.Font = new Font("Arial", 16);
             m_lbl_title.ForeColor = Color.DarkRed;
             m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
-        }        
+        }
         private bool check_thong_tin_chuyen_nhuong_is_ok()
         {
             if (!CValidateTextBox.IsValid(m_txt_nguoi_dai_dien, DataType.StringType, allowNull.NO))
@@ -176,7 +181,7 @@ namespace BondApp
                 m_txt_so_luong_tp_cam_co.Focus();
                 return false;
             }
-          
+
             if (!CValidateTextBox.IsValid(m_txt_ngan_hang_cam_co, DataType.StringType, allowNull.NO))
             {
                 m_txt_ngan_hang_cam_co.Focus();
@@ -197,7 +202,7 @@ namespace BondApp
             //    m_txt_theo_giay_uy_quyen_so.Focus();
             //    return false;
             //}
-       
+
             //if (!CValidateTextBox.IsValid(m_txt_cua, DataType.StringType, allowNull.NO))
             //{
             //    m_txt_cua.Focus();
@@ -206,7 +211,7 @@ namespace BondApp
             if (CIPConvert.ToDecimal(m_txt_so_luong_tp_cam_co.Text) > CIPConvert.ToDecimal(m_txt_so_luong_kha_dung.Text))
             {
                 m_txt_so_luong_tp_cam_co.Focus();
-                MessageBox.Show("Số lượng trái phiếu cầm cố vượt quá số lượng trái phiểu khả dụng! Xin hãy nhập lại.","Cảnh báo");
+                MessageBox.Show("Số lượng trái phiếu cầm cố vượt quá số lượng trái phiểu khả dụng! Xin hãy nhập lại.", "Cảnh báo");
                 return false;
             }
 
@@ -218,11 +223,11 @@ namespace BondApp
             US_HT_THAM_SO_HE_THONG v_us_phi_gd_min = new US_HT_THAM_SO_HE_THONG(GIOI_HAN_PHI_PGT.ID_PHI_PGT_MIN);
             if (v_phi_gd < CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI))
             {
-                MessageBox.Show( "Phí giao dịch nhỏ hơn giá trị phí giao dịch min!\n Phí giao dịch sẽ là " 
+                MessageBox.Show("Phí giao dịch nhỏ hơn giá trị phí giao dịch min!\n Phí giao dịch sẽ là "
                     + CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI), "#,##")
                     , "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 m_txt_phi_gd.Text = CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI), "#,##");
-              
+
                 return false;
             }
             if (v_phi_gd > CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI))
@@ -231,18 +236,18 @@ namespace BondApp
                     + CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI), "#,##")
                     , "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 m_txt_phi_gd.Text = CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI), "#,##");
-              // m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(Math.Round((CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI) / CIPConvert.ToDecimal(m_txt_tong_gia_tri.Text)*100),2));
+                // m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(Math.Round((CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI) / CIPConvert.ToDecimal(m_txt_tong_gia_tri.Text)*100),2));
                 return false;
             }
             return true;
-        }              
+        }
         private void set_inital_form_load()
         {
             US_HT_THAM_SO_HE_THONG v_us_phi_gd_max = new US_HT_THAM_SO_HE_THONG(GIOI_HAN_PHI_PGT.ID_PHI_PGT_MAX);
             US_HT_THAM_SO_HE_THONG v_us_phi_gd_min = new US_HT_THAM_SO_HE_THONG(GIOI_HAN_PHI_PGT.ID_PHI_PGT_MIN);
             m_lbl_pgd_max_min.Text = "Phí giao dịch trong khoảng " + CIPConvert.ToStr(v_us_phi_gd_min.strGIA_TRI, "#,##") + " đến " + CIPConvert.ToStr(v_us_phi_gd_max.strGIA_TRI, "#,##") + ".";
             m_dat_ngay.Value = DateTime.Today;
-           
+
             switch (m_e_form_mode)
             {
                 case eFormMode.LAP_GIAI_TOA:
@@ -271,34 +276,30 @@ namespace BondApp
         {
             f701_danh_sach_giao_dich_phong_giai_toa vfrm701 = new f701_danh_sach_giao_dich_phong_giai_toa();
             switch (m_e_form_mode)
-            { 
+            {
                 case eFormMode.LAP_GIAI_TOA:
                     f500_dm_trai_chu v_f500 = new f500_dm_trai_chu();
                     m_us_trai_chu = v_f500.select_trai_chu_giai_toa_of_trai_phieu(null);
-                     if (m_us_trai_chu.IsIDNull()) return;
-            us_trai_chu_2_form(m_us_trai_chu);
-            m_txt_nguoi_dai_dien.Focus();
+                    if (m_us_trai_chu.IsIDNull()) return;
+                    us_trai_chu_2_form(m_us_trai_chu);
+                    m_txt_nguoi_dai_dien.Focus();
                     break;
                 case eFormMode.LAP_PHONG_TOA:
                     f500_dm_trai_chu v_frm500 = new f500_dm_trai_chu();
-            m_us_trai_chu = v_frm500.select_trai_chu_of_trai_phieu(null);
-            if (m_us_trai_chu.IsIDNull()) return;
-            us_trai_chu_2_form(m_us_trai_chu);
-            m_txt_nguoi_dai_dien.Focus();
-            break;
+                    m_us_trai_chu = v_frm500.select_trai_chu_of_trai_phieu(null);
+                    if (m_us_trai_chu.IsIDNull()) return;
+                    us_trai_chu_2_form(m_us_trai_chu);
+                    m_txt_nguoi_dai_dien.Focus();
+                    break;
                 case eFormMode.DUYET_GIAI_TOA:
-            this.Close();
-            vfrm701.display_giai_toa_duyet();
-            
-            break;
+                    this.Close();
+                    vfrm701.display_giai_toa_duyet();
+                    break;
                 case eFormMode.DUYET_PHONG_TOA:
-            this.Close();
-            vfrm701.display_phong_toa_duyet();
-            
-            break;
-            
+                    this.Close();
+                    vfrm701.display_phong_toa_duyet();
+                    break;
             }
-            
         }
         private void us_trai_chu_2_form(US_DM_TRAI_CHU ip_us_trai_chu)
         {
@@ -333,25 +334,25 @@ namespace BondApp
                 m_dat_ngay.Value = m_us_gd_phong_toa_giai_toa.datNGAY_GIAO_DICH;
                 m_txt_cua.Text = m_us_gd_phong_toa_giai_toa.strCUA;
                 m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.dcTY_LE_PHI_GD);
-                m_txt_phi_gd.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.dcPHI_GIAO_DICH);              
+                m_txt_phi_gd.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.dcPHI_GIAO_DICH);
 
-            
+
             }
-            
+
         }
         private void us_trai_phieu_2_form(US_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
             US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(ip_us_trai_phieu.dcID_DOT_PHAT_HANH);
-          
+
             m_txt_ma_so_trai_phieu.Text = ip_us_trai_phieu.strMA_TRAI_PHIEU;
             m_txt_to_chuc_phat_hanh.Text = ip_us_trai_phieu.strTEN_TRAI_PHIEU;
             if (ip_us_trai_phieu.dcMENH_GIA == 0) m_txt_menh_gia.Text = "0";
             else
-            m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcMENH_GIA, "#,###");
-           
+                m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcMENH_GIA, "#,###");
+
             m_txt_ngay_phat_hanh.Text = v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH.ToString("dd/MM/yyyy");
-            m_txt_ngay_dao_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_DAO_HAN,"dd/MM/yyyy");
-            m_txt_lai_suat.Text = CIPConvert.ToStr( ip_us_trai_phieu.dcLAI_SUAT_DEFAULT, "p");
+            m_txt_ngay_dao_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_DAO_HAN, "dd/MM/yyyy");
+            m_txt_lai_suat.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcLAI_SUAT_DEFAULT, "p");
             if (ip_us_trai_phieu.strTRA_LAI_SAU_YN != null)
                 switch (ip_us_trai_phieu.strTRA_LAI_SAU_YN)
                 {
@@ -379,14 +380,14 @@ namespace BondApp
                     break;
                 case eFormMode.DUYET_PHONG_TOA:
                     m_us_gd_phong_toa_giai_toa.dcID_NGUOI_DUYET = IP.Core.IPSystemAdmin.CAppContext_201.getCurrentUserID();
-                 
+
                     break;
                 case eFormMode.DUYET_GIAI_TOA:
                     m_us_gd_phong_toa_giai_toa.dcID_NGUOI_DUYET = IP.Core.IPSystemAdmin.CAppContext_201.getCurrentUserID();
-                  
+
                     break;
 
-                default: form_2_us_gd_lap_pgt();  break;
+                default: form_2_us_gd_lap_pgt(); break;
 
             }
 
@@ -395,7 +396,7 @@ namespace BondApp
         }
         private void form_2_us_gd_lap_pgt()
         {
-          
+
             m_us_gd_phong_toa_giai_toa.SetID_NGUOI_DUYETNull();
             m_us_gd_phong_toa_giai_toa.dcID_NGUOI_LAP = IP.Core.IPSystemAdmin.CAppContext_201.getCurrentUserID();
             m_us_gd_phong_toa_giai_toa.dcSO_LUONG = CIPConvert.ToDecimal(m_txt_so_luong_tp_cam_co.Text);
@@ -419,9 +420,9 @@ namespace BondApp
         private void lap_giao_dich_phong_toa_giai_toa()
         {
             form_2_us_gd_phong_toa_giai_toa();
-           // m_us_gd_phong_toa_giai_toa.CapNhatSoDuTraiPhieuPhongGiaiToan(m_us_gd_phong_toa_giai_toa.datNGAY_GIAO_DICH, m_us_gd_phong_toa_giai_toa.dcID_TRAI_CHU, 0, m_us_gd_phong_toa_giai_toa.dcSO_LUONG);
+            // m_us_gd_phong_toa_giai_toa.CapNhatSoDuTraiPhieuPhongGiaiToan(m_us_gd_phong_toa_giai_toa.datNGAY_GIAO_DICH, m_us_gd_phong_toa_giai_toa.dcID_TRAI_CHU, 0, m_us_gd_phong_toa_giai_toa.dcSO_LUONG);
             m_us_gd_phong_toa_giai_toa.Insert();
-           
+
         }
         private void export_word()
         {
@@ -452,15 +453,15 @@ namespace BondApp
             v_obj_export_word.AddFindAndReplace("<NGAY_UY_QUYEN>", m_dat_ngay.Value.Date.ToString());
             v_obj_export_word.AddFindAndReplace("<DON_VI_UY_QUYEN>", m_txt_cua.Text);
             v_obj_export_word.AddFindAndReplace("<MENH_GIA_TRAI_PHIEU>", m_txt_menh_gia.Text);
-            v_obj_export_word.AddFindAndReplace("<LOAI_PHONG_TOA>","");            
+            v_obj_export_word.AddFindAndReplace("<LOAI_PHONG_TOA>", "");
             v_obj_export_word.Export2Word(true);
-         
+
         }
         private void save_data()
         {
             if (check_thong_tin_chuyen_nhuong_is_ok() == false) return;
             form_2_us_gd_phong_toa_giai_toa();
-            m_us_gd_phong_toa_giai_toa.Update();            
+            m_us_gd_phong_toa_giai_toa.Update();
 
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
             this.Close();
@@ -481,6 +482,7 @@ namespace BondApp
         //    return v_str_ma_tu_sinh;
         //}
         #endregion
+
         #region Events
 
         private void set_define_events()
@@ -489,12 +491,12 @@ namespace BondApp
             m_cmd_lap.Click += new EventHandler(m_cmd_lap_Click);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_print.Click += new EventHandler(m_cmd_print_Click);
-            m_cmd_save.Click +=new EventHandler(m_cmd_save_Click);
-          //  m_txt_ty_le_phi_gd.TextChanged += new EventHandler(m_txt_ty_le_phi_gd_TextChanged);
-           m_txt_so_luong_tp_cam_co.TextChanged += new EventHandler(m_txt_so_luong_tp_cam_co_TextChanged);
-           m_txt_ty_le_phi_gd.LostFocus += new EventHandler(m_txt_ty_le_phi_gd_LostFocus);
-           m_txt_so_luong_tp_cam_co.LostFocus += new EventHandler(m_txt_so_luong_tp_cam_co_LostFocus);
-           this.KeyDown += new KeyEventHandler(f700_giao_dich_phong_toa_giai_toa_KeyDown);
+            m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
+            //  m_txt_ty_le_phi_gd.TextChanged += new EventHandler(m_txt_ty_le_phi_gd_TextChanged);
+            m_txt_so_luong_tp_cam_co.TextChanged += new EventHandler(m_txt_so_luong_tp_cam_co_TextChanged);
+            m_txt_ty_le_phi_gd.LostFocus += new EventHandler(m_txt_ty_le_phi_gd_LostFocus);
+            m_txt_so_luong_tp_cam_co.LostFocus += new EventHandler(m_txt_so_luong_tp_cam_co_LostFocus);
+            this.KeyDown += new KeyEventHandler(f700_giao_dich_phong_toa_giai_toa_KeyDown);
         }
 
         void f700_giao_dich_phong_toa_giai_toa_KeyDown(object sender, KeyEventArgs e)
@@ -616,14 +618,14 @@ namespace BondApp
                     m_us_gd_phong_toa_giai_toa.CapNhatSoDuTraiPhieuPhongGiaiToan(m_us_gd_phong_toa_giai_toa.datNGAY_GIAO_DICH, m_us_gd_phong_toa_giai_toa.dcID_TRAI_CHU, 0, -m_us_gd_phong_toa_giai_toa.dcSO_LUONG);
                     m_us_gd_phong_toa_giai_toa.duyet_giao_dich_pgt(m_us_gd_phong_toa_giai_toa.dcID_NGUOI_DUYET);
                     m_us_gd_phong_toa_giai_toa.CommitTransaction();
-                    BaseMessages.MsgBox_Infor(10); 
+                    BaseMessages.MsgBox_Infor(10);
                 }
                 catch (Exception v_e)
                 {
                     m_us_gd_phong_toa_giai_toa.Rollback();
                     throw v_e;
                 }
-               
+
 
             }
             catch (Exception v_e)
@@ -635,18 +637,18 @@ namespace BondApp
         private void m_txt_so_luong_tp_cam_co_TextChanged(object sender, EventArgs e)
         {
             if (m_txt_ma_trai_chu.Text == "") return;
-            if(!CValidateTextBox.IsValid(m_txt_so_luong_tp_cam_co,DataType.NumberType,allowNull.YES))
+            if (!CValidateTextBox.IsValid(m_txt_so_luong_tp_cam_co, DataType.NumberType, allowNull.YES))
             {
-                MessageBox.Show("Số lượng trái phiếu cầm cố nhập không đúng.\n Mời nhập lại!","Cảnh báo");
+                MessageBox.Show("Số lượng trái phiếu cầm cố nhập không đúng.\n Mời nhập lại!", "Cảnh báo");
                 m_txt_so_luong_tp_cam_co.Text = "";
-             m_txt_so_luong_tp_cam_co.Focus();
-             return;
+                m_txt_so_luong_tp_cam_co.Focus();
+                return;
             }
             if (m_txt_so_luong_tp_cam_co.Text != "")
             {
                 m_txt_tong_gia_tri.Text = CIPConvert.ToStr((CIPConvert.ToDecimal(m_txt_menh_gia.Text) * CIPConvert.ToDecimal(m_txt_so_luong_tp_cam_co.Text)), "#,###");
                 return;
-               //if(m_txt_ty_le_phi_gd.Text != "") phi_giao_dich_pgt_change();
+                //if(m_txt_ty_le_phi_gd.Text != "") phi_giao_dich_pgt_change();
             }
         }
         private void phi_giao_dich_pgt_change()
@@ -659,12 +661,12 @@ namespace BondApp
             return;
         }
         private void m_txt_so_luong_tp_cam_co_LostFocus(object sender, EventArgs e)
-            {
+        {
             try
             {
                 if (m_txt_so_luong_tp_cam_co.Text != "")
                 {
-                   
+
                     if (m_txt_ty_le_phi_gd.Text != "") phi_giao_dich_pgt_change();
                     if (m_e_form_mode == eFormMode.LAP_GIAI_TOA)
                     {
@@ -677,12 +679,12 @@ namespace BondApp
                     }
                     if (m_e_form_mode == eFormMode.LAP_PHONG_TOA)
                     {
-                        if (CIPConvert.ToDecimal(m_txt_so_luong_tp_cam_co.Text) >  CIPConvert.ToDecimal(m_txt_so_luong_kha_dung.Text))
+                        if (CIPConvert.ToDecimal(m_txt_so_luong_tp_cam_co.Text) > CIPConvert.ToDecimal(m_txt_so_luong_kha_dung.Text))
                         {
                             MessageBox.Show("Số lượng trái phiếu phong tỏa cần bé hơn số lượng trái phiếu khả dụng.");
                             m_txt_so_luong_tp_cam_co.Focus();
                             return;
-                           
+
                         }
                     }
                 }
@@ -725,10 +727,8 @@ namespace BondApp
                 return;
             }
         }
-    
-        #endregion
 
-       
+        #endregion
     }
 }
 
