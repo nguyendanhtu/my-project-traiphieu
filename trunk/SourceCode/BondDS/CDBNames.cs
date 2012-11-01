@@ -317,6 +317,34 @@ namespace BondDS.CDBNames
         public const string TRANG_THAI = "TRANG_THAI";
         public const string DIEN_GIAI = "DIEN_GIAI";
     }
+    public class DM_TRAI_CHU_TEMP
+    {
+        public const string ID = "ID";
+        public const string MA_TRAI_CHU = "MA_TRAI_CHU";
+        public const string TEN_TRAI_CHU = "TEN_TRAI_CHU";
+        public const string DIA_CHI = "DIA_CHI";
+        public const string MOBILE = "MOBILE";
+        public const string FAX = "FAX";
+        public const string CMT_GIAY_DKKD = "CMT_GIAY_DKKD";
+        public const string NGAY_CAP_CMT = "NGAY_CAP_CMT";
+        public const string NOI_CAP_CMT = "NOI_CAP_CMT";
+        public const string ID_LOAI_TRAI_CHU = "ID_LOAI_TRAI_CHU";
+        public const string SO_TAI_KHOAN = "SO_TAI_KHOAN";
+        public const string MO_TAI_NGAN_HANG = "MO_TAI_NGAN_HANG";
+        public const string GHI_CHU1 = "GHI_CHU1";
+        public const string GHI_CHU2 = "GHI_CHU2";
+        public const string GHI_CHU3 = "GHI_CHU3";
+        public const string ID_TRAI_PHIEU_SO_HUU = "ID_TRAI_PHIEU_SO_HUU";
+        public const string ID_NGUOI_LAP = "ID_NGUOI_LAP";
+        public const string ID_NGUOI_DUYET = "ID_NGUOI_DUYET";
+        public const string ID_TRANG_THAI = "ID_TRANG_THAI";
+        public const string TEN_NGUOI_DAI_DIEN = "TEN_NGUOI_DAI_DIEN";
+        public const string CMT_NGUOI_DAI_DIEN = "CMT_NGUOI_DAI_DIEN";
+        public const string NGAY_CAP_CMT_NGUOI_DAI_DIEN = "NGAY_CAP_CMT_NGUOI_DAI_DIEN";
+        public const string NOI_CAP_CMT_NGUOI_DAI_DIEN = "NOI_CAP_CMT_NGUOI_DAI_DIEN";
+        public const string CHUC_VU = "CHUC_VU";
+        public const string SO_LUONG_TRAI_PHIEU = "SO_LUONG_TRAI_PHIEU";
+    }
 
     public class CM_DM_LOAI_TD
     {

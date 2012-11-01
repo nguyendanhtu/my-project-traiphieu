@@ -374,56 +374,57 @@ namespace BondApp
         #region Data Structure
         private enum e_col_Number
         {
-            GHI_CHU3 = 23
+            GHI_CHU3 = 24
 ,
-            DIA_CHI = 3
+            DIA_CHI = 4
                 ,
-            NOI_CAP_CMT_NGUOI_DAI_DIEN = 19
+            NOI_CAP_CMT_NGUOI_DAI_DIEN = 20
                 ,
-            NGAY_CAP_CMT_NGUOI_DAI_DIEN = 18
+            NGAY_CAP_CMT_NGUOI_DAI_DIEN = 19
                 ,
-            MO_TAI_NGAN_HANG = 15
+            MO_TAI_NGAN_HANG = 16
                 ,
-            TEN_TRAI_CHU = 2
+            TEN_TRAI_CHU = 3
                 ,
-            FAX = 5
+            FAX = 6
                 ,
-            TONG_SO_DU = 12
+            TONG_SO_DU = 13
                 ,
-            NGAY_CAP_CMT = 7
+            NGAY_CAP_CMT = 8
                 ,
-            MOBILE = 4
+            MOBILE = 5
                 ,
-            GHI_CHU1 = 21
+            GHI_CHU1 = 22
                 ,
-            ID_LOAI_TRAI_CHU = 9
+            ID_LOAI_TRAI_CHU = 10
                 ,
-            ID_NGUOI_DUYET_TC = 24
+            ID_NGUOI_DUYET_TC = 25
                 ,
-            MA_TRAI_CHU = 1
+            STT = 1,
+            MA_TRAI_CHU = 2
                 ,
-            CMT_NGUOI_DAI_DIEN = 17
+            CMT_NGUOI_DAI_DIEN = 18
                 ,
-            SO_DU_KHA_DUNG = 13
+            SO_DU_KHA_DUNG = 14
                 ,
-            MENH_GIA = 11
+            MENH_GIA = 12
                 ,
-            TEN_NGUOI_DAI_DIEN = 16
+            TEN_NGUOI_DAI_DIEN = 17
                 ,
-            ID_TRANG_THAI = 26
+            ID_TRANG_THAI = 27
                 ,
-            TEN_TRAI_PHIEU = 10
+            TEN_TRAI_PHIEU = 11
                 ,
-            NOI_CAP_CMT = 8
+            NOI_CAP_CMT = 9
                 ,
-            CHUC_VU = 20
+            CHUC_VU = 21
                 ,
-            GHI_CHU2 = 22
+            GHI_CHU2 = 23
                 ,
-            SO_TAI_KHOAN = 14
+            SO_TAI_KHOAN = 15
                 ,
-            ID_NGUOI_LAP_TC = 25
-                , CMT_GIAY_DKKD = 6
+            ID_NGUOI_LAP_TC = 26
+                , CMT_GIAY_DKKD = 7
 
         }	
         #endregion
@@ -537,6 +538,7 @@ namespace BondApp
             }
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
             load_data_2_cbo_grid();
             m_fg.Redraw = true;
             cell_changed();
