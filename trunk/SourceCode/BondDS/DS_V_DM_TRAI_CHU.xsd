@@ -64,7 +64,7 @@
         <xs:element name="V_DM_TRAI_CHU" msprop:Generator_TableClassName="V_DM_TRAI_CHUDataTable" msprop:Generator_TableVarName="tableV_DM_TRAI_CHU" msprop:Generator_TablePropName="V_DM_TRAI_CHU" msprop:Generator_RowDeletingName="V_DM_TRAI_CHURowDeleting" msprop:Generator_UserTableName="V_DM_TRAI_CHU" msprop:Generator_RowChangingName="V_DM_TRAI_CHURowChanging" msprop:Generator_RowEvHandlerName="V_DM_TRAI_CHURowChangeEventHandler" msprop:Generator_RowDeletedName="V_DM_TRAI_CHURowDeleted" msprop:Generator_RowEvArgName="V_DM_TRAI_CHURowChangeEvent" msprop:Generator_RowChangedName="V_DM_TRAI_CHURowChanged" msprop:Generator_RowClassName="V_DM_TRAI_CHURow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
               <xs:element name="MA_TRAI_CHU" msprop:Generator_ColumnVarNameInTable="columnMA_TRAI_CHU" msprop:Generator_ColumnPropNameInRow="MA_TRAI_CHU" msprop:Generator_ColumnPropNameInTable="MA_TRAI_CHUColumn" msprop:Generator_UserColumnName="MA_TRAI_CHU">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
