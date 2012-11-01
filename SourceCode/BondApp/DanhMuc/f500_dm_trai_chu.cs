@@ -541,7 +541,7 @@ namespace BondApp
             CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
             load_data_2_cbo_grid();
             m_fg.Redraw = true;
-            cell_changed();
+            //cell_changed();
         }
 
         private void load_data_2_cbo_grid()
@@ -700,7 +700,7 @@ namespace BondApp
             else
             {
                 m_cmd_update.Enabled = false;
-                m_cmd_duyet.Enabled = false;
+                //m_cmd_duyet.Enabled = false;
             }
         }
 
