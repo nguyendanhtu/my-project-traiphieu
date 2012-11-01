@@ -340,14 +340,14 @@ namespace BondApp
         }
         public US_V_DM_TRAI_CHU select_v_trai_chu_of_trai_phieu(US_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
-            //m_e_form_mode = DataEntryFormMode.SelectDataState;
+            m_e_form_mode = DataEntryFormMode.SelectDataState;
             m_us_trai_phieu = ip_us_trai_phieu;
             this.ShowDialog();
             return m_us;
         }
         public US_DM_TRAI_CHU select_trai_chu_giai_toa_of_trai_phieu(US_V_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
-            //m_e_form_mode = DataEntryFormMode.SelectDataState;
+            m_e_form_mode = DataEntryFormMode.SelectDataState;
             eform_mode = e_form_mode.DANH_SACH_LAP_GIAI_TOA;
             m_us_v_trai_phieu = ip_us_trai_phieu;
             this.ShowDialog();
@@ -356,18 +356,18 @@ namespace BondApp
 
         public US_DM_TRAI_CHU select_trai_chu_of_trai_phieu(US_V_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
-            //m_e_form_mode = DataEntryFormMode.SelectDataState;
+            m_e_form_mode = DataEntryFormMode.SelectDataState;
             m_us_v_trai_phieu = ip_us_trai_phieu;
             this.ShowDialog();
             return m_us_trai_chu;
         }
 
         public enum e_form_mode
-        { 
-            DANH_SACH_LAP_PHONG_TOA,
-            DANH_SACH_LAP_GIAI_TOA,
-            DANH_SACH_CHUYEN_NHUONG,
-            DANH_SACH_TRAI_CHU
+        {
+            DANH_SACH_LAP_PHONG_TOA,   // Danh sách đã duyệt
+            DANH_SACH_LAP_GIAI_TOA,   // Danh sách đã duyệt
+            DANH_SACH_CHUYEN_NHUONG,  // Danh sách đã duyệt
+            DANH_SACH_TRAI_CHU  // Hiển thị hết
         }
         #endregion
 
@@ -520,16 +520,15 @@ namespace BondApp
             {
                 switch (eform_mode)
                 {
-                    case e_form_mode.DANH_SACH_TRAI_CHU:
+                    case e_form_mode.DANH_SACH_TRAI_CHU: // hiển thị tất
                         m_us.FillDataset(m_ds);
                             break;
                     case e_form_mode.DANH_SACH_LAP_PHONG_TOA:
                             m_us.FillDatasetByIDTrangThai(m_ds, TRANG_THAI_DANH_MUC.DA_DUYET);
                             break;
                     case e_form_mode.DANH_SACH_LAP_GIAI_TOA:
-                            m_us.load_data_by_pgt(m_ds);
+                            m_us.FillDatasetByIDTrangThai(m_ds, TRANG_THAI_DANH_MUC.DA_DUYET);
                             break;
-
                 }
             }
             else
