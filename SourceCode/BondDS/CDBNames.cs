@@ -487,6 +487,7 @@ namespace BondDS.CDBNames
         public const string ID_NGUOI_DUYET_TC = "ID_NGUOI_DUYET_TC";
         public const string ID_NGUOI_LAP_TC = "ID_NGUOI_LAP_TC";
         public const string ID_TRANG_THAI = "ID_TRANG_THAI";
+        public const string SO_LUONG_TP_SO_HUU_BAN_DAU = "SO_LUONG_TP_SO_HUU_BAN_DAU";
     }
 
     public class DM_DOT_PHAT_HANH
