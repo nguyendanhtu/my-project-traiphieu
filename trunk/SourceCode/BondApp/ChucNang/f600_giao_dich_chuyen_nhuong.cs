@@ -134,6 +134,14 @@ namespace BondApp
                 default:                    
                     break;
             }
+            US_HT_THAM_SO_HE_THONG v_us_ht_tham_so_ht = new US_HT_THAM_SO_HE_THONG();
+            IP.Core.IPData.DS_HT_THAM_SO_HE_THONG v_ds_ht_tham_so_ht = new IP.Core.IPData.DS_HT_THAM_SO_HE_THONG();
+            v_us_ht_tham_so_ht.FillDataset(v_ds_ht_tham_so_ht, " WHERE LOAI_THAM_SO = 'PHI_PGT'");
+            m_lbl_phi_gd_max_min.Text = "Phí chuyển nhượng từ ";
+            m_lbl_phi_gd_max_min.Text += CIPConvert.ToStr(v_ds_ht_tham_so_ht.HT_THAM_SO_HE_THONG.Rows[1][HT_THAM_SO_HE_THONG.GIA_TRI]);
+            m_lbl_phi_gd_max_min.Text = " VNĐ đến ";
+            m_lbl_phi_gd_max_min.Text += CIPConvert.ToStr(v_ds_ht_tham_so_ht.HT_THAM_SO_HE_THONG.Rows[0][HT_THAM_SO_HE_THONG.GIA_TRI]);
+            m_lbl_phi_gd_max_min.Text = " VNĐ";
         }
 
         private void select_trai_phieu()
