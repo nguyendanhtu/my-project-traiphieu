@@ -383,7 +383,20 @@ namespace BondApp.DanhMuc
             m_txt_ky_han.LostFocus += new EventHandler(m_txt_ky_han_LostFocus);
             m_cbo_don_vi_ky_han.LostFocus += new EventHandler(m_cbo_don_vi_ky_han_LostFocus);
             m_cbo_loai_trai_phieu.LostFocus += new EventHandler(m_cbo_loai_trai_phieu_LostFocus);
-            //m_txt_tong_sl.LostFocus += new EventHandler(m_txt_tong_sl_LostFocus);
+            m_txt_tong_sl.LostFocus += new EventHandler(m_txt_tong_sl_LostFocus);
+        }
+
+        void m_txt_tong_sl_LostFocus(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_txt_tong_sl.Text.Trim() == "") return;
+                m_txt_tong_gia_tri.Text = CIPConvert.ToStr(CIPConvert.ToDecimal(m_txt_tong_sl.Text) * CIPConvert.ToDecimal(m_txt_menh_gia.Text),"#,###");
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void f300_dm_trai_phieu_DE_Load(object sender, EventArgs e)
