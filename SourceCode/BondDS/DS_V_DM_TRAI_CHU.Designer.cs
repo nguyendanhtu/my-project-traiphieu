@@ -847,7 +847,6 @@ namespace BondDS {
                 this.columnID.AutoIncrementSeed = -1;
                 this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
-                this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
                 this.columnMA_TRAI_CHU.AllowDBNull = false;
                 this.columnMA_TRAI_CHU.MaxLength = 35;

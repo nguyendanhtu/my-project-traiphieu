@@ -549,6 +549,28 @@ namespace BondUS
             pm_objDR["CHUC_VU"] = System.Convert.DBNull;
         }
 
+        public decimal dcSO_LUONG_TP_SO_HUU_BAN_DAU
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "SO_LUONG_TP_SO_HUU_BAN_DAU", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["SO_LUONG_TP_SO_HUU_BAN_DAU"] = value;
+            }
+        }
+
+        public bool IsSO_LUONG_TP_SO_HUU_BAN_DAUNull()
+        {
+            return pm_objDR.IsNull("SO_LUONG_TP_SO_HUU_BAN_DAU");
+        }
+
+        public void SetSO_LUONG_TP_SO_HUU_BAN_DAUNull()
+        {
+            pm_objDR["SO_LUONG_TP_SO_HUU_BAN_DAU"] = System.Convert.DBNull;
+        }
+
         #endregion
 
 
