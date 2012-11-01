@@ -155,6 +155,7 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.m_gru_thong_tin_khach_hang = new System.Windows.Forms.GroupBox();
+            this.m_lbl_phi_gd_max_min = new System.Windows.Forms.Label();
             this.m_gru_thong_tin_trai_phieu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -1306,6 +1307,7 @@
             this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.label22);
             this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.label25);
             this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.label21);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.m_lbl_phi_gd_max_min);
             this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.label24);
             this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.label26);
             this.m_gru_thong_tin_chuyen_nhuong.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -1455,7 +1457,7 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(594, 41);
+            this.label37.Location = new System.Drawing.Point(596, 41);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(70, 13);
             this.label37.TabIndex = 39;
@@ -1499,6 +1501,15 @@
             this.m_gru_thong_tin_khach_hang.TabIndex = 2;
             this.m_gru_thong_tin_khach_hang.TabStop = false;
             this.m_gru_thong_tin_khach_hang.Text = "Thông tin khách hàng";
+            // 
+            // m_lbl_phi_gd_max_min
+            // 
+            this.m_lbl_phi_gd_max_min.AutoSize = true;
+            this.m_lbl_phi_gd_max_min.Location = new System.Drawing.Point(628, 70);
+            this.m_lbl_phi_gd_max_min.Name = "m_lbl_phi_gd_max_min";
+            this.m_lbl_phi_gd_max_min.Size = new System.Drawing.Size(16, 13);
+            this.m_lbl_phi_gd_max_min.TabIndex = 39;
+            this.m_lbl_phi_gd_max_min.Text = "...";
             // 
             // f600_giao_dich_chuyen_nhuong
             // 
@@ -1658,6 +1669,7 @@
         private System.Windows.Forms.TextBox m_txt_chuc_vu_ng_dai_dien;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.TextBox m_txt_ben_mua_chuc_vu_ng_dai_dien;
+        private System.Windows.Forms.Label m_lbl_phi_gd_max_min;
 
 
     }
