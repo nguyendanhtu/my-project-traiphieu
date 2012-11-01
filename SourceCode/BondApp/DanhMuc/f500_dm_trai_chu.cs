@@ -152,7 +152,6 @@ namespace BondApp
             this.m_cmd_duyet.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_duyet.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_duyet.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_duyet.Enabled = false;
             this.m_cmd_duyet.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet.Image")));
             this.m_cmd_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_duyet.Location = new System.Drawing.Point(92, 4);
@@ -220,6 +219,7 @@ namespace BondApp
             this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_view.TabIndex = 21;
             this.m_cmd_view.Text = "Xem";
+            this.m_cmd_view.Visible = false;
             // 
             // m_cmd_delete
             // 
@@ -599,7 +599,6 @@ namespace BondApp
             m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
         }
 
-
         private void insert_dm_trai_chu()
         {
             f500_dm_trai_chu_de v_frm500 = new f500_dm_trai_chu_de();
@@ -676,6 +675,11 @@ namespace BondApp
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             grid2us_object(m_us, m_fg.Row);
+            if (m_us.dcID_TRANG_THAI == TRANG_THAI_DANH_MUC.DA_DUYET)
+            {
+                BaseMessages.MsgBox_Infor("Thông tin trái chủ này đã được duyệt!");
+                return;
+            }
             f500_dm_trai_chu_de v_frm500 = new f500_dm_trai_chu_de();
             v_frm500.display_for_duyet(m_us);
             load_data_2_grid(null);
@@ -719,7 +723,7 @@ namespace BondApp
             m_cmd_select.Click += new EventHandler(m_cmd_select_Click);
             m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
             m_cmd_filter.Click += new EventHandler(m_cmd_filter_Click);
-            m_fg.Click += new EventHandler(m_fg_Click);
+            //m_fg.Click += new EventHandler(m_fg_Click);
             m_cmd_duyet.Click += new EventHandler(m_cmd_duyet_Click);
         }
 
