@@ -587,13 +587,21 @@ namespace BondApp
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            if (!BaseMessages.MsgBox_Confirm("Việc xóa trái phiếu đã chọn sẽ xóa toàn bộ các trái chủ đã mua trái phiếu này. \n Bạn có chắc chắn muốn xóa dữ liệu không?")) return;
-            bool v_bool_xac_nhan = false;
-            f000_confirm v_frm000 = new f000_confirm();
-            v_bool_xac_nhan = v_frm000.display_to_confirm();
-            if (!v_bool_xac_nhan) return;
+            if (!BaseMessages.MsgBox_Confirm("Bạn có chắc chắn muốn xóa dữ liệu này?")) return;
+            //bool v_bool_xac_nhan = false;
+            //f000_confirm v_frm000 = new f000_confirm();
+            //v_bool_xac_nhan = v_frm000.display_to_confirm();
+            //if (!v_bool_xac_nhan) return;
             US_V_DM_TRAI_PHIEU v_us = new US_V_DM_TRAI_PHIEU();
             grid2us_object(v_us, m_fg.Row);
+            US_V_DM_TRAI_CHU v_us_dm_trai_chu = new US_V_DM_TRAI_CHU();
+            DS_V_DM_TRAI_CHU v_ds_dm_trai_chu = new DS_V_DM_TRAI_CHU();
+            v_us_dm_trai_chu.FillDataset(v_ds_dm_trai_chu, " WHERE ID_TRAI_PHIEU_SO_HUU = " + v_us.dcID);
+            if (v_ds_dm_trai_chu.V_DM_TRAI_CHU.Rows.Count > 0)
+            {
+                BaseMessages.MsgBox_Infor("Không xóa trái phiếu này được do đã có trái chủ mua!");
+                return;
+            }
             try
             {
                 v_us.BeginTransaction();

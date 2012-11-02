@@ -467,13 +467,21 @@ namespace BondApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
 			//if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-            if (!BaseMessages.MsgBox_Confirm("Việc xóa đợt phát hành sẽ xóa toàn bộ các trái phiếu mà tổ chức này phát hành và các trái chủ đã mua trái phiếu của tổ chức này (kèm các giao dịch) . \n Bạn có chắc chắn muốn xóa dữ liệu không?")) return;
-            bool v_bool_xac_nhan = false;
-            f000_confirm v_frm000 = new f000_confirm();
-            v_bool_xac_nhan = v_frm000.display_to_confirm();
-            if (!v_bool_xac_nhan) return;
+            if (!BaseMessages.MsgBox_Confirm("Bạn có chắc chắn muốn xóa dữ liệu này?")) return;
+            //bool v_bool_xac_nhan = false;
+            //f000_confirm v_frm000 = new f000_confirm();
+            //v_bool_xac_nhan = v_frm000.display_to_confirm();
+            //if (!v_bool_xac_nhan) return;
 			US_V_DM_DOT_PHAT_HANH v_us = new US_V_DM_DOT_PHAT_HANH();
-			grid2us_object(v_us, m_fg.Row);
+            grid2us_object(v_us, m_fg.Row);
+            US_V_DM_TRAI_PHIEU v_us_dm_trai_phieu = new US_V_DM_TRAI_PHIEU();
+            DS_V_DM_TRAI_PHIEU v_ds_dm_trai_phieu = new DS_V_DM_TRAI_PHIEU();
+            v_us_dm_trai_phieu.FillDataset(v_ds_dm_trai_phieu, " WHERE ID_DOT_PHAT_HANH = " + v_us.dcID);
+            if (v_ds_dm_trai_phieu.V_DM_TRAI_PHIEU.Rows.Count > 0)
+            {
+                BaseMessages.MsgBox_Infor("Không xóa đợt phát hành này được do đã khai báo trái phiếu trong đợt này!");
+                return;
+            }
 			try {			
 				v_us.BeginTransaction();    											
 				v_us.Delete();                      								
