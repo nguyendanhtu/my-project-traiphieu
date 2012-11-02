@@ -49,6 +49,8 @@
             this.m_cmd_thoat = new SIS.Controls.Button.SiSButton();
             this.m_dgl_open_file = new System.Windows.Forms.OpenFileDialog();
             this.m_fg_load_file = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.label2 = new System.Windows.Forms.Label();
+            this.m_txt_sl_phat_hanh = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -84,6 +86,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.m_txt_sl_phat_hanh);
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.m_txt_ngay_phat_hanh);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.m_cmd_chon_trai_phieu);
@@ -96,17 +100,17 @@
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(784, 126);
+            this.panel2.Size = new System.Drawing.Size(844, 126);
             this.panel2.TabIndex = 26;
             // 
             // m_txt_ngay_phat_hanh
             // 
             this.m_txt_ngay_phat_hanh.BackColor = System.Drawing.SystemColors.Info;
             this.m_txt_ngay_phat_hanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_txt_ngay_phat_hanh.Location = new System.Drawing.Point(577, 48);
+            this.m_txt_ngay_phat_hanh.Location = new System.Drawing.Point(658, 48);
             this.m_txt_ngay_phat_hanh.Name = "m_txt_ngay_phat_hanh";
             this.m_txt_ngay_phat_hanh.ReadOnly = true;
-            this.m_txt_ngay_phat_hanh.Size = new System.Drawing.Size(173, 22);
+            this.m_txt_ngay_phat_hanh.Size = new System.Drawing.Size(160, 22);
             this.m_txt_ngay_phat_hanh.TabIndex = 14;
             this.m_txt_ngay_phat_hanh.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -114,7 +118,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(457, 51);
+            this.label7.Location = new System.Drawing.Point(538, 51);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(102, 16);
             this.label7.TabIndex = 13;
@@ -141,7 +145,8 @@
             this.m_txt_ten_to_chuc_phat_hanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_txt_ten_to_chuc_phat_hanh.Location = new System.Drawing.Point(170, 85);
             this.m_txt_ten_to_chuc_phat_hanh.Name = "m_txt_ten_to_chuc_phat_hanh";
-            this.m_txt_ten_to_chuc_phat_hanh.Size = new System.Drawing.Size(580, 22);
+            this.m_txt_ten_to_chuc_phat_hanh.ReadOnly = true;
+            this.m_txt_ten_to_chuc_phat_hanh.Size = new System.Drawing.Size(470, 22);
             this.m_txt_ten_to_chuc_phat_hanh.TabIndex = 8;
             // 
             // label4
@@ -170,7 +175,7 @@
             this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(784, 25);
+            this.m_lbl_header.Size = new System.Drawing.Size(844, 25);
             this.m_lbl_header.TabIndex = 0;
             this.m_lbl_header.Text = "F260 - Nhập trái chủ và số dư sở hữu lần đầu";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -193,7 +198,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 126);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(784, 46);
+            this.panel3.Size = new System.Drawing.Size(844, 46);
             this.panel3.TabIndex = 27;
             // 
             // m_cmd_luu
@@ -267,7 +272,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 458);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(784, 40);
+            this.panel1.Size = new System.Drawing.Size(844, 40);
             this.panel1.TabIndex = 29;
             // 
             // m_cmd_thoat
@@ -279,7 +284,7 @@
             this.m_cmd_thoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_thoat.ImageIndex = 12;
             this.m_cmd_thoat.ImageList = this.ImageList;
-            this.m_cmd_thoat.Location = new System.Drawing.Point(691, 0);
+            this.m_cmd_thoat.Location = new System.Drawing.Point(751, 0);
             this.m_cmd_thoat.Name = "m_cmd_thoat";
             this.m_cmd_thoat.Size = new System.Drawing.Size(93, 40);
             this.m_cmd_thoat.TabIndex = 6;
@@ -300,15 +305,36 @@
             this.m_fg_load_file.KeyActionTab = C1.Win.C1FlexGrid.KeyActionEnum.MoveAcross;
             this.m_fg_load_file.Location = new System.Drawing.Point(0, 172);
             this.m_fg_load_file.Name = "m_fg_load_file";
-            this.m_fg_load_file.Size = new System.Drawing.Size(784, 286);
+            this.m_fg_load_file.Size = new System.Drawing.Size(844, 286);
             this.m_fg_load_file.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_load_file.Styles"));
             this.m_fg_load_file.TabIndex = 30;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(661, 88);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 16);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "SL phát hành";
+            // 
+            // m_txt_sl_phat_hanh
+            // 
+            this.m_txt_sl_phat_hanh.BackColor = System.Drawing.SystemColors.Info;
+            this.m_txt_sl_phat_hanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_txt_sl_phat_hanh.Location = new System.Drawing.Point(755, 85);
+            this.m_txt_sl_phat_hanh.Name = "m_txt_sl_phat_hanh";
+            this.m_txt_sl_phat_hanh.ReadOnly = true;
+            this.m_txt_sl_phat_hanh.Size = new System.Drawing.Size(63, 22);
+            this.m_txt_sl_phat_hanh.TabIndex = 14;
+            this.m_txt_sl_phat_hanh.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // f260_import_trai_chu_tu_excel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 498);
+            this.ClientSize = new System.Drawing.Size(844, 498);
             this.Controls.Add(this.m_fg_load_file);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
@@ -345,6 +371,8 @@
         private System.Windows.Forms.OpenFileDialog m_dgl_open_file;
         private System.Windows.Forms.TextBox m_txt_ngay_phat_hanh;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg_load_file;
+        private System.Windows.Forms.TextBox m_txt_sl_phat_hanh;
+        private System.Windows.Forms.Label label2;
 
     }
 }
