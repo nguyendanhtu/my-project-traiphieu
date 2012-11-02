@@ -269,10 +269,11 @@ namespace BondApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			LOAI_THAM_SO = 1
-,GHI_CHU = 4
-,GIA_TRI = 3
-,MA_THAM_SO = 2
+			STT = 1,
+            LOAI_THAM_SO = 2
+,GHI_CHU = 5
+,GIA_TRI = 4
+,MA_THAM_SO = 3
 
 		}			
 		#endregion
@@ -317,6 +318,7 @@ namespace BondApp
 			m_us.FillDataset(m_ds, " WHERE PHAN_HE = 'SD'");
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
 			m_fg.Redraw = true;
 		}
 		private void grid2us_object(US_HT_THAM_SO_HE_THONG i_us
