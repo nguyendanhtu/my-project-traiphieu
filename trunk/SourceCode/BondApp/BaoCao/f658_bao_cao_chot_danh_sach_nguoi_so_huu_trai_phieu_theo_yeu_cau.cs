@@ -684,7 +684,7 @@ namespace BondApp
 		private void load_data_2_grid(){
             m_ds = new DS_V_DM_TRAI_CHU_CHOT_LAI();
             //load_data_2_cbo();
-            m_us.FillDatasetByIDTraiPhieuAndNgayChotLai(m_ds, m_us_trai_phieu.dcID, CIPConvert.ToDatetime(m_txt_ngay_chot.Text));
+            m_us.FillDatasetByIDTraiPhieuAndNgayChotLai(m_ds, m_us_trai_phieu.dcID, CIPConvert.ToDatetime(m_txt_ngay_chot.Text),"A");
             foreach (DataRow v_dr in m_ds.V_DM_TRAI_CHU_CHOT_LAI.Rows)
             {
                 v_dr["ID_TRAI_PHIEU"] = m_us_trai_phieu.dcMENH_GIA * CIPConvert.ToDecimal(v_dr["TONG_SO_DU"]);

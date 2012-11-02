@@ -739,6 +739,12 @@ public class US_V_DM_TRAI_CHU : US_Object
         CStoredProc v_cstore = new CStoredProc("pr_V_DM_TRAI_CHU_Select_from_pgt");
         v_cstore.fillDataSetByCommand(this,op_ds_dm_trai_chu);
     }
+    public void Kiem_tra_phat_sinh_gd(DS_V_DM_TRAI_CHU op_ds_v_dm_trai_chu)
+    {
+        CStoredProc v_cstore = new CStoredProc("pr_V_DM_TRAI_CHU_Kiem_Tra_Phat_Sinh_GD");
+        v_cstore.addDecimalInputParam("@ID_TRAI_CHU",this.dcID);
+        v_cstore.fillDataSetByCommand(this, op_ds_v_dm_trai_chu);
+    }
     #endregion
 
 }

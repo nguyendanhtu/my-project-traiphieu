@@ -634,6 +634,7 @@ namespace BondApp
             US_V_DM_TRAI_CHU v_us = new US_V_DM_TRAI_CHU();
             DS_V_DM_TRAI_CHU v_ds = new DS_V_DM_TRAI_CHU();
             grid2us_object(v_us, m_fg.Row);
+            v_ds.EnforceConstraints = false;
             v_us.Kiem_tra_phat_sinh_gd(v_ds);
             if (v_ds.V_DM_TRAI_CHU.Rows.Count > 0)
             {
