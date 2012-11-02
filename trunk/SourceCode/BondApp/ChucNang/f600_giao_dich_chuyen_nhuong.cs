@@ -526,6 +526,7 @@ namespace BondApp
                 v_str_phi_gd_max = CIPConvert.ToStr(v_ds_phi_gd.HT_THAM_SO_HE_THONG.Rows[0][HT_THAM_SO_HE_THONG.GIA_TRI], "#,###");
                 BaseMessages.MsgBox_Infor("Phí GD lớn hơn phí chuyển nhượng max ("
                     + v_str_phi_gd_max + " VNĐ). Phí GD tự động chuyển thành " + v_str_phi_gd_max + " VNĐ");
+                m_txt_phi_gd.Text = CIPConvert.ToStr(v_str_phi_gd_max,"#,###");
                 return false;
             }
             // TH < min
@@ -534,6 +535,7 @@ namespace BondApp
                 v_str_phi_gd_min = CIPConvert.ToStr(v_ds_phi_gd.HT_THAM_SO_HE_THONG.Rows[1][HT_THAM_SO_HE_THONG.GIA_TRI], "#,###");
                 BaseMessages.MsgBox_Infor("Phí GD nhỏ hơn phí chuyển nhượng min ("
                     + v_str_phi_gd_min + " VNĐ). Phí GD tự động chuyển thành " + v_str_phi_gd_min+" VNĐ");
+                m_txt_phi_gd.Text = CIPConvert.ToStr(v_str_phi_gd_min, "#,###");
                 return false;
             }
             return true;
