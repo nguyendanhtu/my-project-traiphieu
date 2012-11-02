@@ -223,16 +223,16 @@ namespace BondApp
             US_HT_THAM_SO_HE_THONG v_us_phi_gd_min = new US_HT_THAM_SO_HE_THONG(GIOI_HAN_PHI_PGT.ID_PHI_PGT_MIN);
             if (v_phi_gd < CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI))
             {
-                MessageBox.Show("Phí giao dịch nhỏ hơn giá trị phí giao dịch min!\n Phí giao dịch sẽ là "
-                    + CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI), "#,##")
+                MessageBox.Show("Phí giao dịch nhỏ hơn giá trị phí giao dịch min (" + CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI),"#,###") + ")!\n Phí giao dịch sẽ là "
+                    + CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI), "#,###")
                     , "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                m_txt_phi_gd.Text = CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI), "#,##");
+                m_txt_phi_gd.Text = CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI), "#,###");
 
                 return false;
             }
             if (v_phi_gd > CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI))
             {
-                MessageBox.Show("Phí giao dịch vượt quá giới hạn phí giao dịch max!\n Phí giao dịch sẽ là "
+                MessageBox.Show("Phí giao dịch vượt quá giới hạn phí giao dịch max (" + CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI) + ")\n Phí giao dịch sẽ là "
                     + CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI), "#,##")
                     , "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 m_txt_phi_gd.Text = CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI), "#,##");
@@ -245,7 +245,7 @@ namespace BondApp
         {
             US_HT_THAM_SO_HE_THONG v_us_phi_gd_max = new US_HT_THAM_SO_HE_THONG(GIOI_HAN_PHI_PGT.ID_PHI_PGT_MAX);
             US_HT_THAM_SO_HE_THONG v_us_phi_gd_min = new US_HT_THAM_SO_HE_THONG(GIOI_HAN_PHI_PGT.ID_PHI_PGT_MIN);
-            m_lbl_pgd_max_min.Text = "Phí giao dịch trong khoảng " + CIPConvert.ToStr(v_us_phi_gd_min.strGIA_TRI, "#,###") + " đến " + CIPConvert.ToStr(v_us_phi_gd_max.strGIA_TRI, "#,###") + ".";
+            m_lbl_pgd_max_min.Text = "Phí giao dịch trong khoảng " + CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI), "#,###") + " đến " + CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI), "#,###") + ".";
             m_dat_ngay.Value = DateTime.Today;
 
             switch (m_e_form_mode)

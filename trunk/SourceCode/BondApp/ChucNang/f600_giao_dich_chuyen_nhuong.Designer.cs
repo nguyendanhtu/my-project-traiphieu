@@ -171,7 +171,7 @@
             this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(884, 40);
+            this.m_lbl_title.Size = new System.Drawing.Size(904, 40);
             this.m_lbl_title.TabIndex = 1;
             this.m_lbl_title.Text = "F600 - Giao dịch chuyển nhượng";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -197,7 +197,7 @@
             this.m_gru_thong_tin_trai_phieu.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_gru_thong_tin_trai_phieu.Location = new System.Drawing.Point(0, 40);
             this.m_gru_thong_tin_trai_phieu.Name = "m_gru_thong_tin_trai_phieu";
-            this.m_gru_thong_tin_trai_phieu.Size = new System.Drawing.Size(884, 95);
+            this.m_gru_thong_tin_trai_phieu.Size = new System.Drawing.Size(904, 95);
             this.m_gru_thong_tin_trai_phieu.TabIndex = 1;
             this.m_gru_thong_tin_trai_phieu.TabStop = false;
             this.m_gru_thong_tin_trai_phieu.Text = "Thông tin trái phiếu";
@@ -1147,7 +1147,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 576);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(4);
-            this.panel1.Size = new System.Drawing.Size(884, 36);
+            this.panel1.Size = new System.Drawing.Size(904, 36);
             this.panel1.TabIndex = 6;
             // 
             // m_cmd_duyet_chuyen_nhuong
@@ -1159,7 +1159,7 @@
             this.m_cmd_duyet_chuyen_nhuong.Enabled = false;
             this.m_cmd_duyet_chuyen_nhuong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet_chuyen_nhuong.Image")));
             this.m_cmd_duyet_chuyen_nhuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_duyet_chuyen_nhuong.Location = new System.Drawing.Point(528, 4);
+            this.m_cmd_duyet_chuyen_nhuong.Location = new System.Drawing.Point(548, 4);
             this.m_cmd_duyet_chuyen_nhuong.Name = "m_cmd_duyet_chuyen_nhuong";
             this.m_cmd_duyet_chuyen_nhuong.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_duyet_chuyen_nhuong.TabIndex = 27;
@@ -1174,7 +1174,7 @@
             this.m_cmd_lap_chuyen_nhuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_lap_chuyen_nhuong.ImageIndex = 2;
             this.m_cmd_lap_chuyen_nhuong.ImageList = this.ImageList;
-            this.m_cmd_lap_chuyen_nhuong.Location = new System.Drawing.Point(616, 4);
+            this.m_cmd_lap_chuyen_nhuong.Location = new System.Drawing.Point(636, 4);
             this.m_cmd_lap_chuyen_nhuong.Name = "m_cmd_lap_chuyen_nhuong";
             this.m_cmd_lap_chuyen_nhuong.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_lap_chuyen_nhuong.TabIndex = 25;
@@ -1189,7 +1189,7 @@
             this.m_cmd_sua_chuyen_nhuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_sua_chuyen_nhuong.ImageIndex = 3;
             this.m_cmd_sua_chuyen_nhuong.ImageList = this.ImageList;
-            this.m_cmd_sua_chuyen_nhuong.Location = new System.Drawing.Point(704, 4);
+            this.m_cmd_sua_chuyen_nhuong.Location = new System.Drawing.Point(724, 4);
             this.m_cmd_sua_chuyen_nhuong.Name = "m_cmd_sua_chuyen_nhuong";
             this.m_cmd_sua_chuyen_nhuong.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_sua_chuyen_nhuong.TabIndex = 26;
@@ -1220,7 +1220,7 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(792, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(812, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 28;
@@ -1313,7 +1313,7 @@
             this.m_gru_thong_tin_chuyen_nhuong.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_gru_thong_tin_chuyen_nhuong.Location = new System.Drawing.Point(0, 408);
             this.m_gru_thong_tin_chuyen_nhuong.Name = "m_gru_thong_tin_chuyen_nhuong";
-            this.m_gru_thong_tin_chuyen_nhuong.Size = new System.Drawing.Size(884, 168);
+            this.m_gru_thong_tin_chuyen_nhuong.Size = new System.Drawing.Size(904, 168);
             this.m_gru_thong_tin_chuyen_nhuong.TabIndex = 5;
             this.m_gru_thong_tin_chuyen_nhuong.TabStop = false;
             this.m_gru_thong_tin_chuyen_nhuong.Text = "Thông tin chuyển nhương";
@@ -1379,7 +1379,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(580, 70);
+            this.label35.Location = new System.Drawing.Point(576, 70);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(30, 13);
             this.label35.TabIndex = 59;
@@ -1493,7 +1493,7 @@
             // m_lbl_phi_gd_max_min
             // 
             this.m_lbl_phi_gd_max_min.AutoSize = true;
-            this.m_lbl_phi_gd_max_min.Location = new System.Drawing.Point(617, 70);
+            this.m_lbl_phi_gd_max_min.Location = new System.Drawing.Point(611, 70);
             this.m_lbl_phi_gd_max_min.Name = "m_lbl_phi_gd_max_min";
             this.m_lbl_phi_gd_max_min.Size = new System.Drawing.Size(16, 13);
             this.m_lbl_phi_gd_max_min.TabIndex = 39;
@@ -1506,7 +1506,7 @@
             this.m_gru_thong_tin_khach_hang.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_gru_thong_tin_khach_hang.Location = new System.Drawing.Point(0, 135);
             this.m_gru_thong_tin_khach_hang.Name = "m_gru_thong_tin_khach_hang";
-            this.m_gru_thong_tin_khach_hang.Size = new System.Drawing.Size(884, 275);
+            this.m_gru_thong_tin_khach_hang.Size = new System.Drawing.Size(904, 275);
             this.m_gru_thong_tin_khach_hang.TabIndex = 2;
             this.m_gru_thong_tin_khach_hang.TabStop = false;
             this.m_gru_thong_tin_khach_hang.Text = "Thông tin khách hàng";
@@ -1515,7 +1515,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 612);
+            this.ClientSize = new System.Drawing.Size(904, 612);
             this.Controls.Add(this.m_gru_thong_tin_khach_hang);
             this.Controls.Add(this.m_gru_thong_tin_chuyen_nhuong);
             this.Controls.Add(this.panel1);
