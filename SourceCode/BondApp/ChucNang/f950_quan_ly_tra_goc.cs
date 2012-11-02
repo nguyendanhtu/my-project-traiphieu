@@ -149,7 +149,7 @@ namespace BondApp.ChucNang
                 switch (m_mod)
                 {
                     case e_Mod.TAT_CA:
-                        m_us.FillDatasetByIDTraiPhieuAndNgayChotLai(m_ds, m_us_v_trai_phieu.dcID, m_dat_ngay_chot_lai_cuoi);
+                        m_us.FillDatasetByIDTraiPhieuAndNgayChotLai(m_ds, m_us_v_trai_phieu.dcID, m_dat_ngay_chot_lai_cuoi,"A");
                         break;
                     case e_Mod.DA_TRA:
                         m_us.FillDatasetByIDTraiPhieuAndNgayChotLaiAndTrangThaiYes(m_ds, m_us_v_trai_phieu.dcID, m_dat_ngay_chot_lai_cuoi);
