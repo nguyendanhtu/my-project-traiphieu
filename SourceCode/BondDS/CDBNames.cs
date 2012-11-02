@@ -55,6 +55,7 @@ namespace BondDS.CDBNames
     {
         public const decimal DA_LAP = 60;
         public const decimal DA_DUYET = 61;
+        public const decimal DA_DONG = 68;
     }
     public class List_trang_thai
     {
