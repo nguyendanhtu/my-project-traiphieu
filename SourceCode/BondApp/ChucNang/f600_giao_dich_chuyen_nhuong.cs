@@ -142,10 +142,10 @@ namespace BondApp
             v_us_ht_tham_so_ht.FillDataset(v_ds_ht_tham_so_ht, " WHERE LOAI_THAM_SO = 'PHI_PGT'");
             string v_str_ty_le_phi_gd_max_min = "";
             v_str_ty_le_phi_gd_max_min = "Phí chuyển nhượng từ ";
-            v_str_ty_le_phi_gd_max_min += CIPConvert.ToStr(v_ds_ht_tham_so_ht.HT_THAM_SO_HE_THONG.Rows[1][HT_THAM_SO_HE_THONG.GIA_TRI]);
+            v_str_ty_le_phi_gd_max_min += CIPConvert.ToStr(CIPConvert.ToDecimal(v_ds_ht_tham_so_ht.HT_THAM_SO_HE_THONG.Rows[1][HT_THAM_SO_HE_THONG.GIA_TRI]),"#,###");
             m_dc_phi_gd_chuyen_nhuong_max = CIPConvert.ToDecimal(v_ds_ht_tham_so_ht.HT_THAM_SO_HE_THONG.Rows[0][HT_THAM_SO_HE_THONG.GIA_TRI]);
             v_str_ty_le_phi_gd_max_min += " VNĐ đến ";
-            v_str_ty_le_phi_gd_max_min += CIPConvert.ToStr(v_ds_ht_tham_so_ht.HT_THAM_SO_HE_THONG.Rows[0][HT_THAM_SO_HE_THONG.GIA_TRI]);
+            v_str_ty_le_phi_gd_max_min += CIPConvert.ToStr(CIPConvert.ToDecimal(v_ds_ht_tham_so_ht.HT_THAM_SO_HE_THONG.Rows[0][HT_THAM_SO_HE_THONG.GIA_TRI]), "#,###");
             m_dc_phi_gd_chuyen_nhuong_min = CIPConvert.ToDecimal(v_ds_ht_tham_so_ht.HT_THAM_SO_HE_THONG.Rows[1][HT_THAM_SO_HE_THONG.GIA_TRI]);
             v_str_ty_le_phi_gd_max_min += " VNĐ";
             m_lbl_phi_gd_max_min.Text = v_str_ty_le_phi_gd_max_min;
@@ -523,19 +523,19 @@ namespace BondApp
             // TH > max
             if (CIPConvert.ToDecimal(m_txt_phi_gd.Text) > CIPConvert.ToDecimal(v_ds_phi_gd.HT_THAM_SO_HE_THONG.Rows[0][HT_THAM_SO_HE_THONG.GIA_TRI]))
             {
-                v_str_phi_gd_max = CIPConvert.ToStr(v_ds_phi_gd.HT_THAM_SO_HE_THONG.Rows[0][HT_THAM_SO_HE_THONG.GIA_TRI], "#,###");
+                v_str_phi_gd_max = CIPConvert.ToStr(CIPConvert.ToDecimal(v_ds_phi_gd.HT_THAM_SO_HE_THONG.Rows[0][HT_THAM_SO_HE_THONG.GIA_TRI]), "#,###");
                 BaseMessages.MsgBox_Infor("Phí GD lớn hơn phí chuyển nhượng max ("
                     + v_str_phi_gd_max + " VNĐ). Phí GD tự động chuyển thành " + v_str_phi_gd_max + " VNĐ");
-                m_txt_phi_gd.Text = CIPConvert.ToStr(v_str_phi_gd_max,"#,###");
+                m_txt_phi_gd.Text = v_str_phi_gd_max;
                 return false;
             }
             // TH < min
             if (CIPConvert.ToDecimal(m_txt_phi_gd.Text) < CIPConvert.ToDecimal(v_ds_phi_gd.HT_THAM_SO_HE_THONG.Rows[1][HT_THAM_SO_HE_THONG.GIA_TRI]))
             {
-                v_str_phi_gd_min = CIPConvert.ToStr(v_ds_phi_gd.HT_THAM_SO_HE_THONG.Rows[1][HT_THAM_SO_HE_THONG.GIA_TRI], "#,###");
+                v_str_phi_gd_min = CIPConvert.ToStr(CIPConvert.ToDecimal(v_ds_phi_gd.HT_THAM_SO_HE_THONG.Rows[1][HT_THAM_SO_HE_THONG.GIA_TRI]), "#,###");
                 BaseMessages.MsgBox_Infor("Phí GD nhỏ hơn phí chuyển nhượng min ("
                     + v_str_phi_gd_min + " VNĐ). Phí GD tự động chuyển thành " + v_str_phi_gd_min+" VNĐ");
-                m_txt_phi_gd.Text = CIPConvert.ToStr(v_str_phi_gd_min, "#,###");
+                m_txt_phi_gd.Text = v_str_phi_gd_min;
                 return false;
             }
             return true;
