@@ -615,10 +615,12 @@ namespace BondDS.CDBNames
         public const string ID_NGUOI_DUYET = "ID_NGUOI_DUYET";
         public const string TRANG_THAI = "TRANG_THAI";
         public const string ID_TRAI_PHIEU = "ID_TRAI_PHIEU";
-        public const string KY_TINH_LAI = "KY_TINH_LAI";
+        public const string NGAY_DAU_KY = "NGAY_DAU_KY";
+        public const string NGAY_CUOI_KY = "NGAY_CUOI_KY";
         public const string MUC_DICH = "MUC_DICH";
         public const string GHI_CHU1 = "GHI_CHU1";
     }
+
     public class GD_CHOT_LAI_DETAIL
     {
         public const string ID = "ID";
