@@ -96,6 +96,7 @@ namespace BondApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f610_dm_giao_dien_chuyen_nhuong));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_lap_chuyen_nhuong = new SIS.Controls.Button.SiSButton();
             this.m_cmd_duyet_chuyen_nhuong = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_bao_cao = new SIS.Controls.Button.SiSButton();
@@ -112,7 +113,6 @@ namespace BondApp
             this.m_dat_from_date = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_cmd_lap_chuyen_nhuong = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.m_grb_thong_tin_ban_hang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -159,6 +159,21 @@ namespace BondApp
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(984, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
+            // 
+            // m_cmd_lap_chuyen_nhuong
+            // 
+            this.m_cmd_lap_chuyen_nhuong.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_lap_chuyen_nhuong.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_lap_chuyen_nhuong.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_lap_chuyen_nhuong.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_lap_chuyen_nhuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_lap_chuyen_nhuong.ImageIndex = 2;
+            this.m_cmd_lap_chuyen_nhuong.ImageList = this.ImageList;
+            this.m_cmd_lap_chuyen_nhuong.Location = new System.Drawing.Point(540, 4);
+            this.m_cmd_lap_chuyen_nhuong.Name = "m_cmd_lap_chuyen_nhuong";
+            this.m_cmd_lap_chuyen_nhuong.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_lap_chuyen_nhuong.TabIndex = 26;
+            this.m_cmd_lap_chuyen_nhuong.Text = "& Lập";
             // 
             // m_cmd_duyet_chuyen_nhuong
             // 
@@ -353,21 +368,6 @@ namespace BondApp
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 35;
             // 
-            // m_cmd_lap_chuyen_nhuong
-            // 
-            this.m_cmd_lap_chuyen_nhuong.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_lap_chuyen_nhuong.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_lap_chuyen_nhuong.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_lap_chuyen_nhuong.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_lap_chuyen_nhuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_lap_chuyen_nhuong.ImageIndex = 2;
-            this.m_cmd_lap_chuyen_nhuong.ImageList = this.ImageList;
-            this.m_cmd_lap_chuyen_nhuong.Location = new System.Drawing.Point(540, 4);
-            this.m_cmd_lap_chuyen_nhuong.Name = "m_cmd_lap_chuyen_nhuong";
-            this.m_cmd_lap_chuyen_nhuong.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_lap_chuyen_nhuong.TabIndex = 26;
-            this.m_cmd_lap_chuyen_nhuong.Text = "& Lập";
-            // 
             // f610_dm_giao_dien_chuyen_nhuong
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -411,35 +411,37 @@ namespace BondApp
         #region Data Structure        
         private enum e_col_Number
         {
-            GIA_TRI_CN_THEO_MENH_GIA = 8,
-            tcb_TEN_TRAI_CHU = 4
+            STT =1
+                ,
+            GIA_TRI_CN_THEO_MENH_GIA = 9,
+            tcb_TEN_TRAI_CHU = 5
                 ,
             ID = 0
                 ,
-            tcm_MA_TRAI_CHU = 3
+            tcm_MA_TRAI_CHU = 4
                 ,
-            GIA_TRI_THUE = 11
+            GIA_TRI_THUE = 12
                 ,
-            tcb_MA_TRAI_CHU = 5
+            tcb_MA_TRAI_CHU = 6
                 ,
-            tcm_TEN_TRAI_CHU = 2
+            tcm_TEN_TRAI_CHU = 3
                 ,
-            MA_GIAO_DICH = 1
+            MA_GIAO_DICH = 2
                 ,
-            GIA_TRI_CHUYEN_NHUONG_THUC_TE = 9
+            GIA_TRI_CHUYEN_NHUONG_THUC_TE = 10
                 ,
-            NGAY_XAC_NHAN = 14
+            NGAY_XAC_NHAN = 15
                 ,
-            PHI_GD = 10
+            PHI_GD = 11
                 ,
-            NGAY_KY_CHUYEN_NHUONG = 12
+            NGAY_KY_CHUYEN_NHUONG = 13
                 ,
-            ID_TRANG_THAI_CHUYEN_NHUONG = 15
+            ID_TRANG_THAI_CHUYEN_NHUONG = 16
                 ,
-            SO_LUONG_CHUYEN_NHUONG = 7
+            SO_LUONG_CHUYEN_NHUONG = 8
                 ,
-            TEN_TRAI_PHIEU = 6
-                , NGAY_VAO_SO = 13            
+            TEN_TRAI_PHIEU = 7
+                , NGAY_VAO_SO = 14
 
         }
 
@@ -525,6 +527,7 @@ namespace BondApp
             //m_us.FillDataset(m_ds);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
             for (int v_i_grid_row = m_fg.Rows.Fixed; v_i_grid_row < m_fg.Rows.Count; v_i_grid_row++)
             {              
                 v_tu_dien = new US_CM_DM_TU_DIEN(CIPConvert.ToDecimal( m_fg[v_i_grid_row, (int)e_col_Number.ID_TRANG_THAI_CHUYEN_NHUONG]));
