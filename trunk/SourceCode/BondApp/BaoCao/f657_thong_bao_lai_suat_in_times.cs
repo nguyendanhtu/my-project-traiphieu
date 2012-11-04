@@ -92,6 +92,7 @@ namespace BondApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f657_thong_bao_lai_suat_in_times));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_export_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_gru_thong_tin_cap_nhat = new System.Windows.Forms.GroupBox();
@@ -109,7 +110,6 @@ namespace BondApp
             this.m_cmd_chon_trai_phieu = new System.Windows.Forms.Button();
             this.m_txt_ten_trai_phieu = new System.Windows.Forms.TextBox();
             this.m_lbl_title = new System.Windows.Forms.Label();
-            this.m_cmd_export_excel = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.m_gru_thong_tin_cap_nhat.SuspendLayout();
@@ -153,6 +153,21 @@ namespace BondApp
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(784, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
+            // 
+            // m_cmd_export_excel
+            // 
+            this.m_cmd_export_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_export_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_export_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_export_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_export_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_export_excel.ImageIndex = 19;
+            this.m_cmd_export_excel.ImageList = this.ImageList;
+            this.m_cmd_export_excel.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_export_excel.Name = "m_cmd_export_excel";
+            this.m_cmd_export_excel.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_export_excel.TabIndex = 23;
+            this.m_cmd_export_excel.Text = "Xuất excel";
             // 
             // m_cmd_exit
             // 
@@ -341,21 +356,6 @@ namespace BondApp
             this.m_lbl_title.Text = "F657 - BÁO CÁO LÃI SUẤT TRÁI PHIẾU";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // m_cmd_export_excel
-            // 
-            this.m_cmd_export_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_export_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_export_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_export_excel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_export_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_export_excel.ImageIndex = 19;
-            this.m_cmd_export_excel.ImageList = this.ImageList;
-            this.m_cmd_export_excel.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_export_excel.Name = "m_cmd_export_excel";
-            this.m_cmd_export_excel.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_export_excel.TabIndex = 23;
-            this.m_cmd_export_excel.Text = "Xuất excel";
-            // 
             // f657_thong_bao_lai_suat_in_times
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -387,11 +387,12 @@ namespace BondApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			NGAY_KET_THUC = 2
-,LAI_SUAT = 4
-,SO_NGAY_AP_DUNG = 3
-,NGAY_DAU = 1
-,GHI_CHU = 5
+            STT = 1,
+			NGAY_KET_THUC = 3
+,LAI_SUAT = 5
+,SO_NGAY_AP_DUNG = 4
+,NGAY_DAU = 2
+,GHI_CHU = 6
 
 		}			
 		#endregion
@@ -437,6 +438,7 @@ namespace BondApp
             m_us.fill_dataset_by_trai_phieu_in_times(m_ds, m_date_tu_ngay.Value, m_date_den_ngay.Value, m_us_v_trai_phieu.dcID);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
 			m_fg.Redraw = true;
 		}
 		private void grid2us_object(US_GD_THONG_BAO_LAI_SUAT_IN_TIMES i_us
