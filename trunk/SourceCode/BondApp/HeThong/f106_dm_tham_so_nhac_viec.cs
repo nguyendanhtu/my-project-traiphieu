@@ -433,16 +433,17 @@ namespace BondApp
 
 		#region Data Structure
 		private enum e_col_Number{
-            NGAY_LAM_VIEC_YN = 4
+            STT = 1,
+            NGAY_LAM_VIEC_YN = 5
   ,
-            GHI_CHU = 6
+            GHI_CHU = 7
                 ,
-            LOAI_NHAC_VIEC = 1
+            LOAI_NHAC_VIEC = 2
                 ,
-            NOI_DUNG_NHAC = 2
+            NOI_DUNG_NHAC = 3
                 ,
-            SO_NGAY_LAM_TRUOC_NGAY_CHINH = 3
-                , SO_NGAY_NHAC_TRUOC = 5
+            SO_NGAY_LAM_TRUOC_NGAY_CHINH = 4
+                , SO_NGAY_NHAC_TRUOC = 6
 		}			
 		#endregion
 
@@ -489,7 +490,7 @@ namespace BondApp
             m_us.FillDataset(m_ds, " ORDER BY " + V_DM_THAM_SO_NHAC_VIEC.ID_LOAI_NHAC_VIEC);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-
+            CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
             for (int v_i_grid_row = m_fg.Rows.Fixed; v_i_grid_row < m_fg.Rows.Count; v_i_grid_row++)
             {
                 m_fg[v_i_grid_row, (int)e_col_Number.NOI_DUNG_NHAC] = convert_noi_dung_nhac(v_i_grid_row);
