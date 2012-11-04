@@ -47,21 +47,23 @@ namespace BondApp.ChucNang
 
         private enum e_col_Number
         {
-            ID = 1,
 
-            NGAY = 2
+            STT = 1,
+            ID = 2,
+
+            NGAY =3
                 ,
-            LAI_SUAT = 3
+            LAI_SUAT = 4
                 ,
-            NGAY_BAT_DAU_AD_LS = 4
+            NGAY_BAT_DAU_AD_LS = 5
                 ,
-            NGAY_KET_THUC_AD_LS = 5
+            NGAY_KET_THUC_AD_LS = 6
                 ,
-            DA_THUC_HIEN_YN = 6
+            DA_THUC_HIEN_YN = 7
                 ,
-            DA_DUYET_YN = 7
+            DA_DUYET_YN = 8
                 ,
-            GHI_CHU = 8
+            GHI_CHU = 9
         }
         #endregion
 
@@ -161,6 +163,7 @@ namespace BondApp.ChucNang
             m_us_gd_lich_tt_lai_goc.FillDatasetLichSUuLaiSuatThoaThuanByIDTraiPhieu(m_ds_gd_lich_tt_lai_goc, m_us_v_trai_phieu.dcID);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds_gd_lich_tt_lai_goc, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
             m_fg.Redraw = true;
         }
 
