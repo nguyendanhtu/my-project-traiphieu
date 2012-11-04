@@ -111,10 +111,13 @@ namespace BondApp
             this.m_lbl_ten_nguoi_lap = new System.Windows.Forms.Label();
             this.m_lbl_ten_nguoi_duyet = new System.Windows.Forms.Label();
             this.m_cmd_chon_trai_phieu = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.m_lbl_ky_tinh_lai = new System.Windows.Forms.Label();
             this.m_lbl_nguoi_duyet = new System.Windows.Forms.Label();
             this.m_dat_ngay_thanh_toan = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_ngay_thanh_toan = new System.Windows.Forms.Label();
+            this.m_date_ngay_dau_ky = new System.Windows.Forms.DateTimePicker();
+            this.m_data_ngay_cuoi_ky = new System.Windows.Forms.DateTimePicker();
             this.m_dat_ngay_chot_lai = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_muc_dich = new System.Windows.Forms.Label();
             this.m_lbl_ma_trai_phieu = new System.Windows.Forms.Label();
@@ -131,9 +134,6 @@ namespace BondApp
             this.label1 = new System.Windows.Forms.Label();
             this.m_cmd_filter = new System.Windows.Forms.Button();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_data_ngay_cuoi_ky = new System.Windows.Forms.DateTimePicker();
-            this.m_date_ngay_dau_ky = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.m_gbox_thong_tin_tp.SuspendLayout();
             this.m_gru_tim_kiem.SuspendLayout();
@@ -338,6 +338,15 @@ namespace BondApp
             this.m_cmd_chon_trai_phieu.Text = "...";
             this.m_cmd_chon_trai_phieu.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(289, 82);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(26, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "đến";
+            // 
             // m_lbl_ky_tinh_lai
             // 
             this.m_lbl_ky_tinh_lai.AutoSize = true;
@@ -375,6 +384,26 @@ namespace BondApp
             this.m_lbl_ngay_thanh_toan.TabIndex = 6;
             this.m_lbl_ngay_thanh_toan.Text = "Ngày thanh toán";
             this.m_lbl_ngay_thanh_toan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // m_date_ngay_dau_ky
+            // 
+            this.m_date_ngay_dau_ky.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.m_date_ngay_dau_ky.CustomFormat = "dd/MM/yyyy";
+            this.m_date_ngay_dau_ky.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_date_ngay_dau_ky.Location = new System.Drawing.Point(106, 76);
+            this.m_date_ngay_dau_ky.Name = "m_date_ngay_dau_ky";
+            this.m_date_ngay_dau_ky.Size = new System.Drawing.Size(120, 20);
+            this.m_date_ngay_dau_ky.TabIndex = 5;
+            // 
+            // m_data_ngay_cuoi_ky
+            // 
+            this.m_data_ngay_cuoi_ky.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.m_data_ngay_cuoi_ky.CustomFormat = "dd/MM/yyyy";
+            this.m_data_ngay_cuoi_ky.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_data_ngay_cuoi_ky.Location = new System.Drawing.Point(321, 76);
+            this.m_data_ngay_cuoi_ky.Name = "m_data_ngay_cuoi_ky";
+            this.m_data_ngay_cuoi_ky.Size = new System.Drawing.Size(120, 20);
+            this.m_data_ngay_cuoi_ky.TabIndex = 5;
             // 
             // m_dat_ngay_chot_lai
             // 
@@ -527,35 +556,6 @@ namespace BondApp
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 35;
             // 
-            // m_data_ngay_cuoi_ky
-            // 
-            this.m_data_ngay_cuoi_ky.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_data_ngay_cuoi_ky.CustomFormat = "dd/MM/yyyy";
-            this.m_data_ngay_cuoi_ky.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_data_ngay_cuoi_ky.Location = new System.Drawing.Point(321, 76);
-            this.m_data_ngay_cuoi_ky.Name = "m_data_ngay_cuoi_ky";
-            this.m_data_ngay_cuoi_ky.Size = new System.Drawing.Size(120, 20);
-            this.m_data_ngay_cuoi_ky.TabIndex = 5;
-            // 
-            // m_date_ngay_dau_ky
-            // 
-            this.m_date_ngay_dau_ky.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_date_ngay_dau_ky.CustomFormat = "dd/MM/yyyy";
-            this.m_date_ngay_dau_ky.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_date_ngay_dau_ky.Location = new System.Drawing.Point(106, 76);
-            this.m_date_ngay_dau_ky.Name = "m_date_ngay_dau_ky";
-            this.m_date_ngay_dau_ky.Size = new System.Drawing.Size(120, 20);
-            this.m_date_ngay_dau_ky.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(289, 82);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "đến";
-            // 
             // f201_dm_gd_chot_lai_detail
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -594,11 +594,13 @@ namespace BondApp
 
 		#region Data Structure
 		private enum e_col_Number{
-            ID_TRAI_CHU = 1
-            ,NGAY_NHAN_TIEN = 5
-            ,SO_TIEN_LAI = 3
-            ,DA_NHAN_TIEN_YN = 4
-            ,SO_LUONG_TINH_LAI = 2
+            STT = 1
+                ,
+            ID_TRAI_CHU = 2
+            ,NGAY_NHAN_TIEN = 6
+            ,SO_TIEN_LAI = 4
+            ,DA_NHAN_TIEN_YN = 5
+            ,SO_LUONG_TINH_LAI = 3
 
 		}			
 		#endregion
@@ -779,6 +781,7 @@ namespace BondApp
             if (m_ds_gd_chot_lai_detail.IsInitialized)
             {
                 CGridUtils.Dataset2C1Grid(m_ds_gd_chot_lai_detail, m_fg, m_obj_trans);
+                CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
                 for (int v_i_grid_row = m_fg.Rows.Fixed; v_i_grid_row < m_fg.Rows.Count; v_i_grid_row++)
                 {
                     v_us_trai_chu = new US_DM_TRAI_CHU(CIPConvert.ToDecimal(m_fg[v_i_grid_row, (int)e_col_Number.ID_TRAI_CHU]));
