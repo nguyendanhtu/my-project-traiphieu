@@ -112,8 +112,13 @@ namespace BondApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f658_bao_cao_chot_danh_sach_nguoi_so_huu_trai_phieu_theo_yeu_cau));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_yeu_cau_ngan_hang_thanh_toan = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_export_excel = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.m_txt_ngay_chot = new System.Windows.Forms.TextBox();
             this.m_cbo_ky_tinh_lai = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.m_cmd_chon_trai_phieu = new System.Windows.Forms.Button();
@@ -141,11 +146,6 @@ namespace BondApp
             this.m_txt_ten_trai_phieu = new System.Windows.Forms.TextBox();
             this.m_lbl_lai_suat = new System.Windows.Forms.Label();
             this.m_txt_ma_trai_phieu = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.m_txt_ngay_chot = new System.Windows.Forms.TextBox();
-            this.m_cmd_yeu_cau_ngan_hang_thanh_toan = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_export_excel = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -190,6 +190,51 @@ namespace BondApp
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(958, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
+            // 
+            // m_cmd_yeu_cau_ngan_hang_thanh_toan
+            // 
+            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.ImageIndex = 19;
+            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.ImageList = this.ImageList;
+            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.Location = new System.Drawing.Point(92, 4);
+            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.Name = "m_cmd_yeu_cau_ngan_hang_thanh_toan";
+            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.Size = new System.Drawing.Size(238, 28);
+            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.TabIndex = 24;
+            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.Text = "Thông báo yêu cầu ngân hàng thanh toán";
+            // 
+            // m_cmd_export_excel
+            // 
+            this.m_cmd_export_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_export_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_export_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_export_excel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_export_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_export_excel.ImageIndex = 19;
+            this.m_cmd_export_excel.ImageList = this.ImageList;
+            this.m_cmd_export_excel.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_export_excel.Name = "m_cmd_export_excel";
+            this.m_cmd_export_excel.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_export_excel.TabIndex = 23;
+            this.m_cmd_export_excel.Text = "Xuất excel";
+            // 
+            // m_cmd_exit
+            // 
+            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_exit.ImageIndex = 12;
+            this.m_cmd_exit.ImageList = this.ImageList;
+            this.m_cmd_exit.Location = new System.Drawing.Point(866, 4);
+            this.m_cmd_exit.Name = "m_cmd_exit";
+            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_exit.TabIndex = 11;
+            this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // m_lbl_header
             // 
@@ -241,6 +286,25 @@ namespace BondApp
             this.groupBox1.TabIndex = 59;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin trái phiếu";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(369, 135);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.TabIndex = 64;
+            this.label6.Text = "Ngày chốt";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // m_txt_ngay_chot
+            // 
+            this.m_txt_ngay_chot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.m_txt_ngay_chot.Location = new System.Drawing.Point(431, 132);
+            this.m_txt_ngay_chot.Name = "m_txt_ngay_chot";
+            this.m_txt_ngay_chot.ReadOnly = true;
+            this.m_txt_ngay_chot.Size = new System.Drawing.Size(130, 20);
+            this.m_txt_ngay_chot.TabIndex = 65;
             // 
             // m_cbo_ky_tinh_lai
             // 
@@ -501,70 +565,6 @@ namespace BondApp
             this.m_txt_ma_trai_phieu.Size = new System.Drawing.Size(120, 20);
             this.m_txt_ma_trai_phieu.TabIndex = 44;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(369, 135);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 13);
-            this.label6.TabIndex = 64;
-            this.label6.Text = "Ngày chốt";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // m_txt_ngay_chot
-            // 
-            this.m_txt_ngay_chot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_txt_ngay_chot.Location = new System.Drawing.Point(431, 132);
-            this.m_txt_ngay_chot.Name = "m_txt_ngay_chot";
-            this.m_txt_ngay_chot.ReadOnly = true;
-            this.m_txt_ngay_chot.Size = new System.Drawing.Size(130, 20);
-            this.m_txt_ngay_chot.TabIndex = 65;
-            // 
-            // m_cmd_yeu_cau_ngan_hang_thanh_toan
-            // 
-            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.ImageIndex = 19;
-            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.ImageList = this.ImageList;
-            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.Location = new System.Drawing.Point(92, 4);
-            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.Name = "m_cmd_yeu_cau_ngan_hang_thanh_toan";
-            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.Size = new System.Drawing.Size(238, 28);
-            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.TabIndex = 24;
-            this.m_cmd_yeu_cau_ngan_hang_thanh_toan.Text = "Thông báo yêu cầu ngân hàng thanh toán";
-            // 
-            // m_cmd_export_excel
-            // 
-            this.m_cmd_export_excel.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_export_excel.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_export_excel.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_export_excel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_export_excel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_export_excel.ImageIndex = 19;
-            this.m_cmd_export_excel.ImageList = this.ImageList;
-            this.m_cmd_export_excel.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_export_excel.Name = "m_cmd_export_excel";
-            this.m_cmd_export_excel.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_export_excel.TabIndex = 23;
-            this.m_cmd_export_excel.Text = "Xuất excel";
-            // 
-            // m_cmd_exit
-            // 
-            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_exit.ImageIndex = 12;
-            this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(866, 4);
-            this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 11;
-            this.m_cmd_exit.Text = "Thoát (Esc)";
-            // 
             // m_fg
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
@@ -611,20 +611,21 @@ namespace BondApp
 		#region Data Structure
         private enum e_col_Number
         {
-            CMT_GIAY_DKKD = 3
+            STT = 1,
+            CMT_GIAY_DKKD = 4
 ,
-            TEN_TRAI_CHU = 2
+            TEN_TRAI_CHU = 3
                 ,
-            TONG_SO_DU = 7
+            TONG_SO_DU = 8
                 ,
-            NGAY_CAP_CMT = 4
+            NGAY_CAP_CMT = 5
                 ,
-            MA_TRAI_CHU = 1
+            MA_TRAI_CHU = 2
                 ,
-            DIA_CHI = 6
+            DIA_CHI = 7
                 ,
-            ID_TRAI_PHIEU = 8
-                , NOI_CAP_CMT = 5
+            ID_TRAI_PHIEU = 9
+                , NOI_CAP_CMT = 6
 
         }
 
@@ -691,6 +692,7 @@ namespace BondApp
             }
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
 			m_fg.Redraw = true;
 		}
 
