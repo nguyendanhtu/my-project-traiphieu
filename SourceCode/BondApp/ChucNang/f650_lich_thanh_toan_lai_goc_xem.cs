@@ -95,19 +95,20 @@ namespace BondApp
         }
         private enum e_form_mode
         {
-            HIEN_THI_CO_TRAI_PHIEU = 1
+            STT = 1,
+            HIEN_THI_CO_TRAI_PHIEU = 2
           ,
-            HIEN_THI_KHONG_TRAI_PHIEU = 2
+            HIEN_THI_KHONG_TRAI_PHIEU = 3
                 ,
-            KHONG_TRAI_PHIEU_SINH_LICH = 3
+            KHONG_TRAI_PHIEU_SINH_LICH = 4
                 ,
-            KHONG_TRAI_PHIEU_THONG_BAO_LAI_SUAT = 4
+            KHONG_TRAI_PHIEU_THONG_BAO_LAI_SUAT = 5
                 ,
-            KHONG_TRAI_PHIEU_THONG_BAO_NGAY_CHOT_DS_LAI = 5
+            KHONG_TRAI_PHIEU_THONG_BAO_NGAY_CHOT_DS_LAI = 6
                 , 
-            KHONG_TRAI_PHIEU_THONG_BAO_TT_LAI = 6
+            KHONG_TRAI_PHIEU_THONG_BAO_TT_LAI = 7
                 ,
-            KHONG_TRAI_PHIEU_THONG_BAO_DOT_THANH_TOAN_LAI_TRAI_PHIEU = 7
+            KHONG_TRAI_PHIEU_THONG_BAO_DOT_THANH_TOAN_LAI_TRAI_PHIEU = 8
         }
         #endregion
 
@@ -286,6 +287,7 @@ namespace BondApp
             m_us_gd_lich_tt_lai_goc.FillDatasetByIDTraiPhieu(m_ds_gd_lich_tt_lai_goc, m_us_v_trai_phieu.dcID);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds_gd_lich_tt_lai_goc, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
             for (int v_i_grid_row = m_fg.Rows.Fixed; v_i_grid_row < m_fg.Rows.Count; v_i_grid_row++)
             {
                 m_fg[v_i_grid_row, (int)e_col_Number.NOI_DUNG_LICH] = get_content_of_calendar(v_i_grid_row);
