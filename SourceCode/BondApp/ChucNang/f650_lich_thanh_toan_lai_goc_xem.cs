@@ -79,36 +79,36 @@ namespace BondApp
         #region Data Structure
         private enum e_col_Number
         {
-            CHOT_LAI_YN = 3
+            STT =1,
+            CHOT_LAI_YN = 4
 ,
-            NGAY = 1
+            NGAY = 2
                 ,
-            CAP_NHAT_LS_YN = 4
+            CAP_NHAT_LS_YN = 5
                 ,
-            LAI_SUAT = 7
+            LAI_SUAT = 8
                 ,
-            THANH_TOAN_LAI_YN = 6
+            THANH_TOAN_LAI_YN = 7
                 ,
-            THANH_TOAN_GOC_YN = 5
-                , DA_THUC_HIEN_YN = 8
-            , NOI_DUNG_LICH = 2
+            THANH_TOAN_GOC_YN = 6
+                , DA_THUC_HIEN_YN = 9
+            , NOI_DUNG_LICH = 3
         }
         private enum e_form_mode
         {
-            STT = 1,
-            HIEN_THI_CO_TRAI_PHIEU = 2
+            HIEN_THI_CO_TRAI_PHIEU = 1
           ,
-            HIEN_THI_KHONG_TRAI_PHIEU = 3
+            HIEN_THI_KHONG_TRAI_PHIEU = 2
                 ,
-            KHONG_TRAI_PHIEU_SINH_LICH = 4
+            KHONG_TRAI_PHIEU_SINH_LICH = 3
                 ,
-            KHONG_TRAI_PHIEU_THONG_BAO_LAI_SUAT = 5
+            KHONG_TRAI_PHIEU_THONG_BAO_LAI_SUAT = 4
                 ,
-            KHONG_TRAI_PHIEU_THONG_BAO_NGAY_CHOT_DS_LAI = 6
+            KHONG_TRAI_PHIEU_THONG_BAO_NGAY_CHOT_DS_LAI = 5
                 , 
-            KHONG_TRAI_PHIEU_THONG_BAO_TT_LAI = 7
+            KHONG_TRAI_PHIEU_THONG_BAO_TT_LAI = 6
                 ,
-            KHONG_TRAI_PHIEU_THONG_BAO_DOT_THANH_TOAN_LAI_TRAI_PHIEU = 8
+            KHONG_TRAI_PHIEU_THONG_BAO_DOT_THANH_TOAN_LAI_TRAI_PHIEU = 7
         }
         #endregion
 
