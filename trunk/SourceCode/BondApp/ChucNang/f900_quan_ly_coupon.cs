@@ -45,58 +45,59 @@ namespace BondApp.ChucNang
         #region Data Structure
         private enum e_col_Number
         {
-            GHI_CHU3 = 22
+            STT = 1,
+            GHI_CHU3 = 23
 ,
-            SO_LUONG_TINH_LAI = 6
+            SO_LUONG_TINH_LAI = 7
                 ,
-            FAX = 16
+            FAX = 17
                 ,
-            NGAY_CHOT_LAI = 10
+            NGAY_CHOT_LAI = 11
                 ,
-            DIA_CHI = 14
+            DIA_CHI = 15
                 ,
-            KY_TINH_LAI = 5
+            KY_TINH_LAI = 6
                 ,
-            SO_TAI_KHOAN = 12
+            SO_TAI_KHOAN = 13
                 ,
-            ID_CHOT_LAI = 26
+            ID_CHOT_LAI = 27
                 ,
-            NOI_CAP_CMT = 18
+            NOI_CAP_CMT = 19
                 ,
-            SO_TIEN_LAI = 7
+            SO_TIEN_LAI = 8
                 ,
-            NGAY_NHAN_TIEN = 9
+            NGAY_NHAN_TIEN = 10
                 ,
-            DA_NHAN_TIEN_YN = 8
+            DA_NHAN_TIEN_YN = 9
                 ,
-            GHI_CHU2 = 21
+            GHI_CHU2 = 22
                 ,
-            ID_TRAI_PHIEU_SO_HUU = 4
+            ID_TRAI_PHIEU_SO_HUU = 5
                 ,
-            GHI_CHU1 = 20
+            GHI_CHU1 = 21
                 ,
-            GHI_CHU_CHOT_LAI = 23
+            GHI_CHU_CHOT_LAI = 24
                 ,
-            NGAY_THANH_TOAN = 11
+            NGAY_THANH_TOAN = 12
                 ,
-            ID_LOAI_TRAI_CHU = 19
+            ID_LOAI_TRAI_CHU = 20
                 ,
-            TEN_TRAI_CHU = 2
+            TEN_TRAI_CHU = 3
                 ,
-            ID_NGUOI_DUYET_CHOT_LAI = 25
+            ID_NGUOI_DUYET_CHOT_LAI = 26
                 ,
-            ID_TRAI_CHU = 27
+            ID_TRAI_CHU = 28
                 ,
-            ID_NGUOI_LAP_CHOT_LAI = 24
+            ID_NGUOI_LAP_CHOT_LAI = 25
                 ,
-            MO_TAI_NGAN_HANG = 13
+            MO_TAI_NGAN_HANG = 14
                 ,
-            NGAY_CAP_CMT = 17
+            NGAY_CAP_CMT = 18
                 ,
-            MOBILE = 15
+            MOBILE = 16
                 ,
-            CMT_GIAY_DKKD = 3
-                , MA_TRAI_CHU = 1
+            CMT_GIAY_DKKD = 4
+                , MA_TRAI_CHU = 2
 
         }
 
@@ -206,7 +207,7 @@ namespace BondApp.ChucNang
             }
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            
+            CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
             m_fg.Redraw = true;
 
             //Load ma trai phieu so huu
