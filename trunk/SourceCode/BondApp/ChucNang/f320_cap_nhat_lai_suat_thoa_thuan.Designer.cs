@@ -51,6 +51,13 @@
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.m_cmd_reset = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_chon_duyet = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_chon_sua = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_duyet_gd = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_sua = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_lap = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.m_gru_thong_tin_cap_nhat = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -73,13 +80,6 @@
             this.m_txt_ghi_chu = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_reset = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_chon_duyet = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_chon_sua = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_duyet_gd = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_sua = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_lap = new SIS.Controls.Button.SiSButton();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.m_gru_thong_tin_trai_phieu.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -340,6 +340,111 @@
             this.panel1.Size = new System.Drawing.Size(734, 36);
             this.panel1.TabIndex = 12;
             // 
+            // m_cmd_reset
+            // 
+            this.m_cmd_reset.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_reset.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_reset.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_reset.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_reset.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_reset.Image")));
+            this.m_cmd_reset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_reset.Location = new System.Drawing.Point(26, 4);
+            this.m_cmd_reset.Name = "m_cmd_reset";
+            this.m_cmd_reset.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_reset.TabIndex = 50;
+            this.m_cmd_reset.Text = "&Chọn lại";
+            // 
+            // m_cmd_chon_duyet
+            // 
+            this.m_cmd_chon_duyet.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_chon_duyet.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_chon_duyet.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_chon_duyet.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_chon_duyet.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_chon_duyet.Image")));
+            this.m_cmd_chon_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_chon_duyet.Location = new System.Drawing.Point(114, 4);
+            this.m_cmd_chon_duyet.Name = "m_cmd_chon_duyet";
+            this.m_cmd_chon_duyet.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_chon_duyet.TabIndex = 49;
+            this.m_cmd_chon_duyet.Text = "&Duyệt";
+            // 
+            // m_cmd_chon_sua
+            // 
+            this.m_cmd_chon_sua.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_chon_sua.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_chon_sua.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_chon_sua.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_chon_sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_chon_sua.ImageIndex = 3;
+            this.m_cmd_chon_sua.ImageList = this.ImageList;
+            this.m_cmd_chon_sua.Location = new System.Drawing.Point(202, 4);
+            this.m_cmd_chon_sua.Name = "m_cmd_chon_sua";
+            this.m_cmd_chon_sua.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_chon_sua.TabIndex = 48;
+            this.m_cmd_chon_sua.Text = "&Sửa";
+            // 
+            // m_cmd_duyet_gd
+            // 
+            this.m_cmd_duyet_gd.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_duyet_gd.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_duyet_gd.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_duyet_gd.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_duyet_gd.Enabled = false;
+            this.m_cmd_duyet_gd.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet_gd.Image")));
+            this.m_cmd_duyet_gd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_duyet_gd.Location = new System.Drawing.Point(290, 4);
+            this.m_cmd_duyet_gd.Name = "m_cmd_duyet_gd";
+            this.m_cmd_duyet_gd.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_duyet_gd.TabIndex = 47;
+            this.m_cmd_duyet_gd.Text = "&Duyệt";
+            this.m_cmd_duyet_gd.Visible = false;
+            // 
+            // m_cmd_sua
+            // 
+            this.m_cmd_sua.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_sua.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_sua.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_sua.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_sua.ImageIndex = 3;
+            this.m_cmd_sua.ImageList = this.ImageList;
+            this.m_cmd_sua.Location = new System.Drawing.Point(378, 4);
+            this.m_cmd_sua.Name = "m_cmd_sua";
+            this.m_cmd_sua.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_sua.TabIndex = 46;
+            this.m_cmd_sua.Text = "&Sửa";
+            this.m_cmd_sua.Visible = false;
+            // 
+            // m_cmd_lap
+            // 
+            this.m_cmd_lap.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_lap.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_lap.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_lap.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_lap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_lap.ImageIndex = 3;
+            this.m_cmd_lap.ImageList = this.ImageList;
+            this.m_cmd_lap.Location = new System.Drawing.Point(466, 4);
+            this.m_cmd_lap.Name = "m_cmd_lap";
+            this.m_cmd_lap.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_lap.TabIndex = 45;
+            this.m_cmd_lap.Text = "&Lập";
+            // 
+            // m_cmd_delete
+            // 
+            this.m_cmd_delete.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_delete.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_delete.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_delete.ImageIndex = 4;
+            this.m_cmd_delete.ImageList = this.ImageList;
+            this.m_cmd_delete.Location = new System.Drawing.Point(554, 4);
+            this.m_cmd_delete.Name = "m_cmd_delete";
+            this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_delete.TabIndex = 44;
+            this.m_cmd_delete.Text = "&Xoá";
+            // 
             // m_lbl_title
             // 
             this.m_lbl_title.Dock = System.Windows.Forms.DockStyle.Top;
@@ -577,111 +682,6 @@
             this.label3.TabIndex = 34;
             this.label3.Text = "Ghi chú";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // m_cmd_delete
-            // 
-            this.m_cmd_delete.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_delete.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_delete.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_delete.ImageIndex = 4;
-            this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(554, 4);
-            this.m_cmd_delete.Name = "m_cmd_delete";
-            this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_delete.TabIndex = 44;
-            this.m_cmd_delete.Text = "&Xoá";
-            // 
-            // m_cmd_reset
-            // 
-            this.m_cmd_reset.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_reset.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_reset.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_reset.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_reset.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_reset.Image")));
-            this.m_cmd_reset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_reset.Location = new System.Drawing.Point(26, 4);
-            this.m_cmd_reset.Name = "m_cmd_reset";
-            this.m_cmd_reset.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_reset.TabIndex = 50;
-            this.m_cmd_reset.Text = "&Chọn lại";
-            // 
-            // m_cmd_chon_duyet
-            // 
-            this.m_cmd_chon_duyet.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_chon_duyet.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_chon_duyet.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_chon_duyet.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_chon_duyet.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_chon_duyet.Image")));
-            this.m_cmd_chon_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_chon_duyet.Location = new System.Drawing.Point(114, 4);
-            this.m_cmd_chon_duyet.Name = "m_cmd_chon_duyet";
-            this.m_cmd_chon_duyet.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_chon_duyet.TabIndex = 49;
-            this.m_cmd_chon_duyet.Text = "&Duyệt";
-            // 
-            // m_cmd_chon_sua
-            // 
-            this.m_cmd_chon_sua.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_chon_sua.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_chon_sua.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_chon_sua.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_chon_sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_chon_sua.ImageIndex = 3;
-            this.m_cmd_chon_sua.ImageList = this.ImageList;
-            this.m_cmd_chon_sua.Location = new System.Drawing.Point(202, 4);
-            this.m_cmd_chon_sua.Name = "m_cmd_chon_sua";
-            this.m_cmd_chon_sua.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_chon_sua.TabIndex = 48;
-            this.m_cmd_chon_sua.Text = "&Sửa";
-            // 
-            // m_cmd_duyet_gd
-            // 
-            this.m_cmd_duyet_gd.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_duyet_gd.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_duyet_gd.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_duyet_gd.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_duyet_gd.Enabled = false;
-            this.m_cmd_duyet_gd.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet_gd.Image")));
-            this.m_cmd_duyet_gd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_duyet_gd.Location = new System.Drawing.Point(290, 4);
-            this.m_cmd_duyet_gd.Name = "m_cmd_duyet_gd";
-            this.m_cmd_duyet_gd.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_duyet_gd.TabIndex = 47;
-            this.m_cmd_duyet_gd.Text = "&Duyệt";
-            this.m_cmd_duyet_gd.Visible = false;
-            // 
-            // m_cmd_sua
-            // 
-            this.m_cmd_sua.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_sua.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_sua.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_sua.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_sua.ImageIndex = 3;
-            this.m_cmd_sua.ImageList = this.ImageList;
-            this.m_cmd_sua.Location = new System.Drawing.Point(378, 4);
-            this.m_cmd_sua.Name = "m_cmd_sua";
-            this.m_cmd_sua.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_sua.TabIndex = 46;
-            this.m_cmd_sua.Text = "&Sửa";
-            this.m_cmd_sua.Visible = false;
-            // 
-            // m_cmd_lap
-            // 
-            this.m_cmd_lap.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_lap.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_lap.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_lap.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_lap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_lap.ImageIndex = 3;
-            this.m_cmd_lap.ImageList = this.ImageList;
-            this.m_cmd_lap.Location = new System.Drawing.Point(466, 4);
-            this.m_cmd_lap.Name = "m_cmd_lap";
-            this.m_cmd_lap.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_lap.TabIndex = 45;
-            this.m_cmd_lap.Text = "&Lập";
             // 
             // f320_cap_nhat_lai_suat_thoa_thuan
             // 
