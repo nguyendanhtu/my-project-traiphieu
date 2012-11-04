@@ -333,28 +333,31 @@ namespace BondApp
 
 		#region Data Structure
 		private enum e_col_Number{
-            TONG_GIA_TRI_TRAI_PHIEU_PHAT_HANH = 5
-,
-            NGAY_PHAT_HANH = 2
+            STT = 1
                 ,
-            MENH_GIA = 4
+            TONG_GIA_TRI_TRAI_PHIEU_PHAT_HANH = 6
                 ,
-            NGUOI_DUYET = 10
+            NGAY_PHAT_HANH = 3
                 ,
-            TRANG_THAI = 11
+            MENH_GIA = 5
                 ,
-            NGAN_HANG_DAI_LY_QUAN_LY_TK = 8
+            NGUOI_DUYET = 11
                 ,
-            TEN_TO_CHUC_PHAT_HANH = 1
+            TRANG_THAI = 12
                 ,
-            NGUOI_LAP = 9
+            NGAN_HANG_DAI_LY_QUAN_LY_TK = 9
                 ,
-            GHI_CHU = 12
+            TEN_TO_CHUC_PHAT_HANH = 2
                 ,
-            TONG_SO_LUONG_TRAI_PHIEU = 3
+            NGUOI_LAP = 10
                 ,
-            TY_LE_PHI_PHONG_GIAI_TOA = 7
-                , TY_LE_PHI_CHUYEN_NHUONG = 6
+            GHI_CHU = 13
+                ,
+            TONG_SO_LUONG_TRAI_PHIEU = 4
+                ,
+            TY_LE_PHI_PHONG_GIAI_TOA = 8
+                , 
+            TY_LE_PHI_CHUYEN_NHUONG = 7
 
 		}			
 		#endregion
@@ -413,6 +416,7 @@ namespace BondApp
             }
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
 			m_fg.Redraw = true;
 		}
 		private void grid2us_object(US_V_DM_DOT_PHAT_HANH i_us
