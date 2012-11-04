@@ -538,15 +538,16 @@ namespace SaleManagement
 
 		#region Data Structure
 		private enum e_col_Number{
-			TEN_TRAI_CHU = 1
-,SO_LUONG_TINH_LAI = 7
-,NGAY_CAP_CMT = 3
-,SO_TIEN_LAI = 8
-,CMT_GIAY_DKKD = 2
-,SO_TAI_KHOAN = 9
-,DIA_CHI = 5
-,MOBILE = 6
-,NOI_CAP_CMT = 4
+            STT = 1,
+			TEN_TRAI_CHU = 2
+,SO_LUONG_TINH_LAI = 8
+,NGAY_CAP_CMT = 4
+,SO_TIEN_LAI = 9
+,CMT_GIAY_DKKD = 3
+,SO_TAI_KHOAN = 10
+,DIA_CHI = 6
+,MOBILE = 7
+,NOI_CAP_CMT = 5
 
 		}			
 		#endregion
@@ -594,6 +595,7 @@ namespace SaleManagement
             m_us.FillDatasetByIDTraiPhieu(m_ds, m_us_trai_phieu.dcID);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
 			m_fg.Redraw = true;
 		}
 
