@@ -349,60 +349,62 @@ namespace BondApp
         #region Data Structure
         private enum e_col_Number
         {
-            DON_VI_KY_HAN = 8
+            STT = 1
+                ,
+            DON_VI_KY_HAN = 9
 ,
-            TRANG_THAI = 28
+            TRANG_THAI = 29
                 ,
-            DON_VI_KY_TRA_LAI = 15
+            DON_VI_KY_TRA_LAI = 16
                 ,
-            MENH_GIA = 6
+            MENH_GIA = 7
                 ,
-            TONG_SL_PHAT_HANH = 18
+            TONG_SL_PHAT_HANH = 19
                 ,
-            LOAI_TRAI_PHIEU = 3
+            LOAI_TRAI_PHIEU = 4
                 ,
-            SO_HOP_DONG_DL_DK_LUU_KY = 26
+            SO_HOP_DONG_DL_DK_LUU_KY = 27
                 ,
-            NGAY_DAO_HAN = 17
+            NGAY_DAO_HAN = 18
                 ,
-            MA_TRAI_PHIEU = 1
+            MA_TRAI_PHIEU = 2
                 ,
-            CN_HUONG_THEO_NGAY_CHUYEN_NHUONG_YN = 25
+            CN_HUONG_THEO_NGAY_CHUYEN_NHUONG_YN = 26
                 ,
-            KY_HAN = 7
+            KY_HAN = 8
                 ,
-            SO_NGAY_TCPH_CHUYEN_TIEN_TRUOC = 21
+            SO_NGAY_TCPH_CHUYEN_TIEN_TRUOC = 22
                 ,
-            KY_DIEU_CHINH_LS = 11
+            KY_DIEU_CHINH_LS = 12
                 ,
-            TRA_LAI_SAU_YN = 16
+            TRA_LAI_SAU_YN = 17
                 ,
-            CO_SO_TINH_LAI = 9
+            CO_SO_TINH_LAI = 10
                 ,
-            NGUOI_LAP = 22
+            NGUOI_LAP = 23
                 ,
-            TONG_GIA_TRI = 19
+            TONG_GIA_TRI = 20
                 ,
-            NGAY_PHAT_HANH = 4
+            NGAY_PHAT_HANH = 5
                 ,
-            GHI_CHU_PHUONG_THUC_XD_LAI_SUAT = 24
+            GHI_CHU_PHUONG_THUC_XD_LAI_SUAT = 25
                 ,
-            TEN_TRAI_PHIEU = 2
+            TEN_TRAI_PHIEU = 3
                 ,
-            NGUOI_DUYET = 23
+            NGUOI_DUYET = 24
                 ,
-            THA_NOI_YN = 13
+            THA_NOI_YN = 14
                 ,
-            NGAY_KY_HD = 27
+            NGAY_KY_HD = 28
                 ,
-            TEN_TO_CHUC_PHAT_HANH = 5
+            TEN_TO_CHUC_PHAT_HANH = 6
                 ,
-            DON_VI_DIEU_CHINH_LS = 12
+            DON_VI_DIEU_CHINH_LS = 13
                 ,
-            LAI_SUAT_DEFAULT = 10
+            LAI_SUAT_DEFAULT = 11
                 ,
-            BIEN_DO_LAI = 20
-                , KY_TRA_LAI = 14
+            BIEN_DO_LAI = 21
+                , KY_TRA_LAI = 15
 
         }		
         #endregion
@@ -503,6 +505,7 @@ namespace BondApp
             }
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds_v_trai_phieu, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
             //load_data_2_cbo_grid();
             m_fg.Redraw = true;
         }
