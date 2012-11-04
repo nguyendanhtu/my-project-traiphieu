@@ -321,26 +321,27 @@ namespace BondApp
         }
         private enum e_col_Number
         {
-            CMT_GIAY_DKKD = 5
+            STT = 1,
+            CMT_GIAY_DKKD = 6
 ,
-            TEN_TRAI_CHU = 4
+            TEN_TRAI_CHU = 5
                 ,
-            NGAY_CAP_CMT = 6
+            NGAY_CAP_CMT = 7
                 ,
-            MA_GIAO_DICH = 1
+            MA_GIAO_DICH = 2
                 ,
-            NGUOI_THUC_HIEN = 11
+            NGUOI_THUC_HIEN = 12
                 ,
-            MA_TRAI_CHU = 3
+            MA_TRAI_CHU = 4
                 ,
-            SO_LUONG = 8
+            SO_LUONG = 9
                 ,
-            PHI_GIAO_DICH = 10
+            PHI_GIAO_DICH = 11
                 ,
-            NGAY_GIAO_DICH = 2
+            NGAY_GIAO_DICH = 3
                 ,
-            GIA_TRI_GD_THEO_MENH_GIA = 9
-                , NOI_CAP_CMT = 7
+            GIA_TRI_GD_THEO_MENH_GIA = 10
+                , NOI_CAP_CMT = 8
 
         }
         #endregion
@@ -402,6 +403,7 @@ namespace BondApp
                                                             , m_dat_to_date.Value);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
             m_fg.Redraw = true;
         }
         private void grid2us_object(US_V_GD_PHONG_GIAI_TOA i_us
