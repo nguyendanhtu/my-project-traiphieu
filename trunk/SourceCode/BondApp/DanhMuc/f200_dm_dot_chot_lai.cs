@@ -300,15 +300,16 @@ namespace BondApp
 		#region Data Structure
 		private enum e_col_Number
         {
-            ID_NGUOI_LAP = 3
-            ,NGAY_CHOT_LAI = 1
-            ,ID_TRAI_PHIEU = 6
-            ,GHI_CHU1 = 9
-            ,KY_TINH_LAI = 7
-            ,NGAY_THANH_TOAN = 2
-            ,ID_NGUOI_DUYET = 4
-            ,MUC_DICH = 8
-            ,TRANG_THAI = 5
+            STT = 1
+            ,ID_NGUOI_LAP = 4
+            ,NGAY_CHOT_LAI = 2
+            ,ID_TRAI_PHIEU = 7
+            ,GHI_CHU1 = 10
+            ,KY_TINH_LAI = 8
+            ,NGAY_THANH_TOAN = 3
+            ,ID_NGUOI_DUYET = 5
+            ,MUC_DICH = 9
+            ,TRANG_THAI = 6
 
 		}
         private enum e_edit_mode
@@ -360,6 +361,7 @@ namespace BondApp
             m_us_gd_chot_lai.FillDataset(m_ds);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
 			m_fg.Redraw = true;
 
             //Load ten nguoi dung
