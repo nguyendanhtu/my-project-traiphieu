@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f900_quan_ly_coupon));
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.m_txt_ngay_chot = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.m_txt_ky_tinh_lai = new System.Windows.Forms.TextBox();
             this.m_lbl_ky_tinh_lai = new System.Windows.Forms.Label();
@@ -67,8 +69,6 @@
             this.m_txt_search = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.m_cmd_filter = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.m_txt_ngay_chot = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -121,6 +121,25 @@
             this.groupBox2.TabIndex = 56;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin trái phiếu";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(319, 74);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.TabIndex = 66;
+            this.label6.Text = "Ngày chốt";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // m_txt_ngay_chot
+            // 
+            this.m_txt_ngay_chot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.m_txt_ngay_chot.Location = new System.Drawing.Point(381, 71);
+            this.m_txt_ngay_chot.Name = "m_txt_ngay_chot";
+            this.m_txt_ngay_chot.ReadOnly = true;
+            this.m_txt_ngay_chot.Size = new System.Drawing.Size(130, 20);
+            this.m_txt_ngay_chot.TabIndex = 67;
             // 
             // label4
             // 
@@ -501,25 +520,6 @@
             this.m_cmd_filter.TabIndex = 29;
             this.m_cmd_filter.Text = "     Xem";
             this.m_cmd_filter.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(319, 74);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 13);
-            this.label6.TabIndex = 66;
-            this.label6.Text = "Ngày chốt";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // m_txt_ngay_chot
-            // 
-            this.m_txt_ngay_chot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_txt_ngay_chot.Location = new System.Drawing.Point(381, 71);
-            this.m_txt_ngay_chot.Name = "m_txt_ngay_chot";
-            this.m_txt_ngay_chot.ReadOnly = true;
-            this.m_txt_ngay_chot.Size = new System.Drawing.Size(130, 20);
-            this.m_txt_ngay_chot.TabIndex = 67;
             // 
             // f900_quan_ly_coupon
             // 
