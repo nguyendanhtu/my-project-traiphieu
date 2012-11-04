@@ -43,32 +43,33 @@ namespace BondApp.ChucNang
 		#region Data Structure
         private enum e_col_Number
         {
-            CMT_GIAY_DKKD = 6
+            STT = 1,
+            CMT_GIAY_DKKD = 7
 ,
-            TEN_TRAI_CHU = 2
+            TEN_TRAI_CHU = 3
                 ,
-            ID_LOAI_TRAI_CHU = 11
+            ID_LOAI_TRAI_CHU = 12
                 ,
-            NGAY_CAP_CMT = 7
+            NGAY_CAP_CMT = 8
                 ,
-            ID_TRANG_THAI = 14
+            ID_TRANG_THAI = 15
                 ,
-            SO_DU_KHA_DUNG = 4
+            SO_DU_KHA_DUNG = 5
                 ,
-            MA_TRAI_CHU = 1
+            MA_TRAI_CHU = 2
                 ,
-            SO_TAI_KHOAN = 12
+            SO_TAI_KHOAN = 13
                 ,
-            DIA_CHI = 9
+            DIA_CHI = 10
                 ,
-            MO_TAI_NGAN_HANG = 13
+            MO_TAI_NGAN_HANG = 14
                 ,
-            ID_TRAI_PHIEU = 3
+            ID_TRAI_PHIEU = 4
                 ,
-            MOBILE = 10
+            MOBILE = 11
                 ,
-            SO_TIEN_LAI = 5
-                , NOI_CAP_CMT = 8
+            SO_TIEN_LAI = 6
+                , NOI_CAP_CMT = 9
 
         }	
         private enum e_Mod
@@ -169,6 +170,7 @@ namespace BondApp.ChucNang
             }
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
             m_fg.Redraw = true;
 
             //Load loai trai chu
