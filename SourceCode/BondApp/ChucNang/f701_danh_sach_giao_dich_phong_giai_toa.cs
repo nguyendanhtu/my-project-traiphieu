@@ -365,42 +365,43 @@ namespace BondApp
         #region Data Structure
         private enum e_col_Number
         {
-            PHONG_TOA_YN = 19
+            STT = 1,
+            PHONG_TOA_YN = 20
 ,
-            ID_NGUOI_LAP = 16
+            ID_NGUOI_LAP = 17
                 ,
-            NGUOI_XAC_NHAN = 11
+            NGUOI_XAC_NHAN = 12
                 ,
-            SO_LUONG = 2
+            SO_LUONG = 3
                 ,
-            CHUC_DANH = 5
+            CHUC_DANH = 6
                 ,
-            GIAY_UQ = 13
+            GIAY_UQ = 14
                 ,
-            NGAY_CAP_GIAY_UQ = 15
+            NGAY_CAP_GIAY_UQ = 16
                 ,
-            CUA = 14
+            CUA = 15
                 ,
-            NGAN_HANG_CAM_CO = 9
+            NGAN_HANG_CAM_CO = 10
                 ,
-            ID_TRAI_CHU = 1
+            ID_TRAI_CHU = 2
                 ,
-            ID_TRANG_THAI = 18
+            ID_TRANG_THAI = 19
                 ,
-            ID_NGUOI_DUYET = 17
+            ID_NGUOI_DUYET = 18
                 ,
-            NGAY_GIAO_DICH = 3
+            NGAY_GIAO_DICH = 4
                 ,
-            CHUC_VU = 12
+            CHUC_VU = 13
                 ,
-            KHOAN_DAU_TU = 10
+            KHOAN_DAU_TU = 11
                 ,
-            NDD_DIEN_THOAI = 7
+            NDD_DIEN_THOAI = 8
                 ,
-            NGUOI_DAI_DIEN = 4
+            NGUOI_DAI_DIEN = 5
                 ,
-            NDD_TRU_SO = 6
-                , NDD_FAX = 8
+            NDD_TRU_SO = 7
+                , NDD_FAX = 9
 
         }
         private enum e_form_mode
