@@ -371,6 +371,7 @@ namespace BondApp.ChucNang
             else
             {
                 us_gd_cap_nhat_ls_2_from();
+                m_date_ngay_cap_nhat.Value = DateTime.Today;
                 an_hien_button_theo_chuc_nang(eFormMode.CAP_NHAT_LAI_SUAT);
             }
         }
@@ -385,6 +386,7 @@ namespace BondApp.ChucNang
             else
             {
                 us_gd_cap_nhat_ls_2_from();
+                m_date_ngay_duyet.Value = DateTime.Today;
                 an_hien_button_theo_chuc_nang(eFormMode.DUYET_LAI_SUAT);
             }
         }
