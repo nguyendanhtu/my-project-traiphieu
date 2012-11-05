@@ -161,6 +161,7 @@ namespace BondApp.ChucNang
         {
             m_ds_gd_lich_tt_lai_goc = new DS_GD_LICH_THANH_TOAN_LAI_GOC();
             m_us_gd_lich_tt_lai_goc.FillDatasetLichSUuLaiSuatThoaThuanByIDTraiPhieu(m_ds_gd_lich_tt_lai_goc, m_us_v_trai_phieu.dcID);
+            if(m_ds_gd_lich_tt_lai_goc.GD_LICH_THANH_TOAN_LAI_GOC == null || m_ds_gd_lich_tt_lai_goc.GD_LICH_THANH_TOAN_LAI_GOC.Count == 0) return;
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds_gd_lich_tt_lai_goc, m_fg, m_obj_trans);
             CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
@@ -471,8 +472,7 @@ namespace BondApp.ChucNang
         #region Events
         private void set_define_events()
         {
-            this.Load += new EventHandler(f310_cap_nhat_lai_suat_Load);
-            m_cmd_chon_trai_phieu.Click += new EventHandler(m_cmd_chon_trai_phieu_Click);
+            this.Load += new EventHandler(f310_cap_nhat_lai_suat_Load);           
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_lap.Click += new EventHandler(m_cmd_lap_gd_Click);
             m_cmd_sua.Click += new EventHandler(m_cmd_sua_Click);
@@ -617,20 +617,6 @@ namespace BondApp.ChucNang
             }
         }
 
-        void m_cmd_chon_trai_phieu_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                select_trai_phieu();
-                load_data_2_grid();
-            }
-            catch (Exception v_e)
-            {
-
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
         void f310_cap_nhat_lai_suat_Load(object sender, EventArgs e)
         {
             try
@@ -645,5 +631,19 @@ namespace BondApp.ChucNang
             }
         }
         #endregion
+
+        private void m_cmd_chon_trai_phieu_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                select_trai_phieu();
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
     }
 }
