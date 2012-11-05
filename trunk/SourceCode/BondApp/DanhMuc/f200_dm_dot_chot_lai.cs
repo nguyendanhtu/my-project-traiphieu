@@ -304,11 +304,12 @@ namespace BondApp
             ,ID_NGUOI_LAP = 4
             ,NGAY_CHOT_LAI = 2
             ,ID_TRAI_PHIEU = 7
-            ,GHI_CHU1 = 10
-            ,KY_TINH_LAI = 8
+            ,GHI_CHU1 = 11
+            ,NGAY_DAU_KY = 8
+            ,NGAY_CUOI_KY = 9
             ,NGAY_THANH_TOAN = 3
             ,ID_NGUOI_DUYET = 5
-            ,MUC_DICH = 9
+            ,MUC_DICH = 10
             ,TRANG_THAI = 6
 
 		}
@@ -347,7 +348,8 @@ namespace BondApp
 			v_htb.Add(GD_CHOT_LAI.NGAY_CHOT_LAI, e_col_Number.NGAY_CHOT_LAI);
 			v_htb.Add(GD_CHOT_LAI.ID_TRAI_PHIEU, e_col_Number.ID_TRAI_PHIEU);
 			v_htb.Add(GD_CHOT_LAI.GHI_CHU1, e_col_Number.GHI_CHU1);
-			v_htb.Add(GD_CHOT_LAI.KY_TINH_LAI, e_col_Number.KY_TINH_LAI);
+			v_htb.Add(GD_CHOT_LAI.NGAY_DAU_KY, e_col_Number.NGAY_DAU_KY);
+            v_htb.Add(GD_CHOT_LAI.NGAY_CUOI_KY, e_col_Number.NGAY_CUOI_KY);
 			v_htb.Add(GD_CHOT_LAI.NGAY_THANH_TOAN, e_col_Number.NGAY_THANH_TOAN);
 			v_htb.Add(GD_CHOT_LAI.ID_NGUOI_DUYET, e_col_Number.ID_NGUOI_DUYET);
 			v_htb.Add(GD_CHOT_LAI.MUC_DICH, e_col_Number.MUC_DICH);
