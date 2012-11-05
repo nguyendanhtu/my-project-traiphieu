@@ -633,9 +633,7 @@ namespace BondApp
             if (!CValidateTextBox.IsValid(m_txt_ma_trai_phieu, DataType.StringType, allowNull.NO, true))
             { return false; }
             if (!CValidateTextBox.IsValid(m_txt_muc_dich, DataType.StringType, allowNull.YES, true))
-            { return false; }
-            if (!CValidateTextBox.IsValid(m_txt_ky_tinh_lai, DataType.NumberType, allowNull.NO, true))
-            { return false; }
+            { return false; }            
             if (!CValidateTextBox.IsValid(m_txt_ghi_chu, DataType.StringType, allowNull.YES, true))
             { return false; }
             if (m_us_v_dm_trai_phieu.IsIDNull())
