@@ -236,6 +236,7 @@
             this.m_cmd_chon_trai_phieu.TabIndex = 2;
             this.m_cmd_chon_trai_phieu.Text = "...";
             this.m_cmd_chon_trai_phieu.UseVisualStyleBackColor = true;
+            this.m_cmd_chon_trai_phieu.Click += new System.EventHandler(this.m_cmd_chon_trai_phieu_Click_1);
             // 
             // m_txt_ten_trai_phieu
             // 
@@ -540,7 +541,6 @@
             // 
             this.m_date_ket_thuc_ap_dung_ls.Checked = false;
             this.m_date_ket_thuc_ap_dung_ls.CustomFormat = "dd/MM/yyyy";
-            this.m_date_ket_thuc_ap_dung_ls.Enabled = false;
             this.m_date_ket_thuc_ap_dung_ls.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_date_ket_thuc_ap_dung_ls.Location = new System.Drawing.Point(569, 16);
             this.m_date_ket_thuc_ap_dung_ls.Name = "m_date_ket_thuc_ap_dung_ls";
@@ -551,7 +551,6 @@
             // 
             this.m_date_ngay_bat_dau_ap_dung_ls.Checked = false;
             this.m_date_ngay_bat_dau_ap_dung_ls.CustomFormat = "dd/MM/yyyy";
-            this.m_date_ngay_bat_dau_ap_dung_ls.Enabled = false;
             this.m_date_ngay_bat_dau_ap_dung_ls.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_date_ngay_bat_dau_ap_dung_ls.Location = new System.Drawing.Point(366, 16);
             this.m_date_ngay_bat_dau_ap_dung_ls.Name = "m_date_ngay_bat_dau_ap_dung_ls";
