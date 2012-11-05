@@ -80,14 +80,13 @@ namespace BondApp.ChucNang
         private void format_controls()
         {
             CControlFormat.setFormStyle(this);
-            CControlFormat.setC1FlexFormat(m_fg);
-            CGridUtils.AddSave_Excel_Handlers(m_fg);
-            CGridUtils.AddSearch_Handlers(m_fg);
+            CControlFormat.setC1FlexFormat(m_fg1);            
+            CGridUtils.AddSave_Excel_Handlers(m_fg1);
+            CGridUtils.AddSearch_Handlers(m_fg1);
             this.KeyPreview = true;
             m_lbl_title.Font = new Font("Arial", 16);
             m_lbl_title.ForeColor = Color.DarkRed;
             m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
-            set_define_events();
         }
         private void set_inital_form_load(eFormMode ip_e_form_mode)
         {
@@ -101,8 +100,8 @@ namespace BondApp.ChucNang
                     m_cmd_chon_duyet.Visible = true;
                     m_cmd_lap.Visible = true;
                     m_cmd_sua.Visible = false;
-                    m_cmd_delete.Visible = true;
-                    m_chb_xac_nhan.Visible = false;
+                    m_cmd_duyet_gd.Visible = false;
+                    m_cmd_delete.Visible = true;                    
                     m_gru_thong_tin_trai_phieu.Enabled = true;
                     m_gru_thong_tin_cap_nhat.Enabled = true;
                     break;
@@ -110,7 +109,7 @@ namespace BondApp.ChucNang
                     m_cmd_lap.Visible = false;
                     m_cmd_sua.Visible = true;
                     m_cmd_delete.Visible = false;
-                    m_chb_xac_nhan.Visible = false;
+                    m_cmd_duyet_gd.Visible = false;                   
                     m_gru_thong_tin_trai_phieu.Enabled = false;
                     m_gru_thong_tin_cap_nhat.Enabled = true;
                     break;
@@ -118,14 +117,14 @@ namespace BondApp.ChucNang
                     m_cmd_lap.Visible = false;
                     m_cmd_delete.Visible = false;
                     m_cmd_sua.Visible = false;
-                    m_chb_xac_nhan.Visible = false;
+                    m_cmd_duyet_gd.Visible = false;                    
                     m_gru_thong_tin_trai_phieu.Enabled = false;
                     m_gru_thong_tin_cap_nhat.Enabled = false;
                     break;
                 case eFormMode.DUYET_LAI_SUAT:
-                    m_cmd_lap.Visible = false;
-                    m_chb_xac_nhan.Visible = true;
+                    m_cmd_lap.Visible = false;                    
                     m_cmd_delete.Visible = false;
+                    m_cmd_duyet_gd.Visible = true;
                     m_cmd_sua.Visible = false;
                     m_gru_thong_tin_trai_phieu.Enabled = false;
                     m_gru_thong_tin_cap_nhat.Enabled = true;
@@ -152,7 +151,7 @@ namespace BondApp.ChucNang
         private US_GD_LICH_THANH_TOAN_LAI_GOC grid2us_object(int i_grid_row)
         {
             DataRow v_dr;
-            v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
+            v_dr = (DataRow)m_fg1.Rows[i_grid_row].UserData;
             decimal v_id = CIPConvert.ToDecimal(v_dr[0]);
             US_GD_LICH_THANH_TOAN_LAI_GOC v_us = new US_GD_LICH_THANH_TOAN_LAI_GOC(v_id);
             return v_us;
@@ -161,17 +160,18 @@ namespace BondApp.ChucNang
         {
             m_ds_gd_lich_tt_lai_goc = new DS_GD_LICH_THANH_TOAN_LAI_GOC();
             m_us_gd_lich_tt_lai_goc.FillDatasetLichSUuLaiSuatThoaThuanByIDTraiPhieu(m_ds_gd_lich_tt_lai_goc, m_us_v_trai_phieu.dcID);
-            if(m_ds_gd_lich_tt_lai_goc.GD_LICH_THANH_TOAN_LAI_GOC == null || m_ds_gd_lich_tt_lai_goc.GD_LICH_THANH_TOAN_LAI_GOC.Count == 0) return;
-            m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds_gd_lich_tt_lai_goc, m_fg, m_obj_trans);
-            CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
-            m_fg.Redraw = true;
+            //if(m_ds_gd_lich_tt_lai_goc.GD_LICH_THANH_TOAN_LAI_GOC == null || m_ds_gd_lich_tt_lai_goc.GD_LICH_THANH_TOAN_LAI_GOC.Count == 0) return;
+            m_fg1.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds_gd_lich_tt_lai_goc, m_fg1, m_obj_trans);
+            CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg1);
+            m_fg1.Redraw = true;
         }
 
         private void select_trai_phieu()
         {
             f300_dm_trai_phieu v_frm300 = new f300_dm_trai_phieu();
             m_us_v_trai_phieu = v_frm300.select_trai_phieu();
+            if (m_us_v_trai_phieu == null) return;
             if (!m_us_v_trai_phieu.IsIDNull())
                 us_trai_phieu_2_form();
         }
@@ -199,7 +199,7 @@ namespace BondApp.ChucNang
 
 
                 m_txt_ky_han.Text = CIPConvert.ToStr(m_us_v_trai_phieu.dcKY_HAN) + " " + CIPConvert.ToStr(v_us_cm_dm_tu_dien.strTEN);
-                m_txt_lai_suat.Text = CIPConvert.ToStr(m_us_v_trai_phieu.dcLAI_SUAT_DEFAULT, "#,##0.00");
+                m_txt_lai_suat.Text = CIPConvert.ToStr(m_us_v_trai_phieu.dcLAI_SUAT_DEFAULT, "P");
             }
         }
 
@@ -215,8 +215,7 @@ namespace BondApp.ChucNang
             m_us_gd_cap_nhat_ls.strDA_THUC_HIEN_YN = "Y";
             m_us_gd_cap_nhat_ls.strCHOT_LAI_YN = "N";
             m_us_gd_cap_nhat_ls.strTHANH_TOAN_GOC_YN = "N";
-            m_us_gd_cap_nhat_ls.strTHANH_TOAN_LAI_YN = "N";
-            m_us_gd_cap_nhat_ls.SetNGAY_KET_THUC_AD_LSNull();
+            m_us_gd_cap_nhat_ls.strTHANH_TOAN_LAI_YN = "N";            
             m_us_gd_cap_nhat_ls.strLAI_SUAT_THOA_THUAN_YN = "Y";
             if (m_e_form_mode == eFormMode.CAP_NHAT_LAI_SUAT)
             {
@@ -374,9 +373,9 @@ namespace BondApp.ChucNang
 
         private void view_v_gd_cap_nhat_ls()
         {
-            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            m_us_gd_cap_nhat_ls = grid2us_object(m_fg.Row);
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg1)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg1, m_fg1.Row)) return;
+            m_us_gd_cap_nhat_ls = grid2us_object(m_fg1.Row);
             if (m_us_gd_cap_nhat_ls.strDA_THUC_HIEN_YN.Equals("N"))
                 set_inital_form_load(eFormMode.CAP_NHAT_LAI_SUAT);
             else
@@ -391,18 +390,18 @@ namespace BondApp.ChucNang
 
         private void xoa_gd_cap_nhat_ls_thoa_thuan()
         {
-            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            m_us_gd_cap_nhat_ls = grid2us_object(m_fg.Row);
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg1)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg1, m_fg1.Row)) return;
+            m_us_gd_cap_nhat_ls = grid2us_object(m_fg1.Row);
             if (MessageBox.Show("Việc xóa giao dịch cập nhật này sẽ gây ảnh hướng đến lịch sử trả lãi suất.", "Bạn có chắc chắn muốn xóa?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
                 m_us_gd_cap_nhat_ls.Delete();
         }
 
         private void lua_chon_cap_nhan_lai_suat()
         {
-            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            m_us_gd_cap_nhat_ls = grid2us_object(m_fg.Row);
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg1)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg1, m_fg1.Row)) return;
+            m_us_gd_cap_nhat_ls = grid2us_object(m_fg1.Row);
             if (m_us_gd_cap_nhat_ls.strDA_DUYET_YN.Equals("Y"))
                 MessageBox.Show("Đợt cập nhật lãi suất này đã được duyệt, bạn không được phép sửa");
             else
@@ -414,9 +413,9 @@ namespace BondApp.ChucNang
 
         private void lua_chon_duyet_lai_suat()
         {
-            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            m_us_gd_cap_nhat_ls = grid2us_object(m_fg.Row);
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg1)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg1, m_fg1.Row)) return;
+            m_us_gd_cap_nhat_ls = grid2us_object(m_fg1.Row);
             if (m_us_gd_cap_nhat_ls.strDA_DUYET_YN.Equals("Y"))
                 MessageBox.Show("Xập nhật lãi suất này chưa được duyệt, bạn không cần duyệt lại");
             else
@@ -428,9 +427,9 @@ namespace BondApp.ChucNang
 
         private void cell_changed()
         {
-            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            m_us_gd_cap_nhat_ls = grid2us_object(m_fg.Row);
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg1)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg1, m_fg1.Row)) return;
+            m_us_gd_cap_nhat_ls = grid2us_object(m_fg1.Row);
             if (m_us_gd_cap_nhat_ls.strDA_THUC_HIEN_YN.Equals("Y"))
                 m_cmd_duyet_gd.Enabled = false;
             else
@@ -470,22 +469,151 @@ namespace BondApp.ChucNang
         #endregion
 
         #region Events
-        private void set_define_events()
+        private void m_cmd_chon_trai_phieu_Click_1(object sender, EventArgs e)
         {
-            this.Load += new EventHandler(f310_cap_nhat_lai_suat_Load);           
-            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-            m_cmd_lap.Click += new EventHandler(m_cmd_lap_gd_Click);
-            m_cmd_sua.Click += new EventHandler(m_cmd_sua_Click);
-            m_cmd_duyet_gd.Click += new EventHandler(m_cmd_duyet_gd_Click);
-            m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-            m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
-            m_cmd_reset.Click += new EventHandler(m_cmd_reset_Click);
-            m_cmd_chon_sua.Click += new EventHandler(m_cmd_chon_cap_nhat_Click);
-            m_cmd_chon_duyet.Click += new EventHandler(m_cmd_chon_duyet_Click);
-            this.KeyDown += new KeyEventHandler(f320_cap_nhat_lai_suat_thoa_thuan_KeyDown);
+            try
+            {
+                select_trai_phieu();
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
-        void f320_cap_nhat_lai_suat_thoa_thuan_KeyDown(object sender, KeyEventArgs e)
+        private void f320_cap_nhat_lai_suat_thoa_thuan_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                set_inital_form_load(eFormMode.LAP_GD_CAP_NHAP);
+                m_obj_trans = get_trans_object(m_fg1);
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_reset_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                resetcontrl2();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_chon_duyet_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                lua_chon_duyet_lai_suat();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_chon_sua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lua_chon_cap_nhan_lai_suat();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_duyet_gd_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                duyet_gd_cap_nhat_ls();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_sua_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                sua_cap_nhan_lai_suat();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_lap_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Lap_cap_nhat_ls();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_delete_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                xoa_gd_cap_nhat_ls_thoa_thuan();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_cmd_exit_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void m_fg_DoubleClick_1(object sender, EventArgs e)
+        {
+            try
+            {
+                view_v_gd_cap_nhat_ls();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void f320_cap_nhat_lai_suat_thoa_thuan_KeyDown_1(object sender, KeyEventArgs e)
         {
             try
             {
@@ -501,149 +629,6 @@ namespace BondApp.ChucNang
             }
         }
 
-        void m_cmd_delete_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                xoa_gd_cap_nhat_ls_thoa_thuan();
-            }
-            catch (Exception v_e)
-            {
-                
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        void m_cmd_sua_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                sua_cap_nhan_lai_suat();
-            }
-            catch (Exception v_e)
-            {
-
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        void m_cmd_chon_duyet_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                lua_chon_duyet_lai_suat();
-            }
-            catch (Exception v_e)
-            {
-
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        void m_cmd_chon_cap_nhat_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                lua_chon_cap_nhan_lai_suat();
-            }
-            catch (Exception v_e)
-            {
-
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        void m_cmd_reset_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                resetcontrl2();
-            }
-            catch (Exception v_e)
-            {
-
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        void m_fg_DoubleClick(object sender, EventArgs e)
-        {
-            try
-            {
-                view_v_gd_cap_nhat_ls();
-            }
-            catch (Exception v_e)
-            {
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        void m_cmd_duyet_gd_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                duyet_gd_cap_nhat_ls();
-            }
-            catch (Exception v_e)
-            {
-
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        void m_cmd_lap_gd_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Lap_cap_nhat_ls();
-            }
-            catch (Exception v_e)
-            {
-
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        void m_cmd_exit_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.Close();
-            }
-            catch (Exception v_e)
-            {
-
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
-
-        void f310_cap_nhat_lai_suat_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                set_inital_form_load(eFormMode.LAP_GD_CAP_NHAP);
-                m_obj_trans = get_trans_object(m_fg);
-            }
-            catch (Exception v_e)
-            {
-
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
         #endregion
-
-        private void m_cmd_chon_trai_phieu_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                select_trai_phieu();
-                load_data_2_grid();
-            }
-            catch (Exception v_e)
-            {
-
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
     }
 }

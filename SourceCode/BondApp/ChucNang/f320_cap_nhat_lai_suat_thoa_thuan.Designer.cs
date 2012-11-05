@@ -43,7 +43,7 @@
             this.m_txt_ngay_phat_hanh = new System.Windows.Forms.TextBox();
             this.m_txt_ngay_dao_han = new System.Windows.Forms.TextBox();
             this.m_txt_menh_gia = new System.Windows.Forms.TextBox();
-            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_fg1 = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_cmd_chon_trai_phieu = new System.Windows.Forms.Button();
             this.m_txt_ten_trai_phieu = new System.Windows.Forms.TextBox();
             this.m_txt_ma_trai_phieu = new System.Windows.Forms.TextBox();
@@ -80,7 +80,7 @@
             this.m_txt_ghi_chu = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg1)).BeginInit();
             this.m_gru_thong_tin_trai_phieu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.m_gru_thong_tin_cap_nhat.SuspendLayout();
@@ -217,16 +217,17 @@
             this.m_txt_menh_gia.TabStop = false;
             this.m_txt_menh_gia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // m_fg
+            // m_fg1
             // 
-            this.m_fg.AutoResize = false;
-            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 304);
-            this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(734, 222);
-            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 11;
+            this.m_fg1.AutoResize = false;
+            this.m_fg1.ColumnInfo = resources.GetString("m_fg1.ColumnInfo");
+            this.m_fg1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.m_fg1.Location = new System.Drawing.Point(0, 304);
+            this.m_fg1.Name = "m_fg1";
+            this.m_fg1.Size = new System.Drawing.Size(734, 222);
+            this.m_fg1.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg1.Styles"));
+            this.m_fg1.TabIndex = 11;
+            this.m_fg1.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick_1);
             // 
             // m_cmd_chon_trai_phieu
             // 
@@ -323,6 +324,7 @@
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 28;
             this.m_cmd_exit.Text = "Thoát (Esc)";
+            this.m_cmd_exit.Click += new System.EventHandler(this.m_cmd_exit_Click_1);
             // 
             // panel1
             // 
@@ -354,6 +356,7 @@
             this.m_cmd_reset.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_reset.TabIndex = 50;
             this.m_cmd_reset.Text = "&Chọn lại";
+            this.m_cmd_reset.Click += new System.EventHandler(this.m_cmd_reset_Click_1);
             // 
             // m_cmd_chon_duyet
             // 
@@ -368,6 +371,7 @@
             this.m_cmd_chon_duyet.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_chon_duyet.TabIndex = 49;
             this.m_cmd_chon_duyet.Text = "&Duyệt";
+            this.m_cmd_chon_duyet.Click += new System.EventHandler(this.m_cmd_chon_duyet_Click_1);
             // 
             // m_cmd_chon_sua
             // 
@@ -383,6 +387,7 @@
             this.m_cmd_chon_sua.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_chon_sua.TabIndex = 48;
             this.m_cmd_chon_sua.Text = "&Sửa";
+            this.m_cmd_chon_sua.Click += new System.EventHandler(this.m_cmd_chon_sua_Click);
             // 
             // m_cmd_duyet_gd
             // 
@@ -399,6 +404,7 @@
             this.m_cmd_duyet_gd.TabIndex = 47;
             this.m_cmd_duyet_gd.Text = "&Duyệt";
             this.m_cmd_duyet_gd.Visible = false;
+            this.m_cmd_duyet_gd.Click += new System.EventHandler(this.m_cmd_duyet_gd_Click_1);
             // 
             // m_cmd_sua
             // 
@@ -415,6 +421,7 @@
             this.m_cmd_sua.TabIndex = 46;
             this.m_cmd_sua.Text = "&Sửa";
             this.m_cmd_sua.Visible = false;
+            this.m_cmd_sua.Click += new System.EventHandler(this.m_cmd_sua_Click_1);
             // 
             // m_cmd_lap
             // 
@@ -430,6 +437,7 @@
             this.m_cmd_lap.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_lap.TabIndex = 45;
             this.m_cmd_lap.Text = "&Lập";
+            this.m_cmd_lap.Click += new System.EventHandler(this.m_cmd_lap_Click);
             // 
             // m_cmd_delete
             // 
@@ -445,6 +453,7 @@
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 44;
             this.m_cmd_delete.Text = "&Xoá";
+            this.m_cmd_delete.Click += new System.EventHandler(this.m_cmd_delete_Click_1);
             // 
             // m_lbl_title
             // 
@@ -688,13 +697,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 562);
             this.Controls.Add(this.m_gru_thong_tin_cap_nhat);
-            this.Controls.Add(this.m_fg);
+            this.Controls.Add(this.m_fg1);
             this.Controls.Add(this.m_gru_thong_tin_trai_phieu);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_lbl_title);
             this.Name = "f320_cap_nhat_lai_suat_thoa_thuan";
             this.Text = "F320-Cap nhat lai suat thoa thuan";
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
+            this.Load += new System.EventHandler(this.f320_cap_nhat_lai_suat_thoa_thuan_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.f320_cap_nhat_lai_suat_thoa_thuan_KeyDown_1);
+            ((System.ComponentModel.ISupportInitialize)(this.m_fg1)).EndInit();
             this.m_gru_thong_tin_trai_phieu.ResumeLayout(false);
             this.m_gru_thong_tin_trai_phieu.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -719,7 +730,7 @@
         private System.Windows.Forms.TextBox m_txt_ngay_phat_hanh;
         private System.Windows.Forms.TextBox m_txt_ngay_dao_han;
         private System.Windows.Forms.TextBox m_txt_menh_gia;
-        private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
+        private C1.Win.C1FlexGrid.C1FlexGrid m_fg1;
         private System.Windows.Forms.Button m_cmd_chon_trai_phieu;
         private System.Windows.Forms.TextBox m_txt_ten_trai_phieu;
         private System.Windows.Forms.TextBox m_txt_ma_trai_phieu;
