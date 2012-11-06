@@ -340,9 +340,9 @@
             // 
             this.m_cbo_dv_dieu_chinh_ls.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_dv_dieu_chinh_ls.FormattingEnabled = true;
-            this.m_cbo_dv_dieu_chinh_ls.Location = new System.Drawing.Point(439, 19);
+            this.m_cbo_dv_dieu_chinh_ls.Location = new System.Drawing.Point(452, 19);
             this.m_cbo_dv_dieu_chinh_ls.Name = "m_cbo_dv_dieu_chinh_ls";
-            this.m_cbo_dv_dieu_chinh_ls.Size = new System.Drawing.Size(62, 21);
+            this.m_cbo_dv_dieu_chinh_ls.Size = new System.Drawing.Size(65, 21);
             this.m_cbo_dv_dieu_chinh_ls.TabIndex = 2;
             // 
             // m_lbl_ky_dieu_chinh_ls
@@ -358,7 +358,7 @@
             // 
             this.m_txt_ky_dieu_chinh_ls.Location = new System.Drawing.Point(381, 20);
             this.m_txt_ky_dieu_chinh_ls.Name = "m_txt_ky_dieu_chinh_ls";
-            this.m_txt_ky_dieu_chinh_ls.Size = new System.Drawing.Size(52, 20);
+            this.m_txt_ky_dieu_chinh_ls.Size = new System.Drawing.Size(58, 20);
             this.m_txt_ky_dieu_chinh_ls.TabIndex = 1;
             this.m_txt_ky_dieu_chinh_ls.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
