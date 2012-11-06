@@ -296,7 +296,7 @@ public class US_GD_CHOT_LAI : US_Object
 
     public void GenDSTraLai()
     {
-        CStoredProc v_pr_obj = new CStoredProc("pr_GD_CHOT_LAI_Sinh_Gd_Chot_Lai");
+        CStoredProc v_pr_obj = new CStoredProc("pr_GD_CHOT_LAI_Sinh_Gd_Chot_Lai_detail");
         v_pr_obj.addDecimalInputParam("@ID_GD_CHOT_LAI", this.dcID);
         v_pr_obj.ExecuteCommand(this);
     }
