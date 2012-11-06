@@ -741,6 +741,23 @@ namespace BondApp
             m_cmd_filter.Click += new EventHandler(m_cmd_filter_Click);
             //m_fg.Click += new EventHandler(m_fg_Click);
             m_cmd_duyet.Click += new EventHandler(m_cmd_duyet_Click);
+            this.KeyDown += new KeyEventHandler(f500_dm_trai_chu_KeyDown);
+        }
+
+        void f500_dm_trai_chu_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         #endregion

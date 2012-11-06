@@ -185,6 +185,7 @@ namespace BondApp
             this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_view.TabIndex = 21;
             this.m_cmd_view.Text = "Xem";
+            this.m_cmd_view.Visible = false;
             // 
             // m_cmd_delete
             // 
@@ -418,7 +419,24 @@ namespace BondApp
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            this.KeyDown += new KeyEventHandler(f400_dm_loai_trai_phieu_KeyDown);
 		}
+
+        void f400_dm_loai_trai_phieu_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 		#endregion
 
 //

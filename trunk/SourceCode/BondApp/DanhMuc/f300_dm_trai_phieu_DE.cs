@@ -387,6 +387,23 @@ namespace BondApp.DanhMuc
             m_cbo_don_vi_ky_han.LostFocus += new EventHandler(m_cbo_don_vi_ky_han_LostFocus);
             m_cbo_loai_trai_phieu.LostFocus += new EventHandler(m_cbo_loai_trai_phieu_LostFocus);
             m_txt_tong_sl.LostFocus += new EventHandler(m_txt_tong_sl_LostFocus);
+            this.KeyDown += new KeyEventHandler(f300_dm_trai_phieu_DE_KeyDown);
+        }
+
+        void f300_dm_trai_phieu_DE_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_txt_tong_sl_LostFocus(object sender, EventArgs e)
