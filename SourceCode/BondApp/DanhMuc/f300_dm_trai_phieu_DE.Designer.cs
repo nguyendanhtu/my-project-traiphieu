@@ -32,21 +32,55 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f300_dm_trai_phieu_DE));
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.m = new System.Windows.Forms.GroupBox();
+            this.m_gru_thong_tin_thanh_toan = new System.Windows.Forms.GroupBox();
+            this.m_cbo_tra_lai_sau = new System.Windows.Forms.ComboBox();
+            this.m_lbl_tra_lai_sau = new System.Windows.Forms.Label();
+            this.m_cbo_dv_tra_lai = new System.Windows.Forms.ComboBox();
+            this.m_txt_ky_tra_lai = new System.Windows.Forms.TextBox();
+            this.m_cbo_chuyen_nhuong_huong_theo = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.m_lbl_ky_tra_lai = new System.Windows.Forms.Label();
+            this.m_txt_tcph_chuyen_tien_trc = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.m_cbo_co_so_tinh_lai = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_gru_thong_tin_lai_suat = new System.Windows.Forms.GroupBox();
+            this.m_cbo_tha_noi = new System.Windows.Forms.ComboBox();
+            this.m_lbl_lai_suat_tha_noi = new System.Windows.Forms.Label();
+            this.m_txt_lai_suat = new System.Windows.Forms.TextBox();
+            this.m_lbl_lai_suat = new System.Windows.Forms.Label();
+            this.m_lbl_phan_tram = new System.Windows.Forms.Label();
+            this.m_cbo_dv_dieu_chinh_ls = new System.Windows.Forms.ComboBox();
+            this.m_lbl_ky_dieu_chinh_ls = new System.Windows.Forms.Label();
+            this.m_txt_ky_dieu_chinh_ls = new System.Windows.Forms.TextBox();
+            this.m_txt_bien_do_lai = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.m_gru_thong_tin_trai_phieu_chung = new System.Windows.Forms.GroupBox();
+            this.m_cbo_loai_trai_phieu = new System.Windows.Forms.ComboBox();
+            this.m_txt_tong_gia_tri = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.m_txt_tong_sl = new System.Windows.Forms.TextBox();
+            this.m_lbl_tong_sl = new System.Windows.Forms.Label();
+            this.m_lbl_loai_trai_phieu = new System.Windows.Forms.Label();
+            this.m_cbo_ngung_chuyen_nhuong_tu_ngay = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.m_dat_ngay_dao_han = new System.Windows.Forms.DateTimePicker();
+            this.m_lbl_ngay_dao_han = new System.Windows.Forms.Label();
+            this.m_cbo_don_vi_ky_han = new System.Windows.Forms.ComboBox();
+            this.m_txt_ky_han = new System.Windows.Forms.TextBox();
+            this.m_lbl_ky_han = new System.Windows.Forms.Label();
+            this.m_lbl_ma_trai_phieu = new System.Windows.Forms.Label();
+            this.m_txt_ma_trai_phieu = new System.Windows.Forms.TextBox();
+            this.m_lbl_ten_trai_phieu = new System.Windows.Forms.Label();
+            this.m_txt_ten_trai_phieu = new System.Windows.Forms.TextBox();
             this.m_gru_thong_tin_hop_dong_dang_ky_luu_ky_va_thanh_toan = new System.Windows.Forms.GroupBox();
             this.m_dat_ngay_ky_hd = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.m_txt_so_hd = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.m_cbo_chuyen_nhuong_huong_theo = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.m_txt_tcph_chuyen_tien_trc = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.m_txt_bien_do_lai = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.m_gru_thong_tin_trai_phieu = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -58,52 +92,18 @@
             this.m_cmd_chon_dot_phat_hanh = new System.Windows.Forms.Button();
             this.m_txt_ten_dv_phat_hanh = new System.Windows.Forms.TextBox();
             this.m_lbl_vnd = new System.Windows.Forms.Label();
-            this.m_lbl_phan_tram = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.m_cbo_dv_tra_lai = new System.Windows.Forms.ComboBox();
-            this.m_lbl_ky_tra_lai = new System.Windows.Forms.Label();
-            this.m_txt_ky_tra_lai = new System.Windows.Forms.TextBox();
-            this.m_cbo_tra_lai_sau = new System.Windows.Forms.ComboBox();
-            this.m_lbl_tra_lai_sau = new System.Windows.Forms.Label();
-            this.m_cbo_tha_noi = new System.Windows.Forms.ComboBox();
-            this.m_lbl_lai_suat_tha_noi = new System.Windows.Forms.Label();
-            this.m_cbo_dv_dieu_chinh_ls = new System.Windows.Forms.ComboBox();
-            this.m_txt_ky_dieu_chinh_ls = new System.Windows.Forms.TextBox();
-            this.m_lbl_ky_dieu_chinh_ls = new System.Windows.Forms.Label();
-            this.m_txt_lai_suat = new System.Windows.Forms.TextBox();
-            this.m_lbl_lai_suat = new System.Windows.Forms.Label();
+            this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat = new System.Windows.Forms.TextBox();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-            this.m_cbo_co_so_tinh_lai = new System.Windows.Forms.ComboBox();
-            this.m_gru_thong_tin_trai_phieu_chung = new System.Windows.Forms.GroupBox();
-            this.m_lbl_ma_trai_phieu = new System.Windows.Forms.Label();
-            this.m_txt_ma_trai_phieu = new System.Windows.Forms.TextBox();
-            this.m_lbl_ten_trai_phieu = new System.Windows.Forms.Label();
-            this.m_txt_ten_trai_phieu = new System.Windows.Forms.TextBox();
-            this.m_dat_ngay_dao_han = new System.Windows.Forms.DateTimePicker();
-            this.m_lbl_ngay_dao_han = new System.Windows.Forms.Label();
-            this.m_cbo_don_vi_ky_han = new System.Windows.Forms.ComboBox();
-            this.m_txt_ky_han = new System.Windows.Forms.TextBox();
-            this.m_lbl_ky_han = new System.Windows.Forms.Label();
-            this.m_cbo_ngung_chuyen_nhuong_tu_ngay = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.m_gru_thong_tin_lai_suat = new System.Windows.Forms.GroupBox();
-            this.m_gru_thong_tin_thanh_toan = new System.Windows.Forms.GroupBox();
-            this.m_cbo_loai_trai_phieu = new System.Windows.Forms.ComboBox();
-            this.m_txt_tong_gia_tri = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.m_txt_tong_sl = new System.Windows.Forms.TextBox();
-            this.m_lbl_tong_sl = new System.Windows.Forms.Label();
-            this.m_lbl_loai_trai_phieu = new System.Windows.Forms.Label();
             this.m.SuspendLayout();
+            this.m_gru_thong_tin_thanh_toan.SuspendLayout();
+            this.m_gru_thong_tin_lai_suat.SuspendLayout();
+            this.m_gru_thong_tin_trai_phieu_chung.SuspendLayout();
             this.m_gru_thong_tin_hop_dong_dang_ky_luu_ky_va_thanh_toan.SuspendLayout();
             this.m_gru_thong_tin_trai_phieu.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
-            this.m_gru_thong_tin_trai_phieu_chung.SuspendLayout();
-            this.m_gru_thong_tin_lai_suat.SuspendLayout();
-            this.m_gru_thong_tin_thanh_toan.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_lbl_title
@@ -134,6 +134,436 @@
             this.m.Size = new System.Drawing.Size(864, 588);
             this.m.TabIndex = 1;
             this.m.TabStop = false;
+            // 
+            // m_gru_thong_tin_thanh_toan
+            // 
+            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_cbo_tra_lai_sau);
+            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_lbl_tra_lai_sau);
+            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_cbo_dv_tra_lai);
+            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_txt_ky_tra_lai);
+            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_cbo_chuyen_nhuong_huong_theo);
+            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.label10);
+            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.label4);
+            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_lbl_ky_tra_lai);
+            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_txt_tcph_chuyen_tien_trc);
+            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.label7);
+            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_cbo_co_so_tinh_lai);
+            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.label1);
+            this.m_gru_thong_tin_thanh_toan.Location = new System.Drawing.Point(6, 420);
+            this.m_gru_thong_tin_thanh_toan.Name = "m_gru_thong_tin_thanh_toan";
+            this.m_gru_thong_tin_thanh_toan.Size = new System.Drawing.Size(858, 83);
+            this.m_gru_thong_tin_thanh_toan.TabIndex = 74;
+            this.m_gru_thong_tin_thanh_toan.TabStop = false;
+            this.m_gru_thong_tin_thanh_toan.Text = "Thông tin thanh toán";
+            // 
+            // m_cbo_tra_lai_sau
+            // 
+            this.m_cbo_tra_lai_sau.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_tra_lai_sau.FormattingEnabled = true;
+            this.m_cbo_tra_lai_sau.Items.AddRange(new object[] {
+            "Có",
+            "Không"});
+            this.m_cbo_tra_lai_sau.Location = new System.Drawing.Point(159, 23);
+            this.m_cbo_tra_lai_sau.Name = "m_cbo_tra_lai_sau";
+            this.m_cbo_tra_lai_sau.Size = new System.Drawing.Size(96, 21);
+            this.m_cbo_tra_lai_sau.TabIndex = 0;
+            // 
+            // m_lbl_tra_lai_sau
+            // 
+            this.m_lbl_tra_lai_sau.AutoSize = true;
+            this.m_lbl_tra_lai_sau.Location = new System.Drawing.Point(88, 31);
+            this.m_lbl_tra_lai_sau.Name = "m_lbl_tra_lai_sau";
+            this.m_lbl_tra_lai_sau.Size = new System.Drawing.Size(56, 13);
+            this.m_lbl_tra_lai_sau.TabIndex = 28;
+            this.m_lbl_tra_lai_sau.Text = "Trả lãi sau";
+            // 
+            // m_cbo_dv_tra_lai
+            // 
+            this.m_cbo_dv_tra_lai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_dv_tra_lai.FormattingEnabled = true;
+            this.m_cbo_dv_tra_lai.Location = new System.Drawing.Point(452, 23);
+            this.m_cbo_dv_tra_lai.Name = "m_cbo_dv_tra_lai";
+            this.m_cbo_dv_tra_lai.Size = new System.Drawing.Size(65, 21);
+            this.m_cbo_dv_tra_lai.TabIndex = 2;
+            // 
+            // m_txt_ky_tra_lai
+            // 
+            this.m_txt_ky_tra_lai.BackColor = System.Drawing.Color.White;
+            this.m_txt_ky_tra_lai.Location = new System.Drawing.Point(387, 24);
+            this.m_txt_ky_tra_lai.Name = "m_txt_ky_tra_lai";
+            this.m_txt_ky_tra_lai.Size = new System.Drawing.Size(52, 20);
+            this.m_txt_ky_tra_lai.TabIndex = 1;
+            this.m_txt_ky_tra_lai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // m_cbo_chuyen_nhuong_huong_theo
+            // 
+            this.m_cbo_chuyen_nhuong_huong_theo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_chuyen_nhuong_huong_theo.FormattingEnabled = true;
+            this.m_cbo_chuyen_nhuong_huong_theo.Items.AddRange(new object[] {
+            "Ngày chuyển nhượng",
+            "Trọn cả kỳ"});
+            this.m_cbo_chuyen_nhuong_huong_theo.Location = new System.Drawing.Point(159, 53);
+            this.m_cbo_chuyen_nhuong_huong_theo.Name = "m_cbo_chuyen_nhuong_huong_theo";
+            this.m_cbo_chuyen_nhuong_huong_theo.Size = new System.Drawing.Size(154, 21);
+            this.m_cbo_chuyen_nhuong_huong_theo.TabIndex = 4;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(5, 61);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(139, 13);
+            this.label10.TabIndex = 67;
+            this.label10.Text = "Chuyển nhượng hưởng theo";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(749, 61);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(30, 13);
+            this.label4.TabIndex = 62;
+            this.label4.Text = "ngày";
+            // 
+            // m_lbl_ky_tra_lai
+            // 
+            this.m_lbl_ky_tra_lai.AutoSize = true;
+            this.m_lbl_ky_tra_lai.Location = new System.Drawing.Point(334, 31);
+            this.m_lbl_ky_tra_lai.Name = "m_lbl_ky_tra_lai";
+            this.m_lbl_ky_tra_lai.Size = new System.Drawing.Size(47, 13);
+            this.m_lbl_ky_tra_lai.TabIndex = 30;
+            this.m_lbl_ky_tra_lai.Text = "Kỳ trả lãi";
+            // 
+            // m_txt_tcph_chuyen_tien_trc
+            // 
+            this.m_txt_tcph_chuyen_tien_trc.Location = new System.Drawing.Point(667, 54);
+            this.m_txt_tcph_chuyen_tien_trc.Name = "m_txt_tcph_chuyen_tien_trc";
+            this.m_txt_tcph_chuyen_tien_trc.Size = new System.Drawing.Size(73, 20);
+            this.m_txt_tcph_chuyen_tien_trc.TabIndex = 5;
+            this.m_txt_tcph_chuyen_tien_trc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(540, 61);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(121, 13);
+            this.label7.TabIndex = 61;
+            this.label7.Text = "TCPH chuyển tiền trước";
+            // 
+            // m_cbo_co_so_tinh_lai
+            // 
+            this.m_cbo_co_so_tinh_lai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_co_so_tinh_lai.FormattingEnabled = true;
+            this.m_cbo_co_so_tinh_lai.Location = new System.Drawing.Point(667, 23);
+            this.m_cbo_co_so_tinh_lai.Name = "m_cbo_co_so_tinh_lai";
+            this.m_cbo_co_so_tinh_lai.Size = new System.Drawing.Size(73, 21);
+            this.m_cbo_co_so_tinh_lai.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(555, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 13);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Phương thức tính lãi";
+            // 
+            // m_gru_thong_tin_lai_suat
+            // 
+            this.m_gru_thong_tin_lai_suat.Controls.Add(this.m_cbo_tha_noi);
+            this.m_gru_thong_tin_lai_suat.Controls.Add(this.m_lbl_lai_suat_tha_noi);
+            this.m_gru_thong_tin_lai_suat.Controls.Add(this.m_txt_lai_suat);
+            this.m_gru_thong_tin_lai_suat.Controls.Add(this.m_lbl_lai_suat);
+            this.m_gru_thong_tin_lai_suat.Controls.Add(this.m_lbl_phan_tram);
+            this.m_gru_thong_tin_lai_suat.Controls.Add(this.m_cbo_dv_dieu_chinh_ls);
+            this.m_gru_thong_tin_lai_suat.Controls.Add(this.m_lbl_ky_dieu_chinh_ls);
+            this.m_gru_thong_tin_lai_suat.Controls.Add(this.m_txt_ky_dieu_chinh_ls);
+            this.m_gru_thong_tin_lai_suat.Controls.Add(this.m_txt_bien_do_lai);
+            this.m_gru_thong_tin_lai_suat.Controls.Add(this.label2);
+            this.m_gru_thong_tin_lai_suat.Controls.Add(this.label3);
+            this.m_gru_thong_tin_lai_suat.Location = new System.Drawing.Point(6, 363);
+            this.m_gru_thong_tin_lai_suat.Name = "m_gru_thong_tin_lai_suat";
+            this.m_gru_thong_tin_lai_suat.Size = new System.Drawing.Size(855, 51);
+            this.m_gru_thong_tin_lai_suat.TabIndex = 73;
+            this.m_gru_thong_tin_lai_suat.TabStop = false;
+            this.m_gru_thong_tin_lai_suat.Text = "Thông tin lãi suất";
+            // 
+            // m_cbo_tha_noi
+            // 
+            this.m_cbo_tha_noi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_tha_noi.FormattingEnabled = true;
+            this.m_cbo_tha_noi.Items.AddRange(new object[] {
+            "Có",
+            "Không"});
+            this.m_cbo_tha_noi.Location = new System.Drawing.Point(159, 19);
+            this.m_cbo_tha_noi.Name = "m_cbo_tha_noi";
+            this.m_cbo_tha_noi.Size = new System.Drawing.Size(65, 21);
+            this.m_cbo_tha_noi.TabIndex = 0;
+            // 
+            // m_lbl_lai_suat_tha_noi
+            // 
+            this.m_lbl_lai_suat_tha_noi.AutoSize = true;
+            this.m_lbl_lai_suat_tha_noi.Location = new System.Drawing.Point(62, 27);
+            this.m_lbl_lai_suat_tha_noi.Name = "m_lbl_lai_suat_tha_noi";
+            this.m_lbl_lai_suat_tha_noi.Size = new System.Drawing.Size(79, 13);
+            this.m_lbl_lai_suat_tha_noi.TabIndex = 26;
+            this.m_lbl_lai_suat_tha_noi.Text = "Lãi suất thả nổi";
+            // 
+            // m_txt_lai_suat
+            // 
+            this.m_txt_lai_suat.Location = new System.Drawing.Point(595, 20);
+            this.m_txt_lai_suat.Name = "m_txt_lai_suat";
+            this.m_txt_lai_suat.Size = new System.Drawing.Size(52, 20);
+            this.m_txt_lai_suat.TabIndex = 3;
+            this.m_txt_lai_suat.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // m_lbl_lai_suat
+            // 
+            this.m_lbl_lai_suat.AutoSize = true;
+            this.m_lbl_lai_suat.Location = new System.Drawing.Point(547, 27);
+            this.m_lbl_lai_suat.Name = "m_lbl_lai_suat";
+            this.m_lbl_lai_suat.Size = new System.Drawing.Size(44, 13);
+            this.m_lbl_lai_suat.TabIndex = 22;
+            this.m_lbl_lai_suat.Text = "Lãi suất";
+            // 
+            // m_lbl_phan_tram
+            // 
+            this.m_lbl_phan_tram.AutoSize = true;
+            this.m_lbl_phan_tram.Location = new System.Drawing.Point(652, 27);
+            this.m_lbl_phan_tram.Name = "m_lbl_phan_tram";
+            this.m_lbl_phan_tram.Size = new System.Drawing.Size(15, 13);
+            this.m_lbl_phan_tram.TabIndex = 37;
+            this.m_lbl_phan_tram.Text = "%";
+            // 
+            // m_cbo_dv_dieu_chinh_ls
+            // 
+            this.m_cbo_dv_dieu_chinh_ls.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_dv_dieu_chinh_ls.FormattingEnabled = true;
+            this.m_cbo_dv_dieu_chinh_ls.Location = new System.Drawing.Point(439, 19);
+            this.m_cbo_dv_dieu_chinh_ls.Name = "m_cbo_dv_dieu_chinh_ls";
+            this.m_cbo_dv_dieu_chinh_ls.Size = new System.Drawing.Size(62, 21);
+            this.m_cbo_dv_dieu_chinh_ls.TabIndex = 2;
+            // 
+            // m_lbl_ky_dieu_chinh_ls
+            // 
+            this.m_lbl_ky_dieu_chinh_ls.AutoSize = true;
+            this.m_lbl_ky_dieu_chinh_ls.Location = new System.Drawing.Point(255, 27);
+            this.m_lbl_ky_dieu_chinh_ls.Name = "m_lbl_ky_dieu_chinh_ls";
+            this.m_lbl_ky_dieu_chinh_ls.Size = new System.Drawing.Size(108, 13);
+            this.m_lbl_ky_dieu_chinh_ls.TabIndex = 33;
+            this.m_lbl_ky_dieu_chinh_ls.Text = "Kỳ điều chỉnh lãi suất";
+            // 
+            // m_txt_ky_dieu_chinh_ls
+            // 
+            this.m_txt_ky_dieu_chinh_ls.Location = new System.Drawing.Point(381, 20);
+            this.m_txt_ky_dieu_chinh_ls.Name = "m_txt_ky_dieu_chinh_ls";
+            this.m_txt_ky_dieu_chinh_ls.Size = new System.Drawing.Size(52, 20);
+            this.m_txt_ky_dieu_chinh_ls.TabIndex = 1;
+            this.m_txt_ky_dieu_chinh_ls.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // m_txt_bien_do_lai
+            // 
+            this.m_txt_bien_do_lai.Location = new System.Drawing.Point(763, 20);
+            this.m_txt_bien_do_lai.Name = "m_txt_bien_do_lai";
+            this.m_txt_bien_do_lai.Size = new System.Drawing.Size(52, 20);
+            this.m_txt_bien_do_lai.TabIndex = 4;
+            this.m_txt_bien_do_lai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(683, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 13);
+            this.label2.TabIndex = 58;
+            this.label2.Text = "Biên độ lãi suất";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(816, 27);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(15, 13);
+            this.label3.TabIndex = 59;
+            this.label3.Text = "%";
+            // 
+            // m_gru_thong_tin_trai_phieu_chung
+            // 
+            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_cbo_loai_trai_phieu);
+            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_txt_tong_gia_tri);
+            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.label14);
+            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_txt_tong_sl);
+            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_lbl_tong_sl);
+            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_lbl_loai_trai_phieu);
+            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_cbo_ngung_chuyen_nhuong_tu_ngay);
+            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.label9);
+            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_dat_ngay_dao_han);
+            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_lbl_ngay_dao_han);
+            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_cbo_don_vi_ky_han);
+            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_txt_ky_han);
+            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_lbl_ky_han);
+            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_lbl_ma_trai_phieu);
+            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_txt_ma_trai_phieu);
+            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_lbl_ten_trai_phieu);
+            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_txt_ten_trai_phieu);
+            this.m_gru_thong_tin_trai_phieu_chung.Location = new System.Drawing.Point(3, 195);
+            this.m_gru_thong_tin_trai_phieu_chung.Name = "m_gru_thong_tin_trai_phieu_chung";
+            this.m_gru_thong_tin_trai_phieu_chung.Size = new System.Drawing.Size(864, 155);
+            this.m_gru_thong_tin_trai_phieu_chung.TabIndex = 71;
+            this.m_gru_thong_tin_trai_phieu_chung.TabStop = false;
+            this.m_gru_thong_tin_trai_phieu_chung.Text = "Thông tin trái phiếu chung";
+            // 
+            // m_cbo_loai_trai_phieu
+            // 
+            this.m_cbo_loai_trai_phieu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_loai_trai_phieu.FormattingEnabled = true;
+            this.m_cbo_loai_trai_phieu.Location = new System.Drawing.Point(162, 61);
+            this.m_cbo_loai_trai_phieu.Name = "m_cbo_loai_trai_phieu";
+            this.m_cbo_loai_trai_phieu.Size = new System.Drawing.Size(120, 21);
+            this.m_cbo_loai_trai_phieu.TabIndex = 2;
+            // 
+            // m_txt_tong_gia_tri
+            // 
+            this.m_txt_tong_gia_tri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.m_txt_tong_gia_tri.Location = new System.Drawing.Point(716, 62);
+            this.m_txt_tong_gia_tri.Name = "m_txt_tong_gia_tri";
+            this.m_txt_tong_gia_tri.ReadOnly = true;
+            this.m_txt_tong_gia_tri.Size = new System.Drawing.Size(120, 20);
+            this.m_txt_tong_gia_tri.TabIndex = 71;
+            this.m_txt_tong_gia_tri.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(640, 69);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(60, 13);
+            this.label14.TabIndex = 72;
+            this.label14.Text = "Tổng giá trị";
+            // 
+            // m_txt_tong_sl
+            // 
+            this.m_txt_tong_sl.Location = new System.Drawing.Point(494, 62);
+            this.m_txt_tong_sl.Name = "m_txt_tong_sl";
+            this.m_txt_tong_sl.Size = new System.Drawing.Size(120, 20);
+            this.m_txt_tong_sl.TabIndex = 3;
+            this.m_txt_tong_sl.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // m_lbl_tong_sl
+            // 
+            this.m_lbl_tong_sl.AutoSize = true;
+            this.m_lbl_tong_sl.Location = new System.Drawing.Point(401, 69);
+            this.m_lbl_tong_sl.Name = "m_lbl_tong_sl";
+            this.m_lbl_tong_sl.Size = new System.Drawing.Size(75, 13);
+            this.m_lbl_tong_sl.TabIndex = 73;
+            this.m_lbl_tong_sl.Text = "Tổng số lượng";
+            // 
+            // m_lbl_loai_trai_phieu
+            // 
+            this.m_lbl_loai_trai_phieu.AutoSize = true;
+            this.m_lbl_loai_trai_phieu.Location = new System.Drawing.Point(71, 69);
+            this.m_lbl_loai_trai_phieu.Name = "m_lbl_loai_trai_phieu";
+            this.m_lbl_loai_trai_phieu.Size = new System.Drawing.Size(73, 13);
+            this.m_lbl_loai_trai_phieu.TabIndex = 69;
+            this.m_lbl_loai_trai_phieu.Text = "Loại trái phiếu";
+            // 
+            // m_cbo_ngung_chuyen_nhuong_tu_ngay
+            // 
+            this.m_cbo_ngung_chuyen_nhuong_tu_ngay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_ngung_chuyen_nhuong_tu_ngay.FormattingEnabled = true;
+            this.m_cbo_ngung_chuyen_nhuong_tu_ngay.Items.AddRange(new object[] {
+            "Trong ngày chốt",
+            "Từ ngày chốt đến ngày thanh toán"});
+            this.m_cbo_ngung_chuyen_nhuong_tu_ngay.Location = new System.Drawing.Point(494, 127);
+            this.m_cbo_ngung_chuyen_nhuong_tu_ngay.Name = "m_cbo_ngung_chuyen_nhuong_tu_ngay";
+            this.m_cbo_ngung_chuyen_nhuong_tu_ngay.Size = new System.Drawing.Size(176, 21);
+            this.m_cbo_ngung_chuyen_nhuong_tu_ngay.TabIndex = 6;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(369, 135);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(116, 13);
+            this.label9.TabIndex = 67;
+            this.label9.Text = "Ngừng chuyển nhượng";
+            // 
+            // m_dat_ngay_dao_han
+            // 
+            this.m_dat_ngay_dao_han.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_dao_han.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_ngay_dao_han.Location = new System.Drawing.Point(494, 97);
+            this.m_dat_ngay_dao_han.Name = "m_dat_ngay_dao_han";
+            this.m_dat_ngay_dao_han.Size = new System.Drawing.Size(130, 20);
+            this.m_dat_ngay_dao_han.TabIndex = 5;
+            // 
+            // m_lbl_ngay_dao_han
+            // 
+            this.m_lbl_ngay_dao_han.AutoSize = true;
+            this.m_lbl_ngay_dao_han.Location = new System.Drawing.Point(401, 104);
+            this.m_lbl_ngay_dao_han.Name = "m_lbl_ngay_dao_han";
+            this.m_lbl_ngay_dao_han.Size = new System.Drawing.Size(75, 13);
+            this.m_lbl_ngay_dao_han.TabIndex = 18;
+            this.m_lbl_ngay_dao_han.Text = "Ngày đáo hạn";
+            // 
+            // m_cbo_don_vi_ky_han
+            // 
+            this.m_cbo_don_vi_ky_han.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_don_vi_ky_han.FormattingEnabled = true;
+            this.m_cbo_don_vi_ky_han.Location = new System.Drawing.Point(227, 96);
+            this.m_cbo_don_vi_ky_han.Name = "m_cbo_don_vi_ky_han";
+            this.m_cbo_don_vi_ky_han.Size = new System.Drawing.Size(55, 21);
+            this.m_cbo_don_vi_ky_han.TabIndex = 4;
+            // 
+            // m_txt_ky_han
+            // 
+            this.m_txt_ky_han.Location = new System.Drawing.Point(162, 97);
+            this.m_txt_ky_han.Name = "m_txt_ky_han";
+            this.m_txt_ky_han.Size = new System.Drawing.Size(52, 20);
+            this.m_txt_ky_han.TabIndex = 15;
+            this.m_txt_ky_han.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // m_lbl_ky_han
+            // 
+            this.m_lbl_ky_han.AutoSize = true;
+            this.m_lbl_ky_han.Location = new System.Drawing.Point(89, 104);
+            this.m_lbl_ky_han.Name = "m_lbl_ky_han";
+            this.m_lbl_ky_han.Size = new System.Drawing.Size(40, 13);
+            this.m_lbl_ky_han.TabIndex = 19;
+            this.m_lbl_ky_han.Text = "Kỳ hạn";
+            // 
+            // m_lbl_ma_trai_phieu
+            // 
+            this.m_lbl_ma_trai_phieu.AutoSize = true;
+            this.m_lbl_ma_trai_phieu.Location = new System.Drawing.Point(79, 27);
+            this.m_lbl_ma_trai_phieu.Name = "m_lbl_ma_trai_phieu";
+            this.m_lbl_ma_trai_phieu.Size = new System.Drawing.Size(68, 13);
+            this.m_lbl_ma_trai_phieu.TabIndex = 4;
+            this.m_lbl_ma_trai_phieu.Text = "Mã trái phiếu";
+            // 
+            // m_txt_ma_trai_phieu
+            // 
+            this.m_txt_ma_trai_phieu.Location = new System.Drawing.Point(162, 27);
+            this.m_txt_ma_trai_phieu.Name = "m_txt_ma_trai_phieu";
+            this.m_txt_ma_trai_phieu.Size = new System.Drawing.Size(120, 20);
+            this.m_txt_ma_trai_phieu.TabIndex = 0;
+            // 
+            // m_lbl_ten_trai_phieu
+            // 
+            this.m_lbl_ten_trai_phieu.AutoSize = true;
+            this.m_lbl_ten_trai_phieu.Location = new System.Drawing.Point(304, 30);
+            this.m_lbl_ten_trai_phieu.Name = "m_lbl_ten_trai_phieu";
+            this.m_lbl_ten_trai_phieu.Size = new System.Drawing.Size(72, 13);
+            this.m_lbl_ten_trai_phieu.TabIndex = 6;
+            this.m_lbl_ten_trai_phieu.Text = "Tên trái phiếu";
+            // 
+            // m_txt_ten_trai_phieu
+            // 
+            this.m_txt_ten_trai_phieu.Location = new System.Drawing.Point(387, 27);
+            this.m_txt_ten_trai_phieu.Name = "m_txt_ten_trai_phieu";
+            this.m_txt_ten_trai_phieu.Size = new System.Drawing.Size(447, 20);
+            this.m_txt_ten_trai_phieu.TabIndex = 1;
             // 
             // m_gru_thong_tin_hop_dong_dang_ky_luu_ky_va_thanh_toan
             // 
@@ -183,27 +613,6 @@
             this.label11.TabIndex = 6;
             this.label11.Text = "Ngày ký HĐ";
             // 
-            // m_cbo_chuyen_nhuong_huong_theo
-            // 
-            this.m_cbo_chuyen_nhuong_huong_theo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_chuyen_nhuong_huong_theo.FormattingEnabled = true;
-            this.m_cbo_chuyen_nhuong_huong_theo.Items.AddRange(new object[] {
-            "Ngày chuyển nhượng",
-            "Trọn cả kỳ"});
-            this.m_cbo_chuyen_nhuong_huong_theo.Location = new System.Drawing.Point(159, 53);
-            this.m_cbo_chuyen_nhuong_huong_theo.Name = "m_cbo_chuyen_nhuong_huong_theo";
-            this.m_cbo_chuyen_nhuong_huong_theo.Size = new System.Drawing.Size(154, 21);
-            this.m_cbo_chuyen_nhuong_huong_theo.TabIndex = 18;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(5, 61);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(139, 13);
-            this.label10.TabIndex = 67;
-            this.label10.Text = "Chuyển nhượng hưởng theo";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -212,65 +621,6 @@
             this.label8.Size = new System.Drawing.Size(202, 13);
             this.label8.TabIndex = 64;
             this.label8.Text = "Ghi chú về phương thức xác định lãi suất";
-            // 
-            // m_txt_ghi_chu_phuong_thuc_xd_lai_suat
-            // 
-            this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat.Location = new System.Drawing.Point(220, 509);
-            this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat.Name = "m_txt_ghi_chu_phuong_thuc_xd_lai_suat";
-            this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat.Size = new System.Drawing.Size(565, 20);
-            this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat.TabIndex = 19;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(749, 61);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 13);
-            this.label4.TabIndex = 62;
-            this.label4.Text = "ngày";
-            // 
-            // m_txt_tcph_chuyen_tien_trc
-            // 
-            this.m_txt_tcph_chuyen_tien_trc.Location = new System.Drawing.Point(667, 54);
-            this.m_txt_tcph_chuyen_tien_trc.Name = "m_txt_tcph_chuyen_tien_trc";
-            this.m_txt_tcph_chuyen_tien_trc.Size = new System.Drawing.Size(73, 20);
-            this.m_txt_tcph_chuyen_tien_trc.TabIndex = 16;
-            this.m_txt_tcph_chuyen_tien_trc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(540, 61);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(121, 13);
-            this.label7.TabIndex = 61;
-            this.label7.Text = "TCPH chuyển tiền trước";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(816, 27);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(15, 13);
-            this.label3.TabIndex = 59;
-            this.label3.Text = "%";
-            // 
-            // m_txt_bien_do_lai
-            // 
-            this.m_txt_bien_do_lai.Location = new System.Drawing.Point(763, 20);
-            this.m_txt_bien_do_lai.Name = "m_txt_bien_do_lai";
-            this.m_txt_bien_do_lai.Size = new System.Drawing.Size(52, 20);
-            this.m_txt_bien_do_lai.TabIndex = 15;
-            this.m_txt_bien_do_lai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(683, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 13);
-            this.label2.TabIndex = 58;
-            this.label2.Text = "Biên độ lãi suất";
             // 
             // m_gru_thong_tin_trai_phieu
             // 
@@ -367,7 +717,7 @@
             this.m_cmd_chon_dot_phat_hanh.Location = new System.Drawing.Point(630, 18);
             this.m_cmd_chon_dot_phat_hanh.Name = "m_cmd_chon_dot_phat_hanh";
             this.m_cmd_chon_dot_phat_hanh.Size = new System.Drawing.Size(27, 23);
-            this.m_cmd_chon_dot_phat_hanh.TabIndex = 1;
+            this.m_cmd_chon_dot_phat_hanh.TabIndex = 0;
             this.m_cmd_chon_dot_phat_hanh.Text = "...";
             this.m_cmd_chon_dot_phat_hanh.UseVisualStyleBackColor = true;
             // 
@@ -389,135 +739,12 @@
             this.m_lbl_vnd.TabIndex = 19;
             this.m_lbl_vnd.Text = "VNĐ";
             // 
-            // m_lbl_phan_tram
+            // m_txt_ghi_chu_phuong_thuc_xd_lai_suat
             // 
-            this.m_lbl_phan_tram.AutoSize = true;
-            this.m_lbl_phan_tram.Location = new System.Drawing.Point(652, 27);
-            this.m_lbl_phan_tram.Name = "m_lbl_phan_tram";
-            this.m_lbl_phan_tram.Size = new System.Drawing.Size(15, 13);
-            this.m_lbl_phan_tram.TabIndex = 37;
-            this.m_lbl_phan_tram.Text = "%";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(555, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 13);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Phương thức tính lãi";
-            // 
-            // m_cbo_dv_tra_lai
-            // 
-            this.m_cbo_dv_tra_lai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_dv_tra_lai.FormattingEnabled = true;
-            this.m_cbo_dv_tra_lai.Location = new System.Drawing.Point(452, 23);
-            this.m_cbo_dv_tra_lai.Name = "m_cbo_dv_tra_lai";
-            this.m_cbo_dv_tra_lai.Size = new System.Drawing.Size(65, 21);
-            this.m_cbo_dv_tra_lai.TabIndex = 9;
-            // 
-            // m_lbl_ky_tra_lai
-            // 
-            this.m_lbl_ky_tra_lai.AutoSize = true;
-            this.m_lbl_ky_tra_lai.Location = new System.Drawing.Point(334, 31);
-            this.m_lbl_ky_tra_lai.Name = "m_lbl_ky_tra_lai";
-            this.m_lbl_ky_tra_lai.Size = new System.Drawing.Size(47, 13);
-            this.m_lbl_ky_tra_lai.TabIndex = 30;
-            this.m_lbl_ky_tra_lai.Text = "Kỳ trả lãi";
-            // 
-            // m_txt_ky_tra_lai
-            // 
-            this.m_txt_ky_tra_lai.BackColor = System.Drawing.Color.White;
-            this.m_txt_ky_tra_lai.Location = new System.Drawing.Point(387, 24);
-            this.m_txt_ky_tra_lai.Name = "m_txt_ky_tra_lai";
-            this.m_txt_ky_tra_lai.Size = new System.Drawing.Size(52, 20);
-            this.m_txt_ky_tra_lai.TabIndex = 8;
-            this.m_txt_ky_tra_lai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // m_cbo_tra_lai_sau
-            // 
-            this.m_cbo_tra_lai_sau.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_tra_lai_sau.FormattingEnabled = true;
-            this.m_cbo_tra_lai_sau.Items.AddRange(new object[] {
-            "Có",
-            "Không"});
-            this.m_cbo_tra_lai_sau.Location = new System.Drawing.Point(159, 23);
-            this.m_cbo_tra_lai_sau.Name = "m_cbo_tra_lai_sau";
-            this.m_cbo_tra_lai_sau.Size = new System.Drawing.Size(96, 21);
-            this.m_cbo_tra_lai_sau.TabIndex = 14;
-            // 
-            // m_lbl_tra_lai_sau
-            // 
-            this.m_lbl_tra_lai_sau.AutoSize = true;
-            this.m_lbl_tra_lai_sau.Location = new System.Drawing.Point(88, 31);
-            this.m_lbl_tra_lai_sau.Name = "m_lbl_tra_lai_sau";
-            this.m_lbl_tra_lai_sau.Size = new System.Drawing.Size(56, 13);
-            this.m_lbl_tra_lai_sau.TabIndex = 28;
-            this.m_lbl_tra_lai_sau.Text = "Trả lãi sau";
-            // 
-            // m_cbo_tha_noi
-            // 
-            this.m_cbo_tha_noi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_tha_noi.FormattingEnabled = true;
-            this.m_cbo_tha_noi.Items.AddRange(new object[] {
-            "Có",
-            "Không"});
-            this.m_cbo_tha_noi.Location = new System.Drawing.Point(159, 19);
-            this.m_cbo_tha_noi.Name = "m_cbo_tha_noi";
-            this.m_cbo_tha_noi.Size = new System.Drawing.Size(65, 21);
-            this.m_cbo_tha_noi.TabIndex = 13;
-            // 
-            // m_lbl_lai_suat_tha_noi
-            // 
-            this.m_lbl_lai_suat_tha_noi.AutoSize = true;
-            this.m_lbl_lai_suat_tha_noi.Location = new System.Drawing.Point(62, 27);
-            this.m_lbl_lai_suat_tha_noi.Name = "m_lbl_lai_suat_tha_noi";
-            this.m_lbl_lai_suat_tha_noi.Size = new System.Drawing.Size(79, 13);
-            this.m_lbl_lai_suat_tha_noi.TabIndex = 26;
-            this.m_lbl_lai_suat_tha_noi.Text = "Lãi suất thả nổi";
-            // 
-            // m_cbo_dv_dieu_chinh_ls
-            // 
-            this.m_cbo_dv_dieu_chinh_ls.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_dv_dieu_chinh_ls.FormattingEnabled = true;
-            this.m_cbo_dv_dieu_chinh_ls.Location = new System.Drawing.Point(439, 19);
-            this.m_cbo_dv_dieu_chinh_ls.Name = "m_cbo_dv_dieu_chinh_ls";
-            this.m_cbo_dv_dieu_chinh_ls.Size = new System.Drawing.Size(62, 21);
-            this.m_cbo_dv_dieu_chinh_ls.TabIndex = 11;
-            // 
-            // m_txt_ky_dieu_chinh_ls
-            // 
-            this.m_txt_ky_dieu_chinh_ls.Location = new System.Drawing.Point(381, 20);
-            this.m_txt_ky_dieu_chinh_ls.Name = "m_txt_ky_dieu_chinh_ls";
-            this.m_txt_ky_dieu_chinh_ls.Size = new System.Drawing.Size(52, 20);
-            this.m_txt_ky_dieu_chinh_ls.TabIndex = 10;
-            this.m_txt_ky_dieu_chinh_ls.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // m_lbl_ky_dieu_chinh_ls
-            // 
-            this.m_lbl_ky_dieu_chinh_ls.AutoSize = true;
-            this.m_lbl_ky_dieu_chinh_ls.Location = new System.Drawing.Point(255, 27);
-            this.m_lbl_ky_dieu_chinh_ls.Name = "m_lbl_ky_dieu_chinh_ls";
-            this.m_lbl_ky_dieu_chinh_ls.Size = new System.Drawing.Size(108, 13);
-            this.m_lbl_ky_dieu_chinh_ls.TabIndex = 33;
-            this.m_lbl_ky_dieu_chinh_ls.Text = "Kỳ điều chỉnh lãi suất";
-            // 
-            // m_txt_lai_suat
-            // 
-            this.m_txt_lai_suat.Location = new System.Drawing.Point(595, 20);
-            this.m_txt_lai_suat.Name = "m_txt_lai_suat";
-            this.m_txt_lai_suat.Size = new System.Drawing.Size(52, 20);
-            this.m_txt_lai_suat.TabIndex = 7;
-            this.m_txt_lai_suat.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // m_lbl_lai_suat
-            // 
-            this.m_lbl_lai_suat.AutoSize = true;
-            this.m_lbl_lai_suat.Location = new System.Drawing.Point(547, 27);
-            this.m_lbl_lai_suat.Name = "m_lbl_lai_suat";
-            this.m_lbl_lai_suat.Size = new System.Drawing.Size(44, 13);
-            this.m_lbl_lai_suat.TabIndex = 22;
-            this.m_lbl_lai_suat.Text = "Lãi suất";
+            this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat.Location = new System.Drawing.Point(220, 509);
+            this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat.Name = "m_txt_ghi_chu_phuong_thuc_xd_lai_suat";
+            this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat.Size = new System.Drawing.Size(565, 20);
+            this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat.TabIndex = 0;
             // 
             // m_pnl_out_place_dm
             // 
@@ -587,233 +814,6 @@
             this.m_cmd_exit.TabIndex = 1;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
-            // m_cbo_co_so_tinh_lai
-            // 
-            this.m_cbo_co_so_tinh_lai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_co_so_tinh_lai.FormattingEnabled = true;
-            this.m_cbo_co_so_tinh_lai.Location = new System.Drawing.Point(667, 23);
-            this.m_cbo_co_so_tinh_lai.Name = "m_cbo_co_so_tinh_lai";
-            this.m_cbo_co_so_tinh_lai.Size = new System.Drawing.Size(73, 21);
-            this.m_cbo_co_so_tinh_lai.TabIndex = 12;
-            // 
-            // m_gru_thong_tin_trai_phieu_chung
-            // 
-            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_cbo_loai_trai_phieu);
-            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_txt_tong_gia_tri);
-            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.label14);
-            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_txt_tong_sl);
-            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_lbl_tong_sl);
-            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_lbl_loai_trai_phieu);
-            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_cbo_ngung_chuyen_nhuong_tu_ngay);
-            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.label9);
-            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_dat_ngay_dao_han);
-            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_lbl_ngay_dao_han);
-            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_cbo_don_vi_ky_han);
-            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_txt_ky_han);
-            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_lbl_ky_han);
-            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_lbl_ma_trai_phieu);
-            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_txt_ma_trai_phieu);
-            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_lbl_ten_trai_phieu);
-            this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_txt_ten_trai_phieu);
-            this.m_gru_thong_tin_trai_phieu_chung.Location = new System.Drawing.Point(3, 195);
-            this.m_gru_thong_tin_trai_phieu_chung.Name = "m_gru_thong_tin_trai_phieu_chung";
-            this.m_gru_thong_tin_trai_phieu_chung.Size = new System.Drawing.Size(864, 155);
-            this.m_gru_thong_tin_trai_phieu_chung.TabIndex = 71;
-            this.m_gru_thong_tin_trai_phieu_chung.TabStop = false;
-            this.m_gru_thong_tin_trai_phieu_chung.Text = "Thông tin trái phiếu chung";
-            // 
-            // m_lbl_ma_trai_phieu
-            // 
-            this.m_lbl_ma_trai_phieu.AutoSize = true;
-            this.m_lbl_ma_trai_phieu.Location = new System.Drawing.Point(79, 27);
-            this.m_lbl_ma_trai_phieu.Name = "m_lbl_ma_trai_phieu";
-            this.m_lbl_ma_trai_phieu.Size = new System.Drawing.Size(68, 13);
-            this.m_lbl_ma_trai_phieu.TabIndex = 4;
-            this.m_lbl_ma_trai_phieu.Text = "Mã trái phiếu";
-            // 
-            // m_txt_ma_trai_phieu
-            // 
-            this.m_txt_ma_trai_phieu.Location = new System.Drawing.Point(162, 27);
-            this.m_txt_ma_trai_phieu.Name = "m_txt_ma_trai_phieu";
-            this.m_txt_ma_trai_phieu.Size = new System.Drawing.Size(120, 20);
-            this.m_txt_ma_trai_phieu.TabIndex = 3;
-            // 
-            // m_lbl_ten_trai_phieu
-            // 
-            this.m_lbl_ten_trai_phieu.AutoSize = true;
-            this.m_lbl_ten_trai_phieu.Location = new System.Drawing.Point(304, 30);
-            this.m_lbl_ten_trai_phieu.Name = "m_lbl_ten_trai_phieu";
-            this.m_lbl_ten_trai_phieu.Size = new System.Drawing.Size(72, 13);
-            this.m_lbl_ten_trai_phieu.TabIndex = 6;
-            this.m_lbl_ten_trai_phieu.Text = "Tên trái phiếu";
-            // 
-            // m_txt_ten_trai_phieu
-            // 
-            this.m_txt_ten_trai_phieu.Location = new System.Drawing.Point(387, 27);
-            this.m_txt_ten_trai_phieu.Name = "m_txt_ten_trai_phieu";
-            this.m_txt_ten_trai_phieu.Size = new System.Drawing.Size(447, 20);
-            this.m_txt_ten_trai_phieu.TabIndex = 5;
-            // 
-            // m_dat_ngay_dao_han
-            // 
-            this.m_dat_ngay_dao_han.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_ngay_dao_han.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_dao_han.Location = new System.Drawing.Point(494, 97);
-            this.m_dat_ngay_dao_han.Name = "m_dat_ngay_dao_han";
-            this.m_dat_ngay_dao_han.Size = new System.Drawing.Size(130, 20);
-            this.m_dat_ngay_dao_han.TabIndex = 17;
-            // 
-            // m_lbl_ngay_dao_han
-            // 
-            this.m_lbl_ngay_dao_han.AutoSize = true;
-            this.m_lbl_ngay_dao_han.Location = new System.Drawing.Point(401, 104);
-            this.m_lbl_ngay_dao_han.Name = "m_lbl_ngay_dao_han";
-            this.m_lbl_ngay_dao_han.Size = new System.Drawing.Size(75, 13);
-            this.m_lbl_ngay_dao_han.TabIndex = 18;
-            this.m_lbl_ngay_dao_han.Text = "Ngày đáo hạn";
-            // 
-            // m_cbo_don_vi_ky_han
-            // 
-            this.m_cbo_don_vi_ky_han.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_don_vi_ky_han.FormattingEnabled = true;
-            this.m_cbo_don_vi_ky_han.Location = new System.Drawing.Point(227, 96);
-            this.m_cbo_don_vi_ky_han.Name = "m_cbo_don_vi_ky_han";
-            this.m_cbo_don_vi_ky_han.Size = new System.Drawing.Size(55, 21);
-            this.m_cbo_don_vi_ky_han.TabIndex = 16;
-            // 
-            // m_txt_ky_han
-            // 
-            this.m_txt_ky_han.Location = new System.Drawing.Point(162, 97);
-            this.m_txt_ky_han.Name = "m_txt_ky_han";
-            this.m_txt_ky_han.Size = new System.Drawing.Size(52, 20);
-            this.m_txt_ky_han.TabIndex = 15;
-            this.m_txt_ky_han.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // m_lbl_ky_han
-            // 
-            this.m_lbl_ky_han.AutoSize = true;
-            this.m_lbl_ky_han.Location = new System.Drawing.Point(89, 104);
-            this.m_lbl_ky_han.Name = "m_lbl_ky_han";
-            this.m_lbl_ky_han.Size = new System.Drawing.Size(40, 13);
-            this.m_lbl_ky_han.TabIndex = 19;
-            this.m_lbl_ky_han.Text = "Kỳ hạn";
-            // 
-            // m_cbo_ngung_chuyen_nhuong_tu_ngay
-            // 
-            this.m_cbo_ngung_chuyen_nhuong_tu_ngay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_ngung_chuyen_nhuong_tu_ngay.FormattingEnabled = true;
-            this.m_cbo_ngung_chuyen_nhuong_tu_ngay.Items.AddRange(new object[] {
-            "Trong ngày chốt",
-            "Từ ngày chốt đến ngày thanh toán"});
-            this.m_cbo_ngung_chuyen_nhuong_tu_ngay.Location = new System.Drawing.Point(494, 127);
-            this.m_cbo_ngung_chuyen_nhuong_tu_ngay.Name = "m_cbo_ngung_chuyen_nhuong_tu_ngay";
-            this.m_cbo_ngung_chuyen_nhuong_tu_ngay.Size = new System.Drawing.Size(176, 21);
-            this.m_cbo_ngung_chuyen_nhuong_tu_ngay.TabIndex = 66;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(369, 135);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(116, 13);
-            this.label9.TabIndex = 67;
-            this.label9.Text = "Ngừng chuyển nhượng";
-            // 
-            // m_gru_thong_tin_lai_suat
-            // 
-            this.m_gru_thong_tin_lai_suat.Controls.Add(this.m_cbo_tha_noi);
-            this.m_gru_thong_tin_lai_suat.Controls.Add(this.m_lbl_lai_suat_tha_noi);
-            this.m_gru_thong_tin_lai_suat.Controls.Add(this.m_txt_lai_suat);
-            this.m_gru_thong_tin_lai_suat.Controls.Add(this.m_lbl_lai_suat);
-            this.m_gru_thong_tin_lai_suat.Controls.Add(this.m_lbl_phan_tram);
-            this.m_gru_thong_tin_lai_suat.Controls.Add(this.m_cbo_dv_dieu_chinh_ls);
-            this.m_gru_thong_tin_lai_suat.Controls.Add(this.m_lbl_ky_dieu_chinh_ls);
-            this.m_gru_thong_tin_lai_suat.Controls.Add(this.m_txt_ky_dieu_chinh_ls);
-            this.m_gru_thong_tin_lai_suat.Controls.Add(this.m_txt_bien_do_lai);
-            this.m_gru_thong_tin_lai_suat.Controls.Add(this.label2);
-            this.m_gru_thong_tin_lai_suat.Controls.Add(this.label3);
-            this.m_gru_thong_tin_lai_suat.Location = new System.Drawing.Point(6, 363);
-            this.m_gru_thong_tin_lai_suat.Name = "m_gru_thong_tin_lai_suat";
-            this.m_gru_thong_tin_lai_suat.Size = new System.Drawing.Size(855, 51);
-            this.m_gru_thong_tin_lai_suat.TabIndex = 73;
-            this.m_gru_thong_tin_lai_suat.TabStop = false;
-            this.m_gru_thong_tin_lai_suat.Text = "Thông tin lãi suất";
-            // 
-            // m_gru_thong_tin_thanh_toan
-            // 
-            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_cbo_tra_lai_sau);
-            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_lbl_tra_lai_sau);
-            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_cbo_dv_tra_lai);
-            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_txt_ky_tra_lai);
-            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_cbo_chuyen_nhuong_huong_theo);
-            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.label10);
-            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.label4);
-            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_lbl_ky_tra_lai);
-            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_txt_tcph_chuyen_tien_trc);
-            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.label7);
-            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_cbo_co_so_tinh_lai);
-            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.label1);
-            this.m_gru_thong_tin_thanh_toan.Location = new System.Drawing.Point(6, 420);
-            this.m_gru_thong_tin_thanh_toan.Name = "m_gru_thong_tin_thanh_toan";
-            this.m_gru_thong_tin_thanh_toan.Size = new System.Drawing.Size(858, 83);
-            this.m_gru_thong_tin_thanh_toan.TabIndex = 74;
-            this.m_gru_thong_tin_thanh_toan.TabStop = false;
-            this.m_gru_thong_tin_thanh_toan.Text = "Thông tin thanh toán";
-            // 
-            // m_cbo_loai_trai_phieu
-            // 
-            this.m_cbo_loai_trai_phieu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_loai_trai_phieu.FormattingEnabled = true;
-            this.m_cbo_loai_trai_phieu.Location = new System.Drawing.Point(162, 61);
-            this.m_cbo_loai_trai_phieu.Name = "m_cbo_loai_trai_phieu";
-            this.m_cbo_loai_trai_phieu.Size = new System.Drawing.Size(120, 21);
-            this.m_cbo_loai_trai_phieu.TabIndex = 68;
-            // 
-            // m_txt_tong_gia_tri
-            // 
-            this.m_txt_tong_gia_tri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_txt_tong_gia_tri.Location = new System.Drawing.Point(716, 62);
-            this.m_txt_tong_gia_tri.Name = "m_txt_tong_gia_tri";
-            this.m_txt_tong_gia_tri.ReadOnly = true;
-            this.m_txt_tong_gia_tri.Size = new System.Drawing.Size(120, 20);
-            this.m_txt_tong_gia_tri.TabIndex = 71;
-            this.m_txt_tong_gia_tri.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(640, 69);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(60, 13);
-            this.label14.TabIndex = 72;
-            this.label14.Text = "Tổng giá trị";
-            // 
-            // m_txt_tong_sl
-            // 
-            this.m_txt_tong_sl.Location = new System.Drawing.Point(494, 62);
-            this.m_txt_tong_sl.Name = "m_txt_tong_sl";
-            this.m_txt_tong_sl.Size = new System.Drawing.Size(120, 20);
-            this.m_txt_tong_sl.TabIndex = 70;
-            this.m_txt_tong_sl.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // m_lbl_tong_sl
-            // 
-            this.m_lbl_tong_sl.AutoSize = true;
-            this.m_lbl_tong_sl.Location = new System.Drawing.Point(401, 69);
-            this.m_lbl_tong_sl.Name = "m_lbl_tong_sl";
-            this.m_lbl_tong_sl.Size = new System.Drawing.Size(75, 13);
-            this.m_lbl_tong_sl.TabIndex = 73;
-            this.m_lbl_tong_sl.Text = "Tổng số lượng";
-            // 
-            // m_lbl_loai_trai_phieu
-            // 
-            this.m_lbl_loai_trai_phieu.AutoSize = true;
-            this.m_lbl_loai_trai_phieu.Location = new System.Drawing.Point(71, 69);
-            this.m_lbl_loai_trai_phieu.Name = "m_lbl_loai_trai_phieu";
-            this.m_lbl_loai_trai_phieu.Size = new System.Drawing.Size(73, 13);
-            this.m_lbl_loai_trai_phieu.TabIndex = 69;
-            this.m_lbl_loai_trai_phieu.Text = "Loại trái phiếu";
-            // 
             // f300_dm_trai_phieu_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -825,17 +825,17 @@
             this.Text = "F300 - Quản lý thông tin chi tiết trái phiếu";
             this.m.ResumeLayout(false);
             this.m.PerformLayout();
+            this.m_gru_thong_tin_thanh_toan.ResumeLayout(false);
+            this.m_gru_thong_tin_thanh_toan.PerformLayout();
+            this.m_gru_thong_tin_lai_suat.ResumeLayout(false);
+            this.m_gru_thong_tin_lai_suat.PerformLayout();
+            this.m_gru_thong_tin_trai_phieu_chung.ResumeLayout(false);
+            this.m_gru_thong_tin_trai_phieu_chung.PerformLayout();
             this.m_gru_thong_tin_hop_dong_dang_ky_luu_ky_va_thanh_toan.ResumeLayout(false);
             this.m_gru_thong_tin_hop_dong_dang_ky_luu_ky_va_thanh_toan.PerformLayout();
             this.m_gru_thong_tin_trai_phieu.ResumeLayout(false);
             this.m_gru_thong_tin_trai_phieu.PerformLayout();
             this.m_pnl_out_place_dm.ResumeLayout(false);
-            this.m_gru_thong_tin_trai_phieu_chung.ResumeLayout(false);
-            this.m_gru_thong_tin_trai_phieu_chung.PerformLayout();
-            this.m_gru_thong_tin_lai_suat.ResumeLayout(false);
-            this.m_gru_thong_tin_lai_suat.PerformLayout();
-            this.m_gru_thong_tin_thanh_toan.ResumeLayout(false);
-            this.m_gru_thong_tin_thanh_toan.PerformLayout();
             this.ResumeLayout(false);
 
         }
