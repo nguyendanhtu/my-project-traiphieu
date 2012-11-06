@@ -811,5 +811,17 @@ namespace BondDS.CDBNames
         public const string SEQ_NAME = "SEQ_NAME";
         public const string SEQ_VALUE = "SEQ_VALUE";
     }
-
+    public class V_HT_LOG_TRUY_CAP
+    {
+        public const string ID = "ID";
+        public const string ID_DANG_NHAP = "ID_DANG_NHAP";
+        public const string TEN_TRUY_CAP = "TEN_TRUY_CAP";
+        public const string TEN = "TEN";
+        public const string THOI_GIAN = "THOI_GIAN";
+        public const string ID_LOAI_HANH_DONG = "ID_LOAI_HANH_DONG";
+        public const string LOAI_HANH_DONG = "LOAI_HANH_DONG";
+        public const string DOI_TUONG_THAO_TAC = "DOI_TUONG_THAO_TAC";
+        public const string MO_TA = "MO_TA";
+        public const string GHI_CHU = "GHI_CHU";
+    }
 }
