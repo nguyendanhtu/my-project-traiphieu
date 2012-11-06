@@ -441,6 +441,23 @@ namespace BondApp.ChucNang
             m_cmd_hoan_tac.Click += new EventHandler(m_cmd_hoan_tac_Click);
             m_cbo_trang_thai.SelectedIndexChanged += new EventHandler(m_cbo_trang_thai_SelectedIndexChanged);
             m_cbo_ky_tinh_lai.SelectedIndexChanged += new EventHandler(m_cbo_ky_tinh_lai_SelectedIndexChanged);
+            this.KeyDown += new KeyEventHandler(f900_quan_ly_coupon_KeyDown);
+        }
+
+        void f900_quan_ly_coupon_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         #endregion
