@@ -239,6 +239,23 @@ namespace BondApp.DanhMuc
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_txt_menh_gia.TextChanged +=new EventHandler(m_txt_menh_gia_TextChanged);
             m_txt_tong_so_luong_tp.TextChanged += new EventHandler(m_txt_tong_so_luong_tp_TextChanged);
+            this.KeyDown += new KeyEventHandler(f151_dm_dot_phat_hanh_de_KeyDown);
+        }
+
+        void f151_dm_dot_phat_hanh_de_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
         private void m_txt_tong_so_luong_tp_TextChanged(object sender, EventArgs e)
         {

@@ -701,6 +701,23 @@ namespace BondApp
             m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
             m_fg.MouseClick += new MouseEventHandler(m_fg_MouseClick);
             m_cmd_lap_chuyen_nhuong.Click += new EventHandler(m_cmd_lap_chuyen_nhuong_Click);
+            this.KeyDown += new KeyEventHandler(f610_dm_giao_dien_chuyen_nhuong_KeyDown);
+        }
+
+        void f610_dm_giao_dien_chuyen_nhuong_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_lap_chuyen_nhuong_Click(object sender, EventArgs e)
