@@ -676,7 +676,21 @@ namespace SaleManagement
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_export_excel.Click += new EventHandler(m_cmd_export_excel_Click);
             m_cmd_chon_trai_phieu.Click += new EventHandler(m_cmd_chon_trai_phieu_Click);
+            this.KeyDown += new KeyEventHandler(f655_danh_sach_chot_lai_KeyDown);
 		}
+
+        void f655_danh_sach_chot_lai_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                    this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
 		#endregion
 

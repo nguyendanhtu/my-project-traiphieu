@@ -844,7 +844,21 @@ namespace BondApp
             m_cmd_export_excel.Click += new EventHandler(m_cmd_export_excel_Click);
             m_cmd_yeu_cau_ngan_hang_thanh_toan.Click += new EventHandler(m_cmd_yeu_cau_ngan_hang_thanh_toan_Click);
             m_cbo_ky_tinh_lai.SelectedIndexChanged += new EventHandler(m_cbo_ky_tinh_lai_SelectedIndexChanged);
+            this.KeyDown += new KeyEventHandler(f658_bao_cao_chot_danh_sach_nguoi_so_huu_trai_phieu_theo_yeu_cau_KeyDown);
 		}
+
+        void f658_bao_cao_chot_danh_sach_nguoi_so_huu_trai_phieu_theo_yeu_cau_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                    this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         #endregion
         //
 		//
