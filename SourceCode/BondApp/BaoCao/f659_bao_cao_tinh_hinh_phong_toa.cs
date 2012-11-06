@@ -472,6 +472,20 @@ namespace BondApp
             m_dat_from_date.ValueChanged += new EventHandler(m_dat_from_date_ValueChanged);
             m_dat_to_date.ValueChanged += new EventHandler(m_dat_to_date_ValueChanged);
             m_cbo_to_chuc_phat_hanh.SelectedIndexChanged += new EventHandler(m_cbo_to_chuc_phat_hanh_SelectedIndexChanged);
+            this.KeyDown += new KeyEventHandler(f659_bao_cao_tinh_hinh_phong_toa_KeyDown);
+        }
+
+        void f659_bao_cao_tinh_hinh_phong_toa_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                    this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
         private void load_data_2_cbo_to_chuc_phat_hanh()
         {

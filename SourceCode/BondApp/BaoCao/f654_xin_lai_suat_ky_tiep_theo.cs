@@ -225,6 +225,20 @@ namespace BondApp.BaoCao
             m_cmd_chon_trai_phieu.Click += new EventHandler(m_cmd_chon_trai_phieu_Click);
             m_cmd_export_excel.Click += new EventHandler(m_cmd_export_excel_Click);
             m_cbo_ky_tinh_lai.SelectedIndexChanged += new EventHandler(m_cbo_ky_tinh_lai_SelectedIndexChanged);
+            this.KeyDown += new KeyEventHandler(f654_xin_lai_suat_ky_tiep_theo_KeyDown);
+        }
+
+        void f654_xin_lai_suat_ky_tiep_theo_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                    this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
         #endregion
 

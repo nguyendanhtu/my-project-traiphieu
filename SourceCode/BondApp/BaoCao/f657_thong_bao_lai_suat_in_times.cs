@@ -516,6 +516,20 @@ namespace BondApp
             m_date_tu_ngay.ValueChanged += new EventHandler(m_date_tu_ngay_ValueChanged);
             m_date_den_ngay.ValueChanged += new EventHandler(m_date_den_ngay_ValueChanged);
             m_cmd_export_excel.Click += new EventHandler(m_cmd_export_excel_Click);
+            this.KeyDown += new KeyEventHandler(f657_thong_bao_lai_suat_in_times_KeyDown);
+        }
+
+        void f657_thong_bao_lai_suat_in_times_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                    this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_export_excel_Click(object sender, EventArgs e)
