@@ -296,7 +296,6 @@ namespace BondApp
             this.m_cmd_duyet.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_duyet.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_duyet.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_duyet.Enabled = false;
             this.m_cmd_duyet.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet.Image")));
             this.m_cmd_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_duyet.Location = new System.Drawing.Point(691, 4);
@@ -636,7 +635,7 @@ namespace BondApp
         //
         #region Events
         private void set_define_events()
-        {
+        {            
             m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
             m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
