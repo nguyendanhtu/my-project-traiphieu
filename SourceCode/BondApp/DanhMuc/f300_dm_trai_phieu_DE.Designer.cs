@@ -426,7 +426,7 @@
             // m_txt_tong_gia_tri
             // 
             this.m_txt_tong_gia_tri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_txt_tong_gia_tri.Location = new System.Drawing.Point(612, 63);
+            this.m_txt_tong_gia_tri.Location = new System.Drawing.Point(670, 63);
             this.m_txt_tong_gia_tri.Name = "m_txt_tong_gia_tri";
             this.m_txt_tong_gia_tri.ReadOnly = true;
             this.m_txt_tong_gia_tri.Size = new System.Drawing.Size(120, 20);
@@ -436,7 +436,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(536, 70);
+            this.label14.Location = new System.Drawing.Point(594, 70);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(60, 13);
             this.label14.TabIndex = 72;
@@ -446,7 +446,7 @@
             // 
             this.m_txt_tong_sl.Location = new System.Drawing.Point(387, 63);
             this.m_txt_tong_sl.Name = "m_txt_tong_sl";
-            this.m_txt_tong_sl.Size = new System.Drawing.Size(120, 20);
+            this.m_txt_tong_sl.Size = new System.Drawing.Size(130, 20);
             this.m_txt_tong_sl.TabIndex = 3;
             this.m_txt_tong_sl.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
