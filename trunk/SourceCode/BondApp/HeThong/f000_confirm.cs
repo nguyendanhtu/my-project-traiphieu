@@ -66,6 +66,23 @@ namespace BondApp.HeThong
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             this.Load += new EventHandler(f000_confirm_Load);
             m_txt_xac_nhan.KeyPress += new KeyPressEventHandler(m_txt_xac_nhan_KeyPress);
+            this.KeyDown += new KeyEventHandler(f000_confirm_KeyDown);
+        }
+
+        void f000_confirm_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_txt_xac_nhan_KeyPress(object sender, KeyPressEventArgs e)
