@@ -41,6 +41,8 @@
             this.m_txt_fax = new System.Windows.Forms.TextBox();
             this.m_lbl_fax = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_save = new SIS.Controls.Button.SiSButton();
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_cmd_print = new SIS.Controls.Button.SiSButton();
             this.m_cmd_duyet = new SIS.Controls.Button.SiSButton();
             this.m_cmd_lap = new SIS.Controls.Button.SiSButton();
@@ -104,8 +106,6 @@
             this.m_txt_nguoi_xac_nhan = new System.Windows.Forms.TextBox();
             this.m_lbl_chuc_vu = new System.Windows.Forms.Label();
             this.m_txt_chuc_vu = new System.Windows.Forms.TextBox();
-            this.m_cmd_save = new SIS.Controls.Button.SiSButton();
-            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -117,7 +117,7 @@
             this.m_txt_nguoi_dai_dien.Location = new System.Drawing.Point(146, 118);
             this.m_txt_nguoi_dai_dien.Name = "m_txt_nguoi_dai_dien";
             this.m_txt_nguoi_dai_dien.Size = new System.Drawing.Size(173, 20);
-            this.m_txt_nguoi_dai_dien.TabIndex = 16;
+            this.m_txt_nguoi_dai_dien.TabIndex = 3;
             // 
             // m_lbl_nguoi_dai_dien
             // 
@@ -133,7 +133,7 @@
             this.m_txt_chuc_danh.Location = new System.Drawing.Point(146, 144);
             this.m_txt_chuc_danh.Name = "m_txt_chuc_danh";
             this.m_txt_chuc_danh.Size = new System.Drawing.Size(173, 20);
-            this.m_txt_chuc_danh.TabIndex = 18;
+            this.m_txt_chuc_danh.TabIndex = 5;
             // 
             // m_lbl_chuc_danh
             // 
@@ -149,7 +149,7 @@
             this.m_txt_tru_so_chinh.Location = new System.Drawing.Point(422, 118);
             this.m_txt_tru_so_chinh.Name = "m_txt_tru_so_chinh";
             this.m_txt_tru_so_chinh.Size = new System.Drawing.Size(450, 20);
-            this.m_txt_tru_so_chinh.TabIndex = 20;
+            this.m_txt_tru_so_chinh.TabIndex = 4;
             // 
             // m_lbl_tru_so_chinh
             // 
@@ -165,7 +165,7 @@
             this.m_txt_dien_thoai.Location = new System.Drawing.Point(422, 144);
             this.m_txt_dien_thoai.Name = "m_txt_dien_thoai";
             this.m_txt_dien_thoai.Size = new System.Drawing.Size(140, 20);
-            this.m_txt_dien_thoai.TabIndex = 22;
+            this.m_txt_dien_thoai.TabIndex = 6;
             // 
             // m_lbl_dien_thoai
             // 
@@ -181,7 +181,7 @@
             this.m_txt_fax.Location = new System.Drawing.Point(714, 144);
             this.m_txt_fax.Name = "m_txt_fax";
             this.m_txt_fax.Size = new System.Drawing.Size(158, 20);
-            this.m_txt_fax.TabIndex = 24;
+            this.m_txt_fax.TabIndex = 7;
             // 
             // m_lbl_fax
             // 
@@ -206,6 +206,48 @@
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(886, 36);
             this.m_pnl_out_place_dm.TabIndex = 4;
             // 
+            // m_cmd_save
+            // 
+            this.m_cmd_save.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_save.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_save.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_save.ImageIndex = 10;
+            this.m_cmd_save.ImageList = this.ImageList;
+            this.m_cmd_save.Location = new System.Drawing.Point(530, 4);
+            this.m_cmd_save.Name = "m_cmd_save";
+            this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_save.TabIndex = 14;
+            this.m_cmd_save.Text = "&Lưu";
+            // 
+            // ImageList
+            // 
+            this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
+            this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.ImageList.Images.SetKeyName(0, "");
+            this.ImageList.Images.SetKeyName(1, "");
+            this.ImageList.Images.SetKeyName(2, "");
+            this.ImageList.Images.SetKeyName(3, "");
+            this.ImageList.Images.SetKeyName(4, "");
+            this.ImageList.Images.SetKeyName(5, "");
+            this.ImageList.Images.SetKeyName(6, "");
+            this.ImageList.Images.SetKeyName(7, "");
+            this.ImageList.Images.SetKeyName(8, "");
+            this.ImageList.Images.SetKeyName(9, "");
+            this.ImageList.Images.SetKeyName(10, "");
+            this.ImageList.Images.SetKeyName(11, "");
+            this.ImageList.Images.SetKeyName(12, "");
+            this.ImageList.Images.SetKeyName(13, "");
+            this.ImageList.Images.SetKeyName(14, "");
+            this.ImageList.Images.SetKeyName(15, "");
+            this.ImageList.Images.SetKeyName(16, "");
+            this.ImageList.Images.SetKeyName(17, "");
+            this.ImageList.Images.SetKeyName(18, "");
+            this.ImageList.Images.SetKeyName(19, "");
+            this.ImageList.Images.SetKeyName(20, "");
+            this.ImageList.Images.SetKeyName(21, "");
+            // 
             // m_cmd_print
             // 
             this.m_cmd_print.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -217,7 +259,7 @@
             this.m_cmd_print.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_print.Name = "m_cmd_print";
             this.m_cmd_print.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_print.TabIndex = 0;
+            this.m_cmd_print.TabIndex = 18;
             this.m_cmd_print.Text = "&In";
             // 
             // m_cmd_duyet
@@ -232,7 +274,7 @@
             this.m_cmd_duyet.Location = new System.Drawing.Point(618, 4);
             this.m_cmd_duyet.Name = "m_cmd_duyet";
             this.m_cmd_duyet.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_duyet.TabIndex = 1;
+            this.m_cmd_duyet.TabIndex = 15;
             this.m_cmd_duyet.Text = "&Duyệt";
             this.m_cmd_duyet.Click += new System.EventHandler(this.m_cmd_duyet_Click);
             // 
@@ -247,7 +289,7 @@
             this.m_cmd_lap.Location = new System.Drawing.Point(706, 4);
             this.m_cmd_lap.Name = "m_cmd_lap";
             this.m_cmd_lap.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_lap.TabIndex = 2;
+            this.m_cmd_lap.TabIndex = 16;
             this.m_cmd_lap.Text = "Lập";
             // 
             // m_cmd_exit
@@ -261,7 +303,7 @@
             this.m_cmd_exit.Location = new System.Drawing.Point(794, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 3;
+            this.m_cmd_exit.TabIndex = 17;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // m_lbl_title
@@ -466,7 +508,7 @@
             this.m_txt_so_luong_tp_cam_co.Location = new System.Drawing.Point(148, 116);
             this.m_txt_so_luong_tp_cam_co.Name = "m_txt_so_luong_tp_cam_co";
             this.m_txt_so_luong_tp_cam_co.Size = new System.Drawing.Size(140, 20);
-            this.m_txt_so_luong_tp_cam_co.TabIndex = 17;
+            this.m_txt_so_luong_tp_cam_co.TabIndex = 9;
             // 
             // m_lbl_ma_so_trai_phieu
             // 
@@ -556,13 +598,11 @@
             // 
             // m_txt_phi_gd
             // 
-            this.m_txt_phi_gd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.m_txt_phi_gd.BackColor = System.Drawing.Color.White;
             this.m_txt_phi_gd.Location = new System.Drawing.Point(424, 171);
             this.m_txt_phi_gd.Name = "m_txt_phi_gd";
-            this.m_txt_phi_gd.ReadOnly = true;
             this.m_txt_phi_gd.Size = new System.Drawing.Size(140, 20);
-            this.m_txt_phi_gd.TabIndex = 24;
-            this.m_txt_phi_gd.TabStop = false;
+            this.m_txt_phi_gd.TabIndex = 13;
             this.m_txt_phi_gd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
@@ -579,7 +619,7 @@
             this.m_txt_ty_le_phi_gd.Location = new System.Drawing.Point(148, 168);
             this.m_txt_ty_le_phi_gd.Name = "m_txt_ty_le_phi_gd";
             this.m_txt_ty_le_phi_gd.Size = new System.Drawing.Size(140, 20);
-            this.m_txt_ty_le_phi_gd.TabIndex = 26;
+            this.m_txt_ty_le_phi_gd.TabIndex = 12;
             // 
             // label1
             // 
@@ -597,7 +637,7 @@
             this.m_dat_ngay.Location = new System.Drawing.Point(714, 75);
             this.m_dat_ngay.Name = "m_dat_ngay";
             this.m_dat_ngay.Size = new System.Drawing.Size(121, 20);
-            this.m_dat_ngay.TabIndex = 10;
+            this.m_dat_ngay.TabIndex = 8;
             this.m_dat_ngay.Value = new System.DateTime(2012, 10, 6, 22, 35, 45, 0);
             // 
             // m_lbl_hinh_thuc_tra_lai
@@ -732,7 +772,7 @@
             this.m_txt_khoan_dau_tu.Location = new System.Drawing.Point(424, 145);
             this.m_txt_khoan_dau_tu.Name = "m_txt_khoan_dau_tu";
             this.m_txt_khoan_dau_tu.Size = new System.Drawing.Size(448, 20);
-            this.m_txt_khoan_dau_tu.TabIndex = 21;
+            this.m_txt_khoan_dau_tu.TabIndex = 11;
             // 
             // m_lbl_to_chuc_phat_hanh
             // 
@@ -768,7 +808,7 @@
             this.m_txt_ngan_hang_cam_co.Location = new System.Drawing.Point(424, 116);
             this.m_txt_ngan_hang_cam_co.Name = "m_txt_ngan_hang_cam_co";
             this.m_txt_ngan_hang_cam_co.Size = new System.Drawing.Size(450, 20);
-            this.m_txt_ngan_hang_cam_co.TabIndex = 19;
+            this.m_txt_ngan_hang_cam_co.TabIndex = 10;
             // 
             // groupBox2
             // 
@@ -873,48 +913,6 @@
             this.m_txt_chuc_vu.Name = "m_txt_chuc_vu";
             this.m_txt_chuc_vu.Size = new System.Drawing.Size(173, 20);
             this.m_txt_chuc_vu.TabIndex = 3;
-            // 
-            // m_cmd_save
-            // 
-            this.m_cmd_save.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_save.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_save.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_save.ImageIndex = 10;
-            this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(530, 4);
-            this.m_cmd_save.Name = "m_cmd_save";
-            this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_save.TabIndex = 4;
-            this.m_cmd_save.Text = "&Lưu";
-            // 
-            // ImageList
-            // 
-            this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
-            this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.ImageList.Images.SetKeyName(0, "");
-            this.ImageList.Images.SetKeyName(1, "");
-            this.ImageList.Images.SetKeyName(2, "");
-            this.ImageList.Images.SetKeyName(3, "");
-            this.ImageList.Images.SetKeyName(4, "");
-            this.ImageList.Images.SetKeyName(5, "");
-            this.ImageList.Images.SetKeyName(6, "");
-            this.ImageList.Images.SetKeyName(7, "");
-            this.ImageList.Images.SetKeyName(8, "");
-            this.ImageList.Images.SetKeyName(9, "");
-            this.ImageList.Images.SetKeyName(10, "");
-            this.ImageList.Images.SetKeyName(11, "");
-            this.ImageList.Images.SetKeyName(12, "");
-            this.ImageList.Images.SetKeyName(13, "");
-            this.ImageList.Images.SetKeyName(14, "");
-            this.ImageList.Images.SetKeyName(15, "");
-            this.ImageList.Images.SetKeyName(16, "");
-            this.ImageList.Images.SetKeyName(17, "");
-            this.ImageList.Images.SetKeyName(18, "");
-            this.ImageList.Images.SetKeyName(19, "");
-            this.ImageList.Images.SetKeyName(20, "");
-            this.ImageList.Images.SetKeyName(21, "");
             // 
             // f700_giao_dich_phong_toa_giai_toa
             // 
