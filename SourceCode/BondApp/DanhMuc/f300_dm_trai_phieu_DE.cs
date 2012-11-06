@@ -203,7 +203,8 @@ namespace BondApp.DanhMuc
             m_cbo_don_vi_ky_han.DataSource = m_ds_cm_dm_tu_dien.Tables[0];
             m_cbo_don_vi_ky_han.DisplayMember = CM_DM_TU_DIEN.TEN;
             m_cbo_don_vi_ky_han.ValueMember = CM_DM_TU_DIEN.ID;
-            m_cbo_don_vi_ky_han.Text = "";
+            m_cbo_don_vi_ky_han.SelectedIndex = 1;
+            //m_cbo_don_vi_ky_han.Text = "";
 
             m_ds_cm_dm_tu_dien = m_us_tu_dien.getLoaiTuDienDS(CM_DM_LOAI_TD_LIST.DON_VI_KY_HAN);
             m_cbo_dv_dieu_chinh_ls.DataSource = (DataTable)m_ds_cm_dm_tu_dien.Tables[0];
@@ -225,7 +226,7 @@ namespace BondApp.DanhMuc
             m_cbo_co_so_tinh_lai.DataSource = v_arr;
             m_cbo_co_so_tinh_lai.DisplayMember = CO_SO_TINH_LAI.DISPLAY;
             m_cbo_co_so_tinh_lai.ValueMember = CO_SO_TINH_LAI.VALUE;
-            m_cbo_co_so_tinh_lai.Text = "";
+            m_cbo_co_so_tinh_lai.SelectedIndex = 0;
 
             v_arr = new ArrayList();
             v_arr.Add(new CO_SO_TINH_LAI("Có", "Y"));
@@ -352,8 +353,10 @@ namespace BondApp.DanhMuc
         private void set_ini_form_load()
         {
             load_data_2_cbo();
-            m_cbo_chuyen_nhuong_huong_theo.SelectedIndex = 0;
-            m_cbo_ngung_chuyen_nhuong_tu_ngay.SelectedIndex = 0;
+            m_cbo_chuyen_nhuong_huong_theo.SelectedIndex = 1;
+            m_cbo_ngung_chuyen_nhuong_tu_ngay.SelectedIndex = 1;
+            m_lbl_lai_suat_tha_noi.Visible = false;
+            m_cbo_tha_noi.Visible = false;
             switch (m_e_formmode)
             {
                 case e_form_mode.THEM_TRAI_PHIEU:
