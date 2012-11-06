@@ -210,7 +210,7 @@ namespace BondApp.ChucNang
             m_us_gd_cap_nhat_ls.datNGAY_BAT_DAU_AD_LS = m_date_ngay_bat_dau_ap_dung_ls.Value;
             m_us_gd_cap_nhat_ls.datNGAY_KET_THUC_AD_LS = m_date_ket_thuc_ap_dung_ls.Value;
             m_us_gd_cap_nhat_ls.dcLAI_SUAT = CIPConvert.ToDecimal(m_txt_lai_suat_moi.Text)/100;
-            m_us_gd_cap_nhat_ls.strCAP_NHAT_LS_YN = "Y";
+            m_us_gd_cap_nhat_ls.strCAP_NHAT_LS_YN = "N";
             m_us_gd_cap_nhat_ls.strGHI_CHU = m_txt_ghi_chu.Text;
             m_us_gd_cap_nhat_ls.strDA_THUC_HIEN_YN = "Y";
             m_us_gd_cap_nhat_ls.strCHOT_LAI_YN = "N";
