@@ -611,9 +611,12 @@ namespace BondApp
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             grid2us_object(m_us, m_fg.Row);
-            if (m_us.dcID_TRANG_THAI == TRANG_THAI_DANH_MUC.DA_DUYET)
+
+            // Còn 1 cái nữa check quyền được sửa nữa không? chỉ người có quyền Duyệt mới đc sửa
+            
+            if (m_us.dcID_TRANG_THAI == TRANG_THAI_DANH_MUC.DA_DONG)
             {
-                MessageBox.Show("Giao dịch đã được duyệt không được phép sửa.");
+               BaseMessages.MsgBox_Infor("Danh mục trái chủ này đã bị đóng, không thể chỉnh sửa được nữa");
                 return;
             }
             f500_dm_trai_chu_de v_frm500 = new f500_dm_trai_chu_de();
@@ -638,7 +641,7 @@ namespace BondApp
             v_us.Kiem_tra_phat_sinh_gd(v_ds);
             if (v_ds.V_DM_TRAI_CHU.Rows.Count > 0)
             {
-                BaseMessages.MsgBox_Infor("Không xóa trái chủ này được do tráu chủ này đã có phát sinh giao dịch!");
+                BaseMessages.MsgBox_Infor("Không xóa trái chủ này được do đã có phát sinh giao dịch liên quan trái chủ này!");
                 return;
             }
             try
@@ -683,6 +686,11 @@ namespace BondApp
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             grid2us_object(m_us, m_fg.Row);
+            if (m_us.dcID_TRANG_THAI == TRANG_THAI_DANH_MUC.DA_DONG)
+            {
+                BaseMessages.MsgBox_Infor("Danh mục trái chủ này đã bị đóng, không thể chỉnh sửa được nữa");
+                return;
+            }
             if (m_us.dcID_TRANG_THAI == TRANG_THAI_DANH_MUC.DA_DUYET)
             {
                 BaseMessages.MsgBox_Infor("Thông tin trái chủ này đã được duyệt!");
