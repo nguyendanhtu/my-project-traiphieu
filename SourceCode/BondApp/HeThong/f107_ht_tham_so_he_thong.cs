@@ -387,7 +387,24 @@ namespace BondApp
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			//m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			//m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            this.KeyDown += new KeyEventHandler(f107_ht_tham_so_he_thong_KeyDown);
 		}
+
+        void f107_ht_tham_so_he_thong_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
         #endregion
 
