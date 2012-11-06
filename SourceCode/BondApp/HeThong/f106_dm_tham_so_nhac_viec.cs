@@ -667,6 +667,7 @@ namespace BondApp
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             m_cmd_luu.Click += new EventHandler(m_cmd_luu_Click);
+            // Đây là đoạn thêm sự kiện nhấn ESC thì thoát
             this.KeyDown += new KeyEventHandler(f106_dm_tham_so_nhac_viec_KeyDown);
 		}
 
