@@ -301,15 +301,14 @@ namespace BondApp
 
 		#region Data Structure
 		private enum e_col_Number{
-            STT =1,
-            NGAY = 3
+            NGAY = 2
 ,
-            TEN_TRAI_PHIEU = 5
+            TEN_TRAI_PHIEU = 4
                 ,
-            GHI_CHU = 6
+            GHI_CHU = 5
                 ,
-            LOAI_NHAC_VIEC = 2
-                , NOI_DUNG_NHAC = 4
+            LOAI_NHAC_VIEC = 1
+                , NOI_DUNG_NHAC = 3
 		}			
 		#endregion
 
@@ -353,7 +352,6 @@ namespace BondApp
                 , CIPConvert.ToDecimal(m_cbo_loai_nhac_viec.SelectedValue));
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
             m_fg.Subtotal(AggregateEnum.None
                 , 0
                 , (int)e_col_Number.LOAI_NHAC_VIEC
