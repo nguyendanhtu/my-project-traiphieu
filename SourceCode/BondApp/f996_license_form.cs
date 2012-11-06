@@ -270,7 +270,24 @@ namespace BondApp
 		}
 		private void set_define_events(){
 			this.m_cmd_tro_ve.Click+= new EventHandler(m_cmd_tro_ve_Click);
+            this.KeyDown += new KeyEventHandler(f996_license_form_KeyDown);
 		}
+
+        void f996_license_form_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 		#endregion
 
 		private void m_cmd_tro_ve_Click(object sender, EventArgs e) {
