@@ -1177,7 +1177,7 @@
             this.m_cmd_lap_chuyen_nhuong.Location = new System.Drawing.Point(636, 4);
             this.m_cmd_lap_chuyen_nhuong.Name = "m_cmd_lap_chuyen_nhuong";
             this.m_cmd_lap_chuyen_nhuong.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_lap_chuyen_nhuong.TabIndex = 25;
+            this.m_cmd_lap_chuyen_nhuong.TabIndex = 26;
             this.m_cmd_lap_chuyen_nhuong.Text = "& Lập";
             // 
             // m_cmd_sua_chuyen_nhuong
@@ -1244,6 +1244,7 @@
             this.m_txt_ma_giao_dich.ReadOnly = true;
             this.m_txt_ma_giao_dich.Size = new System.Drawing.Size(136, 20);
             this.m_txt_ma_giao_dich.TabIndex = 15;
+            this.m_txt_ma_giao_dich.TabStop = false;
             // 
             // label28
             // 
@@ -1344,7 +1345,7 @@
             this.m_date_ngay_vao_so.Name = "m_date_ngay_vao_so";
             this.m_date_ngay_vao_so.ShowCheckBox = true;
             this.m_date_ngay_vao_so.Size = new System.Drawing.Size(156, 20);
-            this.m_date_ngay_vao_so.TabIndex = 24;
+            this.m_date_ngay_vao_so.TabIndex = 25;
             // 
             // m_date_ngay_xac_nhan
             // 
@@ -1355,7 +1356,7 @@
             this.m_date_ngay_xac_nhan.Name = "m_date_ngay_xac_nhan";
             this.m_date_ngay_xac_nhan.ShowCheckBox = true;
             this.m_date_ngay_xac_nhan.Size = new System.Drawing.Size(135, 20);
-            this.m_date_ngay_xac_nhan.TabIndex = 7;
+            this.m_date_ngay_xac_nhan.TabIndex = 24;
             // 
             // m_date_ngay_chuyen_nhuong
             // 
@@ -1412,6 +1413,7 @@
             this.m_txt_gia_tri_chuyen_nhuong.ReadOnly = true;
             this.m_txt_gia_tri_chuyen_nhuong.Size = new System.Drawing.Size(136, 20);
             this.m_txt_gia_tri_chuyen_nhuong.TabIndex = 16;
+            this.m_txt_gia_tri_chuyen_nhuong.TabStop = false;
             this.m_txt_gia_tri_chuyen_nhuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // m_txt_nguoi_duyet

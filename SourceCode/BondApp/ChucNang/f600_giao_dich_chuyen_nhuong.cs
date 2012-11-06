@@ -124,6 +124,7 @@ namespace BondApp
                     m_cmd_duyet_chuyen_nhuong.Enabled = true;
                     m_gru_thong_tin_khach_hang.Enabled = false;
                     m_gru_thong_tin_trai_phieu.Enabled = false;
+                    m_date_ngay_xac_nhan.Checked = true;
                     m_txt_nguoi_duyet.Text = CAppContext_201.getCurrentUser();
                     break;
                 case eFormMode.XEM_GIAO_DICH:
@@ -422,56 +423,54 @@ namespace BondApp
         private void lap_chuyen_nhuong()
         {
             if (!check_thong_tin_chuyen_nhuong_is_ok()) return;
-            if (!kiem_tra_phi_gd()) return;
+            //if (!kiem_tra_phi_gd()) return;
             form_2_us_gd_chuyen_nhuong();
-            if (kiem_tra_phi_gd())
+            
+            try
             {
-                try
-                {
-                    m_us_gd_chuyen_nhuong.BeginTransaction();
-                    m_us_gd_chuyen_nhuong.Insert();
-                    m_us_gd_chuyen_nhuong.CommitTransaction();
-                }
-                catch (Exception v_e)
-                {
-                    if (m_us_gd_chuyen_nhuong.is_having_transaction())
-                    {
-                        m_us_gd_chuyen_nhuong.Rollback();
-                    }
-                    throw v_e;
-                }
-
-                MessageBox.Show("Cập nhập thành công!");
-                this.Close();
-                f610_dm_giao_dien_chuyen_nhuong v_fm610 = new f610_dm_giao_dien_chuyen_nhuong();
-                v_fm610.display();
+                m_us_gd_chuyen_nhuong.BeginTransaction();
+                m_us_gd_chuyen_nhuong.Insert();
+                m_us_gd_chuyen_nhuong.CommitTransaction();
             }
+            catch (Exception v_e)
+            {
+                if (m_us_gd_chuyen_nhuong.is_having_transaction())
+                {
+                    m_us_gd_chuyen_nhuong.Rollback();
+                }
+                throw v_e;
+            }
+
+            MessageBox.Show("Cập nhập thành công!");
+            this.Close();
+            f610_dm_giao_dien_chuyen_nhuong v_fm610 = new f610_dm_giao_dien_chuyen_nhuong();
+            v_fm610.display();
+
         }
 
         private void sua_thong_tin_chuyen_nhuong()
         {
             if (!check_thong_tin_chuyen_nhuong_is_ok()) return;
             form_2_us_gd_chuyen_nhuong();
-            if (kiem_tra_phi_gd())
+            
+            try
             {
-                try
-                {
-                    m_us_gd_chuyen_nhuong.BeginTransaction();
-                    m_us_gd_chuyen_nhuong.Update();
-                    m_us_gd_chuyen_nhuong.CommitTransaction();
-                }
-                catch (Exception v_e)
-                {
-                    if (m_us_gd_chuyen_nhuong.is_having_transaction())
-                    {
-                        m_us_gd_chuyen_nhuong.Rollback();
-                    }
-
-                    throw v_e;
-                }
-                MessageBox.Show("Cập nhập thành công!");
-                this.Close();
+                m_us_gd_chuyen_nhuong.BeginTransaction();
+                m_us_gd_chuyen_nhuong.Update();
+                m_us_gd_chuyen_nhuong.CommitTransaction();
             }
+            catch (Exception v_e)
+            {
+                if (m_us_gd_chuyen_nhuong.is_having_transaction())
+                {
+                    m_us_gd_chuyen_nhuong.Rollback();
+                }
+
+                throw v_e;
+            }
+            MessageBox.Show("Cập nhập thành công!");
+            this.Close();
+            
         }
 
         private void duyet_chuyen_nhuong()
@@ -482,27 +481,26 @@ namespace BondApp
              * */
             if (!check_thong_tin_chuyen_nhuong_is_ok()) return;
             form_2_us_gd_chuyen_nhuong();
-            if (kiem_tra_phi_gd())
+            
+            try
             {
-                try
-                {
-                    m_us_gd_chuyen_nhuong.BeginTransaction();
-                    m_us_gd_chuyen_nhuong.duyet_chuyen_nhuong();
-                    m_us_gd_chuyen_nhuong.CommitTransaction();
-                }
-                catch (Exception v_e)
-                {
-                    if (m_us_gd_chuyen_nhuong.is_having_transaction())
-                    {
-                        m_us_gd_chuyen_nhuong.Rollback();
-                    }
-
-                    throw v_e;
-                }
-
-                MessageBox.Show("Cập nhập thành công!");
-                this.Close();
+                m_us_gd_chuyen_nhuong.BeginTransaction();
+                m_us_gd_chuyen_nhuong.duyet_chuyen_nhuong();
+                m_us_gd_chuyen_nhuong.CommitTransaction();
             }
+            catch (Exception v_e)
+            {
+                if (m_us_gd_chuyen_nhuong.is_having_transaction())
+                {
+                    m_us_gd_chuyen_nhuong.Rollback();
+                }
+
+                throw v_e;
+            }
+
+            MessageBox.Show("Cập nhập thành công!");
+            this.Close();
+            
         }
 
         private void Show_danh_muc_chuyen_nhuong()
@@ -580,11 +578,21 @@ namespace BondApp
         {
             try
             {
+                US_HT_THAM_SO_HE_THONG v_us_phi_gd_max = new US_HT_THAM_SO_HE_THONG();                
+                IP.Core.IPData.DS_HT_THAM_SO_HE_THONG v_ds_phi_gd = new IP.Core.IPData.DS_HT_THAM_SO_HE_THONG();
+                v_us_phi_gd_max.FillDataset(v_ds_phi_gd, " WHERE LOAI_THAM_SO = 'PHI_PGT'");
+
                 if (m_txt_so_luong_chuyen_nhuong.Text.Trim() == "") return;
                 if (m_txt_ty_le_phi_gd.Text.Trim() == "") return;
                 decimal v_ty_le_phi = CIPConvert.ToDecimal(m_txt_ty_le_phi_gd.Text) / 100;
                 decimal v_so_luong_CN = CIPConvert.ToDecimal(m_txt_so_luong_chuyen_nhuong.Text);
-                m_txt_phi_gd.Text = CIPConvert.ToStr(v_so_luong_CN * v_ty_le_phi * CIPConvert.ToDecimal(m_txt_menh_gia.Text), "#,###");
+                decimal v_phi_giao_dich = v_so_luong_CN * v_ty_le_phi * CIPConvert.ToDecimal(m_txt_menh_gia.Text);
+                if (v_phi_giao_dich > CIPConvert.ToDecimal(v_ds_phi_gd.HT_THAM_SO_HE_THONG.Rows[0][HT_THAM_SO_HE_THONG.GIA_TRI]))
+                    v_phi_giao_dich = CIPConvert.ToDecimal(v_ds_phi_gd.HT_THAM_SO_HE_THONG.Rows[0][HT_THAM_SO_HE_THONG.GIA_TRI]);
+                if (v_phi_giao_dich < CIPConvert.ToDecimal(v_ds_phi_gd.HT_THAM_SO_HE_THONG.Rows[1][HT_THAM_SO_HE_THONG.GIA_TRI]))
+                    v_phi_giao_dich = CIPConvert.ToDecimal(v_ds_phi_gd.HT_THAM_SO_HE_THONG.Rows[1][HT_THAM_SO_HE_THONG.GIA_TRI]);
+
+                m_txt_phi_gd.Text = CIPConvert.ToStr(v_phi_giao_dich, "#,###");
                 //kiem_tra_phi_gd();
             }
             catch (Exception v_e)
