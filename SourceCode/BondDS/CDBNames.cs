@@ -15,6 +15,8 @@ namespace BondDS.CDBNames
         public const decimal TRANG_THAI_GD = 6;
         public const decimal NGAN_HANG_DL_QUAN_LY_TK = 7;
         public const decimal TRANG_THAI_DANH_MUC = 8;
+        public const decimal LOAI_NGAY_LAM_VIEC = 9;
+        public const decimal LOG_LOAI_HANH_DONG = 10;
     }
     public class GD_THONG_BAO_LAI_SUAT_IN_TIMES
     {
@@ -78,6 +80,15 @@ namespace BondDS.CDBNames
         public const decimal TO_CHUC_TRONG_NUOC = 31;
         public const decimal CA_NHAN_NUOC_NGOAI = 40;
         public const decimal TO_CHUC_NUOC_NGOAI = 39;
+    }
+    public class LOG_TRUY_CAP
+    {
+        public const decimal DANG_NHAP = 69;
+        public const decimal DANG_XUAT = 70;
+        public const decimal THEM = 71;
+        public const decimal SUA = 72;
+        public const decimal XOA = 73;
+        public const decimal DUYET = 74;
     }
     public class ID_TRANG_THAI_PGT
     {
