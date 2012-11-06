@@ -162,6 +162,7 @@
     <Compile Include="US_V_GD_NHAC_VIEC.cs" />
     <Compile Include="US_V_GD_PHONG_GIAI_TOA.cs" />
     <Compile Include="US_V_GD_TRA_GOC.cs" />
+    <Compile Include="US_V_HT_LOG_TRUY_CAP.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
