@@ -395,7 +395,6 @@
             this.m_cmd_duyet_gd.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_duyet_gd.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_duyet_gd.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_duyet_gd.Enabled = false;
             this.m_cmd_duyet_gd.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet_gd.Image")));
             this.m_cmd_duyet_gd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_duyet_gd.Location = new System.Drawing.Point(290, 4);
