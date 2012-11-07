@@ -295,7 +295,7 @@ namespace BondApp
             this.m_gbox_thong_tin_tp.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_gbox_thong_tin_tp.Location = new System.Drawing.Point(0, 37);
             this.m_gbox_thong_tin_tp.Name = "m_gbox_thong_tin_tp";
-            this.m_gbox_thong_tin_tp.Size = new System.Drawing.Size(781, 200);
+            this.m_gbox_thong_tin_tp.Size = new System.Drawing.Size(781, 219);
             this.m_gbox_thong_tin_tp.TabIndex = 30;
             this.m_gbox_thong_tin_tp.TabStop = false;
             this.m_gbox_thong_tin_tp.Text = "Thông tin trái phiếu";
@@ -450,7 +450,7 @@ namespace BondApp
             this.m_txt_ghi_chu.Location = new System.Drawing.Point(106, 132);
             this.m_txt_ghi_chu.Multiline = true;
             this.m_txt_ghi_chu.Name = "m_txt_ghi_chu";
-            this.m_txt_ghi_chu.Size = new System.Drawing.Size(626, 66);
+            this.m_txt_ghi_chu.Size = new System.Drawing.Size(626, 81);
             this.m_txt_ghi_chu.TabIndex = 21;
             // 
             // m_lbl_ngay_chot_lai
@@ -513,9 +513,9 @@ namespace BondApp
             this.m_gru_tim_kiem.Controls.Add(this.label1);
             this.m_gru_tim_kiem.Controls.Add(this.m_cmd_filter);
             this.m_gru_tim_kiem.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_gru_tim_kiem.Location = new System.Drawing.Point(0, 237);
+            this.m_gru_tim_kiem.Location = new System.Drawing.Point(0, 256);
             this.m_gru_tim_kiem.Name = "m_gru_tim_kiem";
-            this.m_gru_tim_kiem.Size = new System.Drawing.Size(781, 56);
+            this.m_gru_tim_kiem.Size = new System.Drawing.Size(781, 50);
             this.m_gru_tim_kiem.TabIndex = 34;
             this.m_gru_tim_kiem.TabStop = false;
             // 
@@ -550,9 +550,9 @@ namespace BondApp
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 293);
+            this.m_fg.Location = new System.Drawing.Point(0, 306);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(781, 197);
+            this.m_fg.Size = new System.Drawing.Size(781, 184);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 35;
             // 
@@ -566,7 +566,7 @@ namespace BondApp
             this.Controls.Add(this.m_lbl_title);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f201_dm_gd_chot_lai_detail";
-            this.Text = "f201_dm_gd_chot_lai_detail";
+            this.Text = "f201-dm gd chot lai detail";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.m_gbox_thong_tin_tp.ResumeLayout(false);
             this.m_gbox_thong_tin_tp.PerformLayout();
@@ -582,11 +582,21 @@ namespace BondApp
         public void display_for_insert()
         {
             m_e_form_mode = DataEntryFormMode.InsertDataState;
+            m_eformmode = e_form_mode.LAP_GD_CHOT_LAI;
             this.ShowDialog();
         }
         public void display_for_update(US_GD_CHOT_LAI ip_us)
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            m_eformmode = e_form_mode.LAP_GD_CHOT_LAI;
+            m_us_gd_chot_lai = ip_us;
+            this.ShowDialog();
+        }
+
+        public void display_danh_sach_tra_lai(US_GD_CHOT_LAI ip_us)
+        {
+            m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            m_eformmode = e_form_mode.XEM_GD_CHOT_LAI_DETAIL;
             m_us_gd_chot_lai = ip_us;
             this.ShowDialog();
         }
@@ -602,7 +612,14 @@ namespace BondApp
             ,DA_NHAN_TIEN_YN = 5
             ,SO_LUONG_TINH_LAI = 3
 
-		}			
+		}
+
+        private enum e_form_mode
+        {
+            LAP_GD_CHOT_LAI,
+            XEM_GD_CHOT_LAI_DETAIL
+        }
+
 		#endregion
 
 		#region Members
@@ -614,6 +631,7 @@ namespace BondApp
         US_HT_NGUOI_SU_DUNG m_us_nguoi_lap = new US_HT_NGUOI_SU_DUNG();
         US_HT_NGUOI_SU_DUNG m_us_nguoi_duyet = new US_HT_NGUOI_SU_DUNG();
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
+        e_form_mode m_eformmode = e_form_mode.LAP_GD_CHOT_LAI;
 		#endregion
 
 		#region Private Methods
@@ -878,6 +896,24 @@ namespace BondApp
             set_initial_form_load();
             try
             {
+                if (m_eformmode == e_form_mode.LAP_GD_CHOT_LAI)
+                {
+                    m_gru_tim_kiem.Visible = false;
+                    m_fg.Visible = false;
+                    m_cmd_gen.Visible = false;
+                    this.Height = 310;
+                    m_lbl_title.Text = "F210 - Thông tin đợt chốt lãi";
+                }
+                else
+                {
+                    m_gru_tim_kiem.Visible = true;
+                    m_fg.Visible = true;
+                    m_cmd_gen.Visible = true;
+                    m_cmd_save.Visible = false;
+                    m_cmd_update.Visible = false;
+                    m_cmd_duyet.Visible = false;
+                    m_gbox_thong_tin_tp.Enabled = false;
+                }
                 switch (m_e_form_mode)
                 {
                     case DataEntryFormMode.InsertDataState:
