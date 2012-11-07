@@ -171,10 +171,9 @@ namespace BondApp
             this.m_cmd_view.ImageList = this.ImageList;
             this.m_cmd_view.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_view.Name = "m_cmd_view";
-            this.m_cmd_view.Size = new System.Drawing.Size(64, 28);
+            this.m_cmd_view.Size = new System.Drawing.Size(152, 28);
             this.m_cmd_view.TabIndex = 0;
-            this.m_cmd_view.Text = "Xem";
-            this.m_cmd_view.Visible = false;
+            this.m_cmd_view.Text = "Xem danh sách trả lãi";
             // 
             // m_cmd_delete
             // 
@@ -450,14 +449,41 @@ namespace BondApp
 				v_objErrHandler.showErrorMessage();
 			}
 		}
-		private void set_define_events(){
+
+        private void xem_danh_sach_tra_lai()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us_gd_chot_lai, m_fg.Row);
+            f201_dm_gd_chot_lai_detail v_f201 = new f201_dm_gd_chot_lai_detail();
+            v_f201.display_danh_sach_tra_lai(m_us_gd_chot_lai);
+            load_data_2_grid();       
+        }
+		#endregion
+
+        private void set_define_events()
+        {
             this.Load += new EventHandler(f200_dm_dot_chot_lai_Load);
-			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
-			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
-			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
+            m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
+            m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             this.KeyDown += new KeyEventHandler(f200_dm_dot_chot_lai_KeyDown);
-		}
+            m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+        }
+
+        void m_cmd_view_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                xem_danh_sach_tra_lai();
+            }
+            catch (Exception v_e)
+            {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
         void f200_dm_dot_chot_lai_KeyDown(object sender, KeyEventArgs e)
         {
@@ -474,7 +500,6 @@ namespace BondApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-		#endregion
         #region Events
         private void m_cmd_insert_Click(object sender, EventArgs e)
         {
