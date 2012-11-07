@@ -15,7 +15,7 @@ using System.Data;
 using BondDS;
 
 
-namespace WebUS{
+namespace BondUS{
 
 public class US_V_HT_LOG_TRUY_CAP : US_Object
 {
