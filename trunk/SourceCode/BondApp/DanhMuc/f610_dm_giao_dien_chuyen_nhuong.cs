@@ -458,6 +458,7 @@ namespace BondApp
         DS_V_GD_CHUYEN_NHUONG m_ds = new DS_V_GD_CHUYEN_NHUONG();
         US_V_GD_CHUYEN_NHUONG m_us = new US_V_GD_CHUYEN_NHUONG();
         eFormMode m_e_form_mode = eFormMode.DANH_SACH_CHUYEN_NHUONG;
+        US_V_HT_LOG_TRUY_CAP m_us_v_ht_log_truy_cap = new US_V_HT_LOG_TRUY_CAP();
         #endregion
 
         #region Private Methods
@@ -471,6 +472,24 @@ namespace BondApp
             m_lbl_title.ForeColor = Color.DarkRed;
             m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
             set_define_events();
+        }
+        private void ghi_log_he_thong()
+        {
+            /* Thông tin chung*/
+            m_us_v_ht_log_truy_cap.dcID_DANG_NHAP = CAppContext_201.getCurrentUserID();
+            m_us_v_ht_log_truy_cap.datTHOI_GIAN = DateTime.Now;
+            m_us_v_ht_log_truy_cap.strDOI_TUONG_THAO_TAC = LOG_DOI_TUONG_TAC_DONG.GD_CHUYEN_NHUONG;
+            m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.XOA;
+            m_us_v_ht_log_truy_cap.strMO_TA = "Xóa " + LOG_DOI_TUONG_TAC_DONG.GD_CHUYEN_NHUONG + " có mã: " + m_us.strMA_GIAO_DICH;
+            // ghi log hệ thống
+            try
+            {
+                m_us_v_ht_log_truy_cap.Insert();
+            }
+            catch
+            {
+                BaseMessages.MsgBox_Infor("Đã xảy ra lỗi trong quá trình ghi log hệ thống");
+            }
         }
         private void set_initial_form_load()
         {
@@ -616,6 +635,7 @@ namespace BondApp
                 m_us.BeginTransaction();
                 m_us.delete_gd_chuyen_nhuong();
                 m_us.CommitTransaction();
+                ghi_log_he_thong();
                 m_fg.Rows.Remove(m_fg.Row);
             }
             catch (Exception v_e)
