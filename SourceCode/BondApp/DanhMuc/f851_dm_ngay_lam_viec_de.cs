@@ -8,6 +8,8 @@ using System.Windows.Forms;
 using BondUS;
 using BondDS;
 using IP.Core.IPCommon;
+using IP.Core.IPSystemAdmin;
+using BondDS.CDBNames;
 
 namespace BondApp.DanhMuc
 {
@@ -33,6 +35,7 @@ namespace BondApp.DanhMuc
         #region Members
         US_DM_NGAY_LAM_VIEC m_us_ngay_lam_viec = new US_DM_NGAY_LAM_VIEC();
         DS_DM_NGAY_LAM_VIEC m_ds_ngay_lam_viec = new DS_DM_NGAY_LAM_VIEC();
+        US_V_HT_LOG_TRUY_CAP m_us_v_ht_log_truy_cap = new US_V_HT_LOG_TRUY_CAP();
         #endregion
 
         #region Private Methods
@@ -71,6 +74,7 @@ namespace BondApp.DanhMuc
             form_2_us_object(m_us_ngay_lam_viec);
             m_us_ngay_lam_viec.Update();
             BaseMessages.MsgBox_Infor("Dữ liệu được cập nhật thành công");
+            ghi_log_he_thong();
             this.Close();
         }
         #endregion
@@ -83,7 +87,25 @@ namespace BondApp.DanhMuc
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             this.KeyDown += new KeyEventHandler(f851_dm_ngay_lam_viec_de_KeyDown);
         }
+        private void ghi_log_he_thong()
+        {
+            /* Thông tin chung*/
+            m_us_v_ht_log_truy_cap.dcID_DANG_NHAP = CAppContext_201.getCurrentUserID();
+            m_us_v_ht_log_truy_cap.datTHOI_GIAN = DateTime.Now;
+            m_us_v_ht_log_truy_cap.strDOI_TUONG_THAO_TAC = LOG_DOI_TUONG_TAC_DONG.DM_NGAY_LAM_VIEC;
 
+            m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.SUA;
+            m_us_v_ht_log_truy_cap.strMO_TA = "Sửa ngày làm việc " + m_us_ngay_lam_viec.datNGAY;
+            // ghi log hệ thống
+            try
+            {
+                m_us_v_ht_log_truy_cap.Insert();
+            }
+            catch
+            {
+                BaseMessages.MsgBox_Infor("Đã xảy ra lỗi trong quá trình ghi log hệ thống");
+            }
+        }
         void f851_dm_ngay_lam_viec_de_Load(object sender, EventArgs e)
         {
             try
