@@ -23,6 +23,7 @@ using BondDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
 using IP.Core.IPExcelReport;
+using IP.Core.IPSystemAdmin;
 
 namespace BondApp
 {
@@ -417,7 +418,7 @@ namespace BondApp
         DS_DM_TRAI_CHU m_ds_trai_chu = new DS_DM_TRAI_CHU();
         US_DM_TRAI_CHU m_us_trai_chu = new US_DM_TRAI_CHU();
         e_form_mode m_e_form_mode = e_form_mode.DANH_SACH_PHONG_TOA;
-
+        US_V_HT_LOG_TRUY_CAP m_us_v_ht_log_truy_cap = new US_V_HT_LOG_TRUY_CAP();
         #endregion
 
         #region Private Methods
@@ -432,6 +433,36 @@ namespace BondApp
             m_lbl_header.Font = new Font("Arial", 16);
             m_lbl_header.ForeColor = Color.DarkRed;
             m_lbl_header.TextAlign = ContentAlignment.MiddleCenter;
+        }
+        private void ghi_log_he_thong()
+        {
+            /* Thông tin chung*/
+            m_us_v_ht_log_truy_cap.dcID_DANG_NHAP = CAppContext_201.getCurrentUserID();
+            m_us_v_ht_log_truy_cap.datTHOI_GIAN = DateTime.Now;
+            US_DM_TRAI_CHU v_us_trai_chu = new US_DM_TRAI_CHU(m_us.dcID_TRAI_CHU);
+            /* Thông tin riêng*/
+            switch (m_e_form_mode)
+            {
+                case e_form_mode.DANH_SACH_GIAI_TOA:
+                    m_us_v_ht_log_truy_cap.strDOI_TUONG_THAO_TAC = LOG_DOI_TUONG_TAC_DONG.GD_GIAI_TOA;
+                    m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.XOA;
+                    m_us_v_ht_log_truy_cap.strMO_TA = "Xóa " + LOG_DOI_TUONG_TAC_DONG.GD_PHONG_TOA + " ngày " + m_us.datNGAY_GIAO_DICH+" của trái chủ " + v_us_trai_chu.strTEN_TRAI_CHU;
+                    break;
+                case e_form_mode.DANH_SACH_PHONG_TOA:
+                    m_us_v_ht_log_truy_cap.strDOI_TUONG_THAO_TAC = LOG_DOI_TUONG_TAC_DONG.GD_PHONG_TOA;
+                    m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.XOA;
+                    m_us_v_ht_log_truy_cap.strMO_TA = "Xóa " + LOG_DOI_TUONG_TAC_DONG.GD_PHONG_TOA + " ngày " + m_us.datNGAY_GIAO_DICH + " của trái chủ " + v_us_trai_chu.strTEN_TRAI_CHU;
+                    break;
+            }
+            // ghi log hệ thống
+            try
+            {
+                m_us_v_ht_log_truy_cap.Insert();
+            }
+            catch
+            {
+                BaseMessages.MsgBox_Infor("Đã xảy ra lỗi trong quá trình ghi log hệ thống");
+            }
         }
         private void set_initial_form_load()
         {
@@ -589,6 +620,7 @@ namespace BondApp
                 v_us.BeginTransaction();
                 v_us.Delete();
                 v_us.CommitTransaction();
+                ghi_log_he_thong();
                 m_fg.Rows.Remove(m_fg.Row);
             }
             catch (Exception v_e)

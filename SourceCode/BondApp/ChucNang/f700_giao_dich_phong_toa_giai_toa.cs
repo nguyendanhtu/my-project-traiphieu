@@ -18,6 +18,7 @@ using IP.Core.IPWordReport;
 using C1.Win.C1FlexGrid;
 using System.Data.SqlClient;
 using BondUS;
+using IP.Core.IPSystemAdmin;
 
 namespace BondApp
 {
@@ -139,6 +140,7 @@ namespace BondApp
         US_GD_PHONG_GIAI_TOA m_us_gd_phong_toa_giai_toa = new US_GD_PHONG_GIAI_TOA();
         DS_GD_PHONG_GIAI_TOA m_ds_gd_phong_toa_giai_toa = new DS_GD_PHONG_GIAI_TOA();
         eFormMode m_e_form_mode = eFormMode.LAP_PHONG_TOA;
+        US_V_HT_LOG_TRUY_CAP m_us_v_ht_log_truy_cap = new US_V_HT_LOG_TRUY_CAP();
         #endregion
 
         #region Private Methods
@@ -152,6 +154,68 @@ namespace BondApp
             m_lbl_title.Font = new Font("Arial", 16);
             m_lbl_title.ForeColor = Color.DarkRed;
             m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
+        }
+        private void ghi_log_he_thong()
+        {
+            /* Thông tin chung*/
+            m_us_v_ht_log_truy_cap.dcID_DANG_NHAP = CAppContext_201.getCurrentUserID();
+            m_us_v_ht_log_truy_cap.datTHOI_GIAN = DateTime.Now;
+
+            /* Thông tin riêng*/
+            switch (m_e_form_mode)
+            {
+                case eFormMode.LAP_GIAI_TOA:
+                    m_us_v_ht_log_truy_cap.strDOI_TUONG_THAO_TAC = LOG_DOI_TUONG_TAC_DONG.GD_GIAI_TOA;
+                    DS_GD_PHONG_GIAI_TOA v_ds_gd_phong_giai_toa = new DS_GD_PHONG_GIAI_TOA();
+                    US_DM_TRAI_CHU v_us_trai_chu = new US_DM_TRAI_CHU(m_us_gd_phong_toa_giai_toa.dcID_TRAI_CHU);
+                    m_us_gd_phong_toa_giai_toa.FillDataset(v_ds_gd_phong_giai_toa, " WHERE ID = (SELECT MAX(ID) FROM GD_PHONG_GIAI_TOA)");
+                    m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.THEM;
+                    if (v_ds_gd_phong_giai_toa.GD_PHONG_GIAI_TOA.Rows.Count > 0)
+                        m_us_v_ht_log_truy_cap.strMO_TA = "Thêm " + LOG_DOI_TUONG_TAC_DONG.GD_GIAI_TOA + " ngày " + CIPConvert.ToStr(v_ds_gd_phong_giai_toa.GD_PHONG_GIAI_TOA.Rows[0][GD_PHONG_GIAI_TOA.NGAY_GIAO_DICH]) + ", trái chủ: " + v_us_trai_chu.strTEN_TRAI_CHU;
+                    break;
+                case eFormMode.LAP_PHONG_TOA:
+                    m_us_v_ht_log_truy_cap.strDOI_TUONG_THAO_TAC = LOG_DOI_TUONG_TAC_DONG.GD_PHONG_TOA;
+                    DS_GD_PHONG_GIAI_TOA v_ds_gd_phong_giai_toa1 = new DS_GD_PHONG_GIAI_TOA();
+                    US_DM_TRAI_CHU v_us_trai_chu1 = new US_DM_TRAI_CHU(m_us_gd_phong_toa_giai_toa.dcID_TRAI_CHU);
+                    m_us_gd_phong_toa_giai_toa.FillDataset(v_ds_gd_phong_giai_toa1, " WHERE ID = (SELECT MAX(ID) FROM GD_PHONG_GIAI_TOA)");
+                    m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.THEM;
+                    if (v_ds_gd_phong_giai_toa1.GD_PHONG_GIAI_TOA.Rows.Count > 0)
+                        m_us_v_ht_log_truy_cap.strMO_TA = "Thêm " + LOG_DOI_TUONG_TAC_DONG.GD_PHONG_TOA + " ngày " + CIPConvert.ToStr(v_ds_gd_phong_giai_toa1.GD_PHONG_GIAI_TOA.Rows[0][GD_PHONG_GIAI_TOA.NGAY_GIAO_DICH]) + ", trái chủ: " + v_us_trai_chu1.strTEN_TRAI_CHU;
+                    break;
+                case eFormMode.SUA_GIAI_TOA:
+                    US_DM_TRAI_CHU v_us_trai_chu2 = new US_DM_TRAI_CHU(m_us_gd_phong_toa_giai_toa.dcID_TRAI_CHU);
+                    m_us_v_ht_log_truy_cap.strDOI_TUONG_THAO_TAC = LOG_DOI_TUONG_TAC_DONG.GD_GIAI_TOA;
+                    m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.SUA;
+                    m_us_v_ht_log_truy_cap.strMO_TA = "Cập nhật thông tin " + LOG_DOI_TUONG_TAC_DONG.GD_GIAI_TOA + " ngày " + m_us_gd_phong_toa_giai_toa.datNGAY_GIAO_DICH + ", trái chủ " + v_us_trai_chu2.strTEN_TRAI_CHU;
+                    break;
+                case eFormMode.SUA_PHONG_TOA:
+                    US_DM_TRAI_CHU v_us_trai_chu3 = new US_DM_TRAI_CHU(m_us_gd_phong_toa_giai_toa.dcID_TRAI_CHU);
+                    m_us_v_ht_log_truy_cap.strDOI_TUONG_THAO_TAC = LOG_DOI_TUONG_TAC_DONG.GD_PHONG_TOA;
+                    m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.SUA;
+                    m_us_v_ht_log_truy_cap.strMO_TA = "Cập nhật thông tin " + LOG_DOI_TUONG_TAC_DONG.GD_PHONG_TOA + " ngày " + m_us_gd_phong_toa_giai_toa.datNGAY_GIAO_DICH + ", trái chủ " + v_us_trai_chu3.strTEN_TRAI_CHU;
+                    break;
+                case eFormMode.DUYET_GIAI_TOA:
+                    US_DM_TRAI_CHU v_us_trai_chu4 = new US_DM_TRAI_CHU(m_us_gd_phong_toa_giai_toa.dcID_TRAI_CHU);
+                    m_us_v_ht_log_truy_cap.strDOI_TUONG_THAO_TAC = LOG_DOI_TUONG_TAC_DONG.GD_GIAI_TOA;
+                    m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.SUA;
+                    m_us_v_ht_log_truy_cap.strMO_TA = "Duyệt thông tin " + LOG_DOI_TUONG_TAC_DONG.GD_GIAI_TOA + " ngày " + m_us_gd_phong_toa_giai_toa.datNGAY_GIAO_DICH + ", trái chủ " + v_us_trai_chu4.strTEN_TRAI_CHU;
+                    break;
+                case eFormMode.DUYET_PHONG_TOA:
+                    US_DM_TRAI_CHU v_us_trai_chu5 = new US_DM_TRAI_CHU(m_us_gd_phong_toa_giai_toa.dcID_TRAI_CHU);
+                    m_us_v_ht_log_truy_cap.strDOI_TUONG_THAO_TAC = LOG_DOI_TUONG_TAC_DONG.GD_PHONG_TOA;
+                    m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.SUA;
+                    m_us_v_ht_log_truy_cap.strMO_TA = "Duyệt thông tin " + LOG_DOI_TUONG_TAC_DONG.GD_PHONG_TOA + " ngày " + m_us_gd_phong_toa_giai_toa.datNGAY_GIAO_DICH + ", trái chủ " + v_us_trai_chu5.strTEN_TRAI_CHU;
+                    break;
+            }
+            // ghi log hệ thống
+            try
+            {
+                m_us_v_ht_log_truy_cap.Insert();
+            }
+            catch
+            {
+                BaseMessages.MsgBox_Infor("Đã xảy ra lỗi trong quá trình ghi log hệ thống");
+            }
         }
         private bool check_thong_tin_chuyen_nhuong_is_ok()
         {
@@ -425,7 +489,7 @@ namespace BondApp
             form_2_us_gd_phong_toa_giai_toa();
             // m_us_gd_phong_toa_giai_toa.CapNhatSoDuTraiPhieuPhongGiaiToan(m_us_gd_phong_toa_giai_toa.datNGAY_GIAO_DICH, m_us_gd_phong_toa_giai_toa.dcID_TRAI_CHU, 0, m_us_gd_phong_toa_giai_toa.dcSO_LUONG);
             m_us_gd_phong_toa_giai_toa.Insert();
-
+            ghi_log_he_thong();
         }
         private void export_word()
         {
@@ -465,7 +529,7 @@ namespace BondApp
             if (check_thong_tin_chuyen_nhuong_is_ok() == false) return;
             form_2_us_gd_phong_toa_giai_toa();
             m_us_gd_phong_toa_giai_toa.Update();
-
+            ghi_log_he_thong();
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
             this.Close();
         }
@@ -621,6 +685,7 @@ namespace BondApp
                     m_us_gd_phong_toa_giai_toa.CapNhatSoDuTraiPhieuPhongGiaiToan(m_us_gd_phong_toa_giai_toa.datNGAY_GIAO_DICH, m_us_gd_phong_toa_giai_toa.dcID_TRAI_CHU, 0, -m_us_gd_phong_toa_giai_toa.dcSO_LUONG);
                     m_us_gd_phong_toa_giai_toa.duyet_giao_dich_pgt(m_us_gd_phong_toa_giai_toa.dcID_NGUOI_DUYET);
                     m_us_gd_phong_toa_giai_toa.CommitTransaction();
+                    ghi_log_he_thong();
                     BaseMessages.MsgBox_Infor(10);
                 }
                 catch (Exception v_e)

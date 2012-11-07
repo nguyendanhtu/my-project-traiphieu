@@ -73,7 +73,7 @@ namespace BondApp
         US_DM_TRAI_CHU m_us_trai_chu = new US_DM_TRAI_CHU();
         US_V_DM_TRAI_PHIEU m_us_v_trai_phieu = new US_V_DM_TRAI_PHIEU();
         US_GD_CHUYEN_NHUONG m_us_gd_chuyen_nhuong = new US_GD_CHUYEN_NHUONG();
-
+        US_V_HT_LOG_TRUY_CAP m_us_v_ht_log_truy_cap = new US_V_HT_LOG_TRUY_CAP();
         decimal m_dc_phi_gd_chuyen_nhuong_max, m_dc_phi_gd_chuyen_nhuong_min;
         eFormMode m_e_form_mode = eFormMode.LAP_CHUYEN_NHUONG;
         #endregion
@@ -87,6 +87,44 @@ namespace BondApp
             m_lbl_title.ForeColor = Color.DarkRed;
             m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
             set_define_events();
+        }
+        private void ghi_log_he_thong()
+        {
+            /* Thông tin chung*/
+            m_us_v_ht_log_truy_cap.dcID_DANG_NHAP = CAppContext_201.getCurrentUserID();
+            m_us_v_ht_log_truy_cap.datTHOI_GIAN = DateTime.Now;
+            m_us_v_ht_log_truy_cap.strDOI_TUONG_THAO_TAC = LOG_DOI_TUONG_TAC_DONG.GD_CHUYEN_NHUONG;
+
+            /* Thông tin riêng*/
+            switch (m_e_form_mode)
+            {
+                case eFormMode.LAP_CHUYEN_NHUONG:
+                    DS_GD_CHUYEN_NHUONG v_ds_dm_to_chuc_ph = new DS_GD_CHUYEN_NHUONG();
+                    m_us_gd_chuyen_nhuong.FillDataset(v_ds_dm_to_chuc_ph, " WHERE ID = (SELECT MAX(ID) FROM GD_CHUYEN_NHUONG)");
+                    m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.THEM;
+                    if (v_ds_dm_to_chuc_ph.GD_CHUYEN_NHUONG.Rows.Count > 0)
+                        m_us_v_ht_log_truy_cap.strMO_TA = "Thêm " + LOG_DOI_TUONG_TAC_DONG.GD_CHUYEN_NHUONG + " mã: " + CIPConvert.ToStr(v_ds_dm_to_chuc_ph.GD_CHUYEN_NHUONG.Rows[0][GD_CHUYEN_NHUONG.MA_GIAO_DICH]);
+                    break;
+                case eFormMode.SUA_CHUYEN_NHUONG_CHUA_DUYET:
+                    m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.SUA;
+                    m_us_v_ht_log_truy_cap.strMO_TA = "Cập nhật thông tin " + LOG_DOI_TUONG_TAC_DONG.GD_CHUYEN_NHUONG + " mã: " + m_us_gd_chuyen_nhuong.strMA_GIAO_DICH;
+                    break;
+                case eFormMode.DUYET_CHUYEN_NHUONG:
+                    m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.DUYET;
+                    m_us_v_ht_log_truy_cap.strMO_TA = "Duyệt thông tin " + LOG_DOI_TUONG_TAC_DONG.GD_CHUYEN_NHUONG + " mã: " + m_us_gd_chuyen_nhuong.strMA_GIAO_DICH;
+                    break;
+                default:
+                    break;
+            }
+            // ghi log hệ thống
+            try
+            {
+                m_us_v_ht_log_truy_cap.Insert();
+            }
+            catch
+            {
+                BaseMessages.MsgBox_Infor("Đã xảy ra lỗi trong quá trình ghi log hệ thống");
+            }
         }
         private void load_cbb_trang_thai_chuyen_nhuong()
         {
@@ -431,6 +469,7 @@ namespace BondApp
                 m_us_gd_chuyen_nhuong.BeginTransaction();
                 m_us_gd_chuyen_nhuong.Insert();
                 m_us_gd_chuyen_nhuong.CommitTransaction();
+                ghi_log_he_thong();
             }
             catch (Exception v_e)
             {
@@ -458,6 +497,7 @@ namespace BondApp
                 m_us_gd_chuyen_nhuong.BeginTransaction();
                 m_us_gd_chuyen_nhuong.Update();
                 m_us_gd_chuyen_nhuong.CommitTransaction();
+                ghi_log_he_thong();
             }
             catch (Exception v_e)
             {
@@ -487,6 +527,7 @@ namespace BondApp
                 m_us_gd_chuyen_nhuong.BeginTransaction();
                 m_us_gd_chuyen_nhuong.duyet_chuyen_nhuong();
                 m_us_gd_chuyen_nhuong.CommitTransaction();
+                ghi_log_he_thong();
             }
             catch (Exception v_e)
             {
