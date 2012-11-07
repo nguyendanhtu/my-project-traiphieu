@@ -24,6 +24,7 @@ using BondDS.CDBNames;
 using C1.Win.C1FlexGrid;
 using BondApp.DanhMuc;
 using BondApp.HeThong;
+using IP.Core.IPSystemAdmin;
 
 namespace BondApp
 {
@@ -439,6 +440,7 @@ namespace BondApp
         DS_V_DM_TRAI_PHIEU m_ds_v_trai_phieu;
         US_DM_TRAI_CHU m_us_trai_chu = new US_DM_TRAI_CHU();
         e_form_mode eform_mode = e_form_mode.DANH_SACH_LAP_PHONG_TOA;
+        US_V_HT_LOG_TRUY_CAP m_us_v_ht_log_truy_cap = new US_V_HT_LOG_TRUY_CAP();
         #endregion
 
         #region Private Methods
@@ -454,7 +456,24 @@ namespace BondApp
             m_lbl_title.ForeColor = Color.DarkRed;
             m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
         }
-
+        private void ghi_log_he_thong()
+        {
+            /* Thông tin chung*/
+            m_us_v_ht_log_truy_cap.dcID_DANG_NHAP = CAppContext_201.getCurrentUserID();
+            m_us_v_ht_log_truy_cap.datTHOI_GIAN = DateTime.Now;
+            m_us_v_ht_log_truy_cap.strDOI_TUONG_THAO_TAC = LOG_DOI_TUONG_TAC_DONG.DM_TRAI_CHU;
+            m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.XOA;
+            m_us_v_ht_log_truy_cap.strMO_TA = "Xóa " + LOG_DOI_TUONG_TAC_DONG.DM_TRAI_CHU + ": " + m_us.strTEN_TRAI_CHU+" sở hữu trái phiếu:" + m_us.strTEN_TRAI_PHIEU;
+            // ghi log hệ thống
+            try
+            {
+                m_us_v_ht_log_truy_cap.Insert();
+            }
+            catch
+            {
+                BaseMessages.MsgBox_Infor("Đã xảy ra lỗi trong quá trình ghi log hệ thống");
+            }
+        }
         private void set_initial_form_load()
         {
             switch (m_e_form_mode)
@@ -649,6 +668,7 @@ namespace BondApp
                 v_us.BeginTransaction();
                 v_us.Delete();
                 v_us.CommitTransaction();
+                ghi_log_he_thong();
                 m_fg.Rows.Remove(m_fg.Row);
             }
             catch (Exception v_e)

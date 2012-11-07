@@ -66,6 +66,7 @@ namespace BondApp.DanhMuc
         US_CM_DM_TU_DIEN m_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
         DS_CM_DM_TU_DIEN m_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
         e_formmode m_e_form_mode = e_formmode.HIEN_THI_DE_THEM;
+        US_V_HT_LOG_TRUY_CAP m_us_v_ht_log_truy_cap = new US_V_HT_LOG_TRUY_CAP();
         #endregion
 
         #region Private Method
@@ -77,7 +78,44 @@ namespace BondApp.DanhMuc
             m_lbl_title.ForeColor = Color.DarkRed;
             m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
         }
-
+        private void ghi_log_he_thong()
+        {
+            /* Thông tin chung*/
+            m_us_v_ht_log_truy_cap.dcID_DANG_NHAP = CAppContext_201.getCurrentUserID();
+            m_us_v_ht_log_truy_cap.datTHOI_GIAN = DateTime.Now;
+            m_us_v_ht_log_truy_cap.strDOI_TUONG_THAO_TAC = LOG_DOI_TUONG_TAC_DONG.DM_TRAI_CHU;
+            
+            /* Thông tin riêng*/
+            switch (m_e_form_mode)
+            {
+                case e_formmode.HIEN_THI_DE_THEM:
+                    DS_V_DM_TRAI_CHU v_ds_dm_trai_chu = new DS_V_DM_TRAI_CHU();
+                    m_us_v_trai_chu.FillDataset(v_ds_dm_trai_chu, " WHERE ID = (SELECT MAX(ID) FROM DM_TRAI_CHU)");
+                    m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.THEM;
+                    if (v_ds_dm_trai_chu.V_DM_TRAI_CHU.Rows.Count > 0)
+                        m_us_v_ht_log_truy_cap.strMO_TA = "Thêm " + LOG_DOI_TUONG_TAC_DONG.DM_TRAI_CHU + ": " + CIPConvert.ToStr(v_ds_dm_trai_chu.V_DM_TRAI_CHU.Rows[0][V_DM_TRAI_CHU.TEN_TRAI_CHU]) + " sở hữu trái phiếu: " + CIPConvert.ToStr(v_ds_dm_trai_chu.V_DM_TRAI_CHU.Rows[0][V_DM_TRAI_CHU.TEN_TRAI_PHIEU]);
+                    break;
+                case e_formmode.HIEN_THI_DE_SUA:
+                    m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.SUA;
+                    m_us_v_ht_log_truy_cap.strMO_TA = "Cập nhật thông tin " + LOG_DOI_TUONG_TAC_DONG.DM_TRAI_CHU + ": " + m_us_v_trai_chu.strTEN_TRAI_CHU + " sở hữu trái phiếu: " + m_us_v_trai_chu.strTEN_TRAI_PHIEU;
+                    break;
+                case e_formmode.HIEN_THI_DE_DUYET:
+                    m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.DUYET;
+                    m_us_v_ht_log_truy_cap.strMO_TA = "Duyệt thông tin " + LOG_DOI_TUONG_TAC_DONG.DM_TRAI_CHU + ": " + m_us_v_trai_chu.strTEN_TRAI_CHU + " sở hữu trái phiếu: " + m_us_v_trai_chu.strTEN_TRAI_PHIEU;
+                    break;
+                default:
+                    break;
+            }
+            // ghi log hệ thống
+            try
+            {
+                m_us_v_ht_log_truy_cap.Insert();
+            }
+            catch
+            {
+                BaseMessages.MsgBox_Infor("Đã xảy ra lỗi trong quá trình ghi log hệ thống");
+            }
+        }
         private void set_inital_form_load()
         {
             load_data_2_cbo();
@@ -296,7 +334,7 @@ namespace BondApp.DanhMuc
                     m_us_v_trai_chu.Update();
                     break;
             }
-
+            ghi_log_he_thong();
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
             this.Close();
         }

@@ -55,6 +55,7 @@ namespace BondApp.DanhMuc
         US_V_DM_DOT_PHAT_HANH m_us_v_dm_dot_phat_hanh = new US_V_DM_DOT_PHAT_HANH();
         DS_CM_DM_TU_DIEN m_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
         e_form_mode m_e_formmode = e_form_mode.VIEW_DU_LIEU;
+        US_V_HT_LOG_TRUY_CAP m_us_v_ht_log_truy_cap = new US_V_HT_LOG_TRUY_CAP();
         #endregion
         
         #region Data Structures
@@ -75,6 +76,44 @@ namespace BondApp.DanhMuc
             m_lbl_title.Font = new Font("Arial", 16);
             m_lbl_title.ForeColor = Color.DarkRed;
             m_lbl_title.TextAlign = ContentAlignment.MiddleCenter;
+        }
+        private void ghi_log_he_thong()
+        {
+            /* Thông tin chung*/
+            m_us_v_ht_log_truy_cap.dcID_DANG_NHAP = CAppContext_201.getCurrentUserID();
+            m_us_v_ht_log_truy_cap.datTHOI_GIAN = DateTime.Now;
+            m_us_v_ht_log_truy_cap.strDOI_TUONG_THAO_TAC = LOG_DOI_TUONG_TAC_DONG.DM_TRAI_PHIEU;
+
+            /* Thông tin riêng*/
+            switch (m_e_formmode)
+            {
+                case e_form_mode.THEM_TRAI_PHIEU:
+                    DS_V_DM_TRAI_PHIEU v_ds_dm_trai_phieu = new DS_V_DM_TRAI_PHIEU();
+                    m_us_trai_phieu.FillDataset(v_ds_dm_trai_phieu, " WHERE ID = (SELECT MAX(ID) FROM DM_TRAI_PHIEU)");
+                    m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.THEM;
+                    if (v_ds_dm_trai_phieu.V_DM_TRAI_PHIEU.Rows.Count > 0)
+                        m_us_v_ht_log_truy_cap.strMO_TA = "Thêm " + LOG_DOI_TUONG_TAC_DONG.DM_TRAI_PHIEU + " mã " + CIPConvert.ToStr(v_ds_dm_trai_phieu.V_DM_TRAI_PHIEU.Rows[0][V_DM_TRAI_PHIEU.MA_TRAI_PHIEU]) + " phát hành ngày: " + CIPConvert.ToStr(v_ds_dm_trai_phieu.V_DM_TRAI_PHIEU.Rows[0][V_DM_TRAI_PHIEU.NGAY_PHAT_HANH]);
+                    break;
+                case e_form_mode.CAP_NHAT_TRAI_PHIEU:
+                    m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.SUA;
+                    m_us_v_ht_log_truy_cap.strMO_TA = "Cập nhật thông tin " + LOG_DOI_TUONG_TAC_DONG.DM_TRAI_PHIEU + " mã " + m_us_trai_phieu.strMA_TRAI_PHIEU + " phát hành ngày " + m_us_trai_phieu.datNGAY_PHAT_HANH;
+                    break;
+                case e_form_mode.DUYET_DU_LIEU:
+                    m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.DUYET;
+                    m_us_v_ht_log_truy_cap.strMO_TA = "Duyệt thông tin " + LOG_DOI_TUONG_TAC_DONG.DM_TRAI_PHIEU + " mã " + m_us_trai_phieu.strMA_TRAI_PHIEU + " phát hành ngày " + m_us_trai_phieu.datNGAY_PHAT_HANH;
+                    break;
+                default:
+                    break;
+            }
+            // ghi log hệ thống
+            try
+            {
+                m_us_v_ht_log_truy_cap.Insert();
+            }
+            catch
+            {
+                BaseMessages.MsgBox_Infor("Đã xảy ra lỗi trong quá trình ghi log hệ thống");
+            }
         }
         private void us_object_2_form(US_V_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
@@ -347,6 +386,7 @@ namespace BondApp.DanhMuc
                 default:
                     break;
             }
+            ghi_log_he_thong();
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
             this.Close();
         }
