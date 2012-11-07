@@ -27,7 +27,27 @@ namespace BondDS.CDBNames
         public const string LAI_SUAT = "LAI_SUAT";
         public const string GHI_CHU = "GHI_CHU";
     }
-
+    public class LOG_DOI_TUONG_TAC_DONG
+    {
+        public const string DANG_NHAP_XUAT = "";
+        public const string DM_TU_DIEN = "Danh mục từ điển";
+        public const string DM_DOT_PHAT_HANH = "Danh mục đợt phát hành";
+        public const string DM_NGAY_LAM_VIEC = "Danh mục ngày làm việc";
+        public const string DM_THAM_SO_NHAC_VIEC = "Danh mục tham số nhắc việc";
+        public const string DM_TO_CHUC_PHAT_HANH = "Danh mục tổ chức phát hành";
+        public const string DM_TRAI_CHU = "Danh mục trái chủ";
+        public const string DM_TRAI_PHIEU = "Danh mục trái phiếu";
+        public const string GD_CHOT_LAI = "Giao dịch chốt lãi";
+        public const string GD_CHOT_LAI_DETAIL = "Chi tiết giao dịch chốt lãi";
+        public const string GD_CHUYEN_NHUONG = "Giao dịch chuyển nhượng";
+        public const string GD_LICH_THANH_TOAN_LAI_GOC = "Giao dịch lịch thanh toán lãi gốc";
+        public const string GD_NHAC_VIEC = "Giao dịch nhắc việc";
+        public const string GD_PHONG_TOA = "Giao dịch phong tỏa";
+        public const string GD_GIAI_TOA = "Giao dịch giải tỏa";
+        public const string GD_SO_DU_TRAI_PHIEU = "Giao dịch số dư trái phiếu";
+        public const string HT_NGUOI_SU_DUNG = "Người sử dụng";
+        public const string HT_THAM_SO_HE_THONG = "Tham số hệ thống";
+    }
     public class ID_THAM_SO_HE_THONG
     {
         public const decimal CHOT_LAI_TRUOC = 16;
