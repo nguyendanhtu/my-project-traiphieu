@@ -22,6 +22,7 @@ using BondDS;
 using BondDS.CDBNames;
 
 using C1.Win.C1FlexGrid;
+using IP.Core.IPSystemAdmin;
 
 namespace BondApp
 {
@@ -451,6 +452,7 @@ namespace BondApp
 		DS_V_DM_THAM_SO_NHAC_VIEC m_ds = new DS_V_DM_THAM_SO_NHAC_VIEC();
 		US_V_DM_THAM_SO_NHAC_VIEC m_us = new US_V_DM_THAM_SO_NHAC_VIEC();
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
+        US_V_HT_LOG_TRUY_CAP m_us_v_ht_log_truy_cap = new US_V_HT_LOG_TRUY_CAP();
 		#endregion
 
 		#region Private Methods
@@ -466,6 +468,38 @@ namespace BondApp
 			set_define_events();
 			this.KeyPreview = true;		
 		}
+        private void ghi_log_he_thong()
+        {
+            /* Thông tin chung*/
+            m_us_v_ht_log_truy_cap.dcID_DANG_NHAP = CAppContext_201.getCurrentUserID();
+            m_us_v_ht_log_truy_cap.datTHOI_GIAN = DateTime.Now;
+            m_us_v_ht_log_truy_cap.strDOI_TUONG_THAO_TAC = LOG_DOI_TUONG_TAC_DONG.DM_THAM_SO_NHAC_VIEC;
+
+            /* Thông tin riêng*/
+            switch (m_e_form_mode)
+            {
+                case DataEntryFormMode.InsertDataState:
+                    DS_V_DM_THAM_SO_NHAC_VIEC v_ds_dm_tham_so_nhac_viec = new DS_V_DM_THAM_SO_NHAC_VIEC();
+                    m_us.FillDataset(v_ds_dm_tham_so_nhac_viec, " WHERE ID = (SELECT MAX(ID) FROM DM_THAM_SO_NHAC_VIEC)");
+                    m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.THEM;
+                    if (v_ds_dm_tham_so_nhac_viec.V_DM_THAM_SO_NHAC_VIEC.Rows.Count > 0)
+                        m_us_v_ht_log_truy_cap.strMO_TA = "Thêm " + LOG_DOI_TUONG_TAC_DONG.DM_THAM_SO_NHAC_VIEC + " loại nhắc việc: " + CIPConvert.ToStr(v_ds_dm_tham_so_nhac_viec.V_DM_THAM_SO_NHAC_VIEC.Rows[0][V_DM_THAM_SO_NHAC_VIEC.LOAI_NHAC_VIEC]) + ", nội dung nhắc: " + CIPConvert.ToStr(v_ds_dm_tham_so_nhac_viec.V_DM_THAM_SO_NHAC_VIEC.Rows[0][V_DM_THAM_SO_NHAC_VIEC.NOI_DUNG_NHAC]);
+                    break;
+                case DataEntryFormMode.UpdateDataState:
+                    m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.SUA;
+                    m_us_v_ht_log_truy_cap.strMO_TA = "Cập nhật thông tin " + LOG_DOI_TUONG_TAC_DONG.DM_THAM_SO_NHAC_VIEC + " loại nhắc việc: " + m_us.strLOAI_NHAC_VIEC + ", nội dung nhắc: " + m_us.strNOI_DUNG_NHAC;
+                    break;            
+            }
+            // ghi log hệ thống
+            try
+            {
+                m_us_v_ht_log_truy_cap.Insert();
+            }
+            catch
+            {
+                BaseMessages.MsgBox_Infor("Đã xảy ra lỗi trong quá trình ghi log hệ thống");
+            }
+        }
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
             load_data_2_cbo_loai_nhac_viec();
@@ -755,6 +789,7 @@ namespace BondApp
                     load_data_2_grid();
                     break;
             }
+            ghi_log_he_thong();
             BaseMessages.MsgBox_Infor("Dữ liệu được cập nhật thành công!");
             reset_controls();
         }
