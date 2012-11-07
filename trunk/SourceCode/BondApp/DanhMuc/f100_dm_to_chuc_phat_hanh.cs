@@ -16,6 +16,7 @@ using IP.Core.IPCommon;
 using IP.Core.IPException;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
+using IP.Core.IPSystemAdmin;
 
 using BondUS;
 using BondDS;
@@ -364,9 +365,10 @@ namespace BondApp
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
         DS_V_DM_TO_CHUC_PHAT_HANH m_ds = new DS_V_DM_TO_CHUC_PHAT_HANH();
         US_V_DM_TO_CHUC_PHAT_HANH m_us = new US_V_DM_TO_CHUC_PHAT_HANH();
+        US_V_HT_LOG_TRUY_CAP m_us_v_ht_log_truy_cap = new US_V_HT_LOG_TRUY_CAP();
 		#endregion
 
-		    #region Private Methods
+		#region Private Methods
 		private void format_controls(){
 			CControlFormat.setFormStyle(this);
 			CControlFormat.setC1FlexFormat(m_fg);
@@ -423,14 +425,30 @@ namespace BondApp
 			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
 			i_us.DataRow2Me(v_dr);
 		}
-
+        private void ghi_log_he_thong()
+        {
+            /* Thông tin chung*/
+            m_us_v_ht_log_truy_cap.dcID_DANG_NHAP = CAppContext_201.getCurrentUserID();
+            m_us_v_ht_log_truy_cap.datTHOI_GIAN = DateTime.Now;
+            m_us_v_ht_log_truy_cap.strDOI_TUONG_THAO_TAC = LOG_DOI_TUONG_TAC_DONG.DM_TO_CHUC_PHAT_HANH;
+            m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.XOA;
+            m_us_v_ht_log_truy_cap.strMO_TA = "Xóa " + LOG_DOI_TUONG_TAC_DONG.DM_TO_CHUC_PHAT_HANH+ ": " + m_us.strTEN_TO_CHUC_PHAT_HANH;
+            // ghi log hệ thống
+            try
+            {
+                m_us_v_ht_log_truy_cap.Insert();
+            }
+            catch
+            {
+                BaseMessages.MsgBox_Infor("Đã xảy ra lỗi trong quá trình ghi log hệ thống");
+            }
+        }
 		private void us_object2grid(US_V_DM_TO_CHUC_PHAT_HANH i_us
 			, int i_grid_row) {
 			DataRow v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
 			i_us.Me2DataRow(v_dr);
 			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
 		}
-
         private void chon_to_chuc()
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
@@ -474,12 +492,7 @@ namespace BondApp
 		private void delete_dm_to_chuc_phat_hanh(){
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			//if (BaseMessages.askUser_DataCouldBeDeleted( != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
             if (!BaseMessages.MsgBox_Confirm("Bạn có chắc chắn muốn xóa dữ liệu này?")) return;
-            //bool v_bool_xac_nhan = false;
-            //f000_confirm v_frm000 = new f000_confirm();
-            //v_bool_xac_nhan = v_frm000.display_to_confirm();
-            //if (!v_bool_xac_nhan) return;
             US_V_DM_TO_CHUC_PHAT_HANH v_us = new US_V_DM_TO_CHUC_PHAT_HANH();
 			grid2us_object(v_us, m_fg.Row);
             US_V_DM_DOT_PHAT_HANH v_us_dm_dot_ph = new US_V_DM_DOT_PHAT_HANH();
@@ -492,8 +505,9 @@ namespace BondApp
             }
 			try {			
 				v_us.BeginTransaction();    											
-				v_us.Delete();                      								
+				v_us.Delete();					
 				v_us.CommitTransaction();
+                ghi_log_he_thong();
 				m_fg.Rows.Remove(m_fg.Row);				
 			}
 			catch (Exception v_e) {
