@@ -36,8 +36,12 @@
             this.m_cbo_tra_lai_sau = new System.Windows.Forms.ComboBox();
             this.m_lbl_tra_lai_sau = new System.Windows.Forms.Label();
             this.m_cbo_dv_tra_lai = new System.Windows.Forms.ComboBox();
+            this.m_txt_so_ngay_chot_lai_truoc = new System.Windows.Forms.TextBox();
             this.m_txt_ky_tra_lai = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.m_cbo_thanh_toan_tai_ngay_lv_truoc_yn = new System.Windows.Forms.ComboBox();
             this.m_cbo_chuyen_nhuong_huong_theo = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.m_lbl_ky_tra_lai = new System.Windows.Forms.Label();
@@ -113,7 +117,7 @@
             this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(864, 40);
+            this.m_lbl_title.Size = new System.Drawing.Size(864, 37);
             this.m_lbl_title.TabIndex = 0;
             this.m_lbl_title.Text = "F300 - Thông tin trái phiếu";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -129,9 +133,9 @@
             this.m.Controls.Add(this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat);
             this.m.Controls.Add(this.m_pnl_out_place_dm);
             this.m.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m.Location = new System.Drawing.Point(0, 40);
+            this.m.Location = new System.Drawing.Point(0, 37);
             this.m.Name = "m";
-            this.m.Size = new System.Drawing.Size(864, 606);
+            this.m.Size = new System.Drawing.Size(864, 642);
             this.m.TabIndex = 1;
             this.m.TabStop = false;
             // 
@@ -140,8 +144,12 @@
             this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_cbo_tra_lai_sau);
             this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_lbl_tra_lai_sau);
             this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_cbo_dv_tra_lai);
+            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_txt_so_ngay_chot_lai_truoc);
             this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_txt_ky_tra_lai);
+            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.label16);
+            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_cbo_thanh_toan_tai_ngay_lv_truoc_yn);
             this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_cbo_chuyen_nhuong_huong_theo);
+            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.label15);
             this.m_gru_thong_tin_thanh_toan.Controls.Add(this.label10);
             this.m_gru_thong_tin_thanh_toan.Controls.Add(this.label4);
             this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_lbl_ky_tra_lai);
@@ -149,9 +157,10 @@
             this.m_gru_thong_tin_thanh_toan.Controls.Add(this.label7);
             this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_cbo_co_so_tinh_lai);
             this.m_gru_thong_tin_thanh_toan.Controls.Add(this.label1);
-            this.m_gru_thong_tin_thanh_toan.Location = new System.Drawing.Point(6, 447);
+            this.m_gru_thong_tin_thanh_toan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_gru_thong_tin_thanh_toan.Location = new System.Drawing.Point(3, 442);
             this.m_gru_thong_tin_thanh_toan.Name = "m_gru_thong_tin_thanh_toan";
-            this.m_gru_thong_tin_thanh_toan.Size = new System.Drawing.Size(858, 83);
+            this.m_gru_thong_tin_thanh_toan.Size = new System.Drawing.Size(858, 123);
             this.m_gru_thong_tin_thanh_toan.TabIndex = 74;
             this.m_gru_thong_tin_thanh_toan.TabStop = false;
             this.m_gru_thong_tin_thanh_toan.Text = "Thông tin thanh toán";
@@ -186,6 +195,15 @@
             this.m_cbo_dv_tra_lai.Size = new System.Drawing.Size(65, 21);
             this.m_cbo_dv_tra_lai.TabIndex = 2;
             // 
+            // m_txt_so_ngay_chot_lai_truoc
+            // 
+            this.m_txt_so_ngay_chot_lai_truoc.BackColor = System.Drawing.Color.White;
+            this.m_txt_so_ngay_chot_lai_truoc.Location = new System.Drawing.Point(227, 89);
+            this.m_txt_so_ngay_chot_lai_truoc.Name = "m_txt_so_ngay_chot_lai_truoc";
+            this.m_txt_so_ngay_chot_lai_truoc.Size = new System.Drawing.Size(86, 20);
+            this.m_txt_so_ngay_chot_lai_truoc.TabIndex = 1;
+            this.m_txt_so_ngay_chot_lai_truoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // m_txt_ky_tra_lai
             // 
             this.m_txt_ky_tra_lai.BackColor = System.Drawing.Color.White;
@@ -194,6 +212,24 @@
             this.m_txt_ky_tra_lai.Size = new System.Drawing.Size(58, 20);
             this.m_txt_ky_tra_lai.TabIndex = 1;
             this.m_txt_ky_tra_lai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(380, 92);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(62, 13);
+            this.label16.TabIndex = 67;
+            this.label16.Text = "Thanh toán";
+            // 
+            // m_cbo_thanh_toan_tai_ngay_lv_truoc_yn
+            // 
+            this.m_cbo_thanh_toan_tai_ngay_lv_truoc_yn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_thanh_toan_tai_ngay_lv_truoc_yn.FormattingEnabled = true;
+            this.m_cbo_thanh_toan_tai_ngay_lv_truoc_yn.Location = new System.Drawing.Point(452, 89);
+            this.m_cbo_thanh_toan_tai_ngay_lv_truoc_yn.Name = "m_cbo_thanh_toan_tai_ngay_lv_truoc_yn";
+            this.m_cbo_thanh_toan_tai_ngay_lv_truoc_yn.Size = new System.Drawing.Size(291, 21);
+            this.m_cbo_thanh_toan_tai_ngay_lv_truoc_yn.TabIndex = 4;
             // 
             // m_cbo_chuyen_nhuong_huong_theo
             // 
@@ -206,6 +242,15 @@
             this.m_cbo_chuyen_nhuong_huong_theo.Name = "m_cbo_chuyen_nhuong_huong_theo";
             this.m_cbo_chuyen_nhuong_huong_theo.Size = new System.Drawing.Size(154, 21);
             this.m_cbo_chuyen_nhuong_huong_theo.TabIndex = 4;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(24, 93);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(190, 13);
+            this.label15.TabIndex = 67;
+            this.label15.Text = "Số ngày chốt lãi trước ngày thanh toán";
             // 
             // label10
             // 
@@ -263,7 +308,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(555, 31);
+            this.label1.Location = new System.Drawing.Point(558, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 13);
             this.label1.TabIndex = 24;
@@ -282,9 +327,10 @@
             this.m_gru_thong_tin_lai_suat.Controls.Add(this.m_txt_bien_do_lai);
             this.m_gru_thong_tin_lai_suat.Controls.Add(this.label2);
             this.m_gru_thong_tin_lai_suat.Controls.Add(this.label3);
-            this.m_gru_thong_tin_lai_suat.Location = new System.Drawing.Point(6, 356);
+            this.m_gru_thong_tin_lai_suat.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_gru_thong_tin_lai_suat.Location = new System.Drawing.Point(3, 351);
             this.m_gru_thong_tin_lai_suat.Name = "m_gru_thong_tin_lai_suat";
-            this.m_gru_thong_tin_lai_suat.Size = new System.Drawing.Size(855, 85);
+            this.m_gru_thong_tin_lai_suat.Size = new System.Drawing.Size(858, 91);
             this.m_gru_thong_tin_lai_suat.TabIndex = 73;
             this.m_gru_thong_tin_lai_suat.TabStop = false;
             this.m_gru_thong_tin_lai_suat.Text = "Thông tin lãi suất";
@@ -304,7 +350,7 @@
             // m_lbl_lai_suat_tha_noi
             // 
             this.m_lbl_lai_suat_tha_noi.AutoSize = true;
-            this.m_lbl_lai_suat_tha_noi.Location = new System.Drawing.Point(62, 27);
+            this.m_lbl_lai_suat_tha_noi.Location = new System.Drawing.Point(65, 27);
             this.m_lbl_lai_suat_tha_noi.Name = "m_lbl_lai_suat_tha_noi";
             this.m_lbl_lai_suat_tha_noi.Size = new System.Drawing.Size(79, 13);
             this.m_lbl_lai_suat_tha_noi.TabIndex = 26;
@@ -321,7 +367,7 @@
             // m_lbl_lai_suat
             // 
             this.m_lbl_lai_suat.AutoSize = true;
-            this.m_lbl_lai_suat.Location = new System.Drawing.Point(321, 58);
+            this.m_lbl_lai_suat.Location = new System.Drawing.Point(321, 55);
             this.m_lbl_lai_suat.Name = "m_lbl_lai_suat";
             this.m_lbl_lai_suat.Size = new System.Drawing.Size(44, 13);
             this.m_lbl_lai_suat.TabIndex = 22;
@@ -348,7 +394,7 @@
             // m_lbl_ky_dieu_chinh_ls
             // 
             this.m_lbl_ky_dieu_chinh_ls.AutoSize = true;
-            this.m_lbl_ky_dieu_chinh_ls.Location = new System.Drawing.Point(33, 58);
+            this.m_lbl_ky_dieu_chinh_ls.Location = new System.Drawing.Point(36, 55);
             this.m_lbl_ky_dieu_chinh_ls.Name = "m_lbl_ky_dieu_chinh_ls";
             this.m_lbl_ky_dieu_chinh_ls.Size = new System.Drawing.Size(108, 13);
             this.m_lbl_ky_dieu_chinh_ls.TabIndex = 33;
@@ -373,7 +419,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(578, 58);
+            this.label2.Location = new System.Drawing.Point(581, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 13);
             this.label2.TabIndex = 58;
@@ -407,9 +453,10 @@
             this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_txt_ma_trai_phieu);
             this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_lbl_ten_trai_phieu);
             this.m_gru_thong_tin_trai_phieu_chung.Controls.Add(this.m_txt_ten_trai_phieu);
-            this.m_gru_thong_tin_trai_phieu_chung.Location = new System.Drawing.Point(3, 195);
+            this.m_gru_thong_tin_trai_phieu_chung.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_gru_thong_tin_trai_phieu_chung.Location = new System.Drawing.Point(3, 183);
             this.m_gru_thong_tin_trai_phieu_chung.Name = "m_gru_thong_tin_trai_phieu_chung";
-            this.m_gru_thong_tin_trai_phieu_chung.Size = new System.Drawing.Size(864, 155);
+            this.m_gru_thong_tin_trai_phieu_chung.Size = new System.Drawing.Size(858, 168);
             this.m_gru_thong_tin_trai_phieu_chung.TabIndex = 71;
             this.m_gru_thong_tin_trai_phieu_chung.TabStop = false;
             this.m_gru_thong_tin_trai_phieu_chung.Text = "Thông tin trái phiếu chung";
@@ -475,7 +522,7 @@
             this.m_cbo_ngung_chuyen_nhuong_tu_ngay.Items.AddRange(new object[] {
             "Trong ngày chốt",
             "Từ ngày chốt đến ngày thanh toán"});
-            this.m_cbo_ngung_chuyen_nhuong_tu_ngay.Location = new System.Drawing.Point(387, 128);
+            this.m_cbo_ngung_chuyen_nhuong_tu_ngay.Location = new System.Drawing.Point(162, 131);
             this.m_cbo_ngung_chuyen_nhuong_tu_ngay.Name = "m_cbo_ngung_chuyen_nhuong_tu_ngay";
             this.m_cbo_ngung_chuyen_nhuong_tu_ngay.Size = new System.Drawing.Size(234, 21);
             this.m_cbo_ngung_chuyen_nhuong_tu_ngay.TabIndex = 6;
@@ -483,7 +530,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(256, 136);
+            this.label9.Location = new System.Drawing.Point(28, 139);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(116, 13);
             this.label9.TabIndex = 67;
@@ -527,7 +574,7 @@
             // m_lbl_ky_han
             // 
             this.m_lbl_ky_han.AutoSize = true;
-            this.m_lbl_ky_han.Location = new System.Drawing.Point(89, 104);
+            this.m_lbl_ky_han.Location = new System.Drawing.Point(104, 104);
             this.m_lbl_ky_han.Name = "m_lbl_ky_han";
             this.m_lbl_ky_han.Size = new System.Drawing.Size(40, 13);
             this.m_lbl_ky_han.TabIndex = 19;
@@ -536,7 +583,7 @@
             // m_lbl_ma_trai_phieu
             // 
             this.m_lbl_ma_trai_phieu.AutoSize = true;
-            this.m_lbl_ma_trai_phieu.Location = new System.Drawing.Point(79, 27);
+            this.m_lbl_ma_trai_phieu.Location = new System.Drawing.Point(76, 27);
             this.m_lbl_ma_trai_phieu.Name = "m_lbl_ma_trai_phieu";
             this.m_lbl_ma_trai_phieu.Size = new System.Drawing.Size(68, 13);
             this.m_lbl_ma_trai_phieu.TabIndex = 4;
@@ -572,7 +619,7 @@
             this.m_gru_thong_tin_hop_dong_dang_ky_luu_ky_va_thanh_toan.Controls.Add(this.m_txt_so_hd);
             this.m_gru_thong_tin_hop_dong_dang_ky_luu_ky_va_thanh_toan.Controls.Add(this.label11);
             this.m_gru_thong_tin_hop_dong_dang_ky_luu_ky_va_thanh_toan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_gru_thong_tin_hop_dong_dang_ky_luu_ky_va_thanh_toan.Location = new System.Drawing.Point(3, 127);
+            this.m_gru_thong_tin_hop_dong_dang_ky_luu_ky_va_thanh_toan.Location = new System.Drawing.Point(3, 121);
             this.m_gru_thong_tin_hop_dong_dang_ky_luu_ky_va_thanh_toan.Name = "m_gru_thong_tin_hop_dong_dang_ky_luu_ky_va_thanh_toan";
             this.m_gru_thong_tin_hop_dong_dang_ky_luu_ky_va_thanh_toan.Size = new System.Drawing.Size(858, 62);
             this.m_gru_thong_tin_hop_dong_dang_ky_luu_ky_va_thanh_toan.TabIndex = 69;
@@ -616,7 +663,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(11, 538);
+            this.label8.Location = new System.Drawing.Point(12, 573);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(202, 13);
             this.label8.TabIndex = 64;
@@ -637,7 +684,7 @@
             this.m_gru_thong_tin_trai_phieu.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_gru_thong_tin_trai_phieu.Location = new System.Drawing.Point(3, 16);
             this.m_gru_thong_tin_trai_phieu.Name = "m_gru_thong_tin_trai_phieu";
-            this.m_gru_thong_tin_trai_phieu.Size = new System.Drawing.Size(858, 111);
+            this.m_gru_thong_tin_trai_phieu.Size = new System.Drawing.Size(858, 105);
             this.m_gru_thong_tin_trai_phieu.TabIndex = 56;
             this.m_gru_thong_tin_trai_phieu.TabStop = false;
             this.m_gru_thong_tin_trai_phieu.Text = "Thông tin đợt phát hành";
@@ -741,7 +788,7 @@
             // 
             // m_txt_ghi_chu_phuong_thuc_xd_lai_suat
             // 
-            this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat.Location = new System.Drawing.Point(228, 536);
+            this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat.Location = new System.Drawing.Point(227, 571);
             this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat.Name = "m_txt_ghi_chu_phuong_thuc_xd_lai_suat";
             this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat.Size = new System.Drawing.Size(565, 20);
             this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat.TabIndex = 0;
@@ -751,7 +798,7 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(3, 567);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(3, 603);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(858, 36);
@@ -818,7 +865,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(864, 646);
+            this.ClientSize = new System.Drawing.Size(864, 679);
             this.Controls.Add(this.m);
             this.Controls.Add(this.m_lbl_title);
             this.Name = "f300_dm_trai_phieu_DE";
@@ -909,6 +956,10 @@
         private System.Windows.Forms.TextBox m_txt_tong_sl;
         private System.Windows.Forms.Label m_lbl_tong_sl;
         private System.Windows.Forms.Label m_lbl_loai_trai_phieu;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox m_txt_so_ngay_chot_lai_truoc;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox m_cbo_thanh_toan_tai_ngay_lv_truoc_yn;
 
     }
 }
