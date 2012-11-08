@@ -34,10 +34,10 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.m_txt_ngay_chot = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.m_lbl_dv_ky_tra_lai = new System.Windows.Forms.Label();
             this.m_txt_ky_tinh_lai = new System.Windows.Forms.TextBox();
             this.m_lbl_ky_tinh_lai = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.m_lbl_dv_ky_han = new System.Windows.Forms.Label();
             this.m_cbo_ky_tinh_lai = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
@@ -92,10 +92,10 @@
             // 
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.m_txt_ngay_chot);
-            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.m_lbl_dv_ky_tra_lai);
             this.groupBox2.Controls.Add(this.m_txt_ky_tinh_lai);
             this.groupBox2.Controls.Add(this.m_lbl_ky_tinh_lai);
-            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.m_lbl_dv_ky_han);
             this.groupBox2.Controls.Add(this.m_cbo_ky_tinh_lai);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label34);
@@ -141,15 +141,15 @@
             this.m_txt_ngay_chot.Size = new System.Drawing.Size(130, 20);
             this.m_txt_ngay_chot.TabIndex = 67;
             // 
-            // label4
+            // m_lbl_dv_ky_tra_lai
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(838, 47);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 13);
-            this.label4.TabIndex = 65;
-            this.label4.Text = "tháng";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_lbl_dv_ky_tra_lai.AutoSize = true;
+            this.m_lbl_dv_ky_tra_lai.Location = new System.Drawing.Point(838, 47);
+            this.m_lbl_dv_ky_tra_lai.Name = "m_lbl_dv_ky_tra_lai";
+            this.m_lbl_dv_ky_tra_lai.Size = new System.Drawing.Size(34, 13);
+            this.m_lbl_dv_ky_tra_lai.TabIndex = 65;
+            this.m_lbl_dv_ky_tra_lai.Text = "tháng";
+            this.m_lbl_dv_ky_tra_lai.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // m_txt_ky_tinh_lai
             // 
@@ -170,15 +170,15 @@
             this.m_lbl_ky_tinh_lai.TabIndex = 63;
             this.m_lbl_ky_tinh_lai.Text = "Kỳ tính lãi";
             // 
-            // label3
+            // m_lbl_dv_ky_han
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(647, 47);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 13);
-            this.label3.TabIndex = 62;
-            this.label3.Text = "năm";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_lbl_dv_ky_han.AutoSize = true;
+            this.m_lbl_dv_ky_han.Location = new System.Drawing.Point(647, 47);
+            this.m_lbl_dv_ky_han.Name = "m_lbl_dv_ky_han";
+            this.m_lbl_dv_ky_han.Size = new System.Drawing.Size(27, 13);
+            this.m_lbl_dv_ky_han.TabIndex = 62;
+            this.m_lbl_dv_ky_han.Text = "năm";
+            this.m_lbl_dv_ky_han.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // m_cbo_ky_tinh_lai
             // 
@@ -572,9 +572,9 @@
         private System.Windows.Forms.TextBox m_txt_search;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button m_cmd_filter;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label m_lbl_dv_ky_han;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label m_lbl_dv_ky_tra_lai;
         private System.Windows.Forms.TextBox m_txt_ky_tinh_lai;
         private System.Windows.Forms.Label m_lbl_ky_tinh_lai;
         internal System.Windows.Forms.ImageList ImageList;
