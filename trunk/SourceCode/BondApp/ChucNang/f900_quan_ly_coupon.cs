@@ -343,20 +343,42 @@ namespace BondApp.ChucNang
                 double v_d_ngay = 0;
                 US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_v_trai_phieu.dcID_DOT_PHAT_HANH);
                 m_cbo_ky_tinh_lai.Items.Clear();
-                if(m_us_v_trai_phieu.dcID_DV_KY_TRA_LAI == 18)
+                if (m_us_v_trai_phieu.dcID_DV_KY_TRA_LAI == 18)
                 {
-                    v_dc_so_ky_tra_lai = m_us_v_trai_phieu.dcKY_HAN / m_us_v_trai_phieu.dcKY_TRA_LAI * 12;
-                    v_d_ngay = (DateTime.Now - v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH).TotalDays;
+                    if (m_us_v_trai_phieu.dcID_DV_KY_HAN == 19)
+                    {
+                        v_dc_so_ky_tra_lai = m_us_v_trai_phieu.dcKY_HAN / m_us_v_trai_phieu.dcKY_TRA_LAI * 12;
+                    }
+                    else
+                    {
+                        v_dc_so_ky_tra_lai = m_us_v_trai_phieu.dcKY_HAN / m_us_v_trai_phieu.dcKY_TRA_LAI;
+                    }
                 }
                 else
                 {
-                    v_dc_so_ky_tra_lai = m_us_v_trai_phieu.dcKY_HAN / m_us_v_trai_phieu.dcKY_TRA_LAI;
+                    if (m_us_v_trai_phieu.dcID_DV_KY_HAN == 19)
+                    {
+                        v_dc_so_ky_tra_lai = m_us_v_trai_phieu.dcKY_HAN / m_us_v_trai_phieu.dcKY_TRA_LAI;
+                    }
+                    else
+                    {
+                        v_dc_so_ky_tra_lai = m_us_v_trai_phieu.dcKY_HAN / (m_us_v_trai_phieu.dcKY_TRA_LAI * 12);
+                    }
                 }
+                v_d_ngay = (DateTime.Now - v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH).TotalDays;
                 for (int i = 1; i <= v_dc_so_ky_tra_lai; i++)
                 {
                     m_cbo_ky_tinh_lai.Items.Add(i);
                     DateTime v_dat = v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH;
-                    v_dat = v_dat.AddMonths(i * (int)m_us_v_trai_phieu.dcKY_TRA_LAI);
+                    if (m_us_v_trai_phieu.dcID_DV_KY_TRA_LAI == 18)
+                    {
+                        v_dat = v_dat.AddMonths(i * (int)m_us_v_trai_phieu.dcKY_TRA_LAI);
+                    }
+                    else
+                    {
+                        v_dat = v_dat.AddYears(i * (int)m_us_v_trai_phieu.dcKY_TRA_LAI);
+                    }
+                    
                     if (v_d_ngay >= (v_dat - v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH).TotalDays)
                     {
                         v_i_current = i;
@@ -376,7 +398,15 @@ namespace BondApp.ChucNang
             US_HT_THAM_SO_HE_THONG v_us_ht = new US_HT_THAM_SO_HE_THONG(ID_THAM_SO_HE_THONG.CHOT_LAI_TRUOC);
             US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_v_trai_phieu.dcID_DOT_PHAT_HANH);
             DateTime v_dat_ngay_chot_tuong_ung = v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH;
-            v_dat_ngay_chot_tuong_ung = v_dat_ngay_chot_tuong_ung.AddMonths(i_ky_chot_lai * (int)m_us_v_trai_phieu.dcKY_TRA_LAI);
+            if (m_us_v_trai_phieu.dcID_DV_KY_TRA_LAI == 18)
+            {
+                v_dat_ngay_chot_tuong_ung = v_dat_ngay_chot_tuong_ung.AddMonths(i_ky_chot_lai * (int)m_us_v_trai_phieu.dcKY_TRA_LAI);
+            }
+            else
+            {
+                v_dat_ngay_chot_tuong_ung = v_dat_ngay_chot_tuong_ung.AddYears(i_ky_chot_lai * (int)m_us_v_trai_phieu.dcKY_TRA_LAI);
+            }
+            
             v_dat_ngay_chot_tuong_ung = v_dat_ngay_chot_tuong_ung.AddDays(-(int)CIPConvert.ToDecimal(v_us_ht.strGIA_TRI));
             m_txt_ngay_chot.Text = CIPConvert.ToStr(v_dat_ngay_chot_tuong_ung, "dd/MM/yyyy");
         }
@@ -394,6 +424,14 @@ namespace BondApp.ChucNang
             m_txt_lai_suat.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcLAI_SUAT_DEFAULT*100) + "%";
             m_txt_ky_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_HAN);
             m_txt_ky_tinh_lai.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_TRA_LAI, "#,###");
+            if (ip_us_trai_phieu.dcID_DV_KY_HAN == 18)
+                m_lbl_dv_ky_han.Text = "tháng";
+            else
+                m_lbl_dv_ky_han.Text = "năm";
+            if (ip_us_trai_phieu.dcID_DV_KY_TRA_LAI == 18)
+                m_lbl_dv_ky_tra_lai.Text = "tháng";
+            else
+                m_lbl_dv_ky_tra_lai.Text = "năm";
         }
 
         private bool check_data_is_ok()
