@@ -899,6 +899,50 @@ public class US_V_DM_TRAI_PHIEU : US_Object
         pm_objDR["NGAY_KY_HD"] = System.Convert.DBNull;
     }
 
+    public decimal dcSO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "SO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["SO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN"] = value;
+        }
+    }
+
+    public bool IsSO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOANNull()
+    {
+        return pm_objDR.IsNull("SO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN");
+    }
+
+    public void SetSO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOANNull()
+    {
+        pm_objDR["SO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN"] = System.Convert.DBNull;
+    }
+
+    public string strTHANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "THANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["THANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN"] = value;
+        }
+    }
+
+    public bool IsTHANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YNNull()
+    {
+        return pm_objDR.IsNull("THANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN");
+    }
+
+    public void SetTHANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YNNull()
+    {
+        pm_objDR["THANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN"] = System.Convert.DBNull;
+    }
+
     #endregion
 
 

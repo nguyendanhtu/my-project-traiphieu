@@ -484,6 +484,94 @@ namespace BondUS
             pm_objDR["TRANG_THAI"] = System.Convert.DBNull;
         }
 
+        public decimal dcPHI_CHUYEN_NHUONG_MAX
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "PHI_CHUYEN_NHUONG_MAX", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["PHI_CHUYEN_NHUONG_MAX"] = value;
+            }
+        }
+
+        public bool IsPHI_CHUYEN_NHUONG_MAXNull()
+        {
+            return pm_objDR.IsNull("PHI_CHUYEN_NHUONG_MAX");
+        }
+
+        public void SetPHI_CHUYEN_NHUONG_MAXNull()
+        {
+            pm_objDR["PHI_CHUYEN_NHUONG_MAX"] = System.Convert.DBNull;
+        }
+
+        public decimal dcPHI_CHUYEN_NHUONG_MIN
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "PHI_CHUYEN_NHUONG_MIN", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["PHI_CHUYEN_NHUONG_MIN"] = value;
+            }
+        }
+
+        public bool IsPHI_CHUYEN_NHUONG_MINNull()
+        {
+            return pm_objDR.IsNull("PHI_CHUYEN_NHUONG_MIN");
+        }
+
+        public void SetPHI_CHUYEN_NHUONG_MINNull()
+        {
+            pm_objDR["PHI_CHUYEN_NHUONG_MIN"] = System.Convert.DBNull;
+        }
+
+        public decimal dcPHI_PHONG_GIAI_TOA_MAX
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "PHI_PHONG_GIAI_TOA_MAX", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["PHI_PHONG_GIAI_TOA_MAX"] = value;
+            }
+        }
+
+        public bool IsPHI_PHONG_GIAI_TOA_MAXNull()
+        {
+            return pm_objDR.IsNull("PHI_PHONG_GIAI_TOA_MAX");
+        }
+
+        public void SetPHI_PHONG_GIAI_TOA_MAXNull()
+        {
+            pm_objDR["PHI_PHONG_GIAI_TOA_MAX"] = System.Convert.DBNull;
+        }
+
+        public decimal dcPHI_PHONG_GIAI_TOA_MIN
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "PHI_PHONG_GIAI_TOA_MIN", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["PHI_PHONG_GIAI_TOA_MIN"] = value;
+            }
+        }
+
+        public bool IsPHI_PHONG_GIAI_TOA_MINNull()
+        {
+            return pm_objDR.IsNull("PHI_PHONG_GIAI_TOA_MIN");
+        }
+
+        public void SetPHI_PHONG_GIAI_TOA_MINNull()
+        {
+            pm_objDR["PHI_PHONG_GIAI_TOA_MIN"] = System.Convert.DBNull;
+        }
+
         #endregion
 
 

@@ -122,6 +122,7 @@ namespace BondDS.CDBNames
         public const string LOAI_TRAI_CHU = "LOAI_TRAI_CHU";
         public const string TRANG_THAI_DANH_MUC = "TRANG_THAI_DANH_MUC";
         public const string LOAI_NHAC_NHAC_VIEC = "LOAI_NHAC_NHAC_VIEC";
+        public const string TT_TRUOC_NGAY_LV_GAN_NHAT = "TT_TRUOC_NGAY_LV_GAN_NHAT";
     }
     public class GD_NHAC_VIEC
     {
@@ -281,6 +282,10 @@ namespace BondDS.CDBNames
         public const string NGAY_LAM_VIEC_HAI_SAU_YN = "NGAY_LAM_VIEC_HAI_SAU_YN";
         public const string ID_TRANG_THAI = "ID_TRANG_THAI";
         public const string TRANG_THAI = "TRANG_THAI";
+        public const string PHI_CHUYEN_NHUONG_MAX = "PHI_CHUYEN_NHUONG_MAX";
+        public const string PHI_CHUYEN_NHUONG_MIN = "PHI_CHUYEN_NHUONG_MIN";
+        public const string PHI_PHONG_GIAI_TOA_MAX = "PHI_PHONG_GIAI_TOA_MAX";
+        public const string PHI_PHONG_GIAI_TOA_MIN = "PHI_PHONG_GIAI_TOA_MIN";
     }
 
 
@@ -548,6 +553,10 @@ namespace BondDS.CDBNames
         public const string ID_NGUOI_DUYET = "ID_NGUOI_DUYET";
         public const string NGAY_LAM_VIEC_HAI_SAU_YN = "NGAY_LAM_VIEC_HAI_SAU_YN";
         public const string ID_TRANG_THAI = "ID_TRANG_THAI";
+        public const string PHI_CHUYEN_NHUONG_MAX = "PHI_CHUYEN_NHUONG_MAX";
+        public const string PHI_CHUYEN_NHUONG_MIN = "PHI_CHUYEN_NHUONG_MIN";
+        public const string PHI_PHONG_GIAI_TOA_MAX = "PHI_PHONG_GIAI_TOA_MAX";
+        public const string PHI_PHONG_GIAI_TOA_MIN = "PHI_PHONG_GIAI_TOA_MIN";
     }
 
 
@@ -581,6 +590,8 @@ namespace BondDS.CDBNames
            public const string GHI_CHU_PHUONG_THUC_XD_LAI_SUAT =  "GHI_CHU_PHUONG_THUC_XD_LAI_SUAT";
            public const string CN_HUONG_THEO_NGAY_CHUYEN_NHUONG_YN =  "CN_HUONG_THEO_NGAY_CHUYEN_NHUONG_YN";
            public const string ID_TRANG_THAI =  "ID_TRANG_THAI";
+           public const string SO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN = "SO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN";
+           public const string THANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN = "THANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN";
     }
 
 
@@ -626,6 +637,8 @@ namespace BondDS.CDBNames
         public const string TRANG_THAI = "TRANG_THAI";
         public const string SO_HOP_DONG_DL_DK_LUU_KY = "SO_HOP_DONG_DL_DK_LUU_KY";
         public const string NGAY_KY_HD = "NGAY_KY_HD";
+        public const string SO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN = "SO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN";
+        public const string THANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN = "THANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN";
     }
 
     public class DOC_COLUMN_COMMENT

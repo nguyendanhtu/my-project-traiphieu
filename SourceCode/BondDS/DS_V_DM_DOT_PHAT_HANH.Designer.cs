@@ -321,6 +321,14 @@ namespace BondDS {
             
             private global::System.Data.DataColumn columnTRANG_THAI;
             
+            private global::System.Data.DataColumn columnPHI_CHUYEN_NHUONG_MAX;
+            
+            private global::System.Data.DataColumn columnPHI_CHUYEN_NHUONG_MIN;
+            
+            private global::System.Data.DataColumn columnPHI_PHONG_GIAI_TOA_MAX;
+            
+            private global::System.Data.DataColumn columnPHI_PHONG_GIAI_TOA_MIN;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public V_DM_DOT_PHAT_HANHDataTable() {
@@ -524,6 +532,38 @@ namespace BondDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PHI_CHUYEN_NHUONG_MAXColumn {
+                get {
+                    return this.columnPHI_CHUYEN_NHUONG_MAX;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PHI_CHUYEN_NHUONG_MINColumn {
+                get {
+                    return this.columnPHI_CHUYEN_NHUONG_MIN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PHI_PHONG_GIAI_TOA_MAXColumn {
+                get {
+                    return this.columnPHI_PHONG_GIAI_TOA_MAX;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PHI_PHONG_GIAI_TOA_MINColumn {
+                get {
+                    return this.columnPHI_PHONG_GIAI_TOA_MIN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -579,7 +619,11 @@ namespace BondDS {
                         string NGUOI_DUYET, 
                         string NGAY_LAM_VIEC_HAI_SAU_YN, 
                         decimal ID_TRANG_THAI, 
-                        string TRANG_THAI) {
+                        string TRANG_THAI, 
+                        decimal PHI_CHUYEN_NHUONG_MAX, 
+                        decimal PHI_CHUYEN_NHUONG_MIN, 
+                        decimal PHI_PHONG_GIAI_TOA_MAX, 
+                        decimal PHI_PHONG_GIAI_TOA_MIN) {
                 V_DM_DOT_PHAT_HANHRow rowV_DM_DOT_PHAT_HANHRow = ((V_DM_DOT_PHAT_HANHRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -602,7 +646,11 @@ namespace BondDS {
                         NGUOI_DUYET,
                         NGAY_LAM_VIEC_HAI_SAU_YN,
                         ID_TRANG_THAI,
-                        TRANG_THAI};
+                        TRANG_THAI,
+                        PHI_CHUYEN_NHUONG_MAX,
+                        PHI_CHUYEN_NHUONG_MIN,
+                        PHI_PHONG_GIAI_TOA_MAX,
+                        PHI_PHONG_GIAI_TOA_MIN};
                 rowV_DM_DOT_PHAT_HANHRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowV_DM_DOT_PHAT_HANHRow);
                 return rowV_DM_DOT_PHAT_HANHRow;
@@ -659,6 +707,10 @@ namespace BondDS {
                 this.columnNGAY_LAM_VIEC_HAI_SAU_YN = base.Columns["NGAY_LAM_VIEC_HAI_SAU_YN"];
                 this.columnID_TRANG_THAI = base.Columns["ID_TRANG_THAI"];
                 this.columnTRANG_THAI = base.Columns["TRANG_THAI"];
+                this.columnPHI_CHUYEN_NHUONG_MAX = base.Columns["PHI_CHUYEN_NHUONG_MAX"];
+                this.columnPHI_CHUYEN_NHUONG_MIN = base.Columns["PHI_CHUYEN_NHUONG_MIN"];
+                this.columnPHI_PHONG_GIAI_TOA_MAX = base.Columns["PHI_PHONG_GIAI_TOA_MAX"];
+                this.columnPHI_PHONG_GIAI_TOA_MIN = base.Columns["PHI_PHONG_GIAI_TOA_MIN"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -706,6 +758,14 @@ namespace BondDS {
                 base.Columns.Add(this.columnID_TRANG_THAI);
                 this.columnTRANG_THAI = new global::System.Data.DataColumn("TRANG_THAI", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTRANG_THAI);
+                this.columnPHI_CHUYEN_NHUONG_MAX = new global::System.Data.DataColumn("PHI_CHUYEN_NHUONG_MAX", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPHI_CHUYEN_NHUONG_MAX);
+                this.columnPHI_CHUYEN_NHUONG_MIN = new global::System.Data.DataColumn("PHI_CHUYEN_NHUONG_MIN", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPHI_CHUYEN_NHUONG_MIN);
+                this.columnPHI_PHONG_GIAI_TOA_MAX = new global::System.Data.DataColumn("PHI_PHONG_GIAI_TOA_MAX", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPHI_PHONG_GIAI_TOA_MAX);
+                this.columnPHI_PHONG_GIAI_TOA_MIN = new global::System.Data.DataColumn("PHI_PHONG_GIAI_TOA_MIN", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPHI_PHONG_GIAI_TOA_MIN);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -1189,6 +1249,74 @@ namespace BondDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal PHI_CHUYEN_NHUONG_MAX {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableV_DM_DOT_PHAT_HANH.PHI_CHUYEN_NHUONG_MAXColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PHI_CHUYEN_NHUONG_MAX\' in table \'V_DM_DOT_PHAT_HANH\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_DM_DOT_PHAT_HANH.PHI_CHUYEN_NHUONG_MAXColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal PHI_CHUYEN_NHUONG_MIN {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableV_DM_DOT_PHAT_HANH.PHI_CHUYEN_NHUONG_MINColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PHI_CHUYEN_NHUONG_MIN\' in table \'V_DM_DOT_PHAT_HANH\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_DM_DOT_PHAT_HANH.PHI_CHUYEN_NHUONG_MINColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal PHI_PHONG_GIAI_TOA_MAX {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableV_DM_DOT_PHAT_HANH.PHI_PHONG_GIAI_TOA_MAXColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PHI_PHONG_GIAI_TOA_MAX\' in table \'V_DM_DOT_PHAT_HANH\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_DM_DOT_PHAT_HANH.PHI_PHONG_GIAI_TOA_MAXColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal PHI_PHONG_GIAI_TOA_MIN {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableV_DM_DOT_PHAT_HANH.PHI_PHONG_GIAI_TOA_MINColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PHI_PHONG_GIAI_TOA_MIN\' in table \'V_DM_DOT_PHAT_HANH\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableV_DM_DOT_PHAT_HANH.PHI_PHONG_GIAI_TOA_MINColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsGHI_CHUNull() {
                 return this.IsNull(this.tableV_DM_DOT_PHAT_HANH.GHI_CHUColumn);
             }
@@ -1390,6 +1518,54 @@ namespace BondDS {
             public void SetTRANG_THAINull() {
                 this[this.tableV_DM_DOT_PHAT_HANH.TRANG_THAIColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPHI_CHUYEN_NHUONG_MAXNull() {
+                return this.IsNull(this.tableV_DM_DOT_PHAT_HANH.PHI_CHUYEN_NHUONG_MAXColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPHI_CHUYEN_NHUONG_MAXNull() {
+                this[this.tableV_DM_DOT_PHAT_HANH.PHI_CHUYEN_NHUONG_MAXColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPHI_CHUYEN_NHUONG_MINNull() {
+                return this.IsNull(this.tableV_DM_DOT_PHAT_HANH.PHI_CHUYEN_NHUONG_MINColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPHI_CHUYEN_NHUONG_MINNull() {
+                this[this.tableV_DM_DOT_PHAT_HANH.PHI_CHUYEN_NHUONG_MINColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPHI_PHONG_GIAI_TOA_MAXNull() {
+                return this.IsNull(this.tableV_DM_DOT_PHAT_HANH.PHI_PHONG_GIAI_TOA_MAXColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPHI_PHONG_GIAI_TOA_MAXNull() {
+                this[this.tableV_DM_DOT_PHAT_HANH.PHI_PHONG_GIAI_TOA_MAXColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPHI_PHONG_GIAI_TOA_MINNull() {
+                return this.IsNull(this.tableV_DM_DOT_PHAT_HANH.PHI_PHONG_GIAI_TOA_MINColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPHI_PHONG_GIAI_TOA_MINNull() {
+                this[this.tableV_DM_DOT_PHAT_HANH.PHI_PHONG_GIAI_TOA_MINColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -1572,6 +1748,10 @@ namespace BondDS.DS_V_DM_DOT_PHAT_HANHTableAdapters {
             tableMapping.ColumnMappings.Add("NGAY_LAM_VIEC_HAI_SAU_YN", "NGAY_LAM_VIEC_HAI_SAU_YN");
             tableMapping.ColumnMappings.Add("ID_TRANG_THAI", "ID_TRANG_THAI");
             tableMapping.ColumnMappings.Add("TRANG_THAI", "TRANG_THAI");
+            tableMapping.ColumnMappings.Add("PHI_CHUYEN_NHUONG_MAX", "PHI_CHUYEN_NHUONG_MAX");
+            tableMapping.ColumnMappings.Add("PHI_CHUYEN_NHUONG_MIN", "PHI_CHUYEN_NHUONG_MIN");
+            tableMapping.ColumnMappings.Add("PHI_PHONG_GIAI_TOA_MAX", "PHI_PHONG_GIAI_TOA_MAX");
+            tableMapping.ColumnMappings.Add("PHI_PHONG_GIAI_TOA_MIN", "PHI_PHONG_GIAI_TOA_MIN");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1588,7 +1768,7 @@ namespace BondDS.DS_V_DM_DOT_PHAT_HANHTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT ID, ID_TO_CHUC_PHAT_HANH, TEN_TO_CHUC_PHAT_HANH, NGAY_PHAT_HANH, GHI_CHU, MENH_GIA, KY_TRA_LAI, ID_DV_KY_TRA_LAI, TONG_SO_LUONG_TRAI_PHIEU, TONG_GIA_TRI_TRAI_PHIEU_PHAT_HANH, ID_NGAN_HANG_DAI_LY_QUAN_LY_TK, NGAN_HANG_DAI_LY_QUAN_LY_TK, TY_LE_PHI_CHUYEN_NHUONG, TY_LE_PHI_PHONG_GIAI_TOA, ID_NGUOI_LAP, NGUOI_LAP, ID_NGUOI_DUYET, NGUOI_DUYET, NGAY_LAM_VIEC_HAI_SAU_YN, ID_TRANG_THAI, TRANG_THAI FROM dbo.V_DM_DOT_PHAT_HANH";
+            this._commandCollection[0].CommandText = @"SELECT ID, ID_TO_CHUC_PHAT_HANH, TEN_TO_CHUC_PHAT_HANH, NGAY_PHAT_HANH, GHI_CHU, MENH_GIA, KY_TRA_LAI, ID_DV_KY_TRA_LAI, TONG_SO_LUONG_TRAI_PHIEU, TONG_GIA_TRI_TRAI_PHIEU_PHAT_HANH, ID_NGAN_HANG_DAI_LY_QUAN_LY_TK, NGAN_HANG_DAI_LY_QUAN_LY_TK, TY_LE_PHI_CHUYEN_NHUONG, TY_LE_PHI_PHONG_GIAI_TOA, ID_NGUOI_LAP, NGUOI_LAP, ID_NGUOI_DUYET, NGUOI_DUYET, NGAY_LAM_VIEC_HAI_SAU_YN, ID_TRANG_THAI, TRANG_THAI, PHI_CHUYEN_NHUONG_MAX, PHI_CHUYEN_NHUONG_MIN, PHI_PHONG_GIAI_TOA_MAX, PHI_PHONG_GIAI_TOA_MIN FROM dbo.V_DM_DOT_PHAT_HANH";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
