@@ -42,9 +42,9 @@ namespace BondApp
         private Label label1;
         private Button m_cmd_filter;
         private Label m_lbl_title;
-        private C1FlexGrid m_fg;
         internal SIS.Controls.Button.SiSButton m_cmd_select;
         internal SIS.Controls.Button.SiSButton m_cmd_duyet;
+        private C1FlexGrid m_fg;
         private System.ComponentModel.IContainer components;
 
         public f300_dm_trai_phieu()
@@ -86,6 +86,11 @@ namespace BondApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f300_dm_trai_phieu));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_gru_tim_kiem = new System.Windows.Forms.GroupBox();
+            this.m_txt_search = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_lbl_title = new System.Windows.Forms.Label();
+            this.m_cmd_filter = new System.Windows.Forms.Button();
             this.m_cmd_select = new SIS.Controls.Button.SiSButton();
             this.m_cmd_duyet = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
@@ -93,11 +98,6 @@ namespace BondApp
             this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-            this.m_gru_tim_kiem = new System.Windows.Forms.GroupBox();
-            this.m_txt_search = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.m_cmd_filter = new System.Windows.Forms.Button();
-            this.m_lbl_title = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.m_gru_tim_kiem.SuspendLayout();
@@ -146,6 +146,57 @@ namespace BondApp
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(884, 36);
             this.m_pnl_out_place_dm.TabIndex = 3;
+            // 
+            // m_gru_tim_kiem
+            // 
+            this.m_gru_tim_kiem.Controls.Add(this.m_txt_search);
+            this.m_gru_tim_kiem.Controls.Add(this.label1);
+            this.m_gru_tim_kiem.Controls.Add(this.m_cmd_filter);
+            this.m_gru_tim_kiem.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_gru_tim_kiem.Location = new System.Drawing.Point(0, 37);
+            this.m_gru_tim_kiem.Name = "m_gru_tim_kiem";
+            this.m_gru_tim_kiem.Size = new System.Drawing.Size(884, 49);
+            this.m_gru_tim_kiem.TabIndex = 1;
+            this.m_gru_tim_kiem.TabStop = false;
+            // 
+            // m_txt_search
+            // 
+            this.m_txt_search.Location = new System.Drawing.Point(78, 16);
+            this.m_txt_search.Name = "m_txt_search";
+            this.m_txt_search.Size = new System.Drawing.Size(508, 20);
+            this.m_txt_search.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Tìm kiếm";
+            // 
+            // m_lbl_title
+            // 
+            this.m_lbl_title.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
+            this.m_lbl_title.Name = "m_lbl_title";
+            this.m_lbl_title.Size = new System.Drawing.Size(884, 37);
+            this.m_lbl_title.TabIndex = 0;
+            this.m_lbl_title.Text = "F300 - Danh mục trái phiếu";
+            this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // m_cmd_filter
+            // 
+            this.m_cmd_filter.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_filter.Image")));
+            this.m_cmd_filter.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.m_cmd_filter.Location = new System.Drawing.Point(601, 14);
+            this.m_cmd_filter.Name = "m_cmd_filter";
+            this.m_cmd_filter.Size = new System.Drawing.Size(64, 23);
+            this.m_cmd_filter.TabIndex = 1;
+            this.m_cmd_filter.Text = "     Xem";
+            this.m_cmd_filter.UseVisualStyleBackColor = true;
             // 
             // m_cmd_select
             // 
@@ -251,57 +302,6 @@ namespace BondApp
             this.m_cmd_exit.TabIndex = 6;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
-            // m_gru_tim_kiem
-            // 
-            this.m_gru_tim_kiem.Controls.Add(this.m_txt_search);
-            this.m_gru_tim_kiem.Controls.Add(this.label1);
-            this.m_gru_tim_kiem.Controls.Add(this.m_cmd_filter);
-            this.m_gru_tim_kiem.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_gru_tim_kiem.Location = new System.Drawing.Point(0, 37);
-            this.m_gru_tim_kiem.Name = "m_gru_tim_kiem";
-            this.m_gru_tim_kiem.Size = new System.Drawing.Size(884, 49);
-            this.m_gru_tim_kiem.TabIndex = 1;
-            this.m_gru_tim_kiem.TabStop = false;
-            // 
-            // m_txt_search
-            // 
-            this.m_txt_search.Location = new System.Drawing.Point(78, 16);
-            this.m_txt_search.Name = "m_txt_search";
-            this.m_txt_search.Size = new System.Drawing.Size(508, 20);
-            this.m_txt_search.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Tìm kiếm";
-            // 
-            // m_cmd_filter
-            // 
-            this.m_cmd_filter.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_filter.Image")));
-            this.m_cmd_filter.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.m_cmd_filter.Location = new System.Drawing.Point(601, 14);
-            this.m_cmd_filter.Name = "m_cmd_filter";
-            this.m_cmd_filter.Size = new System.Drawing.Size(64, 23);
-            this.m_cmd_filter.TabIndex = 1;
-            this.m_cmd_filter.Text = "     Xem";
-            this.m_cmd_filter.UseVisualStyleBackColor = true;
-            // 
-            // m_lbl_title
-            // 
-            this.m_lbl_title.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
-            this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(884, 37);
-            this.m_lbl_title.TabIndex = 0;
-            this.m_lbl_title.Text = "F300 - Danh mục trái phiếu";
-            this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // m_fg
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
@@ -310,7 +310,7 @@ namespace BondApp
             this.m_fg.Name = "m_fg";
             this.m_fg.Size = new System.Drawing.Size(884, 440);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 2;
+            this.m_fg.TabIndex = 21;
             // 
             // f300_dm_trai_phieu
             // 
@@ -352,60 +352,62 @@ namespace BondApp
         {
             STT = 1
                 ,
-            DON_VI_KY_HAN = 9
+            DON_VI_KY_HAN = 8
 ,
-            TRANG_THAI = 29
+            TRANG_THAI = 30
                 ,
-            DON_VI_KY_TRA_LAI = 16
+            DON_VI_KY_TRA_LAI = 15
                 ,
-            MENH_GIA = 7
-                ,
-            TONG_SL_PHAT_HANH = 19
+            TONG_SL_PHAT_HANH = 18
                 ,
             LOAI_TRAI_PHIEU = 4
                 ,
-            SO_HOP_DONG_DL_DK_LUU_KY = 27
+            SO_HOP_DONG_DL_DK_LUU_KY = 26
                 ,
-            NGAY_DAO_HAN = 18
+            NGAY_DAO_HAN = 17
                 ,
             MA_TRAI_PHIEU = 2
                 ,
-            CN_HUONG_THEO_NGAY_CHUYEN_NHUONG_YN = 26
+            CN_HUONG_THEO_NGAY_CHUYEN_NHUONG_YN = 25
                 ,
-            KY_HAN = 8
+            KY_HAN = 7
                 ,
-            SO_NGAY_TCPH_CHUYEN_TIEN_TRUOC = 22
+            SO_NGAY_TCPH_CHUYEN_TIEN_TRUOC = 21
                 ,
-            KY_DIEU_CHINH_LS = 12
+            KY_DIEU_CHINH_LS = 11
                 ,
-            TRA_LAI_SAU_YN = 17
+            TRA_LAI_SAU_YN = 16
                 ,
-            CO_SO_TINH_LAI = 10
+            THANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN = 29
                 ,
-            NGUOI_LAP = 23
+            CO_SO_TINH_LAI = 9
                 ,
-            TONG_GIA_TRI = 20
+            NGUOI_LAP = 22
+                ,
+            TONG_GIA_TRI = 19
                 ,
             NGAY_PHAT_HANH = 5
                 ,
-            GHI_CHU_PHUONG_THUC_XD_LAI_SUAT = 25
+            GHI_CHU_PHUONG_THUC_XD_LAI_SUAT = 24
+                ,
+            SO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN = 28
                 ,
             TEN_TRAI_PHIEU = 3
                 ,
-            NGUOI_DUYET = 24
+            NGUOI_DUYET = 23
                 ,
-            THA_NOI_YN = 14
+            THA_NOI_YN = 13
                 ,
-            NGAY_KY_HD = 28
+            NGAY_KY_HD = 27
                 ,
             TEN_TO_CHUC_PHAT_HANH = 6
                 ,
-            DON_VI_DIEU_CHINH_LS = 13
+            DON_VI_DIEU_CHINH_LS = 12
                 ,
-            LAI_SUAT_DEFAULT = 11
+            LAI_SUAT_DEFAULT = 10
                 ,
-            BIEN_DO_LAI = 21
-                , KY_TRA_LAI = 15
+            BIEN_DO_LAI = 20
+                , KY_TRA_LAI = 14
 
         }		
         #endregion
@@ -482,7 +484,6 @@ namespace BondApp
             v_htb.Add(V_DM_TRAI_PHIEU.DON_VI_KY_HAN, e_col_Number.DON_VI_KY_HAN);
             v_htb.Add(V_DM_TRAI_PHIEU.TRANG_THAI, e_col_Number.TRANG_THAI);
             v_htb.Add(V_DM_TRAI_PHIEU.DON_VI_KY_TRA_LAI, e_col_Number.DON_VI_KY_TRA_LAI);
-            v_htb.Add(V_DM_TRAI_PHIEU.MENH_GIA, e_col_Number.MENH_GIA);
             v_htb.Add(V_DM_TRAI_PHIEU.TONG_SL_PHAT_HANH, e_col_Number.TONG_SL_PHAT_HANH);
             v_htb.Add(V_DM_TRAI_PHIEU.LOAI_TRAI_PHIEU, e_col_Number.LOAI_TRAI_PHIEU);
             v_htb.Add(V_DM_TRAI_PHIEU.SO_HOP_DONG_DL_DK_LUU_KY, e_col_Number.SO_HOP_DONG_DL_DK_LUU_KY);
@@ -493,11 +494,13 @@ namespace BondApp
             v_htb.Add(V_DM_TRAI_PHIEU.SO_NGAY_TCPH_CHUYEN_TIEN_TRUOC, e_col_Number.SO_NGAY_TCPH_CHUYEN_TIEN_TRUOC);
             v_htb.Add(V_DM_TRAI_PHIEU.KY_DIEU_CHINH_LS, e_col_Number.KY_DIEU_CHINH_LS);
             v_htb.Add(V_DM_TRAI_PHIEU.TRA_LAI_SAU_YN, e_col_Number.TRA_LAI_SAU_YN);
+            v_htb.Add(V_DM_TRAI_PHIEU.THANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN, e_col_Number.THANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN);
             v_htb.Add(V_DM_TRAI_PHIEU.CO_SO_TINH_LAI, e_col_Number.CO_SO_TINH_LAI);
             v_htb.Add(V_DM_TRAI_PHIEU.NGUOI_LAP, e_col_Number.NGUOI_LAP);
             v_htb.Add(V_DM_TRAI_PHIEU.TONG_GIA_TRI, e_col_Number.TONG_GIA_TRI);
             v_htb.Add(V_DM_TRAI_PHIEU.NGAY_PHAT_HANH, e_col_Number.NGAY_PHAT_HANH);
             v_htb.Add(V_DM_TRAI_PHIEU.GHI_CHU_PHUONG_THUC_XD_LAI_SUAT, e_col_Number.GHI_CHU_PHUONG_THUC_XD_LAI_SUAT);
+            v_htb.Add(V_DM_TRAI_PHIEU.SO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN, e_col_Number.SO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN);
             v_htb.Add(V_DM_TRAI_PHIEU.TEN_TRAI_PHIEU, e_col_Number.TEN_TRAI_PHIEU);
             v_htb.Add(V_DM_TRAI_PHIEU.NGUOI_DUYET, e_col_Number.NGUOI_DUYET);
             v_htb.Add(V_DM_TRAI_PHIEU.THA_NOI_YN, e_col_Number.THA_NOI_YN);
