@@ -132,6 +132,9 @@ namespace BondApp.DanhMuc
                     m_lbl_so_trai_phieu_so_huu.Visible = false;
                     m_cmd_save.Visible = false;
                     m_cmd_duyet.Visible = true;
+                    m_lbl_ngay_duyet_lbl.Visible = true;
+                    m_dat_ngay_duyet.Visible = true;
+                    m_lbl_duyet_ghi_chu.Visible = true;
                     us_object_2_form(m_us_v_trai_chu);
                     break;
             }
@@ -209,7 +212,7 @@ namespace BondApp.DanhMuc
 
             ip_us_trai_chu.strGHI_CHU1 = m_txt_ghi_chu_1.Text;
             ip_us_trai_chu.strGHI_CHU2 = m_txt_ghi_chu_2.Text;
-            ip_us_trai_chu.strGHI_CHU3 = m_txt_ghi_chu_3.Text;
+            ip_us_trai_chu.SetGHI_CHU3Null();
         }
 
         private void form_2_us_gd_so_du_trai_phieu()
@@ -331,6 +334,7 @@ namespace BondApp.DanhMuc
                 case e_formmode.HIEN_THI_DE_DUYET:
                     m_us_v_trai_chu.dcID_TRANG_THAI = TRANG_THAI_DANH_MUC.DA_DUYET;
                     m_us_v_trai_chu.dcID_NGUOI_DUYET_TC = CAppContext_201.getCurrentUserID();
+                    m_us_v_trai_chu.strGHI_CHU3 = CIPConvert.ToStr(m_dat_ngay_duyet.Value);
                     m_us_v_trai_chu.Update();
                     break;
             }
