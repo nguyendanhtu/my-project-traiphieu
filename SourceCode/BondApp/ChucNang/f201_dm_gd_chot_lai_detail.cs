@@ -901,7 +901,7 @@ namespace BondApp
                     m_gru_tim_kiem.Visible = false;
                     m_fg.Visible = false;
                     m_cmd_gen.Visible = false;
-                    this.Height = 310;
+                    this.Height = 320;
                     m_lbl_title.Text = "F210 - Thông tin đợt chốt lãi";
                 }
                 else
