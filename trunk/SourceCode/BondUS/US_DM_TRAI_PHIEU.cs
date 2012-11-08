@@ -637,6 +637,94 @@ namespace BondUS
             pm_objDR["ID_TRANG_THAI"] = System.Convert.DBNull;
         }
 
+        public string strSO_HOP_DONG_DL_DK_LUU_KY
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "SO_HOP_DONG_DL_DK_LUU_KY", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["SO_HOP_DONG_DL_DK_LUU_KY"] = value;
+            }
+        }
+
+        public bool IsSO_HOP_DONG_DL_DK_LUU_KYNull()
+        {
+            return pm_objDR.IsNull("SO_HOP_DONG_DL_DK_LUU_KY");
+        }
+
+        public void SetSO_HOP_DONG_DL_DK_LUU_KYNull()
+        {
+            pm_objDR["SO_HOP_DONG_DL_DK_LUU_KY"] = System.Convert.DBNull;
+        }
+
+        public DateTime datNGAY_KY_HD
+        {
+            get
+            {
+                return CNull.RowNVLDate(pm_objDR, "NGAY_KY_HD", IPConstants.c_DefaultDate);
+            }
+            set
+            {
+                pm_objDR["NGAY_KY_HD"] = value;
+            }
+        }
+
+        public bool IsNGAY_KY_HDNull()
+        {
+            return pm_objDR.IsNull("NGAY_KY_HD");
+        }
+
+        public void SetNGAY_KY_HDNull()
+        {
+            pm_objDR["NGAY_KY_HD"] = System.Convert.DBNull;
+        }
+
+        public decimal dcSO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN
+        {
+            get
+            {
+                return CNull.RowNVLDecimal(pm_objDR, "SO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN", IPConstants.c_DefaultDecimal);
+            }
+            set
+            {
+                pm_objDR["SO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN"] = value;
+            }
+        }
+
+        public bool IsSO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOANNull()
+        {
+            return pm_objDR.IsNull("SO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN");
+        }
+
+        public void SetSO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOANNull()
+        {
+            pm_objDR["SO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN"] = System.Convert.DBNull;
+        }
+
+        public string strTHANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN
+        {
+            get
+            {
+                return CNull.RowNVLString(pm_objDR, "THANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN", IPConstants.c_DefaultString);
+            }
+            set
+            {
+                pm_objDR["THANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN"] = value;
+            }
+        }
+
+        public bool IsTHANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YNNull()
+        {
+            return pm_objDR.IsNull("THANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN");
+        }
+
+        public void SetTHANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YNNull()
+        {
+            pm_objDR["THANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN"] = System.Convert.DBNull;
+        }
+
         #endregion
 
 

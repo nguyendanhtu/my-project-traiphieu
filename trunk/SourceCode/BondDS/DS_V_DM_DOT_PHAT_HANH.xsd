@@ -14,7 +14,7 @@
               <DbSource ConnectionRef="QuanLyPhatHanhTraiPhieuConnectionString2 (Settings)" DbObjectName="QuanLyPhatHanhTraiPhieu.dbo.V_DM_DOT_PHAT_HANH" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, ID_TO_CHUC_PHAT_HANH, TEN_TO_CHUC_PHAT_HANH, NGAY_PHAT_HANH, GHI_CHU, MENH_GIA, KY_TRA_LAI, ID_DV_KY_TRA_LAI, TONG_SO_LUONG_TRAI_PHIEU, TONG_GIA_TRI_TRAI_PHIEU_PHAT_HANH, ID_NGAN_HANG_DAI_LY_QUAN_LY_TK, NGAN_HANG_DAI_LY_QUAN_LY_TK, TY_LE_PHI_CHUYEN_NHUONG, TY_LE_PHI_PHONG_GIAI_TOA, ID_NGUOI_LAP, NGUOI_LAP, ID_NGUOI_DUYET, NGUOI_DUYET, NGAY_LAM_VIEC_HAI_SAU_YN, ID_TRANG_THAI, TRANG_THAI FROM dbo.V_DM_DOT_PHAT_HANH</CommandText>
+                    <CommandText>SELECT ID, ID_TO_CHUC_PHAT_HANH, TEN_TO_CHUC_PHAT_HANH, NGAY_PHAT_HANH, GHI_CHU, MENH_GIA, KY_TRA_LAI, ID_DV_KY_TRA_LAI, TONG_SO_LUONG_TRAI_PHIEU, TONG_GIA_TRI_TRAI_PHIEU_PHAT_HANH, ID_NGAN_HANG_DAI_LY_QUAN_LY_TK, NGAN_HANG_DAI_LY_QUAN_LY_TK, TY_LE_PHI_CHUYEN_NHUONG, TY_LE_PHI_PHONG_GIAI_TOA, ID_NGUOI_LAP, NGUOI_LAP, ID_NGUOI_DUYET, NGUOI_DUYET, NGAY_LAM_VIEC_HAI_SAU_YN, ID_TRANG_THAI, TRANG_THAI, PHI_CHUYEN_NHUONG_MAX, PHI_CHUYEN_NHUONG_MIN, PHI_PHONG_GIAI_TOA_MAX, PHI_PHONG_GIAI_TOA_MIN FROM dbo.V_DM_DOT_PHAT_HANH</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -42,6 +42,10 @@
               <Mapping SourceColumn="NGAY_LAM_VIEC_HAI_SAU_YN" DataSetColumn="NGAY_LAM_VIEC_HAI_SAU_YN" />
               <Mapping SourceColumn="ID_TRANG_THAI" DataSetColumn="ID_TRANG_THAI" />
               <Mapping SourceColumn="TRANG_THAI" DataSetColumn="TRANG_THAI" />
+              <Mapping SourceColumn="PHI_CHUYEN_NHUONG_MAX" DataSetColumn="PHI_CHUYEN_NHUONG_MAX" />
+              <Mapping SourceColumn="PHI_CHUYEN_NHUONG_MIN" DataSetColumn="PHI_CHUYEN_NHUONG_MIN" />
+              <Mapping SourceColumn="PHI_PHONG_GIAI_TOA_MAX" DataSetColumn="PHI_PHONG_GIAI_TOA_MAX" />
+              <Mapping SourceColumn="PHI_PHONG_GIAI_TOA_MIN" DataSetColumn="PHI_PHONG_GIAI_TOA_MIN" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -119,6 +123,10 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="PHI_CHUYEN_NHUONG_MAX" msprop:Generator_ColumnVarNameInTable="columnPHI_CHUYEN_NHUONG_MAX" msprop:Generator_ColumnPropNameInRow="PHI_CHUYEN_NHUONG_MAX" msprop:Generator_ColumnPropNameInTable="PHI_CHUYEN_NHUONG_MAXColumn" msprop:Generator_UserColumnName="PHI_CHUYEN_NHUONG_MAX" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PHI_CHUYEN_NHUONG_MIN" msprop:Generator_ColumnVarNameInTable="columnPHI_CHUYEN_NHUONG_MIN" msprop:Generator_ColumnPropNameInRow="PHI_CHUYEN_NHUONG_MIN" msprop:Generator_ColumnPropNameInTable="PHI_CHUYEN_NHUONG_MINColumn" msprop:Generator_UserColumnName="PHI_CHUYEN_NHUONG_MIN" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PHI_PHONG_GIAI_TOA_MAX" msprop:Generator_ColumnVarNameInTable="columnPHI_PHONG_GIAI_TOA_MAX" msprop:Generator_ColumnPropNameInRow="PHI_PHONG_GIAI_TOA_MAX" msprop:Generator_ColumnPropNameInTable="PHI_PHONG_GIAI_TOA_MAXColumn" msprop:Generator_UserColumnName="PHI_PHONG_GIAI_TOA_MAX" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PHI_PHONG_GIAI_TOA_MIN" msprop:Generator_ColumnVarNameInTable="columnPHI_PHONG_GIAI_TOA_MIN" msprop:Generator_ColumnPropNameInRow="PHI_PHONG_GIAI_TOA_MIN" msprop:Generator_ColumnPropNameInTable="PHI_PHONG_GIAI_TOA_MINColumn" msprop:Generator_UserColumnName="PHI_PHONG_GIAI_TOA_MIN" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
