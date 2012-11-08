@@ -571,6 +571,27 @@ namespace BondUS
             pm_objDR["SO_LUONG_TP_SO_HUU_BAN_DAU"] = System.Convert.DBNull;
         }
 
+        public DateTime datNGAY_DUYET
+        {
+            get
+            {
+                return CNull.RowNVLDate(pm_objDR, "NGAY_DUYET", IPConstants.c_DefaultDate);
+            }
+            set
+            {
+                pm_objDR["NGAY_DUYET"] = value;
+            }
+        }
+
+        public bool IsNGAY_DUYETNull()
+        {
+            return pm_objDR.IsNull("NGAY_DUYET");
+        }
+
+        public void SetNGAY_DUYETNull()
+        {
+            pm_objDR["NGAY_DUYET"] = System.Convert.DBNull;
+        }
         #endregion
 
 

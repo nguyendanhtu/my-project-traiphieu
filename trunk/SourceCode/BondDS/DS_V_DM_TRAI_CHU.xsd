@@ -13,7 +13,7 @@
               <DbSource ConnectionRef="QuanLyPhatHanhTraiPhieuConnectionString2 (Settings)" DbObjectName="QuanLyPhatHanhTraiPhieu.dbo.V_DM_TRAI_CHU" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, MA_TRAI_CHU, TEN_TRAI_CHU, DIA_CHI, MOBILE, FAX, CMT_GIAY_DKKD, NGAY_CAP_CMT, NOI_CAP_CMT, ID_LOAI_TRAI_CHU, ID_TRAI_PHIEU_SO_HUU, TEN_NGUOI_DAI_DIEN, CMT_NGUOI_DAI_DIEN, NGAY_CAP_CMT_NGUOI_DAI_DIEN, NOI_CAP_CMT_NGUOI_DAI_DIEN, CHUC_VU, MA_TRAI_PHIEU, TEN_TRAI_PHIEU, MENH_GIA, TONG_SO_DU, SO_DU_KHA_DUNG, SO_TAI_KHOAN, MO_TAI_NGAN_HANG, GHI_CHU1, GHI_CHU2, GHI_CHU3, ID_NGUOI_DUYET_TC, ID_NGUOI_LAP_TC, ID_TRANG_THAI, SO_LUONG_TP_SO_HUU_BAN_DAU FROM dbo.V_DM_TRAI_CHU</CommandText>
+                    <CommandText>SELECT ID, MA_TRAI_CHU, TEN_TRAI_CHU, DIA_CHI, MOBILE, FAX, CMT_GIAY_DKKD, NGAY_CAP_CMT, NOI_CAP_CMT, ID_LOAI_TRAI_CHU, ID_TRAI_PHIEU_SO_HUU, TEN_NGUOI_DAI_DIEN, CMT_NGUOI_DAI_DIEN, NGAY_CAP_CMT_NGUOI_DAI_DIEN, NOI_CAP_CMT_NGUOI_DAI_DIEN, CHUC_VU, MA_TRAI_PHIEU, TEN_TRAI_PHIEU, MENH_GIA, TONG_SO_DU, SO_DU_KHA_DUNG, SO_TAI_KHOAN, MO_TAI_NGAN_HANG, GHI_CHU1, GHI_CHU2, GHI_CHU3, ID_NGUOI_DUYET_TC, ID_NGUOI_LAP_TC, ID_TRANG_THAI, SO_LUONG_TP_SO_HUU_BAN_DAU, NGAY_DUYET FROM dbo.V_DM_TRAI_CHU</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -50,6 +50,7 @@
               <Mapping SourceColumn="ID_NGUOI_LAP_TC" DataSetColumn="ID_NGUOI_LAP_TC" />
               <Mapping SourceColumn="ID_TRANG_THAI" DataSetColumn="ID_TRANG_THAI" />
               <Mapping SourceColumn="SO_LUONG_TP_SO_HUU_BAN_DAU" DataSetColumn="SO_LUONG_TP_SO_HUU_BAN_DAU" />
+              <Mapping SourceColumn="NGAY_DUYET" DataSetColumn="NGAY_DUYET" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -64,7 +65,7 @@
         <xs:element name="V_DM_TRAI_CHU" msprop:Generator_TableClassName="V_DM_TRAI_CHUDataTable" msprop:Generator_TableVarName="tableV_DM_TRAI_CHU" msprop:Generator_TablePropName="V_DM_TRAI_CHU" msprop:Generator_RowDeletingName="V_DM_TRAI_CHURowDeleting" msprop:Generator_UserTableName="V_DM_TRAI_CHU" msprop:Generator_RowChangingName="V_DM_TRAI_CHURowChanging" msprop:Generator_RowEvHandlerName="V_DM_TRAI_CHURowChangeEventHandler" msprop:Generator_RowDeletedName="V_DM_TRAI_CHURowDeleted" msprop:Generator_RowEvArgName="V_DM_TRAI_CHURowChangeEvent" msprop:Generator_RowChangedName="V_DM_TRAI_CHURowChanged" msprop:Generator_RowClassName="V_DM_TRAI_CHURow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
               <xs:element name="MA_TRAI_CHU" msprop:Generator_ColumnVarNameInTable="columnMA_TRAI_CHU" msprop:Generator_ColumnPropNameInRow="MA_TRAI_CHU" msprop:Generator_ColumnPropNameInTable="MA_TRAI_CHUColumn" msprop:Generator_UserColumnName="MA_TRAI_CHU">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -161,8 +162,8 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="MENH_GIA" msprop:Generator_ColumnVarNameInTable="columnMENH_GIA" msprop:Generator_ColumnPropNameInRow="MENH_GIA" msprop:Generator_ColumnPropNameInTable="MENH_GIAColumn" msprop:Generator_UserColumnName="MENH_GIA" type="xs:decimal" />
-              <xs:element name="TONG_SO_DU" msprop:Generator_ColumnVarNameInTable="columnTONG_SO_DU" msprop:Generator_ColumnPropNameInRow="TONG_SO_DU" msprop:Generator_ColumnPropNameInTable="TONG_SO_DUColumn" msprop:Generator_UserColumnName="TONG_SO_DU" type="xs:decimal" minOccurs="0" />
-              <xs:element name="SO_DU_KHA_DUNG" msprop:Generator_ColumnVarNameInTable="columnSO_DU_KHA_DUNG" msprop:Generator_ColumnPropNameInRow="SO_DU_KHA_DUNG" msprop:Generator_ColumnPropNameInTable="SO_DU_KHA_DUNGColumn" msprop:Generator_UserColumnName="SO_DU_KHA_DUNG" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TONG_SO_DU" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTONG_SO_DU" msprop:Generator_ColumnPropNameInRow="TONG_SO_DU" msprop:Generator_ColumnPropNameInTable="TONG_SO_DUColumn" msprop:Generator_UserColumnName="TONG_SO_DU" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SO_DU_KHA_DUNG" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSO_DU_KHA_DUNG" msprop:Generator_ColumnPropNameInRow="SO_DU_KHA_DUNG" msprop:Generator_ColumnPropNameInTable="SO_DU_KHA_DUNGColumn" msprop:Generator_UserColumnName="SO_DU_KHA_DUNG" type="xs:decimal" minOccurs="0" />
               <xs:element name="SO_TAI_KHOAN" msprop:Generator_ColumnVarNameInTable="columnSO_TAI_KHOAN" msprop:Generator_ColumnPropNameInRow="SO_TAI_KHOAN" msprop:Generator_ColumnPropNameInTable="SO_TAI_KHOANColumn" msprop:Generator_UserColumnName="SO_TAI_KHOAN" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -202,6 +203,7 @@
               <xs:element name="ID_NGUOI_LAP_TC" msprop:Generator_ColumnVarNameInTable="columnID_NGUOI_LAP_TC" msprop:Generator_ColumnPropNameInRow="ID_NGUOI_LAP_TC" msprop:Generator_ColumnPropNameInTable="ID_NGUOI_LAP_TCColumn" msprop:Generator_UserColumnName="ID_NGUOI_LAP_TC" type="xs:decimal" />
               <xs:element name="ID_TRANG_THAI" msprop:Generator_ColumnVarNameInTable="columnID_TRANG_THAI" msprop:Generator_ColumnPropNameInRow="ID_TRANG_THAI" msprop:Generator_ColumnPropNameInTable="ID_TRANG_THAIColumn" msprop:Generator_UserColumnName="ID_TRANG_THAI" type="xs:decimal" />
               <xs:element name="SO_LUONG_TP_SO_HUU_BAN_DAU" msprop:Generator_ColumnVarNameInTable="columnSO_LUONG_TP_SO_HUU_BAN_DAU" msprop:Generator_ColumnPropNameInRow="SO_LUONG_TP_SO_HUU_BAN_DAU" msprop:Generator_ColumnPropNameInTable="SO_LUONG_TP_SO_HUU_BAN_DAUColumn" msprop:Generator_UserColumnName="SO_LUONG_TP_SO_HUU_BAN_DAU" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NGAY_DUYET" msprop:Generator_ColumnVarNameInTable="columnNGAY_DUYET" msprop:Generator_ColumnPropNameInRow="NGAY_DUYET" msprop:Generator_ColumnPropNameInTable="NGAY_DUYETColumn" msprop:Generator_UserColumnName="NGAY_DUYET" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
