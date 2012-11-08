@@ -45,8 +45,8 @@ namespace BondApp
         private TextBox m_txt_search;
         private Label label1;
         private Button m_cmd_filter;
-        private C1FlexGrid m_fg;
         internal SIS.Controls.Button.SiSButton m_cmd_duyet;
+        private C1FlexGrid m_fg;
 		private System.ComponentModel.IContainer components;
 
 		public f150_dm_dot_phat_hanh()
@@ -141,10 +141,10 @@ namespace BondApp
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 412);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 426);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(818, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(864, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_duyet
@@ -155,7 +155,7 @@ namespace BondApp
             this.m_cmd_duyet.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_duyet.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet.Image")));
             this.m_cmd_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_duyet.Location = new System.Drawing.Point(374, 4);
+            this.m_cmd_duyet.Location = new System.Drawing.Point(420, 4);
             this.m_cmd_duyet.Name = "m_cmd_duyet";
             this.m_cmd_duyet.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_duyet.TabIndex = 29;
@@ -170,7 +170,7 @@ namespace BondApp
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(462, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(508, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 12;
@@ -185,7 +185,7 @@ namespace BondApp
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(550, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(596, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 13;
@@ -216,7 +216,7 @@ namespace BondApp
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(638, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(684, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 14;
@@ -231,7 +231,7 @@ namespace BondApp
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(726, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(772, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -244,7 +244,7 @@ namespace BondApp
             this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(818, 40);
+            this.m_lbl_title.Size = new System.Drawing.Size(864, 40);
             this.m_lbl_title.TabIndex = 64;
             this.m_lbl_title.Text = "DANH SÁCH ĐỢT PHÁT HÀNH";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -257,7 +257,7 @@ namespace BondApp
             this.m_gru_tim_kiem.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_gru_tim_kiem.Location = new System.Drawing.Point(0, 40);
             this.m_gru_tim_kiem.Name = "m_gru_tim_kiem";
-            this.m_gru_tim_kiem.Size = new System.Drawing.Size(818, 49);
+            this.m_gru_tim_kiem.Size = new System.Drawing.Size(864, 49);
             this.m_gru_tim_kiem.TabIndex = 65;
             this.m_gru_tim_kiem.TabStop = false;
             // 
@@ -294,15 +294,14 @@ namespace BondApp
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.Location = new System.Drawing.Point(0, 89);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(818, 323);
+            this.m_fg.Size = new System.Drawing.Size(864, 337);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 66;
-            this.m_fg.Click += new System.EventHandler(this.m_fg_Click);
             // 
             // f150_dm_dot_phat_hanh
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(818, 448);
+            this.ClientSize = new System.Drawing.Size(864, 462);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_gru_tim_kiem);
             this.Controls.Add(this.m_lbl_title);
@@ -337,29 +336,38 @@ namespace BondApp
 		private enum e_col_Number{
             STT = 1
                 ,
-            TONG_GIA_TRI_TRAI_PHIEU_PHAT_HANH = 6
-                ,
-            NGAY_PHAT_HANH = 3
+            NGAY_LAM_VIEC_HAI_SAU_YN = 10
+ ,
+            PHI_PHONG_GIAI_TOA_MAX = 13
                 ,
             MENH_GIA = 5
                 ,
-            NGUOI_DUYET = 11
+            TY_LE_PHI_CHUYEN_NHUONG = 7
                 ,
-            TRANG_THAI = 12
-                ,
-            NGAN_HANG_DAI_LY_QUAN_LY_TK = 9
-                ,
-            TEN_TO_CHUC_PHAT_HANH = 2
-                ,
-            NGUOI_LAP = 10
-                ,
-            GHI_CHU = 13
+            TY_LE_PHI_PHONG_GIAI_TOA = 8
                 ,
             TONG_SO_LUONG_TRAI_PHIEU = 4
                 ,
-            TY_LE_PHI_PHONG_GIAI_TOA = 8
-                , 
-            TY_LE_PHI_CHUYEN_NHUONG = 7
+            PHI_CHUYEN_NHUONG_MAX = 11
+                ,
+            NGUOI_LAP = 15
+                ,
+            PHI_PHONG_GIAI_TOA_MIN = 14
+                ,
+            PHI_CHUYEN_NHUONG_MIN = 12
+                ,
+            NGAY_PHAT_HANH = 3
+                ,
+            NGUOI_DUYET = 16
+                ,
+            TEN_TO_CHUC_PHAT_HANH = 2
+                ,
+            GHI_CHU = 17
+                ,
+            NGAN_HANG_DAI_LY_QUAN_LY_TK = 9
+                ,
+            TRANG_THAI = 18
+                , TONG_GIA_TRI_TRAI_PHIEU_PHAT_HANH = 6
 
 		}			
 		#endregion
@@ -408,18 +416,23 @@ namespace BondApp
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
-            v_htb.Add(V_DM_DOT_PHAT_HANH.TONG_GIA_TRI_TRAI_PHIEU_PHAT_HANH, e_col_Number.TONG_GIA_TRI_TRAI_PHIEU_PHAT_HANH);
+            v_htb.Add(V_DM_DOT_PHAT_HANH.NGAY_LAM_VIEC_HAI_SAU_YN, e_col_Number.NGAY_LAM_VIEC_HAI_SAU_YN);
+            v_htb.Add(V_DM_DOT_PHAT_HANH.PHI_PHONG_GIAI_TOA_MAX, e_col_Number.PHI_PHONG_GIAI_TOA_MAX);
             v_htb.Add(V_DM_DOT_PHAT_HANH.MENH_GIA, e_col_Number.MENH_GIA);
+            v_htb.Add(V_DM_DOT_PHAT_HANH.TY_LE_PHI_CHUYEN_NHUONG, e_col_Number.TY_LE_PHI_CHUYEN_NHUONG);
+            v_htb.Add(V_DM_DOT_PHAT_HANH.TY_LE_PHI_PHONG_GIAI_TOA, e_col_Number.TY_LE_PHI_PHONG_GIAI_TOA);
+            v_htb.Add(V_DM_DOT_PHAT_HANH.TONG_SO_LUONG_TRAI_PHIEU, e_col_Number.TONG_SO_LUONG_TRAI_PHIEU);
+            v_htb.Add(V_DM_DOT_PHAT_HANH.PHI_CHUYEN_NHUONG_MAX, e_col_Number.PHI_CHUYEN_NHUONG_MAX);
+            v_htb.Add(V_DM_DOT_PHAT_HANH.NGUOI_LAP, e_col_Number.NGUOI_LAP);
+            v_htb.Add(V_DM_DOT_PHAT_HANH.PHI_PHONG_GIAI_TOA_MIN, e_col_Number.PHI_PHONG_GIAI_TOA_MIN);
+            v_htb.Add(V_DM_DOT_PHAT_HANH.PHI_CHUYEN_NHUONG_MIN, e_col_Number.PHI_CHUYEN_NHUONG_MIN);
             v_htb.Add(V_DM_DOT_PHAT_HANH.NGAY_PHAT_HANH, e_col_Number.NGAY_PHAT_HANH);
             v_htb.Add(V_DM_DOT_PHAT_HANH.NGUOI_DUYET, e_col_Number.NGUOI_DUYET);
-            v_htb.Add(V_DM_DOT_PHAT_HANH.TRANG_THAI, e_col_Number.TRANG_THAI);
-            v_htb.Add(V_DM_DOT_PHAT_HANH.NGAN_HANG_DAI_LY_QUAN_LY_TK, e_col_Number.NGAN_HANG_DAI_LY_QUAN_LY_TK);
             v_htb.Add(V_DM_DOT_PHAT_HANH.TEN_TO_CHUC_PHAT_HANH, e_col_Number.TEN_TO_CHUC_PHAT_HANH);
-            v_htb.Add(V_DM_DOT_PHAT_HANH.NGUOI_LAP, e_col_Number.NGUOI_LAP);
             v_htb.Add(V_DM_DOT_PHAT_HANH.GHI_CHU, e_col_Number.GHI_CHU);
-            v_htb.Add(V_DM_DOT_PHAT_HANH.TONG_SO_LUONG_TRAI_PHIEU, e_col_Number.TONG_SO_LUONG_TRAI_PHIEU);
-            v_htb.Add(V_DM_DOT_PHAT_HANH.TY_LE_PHI_PHONG_GIAI_TOA, e_col_Number.TY_LE_PHI_PHONG_GIAI_TOA);
-            v_htb.Add(V_DM_DOT_PHAT_HANH.TY_LE_PHI_CHUYEN_NHUONG, e_col_Number.TY_LE_PHI_CHUYEN_NHUONG);
+            v_htb.Add(V_DM_DOT_PHAT_HANH.NGAN_HANG_DAI_LY_QUAN_LY_TK, e_col_Number.NGAN_HANG_DAI_LY_QUAN_LY_TK);
+            v_htb.Add(V_DM_DOT_PHAT_HANH.TRANG_THAI, e_col_Number.TRANG_THAI);
+            v_htb.Add(V_DM_DOT_PHAT_HANH.TONG_GIA_TRI_TRAI_PHIEU_PHAT_HANH, e_col_Number.TONG_GIA_TRI_TRAI_PHIEU_PHAT_HANH);
 									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_DM_DOT_PHAT_HANH.NewRow());
 			return v_obj_trans;			

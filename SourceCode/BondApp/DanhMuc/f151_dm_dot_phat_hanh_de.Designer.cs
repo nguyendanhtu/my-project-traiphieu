@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f151_dm_dot_phat_hanh_de));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.m_txt_tong_gia_tri = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -40,6 +44,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.m_txt_ty_le_phi_phong_giai_toa = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.m_txt_phi_chuyen_nhuong_min = new System.Windows.Forms.TextBox();
+            this.m_txt_phi_chuyen_nhuong_max = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.m_txt_phi_phong_giai_toa_min = new System.Windows.Forms.TextBox();
+            this.m_txt_phi_phong_giai_toa_max = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.m_txt_ty_le_phi_chuyen_nhuong = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.m_cbo_ngan_hang_quan_ly_tai_khoan = new System.Windows.Forms.ComboBox();
@@ -66,6 +78,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.m_txt_tong_gia_tri);
             this.groupBox1.Controls.Add(this.label9);
@@ -75,6 +91,14 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.m_txt_ty_le_phi_phong_giai_toa);
             this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.m_txt_phi_chuyen_nhuong_min);
+            this.groupBox1.Controls.Add(this.m_txt_phi_chuyen_nhuong_max);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.m_txt_phi_phong_giai_toa_min);
+            this.groupBox1.Controls.Add(this.m_txt_phi_phong_giai_toa_max);
+            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.m_txt_ty_le_phi_chuyen_nhuong);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.m_cbo_ngan_hang_quan_ly_tai_khoan);
@@ -94,9 +118,45 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(854, 372);
+            this.groupBox1.Size = new System.Drawing.Size(854, 432);
             this.groupBox1.TabIndex = 64;
             this.groupBox1.TabStop = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(617, 196);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(30, 13);
+            this.label17.TabIndex = 58;
+            this.label17.Text = "VNĐ";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(271, 192);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(30, 13);
+            this.label15.TabIndex = 58;
+            this.label15.Text = "VNĐ";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(617, 153);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(30, 13);
+            this.label16.TabIndex = 58;
+            this.label16.Text = "VNĐ";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(271, 149);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(30, 13);
+            this.label14.TabIndex = 58;
+            this.label14.Text = "VNĐ";
             // 
             // label8
             // 
@@ -136,7 +196,7 @@
             this.m_cbo_loai_ngay_lam_viec.Location = new System.Drawing.Point(661, 105);
             this.m_cbo_loai_ngay_lam_viec.Name = "m_cbo_loai_ngay_lam_viec";
             this.m_cbo_loai_ngay_lam_viec.Size = new System.Drawing.Size(171, 21);
-            this.m_cbo_loai_ngay_lam_viec.TabIndex = 54;
+            this.m_cbo_loai_ngay_lam_viec.TabIndex = 6;
             // 
             // label7
             // 
@@ -150,7 +210,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(483, 113);
+            this.label6.Location = new System.Drawing.Point(482, 110);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(15, 13);
             this.label6.TabIndex = 52;
@@ -170,7 +230,7 @@
             this.m_txt_ty_le_phi_phong_giai_toa.Location = new System.Drawing.Point(405, 106);
             this.m_txt_ty_le_phi_phong_giai_toa.Name = "m_txt_ty_le_phi_phong_giai_toa";
             this.m_txt_ty_le_phi_phong_giai_toa.Size = new System.Drawing.Size(72, 20);
-            this.m_txt_ty_le_phi_phong_giai_toa.TabIndex = 50;
+            this.m_txt_ty_le_phi_phong_giai_toa.TabIndex = 5;
             this.m_txt_ty_le_phi_phong_giai_toa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
@@ -182,12 +242,80 @@
             this.label3.TabIndex = 49;
             this.label3.Text = "Tỷ lệ phí phong giải tỏa";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(357, 196);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(120, 13);
+            this.label13.TabIndex = 47;
+            this.label13.Text = "Phí chuyển nhượng min";
+            // 
+            // m_txt_phi_chuyen_nhuong_min
+            // 
+            this.m_txt_phi_chuyen_nhuong_min.Location = new System.Drawing.Point(494, 193);
+            this.m_txt_phi_chuyen_nhuong_min.Name = "m_txt_phi_chuyen_nhuong_min";
+            this.m_txt_phi_chuyen_nhuong_min.Size = new System.Drawing.Size(120, 20);
+            this.m_txt_phi_chuyen_nhuong_min.TabIndex = 10;
+            this.m_txt_phi_chuyen_nhuong_min.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // m_txt_phi_chuyen_nhuong_max
+            // 
+            this.m_txt_phi_chuyen_nhuong_max.Location = new System.Drawing.Point(148, 189);
+            this.m_txt_phi_chuyen_nhuong_max.Name = "m_txt_phi_chuyen_nhuong_max";
+            this.m_txt_phi_chuyen_nhuong_max.Size = new System.Drawing.Size(120, 20);
+            this.m_txt_phi_chuyen_nhuong_max.TabIndex = 9;
+            this.m_txt_phi_chuyen_nhuong_max.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(364, 153);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(113, 13);
+            this.label11.TabIndex = 47;
+            this.label11.Text = "Phí phong giải tỏa min";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(10, 196);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(123, 13);
+            this.label12.TabIndex = 47;
+            this.label12.Text = "Phí chuyển nhượng max";
+            // 
+            // m_txt_phi_phong_giai_toa_min
+            // 
+            this.m_txt_phi_phong_giai_toa_min.Location = new System.Drawing.Point(494, 150);
+            this.m_txt_phi_phong_giai_toa_min.Name = "m_txt_phi_phong_giai_toa_min";
+            this.m_txt_phi_phong_giai_toa_min.Size = new System.Drawing.Size(120, 20);
+            this.m_txt_phi_phong_giai_toa_min.TabIndex = 8;
+            this.m_txt_phi_phong_giai_toa_min.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // m_txt_phi_phong_giai_toa_max
+            // 
+            this.m_txt_phi_phong_giai_toa_max.Location = new System.Drawing.Point(148, 146);
+            this.m_txt_phi_phong_giai_toa_max.Name = "m_txt_phi_phong_giai_toa_max";
+            this.m_txt_phi_phong_giai_toa_max.Size = new System.Drawing.Size(120, 20);
+            this.m_txt_phi_phong_giai_toa_max.TabIndex = 7;
+            this.m_txt_phi_phong_giai_toa_max.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(10, 153);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(116, 13);
+            this.label10.TabIndex = 47;
+            this.label10.Text = "Phí phong giải tỏa max";
+            // 
             // m_txt_ty_le_phi_chuyen_nhuong
             // 
             this.m_txt_ty_le_phi_chuyen_nhuong.Location = new System.Drawing.Point(148, 106);
             this.m_txt_ty_le_phi_chuyen_nhuong.Name = "m_txt_ty_le_phi_chuyen_nhuong";
             this.m_txt_ty_le_phi_chuyen_nhuong.Size = new System.Drawing.Size(63, 20);
-            this.m_txt_ty_le_phi_chuyen_nhuong.TabIndex = 48;
+            this.m_txt_ty_le_phi_chuyen_nhuong.TabIndex = 4;
             this.m_txt_ty_le_phi_chuyen_nhuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label4
@@ -203,15 +331,15 @@
             // 
             this.m_cbo_ngan_hang_quan_ly_tai_khoan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_ngan_hang_quan_ly_tai_khoan.FormattingEnabled = true;
-            this.m_cbo_ngan_hang_quan_ly_tai_khoan.Location = new System.Drawing.Point(145, 158);
+            this.m_cbo_ngan_hang_quan_ly_tai_khoan.Location = new System.Drawing.Point(145, 238);
             this.m_cbo_ngan_hang_quan_ly_tai_khoan.Name = "m_cbo_ngan_hang_quan_ly_tai_khoan";
             this.m_cbo_ngan_hang_quan_ly_tai_khoan.Size = new System.Drawing.Size(687, 21);
-            this.m_cbo_ngan_hang_quan_ly_tai_khoan.TabIndex = 46;
+            this.m_cbo_ngan_hang_quan_ly_tai_khoan.TabIndex = 11;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 161);
+            this.label2.Location = new System.Drawing.Point(22, 241);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 13);
             this.label2.TabIndex = 45;
@@ -231,7 +359,7 @@
             this.m_txt_menh_gia.Location = new System.Drawing.Point(405, 60);
             this.m_txt_menh_gia.Name = "m_txt_menh_gia";
             this.m_txt_menh_gia.Size = new System.Drawing.Size(135, 20);
-            this.m_txt_menh_gia.TabIndex = 43;
+            this.m_txt_menh_gia.TabIndex = 3;
             this.m_txt_menh_gia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // m_lbl_ky_tra_lai
@@ -248,7 +376,7 @@
             this.m_txt_tong_so_luong_tp.Location = new System.Drawing.Point(148, 60);
             this.m_txt_tong_so_luong_tp.Name = "m_txt_tong_so_luong_tp";
             this.m_txt_tong_so_luong_tp.Size = new System.Drawing.Size(120, 20);
-            this.m_txt_tong_so_luong_tp.TabIndex = 40;
+            this.m_txt_tong_so_luong_tp.TabIndex = 2;
             this.m_txt_tong_so_luong_tp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // m_lbl_menh_gia
@@ -267,14 +395,14 @@
             this.m_cbo_ten_to_chuc_phat_hanh.Location = new System.Drawing.Point(405, 19);
             this.m_cbo_ten_to_chuc_phat_hanh.Name = "m_cbo_ten_to_chuc_phat_hanh";
             this.m_cbo_ten_to_chuc_phat_hanh.Size = new System.Drawing.Size(427, 21);
-            this.m_cbo_ten_to_chuc_phat_hanh.TabIndex = 38;
+            this.m_cbo_ten_to_chuc_phat_hanh.TabIndex = 1;
             // 
             // m_pnl_out_place_dm
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(3, 333);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(3, 393);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(848, 36);
@@ -344,7 +472,7 @@
             this.m_dat_ngay_phat_hanh.Location = new System.Drawing.Point(145, 20);
             this.m_dat_ngay_phat_hanh.Name = "m_dat_ngay_phat_hanh";
             this.m_dat_ngay_phat_hanh.Size = new System.Drawing.Size(115, 20);
-            this.m_dat_ngay_phat_hanh.TabIndex = 9;
+            this.m_dat_ngay_phat_hanh.TabIndex = 0;
             // 
             // m_lbl_ngay_phat_hanh
             // 
@@ -358,7 +486,7 @@
             // m_lbl_ghi_chu
             // 
             this.m_lbl_ghi_chu.AutoSize = true;
-            this.m_lbl_ghi_chu.Location = new System.Drawing.Point(92, 235);
+            this.m_lbl_ghi_chu.Location = new System.Drawing.Point(92, 315);
             this.m_lbl_ghi_chu.Name = "m_lbl_ghi_chu";
             this.m_lbl_ghi_chu.Size = new System.Drawing.Size(44, 13);
             this.m_lbl_ghi_chu.TabIndex = 17;
@@ -375,11 +503,11 @@
             // 
             // m_txt_ghi_chu
             // 
-            this.m_txt_ghi_chu.Location = new System.Drawing.Point(145, 199);
+            this.m_txt_ghi_chu.Location = new System.Drawing.Point(145, 279);
             this.m_txt_ghi_chu.Multiline = true;
             this.m_txt_ghi_chu.Name = "m_txt_ghi_chu";
             this.m_txt_ghi_chu.Size = new System.Drawing.Size(687, 96);
-            this.m_txt_ghi_chu.TabIndex = 14;
+            this.m_txt_ghi_chu.TabIndex = 12;
             // 
             // m_lbl_title
             // 
@@ -397,7 +525,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 412);
+            this.ClientSize = new System.Drawing.Size(854, 472);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_lbl_title);
             this.Name = "f151_dm_dot_phat_hanh_de";
@@ -441,5 +569,17 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox m_txt_tong_gia_tri;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox m_txt_phi_phong_giai_toa_max;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox m_txt_phi_chuyen_nhuong_max;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox m_txt_phi_chuyen_nhuong_min;
+        private System.Windows.Forms.TextBox m_txt_phi_phong_giai_toa_min;
     }
 }
