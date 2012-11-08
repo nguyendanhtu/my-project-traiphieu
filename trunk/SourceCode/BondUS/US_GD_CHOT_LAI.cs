@@ -271,6 +271,28 @@ public class US_GD_CHOT_LAI : US_Object
 		pm_objDR["KY_TINH_LAI"] = System.Convert.DBNull;
 	}
 
+    public DateTime datNGAY_THANH_TOAN_THUC_TE
+	{
+		get   
+		{
+			return CNull.RowNVLDate(pm_objDR, "NGAY_THANH_TOAN_THUC_TE", IPConstants.c_DefaultDate);
+		}
+		set   
+		{
+			pm_objDR["NGAY_THANH_TOAN_THUC_TE"] = value;
+		}
+	}
+
+	public bool IsNGAY_THANH_TOAN_THUC_TENull()
+	{
+		return pm_objDR.IsNull("NGAY_THANH_TOAN_THUC_TE");
+	}
+
+	public void SetNGAY_THANH_TOAN_THUC_TENull()
+	{
+		pm_objDR["NGAY_THANH_TOAN_THUC_TE"] = System.Convert.DBNull;
+	}
+
 #endregion
 
 
