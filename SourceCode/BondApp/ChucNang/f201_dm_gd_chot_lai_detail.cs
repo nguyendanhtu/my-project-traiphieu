@@ -66,6 +66,10 @@ namespace BondApp
         private Label label2;
         private DateTimePicker m_date_ngay_dau_ky;
         private DateTimePicker m_data_ngay_cuoi_ky;
+        private DateTimePicker m_dat_ngay_thanh_toan_thuc_te;
+        private Label label3;
+        private Label label4;
+        private ComboBox m_cbo_ky_tinh_lai;
 		private System.ComponentModel.IContainer components;
         //public f201_dm_gd_chot_lai_detail()
         //{
@@ -107,6 +111,7 @@ namespace BondApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.m_gbox_thong_tin_tp = new System.Windows.Forms.GroupBox();
+            this.m_cbo_ky_tinh_lai = new System.Windows.Forms.ComboBox();
             this.m_cbo_trang_thai = new System.Windows.Forms.ComboBox();
             this.m_lbl_ten_nguoi_lap = new System.Windows.Forms.Label();
             this.m_lbl_ten_nguoi_duyet = new System.Windows.Forms.Label();
@@ -114,7 +119,10 @@ namespace BondApp
             this.label2 = new System.Windows.Forms.Label();
             this.m_lbl_ky_tinh_lai = new System.Windows.Forms.Label();
             this.m_lbl_nguoi_duyet = new System.Windows.Forms.Label();
+            this.m_dat_ngay_thanh_toan_thuc_te = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             this.m_dat_ngay_thanh_toan = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
             this.m_lbl_ngay_thanh_toan = new System.Windows.Forms.Label();
             this.m_date_ngay_dau_ky = new System.Windows.Forms.DateTimePicker();
             this.m_data_ngay_cuoi_ky = new System.Windows.Forms.DateTimePicker();
@@ -270,6 +278,7 @@ namespace BondApp
             // 
             // m_gbox_thong_tin_tp
             // 
+            this.m_gbox_thong_tin_tp.Controls.Add(this.m_cbo_ky_tinh_lai);
             this.m_gbox_thong_tin_tp.Controls.Add(this.m_cbo_trang_thai);
             this.m_gbox_thong_tin_tp.Controls.Add(this.m_lbl_ten_nguoi_lap);
             this.m_gbox_thong_tin_tp.Controls.Add(this.m_lbl_ten_nguoi_duyet);
@@ -277,7 +286,10 @@ namespace BondApp
             this.m_gbox_thong_tin_tp.Controls.Add(this.label2);
             this.m_gbox_thong_tin_tp.Controls.Add(this.m_lbl_ky_tinh_lai);
             this.m_gbox_thong_tin_tp.Controls.Add(this.m_lbl_nguoi_duyet);
+            this.m_gbox_thong_tin_tp.Controls.Add(this.m_dat_ngay_thanh_toan_thuc_te);
+            this.m_gbox_thong_tin_tp.Controls.Add(this.label3);
             this.m_gbox_thong_tin_tp.Controls.Add(this.m_dat_ngay_thanh_toan);
+            this.m_gbox_thong_tin_tp.Controls.Add(this.label4);
             this.m_gbox_thong_tin_tp.Controls.Add(this.m_lbl_ngay_thanh_toan);
             this.m_gbox_thong_tin_tp.Controls.Add(this.m_date_ngay_dau_ky);
             this.m_gbox_thong_tin_tp.Controls.Add(this.m_data_ngay_cuoi_ky);
@@ -300,11 +312,22 @@ namespace BondApp
             this.m_gbox_thong_tin_tp.TabStop = false;
             this.m_gbox_thong_tin_tp.Text = "Thông tin trái phiếu";
             // 
+            // m_cbo_ky_tinh_lai
+            // 
+            this.m_cbo_ky_tinh_lai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_ky_tinh_lai.Enabled = false;
+            this.m_cbo_ky_tinh_lai.FormattingEnabled = true;
+            this.m_cbo_ky_tinh_lai.Location = new System.Drawing.Point(106, 50);
+            this.m_cbo_ky_tinh_lai.Name = "m_cbo_ky_tinh_lai";
+            this.m_cbo_ky_tinh_lai.Size = new System.Drawing.Size(120, 21);
+            this.m_cbo_ky_tinh_lai.TabIndex = 22;
+            // 
             // m_cbo_trang_thai
             // 
             this.m_cbo_trang_thai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_trang_thai.Enabled = false;
             this.m_cbo_trang_thai.FormattingEnabled = true;
-            this.m_cbo_trang_thai.Location = new System.Drawing.Point(612, 79);
+            this.m_cbo_trang_thai.Location = new System.Drawing.Point(612, 106);
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
             this.m_cbo_trang_thai.Size = new System.Drawing.Size(120, 21);
             this.m_cbo_trang_thai.TabIndex = 22;
@@ -312,7 +335,7 @@ namespace BondApp
             // m_lbl_ten_nguoi_lap
             // 
             this.m_lbl_ten_nguoi_lap.AutoSize = true;
-            this.m_lbl_ten_nguoi_lap.Location = new System.Drawing.Point(103, 108);
+            this.m_lbl_ten_nguoi_lap.Location = new System.Drawing.Point(103, 135);
             this.m_lbl_ten_nguoi_lap.Name = "m_lbl_ten_nguoi_lap";
             this.m_lbl_ten_nguoi_lap.Size = new System.Drawing.Size(72, 13);
             this.m_lbl_ten_nguoi_lap.TabIndex = 12;
@@ -322,7 +345,7 @@ namespace BondApp
             // m_lbl_ten_nguoi_duyet
             // 
             this.m_lbl_ten_nguoi_duyet.AutoSize = true;
-            this.m_lbl_ten_nguoi_duyet.Location = new System.Drawing.Point(318, 108);
+            this.m_lbl_ten_nguoi_duyet.Location = new System.Drawing.Point(366, 135);
             this.m_lbl_ten_nguoi_duyet.Name = "m_lbl_ten_nguoi_duyet";
             this.m_lbl_ten_nguoi_duyet.Size = new System.Drawing.Size(84, 13);
             this.m_lbl_ten_nguoi_duyet.TabIndex = 17;
@@ -341,7 +364,7 @@ namespace BondApp
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(289, 82);
+            this.label2.Location = new System.Drawing.Point(337, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 13);
             this.label2.TabIndex = 8;
@@ -350,7 +373,7 @@ namespace BondApp
             // m_lbl_ky_tinh_lai
             // 
             this.m_lbl_ky_tinh_lai.AutoSize = true;
-            this.m_lbl_ky_tinh_lai.Location = new System.Drawing.Point(21, 82);
+            this.m_lbl_ky_tinh_lai.Location = new System.Drawing.Point(14, 109);
             this.m_lbl_ky_tinh_lai.Name = "m_lbl_ky_tinh_lai";
             this.m_lbl_ky_tinh_lai.Size = new System.Drawing.Size(66, 13);
             this.m_lbl_ky_tinh_lai.TabIndex = 8;
@@ -359,26 +382,58 @@ namespace BondApp
             // m_lbl_nguoi_duyet
             // 
             this.m_lbl_nguoi_duyet.AutoSize = true;
-            this.m_lbl_nguoi_duyet.Location = new System.Drawing.Point(236, 108);
+            this.m_lbl_nguoi_duyet.Location = new System.Drawing.Point(296, 135);
             this.m_lbl_nguoi_duyet.Name = "m_lbl_nguoi_duyet";
             this.m_lbl_nguoi_duyet.Size = new System.Drawing.Size(64, 13);
             this.m_lbl_nguoi_duyet.TabIndex = 15;
             this.m_lbl_nguoi_duyet.Text = "Người duyệt";
             // 
+            // m_dat_ngay_thanh_toan_thuc_te
+            // 
+            this.m_dat_ngay_thanh_toan_thuc_te.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.m_dat_ngay_thanh_toan_thuc_te.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_thanh_toan_thuc_te.Enabled = false;
+            this.m_dat_ngay_thanh_toan_thuc_te.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_ngay_thanh_toan_thuc_te.Location = new System.Drawing.Point(369, 77);
+            this.m_dat_ngay_thanh_toan_thuc_te.Name = "m_dat_ngay_thanh_toan_thuc_te";
+            this.m_dat_ngay_thanh_toan_thuc_te.Size = new System.Drawing.Size(120, 20);
+            this.m_dat_ngay_thanh_toan_thuc_te.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(238, 82);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(122, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Ngày thanh toán thực tế";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // m_dat_ngay_thanh_toan
             // 
             this.m_dat_ngay_thanh_toan.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.m_dat_ngay_thanh_toan.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_thanh_toan.Enabled = false;
             this.m_dat_ngay_thanh_toan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_thanh_toan.Location = new System.Drawing.Point(321, 50);
+            this.m_dat_ngay_thanh_toan.Location = new System.Drawing.Point(106, 77);
             this.m_dat_ngay_thanh_toan.Name = "m_dat_ngay_thanh_toan";
             this.m_dat_ngay_thanh_toan.Size = new System.Drawing.Size(120, 20);
             this.m_dat_ngay_thanh_toan.TabIndex = 7;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(14, 53);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Kỳ tính lãi";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // m_lbl_ngay_thanh_toan
             // 
             this.m_lbl_ngay_thanh_toan.AutoSize = true;
-            this.m_lbl_ngay_thanh_toan.Location = new System.Drawing.Point(229, 55);
+            this.m_lbl_ngay_thanh_toan.Location = new System.Drawing.Point(14, 82);
             this.m_lbl_ngay_thanh_toan.Name = "m_lbl_ngay_thanh_toan";
             this.m_lbl_ngay_thanh_toan.Size = new System.Drawing.Size(86, 13);
             this.m_lbl_ngay_thanh_toan.TabIndex = 6;
@@ -389,8 +444,9 @@ namespace BondApp
             // 
             this.m_date_ngay_dau_ky.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.m_date_ngay_dau_ky.CustomFormat = "dd/MM/yyyy";
+            this.m_date_ngay_dau_ky.Enabled = false;
             this.m_date_ngay_dau_ky.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_date_ngay_dau_ky.Location = new System.Drawing.Point(106, 76);
+            this.m_date_ngay_dau_ky.Location = new System.Drawing.Point(106, 103);
             this.m_date_ngay_dau_ky.Name = "m_date_ngay_dau_ky";
             this.m_date_ngay_dau_ky.Size = new System.Drawing.Size(120, 20);
             this.m_date_ngay_dau_ky.TabIndex = 5;
@@ -399,8 +455,9 @@ namespace BondApp
             // 
             this.m_data_ngay_cuoi_ky.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.m_data_ngay_cuoi_ky.CustomFormat = "dd/MM/yyyy";
+            this.m_data_ngay_cuoi_ky.Enabled = false;
             this.m_data_ngay_cuoi_ky.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_data_ngay_cuoi_ky.Location = new System.Drawing.Point(321, 76);
+            this.m_data_ngay_cuoi_ky.Location = new System.Drawing.Point(369, 103);
             this.m_data_ngay_cuoi_ky.Name = "m_data_ngay_cuoi_ky";
             this.m_data_ngay_cuoi_ky.Size = new System.Drawing.Size(120, 20);
             this.m_data_ngay_cuoi_ky.TabIndex = 5;
@@ -409,8 +466,9 @@ namespace BondApp
             // 
             this.m_dat_ngay_chot_lai.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.m_dat_ngay_chot_lai.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_chot_lai.Enabled = false;
             this.m_dat_ngay_chot_lai.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_chot_lai.Location = new System.Drawing.Point(106, 50);
+            this.m_dat_ngay_chot_lai.Location = new System.Drawing.Point(369, 50);
             this.m_dat_ngay_chot_lai.Name = "m_dat_ngay_chot_lai";
             this.m_dat_ngay_chot_lai.Size = new System.Drawing.Size(120, 20);
             this.m_dat_ngay_chot_lai.TabIndex = 5;
@@ -418,7 +476,7 @@ namespace BondApp
             // m_lbl_muc_dich
             // 
             this.m_lbl_muc_dich.AutoSize = true;
-            this.m_lbl_muc_dich.Location = new System.Drawing.Point(552, 108);
+            this.m_lbl_muc_dich.Location = new System.Drawing.Point(552, 135);
             this.m_lbl_muc_dich.Name = "m_lbl_muc_dich";
             this.m_lbl_muc_dich.Size = new System.Drawing.Size(54, 13);
             this.m_lbl_muc_dich.TabIndex = 18;
@@ -427,7 +485,7 @@ namespace BondApp
             // m_lbl_ma_trai_phieu
             // 
             this.m_lbl_ma_trai_phieu.AutoSize = true;
-            this.m_lbl_ma_trai_phieu.Location = new System.Drawing.Point(21, 27);
+            this.m_lbl_ma_trai_phieu.Location = new System.Drawing.Point(14, 27);
             this.m_lbl_ma_trai_phieu.Name = "m_lbl_ma_trai_phieu";
             this.m_lbl_ma_trai_phieu.Size = new System.Drawing.Size(68, 13);
             this.m_lbl_ma_trai_phieu.TabIndex = 0;
@@ -447,16 +505,16 @@ namespace BondApp
             // m_txt_ghi_chu
             // 
             this.m_txt_ghi_chu.BackColor = System.Drawing.Color.White;
-            this.m_txt_ghi_chu.Location = new System.Drawing.Point(106, 132);
+            this.m_txt_ghi_chu.Location = new System.Drawing.Point(106, 159);
             this.m_txt_ghi_chu.Multiline = true;
             this.m_txt_ghi_chu.Name = "m_txt_ghi_chu";
-            this.m_txt_ghi_chu.Size = new System.Drawing.Size(626, 81);
+            this.m_txt_ghi_chu.Size = new System.Drawing.Size(626, 51);
             this.m_txt_ghi_chu.TabIndex = 21;
             // 
             // m_lbl_ngay_chot_lai
             // 
             this.m_lbl_ngay_chot_lai.AutoSize = true;
-            this.m_lbl_ngay_chot_lai.Location = new System.Drawing.Point(21, 55);
+            this.m_lbl_ngay_chot_lai.Location = new System.Drawing.Point(294, 53);
             this.m_lbl_ngay_chot_lai.Name = "m_lbl_ngay_chot_lai";
             this.m_lbl_ngay_chot_lai.Size = new System.Drawing.Size(69, 13);
             this.m_lbl_ngay_chot_lai.TabIndex = 4;
@@ -466,7 +524,7 @@ namespace BondApp
             // m_txt_muc_dich
             // 
             this.m_txt_muc_dich.BackColor = System.Drawing.Color.White;
-            this.m_txt_muc_dich.Location = new System.Drawing.Point(612, 106);
+            this.m_txt_muc_dich.Location = new System.Drawing.Point(612, 133);
             this.m_txt_muc_dich.Name = "m_txt_muc_dich";
             this.m_txt_muc_dich.Size = new System.Drawing.Size(120, 20);
             this.m_txt_muc_dich.TabIndex = 19;
@@ -474,7 +532,7 @@ namespace BondApp
             // m_lbl_ghi_chu
             // 
             this.m_lbl_ghi_chu.AutoSize = true;
-            this.m_lbl_ghi_chu.Location = new System.Drawing.Point(21, 135);
+            this.m_lbl_ghi_chu.Location = new System.Drawing.Point(14, 162);
             this.m_lbl_ghi_chu.Name = "m_lbl_ghi_chu";
             this.m_lbl_ghi_chu.Size = new System.Drawing.Size(44, 13);
             this.m_lbl_ghi_chu.TabIndex = 20;
@@ -483,7 +541,7 @@ namespace BondApp
             // m_lbl_trang_thai
             // 
             this.m_lbl_trang_thai.AutoSize = true;
-            this.m_lbl_trang_thai.Location = new System.Drawing.Point(551, 82);
+            this.m_lbl_trang_thai.Location = new System.Drawing.Point(551, 109);
             this.m_lbl_trang_thai.Name = "m_lbl_trang_thai";
             this.m_lbl_trang_thai.Size = new System.Drawing.Size(55, 13);
             this.m_lbl_trang_thai.TabIndex = 13;
@@ -492,7 +550,7 @@ namespace BondApp
             // m_lbl_nguoi_lap
             // 
             this.m_lbl_nguoi_lap.AutoSize = true;
-            this.m_lbl_nguoi_lap.Location = new System.Drawing.Point(21, 108);
+            this.m_lbl_nguoi_lap.Location = new System.Drawing.Point(14, 135);
             this.m_lbl_nguoi_lap.Name = "m_lbl_nguoi_lap";
             this.m_lbl_nguoi_lap.Size = new System.Drawing.Size(52, 13);
             this.m_lbl_nguoi_lap.TabIndex = 10;
@@ -737,6 +795,8 @@ namespace BondApp
         {
             m_txt_ma_trai_phieu.Text = m_us_v_dm_trai_phieu.strMA_TRAI_PHIEU;
             m_lbl_ten_trai_phieu.Text = m_us_v_dm_trai_phieu.strTEN_TRAI_PHIEU;
+            load_cbo_ky_tinh_lai();
+            m_cbo_ky_tinh_lai.Enabled = true;
         }
         private void save_data()
         {
@@ -851,6 +911,40 @@ namespace BondApp
             v_fDE.display_for_update(v_us_gd_chot_lai_detail);
             m_us_gd_chot_lai.fillDSChotLaiDetail(m_ds_gd_chot_lai_detail);
             load_data_2_grid();
+        }
+
+        private void load_cbo_ky_tinh_lai()
+        {
+
+            if (m_us_v_dm_trai_phieu != null)
+            {
+                decimal v_dc_so_ky_tra_lai;
+                m_cbo_ky_tinh_lai.Items.Clear();
+                if (m_us_v_dm_trai_phieu.dcID_DV_KY_TRA_LAI == 18)
+                    v_dc_so_ky_tra_lai = m_us_v_dm_trai_phieu.dcKY_HAN / m_us_v_dm_trai_phieu.dcKY_TRA_LAI * 12;
+                else
+                    v_dc_so_ky_tra_lai = m_us_v_dm_trai_phieu.dcKY_HAN / m_us_v_dm_trai_phieu.dcKY_TRA_LAI;
+                for (int i = 1; i <= v_dc_so_ky_tra_lai; i++)
+                {
+                    m_cbo_ky_tinh_lai.Items.Add(i);
+                }
+            }
+        }
+
+        private void load_data_ky_tinh_lai_2_from()
+        {
+            if (m_us_v_dm_trai_phieu != null)
+            {
+                if (m_us_v_dm_trai_phieu.dcID_DV_KY_TRA_LAI == 18)
+                {
+                    
+
+                }
+                else
+                {
+                    
+                }                
+            }
         }
 #endregion
         #region Events
