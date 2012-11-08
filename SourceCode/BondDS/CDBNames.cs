@@ -665,7 +665,9 @@ namespace BondDS.CDBNames
         public const string NGAY_CUOI_KY = "NGAY_CUOI_KY";
         public const string MUC_DICH = "MUC_DICH";
         public const string GHI_CHU1 = "GHI_CHU1";
+        public const string KY_TINH_LAI = "KY_TINH_LAI";
     }
+
 
     public class GD_CHOT_LAI_DETAIL
     {
