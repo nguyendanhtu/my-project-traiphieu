@@ -334,7 +334,7 @@ namespace BondApp.DanhMuc
                 case e_formmode.HIEN_THI_DE_DUYET:
                     m_us_v_trai_chu.dcID_TRANG_THAI = TRANG_THAI_DANH_MUC.DA_DUYET;
                     m_us_v_trai_chu.dcID_NGUOI_DUYET_TC = CAppContext_201.getCurrentUserID();
-                    m_us_v_trai_chu.strGHI_CHU3 = CIPConvert.ToStr(m_dat_ngay_duyet.Value);
+                    m_us_v_trai_chu.datNGAY_DUYET = m_dat_ngay_duyet.Value;
                     m_us_v_trai_chu.Update();
                     break;
             }

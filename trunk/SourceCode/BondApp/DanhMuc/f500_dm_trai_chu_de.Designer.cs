@@ -515,7 +515,6 @@
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 27;
             this.label2.Text = "Ghi chú 3";
-            this.label2.Visible = false;
             // 
             // m_txt_ghi_chu_3
             // 
@@ -523,7 +522,6 @@
             this.m_txt_ghi_chu_3.Name = "m_txt_ghi_chu_3";
             this.m_txt_ghi_chu_3.Size = new System.Drawing.Size(855, 20);
             this.m_txt_ghi_chu_3.TabIndex = 21;
-            this.m_txt_ghi_chu_3.Visible = false;
             // 
             // m_txt_mo_tai_ngan_hang
             // 
