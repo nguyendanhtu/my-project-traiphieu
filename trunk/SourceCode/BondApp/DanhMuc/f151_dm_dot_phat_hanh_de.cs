@@ -135,6 +135,10 @@ namespace BondApp.DanhMuc
             if (ip_us_v_dot_phat_hanh.strNGAY_LAM_VIEC_HAI_SAU_YN.Equals("Y"))
                 m_cbo_loai_ngay_lam_viec.SelectedIndex = 0;
             else m_cbo_loai_ngay_lam_viec.SelectedIndex = 1;
+            m_txt_phi_chuyen_nhuong_max.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcPHI_CHUYEN_NHUONG_MAX,"#,###");
+            m_txt_phi_chuyen_nhuong_min.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcPHI_CHUYEN_NHUONG_MIN, "#,###");
+            m_txt_phi_phong_giai_toa_max.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcPHI_PHONG_GIAI_TOA_MAX, "#,###");
+            m_txt_phi_phong_giai_toa_min.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcPHI_PHONG_GIAI_TOA_MIN, "#,###");
         }
         private void form_2_us_object(US_V_DM_DOT_PHAT_HANH op_v_us_dot_phat_hanh)
         {
@@ -151,6 +155,10 @@ namespace BondApp.DanhMuc
             if (m_cbo_loai_ngay_lam_viec.SelectedIndex == 0)
                 op_v_us_dot_phat_hanh.strNGAY_LAM_VIEC_HAI_SAU_YN = "Y";
             else op_v_us_dot_phat_hanh.strNGAY_LAM_VIEC_HAI_SAU_YN = "N";
+            op_v_us_dot_phat_hanh.dcPHI_CHUYEN_NHUONG_MAX = CIPConvert.ToDecimal(m_txt_phi_chuyen_nhuong_max.Text);
+            op_v_us_dot_phat_hanh.dcPHI_CHUYEN_NHUONG_MIN = CIPConvert.ToDecimal(m_txt_phi_chuyen_nhuong_min.Text);
+            op_v_us_dot_phat_hanh.dcPHI_PHONG_GIAI_TOA_MAX = CIPConvert.ToDecimal(m_txt_phi_phong_giai_toa_max.Text);
+            op_v_us_dot_phat_hanh.dcPHI_PHONG_GIAI_TOA_MIN = CIPConvert.ToDecimal(m_txt_phi_phong_giai_toa_min.Text);
         }
         
         private bool check_validate_data_is_ok()
@@ -173,6 +181,26 @@ namespace BondApp.DanhMuc
             if (!CValidateTextBox.IsValid(m_txt_ty_le_phi_phong_giai_toa, DataType.NumberType, allowNull.NO, true))
             {
                 m_txt_ty_le_phi_phong_giai_toa.Focus();
+                return false;
+            }
+            if (!CValidateTextBox.IsValid(m_txt_phi_phong_giai_toa_max, DataType.NumberType, allowNull.NO, true))
+            {
+                m_txt_phi_phong_giai_toa_max.Focus();
+                return false;
+            }
+            if (!CValidateTextBox.IsValid(m_txt_phi_phong_giai_toa_min, DataType.NumberType, allowNull.NO, true))
+            {
+                m_txt_phi_phong_giai_toa_min.Focus();
+                return false;
+            }
+            if (!CValidateTextBox.IsValid(m_txt_phi_chuyen_nhuong_max, DataType.NumberType, allowNull.NO, true))
+            {
+                m_txt_phi_chuyen_nhuong_max.Focus();
+                return false;
+            }
+            if (!CValidateTextBox.IsValid(m_txt_phi_chuyen_nhuong_min, DataType.NumberType, allowNull.NO, true))
+            {
+                m_txt_phi_chuyen_nhuong_min.Focus();
                 return false;
             }
             return true;
