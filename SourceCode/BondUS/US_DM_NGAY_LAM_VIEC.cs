@@ -133,11 +133,15 @@ public class US_DM_NGAY_LAM_VIEC : US_Object
 	}
 #endregion
 
-    public void FillDatasetGetNgayThanhtoanThucTe(DS_DM_NGAY_LAM_VIEC ip_ds_dm_ng_lam_viec, DateTime ip_ngay_thanh_toan, decimal ip_so_ngay_truoc_thanh_toan, string ip_str_ngay_lam_viec_truoc_ngay_nghi_yn)
+    public void FillDatasetGetNgayThanhtoanThucTe(
+        DS_DM_NGAY_LAM_VIEC ip_ds_dm_ng_lam_viec, 
+        DateTime ip_ngay_thanh_toan,         
+        string ip_str_ngay_lam_viec_truoc_ngay_nghi_yn, 
+        string ip_str_ngay_lam_viec_26_YN)
     {
         CStoredProc v_pr_obj = new CStoredProc("pr_DM_NGAY_LAM_VIEC_get_ngay_thanh_toan_thuc_te");
-        v_pr_obj.addDatetimeInputParam("@NGAY_THANH_TOAN", ip_ngay_thanh_toan);
-        v_pr_obj.addDecimalInputParam("@SO_NGAY_CHOT_LAI_TRUOC_THANH_TOAN", ip_so_ngay_truoc_thanh_toan);
+        v_pr_obj.addDatetimeInputParam("@NGAY_THANH_TOAN", ip_ngay_thanh_toan);        
+        v_pr_obj.addDecimalInputParam("@NGAY_LAM_VIEC_26_YN", ip_str_ngay_lam_viec_26_YN);
         v_pr_obj.addNVarcharInputParam("@NGAY_LAM_VIEC_TRUOC_NGHI_YN", ip_str_ngay_lam_viec_truoc_ngay_nghi_yn);
         v_pr_obj.fillDataSetByCommand(this, ip_ds_dm_ng_lam_viec);
     }
