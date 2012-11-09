@@ -301,16 +301,16 @@ namespace BondApp
 		private enum e_col_Number
         {
             STT = 1
-            ,ID_NGUOI_LAP = 4
-            ,NGAY_CHOT_LAI = 2
-            ,ID_TRAI_PHIEU = 7
-            ,GHI_CHU1 = 11
-            ,NGAY_DAU_KY = 8
-            ,NGAY_CUOI_KY = 9
-            ,NGAY_THANH_TOAN = 3
-            ,ID_NGUOI_DUYET = 5
-            ,MUC_DICH = 10
-            ,TRANG_THAI = 6
+            ,ID_NGUOI_LAP = 5
+            ,NGAY_CHOT_LAI = 3
+            ,ID_TRAI_PHIEU = 2
+            ,GHI_CHU1 = 12
+            ,NGAY_DAU_KY = 9
+            ,NGAY_CUOI_KY = 10
+            ,NGAY_THANH_TOAN = 4
+            ,ID_NGUOI_DUYET = 6
+            ,MUC_DICH = 11
+            ,TRANG_THAI = 7
 
 		}
         private enum e_edit_mode
