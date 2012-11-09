@@ -964,36 +964,11 @@ namespace BondApp
 
         private DateTime get_ngay_thanh_toan_thuc_te(DateTime ip_ngay_thanh_toan)
         {
-            US_DM_DOT_PHAT_HANH v_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_v_dm_trai_phieu.dcID_DOT_PHAT_HANH);
-            //Nếu ngày thanh toán không phải tứ 7 hoặc CN get ngày thanh toán thực tế = ng thanh toán
-            if(ip_ngay_thanh_toan.DayOfWeek != DayOfWeek.Sunday && ip_ngay_thanh_toan.DayOfWeek != DayOfWeek.Saturday) return ip_ngay_thanh_toan;
-            // Trái phiếu thuộc loại làm việc 6 ngày
-            if(v_dot_phat_hanh.strNGAY_LAM_VIEC_HAI_SAU_YN == "N")
-                // Thứ 7 cũng là ng làm việc get ngày thanh toán thực tế = ng thanh toán
-                if(ip_ngay_thanh_toan.DayOfWeek == DayOfWeek.Saturday) return ip_ngay_thanh_toan;
-                else{// ng thanh toán là CN
-                    if (m_us_v_dm_trai_phieu.strTHANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN == "Y")
-                        return ip_ngay_thanh_toan.AddDays(-1);//trả về thứ 7
-                    else
-                        return ip_ngay_thanh_toan.AddDays(1);//trả về thứ 2
-                }
-            else{
-                if (m_us_v_dm_trai_phieu.strTHANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN == "Y")
-                {
-                    if(ip_ngay_thanh_toan.DayOfWeek == DayOfWeek.Saturday)
-                        return ip_ngay_thanh_toan.AddDays(-1);//trả về thứ 6
-                    else
-                        return ip_ngay_thanh_toan.AddDays(-2);//trả về thứ 6
-                }
-                else
-                {
-                    if (ip_ngay_thanh_toan.DayOfWeek == DayOfWeek.Saturday)
-                        return ip_ngay_thanh_toan.AddDays(2);//trả về thứ 2
-                    else
-                        return ip_ngay_thanh_toan.AddDays(1);//trả về thứ 2
-                }
-            }
-            
+            US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_v_dm_trai_phieu.dcID_DOT_PHAT_HANH);
+            DS_DM_NGAY_LAM_VIEC v_ds_dm_ng_lam_viec = new DS_DM_NGAY_LAM_VIEC();
+            US_DM_NGAY_LAM_VIEC v_us_dm_ng_lam_viec = new US_DM_NGAY_LAM_VIEC();
+            v_us_dm_ng_lam_viec.FillDatasetGetNgayThanhtoanThucTe(v_ds_dm_ng_lam_viec ,ip_ngay_thanh_toan, m_us_v_dm_trai_phieu.dcSO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN, v_us_dm_dot_phat_hanh.strNGAY_LAM_VIEC_HAI_SAU_YN);            
+            return CIPConvert.ToDatetime(v_ds_dm_ng_lam_viec.DM_NGAY_LAM_VIEC.Rows[0][DM_NGAY_LAM_VIEC.NGAY]);
         }
 #endregion
         #region Events
