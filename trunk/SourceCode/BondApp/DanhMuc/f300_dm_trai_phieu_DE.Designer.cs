@@ -135,7 +135,7 @@
             this.m.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m.Location = new System.Drawing.Point(0, 37);
             this.m.Name = "m";
-            this.m.Size = new System.Drawing.Size(864, 642);
+            this.m.Size = new System.Drawing.Size(864, 675);
             this.m.TabIndex = 1;
             this.m.TabStop = false;
             // 
@@ -789,8 +789,9 @@
             // m_txt_ghi_chu_phuong_thuc_xd_lai_suat
             // 
             this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat.Location = new System.Drawing.Point(227, 571);
+            this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat.Multiline = true;
             this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat.Name = "m_txt_ghi_chu_phuong_thuc_xd_lai_suat";
-            this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat.Size = new System.Drawing.Size(565, 20);
+            this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat.Size = new System.Drawing.Size(565, 62);
             this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat.TabIndex = 0;
             // 
             // m_pnl_out_place_dm
@@ -798,7 +799,7 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(3, 603);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(3, 636);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(858, 36);
@@ -865,7 +866,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(864, 679);
+            this.ClientSize = new System.Drawing.Size(864, 712);
             this.Controls.Add(this.m);
             this.Controls.Add(this.m_lbl_title);
             this.Name = "f300_dm_trai_phieu_DE";
