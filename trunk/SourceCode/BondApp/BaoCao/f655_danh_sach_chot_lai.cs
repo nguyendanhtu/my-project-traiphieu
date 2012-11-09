@@ -69,6 +69,12 @@ namespace SaleManagement
         internal SIS.Controls.Button.SiSButton m_cmd_export_excel;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
+        private ComboBox m_cbo_ky_tinh_lai;
+        private Label label5;
+        private Label label6;
+        private Label label7;
+        private DateTimePicker m_date_ngay_dau_ky;
+        private DateTimePicker m_data_ngay_cuoi_ky;
 		private System.ComponentModel.IContainer components;
 
 		public f655_danh_sach_chot_lai()
@@ -140,6 +146,12 @@ namespace SaleManagement
             this.m_cmd_export_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_cbo_ky_tinh_lai = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.m_date_ngay_dau_ky = new System.Windows.Forms.DateTimePicker();
+            this.m_data_ngay_cuoi_ky = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -186,6 +198,12 @@ namespace SaleManagement
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.m_cbo_ky_tinh_lai);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.m_date_ngay_dau_ky);
+            this.groupBox1.Controls.Add(this.m_data_ngay_cuoi_ky);
             this.groupBox1.Controls.Add(this.m_cmd_chon_trai_phieu);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -214,7 +232,7 @@ namespace SaleManagement
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 24);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(968, 135);
+            this.groupBox1.Size = new System.Drawing.Size(968, 174);
             this.groupBox1.TabIndex = 55;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin trái phiếu";
@@ -504,11 +522,70 @@ namespace SaleManagement
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 159);
+            this.m_fg.Location = new System.Drawing.Point(0, 198);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(968, 288);
+            this.m_fg.Size = new System.Drawing.Size(968, 249);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 58;
+            // 
+            // m_cbo_ky_tinh_lai
+            // 
+            this.m_cbo_ky_tinh_lai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_ky_tinh_lai.FormattingEnabled = true;
+            this.m_cbo_ky_tinh_lai.Location = new System.Drawing.Point(134, 135);
+            this.m_cbo_ky_tinh_lai.Name = "m_cbo_ky_tinh_lai";
+            this.m_cbo_ky_tinh_lai.Size = new System.Drawing.Size(120, 21);
+            this.m_cbo_ky_tinh_lai.TabIndex = 64;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(648, 141);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(26, 13);
+            this.label5.TabIndex = 62;
+            this.label5.Text = "đến";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(339, 142);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(66, 13);
+            this.label6.TabIndex = 63;
+            this.label6.Text = "Kỳ tính lãi từ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(42, 138);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(54, 13);
+            this.label7.TabIndex = 61;
+            this.label7.Text = "Kỳ tính lãi";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // m_date_ngay_dau_ky
+            // 
+            this.m_date_ngay_dau_ky.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.m_date_ngay_dau_ky.CustomFormat = "dd/MM/yyyy";
+            this.m_date_ngay_dau_ky.Enabled = false;
+            this.m_date_ngay_dau_ky.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_date_ngay_dau_ky.Location = new System.Drawing.Point(431, 136);
+            this.m_date_ngay_dau_ky.Name = "m_date_ngay_dau_ky";
+            this.m_date_ngay_dau_ky.Size = new System.Drawing.Size(120, 20);
+            this.m_date_ngay_dau_ky.TabIndex = 59;
+            // 
+            // m_data_ngay_cuoi_ky
+            // 
+            this.m_data_ngay_cuoi_ky.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.m_data_ngay_cuoi_ky.CustomFormat = "dd/MM/yyyy";
+            this.m_data_ngay_cuoi_ky.Enabled = false;
+            this.m_data_ngay_cuoi_ky.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_data_ngay_cuoi_ky.Location = new System.Drawing.Point(680, 136);
+            this.m_data_ngay_cuoi_ky.Name = "m_data_ngay_cuoi_ky";
+            this.m_data_ngay_cuoi_ky.Size = new System.Drawing.Size(120, 20);
+            this.m_data_ngay_cuoi_ky.TabIndex = 60;
             // 
             // f655_danh_sach_chot_lai
             // 
@@ -591,8 +668,14 @@ namespace SaleManagement
 		}
 		private void load_data_2_grid(){						
 			m_ds = new DS_V_DM_TRAI_CHU_CHOT_LAI();
+            if ((int)m_cbo_ky_tinh_lai.SelectedItem == 0) return;
 			if (m_us_trai_phieu != null)
-            m_us.FillDatasetByIDTraiPhieu(m_ds, m_us_trai_phieu.dcID);
+                m_us.FillDatasetByIDTraiPhieuByKyTL(m_ds, m_us_trai_phieu.dcID, CIPConvert.ToDecimal( m_cbo_ky_tinh_lai.SelectedItem));
+            if (m_ds.V_DM_TRAI_CHU_CHOT_LAI == null || m_ds.V_DM_TRAI_CHU_CHOT_LAI.Count == 0)
+            {
+                //MessageBox.Show("Giao dịch chốt lãi chưa được thực hiện.");
+                return;
+            }
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
@@ -637,6 +720,7 @@ namespace SaleManagement
             m_txt_tong_gia_tri_trai_phieu.Text = CIPConvert.ToStr(m_us_trai_phieu.dcTONG_GIA_TRI, "#,###");
             m_txt_lai_suat.Text = CIPConvert.ToStr(m_us_trai_phieu.dcLAI_SUAT_DEFAULT * 100, "#,##0.0000");
             m_txt_ky_tinh_lai.Text = CIPConvert.ToStr(m_us_trai_phieu.dcKY_TRA_LAI, "#,###");
+            load_cbo_ky_tinh_lai();
         }
 
         private void select_trai_phieu()
@@ -646,8 +730,7 @@ namespace SaleManagement
             m_us_trai_phieu = v_frm300.select_trai_phieu();
             if (!m_us_trai_phieu.IsIDNull() && m_us_trai_phieu.dcID != -1)
             {
-                us_trai_phieu_2_form();
-                load_data_2_grid();
+                us_trai_phieu_2_form();                
             }
         }
 
@@ -655,6 +738,12 @@ namespace SaleManagement
         {
             US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_trai_phieu.dcID_DOT_PHAT_HANH);
             US_DM_TO_CHUC_PHAT_HANH v_us_dm_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH(v_us_dm_dot_phat_hanh.dcID_TO_CHUC_PHAT_HANH);
+            
+            if(m_ds.V_DM_TRAI_CHU_CHOT_LAI == null || m_ds.V_DM_TRAI_CHU_CHOT_LAI.Count == 0){
+                MessageBox.Show("Giao dịch chốt lãi chưa được thực hiện.");
+                return;
+            }
+            US_GD_CHOT_LAI v_us_gd_chot_lai = new US_GD_CHOT_LAI(CIPConvert.ToDecimal(m_ds.V_DM_TRAI_CHU_CHOT_LAI.Rows[0][V_DM_TRAI_CHU_CHOT_LAI.ID_CHOT_LAI]));
 
             CExcelReport v_obj_export_excel = new CExcelReport("f300 _Danh Sach Chot.xls", 17, 2);
             v_obj_export_excel.AddFindAndReplaceItem("<TEN_CONG_TY>", v_us_dm_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HANH);
@@ -662,22 +751,96 @@ namespace SaleManagement
             v_obj_export_excel.AddFindAndReplaceItem("<MENH_GIA_TRAI_PHIEU>", m_txt_menh_gia.Text + " VND");
             v_obj_export_excel.AddFindAndReplaceItem("<NGAY_PHAT_HANH>", m_txt_ngay_phat_hanh.Text);
             v_obj_export_excel.AddFindAndReplaceItem("<NGAY_DAO_HAN>", m_txt_ngay_dao_han.Text);
-            v_obj_export_excel.AddFindAndReplaceItem("<NGAY_CHOT_DANH_SACH>", CIPConvert.ToStr(m_us.datNGAY_CHOT_LAI, "dd/MM/yyyy"));
-            v_obj_export_excel.AddFindAndReplaceItem("<MUC_DICH>", m_us.strMUC_DICH);
+            v_obj_export_excel.AddFindAndReplaceItem("<NGAY_CHOT_DANH_SACH>", CIPConvert.ToStr(v_us_gd_chot_lai.datNGAY_CHOT_LAI, "dd/MM/yyyy"));
+            v_obj_export_excel.AddFindAndReplaceItem("<MUC_DICH>", v_us_gd_chot_lai.strMUC_DICH);
             v_obj_export_excel.AddFindAndReplaceItem("<KY_TINH_LAI>", m_txt_ky_tinh_lai.Text + " tháng");
             v_obj_export_excel.AddFindAndReplaceItem("<LAI_SUAT>", m_txt_lai_suat.Text);
-            v_obj_export_excel.AddFindAndReplaceItem("<NGAY_THANH_TOAN>", CIPConvert.ToStr(m_us.datNGAY_THANH_TOAN, "dd/MM/yyyy"));
+            v_obj_export_excel.AddFindAndReplaceItem("<NGAY_THANH_TOAN>", CIPConvert.ToStr(v_us_gd_chot_lai.datNGAY_THANH_TOAN, "dd/MM/yyyy"));
             v_obj_export_excel.FindAndReplace(false);
             v_obj_export_excel.Export2ExcelWithoutFixedRows(m_fg, (int)e_col_Number.TEN_TRAI_CHU, m_fg.Cols.Count - 1, false);
             
         }
 
-		private void set_define_events(){
-			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+        private void load_cbo_ky_tinh_lai()
+        {
+
+            if (m_us_trai_phieu != null)
+            {
+                decimal v_dc_so_ky_tra_lai;
+                m_cbo_ky_tinh_lai.Items.Clear();
+                if (m_us_trai_phieu.dcID_DV_KY_TRA_LAI == 18)
+                {
+                    if (m_us_trai_phieu.dcID_DV_KY_HAN == 18)
+                        v_dc_so_ky_tra_lai = m_us_trai_phieu.dcKY_HAN / m_us_trai_phieu.dcKY_TRA_LAI;
+                    else
+                        v_dc_so_ky_tra_lai = (m_us_trai_phieu.dcKY_HAN * 12) / m_us_trai_phieu.dcKY_TRA_LAI;
+                }
+                else
+                {
+                    if (m_us_trai_phieu.dcID_DV_KY_HAN == 18)
+                        v_dc_so_ky_tra_lai = m_us_trai_phieu.dcKY_HAN / (m_us_trai_phieu.dcKY_TRA_LAI * 12);
+                    else
+                        v_dc_so_ky_tra_lai = m_us_trai_phieu.dcKY_HAN / m_us_trai_phieu.dcKY_TRA_LAI;
+                }
+                for (int i = 1; i <= v_dc_so_ky_tra_lai; i++)
+                {
+                    m_cbo_ky_tinh_lai.Items.Add(i);
+                }
+            }
+        }
+
+        private void load_data_ky_tinh_lai_2_from()
+        {
+            if (m_us_trai_phieu != null)
+            {
+                int v_ky_tinh_lai = (int)m_cbo_ky_tinh_lai.SelectedItem;
+                DateTime v_dat_ngay_phat_hanh_tp = m_us_trai_phieu.datNGAY_PHAT_HANH;
+                DateTime v_dat_ngay_thanh_toan;
+                if (m_us_trai_phieu.dcID_DV_KY_TRA_LAI == 18)
+                {
+                    v_dat_ngay_thanh_toan = v_dat_ngay_phat_hanh_tp.AddMonths(v_ky_tinh_lai * (int)m_us_trai_phieu.dcKY_TRA_LAI);                   
+                    m_date_ngay_dau_ky.Value = v_dat_ngay_phat_hanh_tp.AddMonths((v_ky_tinh_lai - 1) * (int)m_us_trai_phieu.dcKY_TRA_LAI);
+                }
+                else
+                {
+                    v_dat_ngay_thanh_toan = v_dat_ngay_phat_hanh_tp.AddYears(v_ky_tinh_lai * (int)m_us_trai_phieu.dcKY_TRA_LAI);                   
+                    m_date_ngay_dau_ky.Value = v_dat_ngay_phat_hanh_tp.AddYears(0 - (int)m_us_trai_phieu.dcKY_TRA_LAI);
+                }
+                m_data_ngay_cuoi_ky.Value = v_dat_ngay_thanh_toan;                
+            }
+        }
+
+		
+
+		#endregion
+
+//
+		//
+		//		EVENT HANLDERS
+		//
+		//
+        private void set_define_events()
+        {
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_export_excel.Click += new EventHandler(m_cmd_export_excel_Click);
             m_cmd_chon_trai_phieu.Click += new EventHandler(m_cmd_chon_trai_phieu_Click);
             this.KeyDown += new KeyEventHandler(f655_danh_sach_chot_lai_KeyDown);
-		}
+            m_cbo_ky_tinh_lai.SelectedIndexChanged += new EventHandler(m_cbo_ky_tinh_lai_SelectedIndexChanged);
+        }
+
+        void m_cbo_ky_tinh_lai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_ky_tinh_lai_2_from();
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
         void f655_danh_sach_chot_lai_KeyDown(object sender, KeyEventArgs e)
         {
@@ -692,13 +855,6 @@ namespace SaleManagement
             }
         }
 
-		#endregion
-
-//
-		//
-		//		EVENT HANLDERS
-		//
-		//
 		private void f655_danh_sach_chot_lai_Load(object sender, System.EventArgs e) {
 			try{
 				set_initial_form_load();
