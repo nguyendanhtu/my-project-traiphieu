@@ -450,6 +450,35 @@ namespace BondUS
             v_pr_obj.fillDataSetByCommand(this, ip_gd_lich);
         }
 
+        public void FillDatasetLaiSuatByIDTraiPhieu(DS_GD_LICH_THANH_TOAN_LAI_GOC ip_gd_lich, decimal ip_id_trai_phieu)
+        {
+            CStoredProc v_pr_obj = new CStoredProc("pr_GD_LICH_THANH_TOAN_LAI_GOC_select_lai_suat_by_trai_phieu");
+            v_pr_obj.addDecimalInputParam("@ID_TRAI_PHIEU", ip_id_trai_phieu);
+
+            v_pr_obj.fillDataSetByCommand(this, ip_gd_lich);
+        }
+
+        public void FillDatasetChotLaiByIDTraiPhieu(DS_GD_LICH_THANH_TOAN_LAI_GOC ip_gd_lich, decimal ip_id_trai_phieu)
+        {
+            CStoredProc v_pr_obj = new CStoredProc("pr_GD_LICH_THANH_TOAN_LAI_GOC_select_chot_lai_by_trai_phieu");
+            v_pr_obj.addDecimalInputParam("@ID_TRAI_PHIEU", ip_id_trai_phieu);
+
+            v_pr_obj.fillDataSetByCommand(this, ip_gd_lich);
+        }
+
+        public void FillDatasetNgayThanhToanLaiByIDTraiPhieu(DS_GD_LICH_THANH_TOAN_LAI_GOC ip_gd_lich, decimal ip_id_trai_phieu)
+        {
+            CStoredProc v_pr_obj = new CStoredProc("pr_GD_LICH_THANH_TOAN_LAI_GOC_select_ngay_thanh_toan_lai_by_trai_phieu");
+            v_pr_obj.addDecimalInputParam("@ID_TRAI_PHIEU", ip_id_trai_phieu);
+
+            v_pr_obj.fillDataSetByCommand(this, ip_gd_lich);
+        }
+        public void FillDatasetAll(DS_GD_LICH_THANH_TOAN_LAI_GOC ip_gd_lich)
+        {
+            CStoredProc v_pr_obj = new CStoredProc("pr_GD_LICH_THANH_TOAN_LAI_GOC_SelectAll");           
+
+            v_pr_obj.fillDataSetByCommand(this, ip_gd_lich);
+        }
         public void FillDatasetLichSUuLaiSuatThoaThuanByIDTraiPhieu(DS_GD_LICH_THANH_TOAN_LAI_GOC ip_gd_lich, decimal ip_id_trai_phieu)
         {
             CStoredProc v_pr_obj = new CStoredProc("pr_GD_LICH_THANH_TOAN_LAI_GOC_selec_lich_su_thay_doi_ls_thoa_thuan");
