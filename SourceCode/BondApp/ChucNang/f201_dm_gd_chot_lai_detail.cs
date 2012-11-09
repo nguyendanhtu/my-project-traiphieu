@@ -25,6 +25,7 @@ using BondApp.ChucNang;
 
 using C1.Win.C1FlexGrid;
 using IP.Core.IPData.DBNames;
+using BondApp.HeThong;
 
 namespace BondApp
 {
@@ -757,10 +758,11 @@ namespace BondApp
             US_CM_DM_TU_DIEN v_us_dm_tu_dien = new US_CM_DM_TU_DIEN(m_us_gd_chot_lai.dcTRANG_THAI);
             m_cbo_trang_thai.SelectedText = v_us_dm_tu_dien.strTEN;
             m_cbo_trang_thai.SelectedValue = v_us_dm_tu_dien.dcID;
+            m_dat_ngay_thanh_toan_thuc_te.Value = m_us_gd_chot_lai.datNGAY_THANH_TOAN_THUC_TE;
             m_date_ngay_dau_ky.Value = m_us_gd_chot_lai.datNGAY_DAU_KY;
             m_data_ngay_cuoi_ky.Value = m_us_gd_chot_lai.datNGAY_CUOI_KY;
             m_txt_ghi_chu.Text = m_us_gd_chot_lai.strGHI_CHU1;
-            m_cbo_ky_tinh_lai.SelectedItem = m_us_gd_chot_lai.dcKY_TINH_LAI;            
+            m_cbo_ky_tinh_lai.SelectedItem =  (int)m_us_gd_chot_lai.dcKY_TINH_LAI;            
             load_data_2_grid();
         }
         private void form_2_us_object(US_GD_CHOT_LAI op_us_gd_chot_lai)
@@ -769,6 +771,7 @@ namespace BondApp
             op_us_gd_chot_lai.dcKY_TINH_LAI = CIPConvert.ToDecimal( m_cbo_ky_tinh_lai.SelectedItem);
             op_us_gd_chot_lai.datNGAY_CHOT_LAI = m_dat_ngay_chot_lai.Value.Date;
             op_us_gd_chot_lai.datNGAY_THANH_TOAN = m_dat_ngay_thanh_toan.Value.Date;
+            op_us_gd_chot_lai.datNGAY_THANH_TOAN_THUC_TE = m_dat_ngay_thanh_toan_thuc_te.Value;
             op_us_gd_chot_lai.datNGAY_DAU_KY = m_date_ngay_dau_ky.Value;
             op_us_gd_chot_lai.datNGAY_CUOI_KY = m_data_ngay_cuoi_ky.Value;            
             op_us_gd_chot_lai.strMUC_DICH = m_txt_muc_dich.Text;
@@ -862,8 +865,7 @@ namespace BondApp
                     m_fg[v_i_grid_row, (int)e_col_Number.ID_TRAI_CHU] = v_us_trai_chu.strTEN_TRAI_CHU;
                 }
             }   
-            m_fg.Redraw = true;
-            if (m_ds_gd_chot_lai_detail.GD_CHOT_LAI_DETAIL != null && m_ds_gd_chot_lai_detail.GD_CHOT_LAI_DETAIL.Count > 0) m_cmd_gen.Enabled = false;
+            m_fg.Redraw = true;            
         }
 
         private void grid2us_object(US_GD_CHOT_LAI_DETAIL i_us, int i_grid_row)
@@ -897,7 +899,20 @@ namespace BondApp
             if (!check_validate_data_is_ok()) return;
             form_2_us_object(v_us_gd_chot_lai);
             v_us_gd_chot_lai.dcID = m_us_gd_chot_lai.dcID;
-            v_us_gd_chot_lai.GenDSTraLai();
+            try
+            {
+                v_us_gd_chot_lai.BeginTransaction();
+                v_us_gd_chot_lai.GenDSTraLai();
+                v_us_gd_chot_lai.CommitTransaction();                
+            }
+            catch (Exception v_e)
+            {
+                if (v_us_gd_chot_lai.is_having_transaction())
+                {
+                    v_us_gd_chot_lai.Rollback();
+                }
+                throw v_e;
+            }                        
             load_data_2_grid();
         }
         private void update_gd_chot_lai_detail()
@@ -946,17 +961,20 @@ namespace BondApp
             {
                 int v_ky_tinh_lai = (int)m_cbo_ky_tinh_lai.SelectedItem;
                 DateTime v_dat_ngay_phat_hanh_tp = m_us_v_dm_trai_phieu.datNGAY_PHAT_HANH;
+                DateTime v_dat_ngay_thanh_toan;
                 if (m_us_v_dm_trai_phieu.dcID_DV_KY_TRA_LAI == 18)
-                {                    
-                    m_dat_ngay_thanh_toan.Value = v_dat_ngay_phat_hanh_tp.AddMonths(v_ky_tinh_lai * (int)m_us_v_dm_trai_phieu.dcKY_TRA_LAI);
-                    m_date_ngay_dau_ky.Value = m_dat_ngay_thanh_toan.Value.AddMonths(0 - (int)m_us_v_dm_trai_phieu.dcKY_TRA_LAI);                    
+                {
+                    v_dat_ngay_thanh_toan = v_dat_ngay_phat_hanh_tp.AddMonths(v_ky_tinh_lai * (int)m_us_v_dm_trai_phieu.dcKY_TRA_LAI);
+                    m_dat_ngay_thanh_toan.Value = v_dat_ngay_thanh_toan;
+                    m_date_ngay_dau_ky.Value = v_dat_ngay_phat_hanh_tp.AddMonths((v_ky_tinh_lai - 1)*(int)m_us_v_dm_trai_phieu.dcKY_TRA_LAI);                    
                 }
                 else
                 {
-                    m_dat_ngay_thanh_toan.Value = v_dat_ngay_phat_hanh_tp.AddYears(v_ky_tinh_lai * (int)m_us_v_dm_trai_phieu.dcKY_TRA_LAI);
-                    m_date_ngay_dau_ky.Value = m_dat_ngay_thanh_toan.Value.AddYears(0 - (int)m_us_v_dm_trai_phieu.dcKY_TRA_LAI); 
+                    v_dat_ngay_thanh_toan = v_dat_ngay_phat_hanh_tp.AddYears(v_ky_tinh_lai * (int)m_us_v_dm_trai_phieu.dcKY_TRA_LAI);
+                    m_dat_ngay_thanh_toan.Value = v_dat_ngay_thanh_toan;
+                    m_date_ngay_dau_ky.Value = v_dat_ngay_phat_hanh_tp.AddYears(0 - (int)m_us_v_dm_trai_phieu.dcKY_TRA_LAI); 
                 }
-                m_dat_ngay_chot_lai.Value = m_dat_ngay_thanh_toan.Value.AddDays(0 - (int)m_us_v_dm_trai_phieu.dcSO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN);
+                m_dat_ngay_chot_lai.Value = v_dat_ngay_thanh_toan.AddDays(- (int)m_us_v_dm_trai_phieu.dcSO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN);
                 m_data_ngay_cuoi_ky.Value = m_dat_ngay_thanh_toan.Value;
                 m_dat_ngay_thanh_toan_thuc_te.Value = get_ngay_thanh_toan_thuc_te(m_dat_ngay_thanh_toan.Value);
             }
@@ -1021,7 +1039,23 @@ namespace BondApp
         {
             try
             {
-                gen_danh_sach_tra_lai();
+                // nếu chưa chọn trái phiếu để gen --> ko thực hiện
+                if (m_us_v_dm_trai_phieu.IsIDNull()) return;
+                // Kiểm tra xem đã gen lịch thanh toán lãi gốc cho Trái phiếu này chưa? Nếu đã có thì phải xác nhận
+                US_GD_CHOT_LAI v_us_chot_lai = new US_GD_CHOT_LAI();
+                DS_GD_CHOT_LAI_DETAIL v_ds_chot_lai = new DS_GD_CHOT_LAI_DETAIL();
+                v_us_chot_lai.fillDSChotLaiDetail(v_ds_chot_lai);
+                bool v_bool_xac_nhan = false;
+                if (v_ds_chot_lai.GD_CHOT_LAI_DETAIL.Rows.Count > 0)
+                {
+                    f000_confirm v_confirm = new f000_confirm();
+                    v_bool_xac_nhan = v_confirm.display_to_confirm();
+                }
+                // nếu đồng ý or chưa có thì cho gen
+                if (v_bool_xac_nhan || v_ds_chot_lai.GD_CHOT_LAI_DETAIL.Rows.Count == 0)
+                {
+                    gen_danh_sach_tra_lai();
+                }
             }
             catch (Exception v_e)
             {
