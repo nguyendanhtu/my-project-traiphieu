@@ -336,16 +336,16 @@ namespace BondApp.DanhMuc
         }
         private bool check_so_luong_is_ok()
         {
-            int v_i_so_luong = int.Parse(m_txt_tong_sl.Text.Trim());
+            decimal v_i_so_luong = CIPConvert.ToDecimal(m_txt_tong_sl.Text.Trim());
             US_V_DM_TRAI_PHIEU v_us_dm_trai_phieu = new US_V_DM_TRAI_PHIEU();
             DS_V_DM_TRAI_PHIEU v_ds_dm_trai_phieu = new DS_V_DM_TRAI_PHIEU();
             v_us_dm_trai_phieu.FillDatasetByIDDotPhatHanh(v_ds_dm_trai_phieu, m_us_v_dm_dot_phat_hanh.dcID);
-            int v_i_so_luong_hien_tai = 0;
+            decimal v_i_so_luong_hien_tai = 0;
             if (v_ds_dm_trai_phieu.V_DM_TRAI_PHIEU.Rows.Count > 0)
             {
                 for (int v_i = 0; v_i < v_ds_dm_trai_phieu.V_DM_TRAI_PHIEU.Rows.Count; v_i++)
                 {
-                    v_i_so_luong_hien_tai += int.Parse(CIPConvert.ToStr(v_ds_dm_trai_phieu.V_DM_TRAI_PHIEU.Rows[v_i][V_DM_TRAI_PHIEU.TONG_SL_PHAT_HANH]));
+                    v_i_so_luong_hien_tai += CIPConvert.ToDecimal(CIPConvert.ToStr(v_ds_dm_trai_phieu.V_DM_TRAI_PHIEU.Rows[v_i][V_DM_TRAI_PHIEU.TONG_SL_PHAT_HANH]));
                 }
             }
             v_i_so_luong_hien_tai += v_i_so_luong;
