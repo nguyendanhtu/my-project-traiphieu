@@ -62,7 +62,6 @@ namespace BondApp
         private C1FlexGrid m_fg;
         internal SIS.Controls.Button.SiSButton m_cmd_gen;
         internal SIS.Controls.Button.SiSButton m_cmd_save;
-        internal SIS.Controls.Button.SiSButton m_cmd_duyet;
         private ComboBox m_cbo_trang_thai;
         private Label label2;
         private DateTimePicker m_date_ngay_dau_ky;
@@ -71,6 +70,7 @@ namespace BondApp
         private Label label3;
         private Label label4;
         private ComboBox m_cbo_ky_tinh_lai;
+        internal SIS.Controls.Button.SiSButton m_cmd_duyet;
 		private System.ComponentModel.IContainer components;
         
         public f201_dm_gd_chot_lai_detail()
@@ -101,7 +101,6 @@ namespace BondApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f201_dm_gd_chot_lai_detail));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_cmd_duyet = new SIS.Controls.Button.SiSButton();
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.m_cmd_gen = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
@@ -139,6 +138,7 @@ namespace BondApp
             this.label1 = new System.Windows.Forms.Label();
             this.m_cmd_filter = new System.Windows.Forms.Button();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_cmd_duyet = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.m_gbox_thong_tin_tp.SuspendLayout();
             this.m_gru_tim_kiem.SuspendLayout();
@@ -185,21 +185,6 @@ namespace BondApp
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(781, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
-            // 
-            // m_cmd_duyet
-            // 
-            this.m_cmd_duyet.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_duyet.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_duyet.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_duyet.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_duyet.ImageIndex = 13;
-            this.m_cmd_duyet.ImageList = this.ImageList;
-            this.m_cmd_duyet.Location = new System.Drawing.Point(162, 4);
-            this.m_cmd_duyet.Name = "m_cmd_duyet";
-            this.m_cmd_duyet.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_duyet.TabIndex = 16;
-            this.m_cmd_duyet.Text = "Duyệt";
             // 
             // m_cmd_save
             // 
@@ -611,6 +596,21 @@ namespace BondApp
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 35;
             // 
+            // m_cmd_duyet
+            // 
+            this.m_cmd_duyet.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_duyet.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_duyet.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_duyet.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_duyet.Enabled = false;
+            this.m_cmd_duyet.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet.Image")));
+            this.m_cmd_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_duyet.Location = new System.Drawing.Point(425, 4);
+            this.m_cmd_duyet.Name = "m_cmd_duyet";
+            this.m_cmd_duyet.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_duyet.TabIndex = 28;
+            this.m_cmd_duyet.Text = "&Duyệt";
+            // 
             // f201_dm_gd_chot_lai_detail
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -648,6 +648,14 @@ namespace BondApp
             this.ShowDialog();
         }
 
+        public void display_for_duyet(US_GD_CHOT_LAI ip_us)
+        {
+            m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            m_eformmode = e_form_mode.DUYET_GD_CHOT_LAI;
+            m_us_gd_chot_lai = ip_us;
+            this.ShowDialog();
+        }
+
         public void display_danh_sach_tra_lai(US_GD_CHOT_LAI ip_us)
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
@@ -672,7 +680,8 @@ namespace BondApp
         private enum e_form_mode
         {
             LAP_GD_CHOT_LAI,
-            XEM_GD_CHOT_LAI_DETAIL
+            XEM_GD_CHOT_LAI_DETAIL,
+            DUYET_GD_CHOT_LAI
         }
 
 		#endregion
@@ -1001,7 +1010,7 @@ namespace BondApp
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
             m_cmd_chon_trai_phieu.Click += new EventHandler(m_cmd_chon_trai_phieu_Click);
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
-            m_cmd_duyet.Click += new EventHandler(m_cmd_duyet_Click);
+            m_cmd_duyet.Click+=new EventHandler(m_cmd_duyet_Click);            
             m_cmd_gen.Click += new EventHandler(m_cmd_gen_Click);
             this.Load += new EventHandler(f201_dm_gd_chot_lai_detail_Load);
             this.KeyDown += new KeyEventHandler(f201_dm_gd_chot_lai_detail_KeyDown);
@@ -1068,25 +1077,40 @@ namespace BondApp
             set_initial_form_load();
             try
             {
-                if (m_eformmode == e_form_mode.LAP_GD_CHOT_LAI)
+                switch (m_eformmode)
                 {
-                    m_gru_tim_kiem.Visible = false;
-                    m_fg.Visible = false;
-                    m_cmd_gen.Visible = false;
-                    m_cmd_update.Visible = false;
-                    this.Height = 320;
-                    m_lbl_title.Text = "F210 - Thông tin đợt chốt lãi";
+                    case e_form_mode.LAP_GD_CHOT_LAI:
+                        m_gru_tim_kiem.Visible = false;
+                        m_fg.Visible = false;
+                        m_cmd_gen.Visible = false;
+                        m_cmd_update.Visible = false;
+                        m_cmd_duyet.Visible = false;
+                        this.Height = 320;
+                        m_lbl_title.Text = "F210 - Thông tin đợt chốt lãi";
+                        break;
+                    case e_form_mode.XEM_GD_CHOT_LAI_DETAIL:
+                        m_gru_tim_kiem.Visible = true;
+                        m_fg.Visible = true;
+                        m_cmd_gen.Visible = true;
+                        m_cmd_save.Visible = false;
+                        m_cmd_update.Visible = true;
+                        m_cmd_duyet.Visible = false;
+                        m_gbox_thong_tin_tp.Enabled = false;
+                        break;
+                    case e_form_mode.DUYET_GD_CHOT_LAI:                        
+                        m_gru_tim_kiem.Visible = false;
+                        m_fg.Visible = false;
+                        m_cmd_gen.Visible = false;
+                        m_cmd_save.Visible = true;
+                        m_cmd_update.Visible = false;
+                        m_cmd_duyet.Visible = true;
+                        this.Height = 320;
+                        m_lbl_title.Text = "F210 - Thông tin đợt chốt lãi";
+                        break;
+                    default:
+                        break;
                 }
-                else
-                {
-                    m_gru_tim_kiem.Visible = true;
-                    m_fg.Visible = true;
-                    m_cmd_gen.Visible = true;
-                    m_cmd_save.Visible = false;
-                    m_cmd_update.Visible = true;
-                    m_cmd_duyet.Visible = false;
-                    m_gbox_thong_tin_tp.Enabled = false;
-                }
+                
                 switch (m_e_form_mode)
                 {
                     case DataEntryFormMode.InsertDataState:
