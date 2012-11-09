@@ -95,9 +95,9 @@
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.Location = new System.Drawing.Point(0, 159);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(904, 295);
+            this.m_fg.Size = new System.Drawing.Size(904, 261);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 32;
+            this.m_fg.TabIndex = 0;
             // 
             // m_lbl_ma_trai_phieu
             // 
@@ -202,6 +202,7 @@
             this.m_txt_ma_trai_phieu.ReadOnly = true;
             this.m_txt_ma_trai_phieu.Size = new System.Drawing.Size(120, 20);
             this.m_txt_ma_trai_phieu.TabIndex = 44;
+            this.m_txt_ma_trai_phieu.TabStop = false;
             // 
             // m_txt_ten_trai_phieu
             // 
@@ -211,6 +212,7 @@
             this.m_txt_ten_trai_phieu.ReadOnly = true;
             this.m_txt_ten_trai_phieu.Size = new System.Drawing.Size(397, 20);
             this.m_txt_ten_trai_phieu.TabIndex = 45;
+            this.m_txt_ten_trai_phieu.TabStop = false;
             // 
             // m_txt_menh_gia
             // 
@@ -220,6 +222,7 @@
             this.m_txt_menh_gia.ReadOnly = true;
             this.m_txt_menh_gia.Size = new System.Drawing.Size(120, 20);
             this.m_txt_menh_gia.TabIndex = 46;
+            this.m_txt_menh_gia.TabStop = false;
             this.m_txt_menh_gia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // m_txt_ky_han
@@ -230,6 +233,7 @@
             this.m_txt_ky_han.ReadOnly = true;
             this.m_txt_ky_han.Size = new System.Drawing.Size(120, 20);
             this.m_txt_ky_han.TabIndex = 47;
+            this.m_txt_ky_han.TabStop = false;
             this.m_txt_ky_han.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // m_txt_ngay_phat_hanh
@@ -240,6 +244,7 @@
             this.m_txt_ngay_phat_hanh.ReadOnly = true;
             this.m_txt_ngay_phat_hanh.Size = new System.Drawing.Size(130, 20);
             this.m_txt_ngay_phat_hanh.TabIndex = 48;
+            this.m_txt_ngay_phat_hanh.TabStop = false;
             // 
             // m_txt_ngay_dao_han
             // 
@@ -249,6 +254,7 @@
             this.m_txt_ngay_dao_han.ReadOnly = true;
             this.m_txt_ngay_dao_han.Size = new System.Drawing.Size(148, 20);
             this.m_txt_ngay_dao_han.TabIndex = 49;
+            this.m_txt_ngay_dao_han.TabStop = false;
             // 
             // m_txt_tong_so_luong_trai_phieu
             // 
@@ -258,6 +264,7 @@
             this.m_txt_tong_so_luong_trai_phieu.ReadOnly = true;
             this.m_txt_tong_so_luong_trai_phieu.Size = new System.Drawing.Size(130, 20);
             this.m_txt_tong_so_luong_trai_phieu.TabIndex = 50;
+            this.m_txt_tong_so_luong_trai_phieu.TabStop = false;
             this.m_txt_tong_so_luong_trai_phieu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // m_txt_tong_gia_tri_trai_phieu
@@ -268,6 +275,7 @@
             this.m_txt_tong_gia_tri_trai_phieu.ReadOnly = true;
             this.m_txt_tong_gia_tri_trai_phieu.Size = new System.Drawing.Size(148, 20);
             this.m_txt_tong_gia_tri_trai_phieu.TabIndex = 51;
+            this.m_txt_tong_gia_tri_trai_phieu.TabStop = false;
             this.m_txt_tong_gia_tri_trai_phieu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // m_txt_ky_tinh_lai
@@ -278,6 +286,7 @@
             this.m_txt_ky_tinh_lai.ReadOnly = true;
             this.m_txt_ky_tinh_lai.Size = new System.Drawing.Size(69, 20);
             this.m_txt_ky_tinh_lai.TabIndex = 52;
+            this.m_txt_ky_tinh_lai.TabStop = false;
             this.m_txt_ky_tinh_lai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // m_txt_lai_suat
@@ -288,6 +297,7 @@
             this.m_txt_lai_suat.ReadOnly = true;
             this.m_txt_lai_suat.Size = new System.Drawing.Size(120, 20);
             this.m_txt_lai_suat.TabIndex = 53;
+            this.m_txt_lai_suat.TabStop = false;
             this.m_txt_lai_suat.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // groupBox1
@@ -321,7 +331,7 @@
             this.groupBox1.Location = new System.Drawing.Point(0, 24);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(904, 135);
-            this.groupBox1.TabIndex = 54;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin trái phiếu";
             // 
@@ -334,13 +344,14 @@
             this.m_cbo_don_vi_ky_tinh_lai.Name = "m_cbo_don_vi_ky_tinh_lai";
             this.m_cbo_don_vi_ky_tinh_lai.Size = new System.Drawing.Size(55, 21);
             this.m_cbo_don_vi_ky_tinh_lai.TabIndex = 59;
+            this.m_cbo_don_vi_ky_tinh_lai.TabStop = false;
             // 
             // m_cmd_chon_trai_phieu
             // 
             this.m_cmd_chon_trai_phieu.Location = new System.Drawing.Point(260, 23);
             this.m_cmd_chon_trai_phieu.Name = "m_cmd_chon_trai_phieu";
             this.m_cmd_chon_trai_phieu.Size = new System.Drawing.Size(27, 23);
-            this.m_cmd_chon_trai_phieu.TabIndex = 58;
+            this.m_cmd_chon_trai_phieu.TabIndex = 0;
             this.m_cmd_chon_trai_phieu.Text = "...";
             this.m_cmd_chon_trai_phieu.UseVisualStyleBackColor = true;
             // 
@@ -415,11 +426,11 @@
             this.panel1.Controls.Add(this.m_cmd_delete);
             this.panel1.Controls.Add(this.m_cmd_exit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 454);
+            this.panel1.Location = new System.Drawing.Point(0, 420);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(4);
             this.panel1.Size = new System.Drawing.Size(904, 36);
-            this.panel1.TabIndex = 55;
+            this.panel1.TabIndex = 3;
             // 
             // m_cmd_thong_bao_dot_thanh_toan_lai_trai_phieu
             // 
@@ -592,7 +603,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(904, 490);
+            this.ClientSize = new System.Drawing.Size(904, 456);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
