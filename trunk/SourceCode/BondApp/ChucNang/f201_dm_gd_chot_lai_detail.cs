@@ -101,6 +101,7 @@ namespace BondApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f201_dm_gd_chot_lai_detail));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_duyet = new SIS.Controls.Button.SiSButton();
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.m_cmd_gen = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
@@ -138,7 +139,6 @@ namespace BondApp
             this.label1 = new System.Windows.Forms.Label();
             this.m_cmd_filter = new System.Windows.Forms.Button();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_cmd_duyet = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.m_gbox_thong_tin_tp.SuspendLayout();
             this.m_gru_tim_kiem.SuspendLayout();
@@ -184,7 +184,22 @@ namespace BondApp
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(781, 36);
-            this.m_pnl_out_place_dm.TabIndex = 19;
+            this.m_pnl_out_place_dm.TabIndex = 1;
+            // 
+            // m_cmd_duyet
+            // 
+            this.m_cmd_duyet.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_duyet.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_duyet.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_duyet.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_duyet.Enabled = false;
+            this.m_cmd_duyet.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet.Image")));
+            this.m_cmd_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_duyet.Location = new System.Drawing.Point(425, 4);
+            this.m_cmd_duyet.Name = "m_cmd_duyet";
+            this.m_cmd_duyet.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_duyet.TabIndex = 1;
+            this.m_cmd_duyet.Text = "&Duyệt";
             // 
             // m_cmd_save
             // 
@@ -198,7 +213,7 @@ namespace BondApp
             this.m_cmd_save.Location = new System.Drawing.Point(513, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_save.TabIndex = 15;
+            this.m_cmd_save.TabIndex = 2;
             this.m_cmd_save.Text = "Thêm";
             // 
             // m_cmd_gen
@@ -213,7 +228,7 @@ namespace BondApp
             this.m_cmd_gen.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_gen.Name = "m_cmd_gen";
             this.m_cmd_gen.Size = new System.Drawing.Size(158, 28);
-            this.m_cmd_gen.TabIndex = 14;
+            this.m_cmd_gen.TabIndex = 0;
             this.m_cmd_gen.Text = "Sinh danh sách trả lãi";
             // 
             // m_cmd_update
@@ -228,7 +243,7 @@ namespace BondApp
             this.m_cmd_update.Location = new System.Drawing.Point(601, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_update.TabIndex = 13;
+            this.m_cmd_update.TabIndex = 3;
             this.m_cmd_update.Text = "&Sửa";
             // 
             // m_cmd_exit
@@ -243,7 +258,7 @@ namespace BondApp
             this.m_cmd_exit.Location = new System.Drawing.Point(689, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 11;
+            this.m_cmd_exit.TabIndex = 4;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // m_lbl_title
@@ -290,7 +305,7 @@ namespace BondApp
             this.m_gbox_thong_tin_tp.Location = new System.Drawing.Point(0, 37);
             this.m_gbox_thong_tin_tp.Name = "m_gbox_thong_tin_tp";
             this.m_gbox_thong_tin_tp.Size = new System.Drawing.Size(781, 219);
-            this.m_gbox_thong_tin_tp.TabIndex = 30;
+            this.m_gbox_thong_tin_tp.TabIndex = 0;
             this.m_gbox_thong_tin_tp.TabStop = false;
             this.m_gbox_thong_tin_tp.Text = "Thông tin trái phiếu";
             // 
@@ -302,7 +317,7 @@ namespace BondApp
             this.m_cbo_ky_tinh_lai.Location = new System.Drawing.Point(106, 50);
             this.m_cbo_ky_tinh_lai.Name = "m_cbo_ky_tinh_lai";
             this.m_cbo_ky_tinh_lai.Size = new System.Drawing.Size(120, 21);
-            this.m_cbo_ky_tinh_lai.TabIndex = 22;
+            this.m_cbo_ky_tinh_lai.TabIndex = 11;
             // 
             // m_cbo_trang_thai
             // 
@@ -312,7 +327,7 @@ namespace BondApp
             this.m_cbo_trang_thai.Location = new System.Drawing.Point(612, 106);
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
             this.m_cbo_trang_thai.Size = new System.Drawing.Size(120, 21);
-            this.m_cbo_trang_thai.TabIndex = 22;
+            this.m_cbo_trang_thai.TabIndex = 12;
             // 
             // m_lbl_ten_nguoi_lap
             // 
@@ -339,7 +354,7 @@ namespace BondApp
             this.m_cmd_chon_trai_phieu.Location = new System.Drawing.Point(232, 22);
             this.m_cmd_chon_trai_phieu.Name = "m_cmd_chon_trai_phieu";
             this.m_cmd_chon_trai_phieu.Size = new System.Drawing.Size(32, 23);
-            this.m_cmd_chon_trai_phieu.TabIndex = 2;
+            this.m_cmd_chon_trai_phieu.TabIndex = 10;
             this.m_cmd_chon_trai_phieu.Text = "...";
             this.m_cmd_chon_trai_phieu.UseVisualStyleBackColor = true;
             // 
@@ -379,7 +394,7 @@ namespace BondApp
             this.m_dat_ngay_thanh_toan_thuc_te.Location = new System.Drawing.Point(369, 77);
             this.m_dat_ngay_thanh_toan_thuc_te.Name = "m_dat_ngay_thanh_toan_thuc_te";
             this.m_dat_ngay_thanh_toan_thuc_te.Size = new System.Drawing.Size(120, 20);
-            this.m_dat_ngay_thanh_toan_thuc_te.TabIndex = 7;
+            this.m_dat_ngay_thanh_toan_thuc_te.TabIndex = 4;
             // 
             // label3
             // 
@@ -400,7 +415,7 @@ namespace BondApp
             this.m_dat_ngay_thanh_toan.Location = new System.Drawing.Point(106, 77);
             this.m_dat_ngay_thanh_toan.Name = "m_dat_ngay_thanh_toan";
             this.m_dat_ngay_thanh_toan.Size = new System.Drawing.Size(120, 20);
-            this.m_dat_ngay_thanh_toan.TabIndex = 7;
+            this.m_dat_ngay_thanh_toan.TabIndex = 3;
             // 
             // label4
             // 
@@ -442,7 +457,7 @@ namespace BondApp
             this.m_data_ngay_cuoi_ky.Location = new System.Drawing.Point(369, 103);
             this.m_data_ngay_cuoi_ky.Name = "m_data_ngay_cuoi_ky";
             this.m_data_ngay_cuoi_ky.Size = new System.Drawing.Size(120, 20);
-            this.m_data_ngay_cuoi_ky.TabIndex = 5;
+            this.m_data_ngay_cuoi_ky.TabIndex = 6;
             // 
             // m_dat_ngay_chot_lai
             // 
@@ -453,7 +468,7 @@ namespace BondApp
             this.m_dat_ngay_chot_lai.Location = new System.Drawing.Point(369, 50);
             this.m_dat_ngay_chot_lai.Name = "m_dat_ngay_chot_lai";
             this.m_dat_ngay_chot_lai.Size = new System.Drawing.Size(120, 20);
-            this.m_dat_ngay_chot_lai.TabIndex = 5;
+            this.m_dat_ngay_chot_lai.TabIndex = 2;
             // 
             // m_lbl_muc_dich
             // 
@@ -480,7 +495,7 @@ namespace BondApp
             this.m_lbl_ten_trai_phieu.Location = new System.Drawing.Point(270, 27);
             this.m_lbl_ten_trai_phieu.Name = "m_lbl_ten_trai_phieu";
             this.m_lbl_ten_trai_phieu.Size = new System.Drawing.Size(72, 13);
-            this.m_lbl_ten_trai_phieu.TabIndex = 3;
+            this.m_lbl_ten_trai_phieu.TabIndex = 0;
             this.m_lbl_ten_trai_phieu.Text = "Tên trái phiếu";
             this.m_lbl_ten_trai_phieu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -491,7 +506,7 @@ namespace BondApp
             this.m_txt_ghi_chu.Multiline = true;
             this.m_txt_ghi_chu.Name = "m_txt_ghi_chu";
             this.m_txt_ghi_chu.Size = new System.Drawing.Size(626, 51);
-            this.m_txt_ghi_chu.TabIndex = 21;
+            this.m_txt_ghi_chu.TabIndex = 14;
             // 
             // m_lbl_ngay_chot_lai
             // 
@@ -509,7 +524,7 @@ namespace BondApp
             this.m_txt_muc_dich.Location = new System.Drawing.Point(612, 133);
             this.m_txt_muc_dich.Name = "m_txt_muc_dich";
             this.m_txt_muc_dich.Size = new System.Drawing.Size(120, 20);
-            this.m_txt_muc_dich.TabIndex = 19;
+            this.m_txt_muc_dich.TabIndex = 13;
             // 
             // m_lbl_ghi_chu
             // 
@@ -546,6 +561,7 @@ namespace BondApp
             this.m_txt_ma_trai_phieu.ReadOnly = true;
             this.m_txt_ma_trai_phieu.Size = new System.Drawing.Size(120, 20);
             this.m_txt_ma_trai_phieu.TabIndex = 1;
+            this.m_txt_ma_trai_phieu.TabStop = false;
             // 
             // m_gru_tim_kiem
             // 
@@ -595,21 +611,6 @@ namespace BondApp
             this.m_fg.Size = new System.Drawing.Size(781, 184);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 35;
-            // 
-            // m_cmd_duyet
-            // 
-            this.m_cmd_duyet.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_duyet.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_duyet.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_duyet.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_duyet.Enabled = false;
-            this.m_cmd_duyet.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet.Image")));
-            this.m_cmd_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_duyet.Location = new System.Drawing.Point(425, 4);
-            this.m_cmd_duyet.Name = "m_cmd_duyet";
-            this.m_cmd_duyet.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_duyet.TabIndex = 28;
-            this.m_cmd_duyet.Text = "&Duyệt";
             // 
             // f201_dm_gd_chot_lai_detail
             // 
