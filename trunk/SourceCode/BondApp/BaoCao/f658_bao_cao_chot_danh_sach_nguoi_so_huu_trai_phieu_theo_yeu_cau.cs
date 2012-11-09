@@ -685,7 +685,7 @@ namespace BondApp
 		private void load_data_2_grid(){
             m_ds = new DS_V_DM_TRAI_CHU_CHOT_LAI();
             //load_data_2_cbo();
-            m_us.FillDatasetByIDTraiPhieuAndNgayChotLai(m_ds, m_us_trai_phieu.dcID, CIPConvert.ToDatetime(m_txt_ngay_chot.Text),"A");
+            m_us.FillDatasetByIDTraiPhieuAndNgayChotLai(m_ds, m_us_trai_phieu.dcID, CIPConvert.ToDatetime(m_txt_ngay_chot.Text), "A");
             foreach (DataRow v_dr in m_ds.V_DM_TRAI_CHU_CHOT_LAI.Rows)
             {
                 v_dr["ID_TRAI_PHIEU"] = m_us_trai_phieu.dcMENH_GIA * CIPConvert.ToDecimal(v_dr["TONG_SO_DU"]);
@@ -734,12 +734,13 @@ namespace BondApp
         }
 
         private void load_ngay_chot_theo_ky(int i_ky_chot_lai)
-        {
-            US_HT_THAM_SO_HE_THONG v_us_ht = new US_HT_THAM_SO_HE_THONG(ID_THAM_SO_HE_THONG.CHOT_LAI_TRUOC);
-            US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_trai_phieu.dcID_DOT_PHAT_HANH);
-            DateTime v_dat_ngay_chot_tuong_ung = v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH;
-            v_dat_ngay_chot_tuong_ung = v_dat_ngay_chot_tuong_ung.AddMonths(i_ky_chot_lai * (int)m_us_trai_phieu.dcKY_TRA_LAI);
-            v_dat_ngay_chot_tuong_ung = v_dat_ngay_chot_tuong_ung.AddDays(-(int)CIPConvert.ToDecimal(v_us_ht.strGIA_TRI));
+        {           
+            DateTime v_dat_ngay_chot_tuong_ung = m_us_trai_phieu.datNGAY_PHAT_HANH;
+            if (m_us_trai_phieu.dcID_DV_KY_TRA_LAI == 18)
+                v_dat_ngay_chot_tuong_ung = v_dat_ngay_chot_tuong_ung.AddMonths(i_ky_chot_lai * (int)m_us_trai_phieu.dcKY_TRA_LAI);                                           
+            else
+                v_dat_ngay_chot_tuong_ung = v_dat_ngay_chot_tuong_ung.AddYears(i_ky_chot_lai * (int)m_us_trai_phieu.dcKY_TRA_LAI);                                                     
+            v_dat_ngay_chot_tuong_ung = v_dat_ngay_chot_tuong_ung.AddDays(-(int)CIPConvert.ToDecimal(m_us_trai_phieu.dcSO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN));
             m_txt_ngay_chot.Text = CIPConvert.ToStr(v_dat_ngay_chot_tuong_ung, "dd/MM/yyyy");
         }
 
