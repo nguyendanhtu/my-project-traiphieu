@@ -883,8 +883,6 @@ namespace BondDS {
                 this.columnTEN_TRAI_PHIEU.AllowDBNull = false;
                 this.columnTEN_TRAI_PHIEU.MaxLength = 250;
                 this.columnMENH_GIA.AllowDBNull = false;
-                this.columnTONG_SO_DU.ReadOnly = true;
-                this.columnSO_DU_KHA_DUNG.ReadOnly = true;
                 this.columnSO_TAI_KHOAN.MaxLength = 250;
                 this.columnMO_TAI_NGAN_HANG.MaxLength = 250;
                 this.columnGHI_CHU1.MaxLength = 250;
