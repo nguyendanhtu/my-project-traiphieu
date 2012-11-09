@@ -304,12 +304,12 @@ namespace BondApp
             ,ID_NGUOI_LAP = 5
             ,NGAY_CHOT_LAI = 3
             ,ID_TRAI_PHIEU = 2
-            ,GHI_CHU1 = 12
-            ,NGAY_DAU_KY = 9
-            ,NGAY_CUOI_KY = 10
+            ,GHI_CHU1 = 11
+            ,NGAY_DAU_KY = 8
+            ,NGAY_CUOI_KY = 9
             ,NGAY_THANH_TOAN = 4
             ,ID_NGUOI_DUYET = 6
-            ,MUC_DICH = 11
+            ,MUC_DICH = 10
             ,TRANG_THAI = 7
 
 		}
