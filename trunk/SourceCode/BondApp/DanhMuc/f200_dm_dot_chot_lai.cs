@@ -41,6 +41,7 @@ namespace BondApp
         private Label label1;
         private Button m_cmd_filter;
         private C1FlexGrid m_fg;
+        internal SIS.Controls.Button.SiSButton m_cmd_duyet;
 		private System.ComponentModel.IContainer components;
         #endregion
         public f200_dm_dot_chot_lai()
@@ -73,6 +74,7 @@ namespace BondApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f200_dm_dot_chot_lai));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_duyet = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_view = new SIS.Controls.Button.SiSButton();
@@ -118,6 +120,7 @@ namespace BondApp
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_duyet);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
@@ -129,6 +132,20 @@ namespace BondApp
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(755, 36);
             this.m_pnl_out_place_dm.TabIndex = 3;
+            // 
+            // m_cmd_duyet
+            // 
+            this.m_cmd_duyet.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_duyet.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_duyet.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_duyet.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_duyet.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet.Image")));
+            this.m_cmd_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_duyet.Location = new System.Drawing.Point(311, 4);
+            this.m_cmd_duyet.Name = "m_cmd_duyet";
+            this.m_cmd_duyet.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_duyet.TabIndex = 28;
+            this.m_cmd_duyet.Text = "&Duyệt";
             // 
             // m_cmd_insert
             // 
@@ -423,10 +440,32 @@ namespace BondApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
             grid2us_object(m_us_gd_chot_lai, m_fg.Row);
+            if (m_us_gd_chot_lai.dcTRANG_THAI == TRANG_THAI_DANH_MUC.DA_DUYET)
+            {
+                MessageBox.Show("Giao dịch đã được chỉnh sửa, bạn có thể xem lại hoặc xóa đi.");
+                return;
+            }
             f201_dm_gd_chot_lai_detail v_f201 = new f201_dm_gd_chot_lai_detail();
             v_f201.display_for_update(m_us_gd_chot_lai);
             load_data_2_grid();
 		}
+
+        private void duyet_gd_chot_lai()
+        {
+            m_e_form_mode = DataEntryFormMode.UpdateDataState;
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us_gd_chot_lai, m_fg.Row);
+            if (m_us_gd_chot_lai.dcTRANG_THAI == TRANG_THAI_DANH_MUC.DA_DUYET)
+            {
+                MessageBox.Show("Giao dịch đã được duyệt, bạn có thể xem lại hoặc xóa đi.");
+                return;
+            }
+            f201_dm_gd_chot_lai_detail v_f201 = new f201_dm_gd_chot_lai_detail();
+            v_f201.display_for_duyet(m_us_gd_chot_lai);
+            load_data_2_grid();
+        }
+
 		private void delete_gd_chot_lai(){
             CStoredProc v_pr_obj = new CStoredProc("pr_GD_CHOT_LAI_DETAIL_DeleteByIdChotLai");
             v_pr_obj.addDecimalInputParam("@ID_CHOT_LAI", m_us_gd_chot_lai.dcID);
@@ -470,6 +509,20 @@ namespace BondApp
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
             this.KeyDown += new KeyEventHandler(f200_dm_dot_chot_lai_KeyDown);
             m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_cmd_duyet.Click += new EventHandler(m_cmd_duyet_Click);
+        }
+
+        void m_cmd_duyet_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                duyet_gd_chot_lai();
+            }
+            catch (Exception v_e)
+            {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_view_Click(object sender, EventArgs e)
