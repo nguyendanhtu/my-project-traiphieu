@@ -766,6 +766,7 @@ namespace BondApp
         private void form_2_us_object(US_GD_CHOT_LAI op_us_gd_chot_lai)
         {
             op_us_gd_chot_lai.dcID_TRAI_PHIEU = m_us_v_dm_trai_phieu.dcID;
+            op_us_gd_chot_lai.dcKY_TINH_LAI = CIPConvert.ToDecimal( m_cbo_ky_tinh_lai.SelectedItem);
             op_us_gd_chot_lai.datNGAY_CHOT_LAI = m_dat_ngay_chot_lai.Value.Date;
             op_us_gd_chot_lai.datNGAY_THANH_TOAN = m_dat_ngay_thanh_toan.Value.Date;
             op_us_gd_chot_lai.datNGAY_DAU_KY = m_date_ngay_dau_ky.Value;
@@ -947,13 +948,13 @@ namespace BondApp
                 DateTime v_dat_ngay_phat_hanh_tp = m_us_v_dm_trai_phieu.datNGAY_PHAT_HANH;
                 if (m_us_v_dm_trai_phieu.dcID_DV_KY_TRA_LAI == 18)
                 {                    
-                    m_dat_ngay_thanh_toan.Value = v_dat_ngay_phat_hanh_tp.AddMonths(v_ky_tinh_lai * (int)m_us_v_dm_trai_phieu.dcKY_HAN);
-                    m_date_ngay_dau_ky.Value = m_dat_ngay_thanh_toan.Value.AddMonths(0 - (int)m_us_v_dm_trai_phieu.dcKY_HAN);                    
+                    m_dat_ngay_thanh_toan.Value = v_dat_ngay_phat_hanh_tp.AddMonths(v_ky_tinh_lai * (int)m_us_v_dm_trai_phieu.dcKY_TRA_LAI);
+                    m_date_ngay_dau_ky.Value = m_dat_ngay_thanh_toan.Value.AddMonths(0 - (int)m_us_v_dm_trai_phieu.dcKY_TRA_LAI);                    
                 }
                 else
                 {
-                    m_dat_ngay_thanh_toan.Value = v_dat_ngay_phat_hanh_tp.AddYears(v_ky_tinh_lai * (int)m_us_v_dm_trai_phieu.dcKY_HAN);
-                    m_date_ngay_dau_ky.Value = m_dat_ngay_thanh_toan.Value.AddYears(0 - (int)m_us_v_dm_trai_phieu.dcKY_HAN); 
+                    m_dat_ngay_thanh_toan.Value = v_dat_ngay_phat_hanh_tp.AddYears(v_ky_tinh_lai * (int)m_us_v_dm_trai_phieu.dcKY_TRA_LAI);
+                    m_date_ngay_dau_ky.Value = m_dat_ngay_thanh_toan.Value.AddYears(0 - (int)m_us_v_dm_trai_phieu.dcKY_TRA_LAI); 
                 }
                 m_dat_ngay_chot_lai.Value = m_dat_ngay_thanh_toan.Value.AddDays(0 - (int)m_us_v_dm_trai_phieu.dcSO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN);
                 m_data_ngay_cuoi_ky.Value = m_dat_ngay_thanh_toan.Value;
@@ -1081,6 +1082,7 @@ namespace BondApp
                     case DataEntryFormMode.UpdateDataState:
                         load_data_2_cbo();
                         us_object_2_form();
+                        m_cmd_save.Text = "Lưu";
                         break;
                     case DataEntryFormMode.ViewDataState:
                         break;
