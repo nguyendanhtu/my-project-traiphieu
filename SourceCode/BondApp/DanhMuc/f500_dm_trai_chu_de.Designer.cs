@@ -34,7 +34,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.m_lbl_so_trai_phieu_so_huu = new System.Windows.Forms.Label();
             this.m_txt_so_trai_phieu_so_huu = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.m_lbl_so_luong_phong_toa = new System.Windows.Forms.Label();
             this.m_txt_sl_da_phong_toa = new System.Windows.Forms.TextBox();
             this.m_dat_ngay_duyet = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_duyet_ghi_chu = new System.Windows.Forms.Label();
@@ -49,7 +49,7 @@
             this.m_txt_nguoi_dai_dien = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.m_txt_chuc_vu = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.m_lbl_so_kha_dung = new System.Windows.Forms.Label();
             this.m_txt_so_du_kha_dung = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.m_txt_ten_trai_phieu = new System.Windows.Forms.TextBox();
@@ -71,7 +71,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.m_lbl_ghi_chu_1 = new System.Windows.Forms.Label();
             this.m_lbl_nguoi_dai_dien = new System.Windows.Forms.Label();
-            this.m_lbl_so_luong_trai_phieu = new System.Windows.Forms.Label();
+            this.m_lbl_dia_chi = new System.Windows.Forms.Label();
             this.m_txt_ghi_chu_2 = new System.Windows.Forms.TextBox();
             this.m_txt_dia_chi = new System.Windows.Forms.TextBox();
             this.m_lbl_ngay_cap = new System.Windows.Forms.Label();
@@ -111,7 +111,7 @@
             // 
             this.groupBox1.Controls.Add(this.m_lbl_so_trai_phieu_so_huu);
             this.groupBox1.Controls.Add(this.m_txt_so_trai_phieu_so_huu);
-            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.m_lbl_so_luong_phong_toa);
             this.groupBox1.Controls.Add(this.m_txt_sl_da_phong_toa);
             this.groupBox1.Controls.Add(this.m_dat_ngay_duyet);
             this.groupBox1.Controls.Add(this.m_lbl_duyet_ghi_chu);
@@ -126,7 +126,7 @@
             this.groupBox1.Controls.Add(this.m_txt_nguoi_dai_dien);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.m_txt_chuc_vu);
-            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.m_lbl_so_kha_dung);
             this.groupBox1.Controls.Add(this.m_txt_so_du_kha_dung);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.m_txt_ten_trai_phieu);
@@ -144,7 +144,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.m_lbl_ghi_chu_1);
             this.groupBox1.Controls.Add(this.m_lbl_nguoi_dai_dien);
-            this.groupBox1.Controls.Add(this.m_lbl_so_luong_trai_phieu);
+            this.groupBox1.Controls.Add(this.m_lbl_dia_chi);
             this.groupBox1.Controls.Add(this.m_txt_ghi_chu_2);
             this.groupBox1.Controls.Add(this.m_txt_dia_chi);
             this.groupBox1.Controls.Add(this.m_lbl_ngay_cap);
@@ -188,14 +188,14 @@
             this.m_txt_so_trai_phieu_so_huu.TabIndex = 18;
             this.m_txt_so_trai_phieu_so_huu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label8
+            // m_lbl_so_luong_phong_toa
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(535, 280);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(116, 13);
-            this.label8.TabIndex = 59;
-            this.label8.Text = "Số lượng đã phong tỏa";
+            this.m_lbl_so_luong_phong_toa.AutoSize = true;
+            this.m_lbl_so_luong_phong_toa.Location = new System.Drawing.Point(535, 280);
+            this.m_lbl_so_luong_phong_toa.Name = "m_lbl_so_luong_phong_toa";
+            this.m_lbl_so_luong_phong_toa.Size = new System.Drawing.Size(116, 13);
+            this.m_lbl_so_luong_phong_toa.TabIndex = 59;
+            this.m_lbl_so_luong_phong_toa.Text = "Số lượng đã phong tỏa";
             // 
             // m_txt_sl_da_phong_toa
             // 
@@ -322,14 +322,14 @@
             this.m_txt_chuc_vu.Size = new System.Drawing.Size(376, 20);
             this.m_txt_chuc_vu.TabIndex = 13;
             // 
-            // label5
+            // m_lbl_so_kha_dung
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(296, 280);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 13);
-            this.label5.TabIndex = 41;
-            this.label5.Text = "Số dư khả dụng";
+            this.m_lbl_so_kha_dung.AutoSize = true;
+            this.m_lbl_so_kha_dung.Location = new System.Drawing.Point(296, 280);
+            this.m_lbl_so_kha_dung.Name = "m_lbl_so_kha_dung";
+            this.m_lbl_so_kha_dung.Size = new System.Drawing.Size(83, 13);
+            this.m_lbl_so_kha_dung.TabIndex = 41;
+            this.m_lbl_so_kha_dung.Text = "Số dư khả dụng";
             // 
             // m_txt_so_du_kha_dung
             // 
@@ -557,14 +557,14 @@
             this.m_lbl_nguoi_dai_dien.TabIndex = 15;
             this.m_lbl_nguoi_dai_dien.Text = "Loại trái chủ";
             // 
-            // m_lbl_so_luong_trai_phieu
+            // m_lbl_dia_chi
             // 
-            this.m_lbl_so_luong_trai_phieu.AutoSize = true;
-            this.m_lbl_so_luong_trai_phieu.Location = new System.Drawing.Point(12, 48);
-            this.m_lbl_so_luong_trai_phieu.Name = "m_lbl_so_luong_trai_phieu";
-            this.m_lbl_so_luong_trai_phieu.Size = new System.Drawing.Size(40, 13);
-            this.m_lbl_so_luong_trai_phieu.TabIndex = 11;
-            this.m_lbl_so_luong_trai_phieu.Text = "Địa chỉ";
+            this.m_lbl_dia_chi.AutoSize = true;
+            this.m_lbl_dia_chi.Location = new System.Drawing.Point(12, 48);
+            this.m_lbl_dia_chi.Name = "m_lbl_dia_chi";
+            this.m_lbl_dia_chi.Size = new System.Drawing.Size(40, 13);
+            this.m_lbl_dia_chi.TabIndex = 11;
+            this.m_lbl_dia_chi.Text = "Địa chỉ";
             // 
             // m_txt_ghi_chu_2
             // 
@@ -756,7 +756,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label m_lbl_ghi_chu_1;
         private System.Windows.Forms.Label m_lbl_nguoi_dai_dien;
-        private System.Windows.Forms.Label m_lbl_so_luong_trai_phieu;
+        private System.Windows.Forms.Label m_lbl_dia_chi;
         private System.Windows.Forms.TextBox m_txt_ghi_chu_2;
         private System.Windows.Forms.TextBox m_txt_dia_chi;
         private System.Windows.Forms.Label m_lbl_ngay_cap;
@@ -782,9 +782,9 @@
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox m_txt_ten_trai_phieu;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label m_lbl_so_kha_dung;
         private System.Windows.Forms.TextBox m_txt_so_du_kha_dung;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label m_lbl_so_luong_phong_toa;
         private System.Windows.Forms.TextBox m_txt_sl_da_phong_toa;
         private System.Windows.Forms.DateTimePicker m_dat_ngay_cap_cmt_nguoi_dai_dien;
         private System.Windows.Forms.Label label11;
