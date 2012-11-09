@@ -86,11 +86,6 @@ namespace BondApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f300_dm_trai_phieu));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_gru_tim_kiem = new System.Windows.Forms.GroupBox();
-            this.m_txt_search = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.m_lbl_title = new System.Windows.Forms.Label();
-            this.m_cmd_filter = new System.Windows.Forms.Button();
             this.m_cmd_select = new SIS.Controls.Button.SiSButton();
             this.m_cmd_duyet = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
@@ -98,6 +93,11 @@ namespace BondApp
             this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            this.m_gru_tim_kiem = new System.Windows.Forms.GroupBox();
+            this.m_txt_search = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_cmd_filter = new System.Windows.Forms.Button();
+            this.m_lbl_title = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.m_gru_tim_kiem.SuspendLayout();
@@ -146,57 +146,6 @@ namespace BondApp
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(884, 36);
             this.m_pnl_out_place_dm.TabIndex = 3;
-            // 
-            // m_gru_tim_kiem
-            // 
-            this.m_gru_tim_kiem.Controls.Add(this.m_txt_search);
-            this.m_gru_tim_kiem.Controls.Add(this.label1);
-            this.m_gru_tim_kiem.Controls.Add(this.m_cmd_filter);
-            this.m_gru_tim_kiem.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_gru_tim_kiem.Location = new System.Drawing.Point(0, 37);
-            this.m_gru_tim_kiem.Name = "m_gru_tim_kiem";
-            this.m_gru_tim_kiem.Size = new System.Drawing.Size(884, 49);
-            this.m_gru_tim_kiem.TabIndex = 1;
-            this.m_gru_tim_kiem.TabStop = false;
-            // 
-            // m_txt_search
-            // 
-            this.m_txt_search.Location = new System.Drawing.Point(78, 16);
-            this.m_txt_search.Name = "m_txt_search";
-            this.m_txt_search.Size = new System.Drawing.Size(508, 20);
-            this.m_txt_search.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Tìm kiếm";
-            // 
-            // m_lbl_title
-            // 
-            this.m_lbl_title.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
-            this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
-            this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(884, 37);
-            this.m_lbl_title.TabIndex = 0;
-            this.m_lbl_title.Text = "F300 - Danh mục trái phiếu";
-            this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // m_cmd_filter
-            // 
-            this.m_cmd_filter.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_filter.Image")));
-            this.m_cmd_filter.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.m_cmd_filter.Location = new System.Drawing.Point(601, 14);
-            this.m_cmd_filter.Name = "m_cmd_filter";
-            this.m_cmd_filter.Size = new System.Drawing.Size(64, 23);
-            this.m_cmd_filter.TabIndex = 1;
-            this.m_cmd_filter.Text = "     Xem";
-            this.m_cmd_filter.UseVisualStyleBackColor = true;
             // 
             // m_cmd_select
             // 
@@ -301,6 +250,57 @@ namespace BondApp
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 6;
             this.m_cmd_exit.Text = "Thoát (Esc)";
+            // 
+            // m_gru_tim_kiem
+            // 
+            this.m_gru_tim_kiem.Controls.Add(this.m_txt_search);
+            this.m_gru_tim_kiem.Controls.Add(this.label1);
+            this.m_gru_tim_kiem.Controls.Add(this.m_cmd_filter);
+            this.m_gru_tim_kiem.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_gru_tim_kiem.Location = new System.Drawing.Point(0, 37);
+            this.m_gru_tim_kiem.Name = "m_gru_tim_kiem";
+            this.m_gru_tim_kiem.Size = new System.Drawing.Size(884, 49);
+            this.m_gru_tim_kiem.TabIndex = 1;
+            this.m_gru_tim_kiem.TabStop = false;
+            // 
+            // m_txt_search
+            // 
+            this.m_txt_search.Location = new System.Drawing.Point(78, 16);
+            this.m_txt_search.Name = "m_txt_search";
+            this.m_txt_search.Size = new System.Drawing.Size(508, 20);
+            this.m_txt_search.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Tìm kiếm";
+            // 
+            // m_cmd_filter
+            // 
+            this.m_cmd_filter.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_filter.Image")));
+            this.m_cmd_filter.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.m_cmd_filter.Location = new System.Drawing.Point(601, 14);
+            this.m_cmd_filter.Name = "m_cmd_filter";
+            this.m_cmd_filter.Size = new System.Drawing.Size(64, 23);
+            this.m_cmd_filter.TabIndex = 1;
+            this.m_cmd_filter.Text = "     Xem";
+            this.m_cmd_filter.UseVisualStyleBackColor = true;
+            // 
+            // m_lbl_title
+            // 
+            this.m_lbl_title.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
+            this.m_lbl_title.Name = "m_lbl_title";
+            this.m_lbl_title.Size = new System.Drawing.Size(884, 37);
+            this.m_lbl_title.TabIndex = 0;
+            this.m_lbl_title.Text = "F300 - Danh mục trái phiếu";
+            this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_fg
             // 
