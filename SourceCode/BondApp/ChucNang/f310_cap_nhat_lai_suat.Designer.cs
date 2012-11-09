@@ -510,6 +510,7 @@
             this.m_date_ngay_ap_dung_ls.Name = "m_date_ngay_ap_dung_ls";
             this.m_date_ngay_ap_dung_ls.Size = new System.Drawing.Size(130, 20);
             this.m_date_ngay_ap_dung_ls.TabIndex = 2;
+            this.m_date_ngay_ap_dung_ls.TabStop = false;
             // 
             // label5
             // 
@@ -605,7 +606,6 @@
             this.m_txt_ghi_chu.Name = "m_txt_ghi_chu";
             this.m_txt_ghi_chu.Size = new System.Drawing.Size(465, 35);
             this.m_txt_ghi_chu.TabIndex = 7;
-            this.m_txt_ghi_chu.TabStop = false;
             // 
             // label4
             // 
