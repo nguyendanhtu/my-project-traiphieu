@@ -71,11 +71,7 @@ namespace BondApp
         private Label label4;
         private ComboBox m_cbo_ky_tinh_lai;
 		private System.ComponentModel.IContainer components;
-        //public f201_dm_gd_chot_lai_detail()
-        //{
-        //    InitializeComponent();
-        //    format_controls();
-        //}
+        
         public f201_dm_gd_chot_lai_detail()
         {
             InitializeComponent();
@@ -764,8 +760,7 @@ namespace BondApp
             m_date_ngay_dau_ky.Value = m_us_gd_chot_lai.datNGAY_DAU_KY;
             m_data_ngay_cuoi_ky.Value = m_us_gd_chot_lai.datNGAY_CUOI_KY;
             m_txt_ghi_chu.Text = m_us_gd_chot_lai.strGHI_CHU1;
-
-            m_us_gd_chot_lai.fillDSChotLaiDetail(m_ds_gd_chot_lai_detail);
+            m_cbo_ky_tinh_lai.SelectedItem = m_us_gd_chot_lai.dcKY_TINH_LAI;            
             load_data_2_grid();
         }
         private void form_2_us_object(US_GD_CHOT_LAI op_us_gd_chot_lai)
@@ -818,6 +813,7 @@ namespace BondApp
                     break;
             }            
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
+            this.Close();
         }
         private void us_nguoi_lap_2_form()
         {
@@ -852,6 +848,7 @@ namespace BondApp
         //}
         private void load_data_2_grid()
         {
+            m_us_gd_chot_lai.fillDSChotLaiDetail(m_ds_gd_chot_lai_detail);
             m_fg.Redraw = false;
             US_DM_TRAI_CHU v_us_trai_chu;
             if (m_ds_gd_chot_lai_detail.IsInitialized)
@@ -864,7 +861,8 @@ namespace BondApp
                     m_fg[v_i_grid_row, (int)e_col_Number.ID_TRAI_CHU] = v_us_trai_chu.strTEN_TRAI_CHU;
                 }
             }   
-            m_fg.Redraw = true;            
+            m_fg.Redraw = true;
+            if (m_fg.Rows.Count > 0) m_cmd_gen.Enabled = false;
         }
 
         private void grid2us_object(US_GD_CHOT_LAI_DETAIL i_us, int i_grid_row)
@@ -921,9 +919,19 @@ namespace BondApp
                 decimal v_dc_so_ky_tra_lai;
                 m_cbo_ky_tinh_lai.Items.Clear();
                 if (m_us_v_dm_trai_phieu.dcID_DV_KY_TRA_LAI == 18)
-                    v_dc_so_ky_tra_lai = m_us_v_dm_trai_phieu.dcKY_HAN / m_us_v_dm_trai_phieu.dcKY_TRA_LAI * 12;
+                {
+                    if(m_us_v_dm_trai_phieu.dcID_DV_KY_HAN == 18)
+                        v_dc_so_ky_tra_lai = m_us_v_dm_trai_phieu.dcKY_HAN / m_us_v_dm_trai_phieu.dcKY_TRA_LAI;
+                    else
+                        v_dc_so_ky_tra_lai = (m_us_v_dm_trai_phieu.dcKY_HAN * 12) / m_us_v_dm_trai_phieu.dcKY_TRA_LAI;
+                }
                 else
-                    v_dc_so_ky_tra_lai = m_us_v_dm_trai_phieu.dcKY_HAN / m_us_v_dm_trai_phieu.dcKY_TRA_LAI;
+                {
+                    if (m_us_v_dm_trai_phieu.dcID_DV_KY_HAN == 18)
+                        v_dc_so_ky_tra_lai = m_us_v_dm_trai_phieu.dcKY_HAN / (m_us_v_dm_trai_phieu.dcKY_TRA_LAI * 12);
+                    else
+                        v_dc_so_ky_tra_lai = m_us_v_dm_trai_phieu.dcKY_HAN / m_us_v_dm_trai_phieu.dcKY_TRA_LAI;
+                }
                 for (int i = 1; i <= v_dc_so_ky_tra_lai; i++)
                 {
                     m_cbo_ky_tinh_lai.Items.Add(i);
@@ -935,16 +943,56 @@ namespace BondApp
         {
             if (m_us_v_dm_trai_phieu != null)
             {
+                int v_ky_tinh_lai = (int)m_cbo_ky_tinh_lai.SelectedItem;
+                DateTime v_dat_ngay_phat_hanh_tp = m_us_v_dm_trai_phieu.datNGAY_PHAT_HANH;
                 if (m_us_v_dm_trai_phieu.dcID_DV_KY_TRA_LAI == 18)
-                {
-                    
-
+                {                    
+                    m_dat_ngay_thanh_toan.Value = v_dat_ngay_phat_hanh_tp.AddMonths(v_ky_tinh_lai * (int)m_us_v_dm_trai_phieu.dcKY_HAN);
+                    m_date_ngay_dau_ky.Value = m_dat_ngay_thanh_toan.Value.AddMonths(0 - (int)m_us_v_dm_trai_phieu.dcKY_HAN);                    
                 }
                 else
                 {
-                    
-                }                
+                    m_dat_ngay_thanh_toan.Value = v_dat_ngay_phat_hanh_tp.AddYears(v_ky_tinh_lai * (int)m_us_v_dm_trai_phieu.dcKY_HAN);
+                    m_date_ngay_dau_ky.Value = m_dat_ngay_thanh_toan.Value.AddYears(0 - (int)m_us_v_dm_trai_phieu.dcKY_HAN); 
+                }
+                m_dat_ngay_chot_lai.Value = m_dat_ngay_thanh_toan.Value.AddDays(0 - (int)m_us_v_dm_trai_phieu.dcSO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN);
+                m_data_ngay_cuoi_ky.Value = m_dat_ngay_thanh_toan.Value;
+                m_dat_ngay_thanh_toan_thuc_te.Value = get_ngay_thanh_toan_thuc_te(m_dat_ngay_thanh_toan.Value);
             }
+        }
+
+        private DateTime get_ngay_thanh_toan_thuc_te(DateTime ip_ngay_thanh_toan)
+        {
+            US_DM_DOT_PHAT_HANH v_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_v_dm_trai_phieu.dcID_DOT_PHAT_HANH);
+            //Nếu ngày thanh toán không phải tứ 7 hoặc CN get ngày thanh toán thực tế = ng thanh toán
+            if(ip_ngay_thanh_toan.DayOfWeek != DayOfWeek.Sunday && ip_ngay_thanh_toan.DayOfWeek != DayOfWeek.Saturday) return ip_ngay_thanh_toan;
+            // Trái phiếu thuộc loại làm việc 6 ngày
+            if(v_dot_phat_hanh.strNGAY_LAM_VIEC_HAI_SAU_YN == "N")
+                // Thứ 7 cũng là ng làm việc get ngày thanh toán thực tế = ng thanh toán
+                if(ip_ngay_thanh_toan.DayOfWeek == DayOfWeek.Saturday) return ip_ngay_thanh_toan;
+                else{// ng thanh toán là CN
+                    if (m_us_v_dm_trai_phieu.strTHANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN == "Y")
+                        return ip_ngay_thanh_toan.AddDays(-1);//trả về thứ 7
+                    else
+                        return ip_ngay_thanh_toan.AddDays(1);//trả về thứ 2
+                }
+            else{
+                if (m_us_v_dm_trai_phieu.strTHANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN == "Y")
+                {
+                    if(ip_ngay_thanh_toan.DayOfWeek == DayOfWeek.Saturday)
+                        return ip_ngay_thanh_toan.AddDays(-1);//trả về thứ 6
+                    else
+                        return ip_ngay_thanh_toan.AddDays(-2);//trả về thứ 6
+                }
+                else
+                {
+                    if (ip_ngay_thanh_toan.DayOfWeek == DayOfWeek.Saturday)
+                        return ip_ngay_thanh_toan.AddDays(2);//trả về thứ 2
+                    else
+                        return ip_ngay_thanh_toan.AddDays(1);//trả về thứ 2
+                }
+            }
+            
         }
 #endregion
         #region Events
@@ -957,7 +1005,21 @@ namespace BondApp
             m_cmd_gen.Click += new EventHandler(m_cmd_gen_Click);
             this.Load += new EventHandler(f201_dm_gd_chot_lai_detail_Load);
             this.KeyDown += new KeyEventHandler(f201_dm_gd_chot_lai_detail_KeyDown);
+            m_cbo_ky_tinh_lai.SelectedIndexChanged += new EventHandler(m_cbo_ky_tinh_lai_SelectedIndexChanged);
 		}
+
+        void m_cbo_ky_tinh_lai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_ky_tinh_lai_2_from();
+            }
+            catch (Exception v_e)
+            {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
         void f201_dm_gd_chot_lai_detail_KeyDown(object sender, KeyEventArgs e)
         {
@@ -995,6 +1057,7 @@ namespace BondApp
                     m_gru_tim_kiem.Visible = false;
                     m_fg.Visible = false;
                     m_cmd_gen.Visible = false;
+                    m_cmd_update.Visible = false;
                     this.Height = 320;
                     m_lbl_title.Text = "F210 - Thông tin đợt chốt lãi";
                 }
@@ -1004,7 +1067,7 @@ namespace BondApp
                     m_fg.Visible = true;
                     m_cmd_gen.Visible = true;
                     m_cmd_save.Visible = false;
-                    m_cmd_update.Visible = false;
+                    m_cmd_update.Visible = true;
                     m_cmd_duyet.Visible = false;
                     m_gbox_thong_tin_tp.Enabled = false;
                 }
