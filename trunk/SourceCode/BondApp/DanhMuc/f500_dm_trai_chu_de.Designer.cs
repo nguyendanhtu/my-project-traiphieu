@@ -215,7 +215,7 @@
             this.m_dat_ngay_duyet.Location = new System.Drawing.Point(424, 390);
             this.m_dat_ngay_duyet.Name = "m_dat_ngay_duyet";
             this.m_dat_ngay_duyet.Size = new System.Drawing.Size(115, 20);
-            this.m_dat_ngay_duyet.TabIndex = 15;
+            this.m_dat_ngay_duyet.TabIndex = 23;
             this.m_dat_ngay_duyet.Visible = false;
             // 
             // m_lbl_duyet_ghi_chu
@@ -384,7 +384,7 @@
             this.m_cmd_duyet.Location = new System.Drawing.Point(696, 4);
             this.m_cmd_duyet.Name = "m_cmd_duyet";
             this.m_cmd_duyet.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_duyet.TabIndex = 29;
+            this.m_cmd_duyet.TabIndex = 0;
             this.m_cmd_duyet.Text = "&Duyệt";
             this.m_cmd_duyet.Visible = false;
             // 
@@ -400,7 +400,7 @@
             this.m_cmd_save.Location = new System.Drawing.Point(784, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_save.TabIndex = 23;
+            this.m_cmd_save.TabIndex = 1;
             this.m_cmd_save.Text = "&Lưu";
             // 
             // ImageList
@@ -442,7 +442,7 @@
             this.m_cmd_exit.Location = new System.Drawing.Point(872, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 24;
+            this.m_cmd_exit.TabIndex = 2;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // m_cbo_loai_trai_chu
@@ -459,7 +459,7 @@
             this.m_cmd_select_trai_phieu.Location = new System.Drawing.Point(272, 246);
             this.m_cmd_select_trai_phieu.Name = "m_cmd_select_trai_phieu";
             this.m_cmd_select_trai_phieu.Size = new System.Drawing.Size(27, 23);
-            this.m_cmd_select_trai_phieu.TabIndex = 36;
+            this.m_cmd_select_trai_phieu.TabIndex = 0;
             this.m_cmd_select_trai_phieu.Text = "...";
             this.m_cmd_select_trai_phieu.UseVisualStyleBackColor = true;
             // 
