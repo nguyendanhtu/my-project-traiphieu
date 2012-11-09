@@ -311,25 +311,41 @@ namespace BondApp
 
 		#region Data Structure
 		private enum e_col_Number{
-            STT = 1,
-			GIA_TRI_CN_THEO_MENH_GIA = 11
-,tcb_TEN_TRAI_CHU = 4
-,PHI_GD = 13
-,tcm_MA_TRAI_CHU = 8
-,GIA_TRI_THUE = 14
-,tcb_MA_TRAI_CHU = 5
-,ID_NGUOI_LAP = 17
-,MA_GIAO_DICH = 2
-,GIA_TRI_CHUYEN_NHUONG_THUC_TE = 12
-,ID_TRAI_CHU_MUA = 9
-,NGAY_KY_CHUYEN_NHUONG = 3
-,ID_TRANG_THAI_CHUYEN_NHUONG = 16
-,SO_LUONG_CHUYEN_NHUONG = 10
-,TEN_TRUY_CAP = 15
-,tcm_TEN_TRAI_CHU = 7
-,ID_TRAI_CHU_BAN = 6
-
-		}			
+            //STT = 1
+            //    ,
+            MA_GIAO_DICH = 1
+                ,
+            NGAY_KY_CHUYEN_NHUONG = 2
+                ,
+            tcb_TEN_TRAI_CHU = 3
+                ,
+            tcb_MA_TRAI_CHU = 4
+                ,
+            //ID_TRAI_CHU_BAN = 6
+              //  ,
+            tcm_TEN_TRAI_CHU = 5
+                ,
+            tcm_MA_TRAI_CHU = 6
+                ,
+            //ID_TRAI_CHU_MUA = 9
+               // ,
+            SO_LUONG_CHUYEN_NHUONG = 7
+                ,
+            GIA_TRI_CN_THEO_MENH_GIA = 8
+                ,
+            GIA_TRI_CHUYEN_NHUONG_THUC_TE = 9
+                ,
+            PHI_GD = 10
+                ,
+            GIA_TRI_THUE = 11
+                ,
+            TEN_TRUY_CAP = 12
+                ,
+            //ID_TRANG_THAI_CHUYEN_NHUONG = 16
+            //    , 
+            //ID_NGUOI_LAP = 17
+            
+        }			
 		#endregion
 
 		#region Members
@@ -365,15 +381,15 @@ namespace BondApp
 			v_htb.Add(V_GD_CHUYEN_NHUONG.tcm_MA_TRAI_CHU, e_col_Number.tcm_MA_TRAI_CHU);
 			v_htb.Add(V_GD_CHUYEN_NHUONG.GIA_TRI_THUE, e_col_Number.GIA_TRI_THUE);
 			v_htb.Add(V_GD_CHUYEN_NHUONG.tcb_MA_TRAI_CHU, e_col_Number.tcb_MA_TRAI_CHU);
-			v_htb.Add(V_GD_CHUYEN_NHUONG.ID_NGUOI_LAP, e_col_Number.ID_NGUOI_LAP);
+			//v_htb.Add(V_GD_CHUYEN_NHUONG.ID_NGUOI_LAP, e_col_Number.ID_NGUOI_LAP);
 			v_htb.Add(V_GD_CHUYEN_NHUONG.MA_GIAO_DICH, e_col_Number.MA_GIAO_DICH);			
-			v_htb.Add(V_GD_CHUYEN_NHUONG.ID_TRAI_CHU_MUA, e_col_Number.ID_TRAI_CHU_MUA);
+			//v_htb.Add(V_GD_CHUYEN_NHUONG.ID_TRAI_CHU_MUA, e_col_Number.ID_TRAI_CHU_MUA);
 			v_htb.Add(V_GD_CHUYEN_NHUONG.NGAY_KY_CHUYEN_NHUONG, e_col_Number.NGAY_KY_CHUYEN_NHUONG);
-			v_htb.Add(V_GD_CHUYEN_NHUONG.ID_TRANG_THAI_CHUYEN_NHUONG, e_col_Number.ID_TRANG_THAI_CHUYEN_NHUONG);
+			//v_htb.Add(V_GD_CHUYEN_NHUONG.ID_TRANG_THAI_CHUYEN_NHUONG, e_col_Number.ID_TRANG_THAI_CHUYEN_NHUONG);
 			v_htb.Add(V_GD_CHUYEN_NHUONG.SO_LUONG_CHUYEN_NHUONG, e_col_Number.SO_LUONG_CHUYEN_NHUONG);
 			v_htb.Add(V_GD_CHUYEN_NHUONG.TEN_TRUY_CAP, e_col_Number.TEN_TRUY_CAP);
 			v_htb.Add(V_GD_CHUYEN_NHUONG.tcm_TEN_TRAI_CHU, e_col_Number.tcm_TEN_TRAI_CHU);
-			v_htb.Add(V_GD_CHUYEN_NHUONG.ID_TRAI_CHU_BAN, e_col_Number.ID_TRAI_CHU_BAN);
+			//v_htb.Add(V_GD_CHUYEN_NHUONG.ID_TRAI_CHU_BAN, e_col_Number.ID_TRAI_CHU_BAN);
             v_htb.Add(V_GD_CHUYEN_NHUONG.GIA_TRI_CN_THEO_MENH_GIA, e_col_Number.GIA_TRI_CN_THEO_MENH_GIA);
             v_htb.Add(V_GD_CHUYEN_NHUONG.GIA_TRI_CHUYEN_NHUONG_THUC_TE, e_col_Number.GIA_TRI_CHUYEN_NHUONG_THUC_TE);
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_GD_CHUYEN_NHUONG.NewRow());
@@ -387,7 +403,7 @@ namespace BondApp
                 ,m_dat_to_date.Value.Date
                 , CIPConvert.ToDecimal(m_cbo_to_chuc_phat_hanh.SelectedValue));
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
+            //CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
 			m_fg.Redraw = true;
 		}
 		private void grid2us_object(US_V_GD_CHUYEN_NHUONG i_us
