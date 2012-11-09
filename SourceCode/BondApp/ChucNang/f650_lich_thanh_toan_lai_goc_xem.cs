@@ -417,9 +417,13 @@ namespace BondApp
             if (m_fg.Rows[m_fg.Row].UserData == null) return;
             grid2us_object(m_us_gd_lich_tt_lai_goc, m_fg.Row);
             DS_GD_CHOT_LAI v_ds_gd_chot_lai = new DS_GD_CHOT_LAI();
-            m_us_gd_chot_lai.FillDSChotLaiByIDTraiPhieuAndNgayChotLai(v_ds_gd_chot_lai, m_us_gd_lich_tt_lai_goc.dcID_TRAI_PHIEU, m_us_gd_lich_tt_lai_goc.datNGAY);
+            m_us_gd_chot_lai.FillDSChotLaiByIDTraiPhieuAndNgayThanhToan(v_ds_gd_chot_lai, m_us_gd_lich_tt_lai_goc.dcID_TRAI_PHIEU, m_us_gd_lich_tt_lai_goc.datNGAY);
 
-            if (v_ds_gd_chot_lai.GD_CHOT_LAI.Rows.Count == 0) return;
+            if (v_ds_gd_chot_lai.GD_CHOT_LAI.Rows.Count == 0)
+            {
+                MessageBox.Show("Giao dịch chốt lãi chưa được thực hiện.");
+                return;
+            }
             IP.Core.IPWordReport.CWordReport v_obj_word_rpt = new CWordReport("f700_TB TCPH Dot Thanh Toan.doc");
             US_V_DM_TO_CHUC_PHAT_HANH v_dm_to_chuc_phat_hanh = new US_V_DM_TO_CHUC_PHAT_HANH(m_us_v_trai_phieu.dcID_TO_CHUC_PHAT_HANH);
             //v_obj_word_rpt.AddFindAndReplace("<NGAY_CAP_NHAT_LAI_SUAT>", CIPConvert.ToStr(m_us_gd_lich_tt_lai_goc.datNGAY));
