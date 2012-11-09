@@ -863,7 +863,7 @@ namespace BondApp
                 }
             }   
             m_fg.Redraw = true;
-            if (m_fg.Rows.Count > 0) m_cmd_gen.Enabled = false;
+            if (m_ds_gd_chot_lai_detail.GD_CHOT_LAI_DETAIL != null && m_ds_gd_chot_lai_detail.GD_CHOT_LAI_DETAIL.Count > 0) m_cmd_gen.Enabled = false;
         }
 
         private void grid2us_object(US_GD_CHOT_LAI_DETAIL i_us, int i_grid_row)
@@ -968,6 +968,7 @@ namespace BondApp
             DS_DM_NGAY_LAM_VIEC v_ds_dm_ng_lam_viec = new DS_DM_NGAY_LAM_VIEC();
             US_DM_NGAY_LAM_VIEC v_us_dm_ng_lam_viec = new US_DM_NGAY_LAM_VIEC();
             v_us_dm_ng_lam_viec.FillDatasetGetNgayThanhtoanThucTe(v_ds_dm_ng_lam_viec ,ip_ngay_thanh_toan, m_us_v_dm_trai_phieu.dcSO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN, v_us_dm_dot_phat_hanh.strNGAY_LAM_VIEC_HAI_SAU_YN);            
+            if(v_ds_dm_ng_lam_viec.DM_NGAY_LAM_VIEC == null || v_ds_dm_ng_lam_viec.DM_NGAY_LAM_VIEC.Count > 0) return ip_ngay_thanh_toan
             return CIPConvert.ToDatetime(v_ds_dm_ng_lam_viec.DM_NGAY_LAM_VIEC.Rows[0][DM_NGAY_LAM_VIEC.NGAY]);
         }
 #endregion
