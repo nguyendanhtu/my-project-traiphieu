@@ -123,13 +123,15 @@ namespace BondApp.DanhMuc
             switch (m_e_form_mode)
             {
                 case e_formmode.HIEN_THI_DE_THEM:
+                    m_lbl_so_kha_dung.Visible = false;
+                    m_lbl_so_luong_phong_toa.Visible = false;
+                    m_txt_so_du_kha_dung.Visible = false;
+                    m_txt_sl_da_phong_toa.Visible = false;
                     break;
                 case e_formmode.HIEN_THI_DE_SUA:
-                    us_object_2_form(m_us_v_trai_chu);
+                    us_object_2_form(m_us_v_trai_chu);                    
                     break;
-                case e_formmode.HIEN_THI_DE_DUYET:
-                    m_txt_so_trai_phieu_so_huu.Visible = false;
-                    m_lbl_so_trai_phieu_so_huu.Visible = false;
+                case e_formmode.HIEN_THI_DE_DUYET:                    
                     m_cmd_save.Visible = false;
                     m_cmd_duyet.Visible = true;
                     m_lbl_ngay_duyet_lbl.Visible = true;
@@ -177,14 +179,26 @@ namespace BondApp.DanhMuc
 
             m_txt_id_trai_phieu_so_huu.Text = ip_us_trai_chu.strMA_TRAI_PHIEU;
             m_txt_ten_trai_phieu.Text = ip_us_trai_chu.strTEN_TRAI_PHIEU;
-            m_txt_so_du_kha_dung.Text = CIPConvert.ToStr(ip_us_trai_chu.dcSO_DU_KHA_DUNG);
-            m_txt_sl_da_phong_toa.Text = CIPConvert.ToStr(ip_us_trai_chu.dcTONG_SO_DU - ip_us_trai_chu.dcSO_DU_KHA_DUNG);
-            m_txt_so_trai_phieu_so_huu.Text = CIPConvert.ToStr(ip_us_trai_chu.dcTONG_SO_DU);
+            m_txt_so_du_kha_dung.Text = CIPConvert.ToStr(ip_us_trai_chu.dcSO_DU_KHA_DUNG, "#,###");
+            m_txt_sl_da_phong_toa.Text = CIPConvert.ToStr(ip_us_trai_chu.dcTONG_SO_DU - ip_us_trai_chu.dcSO_DU_KHA_DUNG, "#,###");
+            m_txt_so_trai_phieu_so_huu.Text = CIPConvert.ToStr(ip_us_trai_chu.dcTONG_SO_DU, "#,###");
 
             m_txt_ghi_chu_1.Text = ip_us_trai_chu.strGHI_CHU1;
             m_txt_ghi_chu_2.Text = ip_us_trai_chu.strGHI_CHU2;
             m_txt_ghi_chu_3.Text = ip_us_trai_chu.strGHI_CHU3;
             m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ip_us_trai_chu.dcID_TRANG_THAI);
+            if (ip_us_trai_chu.dcID_TRANG_THAI == TRANG_THAI_DANH_MUC.DA_LAP)
+            {
+                m_txt_so_trai_phieu_so_huu.Text = CIPConvert.ToStr(ip_us_trai_chu.dcSO_LUONG_TP_SO_HUU_BAN_DAU, "#,###");
+                m_txt_so_du_kha_dung.Text = CIPConvert.ToStr(ip_us_trai_chu.dcSO_LUONG_TP_SO_HUU_BAN_DAU, "#,###");
+                m_txt_sl_da_phong_toa.Text = CIPConvert.ToStr(0);
+            }
+            if (ip_us_trai_chu.dcID_TRANG_THAI == TRANG_THAI_DANH_MUC.DA_DUYET)
+            {
+                m_txt_id_trai_phieu_so_huu.ReadOnly = true;
+                m_cmd_select_trai_phieu.Enabled = false;
+                m_txt_so_trai_phieu_so_huu.ReadOnly = true;
+            }
         }
 
         private void form_2_us_object(US_V_DM_TRAI_CHU ip_us_trai_chu)
@@ -209,6 +223,7 @@ namespace BondApp.DanhMuc
             ip_us_trai_chu.strNOI_CAP_CMT_NGUOI_DAI_DIEN = m_txt_noi_cap_cmt_nguoi_dai_dien.Text;
 
             ip_us_trai_chu.dcID_TRAI_PHIEU_SO_HUU = m_us_v_trai_phieu.dcID;
+            ip_us_trai_chu.dcSO_LUONG_TP_SO_HUU_BAN_DAU = CIPConvert.ToDecimal(m_txt_so_trai_phieu_so_huu.Text);
 
             ip_us_trai_chu.strGHI_CHU1 = m_txt_ghi_chu_1.Text;
             ip_us_trai_chu.strGHI_CHU2 = m_txt_ghi_chu_2.Text;
