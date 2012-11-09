@@ -162,8 +162,8 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="MENH_GIA" msprop:Generator_ColumnVarNameInTable="columnMENH_GIA" msprop:Generator_ColumnPropNameInRow="MENH_GIA" msprop:Generator_ColumnPropNameInTable="MENH_GIAColumn" msprop:Generator_UserColumnName="MENH_GIA" type="xs:decimal" />
-              <xs:element name="TONG_SO_DU" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTONG_SO_DU" msprop:Generator_ColumnPropNameInRow="TONG_SO_DU" msprop:Generator_ColumnPropNameInTable="TONG_SO_DUColumn" msprop:Generator_UserColumnName="TONG_SO_DU" type="xs:decimal" minOccurs="0" />
-              <xs:element name="SO_DU_KHA_DUNG" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSO_DU_KHA_DUNG" msprop:Generator_ColumnPropNameInRow="SO_DU_KHA_DUNG" msprop:Generator_ColumnPropNameInTable="SO_DU_KHA_DUNGColumn" msprop:Generator_UserColumnName="SO_DU_KHA_DUNG" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TONG_SO_DU" msprop:Generator_ColumnVarNameInTable="columnTONG_SO_DU" msprop:Generator_ColumnPropNameInRow="TONG_SO_DU" msprop:Generator_ColumnPropNameInTable="TONG_SO_DUColumn" msprop:Generator_UserColumnName="TONG_SO_DU" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SO_DU_KHA_DUNG" msprop:Generator_ColumnVarNameInTable="columnSO_DU_KHA_DUNG" msprop:Generator_ColumnPropNameInRow="SO_DU_KHA_DUNG" msprop:Generator_ColumnPropNameInTable="SO_DU_KHA_DUNGColumn" msprop:Generator_UserColumnName="SO_DU_KHA_DUNG" type="xs:decimal" minOccurs="0" />
               <xs:element name="SO_TAI_KHOAN" msprop:Generator_ColumnVarNameInTable="columnSO_TAI_KHOAN" msprop:Generator_ColumnPropNameInRow="SO_TAI_KHOAN" msprop:Generator_ColumnPropNameInTable="SO_TAI_KHOANColumn" msprop:Generator_UserColumnName="SO_TAI_KHOAN" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
