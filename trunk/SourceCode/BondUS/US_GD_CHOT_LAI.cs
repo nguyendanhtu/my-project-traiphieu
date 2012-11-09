@@ -345,5 +345,14 @@ public class US_GD_CHOT_LAI : US_Object
         v_pr_obj.addDatetimeInputParam("@NGAY_CHOT_LAI", ip_ngay_chot_lai);
         v_pr_obj.fillDataSetByCommand(this, ip_ds);
     }
+    public void FillDSChotLaiByIDTraiPhieuAndNgayThanhToan(DS_GD_CHOT_LAI ip_ds
+       , decimal ip_id_trai_phieu
+       , DateTime ip_ngay_chot_lai)
+    {
+        CStoredProc v_pr_obj = new CStoredProc("pr_GD_CHOT_LAI_DETAIL_Select_ChotLaiByIDTraiPhieuAndNgayThanhToan");
+        v_pr_obj.addDecimalInputParam("@ID_TRAI_PHIEU", ip_id_trai_phieu);
+        v_pr_obj.addDatetimeInputParam("@NGAY_THANH_TOAN", ip_ngay_chot_lai);
+        v_pr_obj.fillDataSetByCommand(this, ip_ds);
+    }
 }
 }
