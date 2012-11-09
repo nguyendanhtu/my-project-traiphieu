@@ -852,12 +852,13 @@ namespace BondApp
         //}
         private void load_data_2_grid()
         {
-            m_us_gd_chot_lai.fillDSChotLaiDetail(m_ds_gd_chot_lai_detail);
+            DS_GD_CHOT_LAI_DETAIL v_ds_gd_chot_lai_detail = new DS_GD_CHOT_LAI_DETAIL();
+            m_us_gd_chot_lai.fillDSChotLaiDetail(v_ds_gd_chot_lai_detail);
             m_fg.Redraw = false;
             US_DM_TRAI_CHU v_us_trai_chu;
-            if (m_ds_gd_chot_lai_detail.IsInitialized)
+            if (v_ds_gd_chot_lai_detail.IsInitialized)
             {
-                CGridUtils.Dataset2C1Grid(m_ds_gd_chot_lai_detail, m_fg, m_obj_trans);
+                CGridUtils.Dataset2C1Grid(v_ds_gd_chot_lai_detail, m_fg, m_obj_trans);
                 CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
                 for (int v_i_grid_row = m_fg.Rows.Fixed; v_i_grid_row < m_fg.Rows.Count; v_i_grid_row++)
                 {
