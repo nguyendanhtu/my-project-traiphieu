@@ -44,7 +44,7 @@ namespace BondApp.HeThong
         private void xac_nhan_cua_nguoi_dung()
         {
             if (!check_dieu_kien_is_ok()) return;            
-            if (m_txt_xac_nhan.Text.Equals("OK")) m_bool_is_confirm = true;
+            if (m_txt_xac_nhan.Text.Equals("ok")) m_bool_is_confirm = true;
             else m_bool_is_confirm = false;
             this.Close();
         }
