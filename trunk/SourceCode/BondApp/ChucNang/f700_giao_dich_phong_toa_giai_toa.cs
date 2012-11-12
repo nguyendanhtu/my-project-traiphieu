@@ -343,7 +343,7 @@ namespace BondApp
                     break;
                 case eFormMode.LAP_PHONG_TOA:
                     f500_dm_trai_chu v_frm500 = new f500_dm_trai_chu();
-                    m_us_trai_chu = v_frm500.select_trai_chu_giai_toa_of_trai_phieu(null);
+                    m_us_trai_chu = v_frm500.select_trai_chu_phong_toa_of_trai_phieu(null);
                     if (m_us_trai_chu.dcID == -1) return;
                     us_trai_chu_2_form(m_us_trai_chu);
                     m_txt_nguoi_dai_dien.Focus();
