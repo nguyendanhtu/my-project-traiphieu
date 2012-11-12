@@ -166,6 +166,7 @@ namespace BondApp.DanhMuc
                 m_cbo_thanh_toan_tai_ngay_lv_truoc_yn.SelectedIndex = 0;
             else m_cbo_thanh_toan_tai_ngay_lv_truoc_yn.SelectedIndex = 1;
             m_txt_so_ngay_chot_lai_truoc.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcSO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN);
+            m_cbo_ng_hang_tham_chieu_ls.SelectedValue = ip_us_trai_phieu.dcID_NGAN_HANG_THAM_CHIEU_LAI_SUAT;
         }
         private void form_2_us_object(US_V_DM_TRAI_PHIEU op_us_trai_phieu)
         {
@@ -218,6 +219,7 @@ namespace BondApp.DanhMuc
             else op_us_trai_phieu.strTHANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN = "N";
 
             op_us_trai_phieu.dcSO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN = CIPConvert.ToDecimal(m_txt_so_ngay_chot_lai_truoc.Text);
+            op_us_trai_phieu.dcID_NGAN_HANG_THAM_CHIEU_LAI_SUAT = CIPConvert.ToDecimal(m_cbo_ng_hang_tham_chieu_ls.SelectedValue);
         }
         //private void form_2_us_object(US_V_DM_TRAI_PHIEU op_us_trai_phieu)
         //{
@@ -245,6 +247,11 @@ namespace BondApp.DanhMuc
             m_cbo_loai_trai_phieu.DisplayMember = CM_DM_TU_DIEN.TEN;
             m_cbo_loai_trai_phieu.ValueMember = CM_DM_TU_DIEN.ID;
             m_cbo_loai_trai_phieu.Text = "";
+
+            m_ds_cm_dm_tu_dien = m_us_tu_dien.getLoaiTuDienDS("NGAN_HANG_THAM_CHIEU_LAI_SUAT");
+            m_cbo_ng_hang_tham_chieu_ls.DataSource = m_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
+            m_cbo_ng_hang_tham_chieu_ls.DisplayMember = CM_DM_TU_DIEN.TEN;
+            m_cbo_ng_hang_tham_chieu_ls.ValueMember = CM_DM_TU_DIEN.ID;
 
             m_ds_cm_dm_tu_dien = m_us_tu_dien.getLoaiTuDienDS(CM_DM_LOAI_TD_LIST.DON_VI_KY_HAN);
             m_cbo_don_vi_ky_han.DataSource = m_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;

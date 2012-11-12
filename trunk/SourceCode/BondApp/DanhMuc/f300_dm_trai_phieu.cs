@@ -354,8 +354,8 @@ namespace BondApp
                 ,
             DON_VI_KY_HAN = 8
 ,
-            TRANG_THAI = 30
-                ,
+            NGAN_HANG_THAM_CHIEU_LS = 30,
+            TRANG_THAI = 31,
             DON_VI_KY_TRA_LAI = 15
                 ,
             TONG_SL_PHAT_HANH = 18
@@ -510,6 +510,7 @@ namespace BondApp
             v_htb.Add(V_DM_TRAI_PHIEU.LAI_SUAT_DEFAULT, e_col_Number.LAI_SUAT_DEFAULT);
             v_htb.Add(V_DM_TRAI_PHIEU.BIEN_DO_LAI, e_col_Number.BIEN_DO_LAI);
             v_htb.Add(V_DM_TRAI_PHIEU.KY_TRA_LAI, e_col_Number.KY_TRA_LAI);
+            v_htb.Add(V_DM_TRAI_PHIEU.NGAN_HANG_THAM_CHIEU_LS, e_col_Number.NGAN_HANG_THAM_CHIEU_LS);
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds_v_trai_phieu.V_DM_TRAI_PHIEU.NewRow());
             return v_obj_trans;

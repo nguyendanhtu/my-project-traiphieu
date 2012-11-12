@@ -17,6 +17,8 @@ namespace BondDS.CDBNames
         public const decimal TRANG_THAI_DANH_MUC = 8;
         public const decimal LOAI_NGAY_LAM_VIEC = 9;
         public const decimal LOG_LOAI_HANH_DONG = 10;
+        public const decimal TT_TRUOC_NGAY_LV_GAN_NHAT = 11;
+        public const decimal NGAN_HANG_THAM_CHIEU_LAI_SUAT = 12;
     }
     public class GD_THONG_BAO_LAI_SUAT_IN_TIMES
     {
@@ -639,6 +641,8 @@ namespace BondDS.CDBNames
         public const string NGAY_KY_HD = "NGAY_KY_HD";
         public const string SO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN = "SO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN";
         public const string THANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN = "THANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN";
+        public const string ID_NGAN_HANG_THAM_CHIEU_LAI_SUAT = "ID_NGAN_HANG_THAM_CHIEU_LAI_SUAT";
+        public const string NGAN_HANG_THAM_CHIEU_LS = "NGAN_HANG_THAM_CHIEU_LS";
     }
 
     public class DOC_COLUMN_COMMENT
