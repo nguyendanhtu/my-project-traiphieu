@@ -283,29 +283,26 @@ namespace BondApp
         }
         private bool kiem_tra_phi_gd(decimal v_phi_gd)
         {
-            US_HT_THAM_SO_HE_THONG v_us_phi_gd_max = new US_HT_THAM_SO_HE_THONG(GIOI_HAN_PHI_PGT.ID_PHI_PGT_MAX);
-            US_HT_THAM_SO_HE_THONG v_us_phi_gd_min = new US_HT_THAM_SO_HE_THONG(GIOI_HAN_PHI_PGT.ID_PHI_PGT_MIN);
-            if (v_phi_gd < CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI))
+            US_DM_DOT_PHAT_HANH v_dm_dot_phat_hanh = new BondUS.US_DM_DOT_PHAT_HANH(m_us_trai_phieu.dcID_DOT_PHAT_HANH);
+
+            if (v_phi_gd < CIPConvert.ToDecimal(v_dm_dot_phat_hanh.dcPHI_PHONG_GIAI_TOA_MIN))
             {
-               
-                m_txt_phi_gd.Text = CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI), "#,###");
+
+                m_txt_phi_gd.Text = CIPConvert.ToStr(CIPConvert.ToDecimal(v_dm_dot_phat_hanh.dcPHI_PHONG_GIAI_TOA_MIN), "#,###");
 
                 return false;
             }
-            if (v_phi_gd > CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI))
+            if (v_phi_gd > CIPConvert.ToDecimal(v_dm_dot_phat_hanh.dcPHI_PHONG_GIAI_TOA_MAX))
             {
-                
-                m_txt_phi_gd.Text = CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI), "#,##");
+
+                m_txt_phi_gd.Text = CIPConvert.ToStr(CIPConvert.ToDecimal(v_dm_dot_phat_hanh.dcPHI_PHONG_GIAI_TOA_MAX), "#,##");
                 // m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(Math.Round((CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI) / CIPConvert.ToDecimal(m_txt_tong_gia_tri.Text)*100),2));
                 return false;
             }
             return true;
         }
         private void set_inital_form_load()
-        {
-            US_HT_THAM_SO_HE_THONG v_us_phi_gd_max = new US_HT_THAM_SO_HE_THONG(GIOI_HAN_PHI_PGT.ID_PHI_PGT_MAX);
-            US_HT_THAM_SO_HE_THONG v_us_phi_gd_min = new US_HT_THAM_SO_HE_THONG(GIOI_HAN_PHI_PGT.ID_PHI_PGT_MIN);
-            m_lbl_pgd_max_min.Text = "Phí giao dịch trong khoảng " + CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_min.strGIA_TRI), "#,###") + " đến " + CIPConvert.ToStr(CIPConvert.ToDecimal(v_us_phi_gd_max.strGIA_TRI), "#,###") + ".";
+        {                        
             m_dat_ngay.Value = DateTime.Today;
 
             switch (m_e_form_mode)
@@ -430,6 +427,7 @@ namespace BondApp
                         m_txt_hinh_thuc_tra_lai.Text = "Trả theo kỳ";
                         break;
                 }
+            m_lbl_pgd_max_min.Text = "Phí giao dịch trong khoảng " + CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcPHI_PHONG_GIAI_TOA_MIN, "#,###") + " đến " + CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcPHI_PHONG_GIAI_TOA_MAX, "#,###") + ".";
         }
         private void form_2_us_gd_phong_toa_giai_toa()
         {
