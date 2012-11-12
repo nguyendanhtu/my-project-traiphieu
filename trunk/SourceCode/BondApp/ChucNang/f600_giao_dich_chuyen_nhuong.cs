@@ -619,19 +619,18 @@ namespace BondApp
         {
             try
             {
-                US_HT_THAM_SO_HE_THONG v_us_phi_gd_max = new US_HT_THAM_SO_HE_THONG();                
-                IP.Core.IPData.DS_HT_THAM_SO_HE_THONG v_ds_phi_gd = new IP.Core.IPData.DS_HT_THAM_SO_HE_THONG();
-                v_us_phi_gd_max.FillDataset(v_ds_phi_gd, " WHERE LOAI_THAM_SO = 'PHI_PGT'");
+                if (m_us_v_trai_phieu.IsIDNull()) return;
+                US_DM_DOT_PHAT_HANH v_us_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_v_trai_phieu.dcID_DOT_PHAT_HANH);                                              
 
                 if (m_txt_so_luong_chuyen_nhuong.Text.Trim() == "") return;
                 if (m_txt_ty_le_phi_gd.Text.Trim() == "") return;
                 decimal v_ty_le_phi = CIPConvert.ToDecimal(m_txt_ty_le_phi_gd.Text) / 100;
                 decimal v_so_luong_CN = CIPConvert.ToDecimal(m_txt_so_luong_chuyen_nhuong.Text);
                 decimal v_phi_giao_dich = v_so_luong_CN * v_ty_le_phi * CIPConvert.ToDecimal(m_txt_menh_gia.Text);
-                if (v_phi_giao_dich > CIPConvert.ToDecimal(v_ds_phi_gd.HT_THAM_SO_HE_THONG.Rows[0][HT_THAM_SO_HE_THONG.GIA_TRI]))
-                    v_phi_giao_dich = CIPConvert.ToDecimal(v_ds_phi_gd.HT_THAM_SO_HE_THONG.Rows[0][HT_THAM_SO_HE_THONG.GIA_TRI]);
-                if (v_phi_giao_dich < CIPConvert.ToDecimal(v_ds_phi_gd.HT_THAM_SO_HE_THONG.Rows[1][HT_THAM_SO_HE_THONG.GIA_TRI]))
-                    v_phi_giao_dich = CIPConvert.ToDecimal(v_ds_phi_gd.HT_THAM_SO_HE_THONG.Rows[1][HT_THAM_SO_HE_THONG.GIA_TRI]);
+                if (v_phi_giao_dich > v_us_dot_phat_hanh.dcPHI_CHUYEN_NHUONG_MAX)
+                    v_phi_giao_dich = v_us_dot_phat_hanh.dcPHI_CHUYEN_NHUONG_MAX;
+                if (v_phi_giao_dich < v_us_dot_phat_hanh.dcPHI_CHUYEN_NHUONG_MIN)
+                    v_phi_giao_dich = v_us_dot_phat_hanh.dcPHI_CHUYEN_NHUONG_MIN;
 
                 m_txt_phi_gd.Text = CIPConvert.ToStr(v_phi_giao_dich, "#,###");
                 //kiem_tra_phi_gd();
