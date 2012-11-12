@@ -1095,17 +1095,16 @@ namespace BondApp
                         m_cmd_gen.Visible = true;
                         m_cmd_save.Visible = false;
                         m_cmd_update.Visible = true;
-                        m_cmd_duyet.Visible = false;
+                        m_cmd_duyet.Visible = true;
                         m_gbox_thong_tin_tp.Enabled = false;
                         break;
                     case e_form_mode.DUYET_GD_CHOT_LAI:                        
-                        m_gru_tim_kiem.Visible = false;
-                        m_fg.Visible = false;
-                        m_cmd_gen.Visible = false;
+                        m_gru_tim_kiem.Visible = true;
+                        m_fg.Visible = true;
+                        m_cmd_gen.Visible = true;
                         m_cmd_save.Visible = true;
                         m_cmd_update.Visible = false;
-                        m_cmd_duyet.Visible = true;
-                        this.Height = 320;
+                        m_cmd_duyet.Visible = true;                        
                         m_lbl_title.Text = "F210 - Thông tin đợt chốt lãi";
                         break;
                     default:
