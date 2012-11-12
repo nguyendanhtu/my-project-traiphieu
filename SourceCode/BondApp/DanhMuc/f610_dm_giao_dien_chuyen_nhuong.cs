@@ -217,7 +217,7 @@ namespace BondApp
             this.m_cmd_bao_cao.Name = "m_cmd_bao_cao";
             this.m_cmd_bao_cao.Size = new System.Drawing.Size(103, 28);
             this.m_cmd_bao_cao.TabIndex = 21;
-            this.m_cmd_bao_cao.Text = "Suất báo cáo";
+            this.m_cmd_bao_cao.Text = "Xuất báo cáo";
             // 
             // m_cmd_delete
             // 
