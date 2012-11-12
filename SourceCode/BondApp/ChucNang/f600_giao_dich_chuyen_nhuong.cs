@@ -636,9 +636,9 @@ namespace BondApp
             {
                 if (m_txt_phan_tram_thue.Text.Trim() == "") return;
                 decimal v_dc_phan_tram_thue = CIPConvert.ToDecimal(m_txt_phan_tram_thue.Text)/100;
-                decimal v_dc_so_luong_chuyen_nhuong = CIPConvert.ToDecimal(m_txt_so_luong_chuyen_nhuong.Text);
+                decimal v_dc_giao_dich_thuc_te = CIPConvert.ToDecimal(m_txt_gia_tri_chuyen_nhuong_thuc_te.Text);
                 m_txt_thue.Text = CIPConvert.ToStr(
-                    v_dc_so_luong_chuyen_nhuong * v_dc_phan_tram_thue * CIPConvert.ToDecimal(m_txt_menh_gia.Text)
+                    v_dc_giao_dich_thuc_te * v_dc_phan_tram_thue
                     , "#,###");
             }
             catch (Exception v_e)
@@ -652,6 +652,11 @@ namespace BondApp
             try
             {
                 if (m_txt_so_luong_chuyen_nhuong.Text.Trim() == "") return;
+                if (m_txt_so_luong_kha_dung.Text.Trim() == "")
+                {
+                    MessageBox.Show("Chưa chọn trái chủ.");
+                    return;
+                }
                 decimal v_so_luong_chuyen_nhuong = CIPConvert.ToDecimal(m_txt_so_luong_chuyen_nhuong.Text);
                 decimal v_menh_gia_trai_phieu = CIPConvert.ToDecimal(m_txt_menh_gia.Text);
                 decimal v_so_luong_kha_dung = CIPConvert.ToDecimal(m_txt_so_luong_kha_dung.Text);
