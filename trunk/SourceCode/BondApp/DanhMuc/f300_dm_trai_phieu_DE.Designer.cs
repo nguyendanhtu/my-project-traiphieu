@@ -273,11 +273,11 @@
             // m_lbl_ky_tra_lai
             // 
             this.m_lbl_ky_tra_lai.AutoSize = true;
-            this.m_lbl_ky_tra_lai.Location = new System.Drawing.Point(321, 31);
+            this.m_lbl_ky_tra_lai.Location = new System.Drawing.Point(300, 31);
             this.m_lbl_ky_tra_lai.Name = "m_lbl_ky_tra_lai";
-            this.m_lbl_ky_tra_lai.Size = new System.Drawing.Size(47, 13);
+            this.m_lbl_ky_tra_lai.Size = new System.Drawing.Size(73, 13);
             this.m_lbl_ky_tra_lai.TabIndex = 30;
-            this.m_lbl_ky_tra_lai.Text = "Kỳ trả lãi";
+            this.m_lbl_ky_tra_lai.Text = "Kỳ thanh toán";
             // 
             // m_txt_tcph_chuyen_tien_trc
             // 
