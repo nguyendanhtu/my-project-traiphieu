@@ -468,6 +468,7 @@ namespace BondApp
         {
             m_obj_trans = get_trans_object(m_fg);
             load_data_to_cbo_trang_thai();
+            m_dat_from_date.Value = DateTime.Today.AddDays(-7);
             load_data_2_grid();
         }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
