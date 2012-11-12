@@ -216,11 +216,11 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(380, 92);
+            this.label16.Location = new System.Drawing.Point(332, 92);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(62, 13);
+            this.label16.Size = new System.Drawing.Size(110, 13);
             this.label16.TabIndex = 67;
-            this.label16.Text = "Thanh toán";
+            this.label16.Text = "Ngày thực thanh toán";
             // 
             // m_cbo_thanh_toan_tai_ngay_lv_truoc_yn
             // 
@@ -273,7 +273,7 @@
             // m_lbl_ky_tra_lai
             // 
             this.m_lbl_ky_tra_lai.AutoSize = true;
-            this.m_lbl_ky_tra_lai.Location = new System.Drawing.Point(334, 31);
+            this.m_lbl_ky_tra_lai.Location = new System.Drawing.Point(321, 31);
             this.m_lbl_ky_tra_lai.Name = "m_lbl_ky_tra_lai";
             this.m_lbl_ky_tra_lai.Size = new System.Drawing.Size(47, 13);
             this.m_lbl_ky_tra_lai.TabIndex = 30;
@@ -367,7 +367,7 @@
             // m_lbl_lai_suat
             // 
             this.m_lbl_lai_suat.AutoSize = true;
-            this.m_lbl_lai_suat.Location = new System.Drawing.Point(321, 55);
+            this.m_lbl_lai_suat.Location = new System.Drawing.Point(328, 55);
             this.m_lbl_lai_suat.Name = "m_lbl_lai_suat";
             this.m_lbl_lai_suat.Size = new System.Drawing.Size(44, 13);
             this.m_lbl_lai_suat.TabIndex = 22;
