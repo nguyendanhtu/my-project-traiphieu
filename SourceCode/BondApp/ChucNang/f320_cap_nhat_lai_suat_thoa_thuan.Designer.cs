@@ -464,7 +464,7 @@
             this.m_lbl_title.Name = "m_lbl_title";
             this.m_lbl_title.Size = new System.Drawing.Size(734, 37);
             this.m_lbl_title.TabIndex = 13;
-            this.m_lbl_title.Text = "F310 - Cập nhật lãi suất thỏa thuận";
+            this.m_lbl_title.Text = "F320 - Cập nhật lãi suất thỏa thuận";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_gru_thong_tin_cap_nhat
