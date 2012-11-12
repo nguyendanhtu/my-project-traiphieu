@@ -509,6 +509,7 @@
             this.m_txt_so_luong_tp_cam_co.Name = "m_txt_so_luong_tp_cam_co";
             this.m_txt_so_luong_tp_cam_co.Size = new System.Drawing.Size(140, 20);
             this.m_txt_so_luong_tp_cam_co.TabIndex = 9;
+            this.m_txt_so_luong_tp_cam_co.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // m_lbl_ma_so_trai_phieu
             // 
@@ -620,6 +621,7 @@
             this.m_txt_ty_le_phi_gd.Name = "m_txt_ty_le_phi_gd";
             this.m_txt_ty_le_phi_gd.Size = new System.Drawing.Size(140, 20);
             this.m_txt_ty_le_phi_gd.TabIndex = 12;
+            this.m_txt_ty_le_phi_gd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label1
             // 
