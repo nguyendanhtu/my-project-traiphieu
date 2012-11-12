@@ -175,19 +175,7 @@ namespace BondApp
                     break;
                 default:                    
                     break;
-            }
-            US_HT_THAM_SO_HE_THONG v_us_ht_tham_so_ht = new US_HT_THAM_SO_HE_THONG();
-            IP.Core.IPData.DS_HT_THAM_SO_HE_THONG v_ds_ht_tham_so_ht = new IP.Core.IPData.DS_HT_THAM_SO_HE_THONG();
-            v_us_ht_tham_so_ht.FillDataset(v_ds_ht_tham_so_ht, " WHERE LOAI_THAM_SO = 'PHI_PGT'");
-            string v_str_ty_le_phi_gd_max_min = "";
-            v_str_ty_le_phi_gd_max_min = "Phí chuyển nhượng từ ";
-            v_str_ty_le_phi_gd_max_min += CIPConvert.ToStr(CIPConvert.ToDecimal(v_ds_ht_tham_so_ht.HT_THAM_SO_HE_THONG.Rows[1][HT_THAM_SO_HE_THONG.GIA_TRI]),"#,###");
-            m_dc_phi_gd_chuyen_nhuong_max = CIPConvert.ToDecimal(v_ds_ht_tham_so_ht.HT_THAM_SO_HE_THONG.Rows[0][HT_THAM_SO_HE_THONG.GIA_TRI]);
-            v_str_ty_le_phi_gd_max_min += " VNĐ đến ";
-            v_str_ty_le_phi_gd_max_min += CIPConvert.ToStr(CIPConvert.ToDecimal(v_ds_ht_tham_so_ht.HT_THAM_SO_HE_THONG.Rows[0][HT_THAM_SO_HE_THONG.GIA_TRI]), "#,###");
-            m_dc_phi_gd_chuyen_nhuong_min = CIPConvert.ToDecimal(v_ds_ht_tham_so_ht.HT_THAM_SO_HE_THONG.Rows[1][HT_THAM_SO_HE_THONG.GIA_TRI]);
-            v_str_ty_le_phi_gd_max_min += " VNĐ";
-            m_lbl_phi_gd_max_min.Text = v_str_ty_le_phi_gd_max_min;
+            }            
         }
 
         private void select_trai_phieu()
@@ -248,6 +236,7 @@ namespace BondApp
             m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcTY_LE_PHI_CHUYEN_NHUONG * 100, "#,##0.00");
             m_txt_ky_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_HAN) + " " + CIPConvert.ToStr(v_us_cm_dm_tu_dien.strTEN);
             m_txt_lai_suat.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcLAI_SUAT_DEFAULT, "#,##0.00");
+            m_lbl_phi_gd_max_min.Text = "Phí giao dịch trong khoảng " + CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcPHI_PHONG_GIAI_TOA_MIN, "#,###") + " đến " + CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcPHI_PHONG_GIAI_TOA_MAX, "#,###") + ".";
             switch (m_e_form_mode)
             {
                 case eFormMode.LAP_CHUYEN_NHUONG:
