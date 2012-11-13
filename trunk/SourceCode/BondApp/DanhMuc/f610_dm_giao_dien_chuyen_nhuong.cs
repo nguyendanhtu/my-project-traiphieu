@@ -442,6 +442,8 @@ namespace BondApp
                 ,
             TEN_TRAI_PHIEU = 7
                 , NGAY_VAO_SO = 14
+            ,NGUOI_LAP = 17
+            ,NGUOI_DUYET = 18
 
         }
 
@@ -534,6 +536,8 @@ namespace BondApp
             v_htb.Add(V_GD_CHUYEN_NHUONG.SO_LUONG_CHUYEN_NHUONG, e_col_Number.SO_LUONG_CHUYEN_NHUONG);
             v_htb.Add(V_GD_CHUYEN_NHUONG.TEN_TRAI_PHIEU, e_col_Number.TEN_TRAI_PHIEU);
             v_htb.Add(V_GD_CHUYEN_NHUONG.NGAY_VAO_SO, e_col_Number.NGAY_VAO_SO);
+            v_htb.Add(V_GD_CHUYEN_NHUONG.ID_NGUOI_LAP, e_col_Number.NGUOI_LAP);
+            v_htb.Add(V_GD_CHUYEN_NHUONG.ID_NGUOI_DUYET, e_col_Number.NGUOI_DUYET);
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_GD_CHUYEN_NHUONG.NewRow());
             return v_obj_trans;
@@ -542,6 +546,7 @@ namespace BondApp
         {
             m_ds = new DS_V_GD_CHUYEN_NHUONG();      
             US_CM_DM_TU_DIEN v_tu_dien;
+            US_HT_NGUOI_SU_DUNG v_nguoi_lap, v_nguoi_duyet;
             m_us.fill_dataset_by_date_and_trai_phieu_and_trang_thai(m_ds,m_dat_from_date.Value, m_dat_to_date.Value,CIPConvert.ToDecimal(m_cbo_trai_phieu.SelectedValue.ToString()), CIPConvert.ToDecimal(m_cbb_trang_thai_cn.SelectedValue.ToString()));
             //m_us.FillDataset(m_ds);
             m_fg.Redraw = false;
@@ -551,6 +556,16 @@ namespace BondApp
             {              
                 v_tu_dien = new US_CM_DM_TU_DIEN(CIPConvert.ToDecimal( m_fg[v_i_grid_row, (int)e_col_Number.ID_TRANG_THAI_CHUYEN_NHUONG]));
                 m_fg[v_i_grid_row, (int)e_col_Number.ID_TRANG_THAI_CHUYEN_NHUONG] = v_tu_dien.strTEN;
+                if (m_fg[v_i_grid_row, (int)e_col_Number.NGUOI_LAP] != null)
+                {
+                    v_nguoi_lap = new US_HT_NGUOI_SU_DUNG(CIPConvert.ToDecimal(m_fg[v_i_grid_row, (int)e_col_Number.NGUOI_LAP]));
+                    m_fg[v_i_grid_row, (int)e_col_Number.NGUOI_LAP] = v_nguoi_lap.strTEN;
+                }
+                if (m_fg[v_i_grid_row, (int)e_col_Number.NGUOI_DUYET] != null)
+                {
+                    v_nguoi_duyet = new US_HT_NGUOI_SU_DUNG(CIPConvert.ToDecimal(m_fg[v_i_grid_row, (int)e_col_Number.NGUOI_DUYET]));
+                    m_fg[v_i_grid_row, (int)e_col_Number.NGUOI_DUYET] = v_nguoi_duyet.strTEN;
+                }
             }
             m_fg.Redraw = true;
         }
