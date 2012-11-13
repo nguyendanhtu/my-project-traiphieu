@@ -421,7 +421,7 @@ namespace BondApp.ChucNang
 
             m_txt_ngay_dao_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_DAO_HAN, "dd/MM/yyyy");
             m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcMENH_GIA, "#,###");
-            m_txt_lai_suat.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcLAI_SUAT_DEFAULT*100, "#,###") + "%";
+            m_txt_lai_suat.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcLAI_SUAT_DEFAULT*100, "#,###0.00") + "%";
             m_txt_ky_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_HAN);
             m_txt_ky_tinh_lai.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_TRA_LAI, "#,###");
             if (ip_us_trai_phieu.dcID_DV_KY_HAN == 18)
