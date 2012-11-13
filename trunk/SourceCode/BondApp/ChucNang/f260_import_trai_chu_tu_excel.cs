@@ -336,7 +336,7 @@ namespace BondApp.ChucNang
                 v_us.SetNGAY_CAPNull();
             }
             else
-                v_us.datNGAY_CAP = CIPConvert.ToDatetime(CIPConvert.ToStr(m_fg_load_file[i_i_id, (int)e_col_number_xls.NGAY_CAP]));
+                v_us.strNGAY_CAP = CIPConvert.ToStr(m_fg_load_file[i_i_id, (int)e_col_number_xls.NGAY_CAP]);
 
 
             if ((m_fg_load_file[i_i_id, (int)e_col_number_xls.NOI_CAP] == null))
@@ -405,7 +405,7 @@ namespace BondApp.ChucNang
               v_us.SetNGAY_CAP_CMND_NGUOI_DAI_DIENNull();
           }
           else
-              v_us.datNGAY_CAP_CMND_NGUOI_DAI_DIEN = CIPConvert.ToDatetime(CIPConvert.ToStr(m_fg_load_file[i_i_id, (int)e_col_number_xls.NGAY_CAP_CMND_NGUOI_DAI_DIEN]));
+              v_us.strNGAY_CAP_CMND_NGUOI_DAI_DIEN = CIPConvert.ToStr(m_fg_load_file[i_i_id, (int)e_col_number_xls.NGAY_CAP_CMND_NGUOI_DAI_DIEN]);
           if (m_fg_load_file[i_i_id, (int)e_col_number_xls.NOI_CAP_CMND_NGUOI_DAI_DIEN] == null)
           {
               v_us.SetNOI_CAP_CMND_NGUOI_DAI_DIENNull();
@@ -423,7 +423,7 @@ namespace BondApp.ChucNang
               v_us.SetNGAY_BAT_DAU_SO_HUU_TPNull();
           }
           else
-              v_us.datNGAY_BAT_DAU_SO_HUU_TP = CIPConvert.ToDatetime(CIPConvert.ToStr(m_fg_load_file[i_i_id, (int)e_col_number_xls.NGAY_BAT_DAU_SO_HUU_TP]));
+              v_us.strNGAY_BAT_DAU_SO_HUU_TP = CIPConvert.ToStr(m_fg_load_file[i_i_id, (int)e_col_number_xls.NGAY_BAT_DAU_SO_HUU_TP]);
             
             v_us.dcSTT = 1;
         }
