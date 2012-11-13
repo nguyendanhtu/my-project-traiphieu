@@ -255,5 +255,21 @@ public class US_V_HT_LOG_TRUY_CAP : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
-	}
+
+    #region Additional Functions
+    public void fill_data_bo_loc(DS_V_HT_LOG_TRUY_CAP op_ds_ht_log_truy_cap
+                                , string ip_str_username
+                                , DateTime ip_dat_tu_ngay
+                                , DateTime ip_dat_den_ngay
+                                , decimal ip_dc_id_hanh_dong)
+    {
+        CStoredProc v_cstore = new CStoredProc("pr_V_HT_LOG_TRUY_CAP_filter");
+        v_cstore.addNVarcharInputParam("@USERNAME", ip_str_username);
+        v_cstore.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay);
+        v_cstore.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay);
+        v_cstore.addDecimalInputParam("@ID_LOAI_HANH_DONG", ip_dc_id_hanh_dong);
+        v_cstore.fillDataSetByCommand(this, op_ds_ht_log_truy_cap);
+    }
+    #endregion
+}
 }

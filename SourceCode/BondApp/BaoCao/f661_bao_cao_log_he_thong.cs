@@ -42,9 +42,9 @@ namespace BondApp
         private DateTimePicker m_dat_from_date;
         private Label label3;
         private DateTimePicker m_dat_to_date;
-        private ComboBox m_cbo_loai_nhac_viec;
+        private ComboBox m_cbo_loai_hanh_dong;
         private Label label1;
-        private TextBox m_txt_so_tien_lai;
+        private TextBox m_txt_username;
 		private System.ComponentModel.IContainer components;
 
 		public f661_bao_cao_log_he_thong()
@@ -89,7 +89,7 @@ namespace BondApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.m_txt_so_tien_lai = new System.Windows.Forms.TextBox();
+            this.m_txt_username = new System.Windows.Forms.TextBox();
             this.m_lbl_title = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.m_lbl_lich_nhac_viec_tu = new System.Windows.Forms.Label();
@@ -98,7 +98,7 @@ namespace BondApp
             this.m_dat_from_date = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.m_dat_to_date = new System.Windows.Forms.DateTimePicker();
-            this.m_cbo_loai_nhac_viec = new System.Windows.Forms.ComboBox();
+            this.m_cbo_loai_hanh_dong = new System.Windows.Forms.ComboBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -135,7 +135,7 @@ namespace BondApp
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 426);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 526);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(884, 36);
@@ -162,13 +162,13 @@ namespace BondApp
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.Location = new System.Drawing.Point(0, 88);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(884, 338);
+            this.m_fg.Size = new System.Drawing.Size(884, 438);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.m_txt_so_tien_lai);
+            this.groupBox1.Controls.Add(this.m_txt_username);
             this.groupBox1.Controls.Add(this.m_lbl_title);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.m_lbl_lich_nhac_viec_tu);
@@ -177,7 +177,7 @@ namespace BondApp
             this.groupBox1.Controls.Add(this.m_dat_from_date);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.m_dat_to_date);
-            this.groupBox1.Controls.Add(this.m_cbo_loai_nhac_viec);
+            this.groupBox1.Controls.Add(this.m_cbo_loai_hanh_dong);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
@@ -186,12 +186,12 @@ namespace BondApp
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin lọc";
             // 
-            // m_txt_so_tien_lai
+            // m_txt_username
             // 
-            this.m_txt_so_tien_lai.Location = new System.Drawing.Point(84, 47);
-            this.m_txt_so_tien_lai.Name = "m_txt_so_tien_lai";
-            this.m_txt_so_tien_lai.Size = new System.Drawing.Size(99, 20);
-            this.m_txt_so_tien_lai.TabIndex = 32;
+            this.m_txt_username.Location = new System.Drawing.Point(84, 47);
+            this.m_txt_username.Name = "m_txt_username";
+            this.m_txt_username.Size = new System.Drawing.Size(99, 20);
+            this.m_txt_username.TabIndex = 32;
             // 
             // m_lbl_title
             // 
@@ -252,6 +252,7 @@ namespace BondApp
             this.m_dat_from_date.Name = "m_dat_from_date";
             this.m_dat_from_date.Size = new System.Drawing.Size(111, 20);
             this.m_dat_from_date.TabIndex = 24;
+            this.m_dat_from_date.Value = new System.DateTime(2012, 10, 10, 0, 12, 0, 0);
             // 
             // label3
             // 
@@ -270,28 +271,28 @@ namespace BondApp
             this.m_dat_to_date.Name = "m_dat_to_date";
             this.m_dat_to_date.Size = new System.Drawing.Size(106, 20);
             this.m_dat_to_date.TabIndex = 25;
-            this.m_dat_to_date.Value = new System.DateTime(2012, 9, 23, 19, 12, 0, 0);
+            this.m_dat_to_date.Value = new System.DateTime(2012, 11, 14, 0, 0, 0, 0);
             // 
-            // m_cbo_loai_nhac_viec
+            // m_cbo_loai_hanh_dong
             // 
-            this.m_cbo_loai_nhac_viec.DisplayMember = "Tất cả";
-            this.m_cbo_loai_nhac_viec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_loai_nhac_viec.FormattingEnabled = true;
-            this.m_cbo_loai_nhac_viec.Location = new System.Drawing.Point(606, 46);
-            this.m_cbo_loai_nhac_viec.Name = "m_cbo_loai_nhac_viec";
-            this.m_cbo_loai_nhac_viec.Size = new System.Drawing.Size(148, 21);
-            this.m_cbo_loai_nhac_viec.TabIndex = 26;
-            this.m_cbo_loai_nhac_viec.ValueMember = "Tất cả";
+            this.m_cbo_loai_hanh_dong.DisplayMember = "Tất cả";
+            this.m_cbo_loai_hanh_dong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_loai_hanh_dong.FormattingEnabled = true;
+            this.m_cbo_loai_hanh_dong.Location = new System.Drawing.Point(606, 46);
+            this.m_cbo_loai_hanh_dong.Name = "m_cbo_loai_hanh_dong";
+            this.m_cbo_loai_hanh_dong.Size = new System.Drawing.Size(148, 21);
+            this.m_cbo_loai_hanh_dong.TabIndex = 26;
+            this.m_cbo_loai_hanh_dong.ValueMember = "Tất cả";
             // 
             // f661_bao_cao_log_he_thong
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(884, 462);
+            this.ClientSize = new System.Drawing.Size(884, 562);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f661_bao_cao_log_he_thong";
-            this.Text = "f661_bao_cao_log_he_thong";
+            this.Text = "F661 - Lịch sử truy cập hệ thống";
             this.Load += new System.EventHandler(this.f661_bao_cao_log_he_thong_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
@@ -331,6 +332,7 @@ namespace BondApp
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
+            load_data_2_cbo_loai_hanh_dong();
 			load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
@@ -340,12 +342,30 @@ namespace BondApp
 			return v_obj_trans;			
 		}
 		private void load_data_2_grid(){						
-			m_ds = new DS_V_HT_LOG_TRUY_CAP();			
-			m_us.FillDataset(m_ds);
+			m_ds = new DS_V_HT_LOG_TRUY_CAP();
+            m_us.fill_data_bo_loc(m_ds
+                                , m_txt_username.Text.Trim()
+                                , m_dat_from_date.Value
+                                , m_dat_to_date.Value
+                                , CIPConvert.ToDecimal(m_cbo_loai_hanh_dong.SelectedValue));
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
 			m_fg.Redraw = true;
 		}
+        private void load_data_2_cbo_loai_hanh_dong()
+        {
+            US_CM_DM_TU_DIEN v_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
+            DS_CM_DM_TU_DIEN v_ds_cm_dm_tu_dien = new DS_CM_DM_TU_DIEN();
+            DataRow v_dr = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN.NewCM_DM_TU_DIENRow();
+            v_dr[CM_DM_TU_DIEN.ID] = 0;
+            v_dr[CM_DM_TU_DIEN.TEN] = "Tất cả";
+            v_ds_cm_dm_tu_dien.EnforceConstraints = false;
+            v_us_cm_dm_tu_dien.fill_tu_dien_cung_loai_ds(CM_DM_DS_LOAI_TU_DIEN.LOG_LOAI_HANH_DONG, v_ds_cm_dm_tu_dien);
+            v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN.Rows.InsertAt(v_dr, 0);
+            m_cbo_loai_hanh_dong.DataSource = v_ds_cm_dm_tu_dien.CM_DM_TU_DIEN;
+            m_cbo_loai_hanh_dong.DisplayMember = CM_DM_TU_DIEN.TEN;
+            m_cbo_loai_hanh_dong.ValueMember = CM_DM_TU_DIEN.ID;
+        }
 		private void grid2us_object(US_V_HT_LOG_TRUY_CAP i_us
 			, int i_grid_row) {
 			DataRow v_dr;
@@ -353,8 +373,7 @@ namespace BondApp
 			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
 			i_us.DataRow2Me(v_dr);
 		}
-
-	
+        
 		private void us_object2grid(US_V_HT_LOG_TRUY_CAP i_us
 			, int i_grid_row) {
 			DataRow v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
@@ -371,8 +390,20 @@ namespace BondApp
 		}
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-			
+            m_cmd_filter.Click += new EventHandler(m_cmd_filter_Click);
 		}
+
+        void m_cmd_filter_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 		#endregion
 
 //
