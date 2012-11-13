@@ -67,7 +67,10 @@ namespace BondApp.HeThong
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
             this.KeyDown += new KeyEventHandler(f108_tham_so_he_thong_de_KeyDown);
+            m_txt_gia_tri.Leave += new EventHandler(m_txt_gia_tri_Leave);
         }
+
+        
 
         void f108_tham_so_he_thong_de_KeyDown(object sender, KeyEventArgs e)
         {
@@ -204,6 +207,25 @@ namespace BondApp.HeThong
                 CSystemLog_301.ExceptionHandle(v_e);
             }
             
+        }
+
+        void m_txt_gia_tri_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_txt_gia_tri.Text.Trim().Equals("")) return;
+                if (!CValidateTextBox.IsValid(m_txt_gia_tri, DataType.NumberType, allowNull.NO, true))
+                {
+                    BaseMessages.MsgBox_Infor(12); // dữ liệu phải là số
+                    return;
+                }
+                decimal temp = CIPConvert.ToDecimal(m_txt_gia_tri.Text);
+                m_txt_gia_tri.Text = CIPConvert.ToStr(temp, "#,###");
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         //private void m_cmd_update_Click(object sender, EventArgs e)
