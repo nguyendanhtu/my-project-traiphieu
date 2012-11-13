@@ -125,6 +125,7 @@ namespace BondDS.CDBNames
         public const string TRANG_THAI_DANH_MUC = "TRANG_THAI_DANH_MUC";
         public const string LOAI_NHAC_NHAC_VIEC = "LOAI_NHAC_NHAC_VIEC";
         public const string TT_TRUOC_NGAY_LV_GAN_NHAT = "TT_TRUOC_NGAY_LV_GAN_NHAT";
+        public const string LOG_LOAI_HANH_DONG = "LOG_LOAI_HANH_DONG";
     }
     public class GD_NHAC_VIEC
     {
