@@ -985,10 +985,25 @@ namespace BondApp
                     m_dat_ngay_thanh_toan.Value = v_dat_ngay_thanh_toan;
                     m_date_ngay_dau_ky.Value = v_dat_ngay_phat_hanh_tp.AddYears(0 - (int)m_us_v_dm_trai_phieu.dcKY_TRA_LAI); 
                 }
-                m_dat_ngay_chot_lai.Value = v_dat_ngay_thanh_toan.AddDays(- (int)m_us_v_dm_trai_phieu.dcSO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN);
+                m_dat_ngay_chot_lai.Value = get_ngay_chot_lai(m_dat_ngay_thanh_toan.Value);                
                 m_data_ngay_cuoi_ky.Value = m_dat_ngay_thanh_toan.Value;
                 m_dat_ngay_thanh_toan_thuc_te.Value = get_ngay_thanh_toan_thuc_te(m_dat_ngay_thanh_toan.Value);
             }
+        }
+
+        private DateTime get_ngay_chot_lai(DateTime ip_ngay_thanh_toan)
+        {
+            US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_v_dm_trai_phieu.dcID_DOT_PHAT_HANH);
+            DS_DM_NGAY_LAM_VIEC v_ds_dm_ng_lam_viec = new DS_DM_NGAY_LAM_VIEC();
+            US_DM_NGAY_LAM_VIEC v_us_dm_ng_lam_viec = new US_DM_NGAY_LAM_VIEC();
+            decimal v_so_ngay_truoc_tt = m_us_v_dm_trai_phieu.dcSO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN;
+            v_us_dm_ng_lam_viec.FillDatasetGetNgayChotLai(
+                v_ds_dm_ng_lam_viec,
+                ip_ngay_thanh_toan,
+                v_so_ngay_truoc_tt,
+                v_us_dm_dot_phat_hanh.strNGAY_LAM_VIEC_HAI_SAU_YN);
+            if (v_ds_dm_ng_lam_viec.DM_NGAY_LAM_VIEC == null || v_ds_dm_ng_lam_viec.DM_NGAY_LAM_VIEC.Count < v_so_ngay_truoc_tt) return ip_ngay_thanh_toan;
+            return  CIPConvert.ToDatetime(CIPConvert.ToStr(v_ds_dm_ng_lam_viec.DM_NGAY_LAM_VIEC.Rows[(int)v_so_ngay_truoc_tt - 1][DM_NGAY_LAM_VIEC.NGAY]));
         }
 
         private DateTime get_ngay_thanh_toan_thuc_te(DateTime ip_ngay_thanh_toan)
