@@ -135,7 +135,8 @@ namespace BondApp.DanhMuc
             if (ip_us_v_dot_phat_hanh.strNGAY_LAM_VIEC_HAI_SAU_YN.Equals("Y"))
                 m_cbo_loai_ngay_lam_viec.SelectedIndex = 0;
             else m_cbo_loai_ngay_lam_viec.SelectedIndex = 1;
-            m_txt_phi_chuyen_nhuong_max.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcPHI_CHUYEN_NHUONG_MAX,"#,###");
+            
+            m_txt_phi_chuyen_nhuong_max.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcPHI_CHUYEN_NHUONG_MAX,"n");
             m_txt_phi_chuyen_nhuong_min.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcPHI_CHUYEN_NHUONG_MIN, "#,###");
             m_txt_phi_phong_giai_toa_max.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcPHI_PHONG_GIAI_TOA_MAX, "#,###");
             m_txt_phi_phong_giai_toa_min.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcPHI_PHONG_GIAI_TOA_MIN, "#,###");
@@ -384,6 +385,20 @@ namespace BondApp.DanhMuc
             catch (Exception v_e)
             {
                 CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        private void m_txt_phi_chuyen_nhuong_max_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if(m_txt_phi_chuyen_nhuong_max.Text.Equals("0"))
+                    return;
+                Decimal temp = CIPConvert.ToDecimal(m_txt_phi_chuyen_nhuong_max.Text);
+                m_txt_phi_chuyen_nhuong_max.Text = temp.ToString("#,###");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi " + ex );
             }
         }
         #endregion
