@@ -415,6 +415,7 @@ namespace BondApp.DanhMuc
             load_data_2_cbo();
             m_cbo_chuyen_nhuong_huong_theo.SelectedIndex = 1;
             m_cbo_ngung_chuyen_nhuong_tu_ngay.SelectedIndex = 1;
+            m_cbo_ng_hang_tham_chieu_ls.SelectedIndex = 0;
             m_lbl_lai_suat_tha_noi.Visible = false;
             m_cbo_tha_noi.Visible = false;
             switch (m_e_formmode)
