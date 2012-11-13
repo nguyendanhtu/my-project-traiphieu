@@ -308,6 +308,7 @@ namespace BondApp.DanhMuc
             m_txt_menh_gia.TextChanged +=new EventHandler(m_txt_menh_gia_TextChanged);
             m_txt_tong_so_luong_tp.TextChanged += new EventHandler(m_txt_tong_so_luong_tp_TextChanged);
             this.KeyDown += new KeyEventHandler(f151_dm_dot_phat_hanh_de_KeyDown);
+            m_txt_phi_chuyen_nhuong_max.Leave +=new EventHandler(m_txt_phi_chuyen_nhuong_max_Leave);
         }
 
         void f151_dm_dot_phat_hanh_de_KeyDown(object sender, KeyEventArgs e)
@@ -391,14 +392,18 @@ namespace BondApp.DanhMuc
         {
             try
             {
-                if(m_txt_phi_chuyen_nhuong_max.Text.Equals("0"))
+                if(m_txt_phi_chuyen_nhuong_max.Text.Trim().Equals("")) return;
+                if (!CValidateTextBox.IsValid(m_txt_phi_chuyen_nhuong_max, DataType.NumberType, allowNull.NO, true))
+                {
+                    BaseMessages.MsgBox_Infor(12); // dữ liệu phải là số
                     return;
-                Decimal temp = CIPConvert.ToDecimal(m_txt_phi_chuyen_nhuong_max.Text);
-                m_txt_phi_chuyen_nhuong_max.Text = temp.ToString("#,###");
+                }
+                decimal temp = CIPConvert.ToDecimal(m_txt_phi_chuyen_nhuong_max.Text);
+                m_txt_phi_chuyen_nhuong_max.Text = CIPConvert.ToStr(temp,"#,###");
             }
-            catch (Exception ex)
+            catch (Exception v_e)
             {
-                MessageBox.Show("Lỗi " + ex );
+                CSystemLog_301.ExceptionHandle(v_e);
             }
         }
         #endregion

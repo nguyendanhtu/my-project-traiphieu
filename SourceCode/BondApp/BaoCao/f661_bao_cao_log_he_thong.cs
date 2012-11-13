@@ -89,7 +89,9 @@ namespace BondApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.m_txt_so_tien_lai = new System.Windows.Forms.TextBox();
             this.m_lbl_title = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.m_lbl_lich_nhac_viec_tu = new System.Windows.Forms.Label();
             this.m_lbl_lich_nhac_viec_den = new System.Windows.Forms.Label();
             this.m_cmd_filter = new System.Windows.Forms.Button();
@@ -97,8 +99,6 @@ namespace BondApp
             this.label3 = new System.Windows.Forms.Label();
             this.m_dat_to_date = new System.Windows.Forms.DateTimePicker();
             this.m_cbo_loai_nhac_viec = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.m_txt_so_tien_lai = new System.Windows.Forms.TextBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -138,7 +138,7 @@ namespace BondApp
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 426);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(864, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(884, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_exit
@@ -150,7 +150,7 @@ namespace BondApp
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(772, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(792, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -162,7 +162,7 @@ namespace BondApp
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.Location = new System.Drawing.Point(0, 88);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(864, 338);
+            this.m_fg.Size = new System.Drawing.Size(884, 338);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -181,10 +181,17 @@ namespace BondApp
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(864, 88);
+            this.groupBox1.Size = new System.Drawing.Size(884, 88);
             this.groupBox1.TabIndex = 34;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin lọc";
+            // 
+            // m_txt_so_tien_lai
+            // 
+            this.m_txt_so_tien_lai.Location = new System.Drawing.Point(84, 47);
+            this.m_txt_so_tien_lai.Name = "m_txt_so_tien_lai";
+            this.m_txt_so_tien_lai.Size = new System.Drawing.Size(99, 20);
+            this.m_txt_so_tien_lai.TabIndex = 32;
             // 
             // m_lbl_title
             // 
@@ -193,10 +200,19 @@ namespace BondApp
             this.m_lbl_title.ForeColor = System.Drawing.Color.Red;
             this.m_lbl_title.Location = new System.Drawing.Point(3, 16);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(858, 20);
+            this.m_lbl_title.Size = new System.Drawing.Size(878, 20);
             this.m_lbl_title.TabIndex = 31;
-            this.m_lbl_title.Text = "LỊCH NHẮC VIỆC";
+            this.m_lbl_title.Text = "LỊCH SỬ TRUY CẬP HỆ THỐNG";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Tên truy cập";
             // 
             // m_lbl_lich_nhac_viec_tu
             // 
@@ -267,26 +283,10 @@ namespace BondApp
             this.m_cbo_loai_nhac_viec.TabIndex = 26;
             this.m_cbo_loai_nhac_viec.ValueMember = "Tất cả";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Tên truy cập";
-            // 
-            // m_txt_so_tien_lai
-            // 
-            this.m_txt_so_tien_lai.Location = new System.Drawing.Point(84, 47);
-            this.m_txt_so_tien_lai.Name = "m_txt_so_tien_lai";
-            this.m_txt_so_tien_lai.Size = new System.Drawing.Size(99, 20);
-            this.m_txt_so_tien_lai.TabIndex = 32;
-            // 
             // f661_bao_cao_log_he_thong
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(864, 462);
+            this.ClientSize = new System.Drawing.Size(884, 462);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_pnl_out_place_dm);
