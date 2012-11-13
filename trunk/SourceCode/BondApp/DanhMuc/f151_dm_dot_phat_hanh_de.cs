@@ -309,7 +309,13 @@ namespace BondApp.DanhMuc
             m_txt_tong_so_luong_tp.TextChanged += new EventHandler(m_txt_tong_so_luong_tp_TextChanged);
             this.KeyDown += new KeyEventHandler(f151_dm_dot_phat_hanh_de_KeyDown);
             m_txt_phi_chuyen_nhuong_max.Leave +=new EventHandler(m_txt_phi_chuyen_nhuong_max_Leave);
+            m_txt_phi_chuyen_nhuong_min.Leave += new EventHandler(m_txt_phi_chuyen_nhuong_min_Leave);
+            m_txt_phi_phong_giai_toa_max.Leave += new EventHandler(m_txt_phi_phong_giai_toa_max_Leave);
+            m_txt_phi_phong_giai_toa_min.Leave += new EventHandler(m_txt_phi_phong_giai_toa_min_Leave);
+            m_txt_menh_gia.Leave += new EventHandler(m_txt_menh_gia_Leave);
+            m_txt_tong_so_luong_tp.Leave += new EventHandler(m_txt_tong_so_luong_tp_Leave);
         }
+
 
         void f151_dm_dot_phat_hanh_de_KeyDown(object sender, KeyEventArgs e)
         {
@@ -406,6 +412,107 @@ namespace BondApp.DanhMuc
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+
+        void m_txt_tong_so_luong_tp_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_txt_tong_so_luong_tp.Text.Trim().Equals("")) return;
+                if (!CValidateTextBox.IsValid(m_txt_tong_so_luong_tp, DataType.NumberType, allowNull.NO, true))
+                {
+                    BaseMessages.MsgBox_Infor(12); // dữ liệu phải là số
+                    return;
+                }
+                decimal temp = CIPConvert.ToDecimal(m_txt_tong_so_luong_tp.Text);
+                m_txt_tong_so_luong_tp.Text = CIPConvert.ToStr(temp, "#,###");
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+
+        }
+
+        void m_txt_menh_gia_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_txt_menh_gia.Text.Trim().Equals("")) return;
+                if (!CValidateTextBox.IsValid(m_txt_menh_gia, DataType.NumberType, allowNull.NO, true))
+                {
+                    BaseMessages.MsgBox_Infor(12); // dữ liệu phải là số
+                    return;
+                }
+                decimal temp = CIPConvert.ToDecimal(m_txt_menh_gia.Text);
+                m_txt_menh_gia.Text = CIPConvert.ToStr(temp, "#,###");
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+
+        }
+
+        void m_txt_phi_phong_giai_toa_min_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_txt_phi_phong_giai_toa_min.Text.Trim().Equals("")) return;
+                if (!CValidateTextBox.IsValid(m_txt_phi_phong_giai_toa_min, DataType.NumberType, allowNull.NO, true))
+                {
+                    BaseMessages.MsgBox_Infor(12); // dữ liệu phải là số
+                    return;
+                }
+                decimal temp = CIPConvert.ToDecimal(m_txt_phi_phong_giai_toa_min.Text);
+                m_txt_phi_phong_giai_toa_min.Text = CIPConvert.ToStr(temp, "#,###");
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+
+        }
+
+        void m_txt_phi_phong_giai_toa_max_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_txt_phi_phong_giai_toa_max.Text.Trim().Equals("")) return;
+                if (!CValidateTextBox.IsValid(m_txt_phi_phong_giai_toa_max, DataType.NumberType, allowNull.NO, true))
+                {
+                    BaseMessages.MsgBox_Infor(12); // dữ liệu phải là số
+                    return;
+                }
+                decimal temp = CIPConvert.ToDecimal(m_txt_phi_phong_giai_toa_max.Text);
+                m_txt_phi_phong_giai_toa_max.Text = CIPConvert.ToStr(temp, "#,###");
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+
+        }
+
+        void m_txt_phi_chuyen_nhuong_min_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_txt_phi_chuyen_nhuong_min.Text.Trim().Equals("")) return;
+                if (!CValidateTextBox.IsValid(m_txt_phi_chuyen_nhuong_min, DataType.NumberType, allowNull.NO, true))
+                {
+                    BaseMessages.MsgBox_Infor(12); // dữ liệu phải là số
+                    return;
+                }
+                decimal temp = CIPConvert.ToDecimal(m_txt_phi_chuyen_nhuong_min.Text);
+                m_txt_phi_chuyen_nhuong_min.Text = CIPConvert.ToStr(temp, "#,###");
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+
+        }
+
         #endregion
     }
 }
