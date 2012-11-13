@@ -37,7 +37,6 @@
             this.m_lbl_so_luong_phong_toa = new System.Windows.Forms.Label();
             this.m_txt_sl_da_phong_toa = new System.Windows.Forms.TextBox();
             this.m_dat_ngay_duyet = new System.Windows.Forms.DateTimePicker();
-            this.m_lbl_duyet_ghi_chu = new System.Windows.Forms.Label();
             this.m_lbl_ngay_duyet_lbl = new System.Windows.Forms.Label();
             this.m_dat_ngay_cap_cmt_nguoi_dai_dien = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
@@ -114,7 +113,6 @@
             this.groupBox1.Controls.Add(this.m_lbl_so_luong_phong_toa);
             this.groupBox1.Controls.Add(this.m_txt_sl_da_phong_toa);
             this.groupBox1.Controls.Add(this.m_dat_ngay_duyet);
-            this.groupBox1.Controls.Add(this.m_lbl_duyet_ghi_chu);
             this.groupBox1.Controls.Add(this.m_lbl_ngay_duyet_lbl);
             this.groupBox1.Controls.Add(this.m_dat_ngay_cap_cmt_nguoi_dai_dien);
             this.groupBox1.Controls.Add(this.label11);
@@ -212,30 +210,20 @@
             // 
             this.m_dat_ngay_duyet.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_duyet.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_duyet.Location = new System.Drawing.Point(424, 390);
+            this.m_dat_ngay_duyet.Location = new System.Drawing.Point(486, 390);
             this.m_dat_ngay_duyet.Name = "m_dat_ngay_duyet";
             this.m_dat_ngay_duyet.Size = new System.Drawing.Size(115, 20);
             this.m_dat_ngay_duyet.TabIndex = 23;
             this.m_dat_ngay_duyet.Visible = false;
             // 
-            // m_lbl_duyet_ghi_chu
-            // 
-            this.m_lbl_duyet_ghi_chu.AutoSize = true;
-            this.m_lbl_duyet_ghi_chu.Location = new System.Drawing.Point(544, 393);
-            this.m_lbl_duyet_ghi_chu.Name = "m_lbl_duyet_ghi_chu";
-            this.m_lbl_duyet_ghi_chu.Size = new System.Drawing.Size(128, 13);
-            this.m_lbl_duyet_ghi_chu.TabIndex = 57;
-            this.m_lbl_duyet_ghi_chu.Text = "(là ngày sở hữu trái phiếu)";
-            this.m_lbl_duyet_ghi_chu.Visible = false;
-            // 
             // m_lbl_ngay_duyet_lbl
             // 
             this.m_lbl_ngay_duyet_lbl.AutoSize = true;
-            this.m_lbl_ngay_duyet_lbl.Location = new System.Drawing.Point(351, 393);
+            this.m_lbl_ngay_duyet_lbl.Location = new System.Drawing.Point(328, 393);
             this.m_lbl_ngay_duyet_lbl.Name = "m_lbl_ngay_duyet_lbl";
-            this.m_lbl_ngay_duyet_lbl.Size = new System.Drawing.Size(61, 13);
+            this.m_lbl_ngay_duyet_lbl.Size = new System.Drawing.Size(151, 13);
             this.m_lbl_ngay_duyet_lbl.TabIndex = 57;
-            this.m_lbl_ngay_duyet_lbl.Text = "Ngày duyệt";
+            this.m_lbl_ngay_duyet_lbl.Text = "Ngày trái chủ sở hữu trái phiếu";
             this.m_lbl_ngay_duyet_lbl.Visible = false;
             // 
             // m_dat_ngay_cap_cmt_nguoi_dai_dien
@@ -801,6 +789,5 @@
         internal SIS.Controls.Button.SiSButton m_cmd_duyet;
         private System.Windows.Forms.DateTimePicker m_dat_ngay_duyet;
         private System.Windows.Forms.Label m_lbl_ngay_duyet_lbl;
-        private System.Windows.Forms.Label m_lbl_duyet_ghi_chu;
     }
 }
