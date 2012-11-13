@@ -136,7 +136,7 @@ namespace BondApp.DanhMuc
                     m_cmd_duyet.Visible = true;
                     m_lbl_ngay_duyet_lbl.Visible = true;
                     m_dat_ngay_duyet.Visible = true;
-                    m_lbl_duyet_ghi_chu.Visible = true;
+                    //m_lbl_duyet_ghi_chu.Visible = true;
                     us_object_2_form(m_us_v_trai_chu);
                     break;
             }
