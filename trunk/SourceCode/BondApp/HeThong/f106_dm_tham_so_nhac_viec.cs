@@ -780,16 +780,17 @@ namespace BondApp
                 case DataEntryFormMode.UpdateDataState:
                     form_2_us_object(m_us);
                     m_us.Update();
+                    ghi_log_he_thong();
                     m_e_form_mode = DataEntryFormMode.ViewDataState;
                     load_data_2_grid();
                     break;
                 case DataEntryFormMode.ViewDataState:
                     form_2_us_object(m_us);
                     m_us.Insert();
+                    ghi_log_he_thong();
                     load_data_2_grid();
                     break;
             }
-            ghi_log_he_thong();
             BaseMessages.MsgBox_Infor("Dữ liệu được cập nhật thành công!");
             reset_controls();
         }
