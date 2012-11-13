@@ -111,7 +111,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="NGAY_CAP" msprop:Generator_ColumnVarNameInTable="columnNGAY_CAP" msprop:Generator_ColumnPropNameInRow="NGAY_CAP" msprop:Generator_ColumnPropNameInTable="NGAY_CAPColumn" msprop:Generator_UserColumnName="NGAY_CAP" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NGAY_CAP" msprop:Generator_ColumnVarNameInTable="columnNGAY_CAP" msprop:Generator_ColumnPropNameInRow="NGAY_CAP" msprop:Generator_ColumnPropNameInTable="NGAY_CAPColumn" msprop:Generator_UserColumnName="NGAY_CAP" type="xs:string" minOccurs="0" />
               <xs:element name="NOI_CAP" msprop:Generator_ColumnVarNameInTable="columnNOI_CAP" msprop:Generator_ColumnPropNameInRow="NOI_CAP" msprop:Generator_ColumnPropNameInTable="NOI_CAPColumn" msprop:Generator_UserColumnName="NOI_CAP" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -176,7 +176,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="NGAY_CAP_CMND_NGUOI_DAI_DIEN" msprop:Generator_ColumnVarNameInTable="columnNGAY_CAP_CMND_NGUOI_DAI_DIEN" msprop:Generator_ColumnPropNameInRow="NGAY_CAP_CMND_NGUOI_DAI_DIEN" msprop:Generator_ColumnPropNameInTable="NGAY_CAP_CMND_NGUOI_DAI_DIENColumn" msprop:Generator_UserColumnName="NGAY_CAP_CMND_NGUOI_DAI_DIEN" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NGAY_CAP_CMND_NGUOI_DAI_DIEN" msprop:Generator_ColumnVarNameInTable="columnNGAY_CAP_CMND_NGUOI_DAI_DIEN" msprop:Generator_ColumnPropNameInRow="NGAY_CAP_CMND_NGUOI_DAI_DIEN" msprop:Generator_ColumnPropNameInTable="NGAY_CAP_CMND_NGUOI_DAI_DIENColumn" msprop:Generator_UserColumnName="NGAY_CAP_CMND_NGUOI_DAI_DIEN" type="xs:string" minOccurs="0" />
               <xs:element name="NOI_CAP_CMND_NGUOI_DAI_DIEN" msprop:Generator_ColumnVarNameInTable="columnNOI_CAP_CMND_NGUOI_DAI_DIEN" msprop:Generator_ColumnPropNameInRow="NOI_CAP_CMND_NGUOI_DAI_DIEN" msprop:Generator_ColumnPropNameInTable="NOI_CAP_CMND_NGUOI_DAI_DIENColumn" msprop:Generator_UserColumnName="NOI_CAP_CMND_NGUOI_DAI_DIEN" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -191,7 +191,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="NGAY_BAT_DAU_SO_HUU_TP" msprop:Generator_ColumnVarNameInTable="columnNGAY_BAT_DAU_SO_HUU_TP" msprop:Generator_ColumnPropNameInRow="NGAY_BAT_DAU_SO_HUU_TP" msprop:Generator_ColumnPropNameInTable="NGAY_BAT_DAU_SO_HUU_TPColumn" msprop:Generator_UserColumnName="NGAY_BAT_DAU_SO_HUU_TP" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NGAY_BAT_DAU_SO_HUU_TP" msprop:Generator_ColumnVarNameInTable="columnNGAY_BAT_DAU_SO_HUU_TP" msprop:Generator_ColumnPropNameInRow="NGAY_BAT_DAU_SO_HUU_TP" msprop:Generator_ColumnPropNameInTable="NGAY_BAT_DAU_SO_HUU_TPColumn" msprop:Generator_UserColumnName="NGAY_BAT_DAU_SO_HUU_TP" type="xs:string" minOccurs="0" />
               <xs:element name="TRANG_THAI" msprop:Generator_ColumnVarNameInTable="columnTRANG_THAI" msprop:Generator_ColumnPropNameInRow="TRANG_THAI" msprop:Generator_ColumnPropNameInTable="TRANG_THAIColumn" msprop:Generator_UserColumnName="TRANG_THAI" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">

@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f260_import_trai_chu_tu_excel));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.m_txt_sl_phat_hanh = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.m_txt_ngay_phat_hanh = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.m_cmd_chon_trai_phieu = new SIS.Controls.Button.SiSButton();
@@ -49,8 +51,6 @@
             this.m_cmd_thoat = new SIS.Controls.Button.SiSButton();
             this.m_dgl_open_file = new System.Windows.Forms.OpenFileDialog();
             this.m_fg_load_file = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.label2 = new System.Windows.Forms.Label();
-            this.m_txt_sl_phat_hanh = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -102,6 +102,27 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(844, 126);
             this.panel2.TabIndex = 26;
+            // 
+            // m_txt_sl_phat_hanh
+            // 
+            this.m_txt_sl_phat_hanh.BackColor = System.Drawing.SystemColors.Info;
+            this.m_txt_sl_phat_hanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_txt_sl_phat_hanh.Location = new System.Drawing.Point(755, 85);
+            this.m_txt_sl_phat_hanh.Name = "m_txt_sl_phat_hanh";
+            this.m_txt_sl_phat_hanh.ReadOnly = true;
+            this.m_txt_sl_phat_hanh.Size = new System.Drawing.Size(63, 22);
+            this.m_txt_sl_phat_hanh.TabIndex = 14;
+            this.m_txt_sl_phat_hanh.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(661, 88);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 16);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "SL phát hành";
             // 
             // m_txt_ngay_phat_hanh
             // 
@@ -308,27 +329,6 @@
             this.m_fg_load_file.Size = new System.Drawing.Size(844, 286);
             this.m_fg_load_file.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_load_file.Styles"));
             this.m_fg_load_file.TabIndex = 30;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(661, 88);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 16);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "SL phát hành";
-            // 
-            // m_txt_sl_phat_hanh
-            // 
-            this.m_txt_sl_phat_hanh.BackColor = System.Drawing.SystemColors.Info;
-            this.m_txt_sl_phat_hanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_txt_sl_phat_hanh.Location = new System.Drawing.Point(755, 85);
-            this.m_txt_sl_phat_hanh.Name = "m_txt_sl_phat_hanh";
-            this.m_txt_sl_phat_hanh.ReadOnly = true;
-            this.m_txt_sl_phat_hanh.Size = new System.Drawing.Size(63, 22);
-            this.m_txt_sl_phat_hanh.TabIndex = 14;
-            this.m_txt_sl_phat_hanh.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // f260_import_trai_chu_tu_excel
             // 

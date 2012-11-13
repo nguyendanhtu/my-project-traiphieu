@@ -586,7 +586,7 @@ namespace BondDS {
                         string TEN_TRAI_CHU, 
                         int LOAI_HINH_CO_CONG, 
                         string DKHD_CMND, 
-                        System.DateTime NGAY_CAP, 
+                        string NGAY_CAP, 
                         string NOI_CAP, 
                         string QUOC_TICH, 
                         string DIA_CHI, 
@@ -597,10 +597,10 @@ namespace BondDS {
                         decimal SO_LUONG_TRAI_PHIEU_SO_HUU, 
                         string TEN_NGUOI_DAI_DIEN, 
                         string SO_CMND_NGUOI_DAI_DIEN, 
-                        System.DateTime NGAY_CAP_CMND_NGUOI_DAI_DIEN, 
+                        string NGAY_CAP_CMND_NGUOI_DAI_DIEN, 
                         string NOI_CAP_CMND_NGUOI_DAI_DIEN, 
                         string CHUC_VU_NGUOI_DAI_DIEN, 
-                        System.DateTime NGAY_BAT_DAU_SO_HUU_TP, 
+                        string NGAY_BAT_DAU_SO_HUU_TP, 
                         string TRANG_THAI, 
                         string DIEN_GIAI) {
                 DM_TRAI_CHU_IMPRow rowDM_TRAI_CHU_IMPRow = ((DM_TRAI_CHU_IMPRow)(this.NewRow()));
@@ -696,7 +696,7 @@ namespace BondDS {
                 base.Columns.Add(this.columnLOAI_HINH_CO_CONG);
                 this.columnDKHD_CMND = new global::System.Data.DataColumn("DKHD_CMND", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDKHD_CMND);
-                this.columnNGAY_CAP = new global::System.Data.DataColumn("NGAY_CAP", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnNGAY_CAP = new global::System.Data.DataColumn("NGAY_CAP", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNGAY_CAP);
                 this.columnNOI_CAP = new global::System.Data.DataColumn("NOI_CAP", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNOI_CAP);
@@ -718,13 +718,13 @@ namespace BondDS {
                 base.Columns.Add(this.columnTEN_NGUOI_DAI_DIEN);
                 this.columnSO_CMND_NGUOI_DAI_DIEN = new global::System.Data.DataColumn("SO_CMND_NGUOI_DAI_DIEN", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSO_CMND_NGUOI_DAI_DIEN);
-                this.columnNGAY_CAP_CMND_NGUOI_DAI_DIEN = new global::System.Data.DataColumn("NGAY_CAP_CMND_NGUOI_DAI_DIEN", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnNGAY_CAP_CMND_NGUOI_DAI_DIEN = new global::System.Data.DataColumn("NGAY_CAP_CMND_NGUOI_DAI_DIEN", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNGAY_CAP_CMND_NGUOI_DAI_DIEN);
                 this.columnNOI_CAP_CMND_NGUOI_DAI_DIEN = new global::System.Data.DataColumn("NOI_CAP_CMND_NGUOI_DAI_DIEN", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNOI_CAP_CMND_NGUOI_DAI_DIEN);
                 this.columnCHUC_VU_NGUOI_DAI_DIEN = new global::System.Data.DataColumn("CHUC_VU_NGUOI_DAI_DIEN", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCHUC_VU_NGUOI_DAI_DIEN);
-                this.columnNGAY_BAT_DAU_SO_HUU_TP = new global::System.Data.DataColumn("NGAY_BAT_DAU_SO_HUU_TP", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnNGAY_BAT_DAU_SO_HUU_TP = new global::System.Data.DataColumn("NGAY_BAT_DAU_SO_HUU_TP", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNGAY_BAT_DAU_SO_HUU_TP);
                 this.columnTRANG_THAI = new global::System.Data.DataColumn("TRANG_THAI", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTRANG_THAI);
@@ -960,10 +960,10 @@ namespace BondDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime NGAY_CAP {
+            public string NGAY_CAP {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableDM_TRAI_CHU_IMP.NGAY_CAPColumn]));
+                        return ((string)(this[this.tableDM_TRAI_CHU_IMP.NGAY_CAPColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'NGAY_CAP\' in table \'DM_TRAI_CHU_IMP\' is DBNull.", e);
@@ -1138,10 +1138,10 @@ namespace BondDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime NGAY_CAP_CMND_NGUOI_DAI_DIEN {
+            public string NGAY_CAP_CMND_NGUOI_DAI_DIEN {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableDM_TRAI_CHU_IMP.NGAY_CAP_CMND_NGUOI_DAI_DIENColumn]));
+                        return ((string)(this[this.tableDM_TRAI_CHU_IMP.NGAY_CAP_CMND_NGUOI_DAI_DIENColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'NGAY_CAP_CMND_NGUOI_DAI_DIEN\' in table \'DM_TRAI_CHU_IMP\' is" +
@@ -1189,10 +1189,10 @@ namespace BondDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime NGAY_BAT_DAU_SO_HUU_TP {
+            public string NGAY_BAT_DAU_SO_HUU_TP {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableDM_TRAI_CHU_IMP.NGAY_BAT_DAU_SO_HUU_TPColumn]));
+                        return ((string)(this[this.tableDM_TRAI_CHU_IMP.NGAY_BAT_DAU_SO_HUU_TPColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'NGAY_BAT_DAU_SO_HUU_TP\' in table \'DM_TRAI_CHU_IMP\' is DBNul" +
