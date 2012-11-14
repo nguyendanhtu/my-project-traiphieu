@@ -901,8 +901,13 @@ namespace BondApp
         //}
         private void duyet_gd_chot_lai()
         {
-            m_us_nguoi_duyet = new US_HT_NGUOI_SU_DUNG(CAppContext_201.getCurrentUserID());
-            us_nguoi_duyet_2_form();
+            if (check_validate_data_is_ok() == false) return;
+            form_2_us_object(m_us_gd_chot_lai);
+            m_us_gd_chot_lai.dcID_NGUOI_DUYET = CAppContext_201.getCurrentUserID();
+            m_us_gd_chot_lai.dcTRANG_THAI = List_trang_thai.Da_Duyet;
+            m_us_gd_chot_lai.Update();
+            BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
+            this.Close();
         }
         private void gen_danh_sach_tra_lai()
         {
@@ -1117,7 +1122,7 @@ namespace BondApp
                         m_gru_tim_kiem.Visible = true;
                         m_fg.Visible = true;
                         m_cmd_gen.Visible = true;
-                        m_cmd_save.Visible = true;
+                        m_cmd_save.Visible = false;
                         m_cmd_update.Visible = false;
                         m_cmd_duyet.Visible = true;                        
                         m_lbl_title.Text = "F210 - Thông tin đợt chốt lãi";
