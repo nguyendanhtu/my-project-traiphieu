@@ -147,6 +147,10 @@ namespace BondApp.ChucNang
             m_ds = new DS_V_DM_TRAI_CHU_CHOT_LAI();
             if (m_us_v_trai_phieu != null)
             {
+                if (m_dat_ngay_chot_lai_cuoi > DateTime.Today)
+                {
+                    MessageBox.Show("Chưa đến ngày chốt trả gốc cho trái phiếu này\nTên trái phiếu: "+ m_us_v_trai_phieu.strTEN_TRAI_PHIEU);
+                }
                 switch (m_mod)
                 {
                     case e_Mod.TAT_CA:
@@ -200,37 +204,22 @@ namespace BondApp.ChucNang
         {
             if (m_us_v_trai_phieu != null)
             {
-                //int v_i_current = 0;
-                double v_d_ngay = 0;
+                DateTime v_ngay_dao_han = m_us_v_trai_phieu.datNGAY_DAO_HAN;
                 US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_v_trai_phieu.dcID_DOT_PHAT_HANH);
-                if (m_us_v_trai_phieu.dcID_DV_KY_TRA_LAI == 18)
-                {
-                    m_d_ky_tinh_lai = m_us_v_trai_phieu.dcKY_HAN / m_us_v_trai_phieu.dcKY_TRA_LAI * 12;
-                    v_d_ngay = (DateTime.Now - v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH).TotalDays;
-                }
-                else
-                {
-                    m_d_ky_tinh_lai = m_us_v_trai_phieu.dcKY_HAN / m_us_v_trai_phieu.dcKY_TRA_LAI;
-                }
+                DS_DM_NGAY_LAM_VIEC v_ds_dm_ng_lam_viec = new DS_DM_NGAY_LAM_VIEC();
+                US_DM_NGAY_LAM_VIEC v_us_dm_ng_lam_viec = new US_DM_NGAY_LAM_VIEC();
+                decimal v_so_ngay_truoc_tt = m_us_v_trai_phieu.dcSO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN;
+                v_us_dm_ng_lam_viec.FillDatasetGetNgayChotLai(
+                    v_ds_dm_ng_lam_viec,
+                    v_ngay_dao_han,
+                    v_so_ngay_truoc_tt,
+                    v_us_dm_dot_phat_hanh.strNGAY_LAM_VIEC_HAI_SAU_YN);
 
-                /*for (int i = 1; i <= m_d_ky_tinh_lai; i++)
-                {
-                    DateTime v_dat = v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH;
-                    v_dat = v_dat.AddMonths(i * (int)m_us_v_trai_phieu.dcKY_TRA_LAI);
-                    if (v_d_ngay >= (v_dat - v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH).TotalDays)
-                    {
-                        v_i_current = i;
-                    }
-                }*/
+                if (v_ds_dm_ng_lam_viec.DM_NGAY_LAM_VIEC == null || v_ds_dm_ng_lam_viec.DM_NGAY_LAM_VIEC.Count < v_so_ngay_truoc_tt) m_dat_ngay_chot_lai_cuoi = v_ngay_dao_han.AddDays(1-(int)v_so_ngay_truoc_tt);
+                m_dat_ngay_chot_lai_cuoi = CIPConvert.ToDatetime(CIPConvert.ToStr(v_ds_dm_ng_lam_viec.DM_NGAY_LAM_VIEC.Rows[(int)v_so_ngay_truoc_tt - 1][DM_NGAY_LAM_VIEC.NGAY]));
 
-                US_HT_THAM_SO_HE_THONG v_us_ht = new US_HT_THAM_SO_HE_THONG(ID_THAM_SO_HE_THONG.CHOT_LAI_TRUOC);
-                m_dat_ngay_chot_lai_cuoi = v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH;
-                m_dat_ngay_chot_lai_cuoi = m_dat_ngay_chot_lai_cuoi.AddMonths((int)(m_d_ky_tinh_lai * m_us_v_trai_phieu.dcKY_TRA_LAI));
-                m_dat_ngay_chot_lai_cuoi = m_dat_ngay_chot_lai_cuoi.AddDays(-(int)CIPConvert.ToDecimal(v_us_ht.strGIA_TRI));
-
-                if (DateTime.Now < m_dat_ngay_chot_lai_cuoi) m_lbl_trang_thai.Text = "Trái phiếu này chưa đến kỳ trả gốc!";
             }
-        }
+        }       
 
         private void grid2us_object(US_V_DM_TRAI_CHU_CHOT_LAI i_us
             , int i_grid_row)
