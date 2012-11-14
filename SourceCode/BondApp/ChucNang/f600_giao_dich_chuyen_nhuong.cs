@@ -327,7 +327,9 @@ namespace BondApp
             m_us_gd_chuyen_nhuong.strMA_GIAO_DICH = m_txt_ma_giao_dich.Text;            
             m_us_gd_chuyen_nhuong.datNGAY_KY_CHUYEN_NHUONG = m_date_ngay_chuyen_nhuong.Value;
             m_us_gd_chuyen_nhuong.datNGAY_VAO_SO = m_date_ngay_vao_so.Value;
+            if (m_lbl_ID_nguoi_mua.Text.Trim() != "")
             m_us_gd_chuyen_nhuong.dcID_TRAI_CHU_MUA = CIPConvert.ToDecimal(m_lbl_ID_nguoi_mua.Text);
+            if (m_lbl_ID_nguoi_ban.Text.Trim() != "")
             m_us_gd_chuyen_nhuong.dcID_TRAI_CHU_BAN = CIPConvert.ToDecimal(m_lbl_ID_nguoi_ban.Text);
             m_us_gd_chuyen_nhuong.strTEN_NGUOI_UY_QUYEN_MUA = m_txt_ben_mua_ten_nguoi_dai_dien.Text;
             m_us_gd_chuyen_nhuong.strTEN_NGUOI_UY_QUYEN_BAN = m_txt_nguoi_dai_dien.Text;           
@@ -337,22 +339,24 @@ namespace BondApp
             m_us_gd_chuyen_nhuong.datNGAY_CAP_CMT_NGUOI_BAN = m_date_ngay_cap_cmnd_ng_dai_dien.Value;
             m_us_gd_chuyen_nhuong.strNOI_CAP_CMT_NGUOI_MUA = m_txt_ben_mua_noi_cap_cmnd_ng_dai_dien.Text;
             m_us_gd_chuyen_nhuong.strNOI_CAP_CMT_NGUOI_BAN = m_txt_noi_cap_cmt_ng_dai_dien.Text;
+            if (m_txt_so_luong_chuyen_nhuong.Text.Trim() != "")
             m_us_gd_chuyen_nhuong.dcSO_LUONG_CHUYEN_NHUONG = CIPConvert.ToDecimal(m_txt_so_luong_chuyen_nhuong.Text);
             if (m_us_gd_chuyen_nhuong.dcSO_LUONG_CHUYEN_NHUONG > CIPConvert.ToDecimal(m_txt_so_luong_kha_dung.Text))
             {
                 MessageBox.Show("Số lượng trái phiếu chuyển nhượng phải nhỏ hợn số trái phiếu khả dụng của trai chủ bán!");
                 return;
             }
-            m_us_gd_chuyen_nhuong.dcGIA_TRI_CHUYEN_NHUONG_THUC_TE = CIPConvert.ToDecimal(m_txt_gia_tri_chuyen_nhuong_thuc_te.Text);            
+            if (m_txt_gia_tri_chuyen_nhuong_thuc_te.Text.Trim() != "")
+            m_us_gd_chuyen_nhuong.dcGIA_TRI_CHUYEN_NHUONG_THUC_TE = CIPConvert.ToDecimal(m_txt_gia_tri_chuyen_nhuong_thuc_te.Text);
+            if (m_txt_ty_le_phi_gd.Text.Trim() != "")
             m_us_gd_chuyen_nhuong.dcTY_LE_PHI_GD = CIPConvert.ToDecimal(m_txt_ty_le_phi_gd.Text)/100;
+            if (m_txt_phi_gd.Text.Trim() != "")
             m_us_gd_chuyen_nhuong.dcPHI_GD = CIPConvert.ToDecimal(m_txt_phi_gd.Text);            
             m_us_gd_chuyen_nhuong.strNOI_DUNG_GIAO_DICH = m_txt_noi_dung_chuyen_nhuong.Text;
             if (m_txt_phan_tram_thue.Text.Trim() != "")
-            {
                 m_us_gd_chuyen_nhuong.dcPHAN_TRAM_THUE = CIPConvert.ToDecimal(m_txt_phan_tram_thue.Text) / 100;
+            if (m_txt_thue.Text.Trim() != "")
                 m_us_gd_chuyen_nhuong.dcGIA_TRI_THUE = CIPConvert.ToDecimal(m_txt_thue.Text);
-            }
-
             if (!m_date_ngay_xac_nhan.Checked)
             {
                 m_us_gd_chuyen_nhuong.SetNGAY_XAC_NHANNull();
