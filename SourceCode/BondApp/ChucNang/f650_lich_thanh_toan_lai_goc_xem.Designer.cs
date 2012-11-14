@@ -57,7 +57,10 @@
             this.m_cmd_chon_trai_phieu = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.m_lbl_dv_ky_dieu_chinh_ls = new System.Windows.Forms.Label();
             this.m_lbl_don_vi_kh = new System.Windows.Forms.Label();
+            this.m_txt_ky_dieu_chinh_ls = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cmd_thong_bao_dot_thanh_toan_lai_trai_phieu = new SIS.Controls.Button.SiSButton();
@@ -68,9 +71,6 @@
             this.m_cmd_thong_bao_ls = new SIS.Controls.Button.SiSButton();
             this.m_cmd_generate = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.m_txt_ky_dieu_chinh_ls = new System.Windows.Forms.TextBox();
-            this.m_lbl_dv_ky_dieu_chinh_ls = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -361,7 +361,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(253, 79);
+            this.label4.Location = new System.Drawing.Point(260, 80);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(30, 13);
             this.label4.TabIndex = 57;
@@ -378,15 +378,45 @@
             this.label3.Text = "VNĐ";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // m_lbl_dv_ky_dieu_chinh_ls
+            // 
+            this.m_lbl_dv_ky_dieu_chinh_ls.AutoSize = true;
+            this.m_lbl_dv_ky_dieu_chinh_ls.Location = new System.Drawing.Point(793, 106);
+            this.m_lbl_dv_ky_dieu_chinh_ls.Name = "m_lbl_dv_ky_dieu_chinh_ls";
+            this.m_lbl_dv_ky_dieu_chinh_ls.Size = new System.Drawing.Size(27, 13);
+            this.m_lbl_dv_ky_dieu_chinh_ls.TabIndex = 54;
+            this.m_lbl_dv_ky_dieu_chinh_ls.Text = "năm";
+            this.m_lbl_dv_ky_dieu_chinh_ls.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // m_lbl_don_vi_kh
             // 
             this.m_lbl_don_vi_kh.AutoSize = true;
-            this.m_lbl_don_vi_kh.Location = new System.Drawing.Point(253, 54);
+            this.m_lbl_don_vi_kh.Location = new System.Drawing.Point(260, 55);
             this.m_lbl_don_vi_kh.Name = "m_lbl_don_vi_kh";
             this.m_lbl_don_vi_kh.Size = new System.Drawing.Size(27, 13);
             this.m_lbl_don_vi_kh.TabIndex = 54;
             this.m_lbl_don_vi_kh.Text = "năm";
             this.m_lbl_don_vi_kh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // m_txt_ky_dieu_chinh_ls
+            // 
+            this.m_txt_ky_dieu_chinh_ls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.m_txt_ky_dieu_chinh_ls.Location = new System.Drawing.Point(680, 102);
+            this.m_txt_ky_dieu_chinh_ls.Name = "m_txt_ky_dieu_chinh_ls";
+            this.m_txt_ky_dieu_chinh_ls.ReadOnly = true;
+            this.m_txt_ky_dieu_chinh_ls.Size = new System.Drawing.Size(107, 20);
+            this.m_txt_ky_dieu_chinh_ls.TabIndex = 51;
+            this.m_txt_ky_dieu_chinh_ls.TabStop = false;
+            this.m_txt_ky_dieu_chinh_ls.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(567, 105);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 13);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "Kỳ điều chỉnh lãi suất";
             // 
             // ImageList
             // 
@@ -553,36 +583,6 @@
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(567, 105);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 13);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "Kì điều chỉnh lãi suất";
-            // 
-            // m_txt_ky_dieu_chinh_ls
-            // 
-            this.m_txt_ky_dieu_chinh_ls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_txt_ky_dieu_chinh_ls.Location = new System.Drawing.Point(680, 102);
-            this.m_txt_ky_dieu_chinh_ls.Name = "m_txt_ky_dieu_chinh_ls";
-            this.m_txt_ky_dieu_chinh_ls.ReadOnly = true;
-            this.m_txt_ky_dieu_chinh_ls.Size = new System.Drawing.Size(107, 20);
-            this.m_txt_ky_dieu_chinh_ls.TabIndex = 51;
-            this.m_txt_ky_dieu_chinh_ls.TabStop = false;
-            this.m_txt_ky_dieu_chinh_ls.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // m_lbl_dv_ky_dieu_chinh_ls
-            // 
-            this.m_lbl_dv_ky_dieu_chinh_ls.AutoSize = true;
-            this.m_lbl_dv_ky_dieu_chinh_ls.Location = new System.Drawing.Point(793, 106);
-            this.m_lbl_dv_ky_dieu_chinh_ls.Name = "m_lbl_dv_ky_dieu_chinh_ls";
-            this.m_lbl_dv_ky_dieu_chinh_ls.Size = new System.Drawing.Size(27, 13);
-            this.m_lbl_dv_ky_dieu_chinh_ls.TabIndex = 54;
-            this.m_lbl_dv_ky_dieu_chinh_ls.Text = "năm";
-            this.m_lbl_dv_ky_dieu_chinh_ls.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // f650_lich_thanh_toan_lai_goc_xem
             // 
