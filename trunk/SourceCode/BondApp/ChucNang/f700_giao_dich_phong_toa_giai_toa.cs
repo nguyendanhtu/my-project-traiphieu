@@ -94,8 +94,7 @@ namespace BondApp
         public void display_duyet_giai_toa(US_GD_PHONG_GIAI_TOA ip_us_phong_giai_toa)
         {
             m_e_form_mode = eFormMode.DUYET_GIAI_TOA;
-            m_us_gd_phong_toa_giai_toa = ip_us_phong_giai_toa;
-            m_us_gd_phong_toa_giai_toa = ip_us_phong_giai_toa;
+            m_us_gd_phong_toa_giai_toa = ip_us_phong_giai_toa;           
             US_DM_TRAI_CHU ip_us_trai_chu = new US_DM_TRAI_CHU(ip_us_phong_giai_toa.dcID_TRAI_CHU);
             us_trai_chu_2_form(ip_us_trai_chu);
             this.Text = "F700 - Duyệt Giao dịch giải tỏa";
