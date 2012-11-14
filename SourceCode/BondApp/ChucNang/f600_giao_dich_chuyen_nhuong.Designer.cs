@@ -156,6 +156,8 @@
             this.label31 = new System.Windows.Forms.Label();
             this.m_lbl_phi_gd_max_min = new System.Windows.Forms.Label();
             this.m_gru_thong_tin_khach_hang = new System.Windows.Forms.GroupBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
             this.m_gru_thong_tin_trai_phieu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -372,7 +374,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(305, 121);
+            this.label21.Location = new System.Drawing.Point(292, 121);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(79, 13);
             this.label21.TabIndex = 39;
@@ -381,16 +383,16 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(304, 95);
+            this.label26.Location = new System.Drawing.Point(608, 99);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(78, 13);
+            this.label26.Size = new System.Drawing.Size(58, 13);
             this.label26.TabIndex = 39;
-            this.label26.Text = "Thuế giao dịch";
+            this.label26.Text = "Giá trị thuế";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(304, 70);
+            this.label24.Location = new System.Drawing.Point(291, 70);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(70, 13);
             this.label24.TabIndex = 39;
@@ -435,9 +437,9 @@
             // m_txt_thue
             // 
             this.m_txt_thue.BackColor = System.Drawing.Color.White;
-            this.m_txt_thue.Location = new System.Drawing.Point(438, 95);
+            this.m_txt_thue.Location = new System.Drawing.Point(678, 92);
             this.m_txt_thue.Name = "m_txt_thue";
-            this.m_txt_thue.Size = new System.Drawing.Size(136, 20);
+            this.m_txt_thue.Size = new System.Drawing.Size(154, 20);
             this.m_txt_thue.TabIndex = 22;
             this.m_txt_thue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -453,7 +455,7 @@
             // m_txt_phi_gd
             // 
             this.m_txt_phi_gd.BackColor = System.Drawing.Color.White;
-            this.m_txt_phi_gd.Location = new System.Drawing.Point(438, 67);
+            this.m_txt_phi_gd.Location = new System.Drawing.Point(425, 67);
             this.m_txt_phi_gd.Name = "m_txt_phi_gd";
             this.m_txt_phi_gd.Size = new System.Drawing.Size(136, 20);
             this.m_txt_phi_gd.TabIndex = 20;
@@ -1259,7 +1261,7 @@
             // m_txt_noi_dung_chuyen_nhuong
             // 
             this.m_txt_noi_dung_chuyen_nhuong.BackColor = System.Drawing.Color.White;
-            this.m_txt_noi_dung_chuyen_nhuong.Location = new System.Drawing.Point(438, 15);
+            this.m_txt_noi_dung_chuyen_nhuong.Location = new System.Drawing.Point(425, 15);
             this.m_txt_noi_dung_chuyen_nhuong.Name = "m_txt_noi_dung_chuyen_nhuong";
             this.m_txt_noi_dung_chuyen_nhuong.Size = new System.Drawing.Size(424, 20);
             this.m_txt_noi_dung_chuyen_nhuong.TabIndex = 16;
@@ -1267,7 +1269,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(304, 18);
+            this.label29.Location = new System.Drawing.Point(291, 18);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(127, 13);
             this.label29.TabIndex = 5;
@@ -1280,6 +1282,8 @@
             this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.m_date_ngay_vao_so);
             this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.m_date_ngay_xac_nhan);
             this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.m_date_ngay_chuyen_nhuong);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.label42);
+            this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.label43);
             this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.label36);
             this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.label35);
             this.m_gru_thong_tin_chuyen_nhuong.Controls.Add(this.m_cbb_trang_thai_cn);
@@ -1341,7 +1345,7 @@
             // 
             this.m_date_ngay_vao_so.CustomFormat = "dd/MM/yyyy";
             this.m_date_ngay_vao_so.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_date_ngay_vao_so.Location = new System.Drawing.Point(678, 114);
+            this.m_date_ngay_vao_so.Location = new System.Drawing.Point(678, 116);
             this.m_date_ngay_vao_so.Name = "m_date_ngay_vao_so";
             this.m_date_ngay_vao_so.ShowCheckBox = true;
             this.m_date_ngay_vao_so.Size = new System.Drawing.Size(156, 20);
@@ -1352,7 +1356,7 @@
             this.m_date_ngay_xac_nhan.Checked = false;
             this.m_date_ngay_xac_nhan.CustomFormat = "dd/MM/yyyy";
             this.m_date_ngay_xac_nhan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_date_ngay_xac_nhan.Location = new System.Drawing.Point(439, 118);
+            this.m_date_ngay_xac_nhan.Location = new System.Drawing.Point(426, 118);
             this.m_date_ngay_xac_nhan.Name = "m_date_ngay_xac_nhan";
             this.m_date_ngay_xac_nhan.ShowCheckBox = true;
             this.m_date_ngay_xac_nhan.Size = new System.Drawing.Size(135, 20);
@@ -1371,7 +1375,7 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(575, 100);
+            this.label36.Location = new System.Drawing.Point(838, 97);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(30, 13);
             this.label36.TabIndex = 59;
@@ -1380,7 +1384,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(576, 70);
+            this.label35.Location = new System.Drawing.Point(563, 70);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(30, 13);
             this.label35.TabIndex = 59;
@@ -1391,7 +1395,7 @@
             this.m_cbb_trang_thai_cn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbb_trang_thai_cn.Enabled = false;
             this.m_cbb_trang_thai_cn.FormattingEnabled = true;
-            this.m_cbb_trang_thai_cn.Location = new System.Drawing.Point(678, 141);
+            this.m_cbb_trang_thai_cn.Location = new System.Drawing.Point(678, 142);
             this.m_cbb_trang_thai_cn.Name = "m_cbb_trang_thai_cn";
             this.m_cbb_trang_thai_cn.Size = new System.Drawing.Size(154, 21);
             this.m_cbb_trang_thai_cn.TabIndex = 20;
@@ -1399,7 +1403,7 @@
             // m_txt_gia_tri_chuyen_nhuong_thuc_te
             // 
             this.m_txt_gia_tri_chuyen_nhuong_thuc_te.BackColor = System.Drawing.Color.White;
-            this.m_txt_gia_tri_chuyen_nhuong_thuc_te.Location = new System.Drawing.Point(726, 38);
+            this.m_txt_gia_tri_chuyen_nhuong_thuc_te.Location = new System.Drawing.Point(425, 92);
             this.m_txt_gia_tri_chuyen_nhuong_thuc_te.Name = "m_txt_gia_tri_chuyen_nhuong_thuc_te";
             this.m_txt_gia_tri_chuyen_nhuong_thuc_te.Size = new System.Drawing.Size(136, 20);
             this.m_txt_gia_tri_chuyen_nhuong_thuc_te.TabIndex = 18;
@@ -1408,7 +1412,7 @@
             // m_txt_gia_tri_chuyen_nhuong
             // 
             this.m_txt_gia_tri_chuyen_nhuong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_txt_gia_tri_chuyen_nhuong.Location = new System.Drawing.Point(438, 38);
+            this.m_txt_gia_tri_chuyen_nhuong.Location = new System.Drawing.Point(425, 38);
             this.m_txt_gia_tri_chuyen_nhuong.Name = "m_txt_gia_tri_chuyen_nhuong";
             this.m_txt_gia_tri_chuyen_nhuong.ReadOnly = true;
             this.m_txt_gia_tri_chuyen_nhuong.Size = new System.Drawing.Size(136, 20);
@@ -1419,7 +1423,7 @@
             // m_txt_nguoi_duyet
             // 
             this.m_txt_nguoi_duyet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_txt_nguoi_duyet.Location = new System.Drawing.Point(438, 144);
+            this.m_txt_nguoi_duyet.Location = new System.Drawing.Point(425, 144);
             this.m_txt_nguoi_duyet.Name = "m_txt_nguoi_duyet";
             this.m_txt_nguoi_duyet.ReadOnly = true;
             this.m_txt_nguoi_duyet.Size = new System.Drawing.Size(136, 20);
@@ -1450,7 +1454,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(604, 149);
+            this.label32.Location = new System.Drawing.Point(612, 147);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(55, 13);
             this.label32.TabIndex = 39;
@@ -1459,7 +1463,7 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(596, 41);
+            this.label37.Location = new System.Drawing.Point(295, 95);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(70, 13);
             this.label37.TabIndex = 39;
@@ -1468,7 +1472,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(306, 149);
+            this.label30.Location = new System.Drawing.Point(293, 149);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(64, 13);
             this.label30.TabIndex = 39;
@@ -1477,7 +1481,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(306, 44);
+            this.label27.Location = new System.Drawing.Point(293, 44);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(111, 13);
             this.label27.TabIndex = 39;
@@ -1512,6 +1516,24 @@
             this.m_gru_thong_tin_khach_hang.TabIndex = 2;
             this.m_gru_thong_tin_khach_hang.TabStop = false;
             this.m_gru_thong_tin_khach_hang.Text = "Thông tin khách hàng";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(567, 41);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(30, 13);
+            this.label42.TabIndex = 59;
+            this.label42.Text = "VNĐ";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(567, 99);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(30, 13);
+            this.label43.TabIndex = 59;
+            this.label43.Text = "VNĐ";
             // 
             // f600_giao_dich_chuyen_nhuong
             // 
@@ -1672,6 +1694,8 @@
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.TextBox m_txt_ben_mua_chuc_vu_ng_dai_dien;
         private System.Windows.Forms.Label m_lbl_phi_gd_max_min;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label43;
 
 
     }
