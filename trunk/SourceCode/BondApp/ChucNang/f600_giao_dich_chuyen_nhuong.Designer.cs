@@ -361,6 +361,7 @@
             this.m_txt_ma_trai_phieu.Name = "m_txt_ma_trai_phieu";
             this.m_txt_ma_trai_phieu.Size = new System.Drawing.Size(136, 20);
             this.m_txt_ma_trai_phieu.TabIndex = 1;
+            this.m_txt_ma_trai_phieu.TabStop = false;
             // 
             // label22
             // 
@@ -749,6 +750,7 @@
             this.m_txt_so_cmnd_dkkd.ReadOnly = true;
             this.m_txt_so_cmnd_dkkd.Size = new System.Drawing.Size(140, 20);
             this.m_txt_so_cmnd_dkkd.TabIndex = 3;
+            this.m_txt_so_cmnd_dkkd.TabStop = false;
             // 
             // m_txt_chuc_vu_ng_dai_dien
             // 
@@ -1065,6 +1067,7 @@
             this.m_txt_ben_mua_cmnd.ReadOnly = true;
             this.m_txt_ben_mua_cmnd.Size = new System.Drawing.Size(140, 20);
             this.m_txt_ben_mua_cmnd.TabIndex = 9;
+            this.m_txt_ben_mua_cmnd.TabStop = false;
             // 
             // m_txt_ben_mua_chuc_vu_ng_dai_dien
             // 
