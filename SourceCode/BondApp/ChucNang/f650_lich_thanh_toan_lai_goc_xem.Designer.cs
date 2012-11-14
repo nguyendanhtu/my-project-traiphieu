@@ -152,7 +152,7 @@
             // m_lbl_ngay_dao_han
             // 
             this.m_lbl_ngay_dao_han.AutoSize = true;
-            this.m_lbl_ngay_dao_han.Location = new System.Drawing.Point(582, 53);
+            this.m_lbl_ngay_dao_han.Location = new System.Drawing.Point(600, 53);
             this.m_lbl_ngay_dao_han.Name = "m_lbl_ngay_dao_han";
             this.m_lbl_ngay_dao_han.Size = new System.Drawing.Size(75, 13);
             this.m_lbl_ngay_dao_han.TabIndex = 38;
@@ -170,7 +170,7 @@
             // m_lbl_tong_gia_tri_trai_phieu
             // 
             this.m_lbl_tong_gia_tri_trai_phieu.AutoSize = true;
-            this.m_lbl_tong_gia_tri_trai_phieu.Location = new System.Drawing.Point(563, 79);
+            this.m_lbl_tong_gia_tri_trai_phieu.Location = new System.Drawing.Point(569, 79);
             this.m_lbl_tong_gia_tri_trai_phieu.Name = "m_lbl_tong_gia_tri_trai_phieu";
             this.m_lbl_tong_gia_tri_trai_phieu.Size = new System.Drawing.Size(106, 13);
             this.m_lbl_tong_gia_tri_trai_phieu.TabIndex = 40;
@@ -179,7 +179,7 @@
             // m_lbl_ky_tinh_lai
             // 
             this.m_lbl_ky_tinh_lai.AutoSize = true;
-            this.m_lbl_ky_tinh_lai.Location = new System.Drawing.Point(352, 110);
+            this.m_lbl_ky_tinh_lai.Location = new System.Drawing.Point(352, 104);
             this.m_lbl_ky_tinh_lai.Name = "m_lbl_ky_tinh_lai";
             this.m_lbl_ky_tinh_lai.Size = new System.Drawing.Size(73, 13);
             this.m_lbl_ky_tinh_lai.TabIndex = 41;
@@ -281,7 +281,7 @@
             // m_txt_ky_tinh_lai
             // 
             this.m_txt_ky_tinh_lai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_txt_ky_tinh_lai.Location = new System.Drawing.Point(431, 106);
+            this.m_txt_ky_tinh_lai.Location = new System.Drawing.Point(431, 100);
             this.m_txt_ky_tinh_lai.Name = "m_txt_ky_tinh_lai";
             this.m_txt_ky_tinh_lai.ReadOnly = true;
             this.m_txt_ky_tinh_lai.Size = new System.Drawing.Size(69, 20);
@@ -343,7 +343,7 @@
             this.m_cbo_don_vi_ky_tinh_lai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_don_vi_ky_tinh_lai.Enabled = false;
             this.m_cbo_don_vi_ky_tinh_lai.FormattingEnabled = true;
-            this.m_cbo_don_vi_ky_tinh_lai.Location = new System.Drawing.Point(506, 107);
+            this.m_cbo_don_vi_ky_tinh_lai.Location = new System.Drawing.Point(506, 101);
             this.m_cbo_don_vi_ky_tinh_lai.Name = "m_cbo_don_vi_ky_tinh_lai";
             this.m_cbo_don_vi_ky_tinh_lai.Size = new System.Drawing.Size(55, 21);
             this.m_cbo_don_vi_ky_tinh_lai.TabIndex = 59;
