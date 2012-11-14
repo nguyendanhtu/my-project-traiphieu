@@ -986,6 +986,28 @@ public class US_V_DM_TRAI_PHIEU : US_Object
     {
         pm_objDR["NGAN_HANG_THAM_CHIEU_LS"] = System.Convert.DBNull;
     }
+
+    public decimal dcSO_TRAI_PHIEU_TRAI_CHU_DA_SO_HUU
+    {
+        get
+        {
+            return CNull.RowNVLDecimal(pm_objDR, "SO_TRAI_PHIEU_TRAI_CHU_DA_SO_HUU", IPConstants.c_DefaultDecimal);
+        }
+        set
+        {
+            pm_objDR["SO_TRAI_PHIEU_TRAI_CHU_DA_SO_HUU"] = value;
+        }
+    }
+
+    public bool IsSO_TRAI_PHIEU_TRAI_CHU_DA_SO_HUUNull()
+    {
+        return pm_objDR.IsNull("SO_TRAI_PHIEU_TRAI_CHU_DA_SO_HUU");
+    }
+
+    public void SetSO_TRAI_PHIEU_TRAI_CHU_DA_SO_HUUNull()
+    {
+        pm_objDR["SO_TRAI_PHIEU_TRAI_CHU_DA_SO_HUU"] = System.Convert.DBNull;
+    }
     #endregion
 
 
