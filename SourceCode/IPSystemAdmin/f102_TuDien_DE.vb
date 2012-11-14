@@ -48,14 +48,14 @@ Public Class f102_TuDien_DE
     Friend WithEvents m_cmdChapNhan As System.Windows.Forms.Button
     Friend WithEvents m_cmdHuyBo As System.Windows.Forms.Button
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.Label2 = New System.Windows.Forms.Label
-        Me.Label3 = New System.Windows.Forms.Label
-        Me.txtMaTuDien = New System.Windows.Forms.TextBox
-        Me.txtTenNgan = New System.Windows.Forms.TextBox
-        Me.txtTen = New System.Windows.Forms.TextBox
-        Me.m_cmdChapNhan = New System.Windows.Forms.Button
-        Me.m_cmdHuyBo = New System.Windows.Forms.Button
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtMaTuDien = New System.Windows.Forms.TextBox()
+        Me.txtTenNgan = New System.Windows.Forms.TextBox()
+        Me.txtTen = New System.Windows.Forms.TextBox()
+        Me.m_cmdChapNhan = New System.Windows.Forms.Button()
+        Me.m_cmdHuyBo = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -85,7 +85,7 @@ Public Class f102_TuDien_DE
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(108, 24)
         Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Ghi chú:"
+        Me.Label3.Text = "Tên:"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'txtMaTuDien
@@ -96,7 +96,6 @@ Public Class f102_TuDien_DE
         Me.txtMaTuDien.Name = "txtMaTuDien"
         Me.txtMaTuDien.Size = New System.Drawing.Size(128, 22)
         Me.txtMaTuDien.TabIndex = 3
-        Me.txtMaTuDien.Text = ""
         '
         'txtTenNgan
         '
@@ -106,7 +105,6 @@ Public Class f102_TuDien_DE
         Me.txtTenNgan.Name = "txtTenNgan"
         Me.txtTenNgan.Size = New System.Drawing.Size(336, 22)
         Me.txtTenNgan.TabIndex = 4
-        Me.txtTenNgan.Text = ""
         '
         'txtTen
         '
@@ -117,7 +115,6 @@ Public Class f102_TuDien_DE
         Me.txtTen.Name = "txtTen"
         Me.txtTen.Size = New System.Drawing.Size(336, 104)
         Me.txtTen.TabIndex = 5
-        Me.txtTen.Text = ""
         '
         'm_cmdChapNhan
         '
@@ -155,6 +152,7 @@ Public Class f102_TuDien_DE
         Me.Name = "f102_TuDien_DE"
         Me.Text = "M102 - Cập nhật từ điển"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
