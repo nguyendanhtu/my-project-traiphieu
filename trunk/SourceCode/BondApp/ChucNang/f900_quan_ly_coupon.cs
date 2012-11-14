@@ -191,13 +191,13 @@ namespace BondApp.ChucNang
                 switch (m_mod)
                 {
                     case e_Mod.TAT_CA:
-                        m_us.FillDatasetByIDTraiPhieuAndNgayChotLai(m_ds, m_us_v_trai_phieu.dcID, CIPConvert.ToDatetime(m_txt_ngay_chot.Text),"A");
+                        m_us.FillDatasetByIDTraiPhieuByKyTLByTrangThai(m_ds, m_us_v_trai_phieu.dcID, CIPConvert.ToDecimal(m_cbo_ky_tinh_lai.SelectedItem), "A");
                         break;
                     case e_Mod.DA_TRA:
-                        m_us.FillDatasetByIDTraiPhieuAndNgayChotLai(m_ds, m_us_v_trai_phieu.dcID, CIPConvert.ToDatetime(m_txt_ngay_chot.Text),"Y");
+                        m_us.FillDatasetByIDTraiPhieuByKyTLByTrangThai(m_ds, m_us_v_trai_phieu.dcID, CIPConvert.ToDecimal(m_cbo_ky_tinh_lai.SelectedItem), "Y");
                         break;
                     case e_Mod.CHUA_TRA:
-                        m_us.FillDatasetByIDTraiPhieuAndNgayChotLai(m_ds, m_us_v_trai_phieu.dcID, CIPConvert.ToDatetime(m_txt_ngay_chot.Text),"N");
+                        m_us.FillDatasetByIDTraiPhieuByKyTLByTrangThai(m_ds, m_us_v_trai_phieu.dcID, CIPConvert.ToDecimal(m_cbo_ky_tinh_lai.SelectedItem), "N");
                         break;
                 }
             }
