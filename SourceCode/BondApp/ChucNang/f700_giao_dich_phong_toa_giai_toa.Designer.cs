@@ -763,11 +763,13 @@
             // m_lbl_khoan_dau_tu
             // 
             this.m_lbl_khoan_dau_tu.AutoSize = true;
-            this.m_lbl_khoan_dau_tu.Location = new System.Drawing.Point(287, 149);
+            this.m_lbl_khoan_dau_tu.Location = new System.Drawing.Point(285, 148);
             this.m_lbl_khoan_dau_tu.Name = "m_lbl_khoan_dau_tu";
-            this.m_lbl_khoan_dau_tu.Size = new System.Drawing.Size(131, 13);
+            this.m_lbl_khoan_dau_tu.Size = new System.Drawing.Size(133, 17);
             this.m_lbl_khoan_dau_tu.TabIndex = 20;
             this.m_lbl_khoan_dau_tu.Text = "Cầm cố cho khoản đầu tư";
+            this.m_lbl_khoan_dau_tu.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.m_lbl_khoan_dau_tu.UseCompatibleTextRendering = true;
             // 
             // m_txt_khoan_dau_tu
             // 
