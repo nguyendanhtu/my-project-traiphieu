@@ -185,6 +185,7 @@ namespace BondApp.DanhMuc
                 m_txt_sl_da_phong_toa.Text = CIPConvert.ToStr(ip_us_trai_chu.dcTONG_SO_DU - ip_us_trai_chu.dcSO_DU_KHA_DUNG, "#,###");
             }
             m_txt_so_trai_phieu_so_huu.Text = CIPConvert.ToStr(ip_us_trai_chu.dcSO_LUONG_TP_SO_HUU_BAN_DAU, "#,###");
+            m_dat_ngay_so_huu_trai_phieu.Value = ip_us_trai_chu.datNGAY_SO_HUU_TRAI_PHIEU;
             m_txt_ghi_chu_1.Text = ip_us_trai_chu.strGHI_CHU1;
             m_txt_ghi_chu_2.Text = ip_us_trai_chu.strGHI_CHU2;
             m_txt_ghi_chu_3.Text = ip_us_trai_chu.strGHI_CHU3;
