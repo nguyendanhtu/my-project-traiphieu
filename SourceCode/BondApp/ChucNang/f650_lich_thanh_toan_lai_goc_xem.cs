@@ -149,10 +149,7 @@ namespace BondApp
                     m_cmd_thong_bao_tien_lai.Visible = false;
                     m_cmd_thong_bao_ls.Visible = true;
                     m_cmd_tra_goc.Visible = false;
-                    m_cmd_tra_lai.Visible = false;
-                    m_cmd_insert.Visible = true;
-                    m_cmd_update.Visible = true;
-                    m_cmd_delete.Visible = true;
+                    m_cmd_tra_lai.Visible = false;                    
                     m_cmd_cap_nhat_lai_suat.Visible = true;
                     m_cmd_thong_bao_dot_thanh_toan_lai_trai_phieu.Visible = false;
                     break;
@@ -176,10 +173,7 @@ namespace BondApp
                     m_cmd_thong_bao_tien_lai.Visible = false;
                     m_cmd_thong_bao_ls.Visible = true;
                     m_cmd_tra_goc.Visible = false;
-                    m_cmd_tra_lai.Visible = false;
-                    m_cmd_insert.Visible = false;
-                    m_cmd_update.Visible = false;
-                    m_cmd_delete.Visible = false;
+                    m_cmd_tra_lai.Visible = false;                   
                     m_cmd_cap_nhat_lai_suat.Visible = false;
                     m_cmd_thong_bao_dot_thanh_toan_lai_trai_phieu.Visible = false;
                     break;
@@ -191,10 +185,7 @@ namespace BondApp
                     m_cmd_thong_bao_ls.Visible = false;
                     m_cmd_thong_bao_tien_lai.Visible = true;
                     m_cmd_tra_goc.Visible = false;
-                    m_cmd_tra_lai.Visible = false;
-                    m_cmd_insert.Visible = false;
-                    m_cmd_update.Visible = false;
-                    m_cmd_delete.Visible = false;
+                    m_cmd_tra_lai.Visible = false;                    
                     m_cmd_cap_nhat_lai_suat.Visible = false;
                     m_cmd_thong_bao_dot_thanh_toan_lai_trai_phieu.Visible = false;
                     break;
@@ -206,10 +197,7 @@ namespace BondApp
                     m_cmd_thong_bao_ls.Visible = false;
                     m_cmd_thong_bao_tien_lai.Visible = false;
                     m_cmd_tra_goc.Visible = false;
-                    m_cmd_tra_lai.Visible = false;
-                    m_cmd_insert.Visible = false;
-                    m_cmd_update.Visible = false;
-                    m_cmd_delete.Visible = false;
+                    m_cmd_tra_lai.Visible = false;                    
                     m_cmd_cap_nhat_lai_suat.Visible = false;
                     m_cmd_thong_bao_dot_thanh_toan_lai_trai_phieu.Visible = false;
                     break;
@@ -221,10 +209,7 @@ namespace BondApp
                     m_cmd_thong_bao_ls.Visible = false;
                     m_cmd_thong_bao_tien_lai.Visible = false;
                     m_cmd_tra_goc.Visible = false;
-                    m_cmd_tra_lai.Visible = false;
-                    m_cmd_insert.Visible = false;
-                    m_cmd_update.Visible = false;
-                    m_cmd_delete.Visible = false;
+                    m_cmd_tra_lai.Visible = false;                    
                     m_cmd_cap_nhat_lai_suat.Visible = false;
                     m_cmd_thong_bao_dot_thanh_toan_lai_trai_phieu.Visible = true;
                     break;
@@ -237,6 +222,10 @@ namespace BondApp
             m_txt_ma_trai_phieu.Text = m_us_v_trai_phieu.strMA_TRAI_PHIEU;
             m_txt_ten_trai_phieu.Text = m_us_v_trai_phieu.strTEN_TRAI_PHIEU;
             m_txt_menh_gia.Text = CIPConvert.ToStr(m_us_v_trai_phieu.dcMENH_GIA, "#,###");
+            if (m_us_v_trai_phieu.dcID_DV_KY_HAN == ID_DON_VI_KY_HAN.THANG)
+                m_lbl_don_vi_kh.Text = "tháng";
+            else
+                m_lbl_don_vi_kh.Text = "năm";
             m_txt_ky_han.Text = CIPConvert.ToStr(m_us_v_trai_phieu.dcKY_HAN, "#,###");
             try
             {
@@ -255,6 +244,11 @@ namespace BondApp
             m_txt_lai_suat.Text = CIPConvert.ToStr(m_us_v_trai_phieu.dcLAI_SUAT_DEFAULT, "p");
             m_txt_ky_tinh_lai.Text = CIPConvert.ToStr(m_us_v_trai_phieu.dcKY_TRA_LAI, "#,###");
             m_cbo_don_vi_ky_tinh_lai.SelectedValue = m_us_v_trai_phieu.dcID_DV_KY_TRA_LAI;
+            m_txt_ky_dieu_chinh_ls.Text = CIPConvert.ToStr(m_us_v_trai_phieu.dcKY_DIEU_CHINH_LS);
+            if (m_us_v_trai_phieu.dcID_DV_DIEU_CHINH_LS == ID_DON_VI_KY_HAN.THANG)
+                m_lbl_dv_ky_dieu_chinh_ls.Text = "tháng";
+            else
+                m_lbl_dv_ky_dieu_chinh_ls.Text = "năm";
         }
 
         private void load_data_2_cbo_dv_ky_tinh_lai()
@@ -531,8 +525,7 @@ namespace BondApp
         private void set_define_events()
         {
             this.Load += new EventHandler(f650_lich_thanh_toan_lai_goc_xem_Load);
-            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-            m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);            
             this.m_cmd_generate.Click += new System.EventHandler(this.m_cmd_generate_Click);
             m_cmd_thong_bao_ls.Click += new EventHandler(m_cmd_thong_bao_ls_Click);
             m_cmd_chon_trai_phieu.Click += new EventHandler(m_cmd_chon_trai_phieu_Click);
