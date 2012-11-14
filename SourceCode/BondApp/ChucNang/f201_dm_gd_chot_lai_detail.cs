@@ -1109,7 +1109,7 @@ namespace BondApp
                         m_fg.Visible = true;
                         m_cmd_gen.Visible = true;
                         m_cmd_save.Visible = false;
-                        m_cmd_update.Visible = true;
+                        m_cmd_update.Visible = false;
                         m_cmd_duyet.Visible = true;
                         m_gbox_thong_tin_tp.Enabled = false;
                         break;
