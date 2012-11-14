@@ -1003,7 +1003,7 @@ namespace BondApp
                 v_so_ngay_truoc_tt,
                 v_us_dm_dot_phat_hanh.strNGAY_LAM_VIEC_HAI_SAU_YN);
             if (v_ds_dm_ng_lam_viec.DM_NGAY_LAM_VIEC == null || v_ds_dm_ng_lam_viec.DM_NGAY_LAM_VIEC.Count < v_so_ngay_truoc_tt) return ip_ngay_thanh_toan;
-            return  CIPConvert.ToDatetime(CIPConvert.ToStr(CIPConvert.ToStr(v_ds_dm_ng_lam_viec.DM_NGAY_LAM_VIEC.Rows[(int)v_so_ngay_truoc_tt - 1][DM_NGAY_LAM_VIEC.NGAY])));
+            return  CIPConvert.ToDatetime(CIPConvert.ToStr((v_ds_dm_ng_lam_viec.DM_NGAY_LAM_VIEC.Rows[(int)v_so_ngay_truoc_tt - 1][DM_NGAY_LAM_VIEC.NGAY]));
         }
 
         private DateTime get_ngay_thanh_toan_thuc_te(DateTime ip_ngay_thanh_toan)
@@ -1017,7 +1017,7 @@ namespace BondApp
                 m_us_v_dm_trai_phieu.strTHANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN,
                 v_us_dm_dot_phat_hanh.strNGAY_LAM_VIEC_HAI_SAU_YN);
             if (v_ds_dm_ng_lam_viec.DM_NGAY_LAM_VIEC == null || v_ds_dm_ng_lam_viec.DM_NGAY_LAM_VIEC.Count == 0) return ip_ngay_thanh_toan;
-            return CIPConvert.ToDatetime(v_ds_dm_ng_lam_viec.DM_NGAY_LAM_VIEC.Rows[0][DM_NGAY_LAM_VIEC.NGAY]);
+            return CIPConvert.ToDatetime(CIPConvert.ToStr( v_ds_dm_ng_lam_viec.DM_NGAY_LAM_VIEC.Rows[0][DM_NGAY_LAM_VIEC.NGAY]));
         }
 #endregion
         #region Events
