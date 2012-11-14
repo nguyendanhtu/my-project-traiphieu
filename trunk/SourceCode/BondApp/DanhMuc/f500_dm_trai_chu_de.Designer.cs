@@ -90,6 +90,8 @@
             this.m_txt_ma_trai_chu = new System.Windows.Forms.TextBox();
             this.m_lbl_dien_thoai = new System.Windows.Forms.Label();
             this.m_lbl_tru_so_chinh = new System.Windows.Forms.Label();
+            this.m_txt_so_luong_da_so_huu = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
@@ -103,7 +105,7 @@
             this.m_lbl_title.Name = "m_lbl_title";
             this.m_lbl_title.Size = new System.Drawing.Size(970, 40);
             this.m_lbl_title.TabIndex = 60;
-            this.m_lbl_title.Text = "THÔNG TIN TRÁI CHỦ";
+            this.m_lbl_title.Text = "F510 - Thông tin trái chủ";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox1
@@ -124,7 +126,9 @@
             this.groupBox1.Controls.Add(this.m_txt_nguoi_dai_dien);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.m_txt_chuc_vu);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.m_lbl_so_kha_dung);
+            this.groupBox1.Controls.Add(this.m_txt_so_luong_da_so_huu);
             this.groupBox1.Controls.Add(this.m_txt_so_du_kha_dung);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.m_txt_ten_trai_phieu);
@@ -712,6 +716,26 @@
             this.m_lbl_tru_so_chinh.TabIndex = 19;
             this.m_lbl_tru_so_chinh.Text = "Số tài khoản";
             // 
+            // m_txt_so_luong_da_so_huu
+            // 
+            this.m_txt_so_luong_da_so_huu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.m_txt_so_luong_da_so_huu.Location = new System.Drawing.Point(891, 247);
+            this.m_txt_so_luong_da_so_huu.Name = "m_txt_so_luong_da_so_huu";
+            this.m_txt_so_luong_da_so_huu.ReadOnly = true;
+            this.m_txt_so_luong_da_so_huu.Size = new System.Drawing.Size(67, 20);
+            this.m_txt_so_luong_da_so_huu.TabIndex = 40;
+            this.m_txt_so_luong_da_so_huu.TabStop = false;
+            this.m_txt_so_luong_da_so_huu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(748, 250);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(128, 13);
+            this.label5.TabIndex = 41;
+            this.label5.Text = "Số lượng đã được sở hữu";
+            // 
             // f500_dm_trai_chu_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -790,5 +814,7 @@
         internal SIS.Controls.Button.SiSButton m_cmd_duyet;
         private System.Windows.Forms.DateTimePicker m_dat_ngay_so_huu_trai_phieu;
         private System.Windows.Forms.Label m_lbl_ngay_duyet_lbl;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox m_txt_so_luong_da_so_huu;
     }
 }
