@@ -179,11 +179,11 @@
             // m_lbl_ky_tinh_lai
             // 
             this.m_lbl_ky_tinh_lai.AutoSize = true;
-            this.m_lbl_ky_tinh_lai.Location = new System.Drawing.Point(371, 109);
+            this.m_lbl_ky_tinh_lai.Location = new System.Drawing.Point(352, 110);
             this.m_lbl_ky_tinh_lai.Name = "m_lbl_ky_tinh_lai";
-            this.m_lbl_ky_tinh_lai.Size = new System.Drawing.Size(54, 13);
+            this.m_lbl_ky_tinh_lai.Size = new System.Drawing.Size(73, 13);
             this.m_lbl_ky_tinh_lai.TabIndex = 41;
-            this.m_lbl_ky_tinh_lai.Text = "Kỳ tính lãi";
+            this.m_lbl_ky_tinh_lai.Text = "Kỳ thanh toán";
             // 
             // m_lbl_lai_suat
             // 
