@@ -37,6 +37,7 @@ namespace BondApp.ChucNang
         US_V_DM_TRAI_PHIEU m_us_v_trai_phieu;
         DS_DM_TRAI_CHU_IMP m_ds_trai_chu_imp = new DS_DM_TRAI_CHU_IMP();
         decimal m_dc_ca_nhan_trong_nuoc, m_dc_ca_nhan_nuoc_ngoai, m_dc_to_chuc_trong_nuoc, m_dc_to_chuc_nuoc_ngoai;
+        US_V_HT_LOG_TRUY_CAP m_us_v_ht_log_truy_cap = new US_V_HT_LOG_TRUY_CAP();
         // cờ dùng để xác định dữ liệu có ok hay ko? 0: ko ok; 1: ok
         int m_i_flag = 0;
         #endregion
@@ -77,6 +78,25 @@ namespace BondApp.ChucNang
             m_lbl_header.Font = new Font("Arial", 16);
             m_lbl_header.ForeColor = Color.DarkRed;
             m_lbl_header.TextAlign = ContentAlignment.MiddleCenter;
+        }
+        private void ghi_log_he_thong()
+        {
+            /* Thông tin chung*/
+            m_us_v_ht_log_truy_cap.dcID_DANG_NHAP = CAppContext_201.getCurrentUserID();
+            m_us_v_ht_log_truy_cap.datTHOI_GIAN = DateTime.Now;
+            m_us_v_ht_log_truy_cap.strDOI_TUONG_THAO_TAC = LOG_DOI_TUONG_TAC_DONG.DM_TRAI_CHU;
+            m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.IMPORT;
+            m_us_v_ht_log_truy_cap.strMO_TA = "Import " + LOG_DOI_TUONG_TAC_DONG.DM_TRAI_CHU;
+            
+            // ghi log hệ thống
+            try
+            {
+                m_us_v_ht_log_truy_cap.Insert();
+            }
+            catch
+            {
+                BaseMessages.MsgBox_Infor("Đã xảy ra lỗi trong quá trình ghi log hệ thống");
+            }
         }
         private void set_init_load_form()
         {
@@ -323,6 +343,7 @@ namespace BondApp.ChucNang
                                                     , m_us_v_trai_phieu.dcID);
                 }
                 v_us_trai_chu_imp.CommitTransaction();
+                ghi_log_he_thong();
                 BaseMessages.MsgBox_Infor("Đã import trái chủ thành công");
             }
             catch (Exception v_e)
