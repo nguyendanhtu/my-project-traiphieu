@@ -568,5 +568,10 @@ namespace BondUS
         #endregion
 
 
+
+        public void fill_dataset_byIdtraichu(DS_GD_PHONG_GIAI_TOA ip_ds, decimal ip_dc_id_trai_chu)
+        {
+            base.FillDataset(ip_ds, " WHERE ID_TRAI_CHU = " + ip_dc_id_trai_chu);
+        }
     }
 }
