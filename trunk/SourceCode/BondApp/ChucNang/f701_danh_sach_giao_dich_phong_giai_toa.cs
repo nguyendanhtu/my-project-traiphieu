@@ -647,7 +647,7 @@ namespace BondApp
                     vf700.display_duyet_phong_toa(m_us);
                     break;
             }
-            //this.Close();
+            load_data_2_grid();
 
         }
         private void view_gd_phong_giai_toa()
