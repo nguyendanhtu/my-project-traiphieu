@@ -7,8 +7,8 @@ using System.Resources;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 //
-[assembly: AssemblyTitle("Quản lý phát hành trái phiếu")]
-[assembly: AssemblyDescription("Hệ thống quản lý phát hành trái phiếu")]
+[assembly: AssemblyTitle("Quản lý phát hành trái phiếu - VietinBankSC")]
+[assembly: AssemblyDescription("Hệ thống quản lý phát hành trái phiếu - VietinBankSC")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("VietinBankSC")]
 [assembly: AssemblyProduct("QuanLyPhatHanhTraiPhieu")]
