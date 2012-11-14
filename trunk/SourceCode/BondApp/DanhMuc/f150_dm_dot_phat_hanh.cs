@@ -246,7 +246,7 @@ namespace BondApp
             this.m_lbl_title.Name = "m_lbl_title";
             this.m_lbl_title.Size = new System.Drawing.Size(884, 40);
             this.m_lbl_title.TabIndex = 64;
-            this.m_lbl_title.Text = "DANH SÁCH ĐỢT PHÁT HÀNH";
+            this.m_lbl_title.Text = "F150 - Danh sách đợt phát hành";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_gru_tim_kiem
