@@ -114,7 +114,7 @@
             // 
             // m_txt_nguoi_dai_dien
             // 
-            this.m_txt_nguoi_dai_dien.Location = new System.Drawing.Point(146, 118);
+            this.m_txt_nguoi_dai_dien.Location = new System.Drawing.Point(146, 132);
             this.m_txt_nguoi_dai_dien.Name = "m_txt_nguoi_dai_dien";
             this.m_txt_nguoi_dai_dien.Size = new System.Drawing.Size(173, 20);
             this.m_txt_nguoi_dai_dien.TabIndex = 3;
@@ -122,7 +122,7 @@
             // m_lbl_nguoi_dai_dien
             // 
             this.m_lbl_nguoi_dai_dien.AutoSize = true;
-            this.m_lbl_nguoi_dai_dien.Location = new System.Drawing.Point(64, 121);
+            this.m_lbl_nguoi_dai_dien.Location = new System.Drawing.Point(64, 135);
             this.m_lbl_nguoi_dai_dien.Name = "m_lbl_nguoi_dai_dien";
             this.m_lbl_nguoi_dai_dien.Size = new System.Drawing.Size(76, 13);
             this.m_lbl_nguoi_dai_dien.TabIndex = 15;
@@ -130,7 +130,7 @@
             // 
             // m_txt_chuc_danh
             // 
-            this.m_txt_chuc_danh.Location = new System.Drawing.Point(146, 144);
+            this.m_txt_chuc_danh.Location = new System.Drawing.Point(146, 158);
             this.m_txt_chuc_danh.Name = "m_txt_chuc_danh";
             this.m_txt_chuc_danh.Size = new System.Drawing.Size(173, 20);
             this.m_txt_chuc_danh.TabIndex = 5;
@@ -138,7 +138,7 @@
             // m_lbl_chuc_danh
             // 
             this.m_lbl_chuc_danh.AutoSize = true;
-            this.m_lbl_chuc_danh.Location = new System.Drawing.Point(81, 147);
+            this.m_lbl_chuc_danh.Location = new System.Drawing.Point(81, 161);
             this.m_lbl_chuc_danh.Name = "m_lbl_chuc_danh";
             this.m_lbl_chuc_danh.Size = new System.Drawing.Size(59, 13);
             this.m_lbl_chuc_danh.TabIndex = 17;
@@ -146,7 +146,7 @@
             // 
             // m_txt_tru_so_chinh
             // 
-            this.m_txt_tru_so_chinh.Location = new System.Drawing.Point(422, 118);
+            this.m_txt_tru_so_chinh.Location = new System.Drawing.Point(422, 132);
             this.m_txt_tru_so_chinh.Name = "m_txt_tru_so_chinh";
             this.m_txt_tru_so_chinh.Size = new System.Drawing.Size(450, 20);
             this.m_txt_tru_so_chinh.TabIndex = 4;
@@ -154,7 +154,7 @@
             // m_lbl_tru_so_chinh
             // 
             this.m_lbl_tru_so_chinh.AutoSize = true;
-            this.m_lbl_tru_so_chinh.Location = new System.Drawing.Point(348, 121);
+            this.m_lbl_tru_so_chinh.Location = new System.Drawing.Point(348, 135);
             this.m_lbl_tru_so_chinh.Name = "m_lbl_tru_so_chinh";
             this.m_lbl_tru_so_chinh.Size = new System.Drawing.Size(68, 13);
             this.m_lbl_tru_so_chinh.TabIndex = 19;
@@ -162,7 +162,7 @@
             // 
             // m_txt_dien_thoai
             // 
-            this.m_txt_dien_thoai.Location = new System.Drawing.Point(422, 144);
+            this.m_txt_dien_thoai.Location = new System.Drawing.Point(422, 158);
             this.m_txt_dien_thoai.Name = "m_txt_dien_thoai";
             this.m_txt_dien_thoai.Size = new System.Drawing.Size(140, 20);
             this.m_txt_dien_thoai.TabIndex = 6;
@@ -170,7 +170,7 @@
             // m_lbl_dien_thoai
             // 
             this.m_lbl_dien_thoai.AutoSize = true;
-            this.m_lbl_dien_thoai.Location = new System.Drawing.Point(361, 150);
+            this.m_lbl_dien_thoai.Location = new System.Drawing.Point(361, 164);
             this.m_lbl_dien_thoai.Name = "m_lbl_dien_thoai";
             this.m_lbl_dien_thoai.Size = new System.Drawing.Size(55, 13);
             this.m_lbl_dien_thoai.TabIndex = 21;
@@ -178,7 +178,7 @@
             // 
             // m_txt_fax
             // 
-            this.m_txt_fax.Location = new System.Drawing.Point(714, 144);
+            this.m_txt_fax.Location = new System.Drawing.Point(714, 158);
             this.m_txt_fax.Name = "m_txt_fax";
             this.m_txt_fax.Size = new System.Drawing.Size(158, 20);
             this.m_txt_fax.TabIndex = 7;
@@ -186,7 +186,7 @@
             // m_lbl_fax
             // 
             this.m_lbl_fax.AutoSize = true;
-            this.m_lbl_fax.Location = new System.Drawing.Point(684, 147);
+            this.m_lbl_fax.Location = new System.Drawing.Point(684, 161);
             this.m_lbl_fax.Name = "m_lbl_fax";
             this.m_lbl_fax.Size = new System.Drawing.Size(24, 13);
             this.m_lbl_fax.TabIndex = 23;
@@ -320,14 +320,17 @@
             // 
             // m_txt_ma_trai_chu
             // 
-            this.m_txt_ma_trai_chu.Location = new System.Drawing.Point(148, 19);
+            this.m_txt_ma_trai_chu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.m_txt_ma_trai_chu.Location = new System.Drawing.Point(148, 32);
             this.m_txt_ma_trai_chu.Name = "m_txt_ma_trai_chu";
+            this.m_txt_ma_trai_chu.ReadOnly = true;
             this.m_txt_ma_trai_chu.Size = new System.Drawing.Size(140, 20);
             this.m_txt_ma_trai_chu.TabIndex = 1;
+            this.m_txt_ma_trai_chu.TabStop = false;
             // 
             // m_cmd_chon_trai_chu
             // 
-            this.m_cmd_chon_trai_chu.Location = new System.Drawing.Point(294, 17);
+            this.m_cmd_chon_trai_chu.Location = new System.Drawing.Point(294, 30);
             this.m_cmd_chon_trai_chu.Name = "m_cmd_chon_trai_chu";
             this.m_cmd_chon_trai_chu.Size = new System.Drawing.Size(27, 23);
             this.m_cmd_chon_trai_chu.TabIndex = 2;
@@ -337,7 +340,7 @@
             // m_lbl_ma_trai_chu
             // 
             this.m_lbl_ma_trai_chu.AutoSize = true;
-            this.m_lbl_ma_trai_chu.Location = new System.Drawing.Point(82, 22);
+            this.m_lbl_ma_trai_chu.Location = new System.Drawing.Point(82, 35);
             this.m_lbl_ma_trai_chu.Name = "m_lbl_ma_trai_chu";
             this.m_lbl_ma_trai_chu.Size = new System.Drawing.Size(60, 13);
             this.m_lbl_ma_trai_chu.TabIndex = 0;
@@ -381,7 +384,7 @@
             // m_lbl_so_luong_kha_dung
             // 
             this.m_lbl_so_luong_kha_dung.AutoSize = true;
-            this.m_lbl_so_luong_kha_dung.Location = new System.Drawing.Point(321, 74);
+            this.m_lbl_so_luong_kha_dung.Location = new System.Drawing.Point(321, 87);
             this.m_lbl_so_luong_kha_dung.Name = "m_lbl_so_luong_kha_dung";
             this.m_lbl_so_luong_kha_dung.Size = new System.Drawing.Size(97, 13);
             this.m_lbl_so_luong_kha_dung.TabIndex = 13;
@@ -390,7 +393,7 @@
             // m_txt_so_luong_kha_dung
             // 
             this.m_txt_so_luong_kha_dung.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_txt_so_luong_kha_dung.Location = new System.Drawing.Point(424, 71);
+            this.m_txt_so_luong_kha_dung.Location = new System.Drawing.Point(424, 84);
             this.m_txt_so_luong_kha_dung.Name = "m_txt_so_luong_kha_dung";
             this.m_txt_so_luong_kha_dung.ReadOnly = true;
             this.m_txt_so_luong_kha_dung.Size = new System.Drawing.Size(140, 20);
@@ -401,7 +404,7 @@
             // m_lbl_so_luong_trai_phieu
             // 
             this.m_lbl_so_luong_trai_phieu.AutoSize = true;
-            this.m_lbl_so_luong_trai_phieu.Location = new System.Drawing.Point(47, 74);
+            this.m_lbl_so_luong_trai_phieu.Location = new System.Drawing.Point(47, 87);
             this.m_lbl_so_luong_trai_phieu.Name = "m_lbl_so_luong_trai_phieu";
             this.m_lbl_so_luong_trai_phieu.Size = new System.Drawing.Size(95, 13);
             this.m_lbl_so_luong_trai_phieu.TabIndex = 11;
@@ -410,7 +413,7 @@
             // m_txt_so_luong_trai_phieu
             // 
             this.m_txt_so_luong_trai_phieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_txt_so_luong_trai_phieu.Location = new System.Drawing.Point(148, 71);
+            this.m_txt_so_luong_trai_phieu.Location = new System.Drawing.Point(148, 84);
             this.m_txt_so_luong_trai_phieu.Name = "m_txt_so_luong_trai_phieu";
             this.m_txt_so_luong_trai_phieu.ReadOnly = true;
             this.m_txt_so_luong_trai_phieu.Size = new System.Drawing.Size(140, 20);
@@ -421,7 +424,7 @@
             // m_lbl_ngay_cap
             // 
             this.m_lbl_ngay_cap.AutoSize = true;
-            this.m_lbl_ngay_cap.Location = new System.Drawing.Point(657, 48);
+            this.m_lbl_ngay_cap.Location = new System.Drawing.Point(657, 61);
             this.m_lbl_ngay_cap.Name = "m_lbl_ngay_cap";
             this.m_lbl_ngay_cap.Size = new System.Drawing.Size(53, 13);
             this.m_lbl_ngay_cap.TabIndex = 9;
@@ -430,7 +433,7 @@
             // m_txt_ngay_cap
             // 
             this.m_txt_ngay_cap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_txt_ngay_cap.Location = new System.Drawing.Point(716, 45);
+            this.m_txt_ngay_cap.Location = new System.Drawing.Point(716, 58);
             this.m_txt_ngay_cap.Name = "m_txt_ngay_cap";
             this.m_txt_ngay_cap.ReadOnly = true;
             this.m_txt_ngay_cap.Size = new System.Drawing.Size(158, 20);
@@ -440,7 +443,7 @@
             // m_lbl_noi_cap
             // 
             this.m_lbl_noi_cap.AutoSize = true;
-            this.m_lbl_noi_cap.Location = new System.Drawing.Point(374, 48);
+            this.m_lbl_noi_cap.Location = new System.Drawing.Point(374, 61);
             this.m_lbl_noi_cap.Name = "m_lbl_noi_cap";
             this.m_lbl_noi_cap.Size = new System.Drawing.Size(44, 13);
             this.m_lbl_noi_cap.TabIndex = 7;
@@ -449,7 +452,7 @@
             // m_txt_noi_cap
             // 
             this.m_txt_noi_cap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_txt_noi_cap.Location = new System.Drawing.Point(424, 45);
+            this.m_txt_noi_cap.Location = new System.Drawing.Point(424, 58);
             this.m_txt_noi_cap.Name = "m_txt_noi_cap";
             this.m_txt_noi_cap.ReadOnly = true;
             this.m_txt_noi_cap.Size = new System.Drawing.Size(208, 20);
@@ -459,7 +462,7 @@
             // m_lbl_cmnd_dkkd
             // 
             this.m_lbl_cmnd_dkkd.AutoSize = true;
-            this.m_lbl_cmnd_dkkd.Location = new System.Drawing.Point(52, 48);
+            this.m_lbl_cmnd_dkkd.Location = new System.Drawing.Point(52, 61);
             this.m_lbl_cmnd_dkkd.Name = "m_lbl_cmnd_dkkd";
             this.m_lbl_cmnd_dkkd.Size = new System.Drawing.Size(90, 13);
             this.m_lbl_cmnd_dkkd.TabIndex = 5;
@@ -468,7 +471,7 @@
             // m_txt_so_cmnd_dkkd
             // 
             this.m_txt_so_cmnd_dkkd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_txt_so_cmnd_dkkd.Location = new System.Drawing.Point(148, 45);
+            this.m_txt_so_cmnd_dkkd.Location = new System.Drawing.Point(148, 58);
             this.m_txt_so_cmnd_dkkd.Name = "m_txt_so_cmnd_dkkd";
             this.m_txt_so_cmnd_dkkd.ReadOnly = true;
             this.m_txt_so_cmnd_dkkd.Size = new System.Drawing.Size(140, 20);
@@ -478,7 +481,7 @@
             // m_lbl_ten_khach_hang
             // 
             this.m_lbl_ten_khach_hang.AutoSize = true;
-            this.m_lbl_ten_khach_hang.Location = new System.Drawing.Point(332, 22);
+            this.m_lbl_ten_khach_hang.Location = new System.Drawing.Point(332, 35);
             this.m_lbl_ten_khach_hang.Name = "m_lbl_ten_khach_hang";
             this.m_lbl_ten_khach_hang.Size = new System.Drawing.Size(86, 13);
             this.m_lbl_ten_khach_hang.TabIndex = 3;
@@ -487,7 +490,7 @@
             // m_txt_ten_khach_hang
             // 
             this.m_txt_ten_khach_hang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_txt_ten_khach_hang.Location = new System.Drawing.Point(424, 19);
+            this.m_txt_ten_khach_hang.Location = new System.Drawing.Point(424, 32);
             this.m_txt_ten_khach_hang.Name = "m_txt_ten_khach_hang";
             this.m_txt_ten_khach_hang.ReadOnly = true;
             this.m_txt_ten_khach_hang.Size = new System.Drawing.Size(450, 20);

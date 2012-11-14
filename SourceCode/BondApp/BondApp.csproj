@@ -338,6 +338,12 @@
     <Compile Include="ChucNang\f701_danh_sach_giao_dich_phong_giai_toa.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ChucNang\f710_giao_dich_giai_toa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChucNang\f710_giao_dich_giai_toa.Designer.cs">
+      <DependentUpon>f710_giao_dich_giai_toa.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChucNang\f800_rpt_nhac_viec.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -524,6 +530,9 @@
     <EmbeddedResource Include="ChucNang\f701_danh_sach_giao_dich_phong_giai_toa.resx">
       <DependentUpon>f701_danh_sach_giao_dich_phong_giai_toa.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChucNang\f710_giao_dich_giai_toa.resx">
+      <DependentUpon>f710_giao_dich_giai_toa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f800_rpt_nhac_viec.resx">
       <DependentUpon>f800_rpt_nhac_viec.cs</DependentUpon>
