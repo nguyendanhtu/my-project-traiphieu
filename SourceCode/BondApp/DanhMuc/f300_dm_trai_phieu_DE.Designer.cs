@@ -500,6 +500,7 @@
             this.m_txt_tong_gia_tri.ReadOnly = true;
             this.m_txt_tong_gia_tri.Size = new System.Drawing.Size(120, 20);
             this.m_txt_tong_gia_tri.TabIndex = 71;
+            this.m_txt_tong_gia_tri.TabStop = false;
             this.m_txt_tong_gia_tri.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label14
@@ -759,6 +760,7 @@
             this.m_txt_ngay_phat_hanh.ReadOnly = true;
             this.m_txt_ngay_phat_hanh.Size = new System.Drawing.Size(130, 20);
             this.m_txt_ngay_phat_hanh.TabIndex = 44;
+            this.m_txt_ngay_phat_hanh.TabStop = false;
             this.m_txt_ngay_phat_hanh.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // m_txt_so_luong_phat_hanh
@@ -769,6 +771,7 @@
             this.m_txt_so_luong_phat_hanh.ReadOnly = true;
             this.m_txt_so_luong_phat_hanh.Size = new System.Drawing.Size(170, 20);
             this.m_txt_so_luong_phat_hanh.TabIndex = 44;
+            this.m_txt_so_luong_phat_hanh.TabStop = false;
             this.m_txt_so_luong_phat_hanh.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // m_txt_menh_gia
@@ -779,6 +782,7 @@
             this.m_txt_menh_gia.ReadOnly = true;
             this.m_txt_menh_gia.Size = new System.Drawing.Size(170, 20);
             this.m_txt_menh_gia.TabIndex = 44;
+            this.m_txt_menh_gia.TabStop = false;
             this.m_txt_menh_gia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // m_cmd_chon_dot_phat_hanh
@@ -798,6 +802,7 @@
             this.m_txt_ten_dv_phat_hanh.ReadOnly = true;
             this.m_txt_ten_dv_phat_hanh.Size = new System.Drawing.Size(459, 20);
             this.m_txt_ten_dv_phat_hanh.TabIndex = 0;
+            this.m_txt_ten_dv_phat_hanh.TabStop = false;
             // 
             // m_lbl_vnd
             // 
@@ -814,7 +819,7 @@
             this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat.Multiline = true;
             this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat.Name = "m_txt_ghi_chu_phuong_thuc_xd_lai_suat";
             this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat.Size = new System.Drawing.Size(565, 85);
-            this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat.TabIndex = 0;
+            this.m_txt_ghi_chu_phuong_thuc_xd_lai_suat.TabIndex = 5;
             // 
             // m_pnl_out_place_dm
             // 
