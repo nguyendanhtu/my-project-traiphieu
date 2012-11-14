@@ -36,7 +36,7 @@
             this.m_txt_so_trai_phieu_so_huu = new System.Windows.Forms.TextBox();
             this.m_lbl_so_luong_phong_toa = new System.Windows.Forms.Label();
             this.m_txt_sl_da_phong_toa = new System.Windows.Forms.TextBox();
-            this.m_dat_ngay_duyet = new System.Windows.Forms.DateTimePicker();
+            this.m_dat_ngay_so_huu_trai_phieu = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_ngay_duyet_lbl = new System.Windows.Forms.Label();
             this.m_dat_ngay_cap_cmt_nguoi_dai_dien = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
@@ -112,7 +112,7 @@
             this.groupBox1.Controls.Add(this.m_txt_so_trai_phieu_so_huu);
             this.groupBox1.Controls.Add(this.m_lbl_so_luong_phong_toa);
             this.groupBox1.Controls.Add(this.m_txt_sl_da_phong_toa);
-            this.groupBox1.Controls.Add(this.m_dat_ngay_duyet);
+            this.groupBox1.Controls.Add(this.m_dat_ngay_so_huu_trai_phieu);
             this.groupBox1.Controls.Add(this.m_lbl_ngay_duyet_lbl);
             this.groupBox1.Controls.Add(this.m_dat_ngay_cap_cmt_nguoi_dai_dien);
             this.groupBox1.Controls.Add(this.label11);
@@ -206,15 +206,14 @@
             this.m_txt_sl_da_phong_toa.TabStop = false;
             this.m_txt_sl_da_phong_toa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // m_dat_ngay_duyet
+            // m_dat_ngay_so_huu_trai_phieu
             // 
-            this.m_dat_ngay_duyet.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_ngay_duyet.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_ngay_duyet.Location = new System.Drawing.Point(486, 390);
-            this.m_dat_ngay_duyet.Name = "m_dat_ngay_duyet";
-            this.m_dat_ngay_duyet.Size = new System.Drawing.Size(115, 20);
-            this.m_dat_ngay_duyet.TabIndex = 23;
-            this.m_dat_ngay_duyet.Visible = false;
+            this.m_dat_ngay_so_huu_trai_phieu.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_so_huu_trai_phieu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_ngay_so_huu_trai_phieu.Location = new System.Drawing.Point(486, 390);
+            this.m_dat_ngay_so_huu_trai_phieu.Name = "m_dat_ngay_so_huu_trai_phieu";
+            this.m_dat_ngay_so_huu_trai_phieu.Size = new System.Drawing.Size(115, 20);
+            this.m_dat_ngay_so_huu_trai_phieu.TabIndex = 23;
             // 
             // m_lbl_ngay_duyet_lbl
             // 
@@ -224,14 +223,15 @@
             this.m_lbl_ngay_duyet_lbl.Size = new System.Drawing.Size(151, 13);
             this.m_lbl_ngay_duyet_lbl.TabIndex = 57;
             this.m_lbl_ngay_duyet_lbl.Text = "Ngày trái chủ sở hữu trái phiếu";
-            this.m_lbl_ngay_duyet_lbl.Visible = false;
             // 
             // m_dat_ngay_cap_cmt_nguoi_dai_dien
             // 
+            this.m_dat_ngay_cap_cmt_nguoi_dai_dien.Checked = false;
             this.m_dat_ngay_cap_cmt_nguoi_dai_dien.CustomFormat = "dd/MM/yyyy";
             this.m_dat_ngay_cap_cmt_nguoi_dai_dien.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_cap_cmt_nguoi_dai_dien.Location = new System.Drawing.Point(388, 207);
             this.m_dat_ngay_cap_cmt_nguoi_dai_dien.Name = "m_dat_ngay_cap_cmt_nguoi_dai_dien";
+            this.m_dat_ngay_cap_cmt_nguoi_dai_dien.ShowCheckBox = true;
             this.m_dat_ngay_cap_cmt_nguoi_dai_dien.Size = new System.Drawing.Size(115, 20);
             this.m_dat_ngay_cap_cmt_nguoi_dai_dien.TabIndex = 15;
             // 
@@ -457,6 +457,7 @@
             this.m_dat_ngay_cap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_cap.Location = new System.Drawing.Point(388, 99);
             this.m_dat_ngay_cap.Name = "m_dat_ngay_cap";
+            this.m_dat_ngay_cap.ShowCheckBox = true;
             this.m_dat_ngay_cap.Size = new System.Drawing.Size(115, 20);
             this.m_dat_ngay_cap.TabIndex = 8;
             // 
@@ -787,7 +788,7 @@
         private System.Windows.Forms.Label m_lbl_so_trai_phieu_so_huu;
         private System.Windows.Forms.TextBox m_txt_so_trai_phieu_so_huu;
         internal SIS.Controls.Button.SiSButton m_cmd_duyet;
-        private System.Windows.Forms.DateTimePicker m_dat_ngay_duyet;
+        private System.Windows.Forms.DateTimePicker m_dat_ngay_so_huu_trai_phieu;
         private System.Windows.Forms.Label m_lbl_ngay_duyet_lbl;
     }
 }

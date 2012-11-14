@@ -384,58 +384,59 @@ namespace BondApp
         #region Data Structure
         private enum e_col_Number
         {
-            GHI_CHU3 = 25
+            GHI_CHU3 = 26
 ,
             DIA_CHI = 4
                 ,
-            NOI_CAP_CMT_NGUOI_DAI_DIEN = 21
+            NOI_CAP_CMT_NGUOI_DAI_DIEN = 22
                 ,
-            NGAY_CAP_CMT_NGUOI_DAI_DIEN = 20
+            NGAY_CAP_CMT_NGUOI_DAI_DIEN = 21
                 ,
-            MO_TAI_NGAN_HANG = 17
+            MO_TAI_NGAN_HANG = 18
                 ,
             TEN_TRAI_CHU = 3
                 ,
             FAX = 6
                 ,
             SO_LUONG_TP_SO_HUU_BAN_DAU = 13,
-            TONG_SO_DU = 14
+            NGAY_SO_HUU_TRAI_PHIEU = 14,
+            TONG_SO_DU = 15
                 ,
             NGAY_CAP_CMT = 8
                 ,
             MOBILE = 5
                 ,
-            GHI_CHU1 = 23
+            GHI_CHU1 = 24
                 ,
             ID_LOAI_TRAI_CHU = 10
                 ,
-            ID_NGUOI_DUYET_TC = 27,
+            ID_NGUOI_DUYET_TC = 28,
             
-            NGAY_DUYET = 28,
+            NGAY_DUYET = 29,
             STT = 1,
             MA_TRAI_CHU = 2
                 ,
-            CMT_NGUOI_DAI_DIEN = 19
+            CMT_NGUOI_DAI_DIEN = 20
                 ,
-            SO_DU_KHA_DUNG = 15
+            SO_DU_KHA_DUNG = 16
                 ,
             MENH_GIA = 12
                 ,
-            TEN_NGUOI_DAI_DIEN = 18
+            TEN_NGUOI_DAI_DIEN = 19
                 ,
-            ID_TRANG_THAI = 29
+            ID_TRANG_THAI = 30
                 ,
             TEN_TRAI_PHIEU = 11
                 ,
             NOI_CAP_CMT = 9
                 ,
-            CHUC_VU = 22
+            CHUC_VU = 23
                 ,
-            GHI_CHU2 = 24
+            GHI_CHU2 = 25
                 ,
-            SO_TAI_KHOAN = 16
+            SO_TAI_KHOAN = 17
                 ,
-            ID_NGUOI_LAP_TC = 26
+            ID_NGUOI_LAP_TC = 27
                 , CMT_GIAY_DKKD = 7
 
         }	
@@ -541,6 +542,7 @@ namespace BondApp
             v_htb.Add(V_DM_TRAI_CHU.CMT_GIAY_DKKD, e_col_Number.CMT_GIAY_DKKD);
             v_htb.Add(V_DM_TRAI_CHU.NGAY_DUYET, e_col_Number.NGAY_DUYET);
             v_htb.Add(V_DM_TRAI_CHU.SO_LUONG_TP_SO_HUU_BAN_DAU, e_col_Number.SO_LUONG_TP_SO_HUU_BAN_DAU);
+            v_htb.Add(V_DM_TRAI_CHU.NGAY_SO_HUU_TRAI_PHIEU, e_col_Number.NGAY_SO_HUU_TRAI_PHIEU);
 
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_DM_TRAI_CHU.NewRow());
             return v_obj_trans;

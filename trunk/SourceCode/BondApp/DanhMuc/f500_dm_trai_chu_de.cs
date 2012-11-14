@@ -134,8 +134,8 @@ namespace BondApp.DanhMuc
                 case e_formmode.HIEN_THI_DE_DUYET:                    
                     m_cmd_save.Visible = false;
                     m_cmd_duyet.Visible = true;
-                    m_lbl_ngay_duyet_lbl.Visible = true;
-                    m_dat_ngay_duyet.Visible = true;
+                    //m_lbl_ngay_duyet_lbl.Visible = true;
+                    //m_dat_ngay_so_huu_trai_phieu.Visible = true;
                     //m_lbl_duyet_ghi_chu.Visible = true;
                     us_object_2_form(m_us_v_trai_chu);
                     break;
@@ -179,20 +179,16 @@ namespace BondApp.DanhMuc
 
             m_txt_id_trai_phieu_so_huu.Text = ip_us_trai_chu.strMA_TRAI_PHIEU;
             m_txt_ten_trai_phieu.Text = ip_us_trai_chu.strTEN_TRAI_PHIEU;
-            m_txt_so_du_kha_dung.Text = CIPConvert.ToStr(ip_us_trai_chu.dcSO_DU_KHA_DUNG, "#,###");
-            m_txt_sl_da_phong_toa.Text = CIPConvert.ToStr(ip_us_trai_chu.dcTONG_SO_DU - ip_us_trai_chu.dcSO_DU_KHA_DUNG, "#,###");
-            m_txt_so_trai_phieu_so_huu.Text = CIPConvert.ToStr(ip_us_trai_chu.dcTONG_SO_DU, "#,###");
-
+            if (ip_us_trai_chu.dcID_TRANG_THAI == TRANG_THAI_DANH_MUC.DA_DUYET)
+            {
+                m_txt_so_du_kha_dung.Text = CIPConvert.ToStr(ip_us_trai_chu.dcSO_DU_KHA_DUNG, "#,###");
+                m_txt_sl_da_phong_toa.Text = CIPConvert.ToStr(ip_us_trai_chu.dcTONG_SO_DU - ip_us_trai_chu.dcSO_DU_KHA_DUNG, "#,###");
+            }
+            m_txt_so_trai_phieu_so_huu.Text = CIPConvert.ToStr(ip_us_trai_chu.dcSO_LUONG_TP_SO_HUU_BAN_DAU, "#,###");
             m_txt_ghi_chu_1.Text = ip_us_trai_chu.strGHI_CHU1;
             m_txt_ghi_chu_2.Text = ip_us_trai_chu.strGHI_CHU2;
             m_txt_ghi_chu_3.Text = ip_us_trai_chu.strGHI_CHU3;
             m_cbo_trang_thai.SelectedValue = CIPConvert.ToStr(ip_us_trai_chu.dcID_TRANG_THAI);
-            if (ip_us_trai_chu.dcID_TRANG_THAI == TRANG_THAI_DANH_MUC.DA_LAP)
-            {
-                m_txt_so_trai_phieu_so_huu.Text = CIPConvert.ToStr(ip_us_trai_chu.dcSO_LUONG_TP_SO_HUU_BAN_DAU, "#,###");
-                m_txt_so_du_kha_dung.Text = CIPConvert.ToStr(ip_us_trai_chu.dcSO_LUONG_TP_SO_HUU_BAN_DAU, "#,###");
-                m_txt_sl_da_phong_toa.Text = CIPConvert.ToStr(0);
-            }
             if (ip_us_trai_chu.dcID_TRANG_THAI == TRANG_THAI_DANH_MUC.DA_DUYET)
             {
                 m_txt_id_trai_phieu_so_huu.ReadOnly = true;
@@ -219,11 +215,13 @@ namespace BondApp.DanhMuc
             ip_us_trai_chu.strTEN_NGUOI_DAI_DIEN = m_txt_nguoi_dai_dien.Text;
             ip_us_trai_chu.strCHUC_VU = m_txt_chuc_vu.Text;
             ip_us_trai_chu.strCMT_NGUOI_DAI_DIEN = m_txt_cmt_nguoi_dai_dien.Text;
-            ip_us_trai_chu.datNGAY_CAP_CMT_NGUOI_DAI_DIEN = m_dat_ngay_cap_cmt_nguoi_dai_dien.Value;
+            if(m_dat_ngay_cap_cmt_nguoi_dai_dien.Checked)
+                ip_us_trai_chu.datNGAY_CAP_CMT_NGUOI_DAI_DIEN = m_dat_ngay_cap_cmt_nguoi_dai_dien.Value;
             ip_us_trai_chu.strNOI_CAP_CMT_NGUOI_DAI_DIEN = m_txt_noi_cap_cmt_nguoi_dai_dien.Text;
 
             ip_us_trai_chu.dcID_TRAI_PHIEU_SO_HUU = m_us_v_trai_phieu.dcID;
             ip_us_trai_chu.dcSO_LUONG_TP_SO_HUU_BAN_DAU = CIPConvert.ToDecimal(m_txt_so_trai_phieu_so_huu.Text);
+            ip_us_trai_chu.datNGAY_SO_HUU_TRAI_PHIEU = m_dat_ngay_so_huu_trai_phieu.Value;
 
             ip_us_trai_chu.strGHI_CHU1 = m_txt_ghi_chu_1.Text;
             ip_us_trai_chu.strGHI_CHU2 = m_txt_ghi_chu_2.Text;
@@ -341,15 +339,13 @@ namespace BondApp.DanhMuc
                     m_us_v_trai_chu.Insert();
                     break;
                 case e_formmode.HIEN_THI_DE_SUA:
-                    //m_us_trai_chu.dcID = m_us_v_trai_chu.dcID;
                     m_us_v_trai_chu.SetID_NGUOI_DUYET_TCNull();
-                    //form_2_us_gd_so_du_trai_phieu();
                     m_us_v_trai_chu.Update();
                     break;
                 case e_formmode.HIEN_THI_DE_DUYET:
                     m_us_v_trai_chu.dcID_TRANG_THAI = TRANG_THAI_DANH_MUC.DA_DUYET;
                     m_us_v_trai_chu.dcID_NGUOI_DUYET_TC = CAppContext_201.getCurrentUserID();
-                    m_us_v_trai_chu.datNGAY_DUYET = m_dat_ngay_duyet.Value;
+                    m_us_v_trai_chu.datNGAY_DUYET = DateTime.Today;
                     m_us_v_trai_chu.Update();
                     break;
             }
