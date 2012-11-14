@@ -645,6 +645,7 @@ namespace BondDS.CDBNames
         public const string THANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN = "THANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN";
         public const string ID_NGAN_HANG_THAM_CHIEU_LAI_SUAT = "ID_NGAN_HANG_THAM_CHIEU_LAI_SUAT";
         public const string NGAN_HANG_THAM_CHIEU_LS = "NGAN_HANG_THAM_CHIEU_LS";
+        public const string SO_TRAI_PHIEU_TRAI_CHU_DA_SO_HUU = "SO_TRAI_PHIEU_TRAI_CHU_DA_SO_HUU";
     }
 
     public class DOC_COLUMN_COMMENT
