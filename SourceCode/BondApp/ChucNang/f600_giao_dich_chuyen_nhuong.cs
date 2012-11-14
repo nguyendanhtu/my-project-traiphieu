@@ -620,6 +620,11 @@ namespace BondApp
                 }
                 decimal temp = CIPConvert.ToDecimal(m_txt_gia_tri_chuyen_nhuong_thuc_te.Text);
                 m_txt_gia_tri_chuyen_nhuong_thuc_te.Text = CIPConvert.ToStr(temp, "#,###");
+                if (m_txt_phan_tram_thue.Text.Trim() == "") return;
+                decimal v_dc_phan_tram_thue = CIPConvert.ToDecimal(m_txt_phan_tram_thue.Text) / 100;
+                m_txt_thue.Text = CIPConvert.ToStr(
+                    temp * v_dc_phan_tram_thue
+                    , "#,###");
             }
             catch (Exception v_e)
             {
@@ -659,7 +664,7 @@ namespace BondApp
                     return;
                 }
                 decimal temp = CIPConvert.ToDecimal(m_txt_phi_gd.Text);
-                m_txt_phi_gd.Text = CIPConvert.ToStr(temp, "#,###");
+                m_txt_phi_gd.Text = CIPConvert.ToStr(temp, "#,###");                
             }
             catch (Exception v_e)
             {
