@@ -603,6 +603,69 @@ namespace BondApp
             m_cmd_duyet_chuyen_nhuong.Click += new EventHandler(m_cmd_duyet_chuyen_nhuong_Click);
             m_cmd_danh_sach_chuyen_nhuong.Click += new EventHandler(m_cmd_danh_sach_chuyen_nhuong_Click);
             this.KeyDown += new KeyEventHandler(f600_giao_dich_chuyen_nhuong_KeyDown);
+            m_txt_phi_gd.Leave += new EventHandler(m_txt_phi_gd_Leave);
+            m_txt_thue.Leave += new EventHandler(m_txt_thue_Leave);
+            m_txt_gia_tri_chuyen_nhuong_thuc_te.Leave += new EventHandler(m_txt_gia_tri_chuyen_nhuong_thuc_te_Leave);
+        }
+
+        void m_txt_gia_tri_chuyen_nhuong_thuc_te_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_txt_gia_tri_chuyen_nhuong_thuc_te.Text.Trim().Equals("")) return;
+                if (!CValidateTextBox.IsValid(m_txt_gia_tri_chuyen_nhuong_thuc_te, DataType.NumberType, allowNull.NO, true))
+                {
+                    BaseMessages.MsgBox_Infor(12); // dữ liệu phải là số
+                    return;
+                }
+                decimal temp = CIPConvert.ToDecimal(m_txt_gia_tri_chuyen_nhuong_thuc_te.Text);
+                m_txt_gia_tri_chuyen_nhuong_thuc_te.Text = CIPConvert.ToStr(temp, "#,###");
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+
+        }
+
+        void m_txt_thue_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_txt_thue.Text.Trim().Equals("")) return;
+                if (!CValidateTextBox.IsValid(m_txt_thue, DataType.NumberType, allowNull.NO, true))
+                {
+                    BaseMessages.MsgBox_Infor(12); // dữ liệu phải là số
+                    return;
+                }
+                decimal temp = CIPConvert.ToDecimal(m_txt_thue.Text);
+                m_txt_thue.Text = CIPConvert.ToStr(temp, "#,###");
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+
+        }
+
+        void m_txt_phi_gd_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_txt_phi_gd.Text.Trim().Equals("")) return;
+                if (!CValidateTextBox.IsValid(m_txt_phi_gd, DataType.NumberType, allowNull.NO, true))
+                {
+                    BaseMessages.MsgBox_Infor(12); // dữ liệu phải là số
+                    return;
+                }
+                decimal temp = CIPConvert.ToDecimal(m_txt_phi_gd.Text);
+                m_txt_phi_gd.Text = CIPConvert.ToStr(temp, "#,###");
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+
         }
         void m_txt_ty_le_phi_gd_LostFocus(object sender, EventArgs e)
         {
