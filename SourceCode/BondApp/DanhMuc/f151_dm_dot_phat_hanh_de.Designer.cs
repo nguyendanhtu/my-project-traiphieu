@@ -518,7 +518,7 @@
             this.m_lbl_title.Name = "m_lbl_title";
             this.m_lbl_title.Size = new System.Drawing.Size(854, 40);
             this.m_lbl_title.TabIndex = 63;
-            this.m_lbl_title.Text = "THÔNG TIN ĐỢT PHÁT HÀNH";
+            this.m_lbl_title.Text = "F151 - Cập nhật thông tin đợt phát hành";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // f151_dm_dot_phat_hanh_de

@@ -720,7 +720,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_lbl_title);
             this.Name = "f500_dm_trai_chu_de";
-            this.Text = "f510_giao_dien_cap_nhat_trai_chu";
+            this.Text = "F510 - Cập nhật thông tin trái chủ";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.m_pnl_out_place_dm.ResumeLayout(false);
