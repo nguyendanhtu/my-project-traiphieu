@@ -315,10 +315,7 @@ namespace BondApp
 
             switch (m_e_form_mode)
             {
-                case eFormMode.LAP_GIAI_TOA:
-                    m_lbl_ma_gd_pt.Visible = true;
-                    m_txt_ma_gd_phong_toa.Visible = true;
-                    m_cmd_chon_gd_phong_toa.Visible = true;
+                case eFormMode.LAP_GIAI_TOA:                    
                     m_cmd_chon_trai_chu.Visible = false; 
                     m_cmd_lap.Enabled = true;
                     m_cmd_duyet.Enabled = false;
@@ -346,15 +343,6 @@ namespace BondApp
             }       
         }
 
-        private void chon_giao_dich_phong_toa()
-        {
-            if (m_e_form_mode == eFormMode.LAP_GIAI_TOA)
-            {
-                f701_danh_sach_giao_dich_phong_giai_toa vfrm701 = new f701_danh_sach_giao_dich_phong_giai_toa();
-
-            }
-            
-        }
 
         private void select_trai_chu()
         {
@@ -592,22 +580,9 @@ namespace BondApp
             m_txt_ty_le_phi_gd.LostFocus += new EventHandler(m_txt_ty_le_phi_gd_LostFocus);
             m_txt_so_luong_tp_cam_co.LostFocus += new EventHandler(m_txt_so_luong_tp_cam_co_LostFocus);
             this.KeyDown += new KeyEventHandler(f700_giao_dich_phong_toa_giai_toa_KeyDown);
-            m_txt_phi_gd.Leave += new EventHandler(m_txt_phi_gd_Leave);
-            m_cmd_chon_gd_phong_toa.Click += new EventHandler(m_cmd_chon_gd_phong_toa_Click);
+            m_txt_phi_gd.Leave += new EventHandler(m_txt_phi_gd_Leave);           
         }
 
-        void m_cmd_chon_gd_phong_toa_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                chon_giao_dich_phong_toa();
-            }
-            catch (Exception v_e)
-            {
-                
-                CSystemLog_301.ExceptionHandle(v_e);
-            }
-        }
 
         void m_txt_phi_gd_Leave(object sender, EventArgs e)
         {
