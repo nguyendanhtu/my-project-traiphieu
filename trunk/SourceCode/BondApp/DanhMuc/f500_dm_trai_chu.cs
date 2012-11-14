@@ -559,7 +559,7 @@ namespace BondApp
                         m_us.FillDataset(m_ds);
                             break;
                     case e_form_mode.DANH_SACH_LAP_PHONG_TOA:
-                            m_us.FillDatasetByIDTrangThai(m_ds, TRANG_THAI_DANH_MUC.DA_DUYET);
+                            m_us.FillDatasetByIDTrangThai(m_ds, TRANG_THAI_DANH_MUC.DA_DUYET);                            
                             break;
                     case e_form_mode.DANH_SACH_LAP_GIAI_TOA:
                             m_us.FillDatasetDangPhongtoa(m_ds);
@@ -613,6 +613,17 @@ namespace BondApp
             }
             m_fg.Cols[(int)e_col_Number.ID_NGUOI_LAP_TC].DataMap = v_hst_nguoi_dung;
             m_fg.Cols[(int)e_col_Number.ID_NGUOI_DUYET_TC].DataMap = v_hst_nguoi_dung;
+            
+            //Load so so phong toa
+            if (eform_mode == e_form_mode.DANH_SACH_LAP_GIAI_TOA)
+            {                
+                m_fg.Cols[(int)e_col_Number.SO_DU_KHA_DUNG].Caption = "Số trái phiếu bị phong tỏa";
+                for (int v_i_grid_row = m_fg.Rows.Fixed; v_i_grid_row < m_fg.Rows.Count; v_i_grid_row++)
+                {
+                    decimal v_so_luong_phong_toa = CIPConvert.ToDecimal(m_fg[v_i_grid_row, (int)e_col_Number.TONG_SO_DU]) - CIPConvert.ToDecimal(m_fg[v_i_grid_row, (int)e_col_Number.SO_DU_KHA_DUNG]);
+                    m_fg[v_i_grid_row, (int)e_col_Number.SO_DU_KHA_DUNG] = v_so_luong_phong_toa;
+                }
+            }
         }
 
         private void grid2us_object(US_V_DM_TRAI_CHU i_us
