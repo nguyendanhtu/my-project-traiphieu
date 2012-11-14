@@ -47,6 +47,7 @@ namespace BondApp
             m_lbl_title.Text = "F700 - Lập Giao dịch giải tỏa";
             m_lbl_so_luong_tp_cam_co.Text = "Số lượng TP giải tỏa";
             m_lbl_khoan_dau_tu.Text = "Lý do giải tỏa";
+            m_lbl_so_luong_kha_dung.Text = "Số lượng phong tỏa";
             this.ShowDialog();
         }
         public void display_sua_phong_toa(US_GD_PHONG_GIAI_TOA ip_us_phong_giai_toa)
@@ -77,6 +78,7 @@ namespace BondApp
             m_lbl_title.Text = "F700 - Sửa Giao dịch giải tỏa";
             m_lbl_so_luong_tp_cam_co.Text = "Số lượng TP giải tỏa";
             m_lbl_khoan_dau_tu.Text = "Lý do giải tỏa";
+            m_lbl_so_luong_kha_dung.Text = "Số lượng phong tỏa";
             m_us_gd_phong_toa_giai_toa = ip_us_phong_giai_toa;
             US_DM_TRAI_CHU ip_us_trai_chu = new US_DM_TRAI_CHU(ip_us_phong_giai_toa.dcID_TRAI_CHU);
             us_trai_chu_2_form(ip_us_trai_chu);
@@ -105,6 +107,7 @@ namespace BondApp
             m_lbl_title.Text = "F700 - Duyệt Giao dịch giải tỏa";
             m_lbl_so_luong_tp_cam_co.Text = "Số lượng TP giải tỏa";
             m_lbl_khoan_dau_tu.Text = "Lý do giải tỏa";
+            m_lbl_so_luong_kha_dung.Text = "Số lượng phong tỏa";
             this.ShowDialog();
         }
         #endregion
@@ -376,7 +379,10 @@ namespace BondApp
             m_txt_noi_cap.Text = ip_us_trai_chu.strNOI_CAP_CMT;
             m_txt_ngay_cap.Text = ip_us_trai_chu.datNGAY_CAP_CMT.ToString("dd/MM/yyyy");
             m_txt_so_luong_trai_phieu.Text = v_ds.GD_SO_DU_TRAI_PHIEU.Rows[0]["TONG_SO_DU"].ToString();
-            m_txt_so_luong_kha_dung.Text = v_ds.GD_SO_DU_TRAI_PHIEU.Rows[0]["SO_DU_KHA_DUNG"].ToString();
+            if (m_e_form_mode == eFormMode.DUYET_GIAI_TOA || m_e_form_mode == eFormMode.LAP_GIAI_TOA || m_e_form_mode == eFormMode.SUA_GIAI_TOA)
+                m_txt_so_luong_kha_dung.Text = CIPConvert.ToStr(CIPConvert.ToDecimal(v_ds.GD_SO_DU_TRAI_PHIEU.Rows[0]["TONG_SO_DU"]) - CIPConvert.ToDecimal( v_ds.GD_SO_DU_TRAI_PHIEU.Rows[0]["SO_DU_KHA_DUNG"]));
+            else
+                m_txt_so_luong_kha_dung.Text = v_ds.GD_SO_DU_TRAI_PHIEU.Rows[0]["SO_DU_KHA_DUNG"].ToString();
             us_trai_phieu_2_form(m_us_trai_phieu);
             if (m_e_form_mode == eFormMode.DUYET_GIAI_TOA || m_e_form_mode == eFormMode.DUYET_PHONG_TOA)
             {
