@@ -17,7 +17,6 @@ using IP.Core.IPWordReport;
 
 using C1.Win.C1FlexGrid;
 using System.Data.SqlClient;
-using BondUS;
 using IP.Core.IPSystemAdmin;
 
 namespace BondApp
@@ -48,6 +47,7 @@ namespace BondApp
             m_lbl_so_luong_tp_cam_co.Text = "Số lượng TP giải tỏa";
             m_lbl_khoan_dau_tu.Text = "Lý do giải tỏa";
             m_lbl_so_luong_kha_dung.Text = "Số lượng phong tỏa";
+            m_cbo_ngan_hang_cam_co.Visible = true;
             this.ShowDialog();
         }
         public void display_sua_phong_toa(US_GD_PHONG_GIAI_TOA ip_us_phong_giai_toa)
@@ -316,7 +316,7 @@ namespace BondApp
             switch (m_e_form_mode)
             {
                 case eFormMode.LAP_GIAI_TOA:                    
-                    m_cmd_chon_trai_chu.Visible = false; 
+                    //m_cmd_chon_trai_chu.Visible = false; 
                     m_cmd_lap.Enabled = true;
                     m_cmd_duyet.Enabled = false;
                     m_cmd_save.Enabled = false;
@@ -343,7 +343,22 @@ namespace BondApp
             }       
         }
 
+        private void load_data_2_cmb_ngan_hang_cam_co()
+        {
+            US_GD_PHONG_GIAI_TOA v_us_gd_phong_toa = new BondUS.US_GD_PHONG_GIAI_TOA();
+            DS_GD_PHONG_GIAI_TOA v_ds_gd_phong_toa = new DS_GD_PHONG_GIAI_TOA();
 
+            v_us_gd_phong_toa.fill_dataset_byIdtraichu(v_ds_gd_phong_toa, m_us_trai_chu.dcID);            
+            v_ds_gd_phong_toa.EnforceConstraints = false;
+
+
+            m_cbo_ngan_hang_cam_co.ValueMember = GD_PHONG_GIAI_TOA.NGAN_HANG_CAM_CO;
+            m_cbo_ngan_hang_cam_co.DisplayMember = GD_PHONG_GIAI_TOA.NGAN_HANG_CAM_CO;
+            m_cbo_ngan_hang_cam_co.DataSource = v_ds_gd_phong_toa.GD_PHONG_GIAI_TOA;
+
+            m_cbo_ngan_hang_cam_co.SelectedIndex = 0;
+
+        }
         private void select_trai_chu()
         {
             f701_danh_sach_giao_dich_phong_giai_toa vfrm701 = new f701_danh_sach_giao_dich_phong_giai_toa();
@@ -420,6 +435,7 @@ namespace BondApp
                 m_txt_dien_thoai.Text = ip_us_trai_chu.strMOBILE;
                 m_txt_fax.Text = ip_us_trai_chu.strFAX;
             }
+             load_data_2_cmb_ngan_hang_cam_co();
         }
         private void us_trai_phieu_2_form(US_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
@@ -455,6 +471,7 @@ namespace BondApp
                     m_us_gd_phong_toa_giai_toa.strPHONG_TOA_YN = "N";
                     m_us_gd_phong_toa_giai_toa.dcID_TRAI_CHU = m_us_trai_chu.dcID;
                     form_2_us_gd_lap_pgt();
+                    m_us_gd_phong_toa_giai_toa.strNGAN_HANG_CAM_CO = m_cbo_ngan_hang_cam_co.ValueMember;
                     break;
                 case eFormMode.LAP_PHONG_TOA:
                     m_us_gd_phong_toa_giai_toa.strPHONG_TOA_YN = "Y";
@@ -780,10 +797,9 @@ namespace BondApp
                     if (m_txt_ty_le_phi_gd.Text != "") phi_giao_dich_pgt_change();
                     if (m_e_form_mode == eFormMode.LAP_GIAI_TOA)
                     {
-                        if (CIPConvert.ToDecimal(m_txt_so_luong_tp_cam_co.Text) > CIPConvert.ToDecimal(m_txt_so_luong_trai_phieu.Text) - CIPConvert.ToDecimal(m_txt_so_luong_kha_dung.Text))
+                        if (CIPConvert.ToDecimal(m_txt_so_luong_tp_cam_co.Text) > CIPConvert.ToDecimal(m_txt_so_luong_kha_dung.Text))
                         {
-                            MessageBox.Show("Số lượng trái phiếu giải tỏa cần bé hơn số lượng trái phiếu đã phong tỏa.");
-                            m_txt_so_luong_tp_cam_co.Focus();
+                            MessageBox.Show("Số lượng trái phiếu giải tỏa cần bé hơn số lượng trái phiếu đã phong tỏa.");                            
                             return;
                         }
                     }

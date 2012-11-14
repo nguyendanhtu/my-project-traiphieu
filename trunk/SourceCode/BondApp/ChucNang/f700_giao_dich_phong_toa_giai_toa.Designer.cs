@@ -106,6 +106,7 @@
             this.m_txt_nguoi_xac_nhan = new System.Windows.Forms.TextBox();
             this.m_lbl_chuc_vu = new System.Windows.Forms.Label();
             this.m_txt_chuc_vu = new System.Windows.Forms.TextBox();
+            this.m_cbo_ngan_hang_cam_co = new System.Windows.Forms.ComboBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -535,6 +536,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.m_cbo_ngan_hang_cam_co);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.m_lbl_pgd_max_min);
             this.groupBox3.Controls.Add(this.label2);
@@ -921,6 +923,16 @@
             this.m_txt_chuc_vu.Size = new System.Drawing.Size(173, 20);
             this.m_txt_chuc_vu.TabIndex = 3;
             // 
+            // m_cbo_ngan_hang_cam_co
+            // 
+            this.m_cbo_ngan_hang_cam_co.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_ngan_hang_cam_co.FormattingEnabled = true;
+            this.m_cbo_ngan_hang_cam_co.Location = new System.Drawing.Point(424, 116);
+            this.m_cbo_ngan_hang_cam_co.Name = "m_cbo_ngan_hang_cam_co";
+            this.m_cbo_ngan_hang_cam_co.Size = new System.Drawing.Size(448, 21);
+            this.m_cbo_ngan_hang_cam_co.TabIndex = 29;
+            this.m_cbo_ngan_hang_cam_co.Visible = false;
+            // 
             // f700_giao_dich_phong_toa_giai_toa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1023,5 +1035,6 @@
         private System.Windows.Forms.Label label4;
         internal SIS.Controls.Button.SiSButton m_cmd_save;
         internal System.Windows.Forms.ImageList ImageList;
+        private System.Windows.Forms.ComboBox m_cbo_ngan_hang_cam_co;
     }
 }
