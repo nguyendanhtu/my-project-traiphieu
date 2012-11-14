@@ -468,3 +468,195 @@ IF @NGAY_CAP_CMT_NGUOI_DAI_DIEN = '1/1/1900' SET @NGAY_CAP_CMT_NGUOI_DAI_DIEN = 
 IF( @@ERROR!=0) ROLLBACK TRAN
 ELSE COMMIT TRAN
 GO
+--Get ngày ch?t lãi t? ngày thanh toán, ngày làm vi?c 26, s? ngày ch?t lái tru?c thanh toán
+ALTER PROCEDURE [dbo].[pr_DM_NGAY_LAM_VIEC_get_ngay_chot_lai]
+@NGAY_THANH_TOAN DATETIME,
+@NGAY_LAM_VIEC_26_YN NVARCHAR(1),
+@SO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN INT
+AS
+BEGIN	
+	IF @NGAY_LAM_VIEC_26_YN = 'Y'
+	BEGIN
+		SELECT TOP (@SO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN) * FROM DM_NGAY_LAM_VIEC dnlv
+		WHERE dnlv.NGAY_LAM_VIEC_YN = 'Y'
+		AND dnlv.NGAY < @NGAY_THANH_TOAN
+		ORDER BY dnlv.NGAY DESC
+	END	
+	ELSE
+	BEGIN
+		SELECT TOP (@SO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN) * FROM DM_NGAY_LAM_VIEC dnlv
+		WHERE dnlv.NGAY_LAM_VIEC_HAI_BAY_YN = 'Y'
+		AND dnlv.NGAY < @NGAY_THANH_TOAN
+		ORDER BY dnlv.NGAY DESC		
+	END
+END
+GO
+--Get ngày thanh toán th?c t?
+ALTER PROCEDURE [dbo].[pr_DM_NGAY_LAM_VIEC_get_ngay_thanh_toan_thuc_te]
+@NGAY_THANH_TOAN DATETIME,
+@NGAY_LAM_VIEC_26_YN NVARCHAR(1),
+@NGAY_LAM_VIEC_TRUOC_NGHI_YN NVARCHAR(1)
+AS
+BEGIN
+	--Danh sách bi?n luu thông tin ngày làm vi?c
+	DECLARE @ng_id INT
+	DECLARE @ng_ngay DATETIME
+	DECLARE @ng_lam_viec_26 NVARCHAR(1)
+	DECLARE @ng_lam_viec_27 NVARCHAR(1)
+	DECLARE @ng_thanh_toan_thuc_te DATETIME
+	--B?n luu d? li?u cu?i cùng
+	DECLARE @table_retrun TABLE (
+		ID NUMERIC(18,0),
+		NGAY DATETIME,
+		NGAY_LAM_VIEC_YN NVARCHAR(1),
+		NGAY_LAM_VIEC_HAI_BAY_YN NVARCHAR(1))	
+	--L?y thông tin ngày thanh toán
+	SELECT @ng_id = dnlv.ID,
+		@ng_ngay = dnlv.NGAY,
+		@ng_lam_viec_26 = dnlv.NGAY_LAM_VIEC_YN,
+		@ng_lam_viec_27 = dnlv.NGAY_LAM_VIEC_HAI_BAY_YN
+	FROM DM_NGAY_LAM_VIEC dnlv
+	WHERE dnlv.NGAY = @NGAY_THANH_TOAN
+	--Trái phi?u thu?c lo?i làm vi?c t? th? 2 d?n th? 6
+	IF @NGAY_LAM_VIEC_26_YN = 'Y'
+	BEGIN
+		--N?u ngày thanh toán này là ngày ngh?
+		IF	@ng_lam_viec_26 = 'N'
+		BEGIN
+			--l?y ngày tt th?c t? là ngày làm vi?c tru?c g?n nh?t v?i ngày thanh toán là ngày ngh?
+			IF	@NGAY_LAM_VIEC_TRUOC_NGHI_YN = 'Y'
+			BEGIN
+				SELECT TOP 1 @ng_thanh_toan_thuc_te = dnlv.NGAY
+				FROM DM_NGAY_LAM_VIEC dnlv
+				WHERE dnlv.NGAY < @ng_ngay
+				AND dnlv.NGAY_LAM_VIEC_YN = 'Y'
+				ORDER BY dnlv.NGAY DESC 
+			END
+			ELSE--l?y ngày tt th?c t? là ngày làm vi?c sau g?n nh?t v?i ngày thanh toán là ngày ngh?
+			BEGIN
+				SELECT TOP 1 @ng_thanh_toan_thuc_te = dnlv.NGAY
+				FROM DM_NGAY_LAM_VIEC dnlv
+				WHERE dnlv.NGAY > @ng_ngay
+				AND dnlv.NGAY_LAM_VIEC_YN = 'Y'
+				ORDER BY dnlv.NGAY ASC 
+			END
+		END
+		ELSE
+			BEGIN
+			    SET	@ng_thanh_toan_thuc_te = @ng_ngay
+			END
+	END
+	ELSE --Trái phi?u thu?c lo?i làm vi?c t? th? 2 d?n th? 7
+	BEGIN
+		--N?u ngày thanh toán này là ngày ngh?
+		IF	@ng_lam_viec_27 = 'N'
+		BEGIN
+			--l?y ngày tt th?c t? là ngày làm vi?c tru?c g?n nh?t v?i ngày thanh toán là ngày ngh?
+			IF	@NGAY_LAM_VIEC_TRUOC_NGHI_YN = 'Y'
+			BEGIN
+				SELECT TOP 1 @ng_thanh_toan_thuc_te = dnlv.NGAY
+				FROM DM_NGAY_LAM_VIEC dnlv
+				WHERE dnlv.NGAY < @ng_ngay
+				AND dnlv.NGAY_LAM_VIEC_HAI_BAY_YN = 'Y'
+				ORDER BY dnlv.NGAY DESC 
+			END
+			ELSE--l?y ngày tt th?c t? là ngày làm vi?c sau g?n nh?t v?i ngày thanh toán là ngày ngh?
+			BEGIN
+				SELECT TOP 1 @ng_thanh_toan_thuc_te = dnlv.NGAY
+				FROM DM_NGAY_LAM_VIEC dnlv
+				WHERE dnlv.NGAY > @ng_ngay
+				AND dnlv.NGAY_LAM_VIEC_HAI_BAY_YN = 'Y'
+				ORDER BY dnlv.NGAY ASC 
+			END
+		END
+		ELSE
+			BEGIN
+				SET	@ng_thanh_toan_thuc_te = @ng_ngay
+			END
+	END
+	
+	--Gán k?t qu? vào b?n cu?i
+	INSERT INTO @table_retrun
+	(
+		ID,
+		NGAY,
+		NGAY_LAM_VIEC_YN,
+		NGAY_LAM_VIEC_HAI_BAY_YN
+	)
+	VALUES
+	(
+		@ng_id,
+		@ng_thanh_toan_thuc_te,
+		@ng_lam_viec_26,
+		@ng_lam_viec_27
+	)
+	
+	SELECT * FROM @table_retrun tr
+END
+GO
+--Danh sách nh?ng trái ch? dang b? phong t?a trái phi?u
+ALTER PROCEDURE [dbo].[pr_V_DM_TRAI_CHU_Select_dang_phong_toa]
+AS
+SELECT *	
+FROM V_DM_TRAI_CHU tc
+WHERE tc.TONG_SO_DU > tc.SO_DU_KHA_DUNG
+ORDER BY tc.[ID] ASC
+GO
+--S?a l?i d? luu du?c tên dài hon.
+ALTER  PROCEDURE [dbo].[pr_CM_DM_TU_DIEN_Insert]
+	@MA_TU_DIEN nvarchar(15),
+	@ID_LOAI_TU_DIEN numeric(18, 0),
+	@TEN_NGAN nvarchar(35),
+	@TEN nvarchar(250),
+	@GHI_CHU nvarchar(250),
+	@ID numeric(18, 0) OUTPUT
+AS
+INSERT [dbo].[CM_DM_TU_DIEN]
+(
+	[MA_TU_DIEN],
+	[ID_LOAI_TU_DIEN],
+	[TEN_NGAN],
+	[TEN],
+	[GHI_CHU]
+)
+VALUES
+(
+	@MA_TU_DIEN,
+	@ID_LOAI_TU_DIEN,
+	@TEN_NGAN,
+	@TEN,
+	@GHI_CHU
+)
+SELECT @ID=SCOPE_IDENTITY()
+GO
+--danh sách trái ch? theo trái phi?u và k? tính lãi
+ALTER PROC [dbo].[pr_V_DM_TRAI_CHU_CHOT_LAI_Select_FillDatasetByIDTraiPhieuAndKyTL]
+@ID_TRAI_PHIEU NUMERIC(18,0)
+, @KY_TINH_LAI NUMERIC(4,0)
+AS
+SELECT * FROM V_DM_TRAI_CHU_CHOT_LAI dtccl
+WHERE dtccl.KY_TINH_LAI = @KY_TINH_LAI
+AND dtccl.ID_TRAI_PHIEU_SO_HUU = @ID_TRAI_PHIEU
+GO
+--Danh sách trái ch? theo trái phi?u và k? tính lãi, tr?ng thái
+ALTER PROC [dbo].[pr_V_DM_TRAI_CHU_CHOT_LAI_Select_FillDatasetByIDTraiPhieuAndKyTLbyTrangThai]
+@ID_TRAI_PHIEU NUMERIC(18,0)
+, @KY_TINH_LAI NUMERIC(4,0)
+, @DA_THANH_TOAN NVARCHAR
+AS
+SELECT * FROM V_DM_TRAI_CHU_CHOT_LAI dtccl
+WHERE dtccl.KY_TINH_LAI = @KY_TINH_LAI
+AND dtccl.ID_TRAI_PHIEU_SO_HUU = @ID_TRAI_PHIEU
+AND (dtccl.DA_NHAN_TIEN_YN = @DA_THANH_TOAN OR @DA_THANH_TOAN = 'A')
+GO
+ALTER PROCEDURE [dbo].[pr_GD_LICH_THANH_TOAN_LAI_GOC_select_chot_lai_by_trai_phieu]
+@ID_TRAI_PHIEU numeric(18, 0)
+AS
+BEGIN
+	SELECT *
+	FROM [dbo].[GD_LICH_THANH_TOAN_LAI_GOC]
+	WHERE ID_TRAI_PHIEU = @ID_TRAI_PHIEU
+	AND CHOT_LAI_YN = 'Y'	
+	ORDER BY NGAY DESC	
+END
+
