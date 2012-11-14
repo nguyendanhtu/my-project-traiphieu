@@ -573,6 +573,27 @@ namespace BondApp
             m_txt_ty_le_phi_gd.LostFocus += new EventHandler(m_txt_ty_le_phi_gd_LostFocus);
             m_txt_so_luong_tp_cam_co.LostFocus += new EventHandler(m_txt_so_luong_tp_cam_co_LostFocus);
             this.KeyDown += new KeyEventHandler(f700_giao_dich_phong_toa_giai_toa_KeyDown);
+            m_txt_phi_gd.Leave += new EventHandler(m_txt_phi_gd_Leave);
+        }
+
+        void m_txt_phi_gd_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (m_txt_phi_gd.Text.Trim().Equals("")) return;
+                if (!CValidateTextBox.IsValid(m_txt_phi_gd, DataType.NumberType, allowNull.NO, true))
+                {
+                    BaseMessages.MsgBox_Infor(12); // dữ liệu phải là số
+                    return;
+                }
+                decimal temp = CIPConvert.ToDecimal(m_txt_phi_gd.Text);
+                m_txt_phi_gd.Text = CIPConvert.ToStr(temp, "#,###");
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+
         }
 
         void f700_giao_dich_phong_toa_giai_toa_KeyDown(object sender, KeyEventArgs e)
