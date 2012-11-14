@@ -241,6 +241,16 @@ namespace BondApp.ChucNang
                     {
                         m_fg_load_file.SetCellStyle(i_stt, (int)e_col_number_xls.DKHD_CMND, v_cell_style_ok);
                     }
+                    // Ngày bắt đầu sở hữu trái phiếu
+                    if (m_fg_load_file[i_stt, (int)e_col_number_xls.NGAY_BAT_DAU_SO_HUU_TP] == null)
+                    {
+                        v_dien_giai += "Ngày bắt đầu sở hữu trái phiếu không được null, ";
+                        m_fg_load_file.SetCellStyle(i_stt, (int)e_col_number_xls.NGAY_BAT_DAU_SO_HUU_TP, v_cell_style_err);
+                    }
+                    else
+                    {
+                        m_fg_load_file.SetCellStyle(i_stt, (int)e_col_number_xls.DKHD_CMND, v_cell_style_ok);
+                    }
                     // kiem tra số lượng trái phiếu sở hữu
                     if (m_fg_load_file[i_stt, (int)e_col_number_xls.SO_LUONG_TRAI_PHIEU_SO_HUU] != null)
                     {
