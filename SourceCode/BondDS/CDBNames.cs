@@ -111,6 +111,7 @@ namespace BondDS.CDBNames
         public const decimal SUA = 72;
         public const decimal XOA = 73;
         public const decimal DUYET = 74;
+        public const decimal IMPORT = 80;
     }
     public class ID_TRANG_THAI_PGT
     {
