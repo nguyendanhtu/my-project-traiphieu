@@ -236,7 +236,7 @@ namespace BondApp
             m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcTY_LE_PHI_CHUYEN_NHUONG * 100, "#,##0.0000");
             m_txt_ky_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_HAN) + " " + CIPConvert.ToStr(v_us_cm_dm_tu_dien.strTEN);
             m_txt_lai_suat.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcLAI_SUAT_DEFAULT, "#,##0.0000");
-            m_lbl_phi_gd_max_min.Text = "Phí giao dịch trong khoảng " + CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcPHI_PHONG_GIAI_TOA_MIN, "#,###") + " đến " + CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcPHI_PHONG_GIAI_TOA_MAX, "#,###") + ".";
+            m_lbl_phi_gd_max_min.Text = "Phí giao dịch trong khoảng " + CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcPHI_CHUYEN_NHUONG_MIN, "#,###") + " đến " + CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcPHI_CHUYEN_NHUONG_MAX, "#,###") + ".";
             switch (m_e_form_mode)
             {
                 case eFormMode.LAP_CHUYEN_NHUONG:
@@ -343,12 +343,15 @@ namespace BondApp
                 MessageBox.Show("Số lượng trái phiếu chuyển nhượng phải nhỏ hợn số trái phiếu khả dụng của trai chủ bán!");
                 return;
             }
-            m_us_gd_chuyen_nhuong.dcGIA_TRI_CHUYEN_NHUONG_THUC_TE = CIPConvert.ToDecimal(m_txt_gia_tri_chuyen_nhuong_thuc_te.Text);
+            m_us_gd_chuyen_nhuong.dcGIA_TRI_CHUYEN_NHUONG_THUC_TE = CIPConvert.ToDecimal(m_txt_gia_tri_chuyen_nhuong_thuc_te.Text);            
             m_us_gd_chuyen_nhuong.dcTY_LE_PHI_GD = CIPConvert.ToDecimal(m_txt_ty_le_phi_gd.Text)/100;
             m_us_gd_chuyen_nhuong.dcPHI_GD = CIPConvert.ToDecimal(m_txt_phi_gd.Text);            
             m_us_gd_chuyen_nhuong.strNOI_DUNG_GIAO_DICH = m_txt_noi_dung_chuyen_nhuong.Text;
-            m_us_gd_chuyen_nhuong.dcPHAN_TRAM_THUE = CIPConvert.ToDecimal(m_txt_phan_tram_thue.Text)/100;
-            m_us_gd_chuyen_nhuong.dcGIA_TRI_THUE = CIPConvert.ToDecimal(m_txt_thue.Text);
+            if (m_txt_ty_le_phi_gd.Text.Trim() != "")
+            {
+                m_us_gd_chuyen_nhuong.dcPHAN_TRAM_THUE = CIPConvert.ToDecimal(m_txt_phan_tram_thue.Text) / 100;
+                m_us_gd_chuyen_nhuong.dcGIA_TRI_THUE = CIPConvert.ToDecimal(m_txt_thue.Text);
+            }
 
             if (!m_date_ngay_xac_nhan.Checked)
             {
@@ -399,7 +402,7 @@ namespace BondApp
             m_txt_so_luong_chuyen_nhuong.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcSO_LUONG_CHUYEN_NHUONG, "#,###");
             m_txt_gia_tri_chuyen_nhuong.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcSO_LUONG_CHUYEN_NHUONG * v_trai_phieu.dcMENH_GIA, "#,###");
             m_txt_gia_tri_chuyen_nhuong_thuc_te.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcGIA_TRI_CHUYEN_NHUONG_THUC_TE, "#,###");
-            m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcTY_LE_PHI_GD*100, "#,##0.0000");
+            m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcTY_LE_PHI_GD*100, "#,##0.0000");            
             m_txt_phi_gd.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcPHI_GD, "#,###");
             m_txt_phan_tram_thue.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcPHAN_TRAM_THUE * 100, "#,##0.0000");
             m_txt_thue.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcGIA_TRI_THUE, "#,###");
