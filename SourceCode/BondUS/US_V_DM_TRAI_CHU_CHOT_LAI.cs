@@ -872,10 +872,19 @@ public class US_V_DM_TRAI_CHU_CHOT_LAI : US_Object
     {
         CStoredProc v_pr_obj = new CStoredProc("pr_V_DM_TRAI_CHU_CHOT_LAI_Select_FillDatasetByIDTraiPhieuAndKyTL");
         v_pr_obj.addDecimalInputParam("@ID_TRAI_PHIEU", ip_id_trai_phieu_so_huu);
-        v_pr_obj.addDecimalInputParam("@KY_THINH_LAI", ip_ky_tinh_lai);       
+        v_pr_obj.addDecimalInputParam("@KY_TINH_LAI", ip_ky_tinh_lai);       
         v_pr_obj.fillDataSetByCommand(this, ip_ds);
     }
 
+    public void FillDatasetByIDTraiPhieuByKyTLByTrangThai(DS_V_DM_TRAI_CHU_CHOT_LAI ip_ds, decimal ip_id_trai_phieu_so_huu, decimal ip_ky_tinh_lai, string ip_da_thanh_toan)
+    {
+        CStoredProc v_pr_obj = new CStoredProc("pr_V_DM_TRAI_CHU_CHOT_LAI_Select_FillDatasetByIDTraiPhieuAndKyTLbyTrangThai");
+        v_pr_obj.addDecimalInputParam("@ID_TRAI_PHIEU", ip_id_trai_phieu_so_huu);
+        v_pr_obj.addDecimalInputParam("@KY_TINH_LAI", ip_ky_tinh_lai);
+        v_pr_obj.addNVarcharInputParam("@DA_THANH_TOAN", ip_da_thanh_toan);
+        v_pr_obj.fillDataSetByCommand(this, ip_ds);
+    }
+    
     public void FillDatasetByIDTraiPhieuAndNgayChotLai(DS_V_DM_TRAI_CHU_CHOT_LAI ip_ds
       , decimal ip_id_trai_phieu_so_huu
       , DateTime ip_ngay_chot_lai
