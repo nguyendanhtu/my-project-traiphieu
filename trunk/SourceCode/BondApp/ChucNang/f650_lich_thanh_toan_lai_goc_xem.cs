@@ -120,6 +120,7 @@ namespace BondApp
         e_form_mode m_e_form_mode = e_form_mode.HIEN_THI_KHONG_TRAI_PHIEU;
         DS_GD_LICH_THANH_TOAN_LAI_GOC m_ds_gd_lich_tt_lai_goc = new DS_GD_LICH_THANH_TOAN_LAI_GOC();
         US_GD_LICH_THANH_TOAN_LAI_GOC m_us_gd_lich_tt_lai_goc = new US_GD_LICH_THANH_TOAN_LAI_GOC();
+        US_V_HT_LOG_TRUY_CAP m_us_v_ht_log_truy_cap = new US_V_HT_LOG_TRUY_CAP();
         #endregion
 
         #region Private Method
@@ -135,7 +136,14 @@ namespace BondApp
             m_lbl_header.ForeColor = Color.DarkRed;
             m_lbl_header.TextAlign = ContentAlignment.MiddleCenter;
         }
-
+        private void ghi_log_he_thong()
+        {
+            /* Thông tin chung*/
+            m_us_v_ht_log_truy_cap.dcID_DANG_NHAP = CAppContext_201.getCurrentUserID();
+            m_us_v_ht_log_truy_cap.datTHOI_GIAN = DateTime.Now;
+            m_us_v_ht_log_truy_cap.strDOI_TUONG_THAO_TAC = LOG_DOI_TUONG_TAC_DONG.GD_LICH_THANH_TOAN_LAI_GOC;
+            m_us_v_ht_log_truy_cap.strMO_TA = "Sinh " + LOG_DOI_TUONG_TAC_DONG.GD_LICH_THANH_TOAN_LAI_GOC;
+        }
         private void set_initial_form_load()
         {
             load_data_2_cbo_dv_ky_tinh_lai();
@@ -707,12 +715,24 @@ namespace BondApp
                 {
                     f000_confirm v_confirm = new f000_confirm();
                     v_bool_xac_nhan = v_confirm.display_to_confirm();
+                    m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.SUA;
                 }
+                else m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.THEM;
                 // nếu đồng ý or chưa có thì cho gen
                 if (v_bool_xac_nhan || v_ds_lich.GD_LICH_THANH_TOAN_LAI_GOC.Rows.Count == 0)
                 {
                     m_us_gd_lich_tt_lai_goc.BeginTransaction();
                     m_us_gd_lich_tt_lai_goc.GenLichThanhToanLaiGoc(m_us_v_trai_phieu.dcID, CAppContext_201.getCurrentUserID());
+                    ghi_log_he_thong();
+                    // ghi log hệ thống
+                    try
+                    {
+                        m_us_v_ht_log_truy_cap.Insert();
+                    }
+                    catch
+                    {
+                        BaseMessages.MsgBox_Infor("Đã xảy ra lỗi trong quá trình ghi log hệ thống");
+                    }
                     load_data_2_grid();
                     m_us_gd_lich_tt_lai_goc.CommitTransaction();
                 }
