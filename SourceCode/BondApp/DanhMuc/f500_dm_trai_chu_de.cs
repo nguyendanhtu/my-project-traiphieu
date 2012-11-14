@@ -321,9 +321,9 @@ namespace BondApp.DanhMuc
             {
                 return false;
             }
-            if(m_dat_ngay_so_huu_trai_phieu.Value > m_us_v_trai_phieu.datNGAY_PHAT_HANH)
+            if(m_dat_ngay_so_huu_trai_phieu.Value < m_us_v_trai_phieu.datNGAY_PHAT_HANH)
             {
-                BaseMessages.MsgBox_Infor("Ngày sở hữu trái phiếu phải trước ngày phát hành!");
+                BaseMessages.MsgBox_Infor("Ngày sở hữu trái phiếu phải sau ngày phát hành!");
                 m_txt_so_trai_phieu_so_huu.Focus();
                 return false;
             }
