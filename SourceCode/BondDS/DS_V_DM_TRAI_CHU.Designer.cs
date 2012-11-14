@@ -341,6 +341,8 @@ namespace BondDS {
             
             private global::System.Data.DataColumn columnNGAY_DUYET;
             
+            private global::System.Data.DataColumn columnNGAY_SO_HUU_TRAI_PHIEU;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public V_DM_TRAI_CHUDataTable() {
@@ -624,6 +626,14 @@ namespace BondDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NGAY_SO_HUU_TRAI_PHIEUColumn {
+                get {
+                    return this.columnNGAY_SO_HUU_TRAI_PHIEU;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -689,7 +699,8 @@ namespace BondDS {
                         decimal ID_NGUOI_LAP_TC, 
                         decimal ID_TRANG_THAI, 
                         decimal SO_LUONG_TP_SO_HUU_BAN_DAU, 
-                        System.DateTime NGAY_DUYET) {
+                        System.DateTime NGAY_DUYET, 
+                        System.DateTime NGAY_SO_HUU_TRAI_PHIEU) {
                 V_DM_TRAI_CHURow rowV_DM_TRAI_CHURow = ((V_DM_TRAI_CHURow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -722,7 +733,8 @@ namespace BondDS {
                         ID_NGUOI_LAP_TC,
                         ID_TRANG_THAI,
                         SO_LUONG_TP_SO_HUU_BAN_DAU,
-                        NGAY_DUYET};
+                        NGAY_DUYET,
+                        NGAY_SO_HUU_TRAI_PHIEU};
                 rowV_DM_TRAI_CHURow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowV_DM_TRAI_CHURow);
                 return rowV_DM_TRAI_CHURow;
@@ -789,6 +801,7 @@ namespace BondDS {
                 this.columnID_TRANG_THAI = base.Columns["ID_TRANG_THAI"];
                 this.columnSO_LUONG_TP_SO_HUU_BAN_DAU = base.Columns["SO_LUONG_TP_SO_HUU_BAN_DAU"];
                 this.columnNGAY_DUYET = base.Columns["NGAY_DUYET"];
+                this.columnNGAY_SO_HUU_TRAI_PHIEU = base.Columns["NGAY_SO_HUU_TRAI_PHIEU"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -856,6 +869,8 @@ namespace BondDS {
                 base.Columns.Add(this.columnSO_LUONG_TP_SO_HUU_BAN_DAU);
                 this.columnNGAY_DUYET = new global::System.Data.DataColumn("NGAY_DUYET", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNGAY_DUYET);
+                this.columnNGAY_SO_HUU_TRAI_PHIEU = new global::System.Data.DataColumn("NGAY_SO_HUU_TRAI_PHIEU", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNGAY_SO_HUU_TRAI_PHIEU);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -1486,6 +1501,23 @@ namespace BondDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime NGAY_SO_HUU_TRAI_PHIEU {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableV_DM_TRAI_CHU.NGAY_SO_HUU_TRAI_PHIEUColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NGAY_SO_HUU_TRAI_PHIEU\' in table \'V_DM_TRAI_CHU\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableV_DM_TRAI_CHU.NGAY_SO_HUU_TRAI_PHIEUColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDIA_CHINull() {
                 return this.IsNull(this.tableV_DM_TRAI_CHU.DIA_CHIColumn);
             }
@@ -1747,6 +1779,18 @@ namespace BondDS {
             public void SetNGAY_DUYETNull() {
                 this[this.tableV_DM_TRAI_CHU.NGAY_DUYETColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNGAY_SO_HUU_TRAI_PHIEUNull() {
+                return this.IsNull(this.tableV_DM_TRAI_CHU.NGAY_SO_HUU_TRAI_PHIEUColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNGAY_SO_HUU_TRAI_PHIEUNull() {
+                this[this.tableV_DM_TRAI_CHU.NGAY_SO_HUU_TRAI_PHIEUColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -1939,6 +1983,7 @@ namespace BondDS.DS_V_DM_TRAI_CHUTableAdapters {
             tableMapping.ColumnMappings.Add("ID_TRANG_THAI", "ID_TRANG_THAI");
             tableMapping.ColumnMappings.Add("SO_LUONG_TP_SO_HUU_BAN_DAU", "SO_LUONG_TP_SO_HUU_BAN_DAU");
             tableMapping.ColumnMappings.Add("NGAY_DUYET", "NGAY_DUYET");
+            tableMapping.ColumnMappings.Add("NGAY_SO_HUU_TRAI_PHIEU", "NGAY_SO_HUU_TRAI_PHIEU");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1946,7 +1991,7 @@ namespace BondDS.DS_V_DM_TRAI_CHUTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BondDS.Properties.Settings.Default.QuanLyPhatHanhTraiPhieuConnectionString2;
+            this._connection.ConnectionString = global::BondDS.Properties.Settings.Default.QuanLyPhatHanhTraiPhieuConnectionString3;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1955,7 +2000,7 @@ namespace BondDS.DS_V_DM_TRAI_CHUTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT ID, MA_TRAI_CHU, TEN_TRAI_CHU, DIA_CHI, MOBILE, FAX, CMT_GIAY_DKKD, NGAY_CAP_CMT, NOI_CAP_CMT, ID_LOAI_TRAI_CHU, ID_TRAI_PHIEU_SO_HUU, TEN_NGUOI_DAI_DIEN, CMT_NGUOI_DAI_DIEN, NGAY_CAP_CMT_NGUOI_DAI_DIEN, NOI_CAP_CMT_NGUOI_DAI_DIEN, CHUC_VU, MA_TRAI_PHIEU, TEN_TRAI_PHIEU, MENH_GIA, TONG_SO_DU, SO_DU_KHA_DUNG, SO_TAI_KHOAN, MO_TAI_NGAN_HANG, GHI_CHU1, GHI_CHU2, GHI_CHU3, ID_NGUOI_DUYET_TC, ID_NGUOI_LAP_TC, ID_TRANG_THAI, SO_LUONG_TP_SO_HUU_BAN_DAU, NGAY_DUYET FROM dbo.V_DM_TRAI_CHU";
+            this._commandCollection[0].CommandText = @"SELECT ID, MA_TRAI_CHU, TEN_TRAI_CHU, DIA_CHI, MOBILE, FAX, CMT_GIAY_DKKD, NGAY_CAP_CMT, NOI_CAP_CMT, ID_LOAI_TRAI_CHU, ID_TRAI_PHIEU_SO_HUU, TEN_NGUOI_DAI_DIEN, CMT_NGUOI_DAI_DIEN, NGAY_CAP_CMT_NGUOI_DAI_DIEN, NOI_CAP_CMT_NGUOI_DAI_DIEN, CHUC_VU, MA_TRAI_PHIEU, TEN_TRAI_PHIEU, MENH_GIA, TONG_SO_DU, SO_DU_KHA_DUNG, SO_TAI_KHOAN, MO_TAI_NGAN_HANG, GHI_CHU1, GHI_CHU2, GHI_CHU3, ID_NGUOI_DUYET_TC, ID_NGUOI_LAP_TC, ID_TRANG_THAI, SO_LUONG_TP_SO_HUU_BAN_DAU, NGAY_DUYET, NGAY_SO_HUU_TRAI_PHIEU FROM dbo.V_DM_TRAI_CHU";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

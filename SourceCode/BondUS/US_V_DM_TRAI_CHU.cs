@@ -700,6 +700,28 @@ public class US_V_DM_TRAI_CHU : US_Object
     {
         pm_objDR["NGAY_DUYET"] = System.Convert.DBNull;
     }
+
+    public DateTime datNGAY_SO_HUU_TRAI_PHIEU
+    {
+        get
+        {
+            return CNull.RowNVLDate(pm_objDR, "NGAY_SO_HUU_TRAI_PHIEU", IPConstants.c_DefaultDate);
+        }
+        set
+        {
+            pm_objDR["NGAY_SO_HUU_TRAI_PHIEU"] = value;
+        }
+    }
+
+    public bool IsNGAY_SO_HUU_TRAI_PHIEUNull()
+    {
+        return pm_objDR.IsNull("NGAY_SO_HUU_TRAI_PHIEU");
+    }
+
+    public void SetNGAY_SO_HUU_TRAI_PHIEUNull()
+    {
+        pm_objDR["NGAY_SO_HUU_TRAI_PHIEU"] = System.Convert.DBNull;
+    }
     #endregion
 
 

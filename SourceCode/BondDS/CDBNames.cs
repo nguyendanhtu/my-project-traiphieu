@@ -536,6 +536,7 @@ namespace BondDS.CDBNames
         public const string ID_TRANG_THAI = "ID_TRANG_THAI";
         public const string SO_LUONG_TP_SO_HUU_BAN_DAU = "SO_LUONG_TP_SO_HUU_BAN_DAU";
         public const string NGAY_DUYET = "NGAY_DUYET";
+        public const string NGAY_SO_HUU_TRAI_PHIEU = "NGAY_SO_HUU_TRAI_PHIEU";
     }
 
     public class DM_DOT_PHAT_HANH
