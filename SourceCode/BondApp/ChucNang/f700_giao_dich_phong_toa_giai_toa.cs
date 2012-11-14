@@ -472,11 +472,13 @@ namespace BondApp
                     m_us_gd_phong_toa_giai_toa.dcID_TRAI_CHU = m_us_trai_chu.dcID;
                     form_2_us_gd_lap_pgt();
                     m_us_gd_phong_toa_giai_toa.strNGAN_HANG_CAM_CO = m_cbo_ngan_hang_cam_co.ValueMember;
+                    m_us_gd_phong_toa_giai_toa.dcID_TRANG_THAI = List_trang_thai.Da_Nhap;
                     break;
                 case eFormMode.LAP_PHONG_TOA:
                     m_us_gd_phong_toa_giai_toa.strPHONG_TOA_YN = "Y";
                     m_us_gd_phong_toa_giai_toa.dcID_TRAI_CHU = m_us_trai_chu.dcID;
                     form_2_us_gd_lap_pgt();
+                    m_us_gd_phong_toa_giai_toa.dcID_TRANG_THAI = List_trang_thai.Da_Nhap;
                     break;
                 case eFormMode.DUYET_PHONG_TOA:
                     m_us_gd_phong_toa_giai_toa.dcID_NGUOI_DUYET = IP.Core.IPSystemAdmin.CAppContext_201.getCurrentUserID();
