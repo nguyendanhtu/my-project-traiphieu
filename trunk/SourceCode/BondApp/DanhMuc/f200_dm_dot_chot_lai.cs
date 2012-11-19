@@ -417,6 +417,15 @@ namespace BondApp
             }
             m_fg.Cols[(int)e_col_Number.TRANG_THAI].DataMap = v_hst_tu_dien;
 		}
+        private void load_data_2_grid(string ip_str_search_key)
+        {
+            m_ds = new DS_GD_CHOT_LAI();
+            m_us_gd_chot_lai.load_data_by_search(m_ds, ip_str_search_key);
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
+            m_fg.Redraw = true;
+        }
 		private void grid2us_object(US_GD_CHOT_LAI i_us, int i_grid_row) {
 			DataRow v_dr;
 			v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
@@ -510,6 +519,19 @@ namespace BondApp
             this.KeyDown += new KeyEventHandler(f200_dm_dot_chot_lai_KeyDown);
             m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
             m_cmd_duyet.Click += new EventHandler(m_cmd_duyet_Click);
+            m_cmd_filter.Click += new EventHandler(m_cmd_filter_Click);
+        }
+
+        void m_cmd_filter_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                load_data_2_grid(m_txt_search.Text.Trim());
+            }
+            catch (Exception v_e)
+            {   
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_duyet_Click(object sender, EventArgs e)
