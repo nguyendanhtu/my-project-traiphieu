@@ -274,8 +274,8 @@ namespace BondApp
             m_txt_ngay_cap.Text = ip_us_trai_chu.datNGAY_CAP_CMT.ToString("dd/MM/yyyy");
             if (v_ds_so_du_trai_phieu.GD_SO_DU_TRAI_PHIEU != null && v_ds_so_du_trai_phieu.GD_SO_DU_TRAI_PHIEU.Count > 0)
             {
-                m_txt_so_luong_trai_phieu.Text = v_ds_so_du_trai_phieu.GD_SO_DU_TRAI_PHIEU.Rows[0][GD_SO_DU_TRAI_PHIEU.TONG_SO_DU].ToString();
-                m_txt_so_luong_kha_dung.Text = v_ds_so_du_trai_phieu.GD_SO_DU_TRAI_PHIEU.Rows[0][GD_SO_DU_TRAI_PHIEU.SO_DU_KHA_DUNG].ToString();
+                m_txt_so_luong_trai_phieu.Text = CIPConvert.ToStr(v_ds_so_du_trai_phieu.GD_SO_DU_TRAI_PHIEU.Rows[0][GD_SO_DU_TRAI_PHIEU.TONG_SO_DU], "#,###");
+                m_txt_so_luong_kha_dung.Text = CIPConvert.ToStr(v_ds_so_du_trai_phieu.GD_SO_DU_TRAI_PHIEU.Rows[0][GD_SO_DU_TRAI_PHIEU.SO_DU_KHA_DUNG], "#,###");
             }
             m_txt_so_dt.Text = ip_us_trai_chu.strMOBILE;
             m_txt_so_fax.Text = ip_us_trai_chu.strFAX;
