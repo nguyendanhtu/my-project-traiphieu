@@ -416,6 +416,7 @@ namespace BondApp
             m_us.load_data_by_search(m_ds, ip_str_search_key);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
             m_fg.Redraw = true;
         }
 		private void grid2us_object(US_V_DM_TO_CHUC_PHAT_HANH i_us
