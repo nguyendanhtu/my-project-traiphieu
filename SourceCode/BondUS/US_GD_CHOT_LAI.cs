@@ -323,7 +323,13 @@ public class US_GD_CHOT_LAI : US_Object
 	}
 #endregion
 
-
+    public void load_data_by_search(DS_GD_CHOT_LAI op_ds_gd_chot_lai
+                                  , string ip_str_keyword)
+    {
+        CStoredProc v_cstore = new CStoredProc("pr_GD_CHOT_LAI_Fill_By_Search");
+        v_cstore.addNVarcharInputParam("@KEYWORD", ip_str_keyword);
+        v_cstore.fillDataSetByCommand(this, op_ds_gd_chot_lai);
+    }
     public void GenDSTraLai()
     {
         CStoredProc v_pr_obj = new CStoredProc("pr_GD_CHOT_LAI_Sinh_Gd_Chot_Lai_detail");

@@ -123,6 +123,9 @@ namespace BondApp.DanhMuc
             switch (m_e_form_mode)
             {
                 case e_formmode.HIEN_THI_DE_THEM:
+                    m_lbl_label_hien_tai.Visible = false;
+                    m_lbl_tong_so_du_hien_tai.Visible = false;
+                    m_txt_tong_so_du_hien_tai.Visible = false;
                     m_lbl_so_kha_dung.Visible = false;
                     m_lbl_so_luong_phong_toa.Visible = false;
                     m_txt_so_du_kha_dung.Visible = false;
@@ -186,8 +189,12 @@ namespace BondApp.DanhMuc
             m_txt_so_luong_phat_hanh.Text = CIPConvert.ToStr(m_us_v_trai_phieu.dcTONG_SL_PHAT_HANH, "#,###");
             if (ip_us_trai_chu.dcID_TRANG_THAI == TRANG_THAI_DANH_MUC.DA_DUYET)
             {
-                m_txt_so_du_kha_dung.Text = CIPConvert.ToStr(ip_us_trai_chu.dcSO_DU_KHA_DUNG, "#,###");
-                m_txt_sl_da_phong_toa.Text = CIPConvert.ToStr(ip_us_trai_chu.dcTONG_SO_DU - ip_us_trai_chu.dcSO_DU_KHA_DUNG, "#,###");
+                if (ip_us_trai_chu.dcTONG_SO_DU == 0) m_txt_tong_so_du_hien_tai.Text = "0";
+                else m_txt_tong_so_du_hien_tai.Text = CIPConvert.ToStr(ip_us_trai_chu.dcTONG_SO_DU,"#,###");
+                if (ip_us_trai_chu.dcSO_DU_KHA_DUNG == 0) m_txt_so_du_kha_dung.Text = "0";
+                else m_txt_so_du_kha_dung.Text = CIPConvert.ToStr(ip_us_trai_chu.dcSO_DU_KHA_DUNG, "#,###");
+                if ((ip_us_trai_chu.dcTONG_SO_DU - ip_us_trai_chu.dcSO_DU_KHA_DUNG) == 0) m_txt_sl_da_phong_toa.Text = "0";
+                else m_txt_sl_da_phong_toa.Text = CIPConvert.ToStr(ip_us_trai_chu.dcTONG_SO_DU - ip_us_trai_chu.dcSO_DU_KHA_DUNG, "#,###");
             }
             if (ip_us_trai_chu.dcSO_LUONG_TP_SO_HUU_BAN_DAU == 0) m_txt_so_trai_phieu_so_huu.Text = "0";
             else m_txt_so_trai_phieu_so_huu.Text = CIPConvert.ToStr(ip_us_trai_chu.dcSO_LUONG_TP_SO_HUU_BAN_DAU, "#,###");
