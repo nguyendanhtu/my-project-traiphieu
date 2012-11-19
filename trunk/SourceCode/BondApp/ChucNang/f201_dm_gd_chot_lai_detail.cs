@@ -724,8 +724,14 @@ namespace BondApp
                 MessageBox.Show("Bạn chưa chọn trái phiếu!");
                 return false;
             }
+            if(m_us_gd_chot_lai.check_uk_chot_lai())
+            {
+                MessageBox.Show("Kỳ chốt lãi này đã được tạo từ trước");
+                return false;
+            }
             return true;
         }
+        
         private void load_data_2_cbo()
         {
             US_CM_DM_TU_DIEN v_us_cm_dm_tu_diem = new US_CM_DM_TU_DIEN();
