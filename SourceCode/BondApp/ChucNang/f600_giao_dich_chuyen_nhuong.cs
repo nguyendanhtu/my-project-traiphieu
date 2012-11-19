@@ -351,12 +351,16 @@ namespace BondApp
             if (m_txt_ty_le_phi_gd.Text.Trim() != "")
             m_us_gd_chuyen_nhuong.dcTY_LE_PHI_GD = CIPConvert.ToDecimal(m_txt_ty_le_phi_gd.Text)/100;
             if (m_txt_phi_gd.Text.Trim() != "")
-            m_us_gd_chuyen_nhuong.dcPHI_GD = CIPConvert.ToDecimal(m_txt_phi_gd.Text);            
+                m_us_gd_chuyen_nhuong.dcPHI_GD = CIPConvert.ToDecimal(m_txt_phi_gd.Text);
+            else
+                m_us_gd_chuyen_nhuong.dcPHI_GD = 0;
             m_us_gd_chuyen_nhuong.strNOI_DUNG_GIAO_DICH = m_txt_noi_dung_chuyen_nhuong.Text;
             if (m_txt_phan_tram_thue.Text.Trim() != "")
                 m_us_gd_chuyen_nhuong.dcPHAN_TRAM_THUE = CIPConvert.ToDecimal(m_txt_phan_tram_thue.Text) / 100;
             if (m_txt_thue.Text.Trim() != "")
                 m_us_gd_chuyen_nhuong.dcGIA_TRI_THUE = CIPConvert.ToDecimal(m_txt_thue.Text);
+            else
+                m_us_gd_chuyen_nhuong.dcGIA_TRI_THUE = 0;
             if (!m_date_ngay_xac_nhan.Checked)
             {
                 m_us_gd_chuyen_nhuong.SetNGAY_XAC_NHANNull();
