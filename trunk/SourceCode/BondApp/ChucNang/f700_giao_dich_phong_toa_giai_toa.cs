@@ -253,11 +253,14 @@ namespace BondApp
                 m_txt_so_luong_tp_cam_co.Focus();
                 return false;
             }
-
-            if (!CValidateTextBox.IsValid(m_txt_ngan_hang_cam_co, DataType.StringType, allowNull.NO))
+            if (m_e_form_mode != eFormMode.LAP_GIAI_TOA)
             {
-                m_txt_ngan_hang_cam_co.Focus();
-                return false;
+                if (!CValidateTextBox.IsValid(m_txt_ngan_hang_cam_co, DataType.StringType, allowNull.NO))
+                {
+
+                    m_txt_ngan_hang_cam_co.Focus();
+                    return false;
+                }
             }
             //if (!CValidateTextBox.IsValid(m_txt_nguoi_xac_nhan, DataType.StringType, allowNull.NO))
             //{
@@ -515,7 +518,7 @@ namespace BondApp
             m_us_gd_phong_toa_giai_toa.dcPHI_GIAO_DICH = CIPConvert.ToDecimal(m_txt_phi_gd.Text);
             m_us_gd_phong_toa_giai_toa.strNDD_FAX = m_txt_fax.Text;
             m_us_gd_phong_toa_giai_toa.strNDD_DIEN_THOAI = m_txt_dien_thoai.Text;
-            m_us_gd_phong_toa_giai_toa.strNDD_TRU_SO = m_txt_tru_so_chinh.Text;
+            m_us_gd_phong_toa_giai_toa.strNDD_TRU_SO = m_txt_tru_so_chinh.Text;            
             m_us_gd_phong_toa_giai_toa.strNGAN_HANG_CAM_CO = m_txt_ngan_hang_cam_co.Text;
             m_us_gd_phong_toa_giai_toa.strKHOAN_DAU_TU = m_txt_khoan_dau_tu.Text;
         }
