@@ -511,6 +511,7 @@ namespace BondApp
                                     , m_dat_to_date.Value);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
             m_fg.Redraw = true;
             //Map ten trai chu
             DS_DM_TRAI_CHU m_ds_trai_chu = new DS_DM_TRAI_CHU();
