@@ -722,6 +722,7 @@ namespace BondApp
             m_us_v_trai_phieu.load_data_by_search(m_ds_v_trai_phieu, ip_str_search_key);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds_v_trai_phieu, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
             m_fg.Redraw = true;
         }
 
