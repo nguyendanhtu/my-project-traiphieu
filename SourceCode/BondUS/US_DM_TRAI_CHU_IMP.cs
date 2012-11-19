@@ -568,8 +568,8 @@ public class US_DM_TRAI_CHU_IMP : US_Object
         v_cstore.addNVarcharInputParam("@DIEN_THOAI", this.strDIEN_THOAI);
         v_cstore.addNVarcharInputParam("@DKHD_CMND", this.strDKHD_CMND);
         if(!this.IsNGAY_CAPNull())
-            v_cstore.addDatetimeInputParam("@NGAY_CAP", CIPConvert.ToDatetime(this.strNGAY_CAP));
-        else v_cstore.addDatetimeInputParam("@NGAY_CAP", CIPConvert.ToDatetime("01/01/1900"));
+            v_cstore.addDatetimeInputParam("@NGAY_CAP", CIPConvert.ToDatetime(this.strNGAY_CAP).Date);
+        else v_cstore.addDatetimeInputParam("@NGAY_CAP", CIPConvert.ToDatetime("01/01/1900").Date);
         v_cstore.addNVarcharInputParam("@NOI_CAP", this.strNOI_CAP);
         v_cstore.addDecimalInputParam("@ID_LOAI_TRAI_CHU", ip_dc_loai_trai_chu);
         v_cstore.addNVarcharInputParam("@SO_TAI_KHOAN", this.strSO_TAI_KHOAN);
@@ -578,7 +578,7 @@ public class US_DM_TRAI_CHU_IMP : US_Object
         v_cstore.addNVarcharInputParam("@TEN_NGUOI_DAI_DIEN", this.strTEN_NGUOI_DAI_DIEN);
         v_cstore.addNVarcharInputParam("@CMT_NGUOI_DAI_DIEN", this.strSO_CMND_NGUOI_DAI_DIEN);
         if(!this.IsNGAY_CAP_CMND_NGUOI_DAI_DIENNull())
-            v_cstore.addDatetimeInputParam("@NGAY_CAP_CMT_NGUOI_DAI_DIEN", CIPConvert.ToDatetime(this.strNGAY_CAP_CMND_NGUOI_DAI_DIEN));
+            v_cstore.addDatetimeInputParam("@NGAY_CAP_CMT_NGUOI_DAI_DIEN", CIPConvert.ToDatetime(this.strNGAY_CAP_CMND_NGUOI_DAI_DIEN).Date);
         else v_cstore.addDatetimeInputParam("@NGAY_CAP_CMT_NGUOI_DAI_DIEN", CIPConvert.ToDatetime("01/01/1900"));
         v_cstore.addNVarcharInputParam("@NOI_CAP_CMT_NGUOI_DAI_DIEN", this.strNOI_CAP_CMND_NGUOI_DAI_DIEN);
         v_cstore.addNVarcharInputParam("@CHUC_VU", this.strCHUC_VU_NGUOI_DAI_DIEN);

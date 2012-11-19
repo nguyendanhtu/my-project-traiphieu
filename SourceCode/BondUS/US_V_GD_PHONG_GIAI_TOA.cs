@@ -161,7 +161,8 @@ namespace BondUS
             }
             set
             {
-                pm_objDR["NGAY_CAP_CMT"] = value;
+                DateTime v_dt = value;
+                pm_objDR["NGAY_CAP_CMT"] = v_dt.Date;
             }
         }
 
@@ -205,7 +206,8 @@ namespace BondUS
             }
             set
             {
-                pm_objDR["NGAY_GIAO_DICH"] = value;
+                DateTime v_dt = value;
+                pm_objDR["NGAY_GIAO_DICH"] = v_dt.Date;
             }
         }
 
@@ -579,7 +581,8 @@ namespace BondUS
             }
             set
             {
-                pm_objDR["NGAY_CAP_GIAY_UQ"] = value;
+                DateTime v_dt = value;
+                pm_objDR["NGAY_CAP_GIAY_UQ"] = v_dt.Date;
             }
         }
 
@@ -809,8 +812,8 @@ namespace BondUS
         {
             CStoredProc v_cstore = new CStoredProc("pr_V_GD_PHONG_GIAI_TOAN_fill_data_by_date_and_to_chuc_phat_hanh");
             v_cstore.addDecimalInputParam("@ID_TO_CHUC_PHAT_HANH", ip_dc_id_to_chuc_phat_hanh);
-            v_cstore.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay);
-            v_cstore.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay);
+            v_cstore.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay.Date);
+            v_cstore.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay.Date);
             v_cstore.addNVarcharInputParam("@PHONG_TOA_YN", ip_str_phong_toa_yn);
             v_cstore.fillDataSetByCommand(this, ip_ds_v_gd_phong_giai_toa);
         }

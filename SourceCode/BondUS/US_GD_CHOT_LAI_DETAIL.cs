@@ -150,7 +150,8 @@ public class US_GD_CHOT_LAI_DETAIL : US_Object
 		}
 		set   
 		{
-			pm_objDR["NGAY_NHAN_TIEN"] = value;
+            DateTime v_dt = value;
+			pm_objDR["NGAY_NHAN_TIEN"] = v_dt.Date;
 		}
 	}
 

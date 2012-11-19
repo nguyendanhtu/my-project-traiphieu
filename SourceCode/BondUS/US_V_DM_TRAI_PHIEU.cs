@@ -71,7 +71,8 @@ public class US_V_DM_TRAI_PHIEU : US_Object
         }
         set
         {
-            pm_objDR["NGAY_PHAT_HANH"] = value;
+            DateTime v_dt = value;
+            pm_objDR["NGAY_PHAT_HANH"] = v_dt.Date;
         }
     }
 
@@ -533,7 +534,8 @@ public class US_V_DM_TRAI_PHIEU : US_Object
         }
         set
         {
-            pm_objDR["NGAY_DAO_HAN"] = value;
+            DateTime v_dt = value;
+            pm_objDR["NGAY_DAO_HAN"] = v_dt.Date;
         }
     }
 
@@ -885,7 +887,8 @@ public class US_V_DM_TRAI_PHIEU : US_Object
         }
         set
         {
-            pm_objDR["NGAY_KY_HD"] = value;
+            DateTime v_dt = value;
+            pm_objDR["NGAY_KY_HD"] =v_dt.Date;
         }
     }
 

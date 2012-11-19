@@ -183,7 +183,8 @@ public class US_V_GD_TRA_GOC : US_Object
         }
         set
         {
-            pm_objDR["NGAY_CAP_CMT"] = value;
+            DateTime v_dt = value;
+            pm_objDR["NGAY_CAP_CMT"] = v_dt.Date;
         }
     }
 

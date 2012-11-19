@@ -181,7 +181,8 @@ public class US_V_DM_TRAI_CHU : US_Object
         }
         set
         {
-            pm_objDR["NGAY_CAP_CMT"] = value;
+            DateTime v_dt = value;
+            pm_objDR["NGAY_CAP_CMT"] = v_dt.Date;
         }
     }
 
@@ -313,7 +314,8 @@ public class US_V_DM_TRAI_CHU : US_Object
         }
         set
         {
-            pm_objDR["NGAY_CAP_CMT_NGUOI_DAI_DIEN"] = value;
+            DateTime v_dt = value;
+            pm_objDR["NGAY_CAP_CMT_NGUOI_DAI_DIEN"] = v_dt.Date;
         }
     }
 
@@ -687,7 +689,8 @@ public class US_V_DM_TRAI_CHU : US_Object
         }
         set
         {
-            pm_objDR["NGAY_DUYET"] = value;
+            DateTime v_dt = value;
+            pm_objDR["NGAY_DUYET"] = v_dt.Date;
         }
     }
 
@@ -709,7 +712,8 @@ public class US_V_DM_TRAI_CHU : US_Object
         }
         set
         {
-            pm_objDR["NGAY_SO_HUU_TRAI_PHIEU"] = value;
+            DateTime v_dt = value;
+            pm_objDR["NGAY_SO_HUU_TRAI_PHIEU"] = v_dt.Date;
         }
     }
 

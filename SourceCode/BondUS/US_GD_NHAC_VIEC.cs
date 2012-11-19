@@ -178,8 +178,8 @@ public class US_GD_NHAC_VIEC : US_Object
                                         , decimal ip_id_loai_nhac_viec)
     {
         CStoredProc v_pr_obj = new CStoredProc("pr_LICH_NHAC_VIEC_filter");
-        v_pr_obj.addDatetimeInputParam("@ip_from_date", ip_from_date);
-        v_pr_obj.addDatetimeInputParam("@ip_to_date", ip_to_date);
+        v_pr_obj.addDatetimeInputParam("@ip_from_date", ip_from_date.Date);
+        v_pr_obj.addDatetimeInputParam("@ip_to_date", ip_to_date.Date);
         v_pr_obj.addDecimalInputParam("@ip_id_loai_nhac_viec", ip_id_loai_nhac_viec);
 
         v_pr_obj.fillDataSetByCommand(this, ip_gd_lich_nhac_viec);

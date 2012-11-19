@@ -183,7 +183,8 @@ namespace BondUS
             }
             set
             {
-                pm_objDR["NGAY_CAP_CMT"] = value;
+                DateTime v_dt = value;
+                pm_objDR["NGAY_CAP_CMT"] = v_dt.Date;
             }
         }
 
@@ -491,7 +492,8 @@ namespace BondUS
             }
             set
             {
-                pm_objDR["NGAY_CAP_CMT_NGUOI_DAI_DIEN"] = value;
+                DateTime v_dt = value;
+                pm_objDR["NGAY_CAP_CMT_NGUOI_DAI_DIEN"] = v_dt.Date;
             }
         }
 
@@ -579,7 +581,8 @@ namespace BondUS
             }
             set
             {
-                pm_objDR["NGAY_DUYET"] = value;
+                DateTime v_dt = value;
+                pm_objDR["NGAY_DUYET"] = value.Date;
             }
         }
 

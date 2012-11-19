@@ -72,7 +72,8 @@ namespace BondUS
             }
             set
             {
-                pm_objDR["NGAY_PHAT_HANH"] = value;
+                DateTime v_dt = value;
+                pm_objDR["NGAY_PHAT_HANH"] = v_dt.Date;
             }
         }
 
