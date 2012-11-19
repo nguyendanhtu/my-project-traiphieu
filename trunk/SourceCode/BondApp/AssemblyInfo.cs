@@ -10,7 +10,7 @@ using System.Resources;
 [assembly: AssemblyTitle("Quản lý phát hành trái phiếu - VietinBankSC")]
 [assembly: AssemblyDescription("Hệ thống quản lý phát hành trái phiếu - VietinBankSC")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("VietinBankSC")]
+[assembly: AssemblyCompany("QuanLyPhatHanhTraiPhieu")]
 [assembly: AssemblyProduct("QuanLyPhatHanhTraiPhieu")]
 [assembly: AssemblyCopyright("BKIndex Group")]
 [assembly: AssemblyTrademark("BKIndex Group")]
