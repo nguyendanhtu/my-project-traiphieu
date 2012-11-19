@@ -354,5 +354,18 @@ public class US_GD_CHOT_LAI : US_Object
         v_pr_obj.addDatetimeInputParam("@NGAY_THANH_TOAN", ip_ngay_chot_lai);
         v_pr_obj.fillDataSetByCommand(this, ip_ds);
     }
+
+    public bool check_uk_chot_lai()
+    {
+        DS_GD_CHOT_LAI v_ds = new DS_GD_CHOT_LAI();
+        CStoredProc v_pr_obj = new CStoredProc("pr_GD_CHOT_LAI_Select_ChotLaiByIDTraiPhieuAndNgayChotLai");
+        v_pr_obj.addDecimalInputParam("@ID_TRAI_PHIEU", this.dcID_TRAI_PHIEU);
+        v_pr_obj.addDatetimeInputParam("@NGAY_CHOT_LAI", this.datNGAY_CHOT_LAI);
+        v_pr_obj.fillDataSetByCommand(this, v_ds);
+        if (v_ds.GD_CHOT_LAI != null && v_ds.GD_CHOT_LAI.Count > 0)
+            return true;
+        else
+            return false;
+    }
 }
 }
