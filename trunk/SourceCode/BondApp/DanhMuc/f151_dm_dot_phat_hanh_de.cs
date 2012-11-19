@@ -82,7 +82,7 @@ namespace BondApp.DanhMuc
         {
             /* Thông tin chung*/
             m_us_v_ht_log_truy_cap.dcID_DANG_NHAP = CAppContext_201.getCurrentUserID();
-            m_us_v_ht_log_truy_cap.datTHOI_GIAN = DateTime.Now;
+            m_us_v_ht_log_truy_cap.datTHOI_GIAN = DateTime.Now.Date;
             m_us_v_ht_log_truy_cap.strDOI_TUONG_THAO_TAC = LOG_DOI_TUONG_TAC_DONG.DM_DOT_PHAT_HANH;
 
             /* Thông tin riêng*/
@@ -144,7 +144,7 @@ namespace BondApp.DanhMuc
         private void form_2_us_object(US_V_DM_DOT_PHAT_HANH op_v_us_dot_phat_hanh)
         {
             op_v_us_dot_phat_hanh.dcID_TO_CHUC_PHAT_HANH = CIPConvert.ToDecimal(m_cbo_ten_to_chuc_phat_hanh.SelectedValue);
-            op_v_us_dot_phat_hanh.datNGAY_PHAT_HANH = CIPConvert.ToDatetime(CIPConvert.ToStr(m_dat_ngay_phat_hanh.Value));
+            op_v_us_dot_phat_hanh.datNGAY_PHAT_HANH = m_dat_ngay_phat_hanh.Value;
             op_v_us_dot_phat_hanh.dcMENH_GIA = CIPConvert.ToDecimal(m_txt_menh_gia.Text);
             op_v_us_dot_phat_hanh.dcTONG_GIA_TRI_TRAI_PHIEU_PHAT_HANH = CIPConvert.ToDecimal(m_txt_tong_gia_tri.Text);
             op_v_us_dot_phat_hanh.dcTONG_SO_LUONG_TRAI_PHIEU = CIPConvert.ToDecimal(m_txt_tong_so_luong_tp.Text);
