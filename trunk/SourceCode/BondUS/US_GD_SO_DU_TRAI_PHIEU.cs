@@ -69,7 +69,8 @@ public class US_GD_SO_DU_TRAI_PHIEU : US_Object
 		}
 		set   
 		{
-			pm_objDR["NGAY"] = value;
+            DateTime v_dt = value;
+			pm_objDR["NGAY"] = v_dt.Date;
 		}
 	}
 

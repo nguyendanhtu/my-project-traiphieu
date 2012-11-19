@@ -75,7 +75,8 @@ namespace BondUS
             }
             set
             {
-                pm_objDR["NGAY_XAC_NHAN"] = value;
+                DateTime v_dt = value;
+                pm_objDR["NGAY_XAC_NHAN"] = v_dt.Date;
             }
         }
 
@@ -97,7 +98,8 @@ namespace BondUS
             }
             set
             {
-                pm_objDR["NGAY_KY_CHUYEN_NHUONG"] = value;
+                DateTime v_dt = value;
+                pm_objDR["NGAY_KY_CHUYEN_NHUONG"] = v_dt.Date;
             }
         }
 
@@ -119,7 +121,8 @@ namespace BondUS
             }
             set
             {
-                pm_objDR["NGAY_VAO_SO"] = value;
+                DateTime v_dt = value;
+                pm_objDR["NGAY_VAO_SO"] = v_dt.Date;
             }
         }
 
@@ -295,7 +298,8 @@ namespace BondUS
             }
             set
             {
-                pm_objDR["tcm_NGAY_CAP_CMT"] = value;
+                DateTime v_dt = value;
+                pm_objDR["tcm_NGAY_CAP_CMT"] = v_dt.Date;
             }
         }
 
@@ -867,7 +871,8 @@ namespace BondUS
             }
             set
             {
-                pm_objDR["NGAY_DAO_HAN"] = value;
+                DateTime v_dt = value;
+                pm_objDR["NGAY_DAO_HAN"] = v_dt.Date;
             }
         }
 
@@ -1153,7 +1158,8 @@ namespace BondUS
             }
             set
             {
-                pm_objDR["tcb_NGAY_CAP_CMT"] = value;
+                DateTime v_dt = value;
+                pm_objDR["tcb_NGAY_CAP_CMT"] = v_dt.Date;
             }
         }
 
@@ -1461,7 +1467,8 @@ namespace BondUS
             }
             set
             {
-                pm_objDR["NGAY_CAP_CMT_NGUOI_MUA"] = value;
+                DateTime v_dt = value;
+                pm_objDR["NGAY_CAP_CMT_NGUOI_MUA"] = v_dt.Date;
             }
         }
 
@@ -1549,7 +1556,8 @@ namespace BondUS
             }
             set
             {
-                pm_objDR["NGAY_CAP_CMT_NGUOI_BAN"] = value;
+                DateTime v_dt = value;
+                pm_objDR["NGAY_CAP_CMT_NGUOI_BAN"] = v_dt.Date;
             }
         }
 
@@ -1843,8 +1851,8 @@ namespace BondUS
         {
             CStoredProc v_cstore = new CStoredProc("pr_V_GD_CHUYEN_NHUONG_fill_data_by_date_and_to_chuc_phat_hanh");
             
-            v_cstore.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay);
-            v_cstore.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay);
+            v_cstore.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay.Date);
+            v_cstore.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay.Date);
             v_cstore.addDecimalInputParam("@ID_TO_CHUC_PHAT_HANH", ip_dc_id_to_chuc_phat_hanh);
             v_cstore.fillDataSetByCommand(this, ip_ds_v_gd_chuyen_nhuong);
         }
@@ -1856,8 +1864,8 @@ namespace BondUS
         {
             CStoredProc v_cstore = new CStoredProc("[pr_V_GD_CHUYEN_NHUONG_fill_data_by_date_and_trai_phieu]");
 
-            v_cstore.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay);
-            v_cstore.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay);
+            v_cstore.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay.Date);
+            v_cstore.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay.Date);
             v_cstore.addDecimalInputParam("@ID_TRAI_PHIEU", ip_dc_id_trai_phieu);
             v_cstore.fillDataSetByCommand(this, ip_ds_v_gd_chuyen_nhuong);
         }
@@ -1870,8 +1878,8 @@ namespace BondUS
         {
             CStoredProc v_cstore = new CStoredProc("[pr_V_GD_CHUYEN_NHUONG_fill_data_by_date_and_trai_phieu_and_trang_thai]");
 
-            v_cstore.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay);
-            v_cstore.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay);
+            v_cstore.addDatetimeInputParam("@TU_NGAY", ip_dat_tu_ngay.Date);
+            v_cstore.addDatetimeInputParam("@DEN_NGAY", ip_dat_den_ngay.Date);
             v_cstore.addDecimalInputParam("@ID_TRAI_PHIEU", ip_dc_id_trai_phieu);
             v_cstore.addDecimalInputParam("@ID_TRANG_THAI", ip_dc_id_trang_thai);
             v_cstore.fillDataSetByCommand(this, ip_ds_v_gd_chuyen_nhuong);
@@ -1884,7 +1892,7 @@ namespace BondUS
             {
                 v_pr_obj = new CStoredProc("[pr_GD_CHUYEN_NHUONG_Delete_and_Xoa_so_du]");
                 v_pr_obj.addDecimalInputParam("@ID", this.dcID);
-                v_pr_obj.addDatetimeInputParam("@NGAY_CAP_NHAT", DateTime.Today);
+                v_pr_obj.addDatetimeInputParam("@NGAY_CAP_NHAT",this.datNGAY_XAC_NHAN);
                 v_pr_obj.addDecimalInputParam("@ID_TRAI_CHU_MUA", this.dcID_TRAI_CHU_MUA);
                 v_pr_obj.addDecimalInputParam("@ID_TRAI_CHU_BAN", this.dcID_TRAI_CHU_BAN);
                 v_pr_obj.addDecimalInputParam("@SO_LUONG_CHUYEN_NHUONG", this.dcSO_LUONG_CHUYEN_NHUONG);

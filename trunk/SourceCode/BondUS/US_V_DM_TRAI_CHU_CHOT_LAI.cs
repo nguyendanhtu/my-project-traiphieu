@@ -161,7 +161,8 @@ public class US_V_DM_TRAI_CHU_CHOT_LAI : US_Object
         }
         set
         {
-            pm_objDR["NGAY_NHAN_TIEN"] = value;
+            DateTime v_dt = value;
+            pm_objDR["NGAY_NHAN_TIEN"] = v_dt.Date;
         }
     }
 
@@ -315,7 +316,8 @@ public class US_V_DM_TRAI_CHU_CHOT_LAI : US_Object
         }
         set
         {
-            pm_objDR["NGAY_CAP_CMT"] = value;
+            DateTime v_dt = value;
+            pm_objDR["NGAY_CAP_CMT"] = v_dt.Date;
         }
     }
 
@@ -579,7 +581,8 @@ public class US_V_DM_TRAI_CHU_CHOT_LAI : US_Object
         }
         set
         {
-            pm_objDR["NGAY_CHOT_LAI"] = value;
+            DateTime v_dt = value;
+            pm_objDR["NGAY_CHOT_LAI"] = v_dt.Date;
         }
     }
 
@@ -601,7 +604,8 @@ public class US_V_DM_TRAI_CHU_CHOT_LAI : US_Object
         }
         set
         {
-            pm_objDR["NGAY_THANH_TOAN"] = value;
+            DateTime v_dt = value;
+            pm_objDR["NGAY_THANH_TOAN"] = v_dt.Date;
         }
     }
 
@@ -892,7 +896,7 @@ public class US_V_DM_TRAI_CHU_CHOT_LAI : US_Object
     {
         CStoredProc v_pr_obj = new CStoredProc("[pr_GD_CHOT_LAI_DETAIL_Select_ChotLaiByIDTraiPhieuAndNgayChotLai]");
         v_pr_obj.addDecimalInputParam("@ID_TRAI_PHIEU", ip_id_trai_phieu_so_huu);
-        v_pr_obj.addDatetimeInputParam("@NGAY_CHOT_LAI", ip_ngay_chot_lai);
+        v_pr_obj.addDatetimeInputParam("@NGAY_CHOT_LAI", ip_ngay_chot_lai.Date);
         v_pr_obj.addNVarcharInputParam("@DA_THANH_TOAN", ip_da_thanh_toan);
         v_pr_obj.fillDataSetByCommand(this, ip_ds);
     }
@@ -903,28 +907,28 @@ public class US_V_DM_TRAI_CHU_CHOT_LAI : US_Object
     {
         CStoredProc v_pr_obj = new CStoredProc("[pr_DM_TRAI_CHU_Select_ChotLaiByIDTraiPhieuAndNgayChotLai]");
         v_pr_obj.addDecimalInputParam("@ID_TRAI_PHIEU", ip_id_trai_phieu_so_huu);
-        v_pr_obj.addDatetimeInputParam("@NGAY_CHOT_LAI", ip_ngay_chot_lai);       
+        v_pr_obj.addDatetimeInputParam("@NGAY_CHOT_LAI", ip_ngay_chot_lai.Date);       
         v_pr_obj.fillDataSetByCommand(this, ip_ds);
     }
 
     public void FillDatasetByIDTraiPhieuAndNgayChotLaiYes(DS_V_DM_TRAI_CHU_CHOT_LAI ip_ds, decimal ip_id_trai_phieu_so_huu, DateTime ip_ngay_chot_lai)
     {
-        base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu_so_huu.ToString() + " AND NGAY_CHOT_LAI = '" + ip_ngay_chot_lai + "'" + "AND DA_NHAN_TIEN_YN = 'Y'");
+        base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu_so_huu.ToString() + " AND NGAY_CHOT_LAI = '" + ip_ngay_chot_lai.Date + "'" + "AND DA_NHAN_TIEN_YN = 'Y'");
     }
 
     public void FillDatasetByIDTraiPhieuAndNgayChotLaiNo(DS_V_DM_TRAI_CHU_CHOT_LAI ip_ds, decimal ip_id_trai_phieu_so_huu, DateTime ip_ngay_chot_lai)
     {
-        base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu_so_huu.ToString() + " AND NGAY_CHOT_LAI = '" + ip_ngay_chot_lai + "'" + "AND DA_NHAN_TIEN_YN = 'N'");
+        base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu_so_huu.ToString() + " AND NGAY_CHOT_LAI = '" + ip_ngay_chot_lai.Date + "'" + "AND DA_NHAN_TIEN_YN = 'N'");
     }
 
     public void FillDatasetByIDTraiPhieuAndNgayChotLaiAndTrangThaiYes(DS_V_DM_TRAI_CHU_CHOT_LAI ip_ds, decimal ip_id_trai_phieu_so_huu, DateTime ip_ngay_chot_lai)
     {
-        base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu_so_huu.ToString() + " AND NGAY_CHOT_LAI = '" + ip_ngay_chot_lai + "'" + " AND ID_TRANG_THAI = " + List_trang_thai.Da_Thuc_Hien);
+        base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu_so_huu.ToString() + " AND NGAY_CHOT_LAI = '" + ip_ngay_chot_lai.Date + "'" + " AND ID_TRANG_THAI = " + List_trang_thai.Da_Thuc_Hien);
     }
 
     public void FillDatasetByIDTraiPhieuAndNgayChotLaiAndTrangThaiNo(DS_V_DM_TRAI_CHU_CHOT_LAI ip_ds, decimal ip_id_trai_phieu_so_huu, DateTime ip_ngay_chot_lai)
     {
-        base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu_so_huu.ToString() + " AND NGAY_CHOT_LAI = '" + ip_ngay_chot_lai + "'" + " AND ID_TRANG_THAI <> " + List_trang_thai.Da_Thuc_Hien);
+        base.FillDataset(ip_ds, " WHERE ID_TRAI_PHIEU_SO_HUU = " + " " + ip_id_trai_phieu_so_huu.ToString() + " AND NGAY_CHOT_LAI = '" + ip_ngay_chot_lai.Date + "'" + " AND ID_TRANG_THAI <> " + List_trang_thai.Da_Thuc_Hien);
     }
     #endregion  
 }

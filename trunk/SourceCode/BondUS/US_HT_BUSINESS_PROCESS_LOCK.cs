@@ -50,7 +50,8 @@ public class US_HT_BUSINESS_PROCESS_LOCK : US_Object
 		}
 		set   
 		{
-			pm_objDR["GRANTED_SYS_DATETIME"] = value;
+            DateTime v_dt = value;
+			pm_objDR["GRANTED_SYS_DATETIME"] = v_dt.Date;
 		}
 	}
 

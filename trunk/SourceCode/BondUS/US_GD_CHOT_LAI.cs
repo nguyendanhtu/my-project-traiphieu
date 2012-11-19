@@ -49,7 +49,8 @@ public class US_GD_CHOT_LAI : US_Object
 		}
 		set   
 		{
-			pm_objDR["NGAY_CHOT_LAI"] = value;
+            DateTime v_dt = value;
+			pm_objDR["NGAY_CHOT_LAI"] = v_dt.Date;
 		}
 	}
 

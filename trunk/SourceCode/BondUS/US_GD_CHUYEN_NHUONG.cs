@@ -72,7 +72,8 @@ namespace BondUS
             }
             set
             {
-                pm_objDR["NGAY_XAC_NHAN"] = value;
+                DateTime v_dt = value;
+                pm_objDR["NGAY_XAC_NHAN"] = v_dt.Date;
             }
         }
 
@@ -94,7 +95,8 @@ namespace BondUS
             }
             set
             {
-                pm_objDR["NGAY_KY_CHUYEN_NHUONG"] = value;
+                DateTime v_dt = value;
+                pm_objDR["NGAY_KY_CHUYEN_NHUONG"] = v_dt.Date;
             }
         }
 
@@ -116,7 +118,8 @@ namespace BondUS
             }
             set
             {
-                pm_objDR["NGAY_VAO_SO"] = value;
+                DateTime v_dt = value;
+                pm_objDR["NGAY_VAO_SO"] = v_dt.Date;
             }
         }
 
@@ -270,7 +273,8 @@ namespace BondUS
             }
             set
             {
-                pm_objDR["NGAY_CAP_CMT_NGUOI_MUA"] = value;
+                DateTime v_dt = value;
+                pm_objDR["NGAY_CAP_CMT_NGUOI_MUA"] = v_dt.Date;
             }
         }
 
@@ -292,7 +296,8 @@ namespace BondUS
             }
             set
             {
-                pm_objDR["NGAY_CAP_CMT_NGUOI_BAN"] = value;
+                DateTime v_dt = value;
+                pm_objDR["NGAY_CAP_CMT_NGUOI_BAN"] = v_dt.Date;
             }
         }
 
