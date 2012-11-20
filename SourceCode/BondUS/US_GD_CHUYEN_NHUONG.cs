@@ -614,7 +614,14 @@ namespace BondUS
             v_pr_obj.addDecimalInputParam("@ID_TRAI_CHU_BAN", this.dcID_TRAI_CHU_BAN);
             v_pr_obj.addDecimalInputParam("@SO_LUONG_CHUYEN_NHUONG", this.dcSO_LUONG_CHUYEN_NHUONG);
             v_pr_obj.addDecimalInputParam("@ID_TRANG_THAI_CHUYEN_NHUONG", this.dcID_TRANG_THAI_CHUYEN_NHUONG);
+            
+            v_pr_obj.addDecimalInputParam("@TY_LE_PHI_GD", this.dcTY_LE_PHI_GD);
+            v_pr_obj.addDecimalInputParam("@PHI_GIAO_DICH", this.dcPHI_GD);
+            v_pr_obj.addDecimalInputParam("@PHAN_TRAM_THUE", this.dcPHAN_TRAM_THUE);
+            v_pr_obj.addDecimalInputParam("@GIA_TRI_THUC", this.dcGIA_TRI_CHUYEN_NHUONG_THUC_TE);
+            v_pr_obj.addDecimalInputParam("@GIA_TRI_THUE", this.dcGIA_TRI_THUE);
             v_pr_obj.addDecimalInputParam("@ID_NGUOI_DUYET", this.dcID_NGUOI_DUYET);
+            v_pr_obj.addDatetimeInputParam("@NGAY_VAO_SO", this.datNGAY_VAO_SO);
             v_pr_obj.ExecuteCommand(this);
         }
         public string get_ma_dich_chuyen_nhuong()
