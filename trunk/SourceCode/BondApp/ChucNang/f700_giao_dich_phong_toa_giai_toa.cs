@@ -351,7 +351,7 @@ namespace BondApp
             US_GD_PHONG_GIAI_TOA v_us_gd_phong_toa = new BondUS.US_GD_PHONG_GIAI_TOA();
             DS_GD_PHONG_GIAI_TOA v_ds_gd_phong_toa = new DS_GD_PHONG_GIAI_TOA();
 
-            v_us_gd_phong_toa.fill_dataset_byIdtraichu(v_ds_gd_phong_toa, m_us_trai_chu.dcID);            
+            v_us_gd_phong_toa.fill_dataset_byIdtraichu(v_ds_gd_phong_toa, m_us_trai_chu.dcID);
             v_ds_gd_phong_toa.EnforceConstraints = false;
 
 
@@ -359,9 +359,20 @@ namespace BondApp
             m_cbo_ngan_hang_cam_co.DisplayMember = GD_PHONG_GIAI_TOA.NGAN_HANG_CAM_CO;
             m_cbo_ngan_hang_cam_co.DataSource = v_ds_gd_phong_toa.GD_PHONG_GIAI_TOA;
 
-            m_cbo_ngan_hang_cam_co.SelectedIndex = 0;
-
         }
+        //private void load_data_2_cmb_ngan_hang_cam_co()
+        //{
+        //    US_GD_PHONG_GIAI_TOA v_us_gd_phong_toa = new BondUS.US_GD_PHONG_GIAI_TOA();
+        //    DS_GD_PHONG_GIAI_TOA v_ds_gd_phong_toa = new DS_GD_PHONG_GIAI_TOA();
+
+        //    v_us_gd_phong_toa.fill_dataset_byIdtraichu(v_ds_gd_phong_toa, m_us_trai_chu.dcID);
+        //    v_ds_gd_phong_toa.EnforceConstraints = false;
+
+
+        //    m_cbo_ngan_hang_cam_co.ValueMember = GD_PHONG_GIAI_TOA.NGAN_HANG_CAM_CO;
+        //    m_cbo_ngan_hang_cam_co.DisplayMember = GD_PHONG_GIAI_TOA.NGAN_HANG_CAM_CO;
+        //    m_cbo_ngan_hang_cam_co.DataSource = v_ds_gd_phong_toa.GD_PHONG_GIAI_TOA;
+        //}
         private void select_trai_chu()
         {
             f701_danh_sach_giao_dich_phong_giai_toa vfrm701 = new f701_danh_sach_giao_dich_phong_giai_toa();
@@ -438,7 +449,9 @@ namespace BondApp
                 m_txt_dien_thoai.Text = ip_us_trai_chu.strMOBILE;
                 m_txt_fax.Text = ip_us_trai_chu.strFAX;
             }
+             m_txt_ngan_hang_cam_co.Text = m_us_gd_phong_toa_giai_toa.strNGAN_HANG_CAM_CO;
              load_data_2_cmb_ngan_hang_cam_co();
+             m_cbo_ngan_hang_cam_co.SelectedValue = m_us_gd_phong_toa_giai_toa.strNGAN_HANG_CAM_CO;
         }
         private void us_trai_phieu_2_form(US_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
