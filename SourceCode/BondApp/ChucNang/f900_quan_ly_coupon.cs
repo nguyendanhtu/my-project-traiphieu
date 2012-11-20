@@ -390,6 +390,11 @@ namespace BondApp.ChucNang
                     m_cbo_ky_tinh_lai.SelectedIndex = v_i_current - 1;
                     load_ngay_chot_theo_ky(v_i_current);
                 }
+                else
+                {
+                    m_cbo_ky_tinh_lai.SelectedIndex = v_i_current;
+                    load_ngay_chot_theo_ky(v_i_current);
+                }
             }
         }
 
