@@ -49,7 +49,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.m_txt_ky_han = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.m_lbl_dv_ky_han = new System.Windows.Forms.Label();
             this.m_lbl_ngay_dao_han = new System.Windows.Forms.Label();
             this.m_txt_lai_suat = new System.Windows.Forms.TextBox();
             this.m_lbl_ma_trai_phieu = new System.Windows.Forms.Label();
@@ -168,7 +168,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.m_txt_ky_han);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.m_lbl_dv_ky_han);
             this.groupBox1.Controls.Add(this.m_lbl_ngay_dao_han);
             this.groupBox1.Controls.Add(this.m_txt_lai_suat);
             this.groupBox1.Controls.Add(this.m_lbl_ma_trai_phieu);
@@ -320,15 +320,15 @@
             this.m_txt_ky_han.TabIndex = 47;
             this.m_txt_ky_han.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label1
+            // m_lbl_dv_ky_han
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(253, 54);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 13);
-            this.label1.TabIndex = 54;
-            this.label1.Text = "năm";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_lbl_dv_ky_han.AutoSize = true;
+            this.m_lbl_dv_ky_han.Location = new System.Drawing.Point(253, 54);
+            this.m_lbl_dv_ky_han.Name = "m_lbl_dv_ky_han";
+            this.m_lbl_dv_ky_han.Size = new System.Drawing.Size(27, 13);
+            this.m_lbl_dv_ky_han.TabIndex = 54;
+            this.m_lbl_dv_ky_han.Text = "năm";
+            this.m_lbl_dv_ky_han.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // m_lbl_ngay_dao_han
             // 
@@ -550,7 +550,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox m_txt_ky_han;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label m_lbl_dv_ky_han;
         private System.Windows.Forms.Label m_lbl_ngay_dao_han;
         private System.Windows.Forms.TextBox m_txt_lai_suat;
         private System.Windows.Forms.Label m_lbl_ma_trai_phieu;
