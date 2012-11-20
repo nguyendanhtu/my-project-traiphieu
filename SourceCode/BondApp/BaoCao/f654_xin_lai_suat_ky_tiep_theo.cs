@@ -169,6 +169,10 @@ namespace BondApp.BaoCao
             m_txt_ten_trai_phieu.Text = m_us_trai_phieu.strTEN_TRAI_PHIEU;
             m_txt_menh_gia.Text = CIPConvert.ToStr(m_us_trai_phieu.dcMENH_GIA, "#,###");
             m_txt_ky_han.Text = CIPConvert.ToStr(m_us_trai_phieu.dcKY_HAN, "#,###");
+            if (m_us_trai_phieu.dcID_DV_KY_HAN == ID_DON_VI_KY_HAN.THANG)
+                m_lbl_dv_ky_han.Text = "tháng";
+            else
+                m_lbl_dv_ky_han.Text = "năm";
             try
             {
                 US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_trai_phieu.dcID_DOT_PHAT_HANH);
