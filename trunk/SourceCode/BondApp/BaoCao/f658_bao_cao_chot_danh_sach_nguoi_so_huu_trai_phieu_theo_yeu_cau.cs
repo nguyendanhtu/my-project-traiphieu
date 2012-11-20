@@ -44,7 +44,7 @@ namespace BondApp
         private Label label3;
         private Label label2;
         private TextBox m_txt_ky_han;
-        private Label label1;
+        private Label m_lbl_dv_ky_han;
         private Label m_lbl_ngay_dao_han;
         private TextBox m_txt_lai_suat;
         private Label m_lbl_ma_trai_phieu;
@@ -115,13 +115,14 @@ namespace BondApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.m_data_ngay_choi_lai = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.m_cmd_chon_trai_phieu = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.m_txt_ky_han = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.m_lbl_dv_ky_han = new System.Windows.Forms.Label();
             this.m_lbl_ngay_dao_han = new System.Windows.Forms.Label();
             this.m_txt_lai_suat = new System.Windows.Forms.TextBox();
             this.m_lbl_ma_trai_phieu = new System.Windows.Forms.Label();
@@ -142,7 +143,6 @@ namespace BondApp
             this.m_lbl_lai_suat = new System.Windows.Forms.Label();
             this.m_txt_ma_trai_phieu = new System.Windows.Forms.TextBox();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_data_ngay_choi_lai = new System.Windows.Forms.DateTimePicker();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -253,7 +253,7 @@ namespace BondApp
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.m_txt_ky_han);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.m_lbl_dv_ky_han);
             this.groupBox1.Controls.Add(this.m_lbl_ngay_dao_han);
             this.groupBox1.Controls.Add(this.m_txt_lai_suat);
             this.groupBox1.Controls.Add(this.m_lbl_ma_trai_phieu);
@@ -280,6 +280,16 @@ namespace BondApp
             this.groupBox1.TabIndex = 59;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin trái phiếu";
+            // 
+            // m_data_ngay_choi_lai
+            // 
+            this.m_data_ngay_choi_lai.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.m_data_ngay_choi_lai.CustomFormat = "dd/MM/yyyy";
+            this.m_data_ngay_choi_lai.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_data_ngay_choi_lai.Location = new System.Drawing.Point(134, 131);
+            this.m_data_ngay_choi_lai.Name = "m_data_ngay_choi_lai";
+            this.m_data_ngay_choi_lai.Size = new System.Drawing.Size(120, 20);
+            this.m_data_ngay_choi_lai.TabIndex = 65;
             // 
             // label6
             // 
@@ -340,15 +350,15 @@ namespace BondApp
             this.m_txt_ky_han.TabIndex = 47;
             this.m_txt_ky_han.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label1
+            // m_lbl_dv_ky_han
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(253, 54);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 13);
-            this.label1.TabIndex = 54;
-            this.label1.Text = "năm";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_lbl_dv_ky_han.AutoSize = true;
+            this.m_lbl_dv_ky_han.Location = new System.Drawing.Point(253, 54);
+            this.m_lbl_dv_ky_han.Name = "m_lbl_dv_ky_han";
+            this.m_lbl_dv_ky_han.Size = new System.Drawing.Size(27, 13);
+            this.m_lbl_dv_ky_han.TabIndex = 54;
+            this.m_lbl_dv_ky_han.Text = "năm";
+            this.m_lbl_dv_ky_han.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // m_lbl_ngay_dao_han
             // 
@@ -541,16 +551,6 @@ namespace BondApp
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 60;
             // 
-            // m_data_ngay_choi_lai
-            // 
-            this.m_data_ngay_choi_lai.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_data_ngay_choi_lai.CustomFormat = "dd/MM/yyyy";
-            this.m_data_ngay_choi_lai.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_data_ngay_choi_lai.Location = new System.Drawing.Point(134, 131);
-            this.m_data_ngay_choi_lai.Name = "m_data_ngay_choi_lai";
-            this.m_data_ngay_choi_lai.Size = new System.Drawing.Size(120, 20);
-            this.m_data_ngay_choi_lai.TabIndex = 65;
-            // 
             // f658_bao_cao_chot_danh_sach_nguoi_so_huu_trai_phieu_theo_yeu_cau
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -697,6 +697,10 @@ namespace BondApp
             m_txt_ten_trai_phieu.Text = m_us_trai_phieu.strTEN_TRAI_PHIEU;
             m_txt_menh_gia.Text = CIPConvert.ToStr(m_us_trai_phieu.dcMENH_GIA, "#,###");
             m_txt_ky_han.Text = CIPConvert.ToStr(m_us_trai_phieu.dcKY_HAN, "#,###");
+            if (m_us_trai_phieu.dcID_DV_KY_HAN == ID_DON_VI_KY_HAN.THANG)
+                m_lbl_dv_ky_han.Text = "tháng";
+            else
+                m_lbl_dv_ky_han.Text = "năm";
             try
             {
                 US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_trai_phieu.dcID_DOT_PHAT_HANH);
