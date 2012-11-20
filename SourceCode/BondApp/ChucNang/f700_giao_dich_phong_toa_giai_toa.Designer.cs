@@ -69,6 +69,7 @@
             this.m_lbl_ma_so_trai_phieu = new System.Windows.Forms.Label();
             this.m_txt_ma_so_trai_phieu = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.m_cbo_ngan_hang_cam_co = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.m_lbl_pgd_max_min = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -106,7 +107,6 @@
             this.m_txt_nguoi_xac_nhan = new System.Windows.Forms.TextBox();
             this.m_lbl_chuc_vu = new System.Windows.Forms.Label();
             this.m_txt_chuc_vu = new System.Windows.Forms.TextBox();
-            this.m_cbo_ngan_hang_cam_co = new System.Windows.Forms.ComboBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -575,6 +575,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin cầm cố/giải tỏa";
             // 
+            // m_cbo_ngan_hang_cam_co
+            // 
+            this.m_cbo_ngan_hang_cam_co.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_ngan_hang_cam_co.FormattingEnabled = true;
+            this.m_cbo_ngan_hang_cam_co.Location = new System.Drawing.Point(424, 116);
+            this.m_cbo_ngan_hang_cam_co.Name = "m_cbo_ngan_hang_cam_co";
+            this.m_cbo_ngan_hang_cam_co.Size = new System.Drawing.Size(448, 21);
+            this.m_cbo_ngan_hang_cam_co.TabIndex = 29;
+            this.m_cbo_ngan_hang_cam_co.Visible = false;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -922,16 +932,6 @@
             this.m_txt_chuc_vu.Name = "m_txt_chuc_vu";
             this.m_txt_chuc_vu.Size = new System.Drawing.Size(173, 20);
             this.m_txt_chuc_vu.TabIndex = 3;
-            // 
-            // m_cbo_ngan_hang_cam_co
-            // 
-            this.m_cbo_ngan_hang_cam_co.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_ngan_hang_cam_co.FormattingEnabled = true;
-            this.m_cbo_ngan_hang_cam_co.Location = new System.Drawing.Point(424, 116);
-            this.m_cbo_ngan_hang_cam_co.Name = "m_cbo_ngan_hang_cam_co";
-            this.m_cbo_ngan_hang_cam_co.Size = new System.Drawing.Size(448, 21);
-            this.m_cbo_ngan_hang_cam_co.TabIndex = 29;
-            this.m_cbo_ngan_hang_cam_co.Visible = false;
             // 
             // f700_giao_dich_phong_toa_giai_toa
             // 
