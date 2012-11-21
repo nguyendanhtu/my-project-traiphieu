@@ -280,7 +280,15 @@ namespace BondApp.DanhMuc
                 default:
                     break;
             }
-            ghi_log_he_thong();
+            try
+            {
+                ghi_log_he_thong();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Đã xảy ra lỗi trong quá trình ghi log hệ thống");
+                return;
+            }
             BaseMessages.MsgBox_Infor("Dữ liệu đã được cập nhật");
             this.Close();
         }
@@ -293,8 +301,8 @@ namespace BondApp.DanhMuc
                 m_txt_tong_gia_tri.Text = CIPConvert.ToStr(v_d_menhgia * v_d_tongsl,"#,###");
             }
             catch
-            { 
-
+            {
+               
             }
         }
         #endregion

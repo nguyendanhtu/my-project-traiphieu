@@ -46,12 +46,12 @@ Public Class f100_TuDien
     Friend WithEvents m_lblFilter As System.Windows.Forms.Label
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(f100_TuDien))
-        Me.Splitter1 = New System.Windows.Forms.Splitter
-        Me.Panel1 = New System.Windows.Forms.Panel
-        Me.m_lblFilter = New System.Windows.Forms.Label
-        Me.m_cboLoaiTDFilter = New System.Windows.Forms.ComboBox
-        Me.m_lblInfo = New System.Windows.Forms.Label
-        Me.m_fg = New C1.Win.C1FlexGrid.C1FlexGrid
+        Me.Splitter1 = New System.Windows.Forms.Splitter()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.m_lblFilter = New System.Windows.Forms.Label()
+        Me.m_cboLoaiTDFilter = New System.Windows.Forms.ComboBox()
+        Me.m_lblInfo = New System.Windows.Forms.Label()
+        Me.m_fg = New C1.Win.C1FlexGrid.C1FlexGrid()
         Me.Panel1.SuspendLayout()
         CType(Me.m_fg, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
