@@ -86,7 +86,7 @@
               <xs:element name="NGAN_HANG_DAI_LY_QUAN_LY_TK" msprop:Generator_ColumnVarNameInTable="columnNGAN_HANG_DAI_LY_QUAN_LY_TK" msprop:Generator_ColumnPropNameInRow="NGAN_HANG_DAI_LY_QUAN_LY_TK" msprop:Generator_ColumnPropNameInTable="NGAN_HANG_DAI_LY_QUAN_LY_TKColumn" msprop:Generator_UserColumnName="NGAN_HANG_DAI_LY_QUAN_LY_TK" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="250" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
