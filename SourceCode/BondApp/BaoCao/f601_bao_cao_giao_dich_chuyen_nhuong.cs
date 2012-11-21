@@ -311,8 +311,8 @@ namespace BondApp
 
 		#region Data Structure
 		private enum e_col_Number{
-            //STT = 1
-            //    ,
+            STT = 0
+                ,
             MA_GIAO_DICH = 1
                 ,
             NGAY_KY_CHUYEN_NHUONG = 2
@@ -403,7 +403,7 @@ namespace BondApp
                 ,m_dat_to_date.Value.Date
                 , CIPConvert.ToDecimal(m_cbo_to_chuc_phat_hanh.SelectedValue));
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            //CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
+            CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
 			m_fg.Redraw = true;
 		}
 		private void grid2us_object(US_V_GD_CHUYEN_NHUONG i_us
