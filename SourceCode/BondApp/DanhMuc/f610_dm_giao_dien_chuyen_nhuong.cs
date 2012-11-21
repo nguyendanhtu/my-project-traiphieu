@@ -414,17 +414,17 @@ namespace BondApp
             STT =1
                 ,
             GIA_TRI_CN_THEO_MENH_GIA = 9,
-            tcb_TEN_TRAI_CHU = 5
+            tcb_TEN_TRAI_CHU = 3
                 ,
             ID = 0
                 ,
-            tcm_MA_TRAI_CHU = 4
+            tcm_MA_TRAI_CHU = 6
                 ,
             GIA_TRI_THUE = 12
                 ,
-            tcb_MA_TRAI_CHU = 6
+            tcb_MA_TRAI_CHU = 4
                 ,
-            tcm_TEN_TRAI_CHU = 3
+            tcm_TEN_TRAI_CHU = 5
                 ,
             MA_GIAO_DICH = 2
                 ,
