@@ -57,7 +57,7 @@ namespace BondApp
             //m_cmd_duyet.Enabled = false;
             //m_cmd_chon_trai_chu.Enabled = false;
             //m_cmd_save.Enabled = true;
-            m_us_gd_phong_toa_giai_toa = ip_us_phong_giai_toa;
+            //m_us_gd_phong_toa_giai_toa = ip_us_phong_giai_toa;
             this.Text = "F700 - Sửa Giao dịch phong tỏa";
             m_lbl_title.Text = "F700 - Sửa Giao dịch phong tỏa";
             m_us_gd_phong_toa_giai_toa = ip_us_phong_giai_toa;
@@ -73,7 +73,7 @@ namespace BondApp
             //m_cmd_duyet.Enabled = false;
             //m_cmd_chon_trai_chu.Enabled = false;
             //m_cmd_save.Enabled = true;
-            m_us_gd_phong_toa_giai_toa = ip_us_phong_giai_toa;
+            //m_us_gd_phong_toa_giai_toa = ip_us_phong_giai_toa;
             this.Text = "F700 - Sửa Giao dịch giải tỏa";
             m_lbl_title.Text = "F700 - Sửa Giao dịch giải tỏa";
             m_lbl_so_luong_tp_cam_co.Text = "Số lượng TP giải tỏa";
@@ -90,8 +90,7 @@ namespace BondApp
             m_e_form_mode = eFormMode.DUYET_PHONG_TOA;
             m_us_gd_phong_toa_giai_toa = ip_us_phong_giai_toa;
             this.Text = "F700 - Duyệt Giao dịch phong tỏa";
-            m_lbl_title.Text = "F700 - Duyệt Giao dịch phong tỏa"; 
-            m_us_gd_phong_toa_giai_toa = ip_us_phong_giai_toa;
+            m_lbl_title.Text = "F700 - Duyệt Giao dịch phong tỏa";             
             US_DM_TRAI_CHU ip_us_trai_chu = new US_DM_TRAI_CHU(ip_us_phong_giai_toa.dcID_TRAI_CHU);
             us_trai_chu_2_form(ip_us_trai_chu);
             m_txt_nguoi_dai_dien.Focus();
@@ -420,7 +419,8 @@ namespace BondApp
             else
                 m_txt_so_luong_kha_dung.Text = v_ds.GD_SO_DU_TRAI_PHIEU.Rows[0]["SO_DU_KHA_DUNG"].ToString();
             us_trai_phieu_2_form(m_us_trai_phieu);
-            if (m_e_form_mode == eFormMode.DUYET_GIAI_TOA || m_e_form_mode == eFormMode.DUYET_PHONG_TOA)
+            if (m_e_form_mode == eFormMode.DUYET_GIAI_TOA || m_e_form_mode == eFormMode.DUYET_PHONG_TOA
+                 || m_e_form_mode == eFormMode.SUA_GIAI_TOA || m_e_form_mode == eFormMode.SUA_PHONG_TOA)
             {
                 m_txt_nguoi_dai_dien.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.strNGUOI_DAI_DIEN);
                 m_txt_chuc_danh.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.strCHUC_DANH);
@@ -440,8 +440,7 @@ namespace BondApp
                 m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.dcTY_LE_PHI_GD);
                 m_txt_phi_gd.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.dcPHI_GIAO_DICH);
             }
-             if (m_e_form_mode == eFormMode.LAP_GIAI_TOA || m_e_form_mode == eFormMode.LAP_PHONG_TOA
-                || m_e_form_mode == eFormMode.SUA_GIAI_TOA || m_e_form_mode == eFormMode.SUA_PHONG_TOA)
+             if (m_e_form_mode == eFormMode.LAP_GIAI_TOA || m_e_form_mode == eFormMode.LAP_PHONG_TOA)
             {
                 m_txt_nguoi_dai_dien.Text = ip_us_trai_chu.strTEN_NGUOI_DAI_DIEN;
                 m_txt_chuc_danh.Text = ip_us_trai_chu.strCHUC_VU;
