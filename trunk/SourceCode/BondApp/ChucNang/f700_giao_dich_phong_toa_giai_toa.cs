@@ -460,9 +460,9 @@ namespace BondApp
             m_txt_ma_so_trai_phieu.Text = ip_us_trai_phieu.strMA_TRAI_PHIEU;
             m_txt_to_chuc_phat_hanh.Text = ip_us_trai_phieu.strTEN_TRAI_PHIEU;
             m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcTY_LE_PHI_PHONG_GIAI_TOA*100, "#,##0.00");
-            if (ip_us_trai_phieu.dcMENH_GIA == 0) m_txt_menh_gia.Text = "0";
+            if (v_us_dm_dot_phat_hanh.dcMENH_GIA == 0) m_txt_menh_gia.Text = "0";
             else
-                m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcMENH_GIA, "#,###");
+                m_txt_menh_gia.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcMENH_GIA, "#,###");
 
             m_txt_ngay_phat_hanh.Text = v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH.ToString("dd/MM/yyyy");
             m_txt_ngay_dao_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.datNGAY_DAO_HAN, "dd/MM/yyyy");
@@ -782,7 +782,7 @@ namespace BondApp
         private void m_txt_so_luong_tp_cam_co_TextChanged(object sender, EventArgs e)
         {
             if (m_txt_ma_trai_chu.Text == "") return;
-            if (!CValidateTextBox.IsValid(m_txt_so_luong_tp_cam_co, DataType.NumberType, allowNull.YES))
+            if (!CValidateTextBox.IsValid(m_txt_so_luong_tp_cam_co, DataType.NumberType, allowNull.NO))
             {
                 MessageBox.Show("Số lượng trái phiếu cầm cố nhập không đúng.\n Mời nhập lại!", "Cảnh báo");
                 m_txt_so_luong_tp_cam_co.Text = "";
