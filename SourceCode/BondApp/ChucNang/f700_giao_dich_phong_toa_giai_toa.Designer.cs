@@ -649,13 +649,13 @@
             // 
             // m_dat_ngay
             // 
-            this.m_dat_ngay.CustomFormat = "\"dd/MM/yyyy\"";
-            this.m_dat_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dat_ngay.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay.Location = new System.Drawing.Point(714, 75);
             this.m_dat_ngay.Name = "m_dat_ngay";
             this.m_dat_ngay.Size = new System.Drawing.Size(121, 20);
             this.m_dat_ngay.TabIndex = 8;
-            this.m_dat_ngay.Value = new System.DateTime(2012, 10, 6, 22, 35, 45, 0);
+            this.m_dat_ngay.Value = new System.DateTime(2012, 11, 21, 0, 0, 0, 0);
             // 
             // m_lbl_hinh_thuc_tra_lai
             // 
