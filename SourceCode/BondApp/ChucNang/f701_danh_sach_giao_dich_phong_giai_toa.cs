@@ -607,7 +607,7 @@ namespace BondApp
                     vf700.display_sua_phong_toa(m_us);
                     break;
             }
-            
+            load_data_2_grid();
         }
 
         private void delete_gd_phong_giai_toa()
