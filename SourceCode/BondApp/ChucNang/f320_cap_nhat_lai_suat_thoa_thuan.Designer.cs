@@ -511,7 +511,7 @@
             // 
             this.m_chb_xac_nhan.AutoSize = true;
             this.m_chb_xac_nhan.Enabled = false;
-            this.m_chb_xac_nhan.Location = new System.Drawing.Point(573, 46);
+            this.m_chb_xac_nhan.Location = new System.Drawing.Point(583, 49);
             this.m_chb_xac_nhan.Name = "m_chb_xac_nhan";
             this.m_chb_xac_nhan.Size = new System.Drawing.Size(15, 14);
             this.m_chb_xac_nhan.TabIndex = 56;
@@ -552,7 +552,7 @@
             this.m_date_ket_thuc_ap_dung_ls.Checked = false;
             this.m_date_ket_thuc_ap_dung_ls.CustomFormat = "dd/MM/yyyy";
             this.m_date_ket_thuc_ap_dung_ls.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_date_ket_thuc_ap_dung_ls.Location = new System.Drawing.Point(569, 16);
+            this.m_date_ket_thuc_ap_dung_ls.Location = new System.Drawing.Point(579, 19);
             this.m_date_ket_thuc_ap_dung_ls.Name = "m_date_ket_thuc_ap_dung_ls";
             this.m_date_ket_thuc_ap_dung_ls.Size = new System.Drawing.Size(130, 20);
             this.m_date_ket_thuc_ap_dung_ls.TabIndex = 2;
@@ -628,11 +628,11 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(510, 19);
+            this.label10.Location = new System.Drawing.Point(502, 22);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 13);
+            this.label10.Size = new System.Drawing.Size(71, 13);
             this.label10.TabIndex = 11;
-            this.label10.Text = "Đến ngày";
+            this.label10.Text = "Đến hết ngày";
             // 
             // label7
             // 
@@ -673,7 +673,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(510, 46);
+            this.label4.Location = new System.Drawing.Point(523, 45);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 13);
             this.label4.TabIndex = 34;
