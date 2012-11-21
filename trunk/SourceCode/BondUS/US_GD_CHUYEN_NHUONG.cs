@@ -614,7 +614,7 @@ namespace BondUS
             v_pr_obj.addDecimalInputParam("@ID_TRAI_CHU_BAN", this.dcID_TRAI_CHU_BAN);
             v_pr_obj.addDecimalInputParam("@SO_LUONG_CHUYEN_NHUONG", this.dcSO_LUONG_CHUYEN_NHUONG);
             v_pr_obj.addDecimalInputParam("@ID_TRANG_THAI_CHUYEN_NHUONG", this.dcID_TRANG_THAI_CHUYEN_NHUONG);
-            
+            v_pr_obj.addNVarcharInputParam("@NOI_DUNG_GIAO_DICH", this.strNOI_DUNG_GIAO_DICH);
             v_pr_obj.addDecimalInputParam("@TY_LE_PHI_GD", this.dcTY_LE_PHI_GD);
             v_pr_obj.addDecimalInputParam("@PHI_GIAO_DICH", this.dcPHI_GD);
             v_pr_obj.addDecimalInputParam("@PHAN_TRAM_THUE", this.dcPHAN_TRAM_THUE);
