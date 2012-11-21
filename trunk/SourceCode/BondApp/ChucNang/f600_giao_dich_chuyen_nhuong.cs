@@ -235,7 +235,7 @@ namespace BondApp
 
             m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcTY_LE_PHI_CHUYEN_NHUONG * 100, "#,##0.0000");
             m_txt_ky_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_HAN) + " " + CIPConvert.ToStr(v_us_cm_dm_tu_dien.strTEN);
-            m_txt_lai_suat.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcLAI_SUAT_DEFAULT, "#,##0.0000");
+            m_txt_lai_suat.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcLAI_SUAT_DEFAULT, "#,##0.00");
             m_lbl_phi_gd_max_min.Text = "Phí giao dịch trong khoảng " + CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcPHI_CHUYEN_NHUONG_MIN, "#,###") + " đến " + CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcPHI_CHUYEN_NHUONG_MAX, "#,###") + ".";
             switch (m_e_form_mode)
             {
