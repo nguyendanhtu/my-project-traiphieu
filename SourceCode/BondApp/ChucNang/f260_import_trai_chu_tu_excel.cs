@@ -138,6 +138,9 @@ namespace BondApp.ChucNang
                     v_xls_file.Export2DatasetDSPhongThi(v_ds_tmp_dm_trai_chu, v_ds_tmp_dm_trai_chu.DM_TRAI_CHU_IMP.TableName, 2);
 
                     CGridUtils.Dataset2C1Grid(v_ds_tmp_dm_trai_chu, m_fg_load_file, m_obj_tran_xls);
+                    m_lbl_tong_so_luong.Visible = true;
+                    m_lbl_label_tong_sl_tp.Visible = true;
+                    m_lbl_tong_so_luong.Text = CIPConvert.ToStr(get_so_luong_tp_nhap_vao(v_ds_tmp_dm_trai_chu),"#,###");
                     BaseMessages.MsgBox_Infor("Đã load dữ liệu file excel thành công.");
                 }
                 catch (Exception v_e)
@@ -353,6 +356,15 @@ namespace BondApp.ChucNang
                     new CDBClientDBExceptionInterpret()); 
                 v_exceptionHander.showErrorMessage();
             }
+        }
+        private decimal get_so_luong_tp_nhap_vao(DS_DM_TRAI_CHU_IMP ip_ds_dm_trai_chu_imp)
+        {
+            decimal v_dc_so_luong_tp_nhap_vao = 0;
+            for (int v_i = 0; v_i < ip_ds_dm_trai_chu_imp.DM_TRAI_CHU_IMP.Rows.Count; v_i++)
+            {
+                v_dc_so_luong_tp_nhap_vao += CIPConvert.ToDecimal(ip_ds_dm_trai_chu_imp.DM_TRAI_CHU_IMP.Rows[v_i][DM_TRAI_CHU_IMP.SO_LUONG_TRAI_PHIEU_SO_HUU]);
+            }
+            return v_dc_so_luong_tp_nhap_vao;
         }
         private void form_2_us_object_hoc_vien_theo_hoc(US_DM_TRAI_CHU_IMP v_us, int i_i_id)
         {
