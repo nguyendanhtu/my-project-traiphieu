@@ -144,7 +144,7 @@
             // m_lbl_dv_ky_tra_lai
             // 
             this.m_lbl_dv_ky_tra_lai.AutoSize = true;
-            this.m_lbl_dv_ky_tra_lai.Location = new System.Drawing.Point(838, 47);
+            this.m_lbl_dv_ky_tra_lai.Location = new System.Drawing.Point(847, 47);
             this.m_lbl_dv_ky_tra_lai.Name = "m_lbl_dv_ky_tra_lai";
             this.m_lbl_dv_ky_tra_lai.Size = new System.Drawing.Size(34, 13);
             this.m_lbl_dv_ky_tra_lai.TabIndex = 65;
@@ -154,7 +154,7 @@
             // m_txt_ky_tinh_lai
             // 
             this.m_txt_ky_tinh_lai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_txt_ky_tinh_lai.Location = new System.Drawing.Point(749, 44);
+            this.m_txt_ky_tinh_lai.Location = new System.Drawing.Point(758, 44);
             this.m_txt_ky_tinh_lai.Name = "m_txt_ky_tinh_lai";
             this.m_txt_ky_tinh_lai.ReadOnly = true;
             this.m_txt_ky_tinh_lai.Size = new System.Drawing.Size(83, 20);
@@ -164,7 +164,7 @@
             // m_lbl_ky_tinh_lai
             // 
             this.m_lbl_ky_tinh_lai.AutoSize = true;
-            this.m_lbl_ky_tinh_lai.Location = new System.Drawing.Point(689, 48);
+            this.m_lbl_ky_tinh_lai.Location = new System.Drawing.Point(679, 48);
             this.m_lbl_ky_tinh_lai.Name = "m_lbl_ky_tinh_lai";
             this.m_lbl_ky_tinh_lai.Size = new System.Drawing.Size(73, 13);
             this.m_lbl_ky_tinh_lai.TabIndex = 63;
@@ -302,7 +302,7 @@
             // m_lbl_ngay_phat_hanh
             // 
             this.m_lbl_ngay_phat_hanh.AutoSize = true;
-            this.m_lbl_ngay_phat_hanh.Location = new System.Drawing.Point(660, 21);
+            this.m_lbl_ngay_phat_hanh.Location = new System.Drawing.Point(669, 21);
             this.m_lbl_ngay_phat_hanh.Name = "m_lbl_ngay_phat_hanh";
             this.m_lbl_ngay_phat_hanh.Size = new System.Drawing.Size(83, 13);
             this.m_lbl_ngay_phat_hanh.TabIndex = 37;
@@ -312,7 +312,7 @@
             // m_txt_ngay_phat_hanh
             // 
             this.m_txt_ngay_phat_hanh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_txt_ngay_phat_hanh.Location = new System.Drawing.Point(749, 18);
+            this.m_txt_ngay_phat_hanh.Location = new System.Drawing.Point(758, 18);
             this.m_txt_ngay_phat_hanh.Name = "m_txt_ngay_phat_hanh";
             this.m_txt_ngay_phat_hanh.ReadOnly = true;
             this.m_txt_ngay_phat_hanh.Size = new System.Drawing.Size(83, 20);
