@@ -270,6 +270,7 @@ namespace BondApp.DanhMuc
                     m_us_v_dot_phat_hanh.Insert();
                     break;
                 case e_form_mode.SUA_TO_CHUC_PHAT_HANH:
+                    m_us_v_dot_phat_hanh.SetID_NGUOI_DUYETNull();
                     m_us_v_dot_phat_hanh.Update();
                     break;
                 case e_form_mode.DUYET_DU_LIEU:
