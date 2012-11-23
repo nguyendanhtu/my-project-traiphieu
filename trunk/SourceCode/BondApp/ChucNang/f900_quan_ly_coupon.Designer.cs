@@ -166,9 +166,9 @@
             this.m_lbl_ky_tinh_lai.AutoSize = true;
             this.m_lbl_ky_tinh_lai.Location = new System.Drawing.Point(689, 48);
             this.m_lbl_ky_tinh_lai.Name = "m_lbl_ky_tinh_lai";
-            this.m_lbl_ky_tinh_lai.Size = new System.Drawing.Size(54, 13);
+            this.m_lbl_ky_tinh_lai.Size = new System.Drawing.Size(73, 13);
             this.m_lbl_ky_tinh_lai.TabIndex = 63;
-            this.m_lbl_ky_tinh_lai.Text = "Kỳ tính lãi";
+            this.m_lbl_ky_tinh_lai.Text = "Kỳ thanh toán";
             // 
             // m_lbl_dv_ky_han
             // 
