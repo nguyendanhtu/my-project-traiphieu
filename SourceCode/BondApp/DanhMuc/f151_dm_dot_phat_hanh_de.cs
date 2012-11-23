@@ -125,8 +125,8 @@ namespace BondApp.DanhMuc
             m_txt_ghi_chu.Text = m_us_v_dot_phat_hanh.strGHI_CHU;
             m_txt_tong_so_luong_tp.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcTONG_SO_LUONG_TRAI_PHIEU,"#,###");
             m_txt_menh_gia.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcMENH_GIA, "#,###");
-            m_txt_ty_le_phi_chuyen_nhuong.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcTY_LE_PHI_CHUYEN_NHUONG * 100, "#,##0.0000");
-            m_txt_ty_le_phi_phong_giai_toa.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcTY_LE_PHI_PHONG_GIAI_TOA * 100, "#,##0.0000");
+            m_txt_ty_le_phi_chuyen_nhuong.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcTY_LE_PHI_CHUYEN_NHUONG * 100, "#,###0.00000");
+            m_txt_ty_le_phi_phong_giai_toa.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcTY_LE_PHI_PHONG_GIAI_TOA * 100, "#,###0.00000");
             if (ip_us_v_dot_phat_hanh.dcID_NGAN_HANG_DAI_LY_QUAN_LY_TK > 0)
             {
                 m_cbo_ngan_hang_quan_ly_tai_khoan.SelectedValue = ip_us_v_dot_phat_hanh.dcID_NGAN_HANG_DAI_LY_QUAN_LY_TK;
@@ -136,7 +136,7 @@ namespace BondApp.DanhMuc
                 m_cbo_loai_ngay_lam_viec.SelectedIndex = 0;
             else m_cbo_loai_ngay_lam_viec.SelectedIndex = 1;
             
-            m_txt_phi_chuyen_nhuong_max.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcPHI_CHUYEN_NHUONG_MAX,"n");
+            m_txt_phi_chuyen_nhuong_max.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcPHI_CHUYEN_NHUONG_MAX,"#,###");
             m_txt_phi_chuyen_nhuong_min.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcPHI_CHUYEN_NHUONG_MIN, "#,###");
             m_txt_phi_phong_giai_toa_max.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcPHI_PHONG_GIAI_TOA_MAX, "#,###");
             m_txt_phi_phong_giai_toa_min.Text = CIPConvert.ToStr(ip_us_v_dot_phat_hanh.dcPHI_PHONG_GIAI_TOA_MIN, "#,###");

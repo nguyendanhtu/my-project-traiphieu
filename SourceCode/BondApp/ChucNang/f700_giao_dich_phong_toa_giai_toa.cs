@@ -436,7 +436,7 @@ namespace BondApp
                 m_dat_ngay_cap_giay_uq.Value = m_us_gd_phong_toa_giai_toa.datNGAY_CAP_GIAY_UQ;
                 m_dat_ngay.Value = m_us_gd_phong_toa_giai_toa.datNGAY_GIAO_DICH;
                 m_txt_cua.Text = m_us_gd_phong_toa_giai_toa.strCUA;
-                m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.dcTY_LE_PHI_GD*100,"#,###");
+                m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.dcTY_LE_PHI_GD * 100, "#,###0.00000");
                 m_txt_phi_gd.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.dcPHI_GIAO_DICH,"#,###");
             }
              if (m_e_form_mode == eFormMode.LAP_GIAI_TOA || m_e_form_mode == eFormMode.LAP_PHONG_TOA)
