@@ -292,11 +292,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(540, 61);
+            this.label7.Location = new System.Drawing.Point(414, 61);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(121, 13);
+            this.label7.Size = new System.Drawing.Size(246, 13);
             this.label7.TabIndex = 61;
-            this.label7.Text = "TCPH chuyển tiền trước";
+            this.label7.Text = "Thời hạn TCPH chuyển tiền trước ngày thanh toán";
             // 
             // m_cbo_co_so_tinh_lai
             // 
