@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Data;
 using System.Drawing;
 using System.Collections;
@@ -141,7 +140,7 @@ namespace BondApp
 
         #region Members
         US_DM_TRAI_CHU m_us_trai_chu = new US_DM_TRAI_CHU();
-        US_DM_TRAI_PHIEU m_us_trai_phieu = new US_DM_TRAI_PHIEU();
+        US_V_DM_TRAI_PHIEU m_us_trai_phieu = new US_V_DM_TRAI_PHIEU();
         US_CM_DM_TU_DIEN m_us_cm_dm_tu_dien = new US_CM_DM_TU_DIEN();
         US_CM_DM_LOAI_TD m_us_cm_dm_loai_tu_dien = new US_CM_DM_LOAI_TD();
         US_GD_PHONG_GIAI_TOA m_us_gd_phong_toa_giai_toa = new US_GD_PHONG_GIAI_TOA();
@@ -407,17 +406,17 @@ namespace BondApp
             DS_GD_SO_DU_TRAI_PHIEU v_ds = new DS_GD_SO_DU_TRAI_PHIEU();
             US_GD_SO_DU_TRAI_PHIEU v_us = new US_GD_SO_DU_TRAI_PHIEU();
             v_us.select_us_gd_so_du_trai_phieu_byTraiChuID(ip_us_trai_chu.dcID, v_ds);
-            m_us_trai_phieu = new US_DM_TRAI_PHIEU(ip_us_trai_chu.dcID_TRAI_PHIEU_SO_HUU);
+            m_us_trai_phieu = new US_V_DM_TRAI_PHIEU(ip_us_trai_chu.dcID_TRAI_PHIEU_SO_HUU);
             m_txt_ma_trai_chu.Text = ip_us_trai_chu.strMA_TRAI_CHU;
             m_txt_ten_khach_hang.Text = ip_us_trai_chu.strTEN_TRAI_CHU;
             m_txt_so_cmnd_dkkd.Text = ip_us_trai_chu.strCMT_GIAY_DKKD;
             m_txt_noi_cap.Text = ip_us_trai_chu.strNOI_CAP_CMT;
             m_txt_ngay_cap.Text = ip_us_trai_chu.datNGAY_CAP_CMT.ToString("dd/MM/yyyy");
-            m_txt_so_luong_trai_phieu.Text = v_ds.GD_SO_DU_TRAI_PHIEU.Rows[0]["TONG_SO_DU"].ToString();
+            m_txt_so_luong_trai_phieu.Text = CIPConvert.ToStr(v_ds.GD_SO_DU_TRAI_PHIEU.Rows[0]["TONG_SO_DU"], "#,###");
             if (m_e_form_mode == eFormMode.DUYET_GIAI_TOA || m_e_form_mode == eFormMode.LAP_GIAI_TOA || m_e_form_mode == eFormMode.SUA_GIAI_TOA)
-                m_txt_so_luong_kha_dung.Text = CIPConvert.ToStr(CIPConvert.ToDecimal(v_ds.GD_SO_DU_TRAI_PHIEU.Rows[0]["TONG_SO_DU"]) - CIPConvert.ToDecimal( v_ds.GD_SO_DU_TRAI_PHIEU.Rows[0]["SO_DU_KHA_DUNG"]));
+                m_txt_so_luong_kha_dung.Text = CIPConvert.ToStr(CIPConvert.ToDecimal(v_ds.GD_SO_DU_TRAI_PHIEU.Rows[0]["TONG_SO_DU"]) - CIPConvert.ToDecimal(v_ds.GD_SO_DU_TRAI_PHIEU.Rows[0]["SO_DU_KHA_DUNG"]),"#,###");
             else
-                m_txt_so_luong_kha_dung.Text = v_ds.GD_SO_DU_TRAI_PHIEU.Rows[0]["SO_DU_KHA_DUNG"].ToString();
+                m_txt_so_luong_kha_dung.Text = CIPConvert.ToStr(v_ds.GD_SO_DU_TRAI_PHIEU.Rows[0]["SO_DU_KHA_DUNG"],"#,###");
             us_trai_phieu_2_form(m_us_trai_phieu);
             if (m_e_form_mode == eFormMode.DUYET_GIAI_TOA || m_e_form_mode == eFormMode.DUYET_PHONG_TOA
                  || m_e_form_mode == eFormMode.SUA_GIAI_TOA || m_e_form_mode == eFormMode.SUA_PHONG_TOA)
@@ -427,8 +426,8 @@ namespace BondApp
                 m_txt_tru_so_chinh.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.strNDD_TRU_SO);
                 m_txt_dien_thoai.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.strNDD_DIEN_THOAI);
                 m_txt_fax.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.strNDD_FAX);
-                m_txt_so_luong_tp_cam_co.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.dcSO_LUONG);
-                m_txt_tong_gia_tri.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.dcSO_LUONG * m_us_trai_phieu.dcMENH_GIA);
+                m_txt_so_luong_tp_cam_co.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.dcSO_LUONG,"#,###");
+                m_txt_tong_gia_tri.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.dcSO_LUONG * m_us_trai_phieu.dcMENH_GIA,"#,###");
                 m_txt_ngan_hang_cam_co.Text = m_us_gd_phong_toa_giai_toa.strNGAN_HANG_CAM_CO;
                 m_txt_khoan_dau_tu.Text = m_us_gd_phong_toa_giai_toa.strKHOAN_DAU_TU;
                 m_txt_nguoi_xac_nhan.Text = m_us_gd_phong_toa_giai_toa.strNGUOI_XAC_NHAN;
@@ -437,8 +436,8 @@ namespace BondApp
                 m_dat_ngay_cap_giay_uq.Value = m_us_gd_phong_toa_giai_toa.datNGAY_CAP_GIAY_UQ;
                 m_dat_ngay.Value = m_us_gd_phong_toa_giai_toa.datNGAY_GIAO_DICH;
                 m_txt_cua.Text = m_us_gd_phong_toa_giai_toa.strCUA;
-                m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.dcTY_LE_PHI_GD);
-                m_txt_phi_gd.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.dcPHI_GIAO_DICH);
+                m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.dcTY_LE_PHI_GD*100,"#,###");
+                m_txt_phi_gd.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.dcPHI_GIAO_DICH,"#,###");
             }
              if (m_e_form_mode == eFormMode.LAP_GIAI_TOA || m_e_form_mode == eFormMode.LAP_PHONG_TOA)
             {
@@ -452,7 +451,7 @@ namespace BondApp
              load_data_2_cmb_ngan_hang_cam_co();
              m_cbo_ngan_hang_cam_co.SelectedValue = m_us_gd_phong_toa_giai_toa.strNGAN_HANG_CAM_CO;
         }
-        private void us_trai_phieu_2_form(US_DM_TRAI_PHIEU ip_us_trai_phieu)
+        private void us_trai_phieu_2_form(US_V_DM_TRAI_PHIEU ip_us_trai_phieu)
         {
             US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(ip_us_trai_phieu.dcID_DOT_PHAT_HANH);
 
@@ -526,7 +525,7 @@ namespace BondApp
             m_us_gd_phong_toa_giai_toa.strGIAY_UQ = m_txt_theo_giay_uy_quyen_so.Text;
             m_us_gd_phong_toa_giai_toa.strNGUOI_XAC_NHAN = m_txt_nguoi_xac_nhan.Text;
             m_us_gd_phong_toa_giai_toa.strCHUC_VU = m_txt_chuc_vu.Text;
-            m_us_gd_phong_toa_giai_toa.dcTY_LE_PHI_GD = CIPConvert.ToDecimal(m_txt_ty_le_phi_gd.Text);
+            m_us_gd_phong_toa_giai_toa.dcTY_LE_PHI_GD = CIPConvert.ToDecimal(m_txt_ty_le_phi_gd.Text)/100;
             m_us_gd_phong_toa_giai_toa.dcPHI_GIAO_DICH = CIPConvert.ToDecimal(m_txt_phi_gd.Text);
             m_us_gd_phong_toa_giai_toa.strNDD_FAX = m_txt_fax.Text;
             m_us_gd_phong_toa_giai_toa.strNDD_DIEN_THOAI = m_txt_dien_thoai.Text;
