@@ -51,6 +51,8 @@
             this.m_cmd_thoat = new SIS.Controls.Button.SiSButton();
             this.m_dgl_open_file = new System.Windows.Forms.OpenFileDialog();
             this.m_fg_load_file = new C1.Win.C1FlexGrid.C1FlexGrid();
+            this.m_lbl_label_tong_sl_tp = new System.Windows.Forms.Label();
+            this.m_lbl_tong_so_luong = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -107,10 +109,10 @@
             // 
             this.m_txt_sl_phat_hanh.BackColor = System.Drawing.SystemColors.Info;
             this.m_txt_sl_phat_hanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_txt_sl_phat_hanh.Location = new System.Drawing.Point(755, 85);
+            this.m_txt_sl_phat_hanh.Location = new System.Drawing.Point(728, 85);
             this.m_txt_sl_phat_hanh.Name = "m_txt_sl_phat_hanh";
             this.m_txt_sl_phat_hanh.ReadOnly = true;
-            this.m_txt_sl_phat_hanh.Size = new System.Drawing.Size(63, 22);
+            this.m_txt_sl_phat_hanh.Size = new System.Drawing.Size(90, 22);
             this.m_txt_sl_phat_hanh.TabIndex = 14;
             this.m_txt_sl_phat_hanh.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -118,7 +120,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(661, 88);
+            this.label2.Location = new System.Drawing.Point(643, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 16);
             this.label2.TabIndex = 13;
@@ -128,10 +130,10 @@
             // 
             this.m_txt_ngay_phat_hanh.BackColor = System.Drawing.SystemColors.Info;
             this.m_txt_ngay_phat_hanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_txt_ngay_phat_hanh.Location = new System.Drawing.Point(658, 48);
+            this.m_txt_ngay_phat_hanh.Location = new System.Drawing.Point(646, 48);
             this.m_txt_ngay_phat_hanh.Name = "m_txt_ngay_phat_hanh";
             this.m_txt_ngay_phat_hanh.ReadOnly = true;
-            this.m_txt_ngay_phat_hanh.Size = new System.Drawing.Size(160, 22);
+            this.m_txt_ngay_phat_hanh.Size = new System.Drawing.Size(172, 22);
             this.m_txt_ngay_phat_hanh.TabIndex = 14;
             this.m_txt_ngay_phat_hanh.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -139,7 +141,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(538, 51);
+            this.label7.Location = new System.Drawing.Point(528, 51);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(102, 16);
             this.label7.TabIndex = 13;
@@ -167,7 +169,7 @@
             this.m_txt_ten_to_chuc_phat_hanh.Location = new System.Drawing.Point(170, 85);
             this.m_txt_ten_to_chuc_phat_hanh.Name = "m_txt_ten_to_chuc_phat_hanh";
             this.m_txt_ten_to_chuc_phat_hanh.ReadOnly = true;
-            this.m_txt_ten_to_chuc_phat_hanh.Size = new System.Drawing.Size(470, 22);
+            this.m_txt_ten_to_chuc_phat_hanh.Size = new System.Drawing.Size(457, 22);
             this.m_txt_ten_to_chuc_phat_hanh.TabIndex = 8;
             // 
             // label4
@@ -213,6 +215,8 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.m_lbl_tong_so_luong);
+            this.panel3.Controls.Add(this.m_lbl_label_tong_sl_tp);
             this.panel3.Controls.Add(this.m_cmd_luu);
             this.panel3.Controls.Add(this.m_cmd_kiem_tra);
             this.panel3.Controls.Add(this.m_cmd_load_ds_trai_chu);
@@ -330,6 +334,29 @@
             this.m_fg_load_file.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg_load_file.Styles"));
             this.m_fg_load_file.TabIndex = 30;
             // 
+            // m_lbl_label_tong_sl_tp
+            // 
+            this.m_lbl_label_tong_sl_tp.AutoSize = true;
+            this.m_lbl_label_tong_sl_tp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_label_tong_sl_tp.Location = new System.Drawing.Point(512, 24);
+            this.m_lbl_label_tong_sl_tp.Name = "m_lbl_label_tong_sl_tp";
+            this.m_lbl_label_tong_sl_tp.Size = new System.Drawing.Size(213, 16);
+            this.m_lbl_label_tong_sl_tp.TabIndex = 14;
+            this.m_lbl_label_tong_sl_tp.Text = "Tổng số lượng trái phiếu nhập vào:";
+            this.m_lbl_label_tong_sl_tp.Visible = false;
+            // 
+            // m_lbl_tong_so_luong
+            // 
+            this.m_lbl_tong_so_luong.AutoSize = true;
+            this.m_lbl_tong_so_luong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_tong_so_luong.ForeColor = System.Drawing.Color.Maroon;
+            this.m_lbl_tong_so_luong.Location = new System.Drawing.Point(719, 24);
+            this.m_lbl_tong_so_luong.Name = "m_lbl_tong_so_luong";
+            this.m_lbl_tong_so_luong.Size = new System.Drawing.Size(20, 16);
+            this.m_lbl_tong_so_luong.TabIndex = 14;
+            this.m_lbl_tong_so_luong.Text = "...";
+            this.m_lbl_tong_so_luong.Visible = false;
+            // 
             // f260_import_trai_chu_tu_excel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -344,6 +371,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg_load_file)).EndInit();
             this.ResumeLayout(false);
@@ -373,6 +401,8 @@
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg_load_file;
         private System.Windows.Forms.TextBox m_txt_sl_phat_hanh;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label m_lbl_tong_so_luong;
+        private System.Windows.Forms.Label m_lbl_label_tong_sl_tp;
 
     }
 }
