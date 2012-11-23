@@ -778,7 +778,7 @@ namespace BondDS {
                 this.columnTEN_TO_CHUC_PHAT_HANH.AllowDBNull = false;
                 this.columnTEN_TO_CHUC_PHAT_HANH.MaxLength = 250;
                 this.columnNGAY_PHAT_HANH.AllowDBNull = false;
-                this.columnGHI_CHU.MaxLength = 250;
+                this.columnGHI_CHU.MaxLength = 1000;
                 this.columnNGAN_HANG_DAI_LY_QUAN_LY_TK.MaxLength = 250;
                 this.columnNGUOI_LAP.MaxLength = 250;
                 this.columnNGUOI_DUYET.MaxLength = 250;
