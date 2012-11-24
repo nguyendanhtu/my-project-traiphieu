@@ -126,6 +126,7 @@
     <Reference Include="System.Drawing">
       <Name>System.Drawing</Name>
     </Reference>
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms">
       <Name>System.Windows.Forms</Name>
     </Reference>
@@ -169,6 +170,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_HT_NGUOI_SU_DUNG.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_HT_PHAN_QUYEN_DETAIL.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_HT_PHAN_QUYEN_DETAIL.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_HT_THAM_SO_HE_THONG.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -178,6 +184,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_LICENSESOFTWARE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Content Include="DS_CM_DM_LOAI_TD.xsd">
       <Generator>MSDataSetGenerator</Generator>
@@ -203,6 +214,7 @@
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DS_LICENSESOFTWARE.Designer.vb</LastGenOutput>
     </Content>
+    <None Include="app.config" />
     <None Include="DS_CM_DM_LOAI_TD.xsx">
       <DependentUpon>DS_CM_DM_LOAI_TD.xsd</DependentUpon>
     </None>
@@ -218,16 +230,30 @@
     <None Include="DS_HT_NGUOI_SU_DUNG.xsx">
       <DependentUpon>DS_HT_NGUOI_SU_DUNG.xsd</DependentUpon>
     </None>
+    <None Include="DS_HT_PHAN_QUYEN_DETAIL.xsc">
+      <DependentUpon>DS_HT_PHAN_QUYEN_DETAIL.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HT_PHAN_QUYEN_DETAIL.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_HT_PHAN_QUYEN_DETAIL.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DS_HT_PHAN_QUYEN_DETAIL.xss">
+      <DependentUpon>DS_HT_PHAN_QUYEN_DETAIL.xsd</DependentUpon>
+    </None>
     <None Include="DS_HT_THAM_SO_HE_THONG.xsx">
       <DependentUpon>DS_HT_THAM_SO_HE_THONG.xsd</DependentUpon>
     </None>
     <None Include="DS_LICENSESOFTWARE.xsx">
       <DependentUpon>DS_LICENSESOFTWARE.xsd</DependentUpon>
     </None>
+    <None Include="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="My Project\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
       <Visible>False</Visible>
