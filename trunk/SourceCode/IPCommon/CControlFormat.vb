@@ -3,6 +3,12 @@ Option Strict On
 
 Imports System.Windows.Forms
 
+Public Interface IControlerControl
+    Function CanUseControl( _
+                ByVal ip_strFormName As String _
+                , ByVal ip_strControlName As String _
+                , ByVal ip_strControlType As String) As Boolean
+End Interface
 
 Public Class CControlFormat
 
