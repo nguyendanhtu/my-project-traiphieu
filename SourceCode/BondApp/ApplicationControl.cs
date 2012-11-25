@@ -47,6 +47,7 @@ namespace BondApp
                 while (!v_UserWant2ExitFromSystem)
                 {
                     CAppContext_201.InitializeContext(v_obj_login_info);
+                    CAppContext_201.LoadDecentralizationByUserLogin();		
                     f001_main_form v_frm_main = new f001_main_form();
                     v_frm_main.display(ref v_exitmode);
                     v_frm_main.Dispose();
