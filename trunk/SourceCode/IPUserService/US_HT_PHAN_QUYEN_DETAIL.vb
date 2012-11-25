@@ -159,8 +159,8 @@ Public Class US_HT_PHAN_QUYEN_DETAIL
 
 #Region "Adddition"
     Public Sub FillDatasetByUserLogin(ByVal i_ds As DS_HT_PHAN_QUYEN_DETAIL, ByVal i_str_user_login_name As String)
-        Dim v_objPr As New CStoredProc("HT_PHAN_QUYEN_DETAIL_P.Fill_dataset_by_user")
-        v_objPr.addNVarcharInputParam("ip_user_name", i_str_user_login_name)
+        Dim v_objPr As New CStoredProc("pr_HT_PHAN_QUYEN_DETAIL_fill_dataset_by_user")
+        v_objPr.addNVarcharInputParam("@ip_user_name", i_str_user_login_name)
         v_objPr.fillDataSetByCommand(Me, i_ds)
 
     End Sub
