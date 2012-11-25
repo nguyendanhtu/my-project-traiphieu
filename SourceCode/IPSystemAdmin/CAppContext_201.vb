@@ -3,6 +3,8 @@ Option Strict On
 
 Imports IP.Core.IPCommon
 Imports IP.Core.IPUserService
+Imports IP.Core.IPData
+
 'Imports eSchool.eSchoolData
 'Imports eSchool.eSchoolUserService
 
@@ -14,19 +16,32 @@ Imports IP.Core.IPUserService
 #End Region
 
 Public Class CAppContext_201
+    Implements IControlerControl
 
 #Region "Variables"
     Private Shared m_us_user As US_HT_NGUOI_SU_DUNG
     Private Shared m_strRunMode As String
+    Private Shared m_dsDecentralization As New DS_HT_PHAN_QUYEN_DETAIL
 #End Region
 
 #Region "Public interface"
+    Public Shared Sub LoadDecentralizationByUserLogin()
+        Dim v_us As New US_HT_PHAN_QUYEN_DETAIL
+        m_dsDecentralization.Clear()
+        v_us.FillDatasetByUserLogin(m_dsDecentralization, CAppContext_201.getCurrentUser())
+    End Sub
+    Public Function CanUseControl(ByVal ip_strFormName As String, ByVal ip_strControlName As String, ByVal ip_strControlType As String) As Boolean Implements IPCommon.IControlerControl.CanUseControl
+        Return Me.CanUseThisControl(ip_strFormName, ip_strControlName, ip_strControlType)
+    End Function
+
     Public Shared Function IsHavingQuyen(ByVal i_str_ma_quyen As String) As Boolean
         Return US_HT_NGUOI_SU_DUNG.IsHavingMA_QUYEN( _
            CAppContext_201.getCurrentUserID() _
            , i_str_ma_quyen)
 
     End Function
+
+
 
     Public Shared Sub InitializeContext(ByVal i_LoginInfo As CLoginInformation_302)
         '*****************************************************************
@@ -86,6 +101,22 @@ Public Class CAppContext_201
     End Function
 #End Region
 
+
+#Region "Private Methods"
+    Private Shared Sub LoadDecentralization(ByVal ip_dsDecentralization As DS_HT_PHAN_QUYEN_DETAIL)
+        m_dsDecentralization = ip_dsDecentralization
+    End Sub
+
+    Private Shared Function CanUseThisControl( _
+                ByVal ip_strFormName As String _
+                , ByVal ip_strControlName As String _
+                , ByVal ip_strControlType As String) As Boolean
+        If (m_dsDecentralization.HT_PHAN_QUYEN_DETAIL.Select("FORM_NAME = '" & ip_strFormName & "' AND CONTROL_NAME ='" & ip_strControlName & "'").Length > 0) Then
+            Return True
+        End If
+        Return False
+    End Function
+#End Region
 End Class
 Public Class PHAN_QUYEN
     Public Const GIOI_THIEU As String = "Q00"
