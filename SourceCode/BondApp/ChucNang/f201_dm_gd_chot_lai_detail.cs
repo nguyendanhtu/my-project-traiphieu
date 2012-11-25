@@ -994,7 +994,7 @@ namespace BondApp
                 {
                     v_dat_ngay_thanh_toan = v_dat_ngay_phat_hanh_tp.AddYears(v_ky_tinh_lai * (int)m_us_v_dm_trai_phieu.dcKY_TRA_LAI);
                     m_dat_ngay_thanh_toan.Value = v_dat_ngay_thanh_toan;
-                    m_date_ngay_dau_ky.Value = v_dat_ngay_phat_hanh_tp.AddYears(0 - (int)m_us_v_dm_trai_phieu.dcKY_TRA_LAI); 
+                    m_date_ngay_dau_ky.Value = v_dat_ngay_phat_hanh_tp.AddYears((v_ky_tinh_lai - 1)*(int)m_us_v_dm_trai_phieu.dcKY_TRA_LAI); 
                 }
                 m_dat_ngay_chot_lai.Value = get_ngay_chot_lai(m_dat_ngay_thanh_toan.Value);                
                 m_data_ngay_cuoi_ky.Value = m_dat_ngay_thanh_toan.Value;
