@@ -12,6 +12,7 @@ using IP.Core.IPData;
 using IP.Core.IPData.DBNames;
 
 using BondDS;
+using BondDS.CDBNames;
 using BondUS;
 
 namespace BondApp
@@ -37,8 +38,7 @@ namespace BondApp
 		private System.Windows.Forms.ComboBox m_cbo_trang_thai;
 		private System.Windows.Forms.CheckBox m_chk_is_admin;
 		internal SIS.Controls.Button.SiSButton m_cmd_save;
-		private System.Windows.Forms.GroupBox groupBox1;
-		private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
+        private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.Label label9;
@@ -84,9 +84,7 @@ namespace BondApp
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f998_ht_nguoi_su_dung_de));
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
-            this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
-            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -103,12 +101,12 @@ namespace BondApp
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_cbo_nhom_quyen = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.m_cmd_save = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.SuspendLayout();
             // 
             // m_pnl_out_place_dm
@@ -116,26 +114,11 @@ namespace BondApp
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 306);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 188);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(464, 36);
             this.m_pnl_out_place_dm.TabIndex = 1;
-            // 
-            // m_cmd_save
-            // 
-            this.m_cmd_save.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_save.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_save.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_save.ImageIndex = 10;
-            this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(284, 4);
-            this.m_cmd_save.Name = "m_cmd_save";
-            this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_save.TabIndex = 0;
-            this.m_cmd_save.Text = "&Lưu";
             // 
             // ImageList
             // 
@@ -163,21 +146,6 @@ namespace BondApp
             this.ImageList.Images.SetKeyName(19, "");
             this.ImageList.Images.SetKeyName(20, "");
             this.ImageList.Images.SetKeyName(21, "");
-            // 
-            // m_cmd_exit
-            // 
-            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_exit.ImageIndex = 11;
-            this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(372, 4);
-            this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 1;
-            this.m_cmd_exit.Text = "Trở về (Esc)";
             // 
             // label1
             // 
@@ -297,7 +265,6 @@ namespace BondApp
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.m_fg);
             this.groupBox1.Controls.Add(this.m_chk_is_admin);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
@@ -315,7 +282,7 @@ namespace BondApp
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(464, 306);
+            this.groupBox1.Size = new System.Drawing.Size(464, 188);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin người sử dụng";
@@ -347,16 +314,6 @@ namespace BondApp
             this.label7.TabIndex = 1;
             this.label7.Text = "(*)";
             // 
-            // m_fg
-            // 
-            this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(3, 174);
-            this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(458, 129);
-            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 15;
-            // 
             // m_cbo_nhom_quyen
             // 
             this.m_cbo_nhom_quyen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -378,10 +335,40 @@ namespace BondApp
             this.label10.Text = "Nhóm quyền";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // m_cmd_save
+            // 
+            this.m_cmd_save.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_save.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_save.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_save.ImageIndex = 10;
+            this.m_cmd_save.ImageList = this.ImageList;
+            this.m_cmd_save.Location = new System.Drawing.Point(284, 4);
+            this.m_cmd_save.Name = "m_cmd_save";
+            this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_save.TabIndex = 0;
+            this.m_cmd_save.Text = "&Lưu";
+            // 
+            // m_cmd_exit
+            // 
+            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_exit.ImageIndex = 11;
+            this.m_cmd_exit.ImageList = this.ImageList;
+            this.m_cmd_exit.Location = new System.Drawing.Point(372, 4);
+            this.m_cmd_exit.Name = "m_cmd_exit";
+            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_exit.TabIndex = 1;
+            this.m_cmd_exit.Text = "Trở về (Esc)";
+            // 
             // f998_ht_nguoi_su_dung_de
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(464, 342);
+            this.ClientSize = new System.Drawing.Size(464, 224);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f998_ht_nguoi_su_dung_de";
@@ -389,7 +376,6 @@ namespace BondApp
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.ResumeLayout(false);
 
 		}
@@ -409,55 +395,27 @@ namespace BondApp
 		#endregion
 		#region Members
 		US_HT_NGUOI_SU_DUNG m_us_user = new US_HT_NGUOI_SU_DUNG();
-		ITransferDataRow m_obj_trans;
 		DataEntryFormMode m_e_form_mode;
 		#endregion
-		#region Data Structures
-		private enum e_col_number{
-			ID_QUYEN = 1
-			, TEN_QUYEN = 2
-			, LA_QUYEN_USER =3
-		}
+		#region Data Structures		
 		#endregion
 		#region Private Methods
 		private void format_controls(){
 			CControlFormat.setFormStyle(this);		
-			m_cbo_trang_thai.SelectedIndex = 0;
-			m_fg.Cols[(int)e_col_number.ID_QUYEN].Visible = false;
-			m_obj_trans = get_trans_object(m_fg);
+			m_cbo_trang_thai.SelectedIndex = 0;						
 			set_define_events();
 		}
-		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
-			Hashtable v_htb = new Hashtable();
-			v_htb.Add("ID", e_col_number.ID_QUYEN);
-			v_htb.Add("TEN",e_col_number.TEN_QUYEN);
-			DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();									
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,v_ds.CM_DM_TU_DIEN.NewRow());
-			return v_obj_trans;			
-		}
-		private void load_data_2_grid(){
-			US_CM_DM_TU_DIEN v_us_tu_dien_quyen = new US_CM_DM_TU_DIEN();
-			DS_CM_DM_TU_DIEN v_ds_tu_dien_quyen = new DS_CM_DM_TU_DIEN();
-			v_us_tu_dien_quyen.fill_tu_dien_cung_loai_ds("PHAN_QUYEN", v_ds_tu_dien_quyen);
-			CGridUtils.Dataset2C1Grid(v_ds_tu_dien_quyen, m_fg, m_obj_trans);
-			US_HT_QUYEN_USER v_us_quyen = new US_HT_QUYEN_USER ();
-			DS_HT_QUYEN_USER v_ds_quyen = new DS_HT_QUYEN_USER();
-			v_us_quyen.FillDatasetByUserID(m_us_user.dcID, v_ds_quyen);
-			//set not null quyen user
-			for (int v_i_cur = m_fg.Rows.Fixed; v_i_cur < m_fg.Rows.Count; v_i_cur++){				
-				m_fg[v_i_cur, (int)e_col_number.LA_QUYEN_USER] = false;
-			}
-			//set quyen
-			foreach (DataRow v_dr in v_ds_quyen.HT_QUYEN_USER.Rows){
-				for (int v_i_cur = m_fg.Rows.Fixed; v_i_cur < m_fg.Rows.Count; v_i_cur++){
-					if ((decimal) m_fg[v_i_cur, (int)e_col_number.ID_QUYEN]
-						==(decimal)v_dr["ID_QUYEN"]){
-						m_fg[v_i_cur, (int)e_col_number.LA_QUYEN_USER] = true;
-					}
-				}
-			}
-		}
-										 							   
+        private void load_data_2_cbo_nhom_nguoi_dung()
+        {
+            US_HT_NHOM_NGUOI_SU_DUNG v_us_nhom_nguoi_dung = new US_HT_NHOM_NGUOI_SU_DUNG();
+            DS_HT_NHOM_NGUOI_SU_DUNG v_ds_nhom_nguoi_dung = new DS_HT_NHOM_NGUOI_SU_DUNG();
+            v_us_nhom_nguoi_dung.FillDataset(v_ds_nhom_nguoi_dung);
+            v_ds_nhom_nguoi_dung.EnforceConstraints = false;
+
+            m_cbo_nhom_quyen.ValueMember = HT_NHOM_NGUOI_SU_DUNG.ID;
+            m_cbo_nhom_quyen.DisplayMember = HT_NHOM_NGUOI_SU_DUNG.MA_NHOM;
+            m_cbo_nhom_quyen.DataSource = v_ds_nhom_nguoi_dung.HT_NHOM_NGUOI_SU_DUNG;
+        }			   
 		private void form_2_us_object(){
 			m_us_user.strBUILT_IN_YN 
 				= CIPConvert.ToYNString(m_chk_is_admin.Checked);
@@ -468,7 +426,7 @@ namespace BondApp
 			m_us_user.strTRANG_THAI  =
 				CIPConvert.ToStr(m_cbo_trang_thai.SelectedIndex);
 			m_us_user.strNGUOI_TAO = IP.Core.IPSystemAdmin.CAppContext_201.getCurrentUser();
-
+            m_us_user.dcID_NHOM_NGUOI_DUNG = CIPConvert.ToDecimal( m_cbo_nhom_quyen.SelectedValue);
 		}
 		private void us_object_2_form(){
 			m_chk_is_admin.Checked = CIPConvert.ToBoolean(m_us_user.strBUILT_IN_YN);
@@ -487,6 +445,7 @@ namespace BondApp
 			m_txt_go_lai_mat_khau.Text = CIPConvert.Deciphering ( m_us_user.strMAT_KHAU ) ;
 			m_cbo_trang_thai.SelectedIndex = 
 				(int)CIPConvert.ToDecimal(m_us_user.strTRANG_THAI);
+            m_cbo_nhom_quyen.SelectedValue = m_us_user.dcID_NHOM_NGUOI_DUNG;
 		}
 		private bool check_validate(){
 			if (!CValidateTextBox.IsValid(m_txt_ten_truy_cap, DataType.StringType, allowNull.NO, true)) return false;
@@ -508,17 +467,7 @@ namespace BondApp
 				case DataEntryFormMode.UpdateDataState:
 					m_us_user.Update();
 					break;
-			}			
-			US_HT_QUYEN_USER v_us_quyen_user = new US_HT_QUYEN_USER();
-			v_us_quyen_user.dcID_USER = m_us_user.dcID;
-			v_us_quyen_user.DeleteAllQuyenOfUser(m_us_user.dcID);
-			for (int v_i_cur = m_fg.Rows.Fixed; v_i_cur < m_fg.Rows.Count;v_i_cur++){
-				if ((bool)m_fg[v_i_cur, (int)e_col_number.LA_QUYEN_USER]== true){
-					v_us_quyen_user.dcID_QUYEN
-						= CIPConvert.ToDecimal(m_fg[v_i_cur, (int)e_col_number.ID_QUYEN]);
-					v_us_quyen_user.Insert();
-				}
-			}
+			}						
 			BaseMessages.MsgBox_Infor("Đã cập nhật thành công!");
 			this.Close();
 			
@@ -557,7 +506,7 @@ namespace BondApp
 
 		private void f998_ht_nguoi_su_dung_de_Load(object sender, EventArgs e) {
 			try{
-				load_data_2_grid();
+				load_data_2_cbo_nhom_nguoi_dung();
 				switch (m_e_form_mode){
 					case DataEntryFormMode.InsertDataState:
 						
