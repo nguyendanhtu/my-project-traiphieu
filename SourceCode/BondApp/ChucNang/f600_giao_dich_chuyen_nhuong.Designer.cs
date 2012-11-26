@@ -158,6 +158,7 @@
             this.label31 = new System.Windows.Forms.Label();
             this.m_lbl_phi_gd_max_min = new System.Windows.Forms.Label();
             this.m_gru_thong_tin_khach_hang = new System.Windows.Forms.GroupBox();
+            this.m_lbl_dv_lai_suat = new System.Windows.Forms.Label();
             this.m_gru_thong_tin_trai_phieu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -180,6 +181,7 @@
             // 
             // m_gru_thong_tin_trai_phieu
             // 
+            this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_lbl_dv_lai_suat);
             this.m_gru_thong_tin_trai_phieu.Controls.Add(this.label34);
             this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_txt_lai_suat);
             this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_lbl_ky_han);
@@ -1538,6 +1540,16 @@
             this.m_gru_thong_tin_khach_hang.TabStop = false;
             this.m_gru_thong_tin_khach_hang.Text = "Thông tin khách hàng";
             // 
+            // m_lbl_dv_lai_suat
+            // 
+            this.m_lbl_dv_lai_suat.AutoSize = true;
+            this.m_lbl_dv_lai_suat.Location = new System.Drawing.Point(557, 73);
+            this.m_lbl_dv_lai_suat.Name = "m_lbl_dv_lai_suat";
+            this.m_lbl_dv_lai_suat.Size = new System.Drawing.Size(15, 13);
+            this.m_lbl_dv_lai_suat.TabIndex = 57;
+            this.m_lbl_dv_lai_suat.Text = "%";
+            this.m_lbl_dv_lai_suat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // f600_giao_dich_chuyen_nhuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1699,6 +1711,7 @@
         private System.Windows.Forms.Label m_lbl_phi_gd_max_min;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label m_lbl_dv_lai_suat;
 
 
     }
