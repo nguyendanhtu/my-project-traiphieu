@@ -122,10 +122,10 @@
   </metadata>
   <data name="ImageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAO
-        HwAAAk1TRnQBSQFMAgEBFgEAAYwBAAGMAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        HwAAAk1TRnQBSQFMAgEBFgEAAZQBAAGUAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAAWADAAEBAQABCAYAARgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -264,35 +264,35 @@
   <data name="m_cmd_duyet.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAKxSURBVDhPpZNvMBMAGMbfTcTGLMaGbWxZm4kmqbYs
-        XWEhDeXCEDKybNa2bHZrmuSiq6PDOfWlf9d13PVBHXd1ThelEsvlY1eXruP0547DcfK25ktXV+l8+H18
-        f3fP89wLiAhrAci2ACBZA4Bi5ICvTggMVTT4nBCBp1YAnjouuBtZQLTSgXCGCsRzZIALbgD1EEa97jlA
-        vU35+n+CWoegjlDA7wwcL3sTjyGdzM+rFkC1tx/Uka/IerfgzVkFSrrCv8F5t4NAsjE4HqcZ9D9GqGQC
-        mP22kxsZY5rXe7F3SYmJ3dsQrOQSQr07ALOFN+ffuHHEQx8cRPulA7KW4wp6hop9ddNc60Q2jmIZJvXs
-        RDDRrMRqbyA2eAAI20STRfZ4pNXy+r01Ah9nieUiIKn5AncTpyPxngS7pjVoRx0eehCHLqeCL7kZGUC0
-        UVYEVAO/xmzPweqxo0g1Cfr8j0cTKKWRCfTa8PfqF+n4ZMGGz5fNmNcXjx46wR2SluvqVvWTgKLazN/a
-        tHv+2VIb6p/mL5M1wg+RzeLZtvFyHFpowkfzFix+nIIUjaibrArzIhk4sM7sD3DWschFx6R05Q6XDWVR
-        7TXD5fhq8RpWvszFWx9NODjTgj3TFlQPyjGgQmynFcQwaaooR7wIoGr5QDFwwauKDRBUKAXf7Nj9sc37
-        lu9/qceBmVbsmWrAu5+qUDeUhqyKPW8Dc6WhLKUEWMd2OYgFdpEU2IW7nUBwVhKwDyev55TGPzSPKLBj
-        woI3JtRoGE5HgU42xcqUxbAKpMBUioFZLPkN4GekOeGmZpxMaE/Gy5NZaBg9gBH6lBluarosJEsGfxUI
-        5UfASUq2r6gk811OfxyKLfKF0ERFPi8tHf4piEjNgxVyQSQvqIsqVixGyIqMgqQc4GWsQrCWV/5x+x3k
-        uX3QMwGeewAAAABJRU5ErkJggg==
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAKuSURBVDhPpdNbTBIAFMbxIyYJKJKioAIKSSCGYWYl
+        SbZCSc1Qy6WihuYlSZCQBBlhmLm01bSpc9ZLt7WmWw/WdKs5W1pWpuTysdWyNZ1dNp06nXli2kPrauvh
+        //rbzr4dQMT/Cih2fyDb/IFq4oKPQQRMTSR4H5OAh14IHgYeuJvYQLAxwOUUDQhnKADniAB1EEq76tFP
+        u0n9/G9AjROodVELOgLGSl7JMbiD9XHVAFR5+UIt5ZKiZxNen1GhtDPsC5wl7geyncklnWQyfgtUsAAs
+        vlspDcxR3cvd2LNYiPFdWxBslCKXOncAVjN/1q9h/TCpPCiQ/gNA0XPdoJyp4VzeMNsynokjWIIJ3dsR
+        zHQbocoLCPUkAFGrZCLfIUd6Db/PSyf0XgZKJUDWCoTuZm57/B0pdk7p0IEGPHAvFl1PBF0gmphAsFNX
+        AJpRUG1xZGHV6GGkmYW9fkcjXajF4XGMmrC32mep+Gjejk+XLJjTK0eSQXiLrOe5ESu/A6iajYLNjTvn
+        niy2Yvnj3CWKTvQuvCl6pnWsFAfnG/HBnBULHiYhVSfpomhCPclGLqyx+AGcdi5y3jkpo3Cb67qSiLbq
+        oVJ8sXAFK55n4433ZhyYbsbuKStqB5ToXxbtoKujWHRNhPM8MdD0AqAaeeBZyQEIzJOBT2bM3pimPUt3
+        P9Vh/3QLdk/W4+0PlWgYTEF22a7XAdmyEHahFNhHdjiLAU6+DDh5O5eDoIwE4BxMXMstlt+3DKuwfdyK
+        18a1aBxKRaFBMclOV0Sx1TJgFUYDq0D6UyBIS1mOl5x2PK4tES9OZKBxZB+Ky5OmecmpiuAMBfwRECkP
+        rZSU6SMpSn+T1ReL0VblfEi8Kpefkgp/BcTJOd/KBolSXRtRoFoQK/JNwoQs4KetAvjVi64+hK/kuX3Q
+        xnVEsQAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="m_cmd_filter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAFGSURBVDhPpZOxaoNQFIbv1GcI9EkKfZwMFjK4uGRx
-        cckQBwkGpVkyigR0CLjEQSw0i5ODi0sGnTLFIdPfc6Q5FHpLSzN8KPf8/+f1igqAuoexvNls8B+4OwrC
-        MMTlchnpug7DMKCua+R5jiRJkGUZjscjmqbB6XTC+XwGd0Tg+z6KohjhcN/3iKIIQRDAdV2sVitst1vs
-        djvs93scDgdwRwSe543mv+6gbVtwRwT0lBfiWlXVr69QliXv6sodESwWC0U8ER2/wk9nkKYpOEM8c0cE
-        juOoTyZ0fYvj+Nsh8hnQ7J14vOVFYNu2+sID3QdcuH2F9XoNWnsleCZZEcznc6VBBDSDLiMCy7KUBhHQ
-        DLqMCEzTVBpEQDPoMiKYzWZKgwhoBl1GBIZhKA2jYLlcgmatLiOC6XSqNIDWmIqY6DIiuOd3/gD+KX++
-        JqRUwgAAAABJRU5ErkJggg==
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAE8SURBVDhPpZChboNQFIar9gxN9iRL9jgIllRgMDUY
+        TAUVTQOBrKayaZqAaIIBQbpkNagKDAZBFQpE1b97bujZRu+ypRMfObn/+b97wwjAv5Cf1WqFe2BBEARo
+        21ZS1zW6rsPpdEKapgjDEHEc43g8oigKVFWFpmlAHRa4rossyyS0fD6fsdls4Ps+5vM5lssl1us1drsd
+        9vs9kiQBdViwWCyk+a8vKMsS1GGBuOVFcMnz/FfB4XCgV12ow4LZbEY8CWpa/kkQRRFoR/BMHRbYtn1l
+        LHjbbrc3AvoHInsXPPa7nwLLsr7yIPCpcBV4ngdx9tpnvMuC6XSqggU0DzIJC0zTVMECmgeZhAWGYahg
+        Ac2DTMKCyWSiggU0DzIJC3RdVyEFjuNAzOUgk7BA0zQV6MkF4/7sGyy4H4w+AP4pf751iAxnAAAAAElF
+        TkSuQmCC
 </value>
   </data>
   <data name="m_fg.ColumnInfo" xml:space="preserve">
-    <value>19,1,0,0,0,85,Columns:0{Width:13;}	1{Width:33;Caption:"STT";DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	2{Width:170;Caption:"Tên tổ chức phát hành";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	3{Width:119;Caption:"Ngày phát hành";DataType:System.DateTime;Format:"dd/MM/yyyy";TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	4{Width:142;Caption:"Tổng số lượng trái phiếu";DataType:System.Decimal;Format:"#,###";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	5{Width:114;Caption:"Mệnh giá";DataType:System.Decimal;Format:"#,###";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	6{Width:194;Caption:"Tổng giá trị trái phiếu phát hành";DataType:System.Decimal;Format:"#,###";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	7{Width:156;Caption:"Tỷ lệ phí chuyển nhượng";DataType:System.Decimal;Format:"0.0000%";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	8{Width:149;Caption:"Tỷ lệ phí phong giải tỏa";DataType:System.Decimal;Format:"0.0000%";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	9{Width:230;Caption:"Ngân hàng đại lý quản lý tài khoản";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	10{Width:170;Caption:"Làm việc từ thứ 2 đến thứ 6";DataType:System.Boolean;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;ImageAlign:CenterCenter;}	11{Width:164;Caption:"Phí chuyển nhượng Max";DataType:System.Decimal;Format:"#,###";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	12{Width:149;Caption:"Phí chuyển nhượng Min";DataType:System.Decimal;Format:"#,###";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	13{Width:152;Caption:"Phí phong giải tỏa Max";DataType:System.Decimal;Format:"#,###";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	14{Width:143;Caption:"Phí phong giải tỏa Min";DataType:System.Decimal;Format:"#,###";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	15{Width:102;Caption:"Ngươi lập";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	16{Width:102;Caption:"Người duyệt";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	17{Width:94;Caption:"Ghi chú";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	18{Width:102;Caption:"Trạng thái";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	</value>
+    <value>19,1,0,0,0,85,Columns:0{Width:13;}	1{Width:33;Caption:"STT";DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	2{Width:170;Caption:"Tên tổ chức phát hành";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	3{Width:119;Caption:"Ngày phát hành";DataType:System.DateTime;Format:"dd/MM/yyyy";TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	4{Width:142;Caption:"Tổng số lượng trái phiếu";DataType:System.Decimal;Format:"#,###";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	5{Width:114;Caption:"Mệnh giá";DataType:System.Decimal;Format:"#,###";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	6{Width:194;Caption:"Tổng giá trị trái phiếu phát hành";DataType:System.Decimal;Format:"#,###";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	7{Width:156;Caption:"Tỷ lệ phí chuyển nhượng";DataType:System.Decimal;Format:"0.0000%";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	8{Width:149;Caption:"Tỷ lệ phí phong giải tỏa";DataType:System.Decimal;Format:"0.0000%";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	9{Width:230;Caption:"Ngân hàng đại lý quản lý tài khoản";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	10{Width:170;Caption:"Làm việc từ thứ 2 đến thứ 6";DataType:System.Boolean;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;ImageAlign:CenterCenter;}	11{Width:164;Caption:"Phí chuyển nhượng Max";DataType:System.Decimal;Format:"#,###";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	12{Width:149;Caption:"Phí chuyển nhượng Min";DataType:System.Decimal;Format:"#,###";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	13{Width:152;Caption:"Phí phong giải tỏa Max";DataType:System.Decimal;Format:"#,###";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	14{Width:143;Caption:"Phí phong giải tỏa Min";DataType:System.Decimal;Format:"#,###";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	15{Width:102;Caption:"Ngươi lập";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	16{Width:102;Caption:"Người duyệt";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	17{Width:249;Caption:"Ghi chú";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	18{Width:102;Caption:"Trạng thái";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	</value>
   </data>
   <data name="m_fg.Styles" xml:space="preserve">
     <value>Normal{Font:Microsoft Sans Serif, 8.25pt;}	Alternate{BackColor:Info;}	Fixed{BackColor:Control;ForeColor:ControlText;Border:Flat,1,ControlDark,Both;}	Highlight{BackColor:Highlight;ForeColor:HighlightText;}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	EmptyArea{BackColor:AppWorkspace;Border:Flat,1,ControlDarkDark,Both;}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal2{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	</value>
