@@ -174,6 +174,22 @@ Public Class US_HT_NGUOI_SU_DUNG
         pm_objDR("BUILT_IN_YN") = System.Convert.DBNull
     End Sub
 
+    Public Property dcID_NHOM_NGUOI_DUNG() As Decimal
+        Get
+            Return CNull.RowNVLDecimal(pm_objdr, "ID_NHOM_NGUOI_DUNG")
+        End Get
+        Set(ByVal Value As Decimal)
+            pm_objDR.Item("ID_NHOM_NGUOI_DUNG") = Value
+        End Set
+    End Property
+
+    Public Function IsID_NHOM_NGUOI_DUNGNull() As Boolean
+        Return pm_objDR.IsNull("ID_NHOM_NGUOI_DUNG")
+    End Function
+
+    Public Sub SetID_NHOM_NGUOI_DUNGNull()
+        pm_objDR("ID_NHOM_NGUOI_DUNG") = System.Convert.DBNull
+    End Sub
 #End Region
 #Region "Init Functions"
     Public Sub New()
