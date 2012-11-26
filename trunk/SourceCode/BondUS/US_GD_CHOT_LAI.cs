@@ -349,7 +349,7 @@ public class US_GD_CHOT_LAI : US_Object
     {
         CStoredProc v_pr_obj = new CStoredProc("[pr_GD_CHOT_LAI_Select_ChotLaiByIDTraiPhieuAndNgayChotLai]");
         v_pr_obj.addDecimalInputParam("@ID_TRAI_PHIEU", ip_id_trai_phieu);
-        v_pr_obj.addDatetimeInputParam("@NGAY_CHOT_LAI", ip_ngay_chot_lai);        
+        v_pr_obj.addDatetimeInputParam("@NGAY_CHOT_LAI", ip_ngay_chot_lai.Date);        
         v_pr_obj.fillDataSetByCommand(this, ip_ds);
     }
     public void FillDSChotLaiByIDTraiPhieuAndNgayThanhToan(DS_GD_CHOT_LAI ip_ds
@@ -373,6 +373,14 @@ public class US_GD_CHOT_LAI : US_Object
             return true;
         else
             return false;
+    }
+
+    public void FillDatasetByTraiPhieuNgayChotLaiKeTiep(DS_GD_CHOT_LAI ip_gd_lich, decimal ip_id_trai_phieu)
+    {
+        CStoredProc v_pr_obj = new CStoredProc("pr_GD_LICH_THANH_TOAN_LAI_GOC_Selec_Ngay_Chot_Lai_Tiep_Theo");
+        v_pr_obj.addDecimalInputParam("@ID_TRAI_PHIEU", ip_id_trai_phieu);
+
+        v_pr_obj.fillDataSetByCommand(this, ip_gd_lich);
     }
 }
 }
