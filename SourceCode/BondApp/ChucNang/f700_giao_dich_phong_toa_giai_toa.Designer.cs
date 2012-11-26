@@ -107,6 +107,7 @@
             this.m_txt_nguoi_xac_nhan = new System.Windows.Forms.TextBox();
             this.m_lbl_chuc_vu = new System.Windows.Forms.Label();
             this.m_txt_chuc_vu = new System.Windows.Forms.TextBox();
+            this.m_lbl_dv_lai_suat = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -536,6 +537,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.m_lbl_dv_lai_suat);
             this.groupBox3.Controls.Add(this.m_cbo_ngan_hang_cam_co);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.m_lbl_pgd_max_min);
@@ -933,6 +935,16 @@
             this.m_txt_chuc_vu.Size = new System.Drawing.Size(173, 20);
             this.m_txt_chuc_vu.TabIndex = 3;
             // 
+            // m_lbl_dv_lai_suat
+            // 
+            this.m_lbl_dv_lai_suat.AutoSize = true;
+            this.m_lbl_dv_lai_suat.Location = new System.Drawing.Point(570, 51);
+            this.m_lbl_dv_lai_suat.Name = "m_lbl_dv_lai_suat";
+            this.m_lbl_dv_lai_suat.Size = new System.Drawing.Size(15, 13);
+            this.m_lbl_dv_lai_suat.TabIndex = 57;
+            this.m_lbl_dv_lai_suat.Text = "%";
+            this.m_lbl_dv_lai_suat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // f700_giao_dich_phong_toa_giai_toa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1036,5 +1048,6 @@
         internal SIS.Controls.Button.SiSButton m_cmd_save;
         internal System.Windows.Forms.ImageList ImageList;
         private System.Windows.Forms.ComboBox m_cbo_ngan_hang_cam_co;
+        private System.Windows.Forms.Label m_lbl_dv_lai_suat;
     }
 }
