@@ -706,6 +706,22 @@ namespace BondApp
                 US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_trai_phieu.dcID_DOT_PHAT_HANH);
                 US_DM_TO_CHUC_PHAT_HANH v_us_dm_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH(v_us_dm_dot_phat_hanh.dcID_TO_CHUC_PHAT_HANH);
                 m_txt_ngay_phat_hanh.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH, "dd/MM/yyyy");
+
+                switch (m_form_mode)
+                {
+                    case e_form_mode.YEU_CAU_NGAN_HANG_THANH_TOAN:
+                        US_GD_CHOT_LAI v_us_gd_lich_tt_lai_goc = new US_GD_CHOT_LAI();
+                        DS_GD_CHOT_LAI v_ds_gd_lich_tt_lai_goc = new DS_GD_CHOT_LAI();
+
+                        v_us_gd_lich_tt_lai_goc.FillDatasetByTraiPhieuNgayChotLaiKeTiep(v_ds_gd_lich_tt_lai_goc, m_us_trai_phieu.dcID);
+                        if (v_ds_gd_lich_tt_lai_goc.GD_CHOT_LAI.Rows.Count > 0)
+                            m_data_ngay_choi_lai.Value = CIPConvert.ToDatetime(CIPConvert.ToStr(v_ds_gd_lich_tt_lai_goc.GD_CHOT_LAI.Rows[0][GD_CHOT_LAI.NGAY_CHOT_LAI]));
+                        break;
+                    case e_form_mode.CHOT_DANH_SACH_NGUOI_SO_HUU:
+                        break;
+                    default:
+                        break;
+                }
             }
             catch (Exception v_e)
             {
@@ -760,6 +776,7 @@ namespace BondApp
             US_GD_CHOT_LAI v_us = new US_GD_CHOT_LAI();
             DS_GD_CHOT_LAI v_ds = new DS_GD_CHOT_LAI();
             v_us.FillDSChotLaiByIDTraiPhieuAndNgayChotLai(v_ds, m_us_trai_phieu.dcID, m_data_ngay_choi_lai.Value);
+            if (v_ds.GD_CHOT_LAI.Rows.Count == 0) return;
             v_obj_word_rpt.AddFindAndReplace("<DOT_TRA_LAI>", v_ds.GD_CHOT_LAI.Rows[0]["KY_TINH_LAI"].ToString());
             v_obj_word_rpt.AddFindAndReplace("<NGAY_TRA_LAI>", CIPConvert.ToStr(v_ds.GD_CHOT_LAI.Rows[0]["NGAY_THANH_TOAN"]));
             v_obj_word_rpt.AddFindAndReplace("<NGAY_CHOT_DANH_SACH>", CIPConvert.ToStr(v_ds.GD_CHOT_LAI.Rows[0]["NGAY_CHOT_LAI"]));
