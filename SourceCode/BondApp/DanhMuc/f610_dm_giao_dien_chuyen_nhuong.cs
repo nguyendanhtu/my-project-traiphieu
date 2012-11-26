@@ -466,7 +466,7 @@ namespace BondApp
         #region Private Methods
         private void format_controls()
         {
-            CControlFormat.setFormStyle(this);
+            CControlFormat.setFormStyle(this, new CAppContext_201(), IPFormStyle.DialogForm);
             CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
             this.KeyPreview = true;

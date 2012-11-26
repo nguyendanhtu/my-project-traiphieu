@@ -10,7 +10,7 @@ using IP.Core.IPException;
 using IP.Core.IPUserService;
 using IP.Core.IPData;
 using IP.Core.IPData.DBNames;
-
+using IP.Core.IPSystemAdmin;
 using BondDS;
 using BondDS.CDBNames;
 using BondUS;
@@ -401,7 +401,7 @@ namespace BondApp
 		#endregion
 		#region Private Methods
 		private void format_controls(){
-			CControlFormat.setFormStyle(this);		
+			CControlFormat.setFormStyle(this, new CAppContext_201(), IPFormStyle.DialogForm);		
 			m_cbo_trang_thai.SelectedIndex = 0;						
 			set_define_events();
 		}

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using IP.Core.IPSystemAdmin;
 using System.Windows.Forms;
 using BondUS;
 using BondDS;
@@ -41,7 +42,7 @@ namespace BondApp.DanhMuc
         #region Private Methods
         private void format_controls()
         {
-            CControlFormat.setFormStyle(this);
+            CControlFormat.setFormStyle(this, new CAppContext_201(), IPFormStyle.DialogForm);
             set_define_events();
             this.KeyPreview = true;
             m_lbl_title.Font = new Font("Arial", 16);

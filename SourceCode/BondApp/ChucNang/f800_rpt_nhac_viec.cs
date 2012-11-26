@@ -321,7 +321,7 @@ namespace BondApp
 
 		#region Private Methods
 		private void format_controls(){
-			CControlFormat.setFormStyle(this);
+			CControlFormat.setFormStyle(this, new CAppContext_201(), IPFormStyle.DialogForm);
 			CControlFormat.setC1FlexFormat(m_fg);
             m_fg.Tree.Column = (int)e_col_Number.NGAY;
             m_fg.Tree.Style = TreeStyleFlags.SimpleLeaf;

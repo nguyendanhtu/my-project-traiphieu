@@ -153,7 +153,7 @@ namespace BondApp
 
         private void format_controls()
         {
-            CControlFormat.setFormStyle(this);
+            CControlFormat.setFormStyle(this, new CAppContext_201(), IPFormStyle.DialogForm);
 
             set_define_events();
             this.KeyPreview = true;

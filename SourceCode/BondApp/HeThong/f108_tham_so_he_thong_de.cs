@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using IP.Core.IPSystemAdmin;
 using System.Data;
 using System.Drawing;
 using System.Text;
@@ -53,7 +54,7 @@ namespace BondApp.HeThong
         #region Private Mehod
         private void format_control()
         {
-            CControlFormat.setFormStyle(this);
+            CControlFormat.setFormStyle(this, new CAppContext_201(), IPFormStyle.DialogForm);
             this.KeyPreview = true;
             set_define_event();
             m_lbl_title.Font = new Font("Arial", 16);

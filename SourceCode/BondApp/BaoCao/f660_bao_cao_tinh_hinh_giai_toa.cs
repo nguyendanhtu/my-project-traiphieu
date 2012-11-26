@@ -16,7 +16,7 @@ using IP.Core.IPCommon;
 using IP.Core.IPException;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
-
+using IP.Core.IPSystemAdmin;
 using BondUS;
 using BondDS;
 using BondDS.CDBNames;
@@ -356,7 +356,7 @@ namespace BondApp
         #region Private Methods
         private void format_controls()
         {
-            CControlFormat.setFormStyle(this);
+            CControlFormat.setFormStyle(this, new CAppContext_201(), IPFormStyle.DialogForm);
             CControlFormat.setC1FlexFormat(m_fg);
             set_define_events();
             m_lbl_header.Font = new Font("Arial", 16);
