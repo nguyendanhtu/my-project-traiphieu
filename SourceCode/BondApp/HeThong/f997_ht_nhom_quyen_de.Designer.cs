@@ -1,4 +1,4 @@
-﻿namespace BondApp.HeThong
+﻿namespace BondApp
 {
     partial class f997_ht_nhom_quyen_de
     {
@@ -32,22 +32,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f997_ht_nhom_quyen_de));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.m_date_ngay_sua = new System.Windows.Forms.DateTimePicker();
+            this.m_date_ngay_tao = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_chk_is_admin = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.m_txt_ten_truy_cap = new System.Windows.Forms.TextBox();
-            this.m_txt_ten = new System.Windows.Forms.TextBox();
-            this.m_txt_mat_khau = new System.Windows.Forms.TextBox();
-            this.m_txt_go_lai_mat_khau = new System.Windows.Forms.TextBox();
-            this.m_cbo_nhom_quyen = new System.Windows.Forms.ComboBox();
+            this.m_txt_ten_nhom_ng_dung = new System.Windows.Forms.TextBox();
+            this.m_txt_ghi_chu = new System.Windows.Forms.TextBox();
+            this.m_txt_nguoi_sua = new System.Windows.Forms.TextBox();
+            this.m_txt_nguoi_tao = new System.Windows.Forms.TextBox();
             this.m_cbo_trang_thai = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
@@ -87,22 +85,20 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.m_date_ngay_sua);
+            this.groupBox1.Controls.Add(this.m_date_ngay_tao);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.m_fg);
-            this.groupBox1.Controls.Add(this.m_chk_is_admin);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.m_txt_ten_truy_cap);
-            this.groupBox1.Controls.Add(this.m_txt_ten);
-            this.groupBox1.Controls.Add(this.m_txt_mat_khau);
-            this.groupBox1.Controls.Add(this.m_txt_go_lai_mat_khau);
-            this.groupBox1.Controls.Add(this.m_cbo_nhom_quyen);
+            this.groupBox1.Controls.Add(this.m_txt_ten_nhom_ng_dung);
+            this.groupBox1.Controls.Add(this.m_txt_ghi_chu);
+            this.groupBox1.Controls.Add(this.m_txt_nguoi_sua);
+            this.groupBox1.Controls.Add(this.m_txt_nguoi_tao);
             this.groupBox1.Controls.Add(this.m_cbo_trang_thai);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -113,23 +109,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin người sử dụng";
             // 
-            // label9
+            // m_date_ngay_sua
             // 
-            this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(96, 72);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(16, 16);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "(*)";
+            this.m_date_ngay_sua.CustomFormat = "dd/MM/yyyy";
+            this.m_date_ngay_sua.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_date_ngay_sua.Location = new System.Drawing.Point(112, 155);
+            this.m_date_ngay_sua.Name = "m_date_ngay_sua";
+            this.m_date_ngay_sua.Size = new System.Drawing.Size(152, 20);
+            this.m_date_ngay_sua.TabIndex = 16;
             // 
-            // label8
+            // m_date_ngay_tao
             // 
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(96, 48);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(16, 16);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "(*)";
+            this.m_date_ngay_tao.CustomFormat = "dd/MM/yyyy";
+            this.m_date_ngay_tao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_date_ngay_tao.Location = new System.Drawing.Point(112, 129);
+            this.m_date_ngay_tao.Name = "m_date_ngay_tao";
+            this.m_date_ngay_tao.Size = new System.Drawing.Size(152, 20);
+            this.m_date_ngay_tao.TabIndex = 16;
             // 
             // label7
             // 
@@ -150,15 +146,6 @@
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 15;
             // 
-            // m_chk_is_admin
-            // 
-            this.m_chk_is_admin.Location = new System.Drawing.Point(312, 124);
-            this.m_chk_is_admin.Name = "m_chk_is_admin";
-            this.m_chk_is_admin.Size = new System.Drawing.Size(56, 16);
-            this.m_chk_is_admin.TabIndex = 14;
-            this.m_chk_is_admin.Text = "Không";
-            this.m_chk_is_admin.Visible = false;
-            // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -166,92 +153,63 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tên truy cập";
+            this.label1.Text = "Tên nhóm";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(45, 48);
+            this.label2.Location = new System.Drawing.Point(15, 77);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
+            this.label2.Size = new System.Drawing.Size(74, 17);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Tên";
+            this.label2.Text = "Ghi chú";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label10
-            // 
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(6, 147);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(83, 16);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Nhóm quyền";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 120);
+            this.label3.Location = new System.Drawing.Point(12, 50);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 16);
             this.label3.TabIndex = 11;
             this.label3.Text = "Trạng thái";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label4
+            // m_txt_ten_nhom_ng_dung
             // 
-            this.label4.Location = new System.Drawing.Point(216, 124);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 16);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Có quyền Admin?";
-            this.label4.Visible = false;
+            this.m_txt_ten_nhom_ng_dung.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_ten_nhom_ng_dung.Location = new System.Drawing.Point(112, 24);
+            this.m_txt_ten_nhom_ng_dung.Name = "m_txt_ten_nhom_ng_dung";
+            this.m_txt_ten_nhom_ng_dung.Size = new System.Drawing.Size(152, 20);
+            this.m_txt_ten_nhom_ng_dung.TabIndex = 2;
             // 
-            // m_txt_ten_truy_cap
+            // m_txt_ghi_chu
             // 
-            this.m_txt_ten_truy_cap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_ten_truy_cap.Location = new System.Drawing.Point(112, 24);
-            this.m_txt_ten_truy_cap.Name = "m_txt_ten_truy_cap";
-            this.m_txt_ten_truy_cap.Size = new System.Drawing.Size(152, 20);
-            this.m_txt_ten_truy_cap.TabIndex = 2;
+            this.m_txt_ghi_chu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_ghi_chu.Location = new System.Drawing.Point(112, 77);
+            this.m_txt_ghi_chu.Multiline = true;
+            this.m_txt_ghi_chu.Name = "m_txt_ghi_chu";
+            this.m_txt_ghi_chu.Size = new System.Drawing.Size(391, 46);
+            this.m_txt_ghi_chu.TabIndex = 5;
             // 
-            // m_txt_ten
+            // m_txt_nguoi_sua
             // 
-            this.m_txt_ten.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_ten.Location = new System.Drawing.Point(112, 48);
-            this.m_txt_ten.Name = "m_txt_ten";
-            this.m_txt_ten.Size = new System.Drawing.Size(224, 20);
-            this.m_txt_ten.TabIndex = 5;
+            this.m_txt_nguoi_sua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_nguoi_sua.Location = new System.Drawing.Point(383, 155);
+            this.m_txt_nguoi_sua.Name = "m_txt_nguoi_sua";
+            this.m_txt_nguoi_sua.PasswordChar = '*';
+            this.m_txt_nguoi_sua.Size = new System.Drawing.Size(120, 20);
+            this.m_txt_nguoi_sua.TabIndex = 10;
             // 
-            // m_txt_mat_khau
+            // m_txt_nguoi_tao
             // 
-            this.m_txt_mat_khau.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_mat_khau.Location = new System.Drawing.Point(112, 72);
-            this.m_txt_mat_khau.Name = "m_txt_mat_khau";
-            this.m_txt_mat_khau.PasswordChar = '*';
-            this.m_txt_mat_khau.Size = new System.Drawing.Size(120, 20);
-            this.m_txt_mat_khau.TabIndex = 8;
-            // 
-            // m_txt_go_lai_mat_khau
-            // 
-            this.m_txt_go_lai_mat_khau.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.m_txt_go_lai_mat_khau.Location = new System.Drawing.Point(112, 96);
-            this.m_txt_go_lai_mat_khau.Name = "m_txt_go_lai_mat_khau";
-            this.m_txt_go_lai_mat_khau.PasswordChar = '*';
-            this.m_txt_go_lai_mat_khau.Size = new System.Drawing.Size(120, 20);
-            this.m_txt_go_lai_mat_khau.TabIndex = 10;
-            // 
-            // m_cbo_nhom_quyen
-            // 
-            this.m_cbo_nhom_quyen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_nhom_quyen.Items.AddRange(new object[] {
-            "Đang sử dụng",
-            "Đã đóng"});
-            this.m_cbo_nhom_quyen.Location = new System.Drawing.Point(112, 147);
-            this.m_cbo_nhom_quyen.Name = "m_cbo_nhom_quyen";
-            this.m_cbo_nhom_quyen.Size = new System.Drawing.Size(224, 21);
-            this.m_cbo_nhom_quyen.TabIndex = 12;
+            this.m_txt_nguoi_tao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.m_txt_nguoi_tao.Location = new System.Drawing.Point(383, 129);
+            this.m_txt_nguoi_tao.Name = "m_txt_nguoi_tao";
+            this.m_txt_nguoi_tao.PasswordChar = '*';
+            this.m_txt_nguoi_tao.Size = new System.Drawing.Size(120, 20);
+            this.m_txt_nguoi_tao.TabIndex = 10;
             // 
             // m_cbo_trang_thai
             // 
@@ -259,29 +217,49 @@
             this.m_cbo_trang_thai.Items.AddRange(new object[] {
             "Đang sử dụng",
             "Đã đóng"});
-            this.m_cbo_trang_thai.Location = new System.Drawing.Point(112, 120);
+            this.m_cbo_trang_thai.Location = new System.Drawing.Point(112, 50);
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
-            this.m_cbo_trang_thai.Size = new System.Drawing.Size(96, 21);
+            this.m_cbo_trang_thai.Size = new System.Drawing.Size(152, 21);
             this.m_cbo_trang_thai.TabIndex = 12;
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(2, 159);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(87, 16);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "Ngày sửa";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(2, 133);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 16);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Ngày tạo";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(22, 64);
+            this.label5.Location = new System.Drawing.Point(273, 155);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 24);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Mật khẩu";
+            this.label5.Size = new System.Drawing.Size(87, 16);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Người sửa";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(2, 96);
+            this.label6.Location = new System.Drawing.Point(273, 129);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 16);
             this.label6.TabIndex = 9;
-            this.label6.Text = "Gõ lại mật khẩu";
+            this.label6.Text = "Người tạo";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // m_pnl_out_place_dm
@@ -346,26 +324,24 @@
 
         internal System.Windows.Forms.ImageList ImageList;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
-        private System.Windows.Forms.CheckBox m_chk_is_admin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox m_txt_ten_truy_cap;
-        private System.Windows.Forms.TextBox m_txt_ten;
-        private System.Windows.Forms.TextBox m_txt_mat_khau;
-        private System.Windows.Forms.TextBox m_txt_go_lai_mat_khau;
-        private System.Windows.Forms.ComboBox m_cbo_nhom_quyen;
+        private System.Windows.Forms.TextBox m_txt_ten_nhom_ng_dung;
+        private System.Windows.Forms.TextBox m_txt_ghi_chu;
+        private System.Windows.Forms.TextBox m_txt_nguoi_tao;
         private System.Windows.Forms.ComboBox m_cbo_trang_thai;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         internal SIS.Controls.Button.SiSButton m_cmd_save;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
+        private System.Windows.Forms.DateTimePicker m_date_ngay_sua;
+        private System.Windows.Forms.DateTimePicker m_date_ngay_tao;
+        private System.Windows.Forms.TextBox m_txt_nguoi_sua;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
