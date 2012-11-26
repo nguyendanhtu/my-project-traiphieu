@@ -9,11 +9,14 @@
 
 
 using BondDS;
+using BondDS.CDBNames;
 using IP.Core.IPCommon;
 using IP.Core.IPUserService;
 using System.Data.SqlClient;
 using System.Data;
 using System;
+
+
 namespace BondUS
 {
 
@@ -114,6 +117,24 @@ namespace BondUS
             v_cmdSQL = v_objMkCmd.getSelectCmd();
             this.FillDatasetByCommand(pm_objDS, v_cmdSQL);
             pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
+        }
+        #endregion
+
+
+        #region Addtional
+        public void FillDatasetByGroupUserID(decimal i_dc_group_user_id
+            , DS_HT_PHAN_QUYEN_CHO_NHOM i_ds)
+        {
+
+            IMakeSelectCmd v_obj_mak_cmd = new CMakeAndSelectCmd(i_ds, i_ds.HT_PHAN_QUYEN_CHO_NHOM.TableName);
+            v_obj_mak_cmd.AddCondition(HT_PHAN_QUYEN_CHO_NHOM.ID_NHOM_NGUOI_SU_DUNG, i_dc_group_user_id, eKieuDuLieu.KieuNumber, eKieuSoSanh.Bang);
+            this.FillDatasetByCommand(i_ds, v_obj_mak_cmd.getSelectCmd());
+        }
+        public void DeleteAllQuyenOfGroupUser(decimal i_dc_group_user_id)
+        {
+            CStoredProc v_obj = new CStoredProc("pr_HT_PHAN_QUYEN_HE_THONG_Delele_All_Quyen_Of_group_user");
+            v_obj.addDecimalInputParam("@ip_dc_group_user_id", i_dc_group_user_id);
+            v_obj.ExecuteCommand(this);
         }
         #endregion
     }
