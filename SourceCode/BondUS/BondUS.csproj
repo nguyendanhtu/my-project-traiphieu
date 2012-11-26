@@ -149,6 +149,9 @@
     <Compile Include="US_GD_THONG_BAO_LAI_SUAT_IN_TIMES.cs" />
     <Compile Include="US_HT_BACKUP_HISTORY.cs" />
     <Compile Include="US_HT_BUSINESS_PROCESS_LOCK.cs" />
+    <Compile Include="US_HT_NHOM_NGUOI_SU_DUNG.cs" />
+    <Compile Include="US_HT_PHAN_QUYEN_CHO_NHOM.cs" />
+    <Compile Include="US_HT_PHAN_QUYEN_HE_THONG.cs" />
     <Compile Include="US_HT_QUYEN_USER.cs" />
     <Compile Include="US_RPT_NHAC_VIEC.cs" />
     <Compile Include="US_UT_SEQUENCES.cs" />
