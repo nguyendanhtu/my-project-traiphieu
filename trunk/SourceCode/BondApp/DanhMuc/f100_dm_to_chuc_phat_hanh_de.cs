@@ -67,7 +67,7 @@ namespace BondApp.DanhMuc
         #region Private Method
         private void format_controls()
         {
-            CControlFormat.setFormStyle(this);
+            CControlFormat.setFormStyle(this, new CAppContext_201(), IPFormStyle.DialogForm);
             this.KeyPreview = true;
             m_lbl_to_chuc_phat_hanh.Font = new Font("Arial", 16);
             m_lbl_to_chuc_phat_hanh.ForeColor = Color.DarkRed;

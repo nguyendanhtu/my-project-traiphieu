@@ -72,7 +72,7 @@ namespace BondApp.DanhMuc
         #region Private Method
         private void format_control()
         {
-            CControlFormat.setFormStyle(this);
+            CControlFormat.setFormStyle(this, new CAppContext_201(), IPFormStyle.DialogForm);
             set_define_event();
             m_lbl_title.Font = new Font("Arial", 16);
             m_lbl_title.ForeColor = Color.DarkRed;

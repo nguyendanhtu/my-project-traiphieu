@@ -11,7 +11,7 @@ using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
-
+using IP.Core.IPSystemAdmin;
 using IP.Core.IPCommon;
 using IP.Core.IPException;
 using IP.Core.IPData;
@@ -356,7 +356,7 @@ namespace BondApp
 
 		#region Private Methods
 		private void format_controls(){
-			CControlFormat.setFormStyle(this);
+			CControlFormat.setFormStyle(this, new CAppContext_201(), IPFormStyle.DialogForm);
 			CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);

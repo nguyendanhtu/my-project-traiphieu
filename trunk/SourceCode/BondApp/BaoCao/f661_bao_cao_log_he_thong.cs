@@ -16,7 +16,7 @@ using IP.Core.IPCommon;
 using IP.Core.IPException;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
-
+using IP.Core.IPSystemAdmin;
 using BondUS;
 using BondDS;
 using BondDS.CDBNames;
@@ -311,7 +311,13 @@ namespace BondApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			TEN_TRUY_CAP = 1,MO_TA = 6,LOAI_HANH_DONG = 4,DOI_TUONG_THAO_TAC = 5,THOI_GIAN = 3,TEN = 2
+			TEN_TRUY_CAP = 1
+,MO_TA = 6
+,LOAI_HANH_DONG = 4
+,DOI_TUONG_THAO_TAC = 5
+,THOI_GIAN = 3
+,TEN = 2
+
 		}			
 		#endregion
 
@@ -323,7 +329,7 @@ namespace BondApp
 
 		#region Private Methods
 		private void format_controls(){
-			CControlFormat.setFormStyle(this);
+			CControlFormat.setFormStyle(this, new CAppContext_201(), IPFormStyle.DialogForm);
 			CControlFormat.setC1FlexFormat(m_fg);
 			set_define_events();
             CGridUtils.AddSave_Excel_Handlers(m_fg);
@@ -337,7 +343,13 @@ namespace BondApp
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
-			v_htb.Add(V_HT_LOG_TRUY_CAP.TEN_TRUY_CAP, e_col_Number.TEN_TRUY_CAP);			v_htb.Add(V_HT_LOG_TRUY_CAP.MO_TA, e_col_Number.MO_TA);			v_htb.Add(V_HT_LOG_TRUY_CAP.LOAI_HANH_DONG, e_col_Number.LOAI_HANH_DONG);			v_htb.Add(V_HT_LOG_TRUY_CAP.DOI_TUONG_THAO_TAC, e_col_Number.DOI_TUONG_THAO_TAC);			v_htb.Add(V_HT_LOG_TRUY_CAP.THOI_GIAN, e_col_Number.THOI_GIAN);			v_htb.Add(V_HT_LOG_TRUY_CAP.TEN, e_col_Number.TEN);									
+			v_htb.Add(V_HT_LOG_TRUY_CAP.TEN_TRUY_CAP, e_col_Number.TEN_TRUY_CAP);
+			v_htb.Add(V_HT_LOG_TRUY_CAP.MO_TA, e_col_Number.MO_TA);
+			v_htb.Add(V_HT_LOG_TRUY_CAP.LOAI_HANH_DONG, e_col_Number.LOAI_HANH_DONG);
+			v_htb.Add(V_HT_LOG_TRUY_CAP.DOI_TUONG_THAO_TAC, e_col_Number.DOI_TUONG_THAO_TAC);
+			v_htb.Add(V_HT_LOG_TRUY_CAP.THOI_GIAN, e_col_Number.THOI_GIAN);
+			v_htb.Add(V_HT_LOG_TRUY_CAP.TEN, e_col_Number.TEN);
+									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_HT_LOG_TRUY_CAP.NewRow());
 			return v_obj_trans;			
 		}

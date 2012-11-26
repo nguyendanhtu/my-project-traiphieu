@@ -9,7 +9,7 @@ using IP.Core.IPCommon;
 using IP.Core.IPException;
 using IP.Core.IPData;
 using IP.Core.IPUserService;
-
+using IP.Core.IPSystemAdmin;
 using BondDS;
 using BondUS;
 using BondDS.CDBNames;
@@ -122,7 +122,7 @@ namespace BondApp.ChucNang
         #region Private Method
         private void format_control()
         {
-            CControlFormat.setFormStyle(this);
+            CControlFormat.setFormStyle(this, new CAppContext_201(), IPFormStyle.DialogForm);
             CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);

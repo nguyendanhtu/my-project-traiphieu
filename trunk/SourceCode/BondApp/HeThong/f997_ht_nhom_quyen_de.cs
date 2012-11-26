@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
-
+using IP.Core.IPSystemAdmin;
 using IP.Core.IPCommon;
 using IP.Core.IPException;
 using IP.Core.IPUserService;
@@ -59,7 +59,7 @@ namespace BondApp
         #region Private Methods
         private void format_controls()
         {
-            CControlFormat.setFormStyle(this);
+            CControlFormat.setFormStyle(this, new CAppContext_201(), IPFormStyle.DialogForm);
             m_cbo_trang_thai.SelectedIndex = 0;
             m_fg.Cols[(int)e_col_number.ID_QUYEN].Visible = false;
             m_obj_trans = get_trans_object(m_fg);
