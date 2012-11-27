@@ -69,6 +69,7 @@
             this.m_lbl_ma_so_trai_phieu = new System.Windows.Forms.Label();
             this.m_txt_ma_so_trai_phieu = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.m_lbl_dv_lai_suat = new System.Windows.Forms.Label();
             this.m_cbo_ngan_hang_cam_co = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.m_lbl_pgd_max_min = new System.Windows.Forms.Label();
@@ -107,7 +108,6 @@
             this.m_txt_nguoi_xac_nhan = new System.Windows.Forms.TextBox();
             this.m_lbl_chuc_vu = new System.Windows.Forms.Label();
             this.m_txt_chuc_vu = new System.Windows.Forms.TextBox();
-            this.m_lbl_dv_lai_suat = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -577,15 +577,26 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin cầm cố/giải tỏa";
             // 
+            // m_lbl_dv_lai_suat
+            // 
+            this.m_lbl_dv_lai_suat.AutoSize = true;
+            this.m_lbl_dv_lai_suat.Location = new System.Drawing.Point(570, 51);
+            this.m_lbl_dv_lai_suat.Name = "m_lbl_dv_lai_suat";
+            this.m_lbl_dv_lai_suat.Size = new System.Drawing.Size(15, 13);
+            this.m_lbl_dv_lai_suat.TabIndex = 57;
+            this.m_lbl_dv_lai_suat.Text = "%";
+            this.m_lbl_dv_lai_suat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // m_cbo_ngan_hang_cam_co
             // 
             this.m_cbo_ngan_hang_cam_co.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_ngan_hang_cam_co.Enabled = false;
             this.m_cbo_ngan_hang_cam_co.FormattingEnabled = true;
             this.m_cbo_ngan_hang_cam_co.Location = new System.Drawing.Point(424, 116);
             this.m_cbo_ngan_hang_cam_co.Name = "m_cbo_ngan_hang_cam_co";
             this.m_cbo_ngan_hang_cam_co.Size = new System.Drawing.Size(448, 21);
             this.m_cbo_ngan_hang_cam_co.TabIndex = 29;
-            this.m_cbo_ngan_hang_cam_co.Enabled = false;
+            this.m_cbo_ngan_hang_cam_co.Visible = false;
             // 
             // label4
             // 
@@ -844,13 +855,13 @@
             this.groupBox2.Controls.Add(this.m_lbl_chuc_vu);
             this.groupBox2.Controls.Add(this.m_txt_chuc_vu);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Enabled = false;
             this.groupBox2.Location = new System.Drawing.Point(0, 430);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(886, 2);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Đơn vị xác nhận - Công ty cổ phần Chứng khoán Ngân hàng Công thương Việt Nam";
-            this.groupBox2.Enabled = false;
             // 
             // m_dat_ngay_cap_giay_uq
             // 
@@ -934,16 +945,6 @@
             this.m_txt_chuc_vu.Name = "m_txt_chuc_vu";
             this.m_txt_chuc_vu.Size = new System.Drawing.Size(173, 20);
             this.m_txt_chuc_vu.TabIndex = 3;
-            // 
-            // m_lbl_dv_lai_suat
-            // 
-            this.m_lbl_dv_lai_suat.AutoSize = true;
-            this.m_lbl_dv_lai_suat.Location = new System.Drawing.Point(570, 51);
-            this.m_lbl_dv_lai_suat.Name = "m_lbl_dv_lai_suat";
-            this.m_lbl_dv_lai_suat.Size = new System.Drawing.Size(15, 13);
-            this.m_lbl_dv_lai_suat.TabIndex = 57;
-            this.m_lbl_dv_lai_suat.Text = "%";
-            this.m_lbl_dv_lai_suat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // f700_giao_dich_phong_toa_giai_toa
             // 
