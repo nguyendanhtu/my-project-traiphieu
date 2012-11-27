@@ -249,7 +249,6 @@ namespace BondApp
 ,TRANG_THAI_NHOM = 2
 ,INPUTED_DATE = 3
 ,LAS_UPDATED_DATE = 6
-
 		}			
 		#endregion
 
@@ -310,7 +309,14 @@ namespace BondApp
 			DataRow v_dr;
 			v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
 			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
-			i_us.DataRow2Me(v_dr);
+            i_us.dcID = CIPConvert.ToDecimal(v_dr[0]);
+            i_us.strMA_NHOM = CIPConvert.ToStr(v_dr[1]);
+            i_us.strTRANG_THAI_NHOM = CIPConvert.ToStr(v_dr[3]);
+            i_us.dcID_INPUTED_BY = CIPConvert.ToDecimal(v_dr[4]);
+            i_us.dcID_LAST_UPDATED_BY = CIPConvert.ToDecimal(v_dr[6]);
+            i_us.strGHI_CHU = CIPConvert.ToStr(v_dr[2]);
+            i_us.datINPUTED_DATE = CIPConvert.ToDatetime(CIPConvert.ToStr(v_dr[5]));
+            i_us.datLAS_UPDATED_DATE = CIPConvert.ToDatetime(CIPConvert.ToStr(v_dr[7]));
 		}
 
 	
