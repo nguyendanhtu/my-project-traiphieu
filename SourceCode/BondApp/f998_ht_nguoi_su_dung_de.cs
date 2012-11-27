@@ -184,7 +184,7 @@ namespace BondApp
             this.label4.Size = new System.Drawing.Size(96, 16);
             this.label4.TabIndex = 13;
             this.label4.Text = "Có quyền Admin?";
-            this.label4.Visible = false;
+            this.label4.Enabled = false;
             // 
             // m_txt_ten_truy_cap
             // 
@@ -258,7 +258,7 @@ namespace BondApp
             this.m_chk_is_admin.Size = new System.Drawing.Size(56, 16);
             this.m_chk_is_admin.TabIndex = 14;
             this.m_chk_is_admin.Text = "Không";
-            this.m_chk_is_admin.Visible = false;
+            this.m_chk_is_admin.Enabled = false;
             // 
             // groupBox1
             // 

@@ -142,7 +142,7 @@ namespace BondApp
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 12;
             this.m_cmd_insert.Text = "&Thêm";
-            this.m_cmd_insert.Visible = false;
+            this.m_cmd_insert.Enabled = false;
             // 
             // m_cmd_update
             // 
@@ -173,7 +173,7 @@ namespace BondApp
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 14;
             this.m_cmd_delete.Text = "&Xoá";
-            this.m_cmd_delete.Visible = false;
+            this.m_cmd_delete.Enabled = false;
             // 
             // m_cmd_exit
             // 

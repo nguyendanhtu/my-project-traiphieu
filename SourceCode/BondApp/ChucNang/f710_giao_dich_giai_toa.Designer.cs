@@ -521,7 +521,7 @@
             this.m_lbl_ma_gd_pt.Size = new System.Drawing.Size(119, 13);
             this.m_lbl_ma_gd_pt.TabIndex = 0;
             this.m_lbl_ma_gd_pt.Text = "Mã giao dich phong toa";
-            this.m_lbl_ma_gd_pt.Visible = false;
+            this.m_lbl_ma_gd_pt.Enabled = false;
             // 
             // groupBox2
             // 
@@ -542,7 +542,7 @@
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Đơn vị xác nhận - Công ty cổ phần Chứng khoán Ngân hàng Công thương Việt Nam";
-            this.groupBox2.Visible = false;
+            this.groupBox2.Enabled = false;
             // 
             // m_dat_ngay_cap_giay_uq
             // 
@@ -644,7 +644,7 @@
             this.m_cmd_chon_gd_phong_toa.TabIndex = 2;
             this.m_cmd_chon_gd_phong_toa.Text = "...";
             this.m_cmd_chon_gd_phong_toa.UseVisualStyleBackColor = true;
-            this.m_cmd_chon_gd_phong_toa.Visible = false;
+            this.m_cmd_chon_gd_phong_toa.Enabled = false;
             // 
             // m_txt_ma_gd_phong_toa
             // 
@@ -654,7 +654,7 @@
             this.m_txt_ma_gd_phong_toa.ReadOnly = true;
             this.m_txt_ma_gd_phong_toa.Size = new System.Drawing.Size(140, 20);
             this.m_txt_ma_gd_phong_toa.TabIndex = 1;
-            this.m_txt_ma_gd_phong_toa.Visible = false;
+            this.m_txt_ma_gd_phong_toa.Enabled = false;
             // 
             // m_lbl_so_luong_trai_phieu
             // 

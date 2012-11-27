@@ -514,7 +514,8 @@ namespace BondApp
             v_htb.Add(V_DM_THAM_SO_NHAC_VIEC.LOAI_NHAC_VIEC, e_col_Number.LOAI_NHAC_VIEC);
             v_htb.Add(V_DM_THAM_SO_NHAC_VIEC.NOI_DUNG_NHAC, e_col_Number.NOI_DUNG_NHAC);
             v_htb.Add(V_DM_THAM_SO_NHAC_VIEC.SO_NGAY_LAM_TRUOC_NGAY_CHINH, e_col_Number.SO_NGAY_LAM_TRUOC_NGAY_CHINH);
-            v_htb.Add(V_DM_THAM_SO_NHAC_VIEC.SO_NGAY_NHAC_TRUOC, e_col_Number.SO_NGAY_NHAC_TRUOC);									
+            v_htb.Add(V_DM_THAM_SO_NHAC_VIEC.SO_NGAY_NHAC_TRUOC, e_col_Number.SO_NGAY_NHAC_TRUOC);
+									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_DM_THAM_SO_NHAC_VIEC.NewRow());
 			return v_obj_trans;			
 		}

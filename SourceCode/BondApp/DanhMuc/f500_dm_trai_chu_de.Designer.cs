@@ -665,7 +665,7 @@
             this.m_cmd_duyet.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_duyet.TabIndex = 0;
             this.m_cmd_duyet.Text = "&Duyệt";
-            this.m_cmd_duyet.Visible = false;
+            this.m_cmd_duyet.Enabled = false;
             // 
             // m_cmd_save
             // 
@@ -733,7 +733,7 @@
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
             this.m_cbo_trang_thai.Size = new System.Drawing.Size(158, 21);
             this.m_cbo_trang_thai.TabIndex = 22;
-            this.m_cbo_trang_thai.Visible = false;
+            this.m_cbo_trang_thai.Enabled = false;
             // 
             // label6
             // 
@@ -743,7 +743,7 @@
             this.label6.Size = new System.Drawing.Size(55, 13);
             this.label6.TabIndex = 35;
             this.label6.Text = "Trạng thái";
-            this.label6.Visible = false;
+            this.label6.Enabled = false;
             // 
             // label2
             // 

@@ -153,12 +153,12 @@ namespace BondApp
                     us_trai_phieu_2_form();
                     m_obj_trans = get_trans_object(m_fg);
                     load_data_2_grid();
-                    m_cmd_generate.Visible = true;
+                    m_cmd_generate.Enabled = true;
                     m_cmd_thong_bao_tien_lai.Visible = false;
-                    m_cmd_thong_bao_ls.Visible = true;
+                    m_cmd_thong_bao_ls.Enabled = true;
                     m_cmd_tra_goc.Visible = false;
                     m_cmd_tra_lai.Visible = false;                    
-                    m_cmd_cap_nhat_lai_suat.Visible = true;
+                    m_cmd_cap_nhat_lai_suat.Enabled = true;
                     m_cmd_thong_bao_dot_thanh_toan_lai_trai_phieu.Visible = false;
                     break;
                 case e_form_mode.HIEN_THI_KHONG_TRAI_PHIEU:
@@ -179,9 +179,9 @@ namespace BondApp
                     this.Text = "F650 - Thông báo lãi suất";
                     m_cmd_generate.Visible = false;
                     m_cmd_thong_bao_tien_lai.Visible = false;
-                    m_cmd_thong_bao_ls.Visible = true;
+                    m_cmd_thong_bao_ls.Enabled = true;
                     m_cmd_tra_goc.Visible = false;
-                    m_cmd_tra_lai.Visible = false;                   
+                    m_cmd_tra_lai.Visible = false;
                     m_cmd_cap_nhat_lai_suat.Visible = false;
                     m_cmd_thong_bao_dot_thanh_toan_lai_trai_phieu.Visible = false;
                     break;
@@ -191,9 +191,9 @@ namespace BondApp
                     this.Text = "F650 - Thông báo ngày chốt danh sách nhận lãi";
                     m_cmd_generate.Visible = false;
                     m_cmd_thong_bao_ls.Visible = false;
-                    m_cmd_thong_bao_tien_lai.Visible = true;
+                    m_cmd_thong_bao_tien_lai.Enabled = true;
                     m_cmd_tra_goc.Visible = false;
-                    m_cmd_tra_lai.Visible = false;                    
+                    m_cmd_tra_lai.Visible = false;
                     m_cmd_cap_nhat_lai_suat.Visible = false;
                     m_cmd_thong_bao_dot_thanh_toan_lai_trai_phieu.Visible = false;
                     break;
@@ -205,7 +205,7 @@ namespace BondApp
                     m_cmd_thong_bao_ls.Visible = false;
                     m_cmd_thong_bao_tien_lai.Visible = false;
                     m_cmd_tra_goc.Visible = false;
-                    m_cmd_tra_lai.Visible = false;                    
+                    m_cmd_tra_lai.Visible = false;
                     m_cmd_cap_nhat_lai_suat.Visible = false;
                     m_cmd_thong_bao_dot_thanh_toan_lai_trai_phieu.Visible = false;
                     break;
@@ -217,9 +217,9 @@ namespace BondApp
                     m_cmd_thong_bao_ls.Visible = false;
                     m_cmd_thong_bao_tien_lai.Visible = false;
                     m_cmd_tra_goc.Visible = false;
-                    m_cmd_tra_lai.Visible = false;                    
+                    m_cmd_tra_lai.Visible = false;
                     m_cmd_cap_nhat_lai_suat.Visible = false;
-                    m_cmd_thong_bao_dot_thanh_toan_lai_trai_phieu.Visible = true;
+                    m_cmd_thong_bao_dot_thanh_toan_lai_trai_phieu.Enabled = true;
                     break;
                 default:
                     break;

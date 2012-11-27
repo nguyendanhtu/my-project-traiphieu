@@ -403,7 +403,7 @@
             this.m_cmd_duyet_gd.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_duyet_gd.TabIndex = 3;
             this.m_cmd_duyet_gd.Text = "&Duyệt";
-            this.m_cmd_duyet_gd.Visible = false;
+            this.m_cmd_duyet_gd.Enabled = false;
             this.m_cmd_duyet_gd.Click += new System.EventHandler(this.m_cmd_duyet_gd_Click_1);
             // 
             // m_cmd_sua
@@ -420,7 +420,7 @@
             this.m_cmd_sua.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_sua.TabIndex = 4;
             this.m_cmd_sua.Text = "&Sửa";
-            this.m_cmd_sua.Visible = false;
+            this.m_cmd_sua.Enabled = false;
             this.m_cmd_sua.Click += new System.EventHandler(this.m_cmd_sua_Click_1);
             // 
             // m_cmd_lap

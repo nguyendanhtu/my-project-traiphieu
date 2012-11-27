@@ -138,8 +138,8 @@ namespace BondApp.ChucNang
                     v_xls_file.Export2DatasetDSPhongThi(v_ds_tmp_dm_trai_chu, v_ds_tmp_dm_trai_chu.DM_TRAI_CHU_IMP.TableName, 2);
 
                     CGridUtils.Dataset2C1Grid(v_ds_tmp_dm_trai_chu, m_fg_load_file, m_obj_tran_xls);
-                    m_lbl_tong_so_luong.Visible = true;
-                    m_lbl_label_tong_sl_tp.Visible = true;
+                    m_lbl_tong_so_luong.Enabled = true;
+                    m_lbl_label_tong_sl_tp.Enabled = true;
                     m_lbl_tong_so_luong.Text = CIPConvert.ToStr(get_so_luong_tp_nhap_vao(v_ds_tmp_dm_trai_chu),"#,###");
                     BaseMessages.MsgBox_Infor("Đã load dữ liệu file excel thành công.");
                 }

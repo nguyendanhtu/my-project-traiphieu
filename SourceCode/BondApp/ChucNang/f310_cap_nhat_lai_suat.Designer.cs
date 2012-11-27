@@ -181,7 +181,7 @@
             this.m_cmd_duyet_gd.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_duyet_gd.TabIndex = 3;
             this.m_cmd_duyet_gd.Text = "&Duyệt";
-            this.m_cmd_duyet_gd.Visible = false;
+            this.m_cmd_duyet_gd.Enabled = false;
             // 
             // m_cmd_cap_nhat
             // 
@@ -197,7 +197,7 @@
             this.m_cmd_cap_nhat.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_cap_nhat.TabIndex = 4;
             this.m_cmd_cap_nhat.Text = "&Cập nhật";
-            this.m_cmd_cap_nhat.Visible = false;
+            this.m_cmd_cap_nhat.Enabled = false;
             // 
             // m_cmd_exit
             // 
