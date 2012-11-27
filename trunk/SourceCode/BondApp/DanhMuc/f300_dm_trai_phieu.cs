@@ -458,19 +458,19 @@ namespace BondApp
                 case DataEntryFormMode.InsertDataState:
                     break;
                 case DataEntryFormMode.SelectDataState:
-                    m_cmd_delete.Visible = false;
-                    m_cmd_update.Visible = false;
-                    m_cmd_insert.Visible = false;
-                    m_cmd_select.Visible = true;
+                    m_cmd_delete.Enabled = false;
+                    m_cmd_update.Enabled = false;
+                    m_cmd_insert.Enabled = false;
+                    m_cmd_select.Enabled = true;
                     break;
                 case DataEntryFormMode.UpdateDataState:
                     break;
                 case DataEntryFormMode.ViewDataState:
-                    m_cmd_delete.Visible = true;
-                    m_cmd_update.Visible = true;
-                    m_cmd_insert.Visible = true;
+                    m_cmd_delete.Enabled = true;
+                    m_cmd_update.Enabled = true;
+                    m_cmd_insert.Enabled = true;
 
-                    m_cmd_select.Visible = false;
+                    m_cmd_select.Enabled = false;
                     break;
                 default:
                     break;

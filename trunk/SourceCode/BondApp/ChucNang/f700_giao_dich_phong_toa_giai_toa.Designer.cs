@@ -585,7 +585,7 @@
             this.m_cbo_ngan_hang_cam_co.Name = "m_cbo_ngan_hang_cam_co";
             this.m_cbo_ngan_hang_cam_co.Size = new System.Drawing.Size(448, 21);
             this.m_cbo_ngan_hang_cam_co.TabIndex = 29;
-            this.m_cbo_ngan_hang_cam_co.Visible = false;
+            this.m_cbo_ngan_hang_cam_co.Enabled = false;
             // 
             // label4
             // 
@@ -850,7 +850,7 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Đơn vị xác nhận - Công ty cổ phần Chứng khoán Ngân hàng Công thương Việt Nam";
-            this.groupBox2.Visible = false;
+            this.groupBox2.Enabled = false;
             // 
             // m_dat_ngay_cap_giay_uq
             // 

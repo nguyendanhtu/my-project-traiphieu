@@ -189,7 +189,7 @@ namespace BondApp
             this.m_chk_da_thuc_hien.TabIndex = 30;
             this.m_chk_da_thuc_hien.Text = "Đã thực hiện";
             this.m_chk_da_thuc_hien.UseVisualStyleBackColor = true;
-            this.m_chk_da_thuc_hien.Visible = false;
+            this.m_chk_da_thuc_hien.Enabled = false;
             // 
             // m_lbl_lich_nhac_viec_den
             // 
@@ -199,7 +199,7 @@ namespace BondApp
             this.m_lbl_lich_nhac_viec_den.Size = new System.Drawing.Size(27, 13);
             this.m_lbl_lich_nhac_viec_den.TabIndex = 23;
             this.m_lbl_lich_nhac_viec_den.Text = "Đến";
-            this.m_lbl_lich_nhac_viec_den.Visible = false;
+            this.m_lbl_lich_nhac_viec_den.Enabled = false;
             // 
             // m_cmd_filter
             // 
@@ -339,7 +339,8 @@ namespace BondApp
             v_htb.Add(V_GD_NHAC_VIEC.TEN_TRAI_PHIEU, e_col_Number.TEN_TRAI_PHIEU);
             v_htb.Add(V_GD_NHAC_VIEC.GHI_CHU, e_col_Number.GHI_CHU);
             v_htb.Add(V_GD_NHAC_VIEC.LOAI_NHAC_VIEC, e_col_Number.LOAI_NHAC_VIEC);
-            v_htb.Add(V_GD_NHAC_VIEC.NOI_DUNG_NHAC, e_col_Number.NOI_DUNG_NHAC);									
+            v_htb.Add(V_GD_NHAC_VIEC.NOI_DUNG_NHAC, e_col_Number.NOI_DUNG_NHAC);
+									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_GD_NHAC_VIEC.NewRow());
 			return v_obj_trans;			
 		}
@@ -372,7 +373,7 @@ namespace BondApp
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_cbo_loai_nhac_viec();
             m_dat_to_date.Value = m_dat_from_date.Value;
-            m_dat_to_date.Visible = false;
+            m_dat_to_date.Enabled = false;
             load_data_2_grid();
         }
 		private void us_object2grid(US_V_GD_NHAC_VIEC i_us

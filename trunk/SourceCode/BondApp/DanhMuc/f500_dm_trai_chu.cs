@@ -220,7 +220,7 @@ namespace BondApp
             this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_view.TabIndex = 21;
             this.m_cmd_view.Text = "Xem";
-            this.m_cmd_view.Visible = false;
+            this.m_cmd_view.Enabled = false;
             // 
             // m_cmd_delete
             // 
@@ -491,18 +491,18 @@ namespace BondApp
             switch (m_e_form_mode)
             {
                 case DataEntryFormMode.SelectDataState:
-                    m_cmd_delete.Visible = false;
-                    m_cmd_update.Visible = false;
-                    m_cmd_insert.Visible = false;
-                    m_cmd_select.Visible = true;
+                    m_cmd_delete.Enabled = false;
+                    m_cmd_update.Enabled = false;
+                    m_cmd_insert.Enabled = false;
+                    m_cmd_select.Enabled = true;
                     break;
                 case DataEntryFormMode.UpdateDataState:
                     break;
                 case DataEntryFormMode.ViewDataState:
-                    m_cmd_delete.Visible = true;
-                    m_cmd_update.Visible = true;
-                    m_cmd_insert.Visible = true;
-                    m_cmd_select.Visible = false;
+                    m_cmd_delete.Enabled = true;
+                    m_cmd_update.Enabled = true;
+                    m_cmd_insert.Enabled = true;
+                    m_cmd_select.Enabled = false;
                     break;
                 default:
                     break;

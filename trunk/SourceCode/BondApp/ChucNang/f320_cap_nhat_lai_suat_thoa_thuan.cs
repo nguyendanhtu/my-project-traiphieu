@@ -91,41 +91,41 @@ namespace BondApp.ChucNang
         private void set_inital_form_load(eFormMode ip_e_form_mode)
         {
             m_e_form_mode = ip_e_form_mode;
-            m_cmd_chon_sua.Visible = false;
-            m_cmd_chon_duyet.Visible = false;
+            m_cmd_chon_sua.Enabled = false;
+            m_cmd_chon_duyet.Enabled = false;
             switch (ip_e_form_mode)
             {
                 case eFormMode.LAP_GD_CAP_NHAP:
-                    m_cmd_chon_sua.Visible = true;
-                    m_cmd_chon_duyet.Visible = true;
-                    m_cmd_lap.Visible = true;
-                    m_cmd_sua.Visible = false;
-                    m_cmd_duyet_gd.Visible = false;
-                    m_cmd_delete.Visible = true;                    
+                    m_cmd_chon_sua.Enabled = true;
+                    m_cmd_chon_duyet.Enabled = true;
+                    m_cmd_lap.Enabled = true;
+                    m_cmd_sua.Enabled = false;
+                    m_cmd_duyet_gd.Enabled = false;
+                    m_cmd_delete.Enabled = true;                    
                     m_gru_thong_tin_trai_phieu.Enabled = true;
                     m_gru_thong_tin_cap_nhat.Enabled = true;
                     break;
                 case eFormMode.CAP_NHAT_LAI_SUAT:
-                    m_cmd_lap.Visible = false;
-                    m_cmd_sua.Visible = true;
-                    m_cmd_delete.Visible = false;
-                    m_cmd_duyet_gd.Visible = false;                   
+                    m_cmd_lap.Enabled = false;
+                    m_cmd_sua.Enabled = true;
+                    m_cmd_delete.Enabled = false;
+                    m_cmd_duyet_gd.Enabled = false;                   
                     m_gru_thong_tin_trai_phieu.Enabled = false;
                     m_gru_thong_tin_cap_nhat.Enabled = true;
                     break;
                 case eFormMode.XEM_GIAO_DICH:
-                    m_cmd_lap.Visible = false;
-                    m_cmd_delete.Visible = false;
-                    m_cmd_sua.Visible = false;
-                    m_cmd_duyet_gd.Visible = false;                    
+                    m_cmd_lap.Enabled = false;
+                    m_cmd_delete.Enabled = false;
+                    m_cmd_sua.Enabled = false;
+                    m_cmd_duyet_gd.Enabled = false;                    
                     m_gru_thong_tin_trai_phieu.Enabled = false;
                     m_gru_thong_tin_cap_nhat.Enabled = false;
                     break;
                 case eFormMode.DUYET_LAI_SUAT:
-                    m_cmd_lap.Visible = false;                    
-                    m_cmd_delete.Visible = false;
-                    m_cmd_duyet_gd.Visible = true;
-                    m_cmd_sua.Visible = false;
+                    m_cmd_lap.Enabled = false;                    
+                    m_cmd_delete.Enabled = false;
+                    m_cmd_duyet_gd.Enabled = true;
+                    m_cmd_sua.Enabled = false;
                     m_gru_thong_tin_trai_phieu.Enabled = false;
                     m_gru_thong_tin_cap_nhat.Enabled = true;
                     break;
@@ -456,12 +456,12 @@ namespace BondApp.ChucNang
         private void resetcontrl2()
         {
             m_gru_thong_tin_trai_phieu.Enabled = true;
-            m_cmd_lap.Visible = true;
-            m_cmd_delete.Visible = true;
-            m_cmd_sua.Visible = false;
-            m_cmd_duyet_gd.Visible = false;
-            m_cmd_chon_sua.Visible = true;
-            m_cmd_chon_duyet.Visible = true;
+            m_cmd_lap.Enabled = true;
+            m_cmd_delete.Enabled = true;
+            m_cmd_sua.Enabled = false;
+            m_cmd_duyet_gd.Enabled = false;
+            m_cmd_chon_sua.Enabled = true;
+            m_cmd_chon_duyet.Enabled = true;
             m_txt_lai_suat_moi.Text = "";
             m_txt_ghi_chu.Text = "";
             load_data_2_grid();

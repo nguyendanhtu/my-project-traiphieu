@@ -46,7 +46,7 @@ namespace BondApp
             m_lbl_so_luong_tp_cam_co.Text = "Số lượng TP giải tỏa";
             m_lbl_khoan_dau_tu.Text = "Lý do giải tỏa";
             m_lbl_so_luong_kha_dung.Text = "Số lượng phong tỏa";
-            m_cbo_ngan_hang_cam_co.Visible = true;
+            m_cbo_ngan_hang_cam_co.Enabled = true;
             this.ShowDialog();
         }
         public void display_sua_phong_toa(US_GD_PHONG_GIAI_TOA ip_us_phong_giai_toa)
@@ -317,7 +317,7 @@ namespace BondApp
             switch (m_e_form_mode)
             {
                 case eFormMode.LAP_GIAI_TOA:                    
-                    //m_cmd_chon_trai_chu.Visible = false; 
+                    //m_cmd_chon_trai_chu.Enabled = false; 
                     m_cmd_lap.Enabled = true;
                     m_cmd_duyet.Enabled = false;
                     m_cmd_save.Enabled = false;

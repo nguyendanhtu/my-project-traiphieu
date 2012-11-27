@@ -123,23 +123,23 @@ namespace BondApp.DanhMuc
             switch (m_e_form_mode)
             {
                 case e_formmode.HIEN_THI_DE_THEM:
-                    m_lbl_label_hien_tai.Visible = false;
-                    m_lbl_tong_so_du_hien_tai.Visible = false;
-                    m_txt_tong_so_du_hien_tai.Visible = false;
-                    m_lbl_so_kha_dung.Visible = false;
-                    m_lbl_so_luong_phong_toa.Visible = false;
-                    m_txt_so_du_kha_dung.Visible = false;
-                    m_txt_sl_da_phong_toa.Visible = false;
+                    m_lbl_label_hien_tai.Enabled = false;
+                    m_lbl_tong_so_du_hien_tai.Enabled = false;
+                    m_txt_tong_so_du_hien_tai.Enabled = false;
+                    m_lbl_so_kha_dung.Enabled = false;
+                    m_lbl_so_luong_phong_toa.Enabled = false;
+                    m_txt_so_du_kha_dung.Enabled = false;
+                    m_txt_sl_da_phong_toa.Enabled = false;
                     break;
                 case e_formmode.HIEN_THI_DE_SUA:
                     us_object_2_form(m_us_v_trai_chu);                    
                     break;
                 case e_formmode.HIEN_THI_DE_DUYET:                    
-                    m_cmd_save.Visible = false;
-                    m_cmd_duyet.Visible = true;
-                    //m_lbl_ngay_duyet_lbl.Visible = true;
-                    //m_dat_ngay_so_huu_trai_phieu.Visible = true;
-                    //m_lbl_duyet_ghi_chu.Visible = true;
+                    m_cmd_save.Enabled = false;
+                    m_cmd_duyet.Enabled = true;
+                    //m_lbl_ngay_duyet_lbl.Enabled = true;
+                    //m_dat_ngay_so_huu_trai_phieu.Enabled = true;
+                    //m_lbl_duyet_ghi_chu.Enabled = true;
                     us_object_2_form(m_us_v_trai_chu);
                     break;
             }

@@ -842,7 +842,7 @@ namespace BondApp
         private void us_nguoi_duyet_2_form()
         {
             m_lbl_ten_nguoi_duyet.Text = m_us_nguoi_duyet.strTEN;
-            m_cmd_duyet.Visible = false;
+            m_cmd_duyet.Enabled = false;
         }
 		private void set_initial_form_load(){	
 			m_obj_trans = get_trans_object(m_fg);
@@ -1109,28 +1109,28 @@ namespace BondApp
                     case e_form_mode.LAP_GD_CHOT_LAI:
                         m_gru_tim_kiem.Visible = false;
                         m_fg.Visible = false;
-                        m_cmd_gen.Visible = false;
-                        m_cmd_update.Visible = false;
-                        m_cmd_duyet.Visible = false;
+                        m_cmd_gen.Enabled = false;
+                        m_cmd_update.Enabled = false;
+                        m_cmd_duyet.Enabled = false;
                         this.Height = 320;
                         m_lbl_title.Text = "F210 - Thông tin đợt chốt lãi";
                         break;
                     case e_form_mode.XEM_GD_CHOT_LAI_DETAIL:
                         m_gru_tim_kiem.Visible = true;
                         m_fg.Visible = true;
-                        m_cmd_gen.Visible = true;
-                        m_cmd_save.Visible = false;
-                        m_cmd_update.Visible = false;
-                        m_cmd_duyet.Visible = true;
+                        m_cmd_gen.Enabled = true;
+                        m_cmd_save.Enabled = false;
+                        m_cmd_update.Enabled = false;
+                        m_cmd_duyet.Enabled = true;
                         m_gbox_thong_tin_tp.Enabled = false;
                         break;
-                    case e_form_mode.DUYET_GD_CHOT_LAI:                        
+                    case e_form_mode.DUYET_GD_CHOT_LAI:
                         m_gru_tim_kiem.Visible = true;
                         m_fg.Visible = true;
-                        m_cmd_gen.Visible = true;
-                        m_cmd_save.Visible = false;
-                        m_cmd_update.Visible = false;
-                        m_cmd_duyet.Visible = true;                        
+                        m_cmd_gen.Enabled = true;
+                        m_cmd_save.Enabled = false;
+                        m_cmd_update.Enabled = false;
+                        m_cmd_duyet.Enabled = true;                        
                         m_lbl_title.Text = "F210 - Thông tin đợt chốt lãi";
                         break;
                     default:

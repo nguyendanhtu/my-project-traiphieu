@@ -634,10 +634,10 @@ namespace BondApp
             switch (m_form_mode)
             {
                 case e_form_mode.CHOT_DANH_SACH_NGUOI_SO_HUU:
-                    m_cmd_yeu_cau_ngan_hang_thanh_toan.Visible = false;
+                    m_cmd_yeu_cau_ngan_hang_thanh_toan.Enabled = false;
                     break;
                 case e_form_mode.YEU_CAU_NGAN_HANG_THANH_TOAN:
-                    m_cmd_export_excel.Visible = false;
+                    m_cmd_export_excel.Enabled = false;
                     m_lbl_header.Text = "F658 - YÊU CẦU NGÂN HÀNG THANH TOÁN";
                     break;
             }

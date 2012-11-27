@@ -143,22 +143,22 @@ namespace BondApp
             switch (m_e_form_mode)
             {
                 case eFormMode.LAP_CHUYEN_NHUONG:                    
-                    m_cmd_lap_chuyen_nhuong.Visible = true;
-                    m_cmd_sua_chuyen_nhuong.Visible = false;
-                    m_cmd_duyet_chuyen_nhuong.Visible = false;
+                    m_cmd_lap_chuyen_nhuong.Enabled = true;
+                    m_cmd_sua_chuyen_nhuong.Enabled = false;
+                    m_cmd_duyet_chuyen_nhuong.Enabled = false;
                     m_txt_nguoi_lap.Text = CAppContext_201.getCurrentUser();
                     break;
                 case eFormMode.SUA_CHUYEN_NHUONG_CHUA_DUYET:
-                    m_cmd_lap_chuyen_nhuong.Visible = false;
-                    m_cmd_sua_chuyen_nhuong.Visible = true;
-                    m_cmd_duyet_chuyen_nhuong.Visible = false;
+                    m_cmd_lap_chuyen_nhuong.Enabled = false;
+                    m_cmd_sua_chuyen_nhuong.Enabled = true;
+                    m_cmd_duyet_chuyen_nhuong.Enabled = false;
                     m_gru_thong_tin_khach_hang.Enabled = false;
                     m_gru_thong_tin_trai_phieu.Enabled = false;
                     break;
                 case eFormMode.DUYET_CHUYEN_NHUONG:
-                    m_cmd_lap_chuyen_nhuong.Visible = false;
-                    m_cmd_sua_chuyen_nhuong.Visible = false;
-                    m_cmd_duyet_chuyen_nhuong.Visible = true;
+                    m_cmd_lap_chuyen_nhuong.Enabled = false;
+                    m_cmd_sua_chuyen_nhuong.Enabled = false;
+                    m_cmd_duyet_chuyen_nhuong.Enabled = true;
                     m_cmd_duyet_chuyen_nhuong.Enabled = true;
                     m_gru_thong_tin_khach_hang.Enabled = false;
                     m_gru_thong_tin_trai_phieu.Enabled = false;
@@ -166,9 +166,9 @@ namespace BondApp
                     m_txt_nguoi_duyet.Text = CAppContext_201.getCurrentUser();
                     break;
                 case eFormMode.XEM_GIAO_DICH:
-                    m_cmd_lap_chuyen_nhuong.Visible = false;
-                    m_cmd_sua_chuyen_nhuong.Visible = false;
-                    m_cmd_duyet_chuyen_nhuong.Visible = false;                    
+                    m_cmd_lap_chuyen_nhuong.Enabled = false;
+                    m_cmd_sua_chuyen_nhuong.Enabled = false;
+                    m_cmd_duyet_chuyen_nhuong.Enabled = false;                    
                     m_gru_thong_tin_trai_phieu.Enabled = false;
                     m_gru_thong_tin_khach_hang.Enabled = false;
                     m_gru_thong_tin_chuyen_nhuong.Enabled = false;

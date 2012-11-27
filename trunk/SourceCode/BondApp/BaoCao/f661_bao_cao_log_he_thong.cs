@@ -231,7 +231,7 @@ namespace BondApp
             this.m_lbl_lich_nhac_viec_den.Size = new System.Drawing.Size(53, 13);
             this.m_lbl_lich_nhac_viec_den.TabIndex = 23;
             this.m_lbl_lich_nhac_viec_den.Text = "Đến ngày";
-            this.m_lbl_lich_nhac_viec_den.Visible = false;
+            this.m_lbl_lich_nhac_viec_den.Enabled = false;
             // 
             // m_cmd_filter
             // 

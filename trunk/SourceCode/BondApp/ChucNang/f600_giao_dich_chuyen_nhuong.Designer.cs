@@ -769,7 +769,7 @@
             this.m_lbl_ID_nguoi_ban.Name = "m_lbl_ID_nguoi_ban";
             this.m_lbl_ID_nguoi_ban.Size = new System.Drawing.Size(0, 13);
             this.m_lbl_ID_nguoi_ban.TabIndex = 3;
-            this.m_lbl_ID_nguoi_ban.Visible = false;
+            this.m_lbl_ID_nguoi_ban.Enabled = false;
             // 
             // m_lbl_ten_khach_hang
             // 
@@ -1086,7 +1086,7 @@
             this.m_lbl_ID_nguoi_mua.Name = "m_lbl_ID_nguoi_mua";
             this.m_lbl_ID_nguoi_mua.Size = new System.Drawing.Size(0, 13);
             this.m_lbl_ID_nguoi_mua.TabIndex = 3;
-            this.m_lbl_ID_nguoi_mua.Visible = false;
+            this.m_lbl_ID_nguoi_mua.Enabled = false;
             // 
             // label19
             // 
@@ -1216,7 +1216,7 @@
             this.m_cmd_danh_sach_chuyen_nhuong.Size = new System.Drawing.Size(163, 28);
             this.m_cmd_danh_sach_chuyen_nhuong.TabIndex = 29;
             this.m_cmd_danh_sach_chuyen_nhuong.Text = "Danh sách chuyển nhượng";
-            this.m_cmd_danh_sach_chuyen_nhuong.Visible = false;
+            this.m_cmd_danh_sach_chuyen_nhuong.Enabled = false;
             // 
             // m_cmd_exit
             // 
@@ -1241,7 +1241,7 @@
             this.m_lbl_ID_gd_chuyen_nhuong.Size = new System.Drawing.Size(0, 13);
             this.m_lbl_ID_gd_chuyen_nhuong.TabIndex = 33;
             this.m_lbl_ID_gd_chuyen_nhuong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_lbl_ID_gd_chuyen_nhuong.Visible = false;
+            this.m_lbl_ID_gd_chuyen_nhuong.Enabled = false;
             // 
             // m_txt_ma_giao_dich
             // 
@@ -1472,7 +1472,7 @@
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(0, 13);
             this.label33.TabIndex = 39;
-            this.label33.Visible = false;
+            this.label33.Enabled = false;
             // 
             // label32
             // 

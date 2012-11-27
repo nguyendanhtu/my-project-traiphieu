@@ -500,18 +500,18 @@ namespace BondApp
             switch (m_e_form_mode)
             {
                 case eFormMode.DANH_SACH_CHUYEN_NHUONG:
-                    m_cmd_lap_chuyen_nhuong.Visible = true;
-                    m_cmd_bao_cao.Visible = true;
-                    m_cmd_delete.Visible = true;
-                    m_cmd_duyet_chuyen_nhuong.Visible = false;
-                    m_cmd_update.Visible = true;
+                    m_cmd_lap_chuyen_nhuong.Enabled = true;
+                    m_cmd_bao_cao.Enabled = true;
+                    m_cmd_delete.Enabled = true;
+                    m_cmd_duyet_chuyen_nhuong.Enabled = false;
+                    m_cmd_update.Enabled = true;
                     break;
                 case eFormMode.DUYET_CHUYEN_NHUONG:
-                    m_cmd_lap_chuyen_nhuong.Visible = false;
-                    m_cmd_bao_cao.Visible = false;
-                    m_cmd_delete.Visible = false;
-                    m_cmd_duyet_chuyen_nhuong.Visible = true;
-                    m_cmd_update.Visible = false;
+                    m_cmd_lap_chuyen_nhuong.Enabled = false;
+                    m_cmd_bao_cao.Enabled = false;
+                    m_cmd_delete.Enabled = false;
+                    m_cmd_duyet_chuyen_nhuong.Enabled = true;
+                    m_cmd_update.Enabled = false;
                     break;
                 default:
                     break;

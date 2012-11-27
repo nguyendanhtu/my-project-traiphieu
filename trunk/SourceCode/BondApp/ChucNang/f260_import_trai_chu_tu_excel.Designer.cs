@@ -343,7 +343,7 @@
             this.m_lbl_label_tong_sl_tp.Size = new System.Drawing.Size(213, 16);
             this.m_lbl_label_tong_sl_tp.TabIndex = 14;
             this.m_lbl_label_tong_sl_tp.Text = "Tổng số lượng trái phiếu nhập vào:";
-            this.m_lbl_label_tong_sl_tp.Visible = false;
+            this.m_lbl_label_tong_sl_tp.Enabled = false;
             // 
             // m_lbl_tong_so_luong
             // 
@@ -355,7 +355,7 @@
             this.m_lbl_tong_so_luong.Size = new System.Drawing.Size(20, 16);
             this.m_lbl_tong_so_luong.TabIndex = 14;
             this.m_lbl_tong_so_luong.Text = "...";
-            this.m_lbl_tong_so_luong.Visible = false;
+            this.m_lbl_tong_so_luong.Enabled = false;
             // 
             // f260_import_trai_chu_tu_excel
             // 
