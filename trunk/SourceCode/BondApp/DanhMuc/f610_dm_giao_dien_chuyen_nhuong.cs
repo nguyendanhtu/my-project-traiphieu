@@ -672,7 +672,7 @@ namespace BondApp
         }
         private void show_lap_gd_chuyen_nhuong()
         {
-            if (!CAppContext_201.IsHavingQuyen(IP.Core.IPSystemAdmin.PHAN_QUYEN.LAP_LICH_THANH_TOAN_LAI_GOC))
+            if (!CAppContext_201.IsHavingQuyen(IP.Core.IPSystemAdmin.PHAN_QUYEN.QLNV_CN_LAP_GIAO_DICH))
             {
                 BaseMessages.MsgBox_Infor(" Người sử dụng không được phép truy nhập phần này !!! ");
                 return;
