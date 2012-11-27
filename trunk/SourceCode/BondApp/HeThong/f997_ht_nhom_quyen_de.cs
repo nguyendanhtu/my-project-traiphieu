@@ -72,8 +72,8 @@ namespace BondApp
             v_htb.Add(HT_PHAN_QUYEN_HE_THONG.ID, e_col_number.ID_QUYEN);
             v_htb.Add(HT_PHAN_QUYEN_HE_THONG.GHI_CHU, e_col_number.TEN_QUYEN);
             v_htb.Add(HT_PHAN_QUYEN_HE_THONG.MA_PHAN_QUYEN, e_col_number.MA_QUYEN);
-            DS_CM_DM_TU_DIEN v_ds = new DS_CM_DM_TU_DIEN();
-            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, v_ds.CM_DM_TU_DIEN.NewRow());
+            DS_HT_PHAN_QUYEN_HE_THONG v_ds = new DS_HT_PHAN_QUYEN_HE_THONG();
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, v_ds.HT_PHAN_QUYEN_HE_THONG.NewRow());
             return v_obj_trans;
         }
         private void load_data_2_grid()
@@ -91,7 +91,7 @@ namespace BondApp
                 m_fg[v_i_cur, (int)e_col_number.LA_QUYEN_USER] = false;
             }
             //set quyen
-            foreach (DataRow v_dr in v_ds_phan_quyen.HT_PHAN_QUYEN_HE_THONG.Rows)
+            foreach (DataRow v_dr in v_ds_phan_quyen_cho_nhom.HT_PHAN_QUYEN_CHO_NHOM.Rows)
             {
                 for (int v_i_cur = m_fg.Rows.Fixed; v_i_cur < m_fg.Rows.Count; v_i_cur++)
                 {

@@ -241,12 +241,14 @@ namespace BondApp
 		private enum e_col_Number{
 			ID = 0
 ,ID_INPUTED_BY = 4
+    ,INPUTED_BY = 5
 ,MA_NHOM = 1
-,ID_LAST_UPDATED_BY = 6
-,GHI_CHU = 7
+,ID_LAST_UPDATED_BY = 7
+    ,UPDATED_BY = 8
+,GHI_CHU = 9
 ,TRANG_THAI_NHOM = 2
 ,INPUTED_DATE = 3
-,LAS_UPDATED_DATE = 5
+,LAS_UPDATED_DATE = 6
 
 		}			
 		#endregion
@@ -283,10 +285,24 @@ namespace BondApp
 			return v_obj_trans;			
 		}
 		private void load_data_2_grid(){						
-			m_ds = new DS_HT_NHOM_NGUOI_SU_DUNG();			
+			m_ds = new DS_HT_NHOM_NGUOI_SU_DUNG();
+            US_HT_NGUOI_SU_DUNG v_nguoi_lap, v_nguoi_sua;
 			m_us.FillDataset(m_ds);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            for (int v_i_grid_row = m_fg.Rows.Fixed; v_i_grid_row < m_fg.Rows.Count; v_i_grid_row++)
+            {                
+                if (m_fg[v_i_grid_row, (int)e_col_Number.ID_INPUTED_BY] != null)
+                {
+                    v_nguoi_lap = new US_HT_NGUOI_SU_DUNG(CIPConvert.ToDecimal(m_fg[v_i_grid_row, (int)e_col_Number.ID_INPUTED_BY]));
+                    m_fg[v_i_grid_row, (int)e_col_Number.INPUTED_BY] = v_nguoi_lap.strTEN;
+                }
+                if (m_fg[v_i_grid_row, (int)e_col_Number.ID_LAST_UPDATED_BY] != null)
+                {
+                    v_nguoi_sua = new US_HT_NGUOI_SU_DUNG(CIPConvert.ToDecimal(m_fg[v_i_grid_row, (int)e_col_Number.ID_LAST_UPDATED_BY]));
+                    m_fg[v_i_grid_row, (int)e_col_Number.UPDATED_BY] = v_nguoi_sua.strTEN;
+                }
+            }
 			m_fg.Redraw = true;
 		}
 		private void grid2us_object(US_HT_NHOM_NGUOI_SU_DUNG i_us

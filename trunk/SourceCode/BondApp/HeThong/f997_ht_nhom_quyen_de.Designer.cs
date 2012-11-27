@@ -198,7 +198,6 @@
             this.m_txt_nguoi_sua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_txt_nguoi_sua.Location = new System.Drawing.Point(383, 155);
             this.m_txt_nguoi_sua.Name = "m_txt_nguoi_sua";
-            this.m_txt_nguoi_sua.PasswordChar = '*';
             this.m_txt_nguoi_sua.Size = new System.Drawing.Size(120, 20);
             this.m_txt_nguoi_sua.TabIndex = 10;
             // 
@@ -207,7 +206,6 @@
             this.m_txt_nguoi_tao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.m_txt_nguoi_tao.Location = new System.Drawing.Point(383, 129);
             this.m_txt_nguoi_tao.Name = "m_txt_nguoi_tao";
-            this.m_txt_nguoi_tao.PasswordChar = '*';
             this.m_txt_nguoi_tao.Size = new System.Drawing.Size(120, 20);
             this.m_txt_nguoi_tao.TabIndex = 10;
             // 
