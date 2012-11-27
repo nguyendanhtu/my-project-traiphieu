@@ -590,6 +590,7 @@ namespace BondApp
                     break;
                 default: break;
             }
+            load_data_2_grid();
         }
 
         private void update_gd_phong_giai_toa()
@@ -617,6 +618,7 @@ namespace BondApp
             if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
             US_GD_PHONG_GIAI_TOA v_us = new US_GD_PHONG_GIAI_TOA();
             grid2us_object(v_us, m_fg.Row);
+            m_us = v_us;
             try
             {
                 v_us.BeginTransaction();
