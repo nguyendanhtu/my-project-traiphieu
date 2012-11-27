@@ -106,8 +106,8 @@ namespace BondApp
         private void form_2_us_object()
         {
             m_us_group.strMA_NHOM = m_txt_ten_nhom_ng_dung.Text;
-            m_us_group.strGHI_CHU = m_txt_ghi_chu.Text;                                   
-            m_us_group.strTRANG_THAI_NHOM = CIPConvert.ToStr(m_cbo_trang_thai.SelectedIndex);
+            m_us_group.strGHI_CHU = m_txt_ghi_chu.Text;
+            m_us_group.strTRANG_THAI_NHOM = m_cbo_trang_thai.SelectedIndex == 0 ? "ACTIVE" : "NO ACTIVE";
             if(m_e_form_mode == DataEntryFormMode.InsertDataState){
                 m_us_group.dcID_INPUTED_BY = IP.Core.IPSystemAdmin.CAppContext_201.getCurrentUserID();
                 m_us_group.SetID_LAST_UPDATED_BYNull();
@@ -134,9 +134,8 @@ namespace BondApp
                 US_HT_NGUOI_SU_DUNG v_nguoi_sua = new US_HT_NGUOI_SU_DUNG(m_us_group.dcID_LAST_UPDATED_BY);
                 m_txt_nguoi_sua.Text = v_nguoi_sua.strTEN;
                 m_date_ngay_sua.Value = m_us_group.datLAS_UPDATED_DATE;
-            }     
-            m_cbo_trang_thai.SelectedIndex =
-                (int)CIPConvert.ToDecimal(m_us_group.strTRANG_THAI_NHOM);
+            }
+            m_cbo_trang_thai.SelectedIndex = m_us_group.strTRANG_THAI_NHOM == "ACTIVE"? 0 : 1;
         }
         private bool check_validate()
         {
