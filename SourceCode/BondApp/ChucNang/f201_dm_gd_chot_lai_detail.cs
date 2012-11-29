@@ -389,7 +389,6 @@ namespace BondApp
             // 
             this.m_dat_ngay_thanh_toan_thuc_te.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.m_dat_ngay_thanh_toan_thuc_te.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_ngay_thanh_toan_thuc_te.Enabled = false;
             this.m_dat_ngay_thanh_toan_thuc_te.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.m_dat_ngay_thanh_toan_thuc_te.Location = new System.Drawing.Point(369, 77);
             this.m_dat_ngay_thanh_toan_thuc_te.Name = "m_dat_ngay_thanh_toan_thuc_te";
@@ -1003,7 +1002,7 @@ namespace BondApp
 
         private DateTime get_ngay_chot_lai(DateTime ip_ngay_thanh_toan)
         {
-            US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_v_dm_trai_phieu.dcID_DOT_PHAT_HANH);
+            US_V_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_V_DM_DOT_PHAT_HANH(m_us_v_dm_trai_phieu.dcID_DOT_PHAT_HANH);
             DS_DM_NGAY_LAM_VIEC v_ds_dm_ng_lam_viec = new DS_DM_NGAY_LAM_VIEC();
             US_DM_NGAY_LAM_VIEC v_us_dm_ng_lam_viec = new US_DM_NGAY_LAM_VIEC();
             decimal v_so_ngay_truoc_tt = m_us_v_dm_trai_phieu.dcSO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN;
@@ -1031,8 +1030,11 @@ namespace BondApp
             else 
               v_dat_ngay_thanh_toan_thuc = CIPConvert.ToDatetime(CIPConvert.ToStr( v_ds_dm_ng_lam_viec.DM_NGAY_LAM_VIEC.Rows[0][DM_NGAY_LAM_VIEC.NGAY]));
             if (v_dat_ngay_thanh_toan_thuc != ip_ngay_thanh_toan)
-                MessageBox.Show("Ngày thanh toán đã trùng với ngày nghỉ.\nHãy sửa lại ngày thanh toán trong ô ngày thành toán thực thế.\nP/s: Trái phiếu thuộc loại làm việc từ "+
-                    v_us_dm_dot_phat_hanh.strNGAY_LAM_VIEC_HAI_SAU_YN == "Y" ? "thứ 2 đến thứ 6." : "thứ 2 đến thứ 7.");
+            {
+                if(v_us_dm_dot_phat_hanh.strNGAY_LAM_VIEC_HAI_SAU_YN == "Y")
+                    BaseMessages.MsgBox_Infor("Ngày thanh toán đã trùng với ngày nghỉ.\nHãy sửa lại ô ngày thành toán thực tế.\nP/s: Trái phiếu thuộc loại làm việc từ thứ 2 đến thứ 6");
+                else BaseMessages.MsgBox_Infor("Ngày thanh toán đã trùng với ngày nghỉ.\nHãy sửa lại ô ngày thành toán thực tế.\nP/s: Trái phiếu thuộc loại làm việc từ thứ 2 đến thứ 7");
+            }
             return v_dat_ngay_thanh_toan_thuc;
         }
 #endregion
