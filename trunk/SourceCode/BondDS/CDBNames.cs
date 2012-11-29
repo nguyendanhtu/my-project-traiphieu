@@ -20,6 +20,12 @@ namespace BondDS.CDBNames
         public const decimal TT_TRUOC_NGAY_LV_GAN_NHAT = 11;
         public const decimal NGAN_HANG_THAM_CHIEU_LAI_SUAT = 12;
     }
+    public class GD_SO_TIEN_LAI_TREN_TRAI_PHIEU
+    {
+        public const string ID = "ID";
+        public const string ID_TRAI_PHIEU = "ID_TRAI_PHIEU";
+        public const string SO_TIEN_LAI_TREN_TRAI_PHIEU = "SO_TIEN_LAI_TREN_TRAI_PHIEU";
+    }
 
     public class HT_PHAN_QUYEN_HE_THONG
     {
