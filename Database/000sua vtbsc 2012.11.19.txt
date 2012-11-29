@@ -1,0 +1,760 @@
+B? UK trong GD_CHOT_LAI_DETAIL
+sua Proc [pr_DM_TRAI_CHU_Select_ChotLaiByIDTraiPhieuAndNgayChotLai]
+them truong ID_NHOM_NGUOI_DUNG trong bang HT_NGUOI_SU_DUNG
+them du lieu cho cac bang HT_NGUOI_SU_DUNG, HT_NHOM_NGUOI_DUNG, HT_PHAN_QUYEN_CHO_NHOM, HT_PHAN_QUYEN_HE_THONG, HT_PHAN_QUYEN_DETAIL
+GO
+ALTER PROC [dbo].[pr_DM_TRAI_CHU_Select_ChotLaiByIDTraiPhieuAndNgayChotLai]
+@ID_TRAI_PHIEU NUMERIC(18,0)
+, @NGAY_CHOT_LAI DATETIME
+AS
+SELECT
+tc.ID as ID,
+tc.ID as ID_CHOT_LAI,
+tc.ID AS ID_TRAI_CHU,
+1 AS SO_LUONG_TINH_LAI,
+1 AS SO_TIEN_LAI,
+'Y' DA_NHAN_TIEN_YN,
+@NGAY_CHOT_LAI AS NGAY_NHAN_TIEN,
+tc.TEN_TRAI_CHU,
+tc.MA_TRAI_CHU,
+tc.DIA_CHI,
+tc.MOBILE,
+tc.FAX,
+tc.CMT_GIAY_DKKD,
+tc.NGAY_CAP_CMT,
+tc.NOI_CAP_CMT,
+tc.ID_LOAI_TRAI_CHU,
+tc.ID_NGUOI_DUYET as ID_NGUOI_DUYET_TC,
+tc.ID_NGUOI_LAP as ID_NGUOI_LAP_TC,
+tc.ID_TRAI_PHIEU_SO_HUU,
+tc.SO_TAI_KHOAN,
+tc.MO_TAI_NGAN_HANG,
+tc.GHI_CHU1, tc.GHI_CHU2,tc.GHI_CHU3,
+tc.ID_TRANG_THAI,
+@NGAY_CHOT_LAI AS NGAY_CHOT_LAI,
+@NGAY_CHOT_LAI AS NGAY_THANH_TOAN,
+tc.ID_TRAI_PHIEU_SO_HUU as ID_TRAI_PHIEU,
+1 as KY_TINH_LAI,
+22 as TRANG_THAI_CHOT_LAI,
+'' as MUC_DICH,
+'' as GHI_CHU_CHOT_LAI,
+1 as ID_NGUOI_LAP_CHOT_LAI,
+1 as ID_NGUOI_DUYET_CHOT_LAI,
+dbo.f_so_du_trai_phieu_theo_trai_chu(tc.ID, @NGAY_CHOT_LAI) as TONG_SO_DU,
+dbo.f_so_du_kha_dung_trai_phieu_theo_trai_chu(tc.ID, @NGAY_CHOT_LAI) AS  SO_DU_KHA_DUNG
+FROM DM_TRAI_CHU as tc
+WHERE tc.ID_TRAI_PHIEU_SO_HUU = @ID_TRAI_PHIEU
+----Chua coppy sang anh dang
+GO
+ALTER PROC [dbo].[pr_GD_CHOT_LAI_Select_ChotLaiByIDTraiPhieuAndNgayChotLai]
+@ID_TRAI_PHIEU NUMERIC(18,0)
+, @NGAY_CHOT_LAI DATETIME
+AS
+SELECT * FROM GD_CHOT_LAI gcl
+WHERE gcl.NGAY_CHOT_LAI  = @NGAY_CHOT_LAI
+AND gcl.ID_TRAI_PHIEU = @ID_TRAI_PHIEU
+
+
+set ANSI_NULLS ON
+set QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[pr_GD_CHUYEN_NHUONG_duyet_giao_dich] 
+	@ID numeric(18, 0),	
+	@NGAY_XAC_NHAN datetime,	
+	@ID_TRAI_CHU_MUA numeric(18, 0),
+	@ID_TRAI_CHU_BAN numeric(18, 0),	
+	@SO_LUONG_CHUYEN_NHUONG numeric(18, 0),	
+	@ID_NGUOI_DUYET numeric(18, 0),
+	@ID_TRANG_THAI_CHUYEN_NHUONG numeric(18, 0)
+AS
+BEGIN
+--C?p nh?t giao d?ch chuy?n nhu?ng
+	UPDATE [dbo].[GD_CHUYEN_NHUONG]
+	SET 			
+		[ID_TRANG_THAI_CHUYEN_NHUONG] = @ID_TRANG_THAI_CHUYEN_NHUONG
+		,NGAY_XAC_NHAN = @NGAY_XAC_NHAN
+	WHERE
+		[ID] = @ID
+--C?p nh?t s? du trái ch? bán	
+	DECLARE @SO_LUONG_CHUYEN_NHUONG_ban numeric(18,0)
+	SET @SO_LUONG_CHUYEN_NHUONG_ban = 0 - @SO_LUONG_CHUYEN_NHUONG
+  EXEC 	dbo.pr_GD_SO_DU_TRAI_PHIEU_add_so_du @NGAY_XAC_NHAN, @ID_TRAI_CHU_BAN, @SO_LUONG_CHUYEN_NHUONG_ban, @SO_LUONG_CHUYEN_NHUONG_ban
+--C?p nh?t s? du trái ch? mua	
+  EXEC	dbo.pr_GD_SO_DU_TRAI_PHIEU_add_so_du @NGAY_XAC_NHAN, @ID_TRAI_CHU_MUA, @SO_LUONG_CHUYEN_NHUONG, @SO_LUONG_CHUYEN_NHUONG
+END
+
+GO
+---them truong khi update gd_chuyen nhuong
+ALTER PROCEDURE [dbo].[pr_GD_CHUYEN_NHUONG_duyet_giao_dich] 
+	@ID numeric(18, 0),	
+	@NGAY_XAC_NHAN datetime,	
+	@ID_TRAI_CHU_MUA numeric(18, 0),
+	@ID_TRAI_CHU_BAN numeric(18, 0),	
+	@SO_LUONG_CHUYEN_NHUONG numeric(18, 0),	
+	@ID_NGUOI_DUYET numeric(18, 0),
+	@ID_TRANG_THAI_CHUYEN_NHUONG numeric(18, 0),
+	@NOI_DUNG_GIAO_DICH NVARCHAR(250),
+	@TY_LE_PHI_GD NUMERIC(21,10),
+	@PHI_GIAO_DICH NUMERIC(21,3),
+	@PHAN_TRAM_THUE NUMERIC(21,10),
+	@GIA_TRI_THUE NUMERIC(21,10),
+	@GIA_TRI_THUC NUMERIC(21,3),
+	@NGAY_VAO_SO DATETIME	
+AS
+BEGIN
+--C?p nh?t giao d?ch chuy?n nhu?ng
+	UPDATE [dbo].[GD_CHUYEN_NHUONG]
+	SET 			
+		NGAY_XAC_NHAN = @NGAY_XAC_NHAN,	
+		NGAY_VAO_SO = @NGAY_VAO_SO,
+		SO_LUONG_CHUYEN_NHUONG = @SO_LUONG_CHUYEN_NHUONG,
+		GIA_TRI_CHUYEN_NHUONG_THUC_TE = @GIA_TRI_THUC,
+		TY_LE_PHI_GD = @TY_LE_PHI_GD,
+		PHI_GD = @PHI_GIAO_DICH,
+		NOI_DUNG_GIAO_DICH = @NOI_DUNG_GIAO_DICH,
+		PHAN_TRAM_THUE = @PHAN_TRAM_THUE,
+		GIA_TRI_THUE = @GIA_TRI_THUE,
+		ID_NGUOI_DUYET = @ID_NGUOI_DUYET,
+		[ID_TRANG_THAI_CHUYEN_NHUONG] = @ID_TRANG_THAI_CHUYEN_NHUONG
+	WHERE
+		[ID] = @ID
+--C?p nh?t s? du trái ch? bán	
+	DECLARE @SO_LUONG_CHUYEN_NHUONG_ban numeric(18,0)
+	SET @SO_LUONG_CHUYEN_NHUONG_ban = 0 - @SO_LUONG_CHUYEN_NHUONG
+  EXEC 	dbo.pr_GD_SO_DU_TRAI_PHIEU_add_so_du @NGAY_XAC_NHAN, @ID_TRAI_CHU_BAN, @SO_LUONG_CHUYEN_NHUONG_ban, @SO_LUONG_CHUYEN_NHUONG_ban
+--C?p nh?t s? du trái ch? mua	
+  EXEC	dbo.pr_GD_SO_DU_TRAI_PHIEU_add_so_du @NGAY_XAC_NHAN, @ID_TRAI_CHU_MUA, @SO_LUONG_CHUYEN_NHUONG, @SO_LUONG_CHUYEN_NHUONG
+END
+
+--Sua funstion 
+set ANSI_NULLS ON
+set QUOTED_IDENTIFIER ON
+GO
+
+ALTER function  [dbo].[f_get_lai_suat_in_times] (
+	@ID_TRAI_PHIEU numeric(18, 0),
+	@NGAY_BAT_DAU DATETIME,
+	@NGAY_KET_THUC DATETIME
+) RETURNS @table_lai_suat TABLE
+	(
+		ID INT,
+		NGAY_DAU DATETIME,
+		NGAY_KET_THUC DATETIME,
+		SO_NGAY_AP_DUNG NUMERIC(18,0),
+		LAI_SUAT NUMERIC(21,3),	
+		GHI_CHU NVARCHAR(250)
+	)
+AS
+BEGIN
+	-- Khai báo bi?n luu lãi su?t th?a thu?n
+	DECLARE @id_lai_suat_tt INT
+	DECLARE @ngay_bat_dau_ls_tt DATETIME
+	DECLARE @ngay_ket_thuc_ls_tt DATETIME
+	DECLARE @lai_suat_tt NUMERIC(21,3)
+	DECLARE @ghi_chu_ls_tt NVARCHAR(250)
+	
+	-- Khai báo bi?n luu lãi su?t c?p nh?t
+	DECLARE @id_lai_suat_cn INT
+	DECLARE @ngay_bat_dau_ls_cn DATETIME
+	DECLARE @ngay_ket_thuc_ls_cn DATETIME
+	DECLARE @lai_suat_cn NUMERIC(21,3)
+	DECLARE @ghi_chu_ls_cn NVARCHAR(250)	
+	
+	-- Khai báo b?ng d? li?u cu?i cùng
+	DECLARE @table_result TABLE (
+	ID INT,
+	NGAY_DAU DATETIME,
+	NGAY_KET_THUC DATETIME,
+	SO_NGAY_AP_DUNG NUMERIC(18,0),
+	LAI_SUAT NUMERIC(21,3),	
+	GHI_CHU NVARCHAR(250))
+	
+	DECLARE @table_item TABLE (
+	ID INT,
+	NGAY_DAU DATETIME,
+	NGAY_KET_THUC DATETIME,	
+	LAI_SUAT NUMERIC(21,3),	
+	GHI_CHU NVARCHAR(250))
+	
+	--Chèn d? li?u là nh?ng giao d?ch c?p nh?t lái suât có ngày b?t d?u trong kho?ng (ngay_dau, ngay_ket_thuc)
+	INSERT INTO @table_item(ID,NGAY_DAU,NGAY_KET_THUC,LAI_SUAT, GHI_CHU)
+	SELECT ID
+	, NGAY_BAT_DAU_AD_LS AS NGAY_DAU
+	, dbo.f_get_ngay_ket_thuc_ls(@ID_TRAI_PHIEU, NGAY_BAT_DAU_AD_LS) AS NGAY_KET_THUC
+	, LAI_SUAT
+	, GHI_CHU
+	FROM [dbo].[GD_LICH_THANH_TOAN_LAI_GOC]
+	WHERE ID_TRAI_PHIEU = @ID_TRAI_PHIEU
+	AND CAP_NHAT_LS_YN = 'Y'
+	AND DA_THUC_HIEN_YN = 'Y'
+	AND DA_DUYET_YN = 'Y'
+	AND NGAY_BAT_DAU_AD_LS > @NGAY_BAT_DAU
+	AND NGAY_BAT_DAU_AD_LS < @NGAY_KET_THUC
+	
+	--Chèn d? li?u là giao d?ch c?p nh?t lái suât có ngày b?t d?u sát NGAY_DAU nh?t
+	INSERT INTO @table_item(ID,NGAY_DAU,NGAY_KET_THUC,LAI_SUAT, GHI_CHU)
+	SELECT TOP 1 ID
+	, glttlg.NGAY_BAT_DAU_AD_LS AS NGAY_DAU
+	, dbo.f_get_ngay_ket_thuc_ls(@ID_TRAI_PHIEU, NGAY_BAT_DAU_AD_LS) AS NGAY_KET_THUC
+	, LAI_SUAT
+	, GHI_CHU
+	FROM GD_LICH_THANH_TOAN_LAI_GOC glttlg
+	WHERE glttlg.ID_TRAI_PHIEU = @ID_TRAI_PHIEU
+	AND CAP_NHAT_LS_YN = 'Y'
+	AND DA_THUC_HIEN_YN = 'Y'
+	AND DA_DUYET_YN = 'Y'
+	AND NGAY_BAT_DAU_AD_LS <= @NGAY_BAT_DAU	
+	ORDER BY glttlg.NGAY_BAT_DAU_AD_LS DESC 
+	
+	--Update l?i ngày cho nh?ng kho?ng không thu?c th?i gian dang xét
+	UPDATE @table_item
+	SET		
+		NGAY_DAU = @NGAY_BAT_DAU
+	WHERE NGAY_DAU < @NGAY_BAT_DAU
+	
+	UPDATE @table_item
+	SET	
+		NGAY_KET_THUC = @NGAY_KET_THUC
+	WHERE NGAY_KET_THUC > @NGAY_KET_THUC	
+	
+	--Xem l?i ph?n này c?n thêm m?t @table_ls_thoa_thuan n?a select nh?ng dòng có ngày b?t d?u ho?c ngày k?t thúc thu?c kho?ng dang xét
+	--S? d?ng 2 vòng for d? c?p nh?t l?i su?t vào @table_result
+	--Thay d?i nh?ng cái giao v?i ls_thoa_thuan
+	--Xóa nh?ng cái n?m trong ls_thao_thuan
+	DECLARE v_cur_ls_thoa_thuan CURSOR FOR
+	SELECT ID
+	, NGAY_BAT_DAU_AD_LS AS NGAY_DAU
+	, DATEADD(DAY,1,glttls.NGAY_KET_THUC_AD_LS) AS NGAY_KET_THUC
+	, LAI_SUAT
+	, GHI_CHU
+	FROM [dbo].[GD_LICH_THANH_TOAN_LAI_GOC] glttls
+	WHERE ID_TRAI_PHIEU = @ID_TRAI_PHIEU
+	AND LAI_SUAT_THOA_THUAN_YN = 'Y'
+	AND DA_THUC_HIEN_YN = 'Y'
+	AND DA_DUYET_YN = 'Y'
+	AND ((NGAY_BAT_DAU_AD_LS > @NGAY_BAT_DAU AND NGAY_BAT_DAU_AD_LS < @NGAY_KET_THUC)
+	OR (glttls.NGAY_KET_THUC_AD_LS >= @NGAY_BAT_DAU AND glttls.NGAY_KET_THUC_AD_LS < @NGAY_KET_THUC))
+	
+	
+	OPEN v_cur_ls_thoa_thuan;
+	FETCH NEXT FROM v_cur_ls_thoa_thuan 
+	INTO @id_lai_suat_tt
+		, @ngay_bat_dau_ls_tt
+		, @ngay_ket_thuc_ls_tt
+		, @lai_suat_tt
+		, @ghi_chu_ls_tt
+	WHILE @@FETCH_STATUS = 0
+	BEGIN
+		IF @ngay_bat_dau_ls_tt < @NGAY_BAT_DAU
+		BEGIN
+			SET	@ngay_bat_dau_ls_tt = @NGAY_BAT_DAU
+		END
+		
+		IF @ngay_ket_thuc_ls_tt > @NGAY_KET_THUC
+		BEGIN
+			SET @ngay_ket_thuc_ls_tt = @NGAY_KET_THUC
+		END
+		INSERT INTO @table_result
+		(
+			ID,
+			NGAY_DAU,
+			NGAY_KET_THUC,
+			SO_NGAY_AP_DUNG,
+			LAI_SUAT,
+			GHI_CHU
+		)		
+		VALUES
+		(
+			@id_lai_suat_tt, 
+			@ngay_bat_dau_ls_tt,
+			@ngay_ket_thuc_ls_tt,
+			dbo.f_get_so_ngay(@ID_TRAI_PHIEU, @ngay_bat_dau_ls_tt, @ngay_ket_thuc_ls_tt),		
+			@lai_suat_tt, 
+			@ghi_chu_ls_tt
+		)	
+		
+		DECLARE v_cur_ls_cap_nhat CURSOR FOR
+		SELECT * FROM @table_item
+		
+		OPEN v_cur_ls_cap_nhat;
+		FETCH NEXT FROM v_cur_ls_cap_nhat 
+		INTO @id_lai_suat_cn
+			, @ngay_bat_dau_ls_cn
+			, @ngay_ket_thuc_ls_cn
+			, @lai_suat_cn
+			, @ghi_chu_ls_cn
+		WHILE @@FETCH_STATUS = 0
+		BEGIN
+			IF (@ngay_bat_dau_ls_tt <= @ngay_bat_dau_ls_cn 
+				AND @ngay_ket_thuc_ls_cn <= @ngay_ket_thuc_ls_tt)
+			BEGIN
+				DELETE FROM @table_item WHERE ID = @id_lai_suat_cn
+			END
+			ELSE
+			BEGIN
+				IF (@ngay_bat_dau_ls_cn < @ngay_bat_dau_ls_tt 
+					AND @ngay_bat_dau_ls_tt < @ngay_ket_thuc_ls_cn 
+					AND @ngay_ket_thuc_ls_cn <= @ngay_ket_thuc_ls_tt)
+				BEGIN
+					UPDATE @table_item
+					SET
+						NGAY_KET_THUC = @ngay_bat_dau_ls_tt					
+					WHERE ID = @id_lai_suat_cn
+				END
+				ELSE
+				BEGIN
+					IF (@ngay_bat_dau_ls_tt <= @ngay_bat_dau_ls_cn
+						AND @ngay_bat_dau_ls_cn < @ngay_ket_thuc_ls_tt 
+						AND @ngay_ket_thuc_ls_tt < @ngay_ket_thuc_ls_cn)
+					BEGIN
+						UPDATE @table_item
+						SET							
+							NGAY_DAU = @ngay_ket_thuc_ls_tt					
+						WHERE ID = @id_lai_suat_cn
+					END
+					ELSE
+					BEGIN
+						IF (@ngay_bat_dau_ls_cn < @ngay_bat_dau_ls_tt
+							AND @ngay_ket_thuc_ls_tt < @ngay_ket_thuc_ls_cn)
+						BEGIN
+							UPDATE @table_item
+							SET
+								NGAY_KET_THUC = @ngay_bat_dau_ls_tt			
+							WHERE ID = @id_lai_suat_cn
+							
+							INSERT INTO @table_item
+							(
+								ID,
+								NGAY_DAU,
+								NGAY_KET_THUC,
+								LAI_SUAT,
+								GHI_CHU
+							)
+							VALUES
+							(
+								@id_lai_suat_cn
+								, @ngay_ket_thuc_ls_tt
+								, @ngay_ket_thuc_ls_cn
+								, @lai_suat_cn
+								, @ghi_chu_ls_cn
+							)
+						END
+					END
+				END
+			END			
+			FETCH NEXT FROM v_cur_ls_cap_nhat 
+			INTO @id_lai_suat_cn
+			, @ngay_bat_dau_ls_cn
+			, @ngay_ket_thuc_ls_cn
+			, @lai_suat_cn
+			, @ghi_chu_ls_cn	
+		END
+		
+		CLOSE v_cur_ls_cap_nhat
+		DEALLOCATE v_cur_ls_cap_nhat;
+		FETCH NEXT FROM v_cur_ls_thoa_thuan INTO @id_lai_suat_tt
+											, @ngay_bat_dau_ls_tt
+											,@ngay_ket_thuc_ls_tt
+											,@lai_suat_tt
+											, @ghi_chu_ls_tt
+	END
+	CLOSE v_cur_ls_thoa_thuan
+	DEALLOCATE v_cur_ls_thoa_thuan;
+	
+	/* Chèn thêm @table_item vào @table_result*/
+	INSERT INTO @table_result
+	(
+		ID,
+		NGAY_DAU,
+		NGAY_KET_THUC,
+		SO_NGAY_AP_DUNG,
+		LAI_SUAT,
+		GHI_CHU
+	)
+	SELECT
+		tr.ID,
+		tr.NGAY_DAU,
+		tr.NGAY_KET_THUC,
+		dbo.f_get_so_ngay(@ID_TRAI_PHIEU, tr.NGAY_DAU, tr.NGAY_KET_THUC),
+		tr.LAI_SUAT,
+		tr.GHI_CHU
+	FROM @table_item tr
+	ORDER BY tr.NGAY_DAU DESC
+		
+	INSERT INTO @table_lai_suat
+	(
+		ID,
+		NGAY_DAU,
+		NGAY_KET_THUC,
+		SO_NGAY_AP_DUNG,
+		LAI_SUAT,
+		GHI_CHU
+	)
+	SELECT
+		tr.ID,
+		tr.NGAY_DAU,
+		tr.NGAY_KET_THUC,
+		tr.SO_NGAY_AP_DUNG,
+		tr.LAI_SUAT,
+		tr.GHI_CHU
+	FROM
+		@table_result tr
+	RETURN
+END	
+
+---26/11/2012
+CREATE procedure [dbo].[pr_HT_PHAN_QUYEN_HE_THONG_Delele_All_Quyen_Of_group_user]
+	@ip_dc_group_user_id numeric(18,0)
+
+as
+delete  FROM HT_PHAN_QUYEN_CHO_NHOM WHERE ID_NHOM_NGUOI_SU_DUNG = @ip_dc_group_user_id
+GO
+ALTER PROCEDURE [dbo].[pr_HT_PHAN_QUYEN_DETAIL_fill_dataset_by_user]
+@ip_user_name NVARCHAR(50)
+
+AS
+
+SELECT distinct hpqd.* FROM 
+HT_PHAN_QUYEN_DETAIL hpqd
+, HT_PHAN_QUYEN_HE_THONG hpqht
+, HT_PHAN_QUYEN_CHO_NHOM hpqcn
+, HT_NHOM_NGUOI_SU_DUNG hnnsd
+, HT_NGUOI_SU_DUNG hnsd
+WHERE
+hpqd.ID_PHAN_QUYEN_HT = hpqht.ID
+AND hpqcn.ID_PHAN_QUYEN_HE_THONG = hpqht.ID
+AND hpqcn.ID_NHOM_NGUOI_SU_DUNG = hnnsd.ID
+AND hnnsd.ID = hnsd.ID_NHOM_NGUOI_DUNG
+AND hnsd.TEN_TRUY_CAP = @ip_user_name
+
+---Sua proc insert bang nguoi dung
+GO
+
+ALTER PROCEDURE [dbo].[pr_HT_NGUOI_SU_DUNG_Insert]
+	@ID numeric(18, 0) out,
+	@TEN_TRUY_CAP nvarchar(35),
+	@TEN nvarchar(250),
+	@MAT_KHAU nvarchar(35),
+	@NGAY_TAO datetime,
+	@NGUOI_TAO nvarchar(15),
+	@TRANG_THAI nvarchar(15),
+	@BUILT_IN_YN nvarchar(1),
+	@ID_NHOM_NGUOI_DUNG numeric(18, 0)
+AS
+INSERT [dbo].[HT_NGUOI_SU_DUNG]
+(
+	[TEN_TRUY_CAP],
+	[TEN],
+	[MAT_KHAU],
+	[NGAY_TAO],
+	[NGUOI_TAO],
+	[TRANG_THAI],
+	[BUILT_IN_YN],
+	ID_NHOM_NGUOI_DUNG
+)
+VALUES
+(
+	@TEN_TRUY_CAP,
+	@TEN,
+	@MAT_KHAU,
+	@NGAY_TAO,
+	@NGUOI_TAO,
+	@TRANG_THAI,
+	@BUILT_IN_YN,
+	@ID_NHOM_NGUOI_DUNG
+)
+set @id=scope_identity()
+
+----Update
+GO
+
+ALTER PROCEDURE [dbo].[pr_HT_NGUOI_SU_DUNG_Update]
+	@ID numeric(18, 0),
+	@TEN_TRUY_CAP nvarchar(35),
+	@TEN nvarchar(250),
+	@MAT_KHAU nvarchar(35),
+	@NGAY_TAO datetime,
+	@NGUOI_TAO nvarchar(15),
+	@TRANG_THAI nvarchar(15),
+	@BUILT_IN_YN nvarchar(1),
+	@ID_NHOM_NGUOI_DUNG numeric(18, 0)
+AS
+UPDATE [dbo].[HT_NGUOI_SU_DUNG]
+SET 
+	[TEN_TRUY_CAP] = @TEN_TRUY_CAP,
+	[TEN] = @TEN,
+	[MAT_KHAU] = @MAT_KHAU,
+	[NGAY_TAO] = @NGAY_TAO,
+	[NGUOI_TAO] = @NGUOI_TAO,
+	[TRANG_THAI] = @TRANG_THAI,
+	[BUILT_IN_YN] = @BUILT_IN_YN,
+	ID_NHOM_NGUOI_DUNG = @ID_NHOM_NGUOI_DUNG
+WHERE
+	[ID] = @ID
+
+GO
+CREATE PROCEDURE [dbo].[pr_HT_NHOM_NGUOI_SU_DUNG_Insert]
+	@ID numeric(18, 0),
+	@MA_NHOM nvarchar(35),
+	@GHI_CHU nvarchar(250),
+	@TRANG_THAI_NHOM nvarchar(50),
+	@ID_INPUTED_BY numeric(18, 0),
+	@INPUTED_DATE datetime,
+	@ID_LAST_UPDATED_BY numeric(18, 0),
+	@LAS_UPDATED_DATE datetime
+AS
+INSERT [dbo].[HT_NHOM_NGUOI_SU_DUNG]
+(
+	[ID],
+	[MA_NHOM],
+	[GHI_CHU],
+	[TRANG_THAI_NHOM],
+	[ID_INPUTED_BY],
+	[INPUTED_DATE],
+	[ID_LAST_UPDATED_BY],
+	[LAS_UPDATED_DATE]
+)
+VALUES
+(
+	@ID,
+	@MA_NHOM,
+	@GHI_CHU,
+	@TRANG_THAI_NHOM,
+	@ID_INPUTED_BY,
+	@INPUTED_DATE,
+	@ID_LAST_UPDATED_BY,
+	@LAS_UPDATED_DATE
+)
+
+CREATE PROCEDURE [dbo].[pr_HT_NHOM_NGUOI_SU_DUNG_Update]
+	@ID numeric(18, 0),
+	@MA_NHOM nvarchar(35),
+	@GHI_CHU nvarchar(250),
+	@TRANG_THAI_NHOM nvarchar(50),
+	@ID_INPUTED_BY numeric(18, 0),
+	@INPUTED_DATE datetime,
+	@ID_LAST_UPDATED_BY numeric(18, 0),
+	@LAS_UPDATED_DATE datetime
+AS
+UPDATE [dbo].[HT_NHOM_NGUOI_SU_DUNG]
+SET 
+	[MA_NHOM] = @MA_NHOM,
+	[GHI_CHU] = @GHI_CHU,
+	[TRANG_THAI_NHOM] = @TRANG_THAI_NHOM,
+	[ID_INPUTED_BY] = @ID_INPUTED_BY,
+	[INPUTED_DATE] = @INPUTED_DATE,
+	[ID_LAST_UPDATED_BY] = @ID_LAST_UPDATED_BY,
+	[LAS_UPDATED_DATE] = @LAS_UPDATED_DATE
+WHERE
+	[ID] = @ID
+GO
+
+CREATE PROCEDURE [dbo].[pr_HT_NHOM_NGUOI_SU_DUNG_Delete]
+	@ID numeric(18, 0)
+AS
+DELETE FROM [dbo].[HT_NHOM_NGUOI_SU_DUNG]
+WHERE
+	[ID] = @ID
+GO
+
+CREATE PROCEDURE [dbo].[pr_HT_PHAN_QUYEN_DETAIL_Insert]
+	@ID numeric(18, 0),
+	@FORM_NAME nvarchar(50),
+	@CONTROL_NAME nvarchar(50),
+	@CONTROL_TYPE nvarchar(35),
+	@VISIBLE_YN nvarchar(1),
+	@ENABLED_YN nvarchar(1),
+	@ID_PHAN_QUYEN_HT numeric(18, 0)
+AS
+INSERT [dbo].[HT_PHAN_QUYEN_DETAIL]
+(
+	[ID],
+	[FORM_NAME],
+	[CONTROL_NAME],
+	[CONTROL_TYPE],
+	[VISIBLE_YN],
+	[ENABLED_YN],
+	[ID_PHAN_QUYEN_HT]
+)
+VALUES
+(
+	@ID,
+	@FORM_NAME,
+	@CONTROL_NAME,
+	@CONTROL_TYPE,
+	@VISIBLE_YN,
+	@ENABLED_YN,
+	@ID_PHAN_QUYEN_HT
+)
+
+CREATE PROCEDURE [dbo].[pr_HT_PHAN_QUYEN_DETAIL_Update]
+	@ID numeric(18, 0),
+	@FORM_NAME nvarchar(50),
+	@CONTROL_NAME nvarchar(50),
+	@CONTROL_TYPE nvarchar(35),
+	@VISIBLE_YN nvarchar(1),
+	@ENABLED_YN nvarchar(1),
+	@ID_PHAN_QUYEN_HT numeric(18, 0)
+AS
+UPDATE [dbo].[HT_PHAN_QUYEN_DETAIL]
+SET 
+	[FORM_NAME] = @FORM_NAME,
+	[CONTROL_NAME] = @CONTROL_NAME,
+	[CONTROL_TYPE] = @CONTROL_TYPE,
+	[VISIBLE_YN] = @VISIBLE_YN,
+	[ENABLED_YN] = @ENABLED_YN,
+	[ID_PHAN_QUYEN_HT] = @ID_PHAN_QUYEN_HT
+WHERE
+	[ID] = @ID
+
+GO
+
+CREATE PROCEDURE [dbo].[pr_HT_PHAN_QUYEN_DETAIL_Delete]
+	@ID numeric(18, 0)
+AS
+DELETE FROM [dbo].[HT_PHAN_QUYEN_DETAIL]
+WHERE
+	[ID] = @ID
+GO
+CREATE PROCEDURE [dbo].[pr_HT_PHAN_QUYEN_CHO_NHOM_Insert]
+	@ID_NHOM_NGUOI_SU_DUNG numeric(18, 0),
+	@ID_PHAN_QUYEN_HE_THONG numeric(18, 0),
+	@ID numeric(18, 0) OUTPUT
+AS
+INSERT [dbo].[HT_PHAN_QUYEN_CHO_NHOM]
+(
+	[ID_NHOM_NGUOI_SU_DUNG],
+	[ID_PHAN_QUYEN_HE_THONG]
+)
+VALUES
+(
+	@ID_NHOM_NGUOI_SU_DUNG,
+	@ID_PHAN_QUYEN_HE_THONG
+)
+SELECT @ID=SCOPE_IDENTITY()
+GO
+
+CREATE PROCEDURE [dbo].[pr_HT_PHAN_QUYEN_CHO_NHOM_Update]
+	@ID numeric(18, 0),
+	@ID_NHOM_NGUOI_SU_DUNG numeric(18, 0),
+	@ID_PHAN_QUYEN_HE_THONG numeric(18, 0)
+AS
+UPDATE [dbo].[HT_PHAN_QUYEN_CHO_NHOM]
+SET 
+	[ID_NHOM_NGUOI_SU_DUNG] = @ID_NHOM_NGUOI_SU_DUNG,
+	[ID_PHAN_QUYEN_HE_THONG] = @ID_PHAN_QUYEN_HE_THONG
+WHERE
+	[ID] = @ID
+CREATE PROCEDURE [dbo].[pr_HT_PHAN_QUYEN_CHO_NHOM_Delete]
+	@ID numeric(18, 0)
+AS
+DELETE FROM [dbo].[HT_PHAN_QUYEN_CHO_NHOM]
+WHERE
+	[ID] = @ID
+---Having quyen ngay 27/11/2012 17h50	
+GO
+ALTER procedure [dbo].[pr_is_having_quyen_user](
+   @ip_dc_user_id  numeric(18,0)
+   ,@ip_str_ma_quyen nvarchar(100)
+   ,@op_str_is_having_quyen nvarchar(1) out
+)
+as
+begin
+   declare @v_is_having_record numeric(10,0)
+   
+   set @v_is_having_record =	
+      (
+    	   select count(*)  
+	   from HT_PHAN_QUYEN_DETAIL hpqd
+		, HT_PHAN_QUYEN_HE_THONG hpqht
+		, HT_PHAN_QUYEN_CHO_NHOM hpqcn
+		, HT_NHOM_NGUOI_SU_DUNG hnnsd
+		, HT_NGUOI_SU_DUNG hnsd
+		WHERE
+		hpqd.ID_PHAN_QUYEN_HT = hpqht.ID
+		AND hpqcn.ID_PHAN_QUYEN_HE_THONG = hpqht.ID
+		AND hpqcn.ID_NHOM_NGUOI_SU_DUNG = hnnsd.ID
+		AND hnnsd.ID = hnsd.ID_NHOM_NGUOI_DUNG
+		AND hnsd.ID = @ip_dc_user_id
+		AND hpqd.FORM_NAME = 'f001_main_form'		
+		AND hpqd.CONTROL_NAME = @ip_str_ma_quyen
+      )
+   if (@v_is_having_record >0) 
+       set @op_str_is_having_quyen = N'Y'
+   else 
+       set @op_str_is_having_quyen = N'N'
+end
+
+--2012/11/30---Tao Proc tinh so tien lai trem 1 trai phieu trong 1 ky tinh lai
+GO
+CREATE PROCEDURE [dbo].[pr_GD_SO_TIEN_LAI_TREN_TRAI_PHIEU_select_lai_in_times]
+@id_trai_phieu NUMERIC(18,0),
+@ngay_dau_ky DATETIME,
+@ngay_cuoi_ky DATETIME
+AS
+BEGIN	
+	--B?ng su?t ra
+	DECLARE @table_output TABLE (
+		ID NUMERIC(18,0),
+		ID_TRAI_PHIEU NUMERIC(18,0),
+		SO_TIEN_LAI_TREN_TRAI_PHIEU NUMERIC(21,4))
+	
+	DECLARE @tl_so_tien_lai NUMERIC(21,3)
+	
+	--Thông tin lãi su?t
+	DECLARE @ls_gia_tri_ls  NUMERIC(21,10)
+	DECLARE @ls_so_ngay_ap_dung NUMERIC(18,0)
+	
+	
+	--L?y thông tin trái phi?u
+	DECLARE @tp_menh_gia NUMERIC(21,3)
+	DECLARE @tp_co_so_tinh_lai NVARCHAR(50)
+	
+	SELECT @tp_menh_gia = dtp.MENH_GIA,
+	@tp_co_so_tinh_lai = dtp.CO_SO_TINH_LAI
+	FROM V_DM_TRAI_PHIEU dtp WHERE dtp.ID = @id_trai_phieu
+	
+	SET @tl_so_tien_lai = 0
+	
+	DECLARE v_cur_lai_suat CURSOR FOR
+	SELECT ls.LAI_SUAT, ls.SO_NGAY_AP_DUNG
+	FROM dbo.f_get_lai_suat_in_times(@id_trai_phieu, @ngay_dau_ky, @ngay_cuoi_ky) ls
+
+	OPEN v_cur_lai_suat;
+	FETCH NEXT FROM v_cur_lai_suat
+	INTO @ls_gia_tri_ls, @ls_so_ngay_ap_dung
+	
+	WHILE @@FETCH_STATUS = 0
+	BEGIN
+		IF (@tp_co_so_tinh_lai = '365/365' OR @tp_co_so_tinh_lai = '360/365')																	
+		BEGIN
+			SET @tl_so_tien_lai = @tl_so_tien_lai + (@tp_menh_gia*@ls_gia_tri_ls*@ls_so_ngay_ap_dung)/365
+		END
+		ELSE--365/360 or 360/360
+		BEGIN
+			SET @tl_so_tien_lai = @tl_so_tien_lai + (@tp_menh_gia*@ls_gia_tri_ls*@ls_so_ngay_ap_dung)/360
+		END	
+		--Lãi su?t ti?p theo
+		FETCH NEXT FROM v_cur_lai_suat
+		INTO @ls_gia_tri_ls, @ls_so_ngay_ap_dung
+	END
+	--Ðóng cur lái su?t
+	CLOSE v_cur_lai_suat
+	DEALLOCATE v_cur_lai_suat;
+	
+	INSERT INTO @table_output
+	(
+		ID,
+		ID_TRAI_PHIEU,
+		SO_TIEN_LAI_TREN_TRAI_PHIEU
+	)
+	VALUES
+	(
+		1,
+		@id_trai_phieu,
+		@tl_so_tien_lai
+	)
+		
+	SELECT * FROM @table_output
+END
