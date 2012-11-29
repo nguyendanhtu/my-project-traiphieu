@@ -209,6 +209,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_GD_SO_DU_TRAI_PHIEU.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_GD_SO_TIEN_LAI_TREN_TRAI_PHIEU.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_GD_SO_TIEN_LAI_TREN_TRAI_PHIEU.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_GD_THONG_BAO_LAI_SUAT_IN_TIMES.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -519,6 +524,17 @@
     </None>
     <None Include="DS_GD_SO_DU_TRAI_PHIEU.xss">
       <DependentUpon>DS_GD_SO_DU_TRAI_PHIEU.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_SO_TIEN_LAI_TREN_TRAI_PHIEU.xsc">
+      <DependentUpon>DS_GD_SO_TIEN_LAI_TREN_TRAI_PHIEU.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_SO_TIEN_LAI_TREN_TRAI_PHIEU.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_GD_SO_TIEN_LAI_TREN_TRAI_PHIEU.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_GD_SO_TIEN_LAI_TREN_TRAI_PHIEU.xss">
+      <DependentUpon>DS_GD_SO_TIEN_LAI_TREN_TRAI_PHIEU.xsd</DependentUpon>
     </None>
     <None Include="DS_GD_THONG_BAO_LAI_SUAT_IN_TIMES.xsc">
       <DependentUpon>DS_GD_THONG_BAO_LAI_SUAT_IN_TIMES.xsd</DependentUpon>
