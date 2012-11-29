@@ -146,6 +146,7 @@
     <Compile Include="US_GD_NHAC_VIEC.cs" />
     <Compile Include="US_GD_PHONG_GIAI_TOA.cs" />
     <Compile Include="US_GD_SO_DU_TRAI_PHIEU.cs" />
+    <Compile Include="US_GD_SO_TIEN_LAI_TREN_TRAI_PHIEU.cs" />
     <Compile Include="US_GD_THONG_BAO_LAI_SUAT_IN_TIMES.cs" />
     <Compile Include="US_HT_BACKUP_HISTORY.cs" />
     <Compile Include="US_HT_BUSINESS_PROCESS_LOCK.cs" />
