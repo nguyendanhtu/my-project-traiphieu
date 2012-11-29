@@ -28,7 +28,7 @@ Public Class CAppContext_201
     Public Shared Sub LoadDecentralizationByUserLogin()
         Dim v_us As New US_HT_PHAN_QUYEN_DETAIL
         m_dsDecentralization.Clear()
-        v_us.FillDatasetByUserLogin(m_dsDecentralization, CAppContext_201.getCurrentUser())
+        v_us.FillDatasetByUserLogin(m_dsDecentralization, CAppContext_201.getCurrentUserName())
     End Sub
     Public Function CanUseControl(ByVal ip_strFormName As String, ByVal ip_strControlName As String, ByVal ip_strControlType As String) As Boolean Implements IPCommon.IControlerControl.CanUseControl
         Return Me.CanUseThisControl(ip_strFormName, ip_strControlName, ip_strControlType)
