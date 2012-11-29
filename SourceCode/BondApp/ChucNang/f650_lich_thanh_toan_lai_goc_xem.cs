@@ -398,13 +398,27 @@ namespace BondApp
             v_obj_word_rpt.AddFindAndReplace("<GHI_CHU_VE_PHUONG_THUC_XAC_DINH_LAI_SUAT>", m_us_v_trai_phieu.strGHI_CHU_PHUONG_THUC_XD_LAI_SUAT);
             v_obj_word_rpt.Export2Word(true);
         }
-
+        private DateTime get_ngay_thanh_toan(DateTime ip_ngay_chot_lai)
+        {
+            US_V_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_V_DM_DOT_PHAT_HANH(m_us_v_trai_phieu.dcID_DOT_PHAT_HANH);
+            DS_DM_NGAY_LAM_VIEC v_ds_dm_ng_lam_viec = new DS_DM_NGAY_LAM_VIEC();
+            US_DM_NGAY_LAM_VIEC v_us_dm_ng_lam_viec = new US_DM_NGAY_LAM_VIEC();
+            decimal v_so_ngay_truoc_tt = m_us_v_trai_phieu.dcSO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN;
+            v_us_dm_ng_lam_viec.FillDatasetGetNgayThanhToan(
+                v_ds_dm_ng_lam_viec,
+                ip_ngay_chot_lai,
+                v_so_ngay_truoc_tt,
+                v_us_dm_dot_phat_hanh.strNGAY_LAM_VIEC_HAI_SAU_YN);
+            if (v_ds_dm_ng_lam_viec.DM_NGAY_LAM_VIEC == null || v_ds_dm_ng_lam_viec.DM_NGAY_LAM_VIEC.Count < v_so_ngay_truoc_tt) return ip_ngay_chot_lai;
+            return CIPConvert.ToDatetime(CIPConvert.ToStr(v_ds_dm_ng_lam_viec.DM_NGAY_LAM_VIEC.Rows[(int)v_so_ngay_truoc_tt - 1][DM_NGAY_LAM_VIEC.NGAY]));
+        }
         private void thong_bao_ngay_chot_tien_lai()
         {
             if (m_fg.Rows[m_fg.Row].UserData == null) return;
             grid2us_object(m_us_gd_lich_tt_lai_goc, m_fg.Row);
             DateTime v_dat_ngay_bdau_thanh_toan, v_dat_ngay_thanh_toan;
-            v_dat_ngay_thanh_toan = m_us_gd_lich_tt_lai_goc.datNGAY.AddDays((int)m_us_v_trai_phieu.dcSO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN);
+            //Ham duoi nay tinh sai ngay thanh toan anh nhe --- Anh xem cho nao cua anh con tinh sai kieu nay thi sua di nhe
+            v_dat_ngay_thanh_toan = get_ngay_thanh_toan( m_us_gd_lich_tt_lai_goc.datNGAY);//.AddDays((int)m_us_v_trai_phieu.dcSO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN);
             if (m_us_v_trai_phieu.dcID_DV_KY_TRA_LAI == ID_DON_VI_KY_HAN.THANG)
                 v_dat_ngay_bdau_thanh_toan = v_dat_ngay_thanh_toan.AddMonths(-(int)m_us_v_trai_phieu.dcKY_TRA_LAI);
             else v_dat_ngay_bdau_thanh_toan = v_dat_ngay_thanh_toan.AddYears(-(int)m_us_v_trai_phieu.dcKY_TRA_LAI);
@@ -428,7 +442,14 @@ namespace BondApp
             v_obj_word_rpt.AddFindAndReplace("<NGAY_CHOT_DANH_SACH>",CIPConvert.ToStr(m_us_gd_lich_tt_lai_goc.datNGAY, "dd/MM/yyyy" ));
             v_obj_word_rpt.AddFindAndReplace("<NGAY_BAT_DAU>", CIPConvert.ToStr(v_dat_ngay_bdau_thanh_toan));
             v_obj_word_rpt.AddFindAndReplace("<NGAY_KET_THUC>", CIPConvert.ToStr(v_dat_ngay_thanh_toan));
-            v_obj_word_rpt.AddFindAndReplace("<SO_TIEN>", ""); // cái này Ninh làm nốt nhé
+            US_GD_SO_TIEN_LAI_TREN_TRAI_PHIEU v_us_so_tien_lai_tren_tp = new US_GD_SO_TIEN_LAI_TREN_TRAI_PHIEU();
+            DS_GD_SO_TIEN_LAI_TREN_TRAI_PHIEU v_ds_so_tien_lai_tren_tp = new DS_GD_SO_TIEN_LAI_TREN_TRAI_PHIEU();
+            v_us_so_tien_lai_tren_tp.fill_dataset_by_trai_phieu_in_times(v_ds_so_tien_lai_tren_tp, v_dat_ngay_bdau_thanh_toan, v_dat_ngay_thanh_toan, m_us_v_trai_phieu.dcID);
+            decimal v_so_tien_lai_tren_tp;
+            if (v_ds_so_tien_lai_tren_tp.GD_SO_TIEN_LAI_TREN_TRAI_PHIEU != null && v_ds_so_tien_lai_tren_tp.GD_SO_TIEN_LAI_TREN_TRAI_PHIEU.Rows.Count > 0)
+                v_so_tien_lai_tren_tp = CIPConvert.ToDecimal(v_ds_so_tien_lai_tren_tp.GD_SO_TIEN_LAI_TREN_TRAI_PHIEU.Rows[0][GD_SO_TIEN_LAI_TREN_TRAI_PHIEU.SO_TIEN_LAI_TREN_TRAI_PHIEU]);
+            else v_so_tien_lai_tren_tp = 0;
+            v_obj_word_rpt.AddFindAndReplace("<SO_TIEN>", CIPConvert.ToStr(v_so_tien_lai_tren_tp, "#,###")); // cái này Ninh làm nốt nhé
             v_obj_word_rpt.AddFindAndReplace("<NGAY_THANH_TOAN>", CIPConvert.ToStr(v_dat_ngay_thanh_toan, "dd/MM/yyyy"));
             v_obj_word_rpt.AddFindAndReplace("<NGUNG_CHUYEN_NHUONG>", v_str_ngung_chuyen_nhuong);
             v_obj_word_rpt.Export2Word(true);
