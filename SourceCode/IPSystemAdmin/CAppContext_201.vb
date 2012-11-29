@@ -72,6 +72,10 @@ Public Class CAppContext_201
         Return System.DateTime.Now.Date
     End Function
 
+    Public Shared Function getCurrentUserName() As String
+        Return m_us_user.strTEN_TRUY_CAP
+    End Function
+
     Public Shared Function getCurrentUser() As String
         Return m_us_user.strTEN
     End Function
