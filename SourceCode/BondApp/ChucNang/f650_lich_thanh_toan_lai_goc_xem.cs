@@ -7,7 +7,6 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-
 using IP.Core.IPCommon;
 using IP.Core.IPException;
 using IP.Core.IPData;
