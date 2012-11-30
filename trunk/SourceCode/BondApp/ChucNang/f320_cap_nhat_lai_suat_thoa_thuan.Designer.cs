@@ -387,7 +387,7 @@
             this.m_cmd_chon_sua.Name = "m_cmd_chon_sua";
             this.m_cmd_chon_sua.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_chon_sua.TabIndex = 2;
-            this.m_cmd_chon_sua.Text = "&Sửa";
+            this.m_cmd_chon_sua.Text = "&Chọn";
             this.m_cmd_chon_sua.Click += new System.EventHandler(this.m_cmd_chon_sua_Click);
             // 
             // m_cmd_duyet_gd
@@ -396,14 +396,14 @@
             this.m_cmd_duyet_gd.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_duyet_gd.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_duyet_gd.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_duyet_gd.Enabled = false;
             this.m_cmd_duyet_gd.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet_gd.Image")));
             this.m_cmd_duyet_gd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_duyet_gd.Location = new System.Drawing.Point(290, 4);
             this.m_cmd_duyet_gd.Name = "m_cmd_duyet_gd";
             this.m_cmd_duyet_gd.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_duyet_gd.TabIndex = 3;
-            this.m_cmd_duyet_gd.Text = "&Duyệt";
-            this.m_cmd_duyet_gd.Enabled = false;
+            this.m_cmd_duyet_gd.Text = "&Chấp nhận";
             this.m_cmd_duyet_gd.Click += new System.EventHandler(this.m_cmd_duyet_gd_Click_1);
             // 
             // m_cmd_sua
@@ -412,6 +412,7 @@
             this.m_cmd_sua.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_sua.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_sua.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_sua.Enabled = false;
             this.m_cmd_sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_sua.ImageIndex = 3;
             this.m_cmd_sua.ImageList = this.ImageList;
@@ -419,8 +420,7 @@
             this.m_cmd_sua.Name = "m_cmd_sua";
             this.m_cmd_sua.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_sua.TabIndex = 4;
-            this.m_cmd_sua.Text = "&Sửa";
-            this.m_cmd_sua.Enabled = false;
+            this.m_cmd_sua.Text = "&Cập nhật";
             this.m_cmd_sua.Click += new System.EventHandler(this.m_cmd_sua_Click_1);
             // 
             // m_cmd_lap

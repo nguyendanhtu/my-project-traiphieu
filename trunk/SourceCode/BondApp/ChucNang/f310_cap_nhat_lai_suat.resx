@@ -162,7 +162,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAO
-        HwAAAk1TRnQBSQFMAgEBFgEAASQBAQEkAQEBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        HwAAAk1TRnQBSQFMAgEBFgEAASwBAQEsAQEBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAAWADAAEBAQABCAYAARgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -315,8 +315,28 @@
         uX3QMwGeewAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="m_cmd_exit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAANKSURBVEhL7ZB/TIxxHMef556755577gfPiVJXXCpOk1R2fmYzzZIr4qxr/biQPKVCLs6P/JhQ
+        lEiSm8Sx+ENmmu2SkVD3QxlLfjNsjNlsZrNhb88fll+x8Cff7b3vvtv7/fp8vm+C+H9+1YD3RMJXv1ye
+        FV/mV2uqCXLMqQxomFas3hw0WzThj5uLWKjgc49MeVx5cRFqnRYcdluFuwB7WrOwrnHGe8PWgONeYeTQ
+        3xowOc+7pLwlHfarVtg7rKjrXAZbJw9bB4/aq/mwOZegss2MhYfCu71CqRF9ggcbmPSSliQcdK1ArWcp
+        1p6O+xizQuMKTVAc05vVZ8x7w5/vak9GdXsm9jjTYKoKaaVYQv5LuLg/wZlrRt+1uXJhc+cg9/Ckl14j
+        qWwh5C1IIkguYgn91HyNo/jSdGxrm4HVLXqEGBielhNsZLYsvdcB/tFi46ZzM7HfxWODI/aDzxhJTp++
+        +dmUUR8IfeaA7T9kdPHslrI2I6o985FUEXKTIAnue5OIFrGxG3xPJO8Objfu0LoSSwJcs7b5OudWaLpX
+        O8bD0hSJyAxliYgm6J5s2Dzlvgq3EVUdJsSuG9zY27ZCFf4FF4Kx8/Z4bOzUYY1LC8tlP+SdH4iMhn5I
+        P6FCcoMcvhPEpp586Gy2vLQ9DpUeI1L2hXiEjanv4RRNDooppbsS68jnCTWiZ/HV1DNDFfVi1n7xm9ST
+        EqScohE+nz4rZsghPdkh0dLs9S3R2OVOROG58HfayYqY3+k4pVGKsby0mRSR/t/kpJxIl1anfVV4IRCL
+        m1mYT3rd0uq5qK9NPkEcO6dcW5bvkb/PczLIccsQkcatlLCUWpfIHCApMrCXZUhyeAKzI8NBg2+WYkmr
+        FJlNqtep9qEHs+ujsrKOj9qY2ejTsaqLhfUaA2sXA9NR7gmjkgz/DBP/9IdiKeUzsUDRzLfKsPQKgwIX
+        A8s1KQqvS2C9KUHRHQZF3TIU3WOw6Cz3VhOhTOlzXQJcG7VAeWxBk+Kj5YYMawTQ+rsybHrIYvNTFmsf
+        KGGyq+/7halS+wz9YiQV6mFM8jhe1WDYrbiVVM88nWdnH80s5dp0cf2KJQw98g+g30RkwksjKFiQliDI
+        AX8L/EfznwAaXj4L8kJ1vQAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="m_fg.ColumnInfo" xml:space="preserve">
-    <value>9,1,0,0,0,85,Columns:0{Width:1;}	1{Caption:"ID";Enabled:False;DataType:System.Decimal;TextAlign:RightCenter;}	2{Width:33;Caption:"STT";DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	3{Width:119;Caption:"Ngày lập";DataType:System.DateTime;Format:"dd/MM/yyyy";TextAlign:LeftCenter;TextAlignFixed:CenterCenter;ImageAlignFixed:CenterCenter;}	4{Width:117;Caption:"Lãi suất áp dụng";DataType:System.Decimal;Format:"p";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	5{Width:96;Caption:"Ngày áp dụng";DataType:System.DateTime;Format:"dd/MM/yyyy";TextAlign:LeftCenter;}	6{Width:73;Caption:"Đã cập nhật";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;ImageAlign:CenterCenter;}	7{Width:73;Caption:"Đã duyệt";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;ImageAlign:CenterCenter;}	8{Width:238;Caption:"Ghi chú";DataType:System.String;TextAlign:LeftCenter;}	</value>
+    <value>9,1,0,0,0,85,Columns:0{Width:1;}	1{Caption:"ID";DataType:System.Decimal;TextAlign:RightCenter;}	2{Width:33;Caption:"STT";DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	3{Width:119;Caption:"Ngày lập";DataType:System.DateTime;Format:"dd/MM/yyyy";TextAlign:LeftCenter;TextAlignFixed:CenterCenter;ImageAlignFixed:CenterCenter;}	4{Width:117;Caption:"Lãi suất áp dụng";DataType:System.Decimal;Format:"p";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	5{Width:96;Caption:"Ngày áp dụng";DataType:System.DateTime;Format:"dd/MM/yyyy";TextAlign:LeftCenter;}	6{Width:73;Caption:"Đã cập nhật";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;ImageAlign:CenterCenter;}	7{Width:73;Caption:"Đã duyệt";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;ImageAlign:CenterCenter;}	8{Width:238;Caption:"Ghi chú";DataType:System.String;TextAlign:LeftCenter;}	</value>
   </data>
   <data name="m_fg.Styles" xml:space="preserve">
     <value>Normal{Font:Microsoft Sans Serif, 8.25pt;}	Alternate{BackColor:Info;}	Fixed{BackColor:Control;ForeColor:ControlText;Border:Flat,1,ControlDark,Both;}	Highlight{BackColor:Highlight;ForeColor:HighlightText;}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	EmptyArea{BackColor:AppWorkspace;Border:Flat,1,ControlDarkDark,Both;}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal2{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	</value>
