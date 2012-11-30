@@ -138,7 +138,7 @@
             this.m_cmd_chon_cap_nhat.Name = "m_cmd_chon_cap_nhat";
             this.m_cmd_chon_cap_nhat.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_chon_cap_nhat.TabIndex = 2;
-            this.m_cmd_chon_cap_nhat.Text = "&Cập nhật";
+            this.m_cmd_chon_cap_nhat.Text = "&Chọn";
             // 
             // ImageList
             // 
@@ -180,8 +180,7 @@
             this.m_cmd_duyet_gd.Name = "m_cmd_duyet_gd";
             this.m_cmd_duyet_gd.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_duyet_gd.TabIndex = 3;
-            this.m_cmd_duyet_gd.Text = "&Duyệt";
-            this.m_cmd_duyet_gd.Enabled = false;
+            this.m_cmd_duyet_gd.Text = "&Chấp nhận";
             // 
             // m_cmd_cap_nhat
             // 
@@ -189,6 +188,7 @@
             this.m_cmd_cap_nhat.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_cap_nhat.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_cap_nhat.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_cap_nhat.Enabled = false;
             this.m_cmd_cap_nhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_cap_nhat.ImageIndex = 3;
             this.m_cmd_cap_nhat.ImageList = this.ImageList;
@@ -197,7 +197,6 @@
             this.m_cmd_cap_nhat.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_cap_nhat.TabIndex = 4;
             this.m_cmd_cap_nhat.Text = "&Cập nhật";
-            this.m_cmd_cap_nhat.Enabled = false;
             // 
             // m_cmd_exit
             // 
@@ -205,8 +204,8 @@
             this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_exit.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_exit.Image")));
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.Location = new System.Drawing.Point(592, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);

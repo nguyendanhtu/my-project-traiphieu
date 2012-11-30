@@ -106,10 +106,10 @@ namespace BondApp.ChucNang
         {
             switch (m_e_form_mode)
             {                
-                case eFormMode.CAP_NHAT_LAI_SUAT:                   
-                    m_cmd_cap_nhat.Enabled = true;
-                    m_cmd_duyet_gd.Enabled = true;                                       
-                    break;                
+                //case eFormMode.CAP_NHAT_LAI_SUAT:                   
+                //    m_cmd_cap_nhat.Enabled = true;
+                //    m_cmd_duyet_gd.Enabled = true;                                       
+                //    break;                
                 case eFormMode.XEM_GIAO_DICH:
                     m_cmd_duyet_gd.Enabled = false;
                     m_cmd_duyet_gd.Enabled = false;
