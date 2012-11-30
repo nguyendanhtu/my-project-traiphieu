@@ -174,6 +174,7 @@ namespace BondApp
             this.m_cmd_view.Size = new System.Drawing.Size(98, 28);
             this.m_cmd_view.TabIndex = 21;
             this.m_cmd_view.Text = "Xem quyền";
+            this.m_cmd_view.Visible = false;
             // 
             // m_cmd_delete
             // 

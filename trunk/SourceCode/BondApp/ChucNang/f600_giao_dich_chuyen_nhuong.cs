@@ -285,7 +285,7 @@ namespace BondApp
             {
                 m_txt_nguoi_dai_dien.Text = ip_us_trai_chu.strTEN_NGUOI_DAI_DIEN;
                 m_txt_cmt_ng_dai_dien.Text = ip_us_trai_chu.strCMT_NGUOI_DAI_DIEN;
-                m_txt_noi_cap_cmt_ng_dai_dien.Text = ip_us_trai_chu.strNOI_CAP_CMT;
+                m_txt_noi_cap_cmt_ng_dai_dien.Text = ip_us_trai_chu.strNOI_CAP_CMT_NGUOI_DAI_DIEN;
                 m_date_ngay_cap_cmnd_ng_dai_dien.Value = ip_us_trai_chu.datNGAY_CAP_CMT_NGUOI_DAI_DIEN;
             }
         }
@@ -314,7 +314,7 @@ namespace BondApp
             {
                 m_txt_ben_mua_ten_nguoi_dai_dien.Text = ip_us_trai_chu_mua.strTEN_NGUOI_DAI_DIEN;
                 m_txt_ben_mua_cmnd_ng_dai_dien.Text = ip_us_trai_chu_mua.strCMT_NGUOI_DAI_DIEN;
-                m_txt_ben_mua_noi_cap_cmnd_ng_dai_dien.Text = ip_us_trai_chu_mua.strNOI_CAP_CMT;
+                m_txt_ben_mua_noi_cap_cmnd_ng_dai_dien.Text = ip_us_trai_chu_mua.strNOI_CAP_CMT_NGUOI_DAI_DIEN;
                 m_date_ben_mua_ngay_cap_cmnd_ng_dai_dien.Value = ip_us_trai_chu_mua.datNGAY_CAP_CMT_NGUOI_DAI_DIEN;
             }
         }
@@ -349,7 +349,7 @@ namespace BondApp
             if (m_txt_gia_tri_chuyen_nhuong_thuc_te.Text.Trim() != "")
             m_us_gd_chuyen_nhuong.dcGIA_TRI_CHUYEN_NHUONG_THUC_TE = CIPConvert.ToDecimal(m_txt_gia_tri_chuyen_nhuong_thuc_te.Text);
             if (m_txt_ty_le_phi_gd.Text.Trim() != "")
-            m_us_gd_chuyen_nhuong.dcTY_LE_PHI_GD = CIPConvert.ToDecimal(m_txt_ty_le_phi_gd.Text)/100;
+                m_us_gd_chuyen_nhuong.dcTY_LE_PHI_GD = CIPConvert.ToDecimal(m_txt_ty_le_phi_gd.Text)/100;
             if (m_txt_phi_gd.Text.Trim() != "")
                 m_us_gd_chuyen_nhuong.dcPHI_GD = CIPConvert.ToDecimal(m_txt_phi_gd.Text);
             else
@@ -410,9 +410,11 @@ namespace BondApp
             m_txt_so_luong_chuyen_nhuong.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcSO_LUONG_CHUYEN_NHUONG, "#,###");
             m_txt_gia_tri_chuyen_nhuong.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcSO_LUONG_CHUYEN_NHUONG * v_trai_phieu.dcMENH_GIA, "#,###");
             m_txt_gia_tri_chuyen_nhuong_thuc_te.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcGIA_TRI_CHUYEN_NHUONG_THUC_TE, "#,###");
-            m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcTY_LE_PHI_GD*100, "#,##0.0000");            
+            if (m_us_gd_chuyen_nhuong.dcTY_LE_PHI_GD == 0) m_txt_ty_le_phi_gd.Text = "0";
+            else m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcTY_LE_PHI_GD*100, "#,##0.0000");            
             m_txt_phi_gd.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcPHI_GD, "#,###");
-            m_txt_phan_tram_thue.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcPHAN_TRAM_THUE * 100, "#,##0.0000");
+            if (m_us_gd_chuyen_nhuong.dcPHAN_TRAM_THUE == 0) m_txt_phan_tram_thue.Text = "0";
+            else m_txt_phan_tram_thue.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcPHAN_TRAM_THUE * 100, "#,##0.0000");
             m_txt_thue.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcGIA_TRI_THUE, "#,###");
             m_date_ngay_chuyen_nhuong.Value = m_us_gd_chuyen_nhuong.datNGAY_KY_CHUYEN_NHUONG;
             m_date_ngay_vao_so.Value = m_us_gd_chuyen_nhuong.datNGAY_VAO_SO;
@@ -454,6 +456,10 @@ namespace BondApp
             if (!CValidateTextBox.IsValid(m_txt_ma_giao_dich, DataType.StringType, allowNull.NO)) return false;
             if (!CValidateTextBox.IsValid(m_txt_so_luong_chuyen_nhuong, DataType.NumberType, allowNull.NO)) return false;
             if (!CValidateTextBox.IsValid(m_txt_ty_le_phi_gd, DataType.NumberType, allowNull.NO)) return false;
+            if (!CValidateTextBox.IsValid(m_txt_phi_gd, DataType.NumberType, allowNull.YES)) return false;
+            if (!CValidateTextBox.IsValid(m_txt_phan_tram_thue, DataType.NumberType, allowNull.YES)) return false;
+            if (!CValidateTextBox.IsValid(m_txt_gia_tri_chuyen_nhuong_thuc_te, DataType.NumberType, allowNull.YES)) return false;
+            if (!CValidateTextBox.IsValid(m_txt_thue, DataType.NumberType, allowNull.YES)) return false;
             if (!CValidateTextBox.IsValid(m_txt_so_cmnd_dkkd, DataType.StringType, allowNull.NO)) return false;
             return true;
         }
@@ -687,7 +693,7 @@ namespace BondApp
         {
             try
             {
-                if (m_us_v_trai_phieu.IsIDNull()) return;
+                if (m_us_v_trai_phieu.dcID == -1) return;
                 US_DM_DOT_PHAT_HANH v_us_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_v_trai_phieu.dcID_DOT_PHAT_HANH);                                              
 
                 if (m_txt_so_luong_chuyen_nhuong.Text.Trim() == "") return;
@@ -715,10 +721,14 @@ namespace BondApp
             {
                 if (m_txt_phan_tram_thue.Text.Trim() == "") return;
                 decimal v_dc_phan_tram_thue = CIPConvert.ToDecimal(m_txt_phan_tram_thue.Text)/100;
-                decimal v_dc_giao_dich_thuc_te = CIPConvert.ToDecimal(m_txt_gia_tri_chuyen_nhuong_thuc_te.Text);
-                m_txt_thue.Text = CIPConvert.ToStr(
-                    v_dc_giao_dich_thuc_te * v_dc_phan_tram_thue
-                    , "#,###");
+                if (v_dc_phan_tram_thue == 0) m_txt_thue.Text = "0";
+                else
+                {
+                    decimal v_dc_giao_dich_thuc_te = CIPConvert.ToDecimal(m_txt_gia_tri_chuyen_nhuong_thuc_te.Text);
+                    m_txt_thue.Text = CIPConvert.ToStr(
+                        v_dc_giao_dich_thuc_te * v_dc_phan_tram_thue
+                        , "#,###");
+                }
             }
             catch (Exception v_e)
             {
