@@ -157,6 +157,7 @@
     <Compile Include="US_RPT_NHAC_VIEC.cs" />
     <Compile Include="US_UT_SEQUENCES.cs" />
     <Compile Include="US_V_DM_DOT_PHAT_HANH.cs" />
+    <Compile Include="US_V_DM_DOT_PHAT_HANH_LAN_THU.cs" />
     <Compile Include="US_V_DM_THAM_SO_NHAC_VIEC.cs" />
     <Compile Include="US_V_DM_TO_CHUC_PHAT_HANH.cs" />
     <Compile Include="US_V_DM_TRAI_CHU.cs" />
