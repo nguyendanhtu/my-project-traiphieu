@@ -783,14 +783,23 @@ namespace BondApp
             v_obj_word_rpt.Export2Word(true);
         }
 
-		private void set_define_events(){
-			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+		
+        #endregion
+        //
+		//
+		//		EVENT HANLDERS
+		//
+		//
+
+        private void set_define_events()
+        {
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_chon_trai_phieu.Click += new EventHandler(m_cmd_chon_trai_phieu_Click);
             m_cmd_export_excel.Click += new EventHandler(m_cmd_export_excel_Click);
             m_cmd_yeu_cau_ngan_hang_thanh_toan.Click += new EventHandler(m_cmd_yeu_cau_ngan_hang_thanh_toan_Click);
             m_data_ngay_choi_lai.ValueChanged += new EventHandler(m_data_ngay_choi_lai_ValueChanged);
             this.KeyDown += new KeyEventHandler(f658_bao_cao_chot_danh_sach_nguoi_so_huu_trai_phieu_theo_yeu_cau_KeyDown);
-		}
+        }
 
         void m_data_ngay_choi_lai_ValueChanged(object sender, EventArgs e)
         {
@@ -800,7 +809,7 @@ namespace BondApp
             }
             catch (Exception v_e)
             {
-                
+
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
@@ -817,12 +826,7 @@ namespace BondApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-        #endregion
-        //
-		//
-		//		EVENT HANLDERS
-		//
-		//
+
 		private void f658_bao_cao_chot_danh_sach_nguoi_so_huu_trai_phieu_theo_yeu_cau_Load(object sender, System.EventArgs e) {
 			try{
 				set_initial_form_load();
