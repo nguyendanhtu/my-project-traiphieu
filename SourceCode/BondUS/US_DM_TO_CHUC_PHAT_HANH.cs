@@ -213,6 +213,51 @@ public class US_DM_TO_CHUC_PHAT_HANH : US_Object
 		this.FillDatasetByCommand(pm_objDS, v_cmdSQL);
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
+
+    public string strSO_TAI_KHOAN
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "SO_TAI_KHOAN", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["SO_TAI_KHOAN"] = value;
+        }
+    }
+
+    public bool IsSO_TAI_KHOANNull()
+    {
+        return pm_objDR.IsNull("SO_TAI_KHOAN");
+    }
+
+    public void SetSO_TAI_KHOANNull()
+    {
+        pm_objDR["SO_TAI_KHOAN"] = System.Convert.DBNull;
+    }
+
+    public string strMO_TAI_NGAN_HANG
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "MO_TAI_NGAN_HANG", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["MO_TAI_NGAN_HANG"] = value;
+        }
+    }
+
+    public bool IsMO_TAI_NGAN_HANGNull()
+    {
+        return pm_objDR.IsNull("MO_TAI_NGAN_HANG");
+    }
+
+    public void SetMO_TAI_NGAN_HANGNull()
+    {
+        pm_objDR["MO_TAI_NGAN_HANG"] = System.Convert.DBNull;
+    }
+
 #endregion
 
     #region Additional Functions
