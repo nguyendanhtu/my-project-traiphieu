@@ -160,4 +160,5 @@ Public Class PHAN_QUYEN
     Public Const BC_LAI_SUAT_TRAI_PHIEU As String = "BC_lai_suat_trai_phieu"
     Public Const BC_CHUYEN_NHUONG As String = "BC_chuyen_nhuong"
     Public Const GIOI_THIEU As String = "Gioi_thieu"
+    Public Const IN_SO_SO_HUU_TRAI_PHIEU As String = "In_so_so_huu_trai_phieu"
 End Class
