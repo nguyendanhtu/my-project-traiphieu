@@ -185,13 +185,19 @@ namespace BondApp.BaoCao
         private void export_excel()
         {
             US_DM_TO_CHUC_PHAT_HANH v_us_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH(m_us_trai_phieu.dcID_TO_CHUC_PHAT_HANH);
+            //US_DM_DOT_PHAT_HANH v_us_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_trai_phieu.dcID_DOT_PHAT_HANH);
             CExcelReport v_obj_export_excel1 = new CExcelReport("f500_DLDKLK_So_DKNSHTP_bia.xls", 15, 2);
-            v_obj_export_excel1.AddFindAndReplaceItem("<TO_CHUC_PHAT_HANH>", m_us_trai_phieu.strTEN_TO_CHUC_PHAT_HANH);            
+            v_obj_export_excel1.AddFindAndReplaceItem("<TO_CHUC_PHAT_HANH>", m_us_trai_phieu.strTEN_TO_CHUC_PHAT_HANH);
+            v_obj_export_excel1.AddFindAndReplaceItem("<DOT_PHAT_HANH>", 1);  
+            v_obj_export_excel1.AddFindAndReplaceItem("<NGAY>", m_us_trai_phieu.datNGAY_PHAT_HANH.Day);
+            v_obj_export_excel1.AddFindAndReplaceItem("<THANG>", m_us_trai_phieu.datNGAY_PHAT_HANH.Month);
+            v_obj_export_excel1.AddFindAndReplaceItem("<NAM>", m_us_trai_phieu.datNGAY_PHAT_HANH.Year); 
             v_obj_export_excel1.FindAndReplace(false);
             
             CExcelReport v_obj_export_excel2 = new CExcelReport("f500_DLDKLK_So_DKNSHTP_sdknsh.xls", 15, 2);
             v_obj_export_excel2.AddFindAndReplaceItem("<TO_CHUC_PHAT_HANH>", m_us_trai_phieu.strTEN_TO_CHUC_PHAT_HANH);
             v_obj_export_excel2.AddFindAndReplaceItem("<SO_CHUNG_NHAN_DKKD>", v_us_to_chuc_phat_hanh.strCHUNG_NHAN_DKDN);
+            v_obj_export_excel2.AddFindAndReplaceItem("<TRU_SO_CHINH>", v_us_to_chuc_phat_hanh.strDIA_CHI_TRU_SO_CHINH);
             v_obj_export_excel2.AddFindAndReplaceItem("<SO_DIEN_THOAI>", v_us_to_chuc_phat_hanh.strDIEN_THOAI);
             v_obj_export_excel2.AddFindAndReplaceItem("<SO_FAX>", v_us_to_chuc_phat_hanh.strFAX);
             v_obj_export_excel2.AddFindAndReplaceItem("<SO_TAI_KHOAN>", v_us_to_chuc_phat_hanh.strSO_TAI_KHOAN);
@@ -202,13 +208,15 @@ namespace BondApp.BaoCao
             v_obj_export_excel2.AddFindAndReplaceItem("<KY_HAN_TRAI_PHIEU>", m_us_trai_phieu.dcKY_HAN.ToString() + " " + m_us_trai_phieu.strDON_VI_KY_HAN);
             v_obj_export_excel2.AddFindAndReplaceItem("<LAI_SUAT>", m_us_trai_phieu.dcLAI_SUAT_DEFAULT);
             v_obj_export_excel2.AddFindAndReplaceItem("<PHUONG_THUC_TRA_LAI>", m_us_trai_phieu.strGHI_CHU_PHUONG_THUC_XD_LAI_SUAT);
-            v_obj_export_excel2.AddFindAndReplaceItem("<SO_LUONG_PHAT_HANH>", m_us_trai_phieu.dcTONG_SL_PHAT_HANH);
+            v_obj_export_excel2.AddFindAndReplaceItem("<NGAY_PHAT_HANH>", m_us_trai_phieu.dcTONG_SL_PHAT_HANH);
+            v_obj_export_excel2.AddFindAndReplaceItem("<NGAY_DAO_HAN>", m_us_trai_phieu.dcTONG_GIA_TRI);
+            v_obj_export_excel2.AddFindAndReplaceItem("<SO_LUONG_TRAI_PHIEU>", m_us_trai_phieu.dcTONG_SL_PHAT_HANH);
             v_obj_export_excel2.AddFindAndReplaceItem("<GIA_TRI_TRAI_PHIEU>", m_us_trai_phieu.dcTONG_GIA_TRI);
             v_obj_export_excel2.FindAndReplace(false);
 
 
             CExcelReport v_obj_export_excel3 = new CExcelReport("f500_DLDKLK_So_DKNSHTP_dsnshtp.xls", 10, 4);
-            v_obj_export_excel3.AddFindAndReplaceItem("<TO_CHUC_PHAT_HANH>", m_us_trai_phieu.strTEN_TO_CHUC_PHAT_HANH);
+            v_obj_export_excel3.AddFindAndReplaceItem("<TEN_TO_CHUC_PHAT_HANH>", m_us_trai_phieu.strTEN_TO_CHUC_PHAT_HANH);
             v_obj_export_excel3.AddFindAndReplaceItem("<MENH_GIA_TRAI_PHIEU>", m_us_trai_phieu.dcMENH_GIA);          
             v_obj_export_excel3.FindAndReplace(false);
             v_obj_export_excel3.Export2ExcelWithoutFixedRows(m_fg, (int)e_col_Number.MA_TRAI_CHU, m_fg.Cols.Count - 1, false);
