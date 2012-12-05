@@ -235,12 +235,32 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\Reports\Templates\Readme.txt" />
     <Content Include="icon VTBSC.ico" />
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
     <None Include="bin\Debug\Help\help.chm" />
     <Content Include="App.ico" />
+    <None Include="bin\Debug\Reports\Templates\F260_file_template_import.xls" />
+    <None Include="bin\Debug\Reports\Templates\f300 _Danh Sach Chot.xls" />
+    <None Include="bin\Debug\Reports\Templates\f500_DLDKLK_So_DKNSHTP_bia.xls" />
+    <None Include="bin\Debug\Reports\Templates\f500_DLDKLK_So_DKNSHTP_dsnshtp.xls" />
+    <None Include="bin\Debug\Reports\Templates\f500_DLDKLK_So_DKNSHTP_sdknsh.xls" />
+    <None Include="bin\Debug\Reports\Templates\f500_ĐLĐKLK_So ĐKNSHTP.xls" />
+    <None Include="bin\Debug\Reports\Templates\f600_Bao cao tong hop tinh hinh chuyen nhuong.xls" />
+    <None Include="bin\Debug\Reports\Templates\f600_ĐLĐKLK_Bao Cao Tinh Hinh Chuyen Nhuong TP.xls" />
+    <None Include="bin\Debug\Reports\Templates\f600_ĐLĐKLK_Giay De Nghi Chuyen Nhuong TP.doc" />
+    <None Include="bin\Debug\Reports\Templates\f658_Bao_Cao_Chot_Danh_Sach_Nguoi_So_Trai_Phieu_Theo_Yeu_Cau.xls" />
+    <None Include="bin\Debug\Reports\Templates\f700_Bao cao tong hop tinh hinh giai toa.xls" />
+    <None Include="bin\Debug\Reports\Templates\f700_Bao cao tong hop tinh hinh phong toa.xls" />
+    <None Include="bin\Debug\Reports\Templates\f700_TB TCPH Dot Thanh Toan.doc" />
+    <None Include="bin\Debug\Reports\Templates\f700_ĐLĐKLK_Giay De Nghi Phong Toa TP.doc" />
+    <None Include="bin\Debug\Reports\Templates\f750_ TB Lai Suat.doc" />
+    <None Include="bin\Debug\Reports\Templates\f750_Bao cao lai suat trai phieu.xls" />
+    <None Include="bin\Debug\Reports\Templates\f750_TB Trai Chu Ngay Chot.doc" />
+    <None Include="bin\Debug\Reports\Templates\f800_Xin LS.doc" />
+    <None Include="bin\Debug\Reports\Templates\f800_Yeu Cau Ngan Hang Thanh Toan.doc" />
     <None Include="Resources\report.jpg" />
     <Compile Include="ApplicationControl.cs">
       <SubType>Code</SubType>
@@ -274,6 +294,12 @@
     </Compile>
     <Compile Include="BaoCao\f661_bao_cao_log_he_thong.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\f662_bao_cao_in_so_so_huu_trai_phieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\f662_bao_cao_in_so_so_huu_trai_phieu.Designer.cs">
+      <DependentUpon>f662_bao_cao_in_so_so_huu_trai_phieu.cs</DependentUpon>
     </Compile>
     <Compile Include="CChartParameter.cs" />
     <Compile Include="ChartDataSourceInterface.cs" />
@@ -498,6 +524,9 @@
     <EmbeddedResource Include="BaoCao\f661_bao_cao_log_he_thong.resx">
       <DependentUpon>f661_bao_cao_log_he_thong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\f662_bao_cao_in_so_so_huu_trai_phieu.resx">
+      <DependentUpon>f662_bao_cao_in_so_so_huu_trai_phieu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChucNang\f201_dm_gd_chot_lai_detail.resx">
       <DependentUpon>f201_dm_gd_chot_lai_detail.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -656,7 +685,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\Reports\Output\" />
-    <Folder Include="bin\Debug\Reports\Templates\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
