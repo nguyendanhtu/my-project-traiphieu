@@ -311,35 +311,35 @@ namespace BondApp
 
 		#region Data Structure
 		private enum e_col_Number{
-            STT = 0
+            STT = 1
                 ,
-            MA_GIAO_DICH = 1
+            MA_GIAO_DICH = 2
                 ,
-            NGAY_KY_CHUYEN_NHUONG = 2
+            NGAY_KY_CHUYEN_NHUONG = 3
                 ,
-            tcb_TEN_TRAI_CHU = 3
+            tcb_TEN_TRAI_CHU = 4
                 ,
-            tcb_MA_TRAI_CHU = 4
+            tcb_MA_TRAI_CHU = 5
                 ,
             //ID_TRAI_CHU_BAN = 6
               //  ,
-            tcm_TEN_TRAI_CHU = 5
+            tcm_TEN_TRAI_CHU = 6
                 ,
-            tcm_MA_TRAI_CHU = 6
+            tcm_MA_TRAI_CHU = 7
                 ,
             //ID_TRAI_CHU_MUA = 9
                // ,
-            SO_LUONG_CHUYEN_NHUONG = 7
+            SO_LUONG_CHUYEN_NHUONG = 8
                 ,
-            GIA_TRI_CN_THEO_MENH_GIA = 8
+            GIA_TRI_CN_THEO_MENH_GIA = 9
                 ,
-            GIA_TRI_CHUYEN_NHUONG_THUC_TE = 9
+            GIA_TRI_CHUYEN_NHUONG_THUC_TE = 10
                 ,
-            PHI_GD = 10
+            PHI_GD = 11
                 ,
-            GIA_TRI_THUE = 11
+            GIA_TRI_THUE = 12
                 ,
-            TEN_TRUY_CAP = 12
+            TEN_TRUY_CAP = 13
                 ,
             //ID_TRANG_THAI_CHUYEN_NHUONG = 16
             //    , 
@@ -422,7 +422,20 @@ namespace BondApp
 			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
 		}
 
-
+        private void get_cac_tong(ref decimal op_dc_tong_so_luong_chuyen_nhuong
+                            , ref decimal op_dc_tong_gia_tri_chuyen_nhuong
+                            , ref decimal op_dc_tong_gia_tri_chuyen_nhuong_thuc_te
+                            , ref decimal op_dc_phi_chuyen_nhuong)
+        {
+            op_dc_tong_so_luong_chuyen_nhuong = op_dc_tong_gia_tri_chuyen_nhuong = op_dc_tong_gia_tri_chuyen_nhuong_thuc_te = op_dc_tong_so_luong_chuyen_nhuong = 0;
+            for (int i = 0; i < m_ds.V_GD_CHUYEN_NHUONG.Count; i++)
+            {
+                op_dc_tong_so_luong_chuyen_nhuong = op_dc_tong_so_luong_chuyen_nhuong + m_ds.V_GD_CHUYEN_NHUONG[i].SO_LUONG_CHUYEN_NHUONG;
+                op_dc_tong_gia_tri_chuyen_nhuong = op_dc_tong_gia_tri_chuyen_nhuong + m_ds.V_GD_CHUYEN_NHUONG[i].GIA_TRI_CN_THEO_MENH_GIA;
+                op_dc_tong_gia_tri_chuyen_nhuong_thuc_te = op_dc_tong_gia_tri_chuyen_nhuong_thuc_te + m_ds.V_GD_CHUYEN_NHUONG[i].GIA_TRI_CHUYEN_NHUONG_THUC_TE;
+                op_dc_phi_chuyen_nhuong = op_dc_phi_chuyen_nhuong + m_ds.V_GD_CHUYEN_NHUONG[i].PHI_GD;
+            }
+        }
 		private void insert_v_gd_chuyen_nhuong(){			
 		//	f601_bao_cao_giao_dich_chuyen_nhuong_DE v_fDE = new  f601_bao_cao_giao_dich_chuyen_nhuong_DE();								
 		//	v_fDE.display();
@@ -459,10 +472,17 @@ namespace BondApp
 		}
         private void export_excel()
         {
+            decimal v_dc_tong_sl_chuyen_nhuong, v_dc_tong_gia_tri_cn, v_dc_tong_gia_tri_thuc_te, v_dc_phi_cn;
+            v_dc_phi_cn = v_dc_tong_gia_tri_cn = v_dc_tong_gia_tri_thuc_te = v_dc_tong_sl_chuyen_nhuong = 0;
+            get_cac_tong(ref v_dc_tong_sl_chuyen_nhuong, ref v_dc_tong_gia_tri_cn, ref v_dc_tong_gia_tri_thuc_te, ref v_dc_phi_cn);
             CExcelReport v_obj_export_excel = new CExcelReport("f600_Bao cao tong hop tinh hinh chuyen nhuong.xls",11, 2);
             v_obj_export_excel.AddFindAndReplaceItem("<NGAY_BAT_DAU>", CIPConvert.ToStr(m_dat_from_date.Value, "dd/MM/yyyy"));
             v_obj_export_excel.AddFindAndReplaceItem("<TEN_CONG_TY>", m_cbo_to_chuc_phat_hanh.Text);
             v_obj_export_excel.AddFindAndReplaceItem("<NGAY_KET_THUC>", CIPConvert.ToStr(m_dat_to_date.Value, "dd/MM/yyyy"));
+            v_obj_export_excel.AddFindAndReplaceItem("<TONG_SL>", CIPConvert.ToStr(v_dc_tong_sl_chuyen_nhuong, "#,###"));
+            v_obj_export_excel.AddFindAndReplaceItem("<TONG_GIA_TRI_THEO_MENH_GIA>", CIPConvert.ToStr(v_dc_tong_gia_tri_cn, "#,###"));
+            v_obj_export_excel.AddFindAndReplaceItem("<TONG_PHI>", CIPConvert.ToStr(v_dc_phi_cn, "#,###"));
+            v_obj_export_excel.AddFindAndReplaceItem("<TONG_THUC_TE>", CIPConvert.ToStr(v_dc_tong_gia_tri_thuc_te, "#,###"));
             v_obj_export_excel.FindAndReplace(false);
             v_obj_export_excel.Export2ExcelWithoutFixedRows(m_fg, (int)e_col_Number.MA_GIAO_DICH, m_fg.Cols.Count - 1, false);
         }
