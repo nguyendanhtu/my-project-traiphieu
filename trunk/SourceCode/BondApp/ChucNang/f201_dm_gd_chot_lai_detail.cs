@@ -1031,9 +1031,22 @@ namespace BondApp
               v_dat_ngay_thanh_toan_thuc = CIPConvert.ToDatetime(CIPConvert.ToStr( v_ds_dm_ng_lam_viec.DM_NGAY_LAM_VIEC.Rows[0][DM_NGAY_LAM_VIEC.NGAY]));
             if (v_dat_ngay_thanh_toan_thuc != ip_ngay_thanh_toan)
             {
-                if(v_us_dm_dot_phat_hanh.strNGAY_LAM_VIEC_HAI_SAU_YN == "Y")
-                    BaseMessages.MsgBox_Infor("Ngày thanh toán đã trùng với ngày nghỉ.\nHãy sửa lại ô ngày thành toán thực tế.\nP/s: Trái phiếu thuộc loại làm việc từ thứ 2 đến thứ 6");
-                else BaseMessages.MsgBox_Infor("Ngày thanh toán đã trùng với ngày nghỉ.\nHãy sửa lại ô ngày thành toán thực tế.\nP/s: Trái phiếu thuộc loại làm việc từ thứ 2 đến thứ 7");
+                if (v_us_dm_dot_phat_hanh.strNGAY_LAM_VIEC_HAI_SAU_YN == "Y" && m_us_v_dm_trai_phieu.strTHANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN == "Y")
+                {
+                    BaseMessages.MsgBox_Infor("Ngày thực thanh toán trùng với ngày nghỉ.\nP/s: Trái phiếu thuộc loại làm việc từ thứ 2 đến thứ 6, và ngày thực thanh toán là ngày làm việc gần nhất");
+                }
+                if (v_us_dm_dot_phat_hanh.strNGAY_LAM_VIEC_HAI_SAU_YN == "N" && m_us_v_dm_trai_phieu.strTHANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN == "Y")
+                {
+                    BaseMessages.MsgBox_Infor("Ngày thực thanh toán trùng với ngày nghỉ.\nP/s: Trái phiếu thuộc loại làm việc từ thứ 2 đến thứ 7, và ngày thực thanh toán là ngày làm việc gần nhất");
+                }
+                if (v_us_dm_dot_phat_hanh.strNGAY_LAM_VIEC_HAI_SAU_YN == "Y" && m_us_v_dm_trai_phieu.strTHANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN == "N")
+                {
+                    BaseMessages.MsgBox_Infor("Ngày thực thanh toán trùng với ngày nghỉ.\nP/s: Trái phiếu thuộc loại làm việc từ thứ 2 đến thứ 6, và ngày thực thanh toán là ngày làm việc tiếp theo");
+                }
+                if (v_us_dm_dot_phat_hanh.strNGAY_LAM_VIEC_HAI_SAU_YN == "N" && m_us_v_dm_trai_phieu.strTHANH_TOAN_TRUOC_NGAY_LAM_VIEC_GAN_NHAT_YN == "N")
+                {
+                    BaseMessages.MsgBox_Infor("Ngày thực thanh toán trùng với ngày nghỉ.\nP/s: Trái phiếu thuộc loại làm việc từ thứ 2 đến thứ 7, và ngày thực thanh toán là ngày làm việc tiếp theo");
+                }
             }
             return v_dat_ngay_thanh_toan_thuc;
         }
