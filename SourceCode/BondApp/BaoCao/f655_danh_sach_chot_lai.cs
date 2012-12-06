@@ -755,6 +755,8 @@ namespace SaleManagement
             v_obj_export_excel.AddFindAndReplaceItem("<MUC_DICH>", v_us_gd_chot_lai.strMUC_DICH);
             v_obj_export_excel.AddFindAndReplaceItem("<KY_TINH_LAI>", m_txt_ky_tinh_lai.Text + " tháng");
             v_obj_export_excel.AddFindAndReplaceItem("<LAI_SUAT>", m_txt_lai_suat.Text);
+            v_obj_export_excel.AddFindAndReplaceItem("<NGAY_BAT_DAU>", CIPConvert.ToStr(m_date_ngay_dau_ky.Value,"dd/MM/yyyy"));
+            v_obj_export_excel.AddFindAndReplaceItem("<NGAY_KET_THUC>", CIPConvert.ToStr(m_data_ngay_cuoi_ky.Value, "dd/MM/yyyy"));
             v_obj_export_excel.AddFindAndReplaceItem("<NGAY_THANH_TOAN>", CIPConvert.ToStr(v_us_gd_chot_lai.datNGAY_THANH_TOAN, "dd/MM/yyyy"));
             v_obj_export_excel.FindAndReplace(false);
             v_obj_export_excel.Export2ExcelWithoutFixedRows(m_fg, (int)e_col_Number.TEN_TRAI_CHU, m_fg.Cols.Count - 1, false);
