@@ -393,8 +393,10 @@ namespace BondApp
             v_obj_word_rpt.AddFindAndReplace("<NGAY_BAT_DAU>", CIPConvert.ToStr(m_us_gd_lich_tt_lai_goc.datNGAY_BAT_DAU_AD_LS));
             v_obj_word_rpt.AddFindAndReplace("<NGAY_KET_THUC>", CIPConvert.ToStr(v_dat_den_ngay));
             v_obj_word_rpt.AddFindAndReplace("<KY_HAN>", m_txt_ky_han.Text + " năm"); // Can phai sua
-            v_obj_word_rpt.AddFindAndReplace("<LAI_SUAT>", m_txt_lai_suat.Text);
+            //v_obj_word_rpt.AddFindAndReplace("<LAI_SUAT>", m_us_gd_chot_lai);
             v_obj_word_rpt.AddFindAndReplace("<GHI_CHU_VE_PHUONG_THUC_XAC_DINH_LAI_SUAT>", m_us_v_trai_phieu.strGHI_CHU_PHUONG_THUC_XD_LAI_SUAT);
+            v_obj_word_rpt.AddFindAndReplace("<SO_HOP_DONG>", m_us_v_trai_phieu.strSO_HOP_DONG_DL_DK_LUU_KY);
+            v_obj_word_rpt.AddFindAndReplace("<NGAY_KY_HOP_DONG>", CIPConvert.ToStr(m_us_v_trai_phieu.datNGAY_KY_HD, "dd/MM/yyyy"));
             v_obj_word_rpt.Export2Word(true);
         }
         private DateTime get_ngay_thanh_toan(DateTime ip_ngay_chot_lai)
