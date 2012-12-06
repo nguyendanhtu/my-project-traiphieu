@@ -353,7 +353,7 @@ Public Class f101_Dang_Nhap
         Try
             Select Case e.KeyCode
                 Case Keys.Enter
-                    SendKeys.Send("{tab}")
+                    Me.m_btnOK_Click(sender, e)
                 Case Keys.Escape
                     Me.m_btnCancel_Click(sender, e)
             End Select
