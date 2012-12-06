@@ -94,14 +94,14 @@ SELECT ID, FORM_NAME, CONTROL_NAME, CONTROL_TYPE, VISIBLE_YN, ENABLED_YN, ID_PHA
               <xs:element name="FORM_NAME" msprop:Generator_ColumnVarNameInTable="columnFORM_NAME" msprop:Generator_ColumnPropNameInRow="FORM_NAME" msprop:Generator_ColumnPropNameInTable="FORM_NAMEColumn" msprop:Generator_UserColumnName="FORM_NAME">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="250" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="CONTROL_NAME" msprop:Generator_ColumnVarNameInTable="columnCONTROL_NAME" msprop:Generator_ColumnPropNameInRow="CONTROL_NAME" msprop:Generator_ColumnPropNameInTable="CONTROL_NAMEColumn" msprop:Generator_UserColumnName="CONTROL_NAME">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="250" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
