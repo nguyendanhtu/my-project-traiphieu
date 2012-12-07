@@ -484,7 +484,7 @@ namespace BondApp
             //Cũ
             v_obj_word_rpt.AddFindAndReplace("<LAI_SUAT>", m_txt_lai_suat.Text);
             //Mới
-            //            v_obj_word_rpt.AddFindAndReplace("<LAI_SUAT>", CIPConvert.ToStr(m_us_gd_lich_tt_lai_goc.dcLAI_SUAT, "p"));
+            //v_obj_word_rpt.AddFindAndReplace("<LAI_SUAT>", CIPConvert.ToStr(m_us_gd_lich_tt_lai_goc.dcLAI_SUAT, "p"));
             v_obj_word_rpt.AddFindAndReplace("<NGAY_THANH_TOAN_LAI>", CIPConvert.ToStr(v_ds_gd_chot_lai.GD_CHOT_LAI.Rows[0][GD_CHOT_LAI.NGAY_THANH_TOAN]));
             if (v_ds_gd_chot_lai.GD_CHOT_LAI.Rows[0][GD_CHOT_LAI.MUC_DICH].GetType() != typeof(DBNull))
                 v_obj_word_rpt.AddFindAndReplace("<MUC_DICH>", CIPConvert.ToStr(v_ds_gd_chot_lai.GD_CHOT_LAI.Rows[0][GD_CHOT_LAI.MUC_DICH]));
