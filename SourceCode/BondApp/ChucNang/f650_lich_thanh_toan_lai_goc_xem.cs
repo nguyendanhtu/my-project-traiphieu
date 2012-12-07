@@ -393,7 +393,6 @@ namespace BondApp
             v_obj_word_rpt.AddFindAndReplace("<NGAY_BAT_DAU>", CIPConvert.ToStr(m_us_gd_lich_tt_lai_goc.datNGAY_BAT_DAU_AD_LS));
             v_obj_word_rpt.AddFindAndReplace("<NGAY_KET_THUC>", CIPConvert.ToStr(v_dat_den_ngay));
             v_obj_word_rpt.AddFindAndReplace("<KY_HAN>", m_txt_ky_han.Text + " năm"); // Can phai sua
-            //
             v_obj_word_rpt.AddFindAndReplace("<LAI_SUAT>", CIPConvert.ToStr(m_us_gd_lich_tt_lai_goc.dcLAI_SUAT, "p"));
             v_obj_word_rpt.AddFindAndReplace("<GHI_CHU_VE_PHUONG_THUC_XAC_DINH_LAI_SUAT>", m_us_v_trai_phieu.strGHI_CHU_PHUONG_THUC_XD_LAI_SUAT);
             v_obj_word_rpt.AddFindAndReplace("<SO_HOP_DONG>", m_us_v_trai_phieu.strSO_HOP_DONG_DL_DK_LUU_KY);
@@ -482,8 +481,10 @@ namespace BondApp
             v_obj_word_rpt.AddFindAndReplace("<TONG_GIA_TRI_TRAI_PHIEU>", m_txt_tong_gia_tri_trai_phieu.Text + "VNĐ");
             v_obj_word_rpt.AddFindAndReplace("<KY_HAN>", m_txt_ky_han.Text + " năm"); // Can phai sua
             v_obj_word_rpt.AddFindAndReplace("<KY_TINH_LAI>", m_txt_ky_tinh_lai.Text + " tháng");
-            //Chua biet dung hay sai
+            //Cũ
             v_obj_word_rpt.AddFindAndReplace("<LAI_SUAT>", m_txt_lai_suat.Text);
+            //Mới
+            //            v_obj_word_rpt.AddFindAndReplace("<LAI_SUAT>", CIPConvert.ToStr(m_us_gd_lich_tt_lai_goc.dcLAI_SUAT, "p"));
             v_obj_word_rpt.AddFindAndReplace("<NGAY_THANH_TOAN_LAI>", CIPConvert.ToStr(v_ds_gd_chot_lai.GD_CHOT_LAI.Rows[0][GD_CHOT_LAI.NGAY_THANH_TOAN]));
             if (v_ds_gd_chot_lai.GD_CHOT_LAI.Rows[0][GD_CHOT_LAI.MUC_DICH].GetType() != typeof(DBNull))
                 v_obj_word_rpt.AddFindAndReplace("<MUC_DICH>", CIPConvert.ToStr(v_ds_gd_chot_lai.GD_CHOT_LAI.Rows[0][GD_CHOT_LAI.MUC_DICH]));
