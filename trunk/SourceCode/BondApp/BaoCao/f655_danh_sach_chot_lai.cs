@@ -117,6 +117,12 @@ namespace SaleManagement
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.m_cbo_ky_tinh_lai = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.m_date_ngay_dau_ky = new System.Windows.Forms.DateTimePicker();
+            this.m_data_ngay_cuoi_ky = new System.Windows.Forms.DateTimePicker();
             this.m_cmd_chon_trai_phieu = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -146,12 +152,6 @@ namespace SaleManagement
             this.m_cmd_export_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_cbo_ky_tinh_lai = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.m_date_ngay_dau_ky = new System.Windows.Forms.DateTimePicker();
-            this.m_data_ngay_cuoi_ky = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -236,6 +236,65 @@ namespace SaleManagement
             this.groupBox1.TabIndex = 55;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin trái phiếu";
+            // 
+            // m_cbo_ky_tinh_lai
+            // 
+            this.m_cbo_ky_tinh_lai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_ky_tinh_lai.FormattingEnabled = true;
+            this.m_cbo_ky_tinh_lai.Location = new System.Drawing.Point(134, 135);
+            this.m_cbo_ky_tinh_lai.Name = "m_cbo_ky_tinh_lai";
+            this.m_cbo_ky_tinh_lai.Size = new System.Drawing.Size(120, 21);
+            this.m_cbo_ky_tinh_lai.TabIndex = 64;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(648, 141);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(26, 13);
+            this.label5.TabIndex = 62;
+            this.label5.Text = "đến";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(339, 142);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(66, 13);
+            this.label6.TabIndex = 63;
+            this.label6.Text = "Kỳ tính lãi từ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(42, 138);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(54, 13);
+            this.label7.TabIndex = 61;
+            this.label7.Text = "Kỳ tính lãi";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // m_date_ngay_dau_ky
+            // 
+            this.m_date_ngay_dau_ky.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.m_date_ngay_dau_ky.CustomFormat = "dd/MM/yyyy";
+            this.m_date_ngay_dau_ky.Enabled = false;
+            this.m_date_ngay_dau_ky.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_date_ngay_dau_ky.Location = new System.Drawing.Point(431, 136);
+            this.m_date_ngay_dau_ky.Name = "m_date_ngay_dau_ky";
+            this.m_date_ngay_dau_ky.Size = new System.Drawing.Size(120, 20);
+            this.m_date_ngay_dau_ky.TabIndex = 59;
+            // 
+            // m_data_ngay_cuoi_ky
+            // 
+            this.m_data_ngay_cuoi_ky.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.m_data_ngay_cuoi_ky.CustomFormat = "dd/MM/yyyy";
+            this.m_data_ngay_cuoi_ky.Enabled = false;
+            this.m_data_ngay_cuoi_ky.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_data_ngay_cuoi_ky.Location = new System.Drawing.Point(680, 136);
+            this.m_data_ngay_cuoi_ky.Name = "m_data_ngay_cuoi_ky";
+            this.m_data_ngay_cuoi_ky.Size = new System.Drawing.Size(120, 20);
+            this.m_data_ngay_cuoi_ky.TabIndex = 60;
             // 
             // m_cmd_chon_trai_phieu
             // 
@@ -528,65 +587,6 @@ namespace SaleManagement
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 58;
             // 
-            // m_cbo_ky_tinh_lai
-            // 
-            this.m_cbo_ky_tinh_lai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_ky_tinh_lai.FormattingEnabled = true;
-            this.m_cbo_ky_tinh_lai.Location = new System.Drawing.Point(134, 135);
-            this.m_cbo_ky_tinh_lai.Name = "m_cbo_ky_tinh_lai";
-            this.m_cbo_ky_tinh_lai.Size = new System.Drawing.Size(120, 21);
-            this.m_cbo_ky_tinh_lai.TabIndex = 64;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(648, 141);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(26, 13);
-            this.label5.TabIndex = 62;
-            this.label5.Text = "đến";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(339, 142);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 13);
-            this.label6.TabIndex = 63;
-            this.label6.Text = "Kỳ tính lãi từ";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(42, 138);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 13);
-            this.label7.TabIndex = 61;
-            this.label7.Text = "Kỳ tính lãi";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // m_date_ngay_dau_ky
-            // 
-            this.m_date_ngay_dau_ky.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_date_ngay_dau_ky.CustomFormat = "dd/MM/yyyy";
-            this.m_date_ngay_dau_ky.Enabled = false;
-            this.m_date_ngay_dau_ky.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_date_ngay_dau_ky.Location = new System.Drawing.Point(431, 136);
-            this.m_date_ngay_dau_ky.Name = "m_date_ngay_dau_ky";
-            this.m_date_ngay_dau_ky.Size = new System.Drawing.Size(120, 20);
-            this.m_date_ngay_dau_ky.TabIndex = 59;
-            // 
-            // m_data_ngay_cuoi_ky
-            // 
-            this.m_data_ngay_cuoi_ky.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_data_ngay_cuoi_ky.CustomFormat = "dd/MM/yyyy";
-            this.m_data_ngay_cuoi_ky.Enabled = false;
-            this.m_data_ngay_cuoi_ky.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_data_ngay_cuoi_ky.Location = new System.Drawing.Point(680, 136);
-            this.m_data_ngay_cuoi_ky.Name = "m_data_ngay_cuoi_ky";
-            this.m_data_ngay_cuoi_ky.Size = new System.Drawing.Size(120, 20);
-            this.m_data_ngay_cuoi_ky.TabIndex = 60;
-            // 
             // f655_danh_sach_chot_lai
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -625,7 +625,7 @@ namespace SaleManagement
 ,DIA_CHI = 6
 ,MOBILE = 7
 ,NOI_CAP_CMT = 5
-
+            , ID_TRAI_CHU = 11
 		}			
 		#endregion
 
@@ -662,11 +662,12 @@ namespace SaleManagement
 			v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.DIA_CHI, e_col_Number.DIA_CHI);
 			v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.MOBILE, e_col_Number.MOBILE);
 			v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.NOI_CAP_CMT, e_col_Number.NOI_CAP_CMT);
-									
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.ID_TRAI_CHU, e_col_Number.ID_TRAI_CHU);
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_DM_TRAI_CHU_CHOT_LAI.NewRow());
 			return v_obj_trans;			
 		}
-		private void load_data_2_grid(){						
+		private void load_data_2_grid(){
+            US_DM_TRAI_CHU v_us_trai_chu;
 			m_ds = new DS_V_DM_TRAI_CHU_CHOT_LAI();
             if ((int)m_cbo_ky_tinh_lai.SelectedItem == 0) return;
 			if (m_us_trai_phieu != null)
@@ -679,6 +680,11 @@ namespace SaleManagement
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
+            for (int v_i_grid_row = m_fg.Rows.Fixed; v_i_grid_row < m_fg.Rows.Count; v_i_grid_row++)
+            {
+                v_us_trai_chu = new US_DM_TRAI_CHU(CIPConvert.ToDecimal(m_fg[v_i_grid_row, (int)e_col_Number.ID_TRAI_CHU]));
+                m_fg[v_i_grid_row, (int)e_col_Number.SO_TAI_KHOAN] = m_fg[v_i_grid_row, (int)e_col_Number.SO_TAI_KHOAN] +" Mở tại "+ v_us_trai_chu.strMO_TAI_NGAN_HANG;
+            }
 			m_fg.Redraw = true;
 		}
 
