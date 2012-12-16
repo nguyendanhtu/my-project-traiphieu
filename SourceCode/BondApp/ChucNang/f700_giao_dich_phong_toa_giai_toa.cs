@@ -838,7 +838,8 @@ namespace BondApp
                     {
                         if (CIPConvert.ToDecimal(m_txt_so_luong_tp_cam_co.Text) > CIPConvert.ToDecimal(m_txt_so_luong_kha_dung.Text))
                         {
-                            MessageBox.Show("Số lượng trái phiếu giải tỏa cần bé hơn số lượng trái phiếu đã phong tỏa.");                            
+                            MessageBox.Show("Số lượng trái phiếu giải tỏa cần bé hơn số lượng trái phiếu đã phong tỏa.");
+                            m_txt_so_luong_kha_dung.Text = "";
                             return;
                         }
                     }
@@ -847,7 +848,8 @@ namespace BondApp
                         if (CIPConvert.ToDecimal(m_txt_so_luong_tp_cam_co.Text) > CIPConvert.ToDecimal(m_txt_so_luong_kha_dung.Text))
                         {
                             MessageBox.Show("Số lượng trái phiếu phong tỏa cần bé hơn số lượng trái phiếu khả dụng.");
-                            m_txt_so_luong_tp_cam_co.Focus();
+                            m_txt_so_luong_kha_dung.Text = "";
+                            //m_txt_so_luong_tp_cam_co.Focus();
                             return;
 
                         }
