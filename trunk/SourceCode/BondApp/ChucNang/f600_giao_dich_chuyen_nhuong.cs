@@ -233,7 +233,7 @@ namespace BondApp
                     throw v_e;
             }
 
-            m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcTY_LE_PHI_CHUYEN_NHUONG * 100, "#,##0.0000");
+            m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcTY_LE_PHI_CHUYEN_NHUONG * 100, "#,##0.00");
             m_txt_ky_han.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_HAN) + " " + CIPConvert.ToStr(v_us_cm_dm_tu_dien.strTEN);
             m_txt_lai_suat.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcLAI_SUAT_DEFAULT, "#,##0.00");
             m_lbl_phi_gd_max_min.Text = "Phí giao dịch trong khoảng " + CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcPHI_CHUYEN_NHUONG_MIN, "#,###") + " đến " + CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcPHI_CHUYEN_NHUONG_MAX, "#,###") + ".";
@@ -411,10 +411,10 @@ namespace BondApp
             m_txt_gia_tri_chuyen_nhuong.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcSO_LUONG_CHUYEN_NHUONG * v_trai_phieu.dcMENH_GIA, "#,###");
             m_txt_gia_tri_chuyen_nhuong_thuc_te.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcGIA_TRI_CHUYEN_NHUONG_THUC_TE, "#,###");
             if (m_us_gd_chuyen_nhuong.dcTY_LE_PHI_GD == 0) m_txt_ty_le_phi_gd.Text = "0";
-            else m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcTY_LE_PHI_GD*100, "#,##0.0000");            
+            else m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcTY_LE_PHI_GD*100, "#,##0.00");            
             m_txt_phi_gd.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcPHI_GD, "#,###");
             if (m_us_gd_chuyen_nhuong.dcPHAN_TRAM_THUE == 0) m_txt_phan_tram_thue.Text = "0";
-            else m_txt_phan_tram_thue.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcPHAN_TRAM_THUE * 100, "#,##0.0000");
+            else m_txt_phan_tram_thue.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcPHAN_TRAM_THUE * 100, "#,##0.00");
             m_txt_thue.Text = CIPConvert.ToStr(m_us_gd_chuyen_nhuong.dcGIA_TRI_THUE, "#,###");
             m_date_ngay_chuyen_nhuong.Value = m_us_gd_chuyen_nhuong.datNGAY_KY_CHUYEN_NHUONG;
             m_date_ngay_vao_so.Value = m_us_gd_chuyen_nhuong.datNGAY_VAO_SO;

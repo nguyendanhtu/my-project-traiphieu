@@ -139,7 +139,7 @@ namespace BondApp.DanhMuc
             m_cbo_don_vi_ky_han.SelectedValue = ip_us_trai_phieu.dcID_DV_KY_HAN;
             m_txt_tong_sl.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcTONG_SL_PHAT_HANH, "#,###");
             m_txt_tong_gia_tri.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcTONG_GIA_TRI, "#,###");
-            m_txt_lai_suat.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcLAI_SUAT_DEFAULT * 100, "#,###0.00000");
+            m_txt_lai_suat.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcLAI_SUAT_DEFAULT * 100, "#,###0.00");
             m_txt_ky_tra_lai.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_TRA_LAI);
             m_cbo_dv_tra_lai.SelectedValue = ip_us_trai_phieu.dcID_DV_KY_TRA_LAI;
             m_txt_ky_dieu_chinh_ls.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcKY_DIEU_CHINH_LS);
@@ -153,7 +153,7 @@ namespace BondApp.DanhMuc
                 m_cbo_tra_lai_sau.SelectedIndex = 0;
             else
                 m_cbo_tra_lai_sau.SelectedIndex = 1;
-            m_txt_bien_do_lai.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcBIEN_DO_LAI * 100, "#,###0.00000");
+            m_txt_bien_do_lai.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcBIEN_DO_LAI * 100, "#,###0.00");
             m_txt_tcph_chuyen_tien_trc.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcSO_NGAY_TCPH_CHUYEN_TIEN_TRUOC);
             if (ip_us_trai_phieu.strNGUNG_CHUYEN_NHUONG_TU_NGAY_CHOT_YN.Equals("Y") && ip_us_trai_phieu.strNGUNG_CHUYEN_NHUONG_DEN_NGAY_THANH_TOAN_YN.Equals("Y"))
                 m_cbo_ngung_chuyen_nhuong_tu_ngay.SelectedIndex = 1;

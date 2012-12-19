@@ -200,7 +200,7 @@
               <xs:element name="GHI_CHU_PHUONG_THUC_XD_LAI_SUAT" msprop:Generator_ColumnVarNameInTable="columnGHI_CHU_PHUONG_THUC_XD_LAI_SUAT" msprop:Generator_ColumnPropNameInRow="GHI_CHU_PHUONG_THUC_XD_LAI_SUAT" msprop:Generator_ColumnPropNameInTable="GHI_CHU_PHUONG_THUC_XD_LAI_SUATColumn" msprop:Generator_UserColumnName="GHI_CHU_PHUONG_THUC_XD_LAI_SUAT" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="250" />
+                    <xs:maxLength value="1000" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

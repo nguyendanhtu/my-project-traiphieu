@@ -471,7 +471,7 @@ namespace BondApp
 
             m_txt_ma_so_trai_phieu.Text = ip_us_trai_phieu.strMA_TRAI_PHIEU;
             m_txt_to_chuc_phat_hanh.Text = ip_us_trai_phieu.strTEN_TRAI_PHIEU;
-            m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcTY_LE_PHI_PHONG_GIAI_TOA*100, "#,##0.0000");
+            m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcTY_LE_PHI_PHONG_GIAI_TOA*100, "#,##0.00");
             if (v_us_dm_dot_phat_hanh.dcMENH_GIA == 0) m_txt_menh_gia.Text = "0";
             else
                 m_txt_menh_gia.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcMENH_GIA, "#,###");
