@@ -620,7 +620,7 @@ namespace BondApp
             this.Controls.Add(this.m_lbl_title);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f201_dm_gd_chot_lai_detail";
-            this.Text = "f201-dm gd chot lai detail";
+            this.Text = "F201 - Danh sách trả lãi";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.m_gbox_thong_tin_tp.ResumeLayout(false);
             this.m_gbox_thong_tin_tp.PerformLayout();
@@ -954,16 +954,16 @@ namespace BondApp
             {
                 decimal v_dc_so_ky_tra_lai;
                 m_cbo_ky_tinh_lai.Items.Clear();
-                if (m_us_v_dm_trai_phieu.dcID_DV_KY_TRA_LAI == 18)
+                if (m_us_v_dm_trai_phieu.dcID_DV_KY_TRA_LAI == ID_DON_VI_KY_HAN.THANG)
                 {
-                    if(m_us_v_dm_trai_phieu.dcID_DV_KY_HAN == 18)
+                    if(m_us_v_dm_trai_phieu.dcID_DV_KY_HAN == ID_DON_VI_KY_HAN.THANG)
                         v_dc_so_ky_tra_lai = m_us_v_dm_trai_phieu.dcKY_HAN / m_us_v_dm_trai_phieu.dcKY_TRA_LAI;
                     else
                         v_dc_so_ky_tra_lai = (m_us_v_dm_trai_phieu.dcKY_HAN * 12) / m_us_v_dm_trai_phieu.dcKY_TRA_LAI;
                 }
                 else
                 {
-                    if (m_us_v_dm_trai_phieu.dcID_DV_KY_HAN == 18)
+                    if (m_us_v_dm_trai_phieu.dcID_DV_KY_HAN == ID_DON_VI_KY_HAN.THANG)
                         v_dc_so_ky_tra_lai = m_us_v_dm_trai_phieu.dcKY_HAN / (m_us_v_dm_trai_phieu.dcKY_TRA_LAI * 12);
                     else
                         v_dc_so_ky_tra_lai = m_us_v_dm_trai_phieu.dcKY_HAN / m_us_v_dm_trai_phieu.dcKY_TRA_LAI;

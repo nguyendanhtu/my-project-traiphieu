@@ -93,7 +93,7 @@
             // m_lbl_ma_so_thue
             // 
             this.m_lbl_ma_so_thue.AutoSize = true;
-            this.m_lbl_ma_so_thue.Location = new System.Drawing.Point(389, 133);
+            this.m_lbl_ma_so_thue.Location = new System.Drawing.Point(447, 137);
             this.m_lbl_ma_so_thue.Name = "m_lbl_ma_so_thue";
             this.m_lbl_ma_so_thue.Size = new System.Drawing.Size(60, 13);
             this.m_lbl_ma_so_thue.TabIndex = 5;
@@ -139,9 +139,9 @@
             // 
             // m_txt_ma_so_thue
             // 
-            this.m_txt_ma_so_thue.Location = new System.Drawing.Point(455, 130);
+            this.m_txt_ma_so_thue.Location = new System.Drawing.Point(513, 134);
             this.m_txt_ma_so_thue.Name = "m_txt_ma_so_thue";
-            this.m_txt_ma_so_thue.Size = new System.Drawing.Size(196, 20);
+            this.m_txt_ma_so_thue.Size = new System.Drawing.Size(138, 20);
             this.m_txt_ma_so_thue.TabIndex = 3;
             // 
             // m_txt_ten_to_chuc
@@ -155,7 +155,7 @@
             // 
             this.m_txt_chung_nhan_dkdn.Location = new System.Drawing.Point(138, 130);
             this.m_txt_chung_nhan_dkdn.Name = "m_txt_chung_nhan_dkdn";
-            this.m_txt_chung_nhan_dkdn.Size = new System.Drawing.Size(198, 20);
+            this.m_txt_chung_nhan_dkdn.Size = new System.Drawing.Size(303, 20);
             this.m_txt_chung_nhan_dkdn.TabIndex = 2;
             // 
             // m_txt_dia_chi

@@ -352,7 +352,7 @@
             this.m_cmd_reset.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_reset.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_reset.Image")));
             this.m_cmd_reset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_reset.Location = new System.Drawing.Point(26, 4);
+            this.m_cmd_reset.Location = new System.Drawing.Point(16, 4);
             this.m_cmd_reset.Name = "m_cmd_reset";
             this.m_cmd_reset.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_reset.TabIndex = 0;
@@ -367,11 +367,11 @@
             this.m_cmd_chon_duyet.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_chon_duyet.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_chon_duyet.Image")));
             this.m_cmd_chon_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_chon_duyet.Location = new System.Drawing.Point(114, 4);
+            this.m_cmd_chon_duyet.Location = new System.Drawing.Point(104, 4);
             this.m_cmd_chon_duyet.Name = "m_cmd_chon_duyet";
-            this.m_cmd_chon_duyet.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_chon_duyet.Size = new System.Drawing.Size(93, 28);
             this.m_cmd_chon_duyet.TabIndex = 1;
-            this.m_cmd_chon_duyet.Text = "&Duyệt";
+            this.m_cmd_chon_duyet.Text = "&Chọn duyệt";
             this.m_cmd_chon_duyet.Click += new System.EventHandler(this.m_cmd_chon_duyet_Click_1);
             // 
             // m_cmd_chon_sua
@@ -383,11 +383,11 @@
             this.m_cmd_chon_sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_chon_sua.ImageIndex = 3;
             this.m_cmd_chon_sua.ImageList = this.ImageList;
-            this.m_cmd_chon_sua.Location = new System.Drawing.Point(202, 4);
+            this.m_cmd_chon_sua.Location = new System.Drawing.Point(197, 4);
             this.m_cmd_chon_sua.Name = "m_cmd_chon_sua";
-            this.m_cmd_chon_sua.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_chon_sua.Size = new System.Drawing.Size(93, 28);
             this.m_cmd_chon_sua.TabIndex = 2;
-            this.m_cmd_chon_sua.Text = "&Chọn";
+            this.m_cmd_chon_sua.Text = "&Chọn sửa";
             this.m_cmd_chon_sua.Click += new System.EventHandler(this.m_cmd_chon_sua_Click);
             // 
             // m_cmd_duyet_gd
@@ -648,9 +648,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(281, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.Size = new System.Drawing.Size(85, 13);
             this.label1.TabIndex = 11;
-            this.label1.Text = "Áp dụng từ này";
+            this.label1.Text = "Áp dụng từ ngày";
             // 
             // label2
             // 

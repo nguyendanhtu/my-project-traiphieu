@@ -58,7 +58,7 @@ namespace BondApp.BaoCao
                 ,
             ID_TRAI_PHIEU = 10
                 , NOI_CAP_CMT = 6
-            ,TAI_KHOAN_NH = 11
+            , SO_TAI_KHOAN = 11
 
         }
        
@@ -99,7 +99,7 @@ namespace BondApp.BaoCao
             v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.MA_TRAI_CHU, e_col_Number.MA_TRAI_CHU);
             v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.DIA_CHI, e_col_Number.DIA_CHI);
             v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.MOBILE, e_col_Number.DIEN_THOAI);
-            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.SO_TAI_KHOAN, e_col_Number.TAI_KHOAN_NH);
+            v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.SO_TAI_KHOAN, e_col_Number.SO_TAI_KHOAN);
             v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.ID_TRAI_PHIEU, e_col_Number.ID_TRAI_PHIEU);
             v_htb.Add(V_DM_TRAI_CHU_CHOT_LAI.NOI_CAP_CMT, e_col_Number.NOI_CAP_CMT);
 
@@ -114,6 +114,7 @@ namespace BondApp.BaoCao
             foreach (DataRow v_dr in m_ds.V_DM_TRAI_CHU_CHOT_LAI.Rows)
             {
                 v_dr["ID_TRAI_PHIEU"] = m_us_trai_phieu.dcMENH_GIA * CIPConvert.ToDecimal(v_dr["TONG_SO_DU"]);
+                v_dr["SO_TAI_KHOAN"] = CIPConvert.ToStr(v_dr[V_DM_TRAI_CHU_CHOT_LAI.SO_TAI_KHOAN]) + " mở tại " + CIPConvert.ToStr(v_dr[V_DM_TRAI_CHU_CHOT_LAI.MO_TAI_NGAN_HANG]);
             }
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
@@ -121,7 +122,16 @@ namespace BondApp.BaoCao
             m_fg.Redraw = true;
         }
 
-
+        private void tinh_tong_so_luong_export_excel(ref decimal op_dc_tong_sl_tp_so_huu
+                                                   , ref decimal op_dc_tong_gt_tp_so_huu
+                                                   , DS_V_DM_TRAI_CHU_CHOT_LAI ip_ds_v_dm_trai_chu_chot_lai)
+        {
+            for (int v_i = 0; v_i < ip_ds_v_dm_trai_chu_chot_lai.V_DM_TRAI_CHU_CHOT_LAI.Rows.Count; v_i++)
+            {
+                op_dc_tong_sl_tp_so_huu += CIPConvert.ToDecimal(ip_ds_v_dm_trai_chu_chot_lai.V_DM_TRAI_CHU_CHOT_LAI.Rows[v_i][V_DM_TRAI_CHU_CHOT_LAI.TONG_SO_DU]);
+                op_dc_tong_gt_tp_so_huu += CIPConvert.ToDecimal(ip_ds_v_dm_trai_chu_chot_lai.V_DM_TRAI_CHU_CHOT_LAI.Rows[v_i][V_DM_TRAI_CHU_CHOT_LAI.TONG_SO_DU]) * m_us_trai_phieu.dcMENH_GIA;
+            }
+        }
 
         private void grid2us_object(US_V_DM_TRAI_CHU_CHOT_LAI i_us
             , int i_grid_row)
@@ -166,7 +176,7 @@ namespace BondApp.BaoCao
             m_txt_ngay_dao_han.Text = CIPConvert.ToStr(m_us_trai_phieu.datNGAY_DAO_HAN);
             m_txt_tong_so_luong_trai_phieu.Text = CIPConvert.ToStr(m_us_trai_phieu.dcTONG_SL_PHAT_HANH, "#,###");
             m_txt_tong_gia_tri_trai_phieu.Text = CIPConvert.ToStr(m_us_trai_phieu.dcTONG_GIA_TRI, "#,###");
-            m_txt_lai_suat.Text = CIPConvert.ToStr(m_us_trai_phieu.dcLAI_SUAT_DEFAULT * 100, "#,##0.0000");
+            m_txt_lai_suat.Text = CIPConvert.ToStr(m_us_trai_phieu.dcLAI_SUAT_DEFAULT * 100, "#,##0.00");
             m_txt_ky_tinh_lai.Text = CIPConvert.ToStr(m_us_trai_phieu.dcKY_TRA_LAI, "#,###");
         }
 
@@ -184,11 +194,20 @@ namespace BondApp.BaoCao
 
         private void export_excel()
         {
+            string v_str_phuong_thuc_tra_lai = "Trả lãi ";
+            decimal v_dc_tong_so_du_tp = 0;
+            decimal v_dc_tong_gt_trai_phieu = 0;
             US_DM_TO_CHUC_PHAT_HANH v_us_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH(m_us_trai_phieu.dcID_TO_CHUC_PHAT_HANH);
             US_V_DM_DOT_PHAT_HANH_LAN_THU v_us_dot_phat_hanh = new US_V_DM_DOT_PHAT_HANH_LAN_THU(m_us_trai_phieu.dcID_DOT_PHAT_HANH);
+
+            v_str_phuong_thuc_tra_lai += m_us_trai_phieu.dcKY_TRA_LAI+" ";
+            v_str_phuong_thuc_tra_lai += m_us_trai_phieu.strDON_VI_KY_TRA_LAI + "/lần";
+
+            tinh_tong_so_luong_export_excel(ref v_dc_tong_so_du_tp, ref v_dc_tong_gt_trai_phieu, m_ds);
+
             CExcelReport v_obj_export_excel1 = new CExcelReport("f500_DLDKLK_So_DKNSHTP_bia.xls", 15, 2);
             v_obj_export_excel1.AddFindAndReplaceItem("<TO_CHUC_PHAT_HANH>", m_us_trai_phieu.strTEN_TO_CHUC_PHAT_HANH);
-            v_obj_export_excel1.AddFindAndReplaceItem("<DOT_PHAT_HANH>", CIPConvert.ToStr(v_us_dot_phat_hanh.dcLAN_THU, "#,###"));  
+//            v_obj_export_excel1.AddFindAndReplaceItem("<DOT_PHAT_HANH>", CIPConvert.ToStr(v_us_dot_phat_hanh.dcLAN_THU, "#,###"));  
             v_obj_export_excel1.AddFindAndReplaceItem("<NGAY>", m_us_trai_phieu.datNGAY_PHAT_HANH.Day);
             v_obj_export_excel1.AddFindAndReplaceItem("<THANG>", m_us_trai_phieu.datNGAY_PHAT_HANH.Month);
             v_obj_export_excel1.AddFindAndReplaceItem("<NAM>", m_us_trai_phieu.datNGAY_PHAT_HANH.Year); 
@@ -203,23 +222,24 @@ namespace BondApp.BaoCao
             v_obj_export_excel2.AddFindAndReplaceItem("<SO_TAI_KHOAN>", "'"+v_us_to_chuc_phat_hanh.strSO_TAI_KHOAN);
             v_obj_export_excel2.AddFindAndReplaceItem("<DIA_CHI>", v_us_to_chuc_phat_hanh.strMO_TAI_NGAN_HANG);
             v_obj_export_excel2.AddFindAndReplaceItem("<TEN_TRAI_PHIEU>", m_us_trai_phieu.strTEN_TRAI_PHIEU);
-            v_obj_export_excel2.AddFindAndReplaceItem("<LOAI_TRAI_PHIEU>", m_us_trai_phieu.strLOAI_TRAI_PHIEU);
-            v_obj_export_excel2.AddFindAndReplaceItem("<MENH_GIA>", CIPConvert.ToStr(m_us_trai_phieu.dcMENH_GIA,"#,###"));
+            //v_obj_export_excel2.AddFindAndReplaceItem("<LOAI_TRAI_PHIEU>", m_us_trai_phieu.strLOAI_TRAI_PHIEU);
+            v_obj_export_excel2.AddFindAndReplaceItem("<MENH_GIA>", CIPConvert.ToStr(m_us_trai_phieu.dcMENH_GIA,"#,###")+" VNĐ/ Trái phiếu");
             v_obj_export_excel2.AddFindAndReplaceItem("<KY_HAN_TRAI_PHIEU>", m_us_trai_phieu.dcKY_HAN.ToString() + " " + m_us_trai_phieu.strDON_VI_KY_HAN);
             v_obj_export_excel2.AddFindAndReplaceItem("<LAI_SUAT>", m_us_trai_phieu.dcLAI_SUAT_DEFAULT* 100 +"%");
-            v_obj_export_excel2.AddFindAndReplaceItem("<PHUONG_THUC_TRA_LAI>", m_us_trai_phieu.strGHI_CHU_PHUONG_THUC_XD_LAI_SUAT);
+            
+            v_obj_export_excel2.AddFindAndReplaceItem("<PHUONG_THUC_TRA_LAI>", v_str_phuong_thuc_tra_lai);
             v_obj_export_excel2.AddFindAndReplaceItem("<NGAY_PHAT_HANH>", CIPConvert.ToStr(m_us_trai_phieu.datNGAY_PHAT_HANH,"dd/MM/yyyy"));
             v_obj_export_excel2.AddFindAndReplaceItem("<NGAY_DAO_HAN>", CIPConvert.ToStr(m_us_trai_phieu.datNGAY_DAO_HAN, "dd/MM/yyyy"));
-            v_obj_export_excel2.AddFindAndReplaceItem("<SO_LUONG_TRAI_PHIEU>", CIPConvert.ToStr(m_us_trai_phieu.dcTONG_SL_PHAT_HANH,"#,###"));
-            v_obj_export_excel2.AddFindAndReplaceItem("<GIA_TRI_TRAI_PHIEU>", CIPConvert.ToStr(m_us_trai_phieu.dcTONG_GIA_TRI,"#,###"));
+            v_obj_export_excel2.AddFindAndReplaceItem("<SO_LUONG_TRAI_PHIEU>", CIPConvert.ToStr(m_us_trai_phieu.dcTONG_SL_PHAT_HANH,"#,###")+" Trái phiếu");
+            v_obj_export_excel2.AddFindAndReplaceItem("<GIA_TRI_TRAI_PHIEU>", CIPConvert.ToStr(m_us_trai_phieu.dcTONG_GIA_TRI,"#,###")+" VNĐ");
             v_obj_export_excel2.FindAndReplace(false);
 
 
-            CExcelReport v_obj_export_excel3 = new CExcelReport("f500_DLDKLK_So_DKNSHTP_dsnshtp.xls", 10, 4);
-            v_obj_export_excel3.AddFindAndReplaceItem("<TEN_TO_CHUC_PHAT_HANH>", m_us_trai_phieu.strTEN_TO_CHUC_PHAT_HANH);
-            v_obj_export_excel3.AddFindAndReplaceItem("<MENH_GIA_TRAI_PHIEU>", CIPConvert.ToStr(m_us_trai_phieu.dcMENH_GIA,"#,###"));   
+            CExcelReport v_obj_export_excel3 = new CExcelReport("f500_DLDKLK_So_DKNSHTP_dsnshtp.xls", 8, 3);
+            v_obj_export_excel3.AddFindAndReplaceItem("<TONG_SL_TP_SO_HUU>", CIPConvert.ToStr(v_dc_tong_so_du_tp,"#,###"));
+            v_obj_export_excel3.AddFindAndReplaceItem("<TONG_GT_TP_SO_HUU>", CIPConvert.ToStr(v_dc_tong_gt_trai_phieu, "#,###"));   
             v_obj_export_excel3.FindAndReplace(false);
-            v_obj_export_excel3.Export2ExcelWithoutFixedRows(m_fg, (int)e_col_Number.MA_TRAI_CHU, m_fg.Cols.Count - 1, false);
+            v_obj_export_excel3.Export2ExcelWithoutFixedRows(m_fg, (int)e_col_Number.STT, m_fg.Cols.Count - 1, false);
 
         }        
         #endregion

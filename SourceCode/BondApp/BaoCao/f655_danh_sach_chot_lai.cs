@@ -724,7 +724,7 @@ namespace SaleManagement
             m_txt_ngay_dao_han.Text = CIPConvert.ToStr(m_us_trai_phieu.datNGAY_DAO_HAN);
             m_txt_tong_so_luong_trai_phieu.Text = CIPConvert.ToStr(m_us_trai_phieu.dcTONG_SL_PHAT_HANH, "#,###");
             m_txt_tong_gia_tri_trai_phieu.Text = CIPConvert.ToStr(m_us_trai_phieu.dcTONG_GIA_TRI, "#,###");
-            m_txt_lai_suat.Text = CIPConvert.ToStr(m_us_trai_phieu.dcLAI_SUAT_DEFAULT * 100, "#,##0.0000");
+            m_txt_lai_suat.Text = CIPConvert.ToStr(m_us_trai_phieu.dcLAI_SUAT_DEFAULT * 100, "#,##0.00");
             m_txt_ky_tinh_lai.Text = CIPConvert.ToStr(m_us_trai_phieu.dcKY_TRA_LAI, "#,###");
             load_cbo_ky_tinh_lai();
         }
@@ -751,7 +751,7 @@ namespace SaleManagement
             }
             US_GD_CHOT_LAI v_us_gd_chot_lai = new US_GD_CHOT_LAI(CIPConvert.ToDecimal(m_ds.V_DM_TRAI_CHU_CHOT_LAI.Rows[0][V_DM_TRAI_CHU_CHOT_LAI.ID_CHOT_LAI]));
 
-            CExcelReport v_obj_export_excel = new CExcelReport("f300 _Danh Sach Chot.xls", 17, 2);
+            CExcelReport v_obj_export_excel = new CExcelReport("f300 _Danh Sach Chot.xls", 17, 1);
             v_obj_export_excel.AddFindAndReplaceItem("<TEN_CONG_TY>", v_us_dm_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HANH);
             v_obj_export_excel.AddFindAndReplaceItem("<TEN_TRAI_PHIEU>", m_txt_ten_trai_phieu.Text);
             v_obj_export_excel.AddFindAndReplaceItem("<MENH_GIA_TRAI_PHIEU>", m_txt_menh_gia.Text + " VND");
@@ -765,7 +765,7 @@ namespace SaleManagement
             v_obj_export_excel.AddFindAndReplaceItem("<NGAY_KET_THUC>", CIPConvert.ToStr(m_data_ngay_cuoi_ky.Value, "dd/MM/yyyy"));
             v_obj_export_excel.AddFindAndReplaceItem("<NGAY_THANH_TOAN>", CIPConvert.ToStr(v_us_gd_chot_lai.datNGAY_THANH_TOAN, "dd/MM/yyyy"));
             v_obj_export_excel.FindAndReplace(false);
-            v_obj_export_excel.Export2ExcelWithoutFixedRows(m_fg, (int)e_col_Number.TEN_TRAI_CHU, m_fg.Cols.Count - 1, false);
+            v_obj_export_excel.Export2ExcelWithoutFixedRows(m_fg, (int)e_col_Number.STT, m_fg.Cols.Count - 1, false);
             
         }
 

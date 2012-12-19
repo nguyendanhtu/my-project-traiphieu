@@ -105,7 +105,7 @@
             this.m_cmd_reset.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_reset.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_reset.Image")));
             this.m_cmd_reset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_reset.Location = new System.Drawing.Point(152, 4);
+            this.m_cmd_reset.Location = new System.Drawing.Point(117, 4);
             this.m_cmd_reset.Name = "m_cmd_reset";
             this.m_cmd_reset.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_reset.TabIndex = 0;
@@ -119,11 +119,11 @@
             this.m_cmd_chon_duyet.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_chon_duyet.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_chon_duyet.Image")));
             this.m_cmd_chon_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_chon_duyet.Location = new System.Drawing.Point(240, 4);
+            this.m_cmd_chon_duyet.Location = new System.Drawing.Point(205, 4);
             this.m_cmd_chon_duyet.Name = "m_cmd_chon_duyet";
-            this.m_cmd_chon_duyet.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_chon_duyet.Size = new System.Drawing.Size(93, 28);
             this.m_cmd_chon_duyet.TabIndex = 1;
-            this.m_cmd_chon_duyet.Text = "&Duyệt";
+            this.m_cmd_chon_duyet.Text = "&Chọn duyệt";
             // 
             // m_cmd_chon_cap_nhat
             // 
@@ -134,11 +134,11 @@
             this.m_cmd_chon_cap_nhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_chon_cap_nhat.ImageIndex = 3;
             this.m_cmd_chon_cap_nhat.ImageList = this.ImageList;
-            this.m_cmd_chon_cap_nhat.Location = new System.Drawing.Point(328, 4);
+            this.m_cmd_chon_cap_nhat.Location = new System.Drawing.Point(298, 4);
             this.m_cmd_chon_cap_nhat.Name = "m_cmd_chon_cap_nhat";
-            this.m_cmd_chon_cap_nhat.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_chon_cap_nhat.Size = new System.Drawing.Size(118, 28);
             this.m_cmd_chon_cap_nhat.TabIndex = 2;
-            this.m_cmd_chon_cap_nhat.Text = "&Chọn";
+            this.m_cmd_chon_cap_nhat.Text = "&Chọn cập nhật";
             // 
             // ImageList
             // 
