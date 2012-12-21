@@ -477,13 +477,13 @@ namespace BondApp
 		
         private void export_excel()
         {
-            CExcelReport v_obj_export_excel = new CExcelReport("f750_Bao cao lai suat trai phieu.xls", 12, 3);
+            CExcelReport v_obj_export_excel = new CExcelReport("f750_Bao cao lai suat trai phieu.xls", 12, 2);
             v_obj_export_excel.AddFindAndReplaceItem("<NGAY_BAT_DAU>", CIPConvert.ToStr(m_date_tu_ngay.Value, "dd/MM/yyyy"));
             v_obj_export_excel.AddFindAndReplaceItem("<TEN_CONG_TY>", m_txt_to_chuc_phat_hanh.Text);
             v_obj_export_excel.AddFindAndReplaceItem("<NGAY_KET_THUC>", CIPConvert.ToStr(m_date_den_ngay.Value, "dd/MM/yyyy"));
             v_obj_export_excel.AddFindAndReplaceItem("<TONG_SO_NGAY>", CIPConvert.ToStr(get_tong_so_ngay(), "#,###"));            
             v_obj_export_excel.FindAndReplace(false);
-            v_obj_export_excel.Export2ExcelWithoutFixedRows(m_fg, (int)e_col_Number.NGAY_DAU, m_fg.Cols.Count - 1, false);
+            v_obj_export_excel.Export2ExcelWithoutFixedRows(m_fg, (int)e_col_Number.STT, m_fg.Cols.Count - 1, false);
         }
         private decimal get_tong_so_ngay()
         {

@@ -664,6 +664,7 @@ namespace BondDS.CDBNames
         public const string TONG_GIA_TRI = "TONG_GIA_TRI";
         public const string BIEN_DO_LAI = "BIEN_DO_LAI";
         public const string SO_NGAY_TCPH_CHUYEN_TIEN_TRUOC = "SO_NGAY_TCPH_CHUYEN_TIEN_TRUOC";
+        public const string TRUOC_NGAY_LAM_VIEC_YN = "TRUOC_NGAY_LAM_VIEC_YN";
         public const string NGUNG_CHUYEN_NHUONG_TU_NGAY_CHOT_YN = "NGUNG_CHUYEN_NHUONG_TU_NGAY_CHOT_YN";
         public const string NGUNG_CHUYEN_NHUONG_DEN_NGAY_THANH_TOAN_YN = "NGUNG_CHUYEN_NHUONG_DEN_NGAY_THANH_TOAN_YN";
         public const string ID_NGUOI_LAP = "ID_NGUOI_LAP";

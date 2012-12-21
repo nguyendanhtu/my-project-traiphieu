@@ -241,7 +241,7 @@ namespace BondApp
             this.m_lbl_header.Name = "m_lbl_header";
             this.m_lbl_header.Size = new System.Drawing.Size(958, 45);
             this.m_lbl_header.TabIndex = 58;
-            this.m_lbl_header.Text = "F658- DANH SÁCH NGƯỜI SỞ HỮU TRÁI PHIẾU";
+            this.m_lbl_header.Text = "F658- Yêu cầu TCPH / NHQLTK thanh toán";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox1
@@ -560,7 +560,7 @@ namespace BondApp
             this.Controls.Add(this.m_lbl_header);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f658_bao_cao_chot_danh_sach_nguoi_so_huu_trai_phieu_theo_yeu_cau";
-            this.Text = "f658 - Danh sách người sở hữu trái phiếu theo yêu cầu";
+            this.Text = "F658- Yêu cầu TCPH / NHQLTK thanh toán";
             this.Load += new System.EventHandler(this.f658_bao_cao_chot_danh_sach_nguoi_so_huu_trai_phieu_theo_yeu_cau_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -752,7 +752,7 @@ namespace BondApp
             US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_trai_phieu.dcID_DOT_PHAT_HANH);
             US_DM_TO_CHUC_PHAT_HANH v_us_dm_to_chuc_phat_hanh = new US_DM_TO_CHUC_PHAT_HANH(v_us_dm_dot_phat_hanh.dcID_TO_CHUC_PHAT_HANH);
 
-            CExcelReport v_obj_export_excel = new CExcelReport("f658_Bao_Cao_Chot_Danh_Sach_Nguoi_So_Trai_Phieu_Theo_Yeu_Cau.xls", 15, 2);
+            CExcelReport v_obj_export_excel = new CExcelReport("f658_Bao_Cao_Chot_Danh_Sach_Nguoi_So_Trai_Phieu_Theo_Yeu_Cau.xls", 15, 1);
             v_obj_export_excel.AddFindAndReplaceItem("<TEN_CONG_TY>", v_us_dm_to_chuc_phat_hanh.strTEN_TO_CHUC_PHAT_HANH);
             v_obj_export_excel.AddFindAndReplaceItem("<MA_TRAI_PHIEU>", m_txt_ma_trai_phieu.Text);
             v_obj_export_excel.AddFindAndReplaceItem("<MENH_GIA>", m_txt_menh_gia.Text + " VNĐ");
@@ -762,7 +762,7 @@ namespace BondApp
             v_obj_export_excel.AddFindAndReplaceItem("<NGAY_CHOT>", m_data_ngay_choi_lai.Value);
             v_obj_export_excel.AddFindAndReplaceItem("<LAI_SUAT>", m_txt_lai_suat.Text);
             v_obj_export_excel.FindAndReplace(false);
-            v_obj_export_excel.Export2ExcelWithoutFixedRows(m_fg, (int)e_col_Number.MA_TRAI_CHU, m_fg.Cols.Count - 1, false);
+            v_obj_export_excel.Export2ExcelWithoutFixedRows(m_fg, (int)e_col_Number.STT, m_fg.Cols.Count - 1, false);
 
         }
 

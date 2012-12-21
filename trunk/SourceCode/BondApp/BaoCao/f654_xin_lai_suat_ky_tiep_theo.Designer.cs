@@ -82,7 +82,7 @@
             this.m_lbl_header.Name = "m_lbl_header";
             this.m_lbl_header.Size = new System.Drawing.Size(867, 45);
             this.m_lbl_header.TabIndex = 60;
-            this.m_lbl_header.Text = "F654- PHIẾU ĐỀ SUẤT KÌ TRẢ LÃI TIẾP THEO";
+            this.m_lbl_header.Text = "F654- Phiếu xin lãi suất tham chiếu";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ImageList
@@ -236,11 +236,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(49, 158);
+            this.label6.Location = new System.Drawing.Point(44, 158);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 13);
+            this.label6.Size = new System.Drawing.Size(92, 13);
             this.label6.TabIndex = 64;
-            this.label6.Text = "Ngày chốt lãi";
+            this.label6.Text = "Ngày xác định LS";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // m_txt_ngay_chot
@@ -264,11 +264,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(49, 131);
+            this.label5.Location = new System.Drawing.Point(44, 131);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(19, 13);
+            this.label5.Size = new System.Drawing.Size(79, 13);
             this.label5.TabIndex = 62;
-            this.label5.Text = "Kỳ";
+            this.label5.Text = "Kỳ xác định LS";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // m_cmd_chon_trai_phieu
@@ -352,7 +352,7 @@
             // m_lbl_ma_trai_phieu
             // 
             this.m_lbl_ma_trai_phieu.AutoSize = true;
-            this.m_lbl_ma_trai_phieu.Location = new System.Drawing.Point(49, 31);
+            this.m_lbl_ma_trai_phieu.Location = new System.Drawing.Point(44, 31);
             this.m_lbl_ma_trai_phieu.Name = "m_lbl_ma_trai_phieu";
             this.m_lbl_ma_trai_phieu.Size = new System.Drawing.Size(68, 13);
             this.m_lbl_ma_trai_phieu.TabIndex = 33;
@@ -392,7 +392,7 @@
             // m_lbl_menh_gia
             // 
             this.m_lbl_menh_gia.AutoSize = true;
-            this.m_lbl_menh_gia.Location = new System.Drawing.Point(49, 83);
+            this.m_lbl_menh_gia.Location = new System.Drawing.Point(44, 83);
             this.m_lbl_menh_gia.Name = "m_lbl_menh_gia";
             this.m_lbl_menh_gia.Size = new System.Drawing.Size(51, 13);
             this.m_lbl_menh_gia.TabIndex = 35;
@@ -412,7 +412,7 @@
             // m_lbl_ky_han
             // 
             this.m_lbl_ky_han.AutoSize = true;
-            this.m_lbl_ky_han.Location = new System.Drawing.Point(49, 55);
+            this.m_lbl_ky_han.Location = new System.Drawing.Point(44, 55);
             this.m_lbl_ky_han.Name = "m_lbl_ky_han";
             this.m_lbl_ky_han.Size = new System.Drawing.Size(40, 13);
             this.m_lbl_ky_han.TabIndex = 36;
@@ -496,7 +496,7 @@
             // m_lbl_lai_suat
             // 
             this.m_lbl_lai_suat.AutoSize = true;
-            this.m_lbl_lai_suat.Location = new System.Drawing.Point(49, 105);
+            this.m_lbl_lai_suat.Location = new System.Drawing.Point(44, 105);
             this.m_lbl_lai_suat.Name = "m_lbl_lai_suat";
             this.m_lbl_lai_suat.Size = new System.Drawing.Size(44, 13);
             this.m_lbl_lai_suat.TabIndex = 42;
@@ -520,7 +520,7 @@
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_lbl_header);
             this.Name = "f654_xin_lai_suat_ky_tiep_theo";
-            this.Text = "f654 - Phiếu đề suất kì trả lãi tiếp theo";
+            this.Text = "F654- Phiếu xin lãi suất tham chiếu";
             this.Load += new System.EventHandler(this.f654_xin_lai_suat_ky_tiep_theo_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
