@@ -155,6 +155,13 @@ namespace BondApp.DanhMuc
                 m_cbo_tra_lai_sau.SelectedIndex = 1;
             m_txt_bien_do_lai.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcBIEN_DO_LAI * 100, "#,###0.00");
             m_txt_tcph_chuyen_tien_trc.Text = CIPConvert.ToStr(ip_us_trai_phieu.dcSO_NGAY_TCPH_CHUYEN_TIEN_TRUOC);
+            if (ip_us_trai_phieu.strTRUOC_NGAY_LAM_VIEC_YN != "")
+            {
+                if (ip_us_trai_phieu.strTRUOC_NGAY_LAM_VIEC_YN.Equals("Y"))
+                    m_cbo_tcph_truoc_ngay_lam_viec_yn.SelectedIndex = 0;
+                else m_cbo_tcph_truoc_ngay_lam_viec_yn.SelectedIndex = 1;
+            }
+            else m_cbo_tcph_truoc_ngay_lam_viec_yn.SelectedIndex = -1;
             if (ip_us_trai_phieu.strNGUNG_CHUYEN_NHUONG_TU_NGAY_CHOT_YN.Equals("Y") && ip_us_trai_phieu.strNGUNG_CHUYEN_NHUONG_DEN_NGAY_THANH_TOAN_YN.Equals("Y"))
                 m_cbo_ngung_chuyen_nhuong_tu_ngay.SelectedIndex = 1;
             else m_cbo_ngung_chuyen_nhuong_tu_ngay.SelectedIndex = 0;
@@ -202,6 +209,9 @@ namespace BondApp.DanhMuc
             if (m_txt_bien_do_lai.Text != "")
                 op_us_trai_phieu.dcBIEN_DO_LAI = CIPConvert.ToDecimal(m_txt_bien_do_lai.Text) / 100;
             op_us_trai_phieu.dcSO_NGAY_TCPH_CHUYEN_TIEN_TRUOC = CIPConvert.ToDecimal(m_txt_tcph_chuyen_tien_trc.Text);
+            if (m_cbo_tcph_truoc_ngay_lam_viec_yn.SelectedIndex == 0)
+                op_us_trai_phieu.strTRUOC_NGAY_LAM_VIEC_YN = "Y";
+            else op_us_trai_phieu.strTRUOC_NGAY_LAM_VIEC_YN = "N";
             if (m_cbo_ngung_chuyen_nhuong_tu_ngay.SelectedIndex == 1)
             {
                 op_us_trai_phieu.strNGUNG_CHUYEN_NHUONG_TU_NGAY_CHOT_YN = "Y";
@@ -415,6 +425,7 @@ namespace BondApp.DanhMuc
             load_data_2_cbo();
             m_cbo_chuyen_nhuong_huong_theo.SelectedIndex = 1;
             m_cbo_ngung_chuyen_nhuong_tu_ngay.SelectedIndex = 1;
+            m_cbo_tcph_truoc_ngay_lam_viec_yn.SelectedIndex = 0;
             m_cbo_ng_hang_tham_chieu_ls.SelectedIndex = 0;
             m_lbl_lai_suat_tha_noi.Enabled = false;
             m_cbo_tha_noi.Enabled = false;

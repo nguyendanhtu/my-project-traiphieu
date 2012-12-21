@@ -637,6 +637,29 @@ public class US_V_DM_TRAI_PHIEU : US_Object
         pm_objDR["SO_NGAY_TCPH_CHUYEN_TIEN_TRUOC"] = System.Convert.DBNull;
     }
 
+
+    public string strTRUOC_NGAY_LAM_VIEC_YN
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "TRUOC_NGAY_LAM_VIEC_YN", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["TRUOC_NGAY_LAM_VIEC_YN"] = value;
+        }
+    }
+
+    public bool IsTRUOC_NGAY_LAM_VIEC_YNNull()
+    {
+        return pm_objDR.IsNull("TRUOC_NGAY_LAM_VIEC_YN");
+    }
+
+    public void SetTRUOC_NGAY_LAM_VIEC_YNNull()
+    {
+        pm_objDR["TRUOC_NGAY_LAM_VIEC_YN"] = System.Convert.DBNull;
+    }
+
     public string strNGUNG_CHUYEN_NHUONG_TU_NGAY_CHOT_YN
     {
         get

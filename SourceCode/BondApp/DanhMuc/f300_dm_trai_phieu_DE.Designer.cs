@@ -43,7 +43,6 @@
             this.m_cbo_chuyen_nhuong_huong_theo = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.m_lbl_ky_tra_lai = new System.Windows.Forms.Label();
             this.m_txt_tcph_chuyen_tien_trc = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -103,6 +102,7 @@
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            this.m_cbo_tcph_truoc_ngay_lam_viec_yn = new System.Windows.Forms.ComboBox();
             this.m.SuspendLayout();
             this.m_gru_thong_tin_thanh_toan.SuspendLayout();
             this.m_gru_thong_tin_lai_suat.SuspendLayout();
@@ -153,10 +153,10 @@
             this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_cbo_chuyen_nhuong_huong_theo);
             this.m_gru_thong_tin_thanh_toan.Controls.Add(this.label15);
             this.m_gru_thong_tin_thanh_toan.Controls.Add(this.label10);
-            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.label4);
             this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_lbl_ky_tra_lai);
             this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_txt_tcph_chuyen_tien_trc);
             this.m_gru_thong_tin_thanh_toan.Controls.Add(this.label7);
+            this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_cbo_tcph_truoc_ngay_lam_viec_yn);
             this.m_gru_thong_tin_thanh_toan.Controls.Add(this.m_cbo_co_so_tinh_lai);
             this.m_gru_thong_tin_thanh_toan.Controls.Add(this.label1);
             this.m_gru_thong_tin_thanh_toan.Dock = System.Windows.Forms.DockStyle.Top;
@@ -263,15 +263,6 @@
             this.label10.TabIndex = 67;
             this.label10.Text = "Chuyển nhượng hưởng theo";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(749, 61);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 13);
-            this.label4.TabIndex = 62;
-            this.label4.Text = "ngày";
-            // 
             // m_lbl_ky_tra_lai
             // 
             this.m_lbl_ky_tra_lai.AutoSize = true;
@@ -283,20 +274,20 @@
             // 
             // m_txt_tcph_chuyen_tien_trc
             // 
-            this.m_txt_tcph_chuyen_tien_trc.Location = new System.Drawing.Point(667, 54);
+            this.m_txt_tcph_chuyen_tien_trc.Location = new System.Drawing.Point(563, 58);
             this.m_txt_tcph_chuyen_tien_trc.Name = "m_txt_tcph_chuyen_tien_trc";
-            this.m_txt_tcph_chuyen_tien_trc.Size = new System.Drawing.Size(73, 20);
+            this.m_txt_tcph_chuyen_tien_trc.Size = new System.Drawing.Size(58, 20);
             this.m_txt_tcph_chuyen_tien_trc.TabIndex = 5;
             this.m_txt_tcph_chuyen_tien_trc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(414, 61);
+            this.label7.Location = new System.Drawing.Point(352, 61);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(246, 13);
+            this.label7.Size = new System.Drawing.Size(201, 13);
             this.label7.TabIndex = 61;
-            this.label7.Text = "Thời hạn TCPH chuyển tiền trước ngày thanh toán";
+            this.label7.Text = "TCPH chuyển tiền trước ngày thanh toán";
             // 
             // m_cbo_co_so_tinh_lai
             // 
@@ -304,7 +295,7 @@
             this.m_cbo_co_so_tinh_lai.FormattingEnabled = true;
             this.m_cbo_co_so_tinh_lai.Location = new System.Drawing.Point(667, 23);
             this.m_cbo_co_so_tinh_lai.Name = "m_cbo_co_so_tinh_lai";
-            this.m_cbo_co_so_tinh_lai.Size = new System.Drawing.Size(73, 21);
+            this.m_cbo_co_so_tinh_lai.Size = new System.Drawing.Size(76, 21);
             this.m_cbo_co_so_tinh_lai.TabIndex = 3;
             // 
             // label1
@@ -401,7 +392,7 @@
             this.m_cbo_dv_dieu_chinh_ls.FormattingEnabled = true;
             this.m_cbo_dv_dieu_chinh_ls.Location = new System.Drawing.Point(663, 17);
             this.m_cbo_dv_dieu_chinh_ls.Name = "m_cbo_dv_dieu_chinh_ls";
-            this.m_cbo_dv_dieu_chinh_ls.Size = new System.Drawing.Size(65, 21);
+            this.m_cbo_dv_dieu_chinh_ls.Size = new System.Drawing.Size(80, 21);
             this.m_cbo_dv_dieu_chinh_ls.TabIndex = 3;
             // 
             // m_cbo_ng_hang_tham_chieu_ls
@@ -889,6 +880,18 @@
             this.m_cmd_exit.TabIndex = 1;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
+            // m_cbo_tcph_truoc_ngay_lam_viec_yn
+            // 
+            this.m_cbo_tcph_truoc_ngay_lam_viec_yn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_tcph_truoc_ngay_lam_viec_yn.FormattingEnabled = true;
+            this.m_cbo_tcph_truoc_ngay_lam_viec_yn.Items.AddRange(new object[] {
+            "Ngày làm việc",
+            "Ngày thường"});
+            this.m_cbo_tcph_truoc_ngay_lam_viec_yn.Location = new System.Drawing.Point(630, 58);
+            this.m_cbo_tcph_truoc_ngay_lam_viec_yn.Name = "m_cbo_tcph_truoc_ngay_lam_viec_yn";
+            this.m_cbo_tcph_truoc_ngay_lam_viec_yn.Size = new System.Drawing.Size(113, 21);
+            this.m_cbo_tcph_truoc_ngay_lam_viec_yn.TabIndex = 3;
+            // 
             // f300_dm_trai_phieu_DE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -950,7 +953,6 @@
         private System.Windows.Forms.TextBox m_txt_bien_do_lai;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox m_txt_tcph_chuyen_tien_trc;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -990,6 +992,7 @@
         private System.Windows.Forms.ComboBox m_cbo_thanh_toan_tai_ngay_lv_truoc_yn;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox m_cbo_ng_hang_tham_chieu_ls;
+        private System.Windows.Forms.ComboBox m_cbo_tcph_truoc_ngay_lam_viec_yn;
 
     }
 }
