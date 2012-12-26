@@ -202,10 +202,10 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_lap);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 432);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 536);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(886, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(889, 36);
             this.m_pnl_out_place_dm.TabIndex = 4;
             // 
             // m_cmd_save
@@ -217,7 +217,7 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(530, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(533, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 14;
@@ -273,7 +273,7 @@
             this.m_cmd_duyet.Enabled = false;
             this.m_cmd_duyet.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet.Image")));
             this.m_cmd_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_duyet.Location = new System.Drawing.Point(618, 4);
+            this.m_cmd_duyet.Location = new System.Drawing.Point(621, 4);
             this.m_cmd_duyet.Name = "m_cmd_duyet";
             this.m_cmd_duyet.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_duyet.TabIndex = 15;
@@ -288,7 +288,7 @@
             this.m_cmd_lap.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_lap.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_lap.Image")));
             this.m_cmd_lap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_lap.Location = new System.Drawing.Point(706, 4);
+            this.m_cmd_lap.Location = new System.Drawing.Point(709, 4);
             this.m_cmd_lap.Name = "m_cmd_lap";
             this.m_cmd_lap.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_lap.TabIndex = 16;
@@ -302,7 +302,7 @@
             this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_exit.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_exit.Image")));
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_exit.Location = new System.Drawing.Point(794, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(797, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 17;
@@ -315,7 +315,7 @@
             this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(886, 40);
+            this.m_lbl_title.Size = new System.Drawing.Size(889, 40);
             this.m_lbl_title.TabIndex = 0;
             this.m_lbl_title.Text = "F700 - Giao dịch phong tỏa, giải tỏa";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -378,7 +378,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(886, 184);
+            this.groupBox1.Size = new System.Drawing.Size(889, 184);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin trái chủ";
@@ -572,7 +572,7 @@
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox3.Location = new System.Drawing.Point(0, 224);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(886, 206);
+            this.groupBox3.Size = new System.Drawing.Size(889, 206);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin cầm cố/giải tỏa";
@@ -858,7 +858,7 @@
             this.groupBox2.Enabled = false;
             this.groupBox2.Location = new System.Drawing.Point(0, 430);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(886, 2);
+            this.groupBox2.Size = new System.Drawing.Size(889, 106);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Đơn vị xác nhận - Công ty cổ phần Chứng khoán Ngân hàng Công thương Việt Nam";
@@ -950,7 +950,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(886, 468);
+            this.ClientSize = new System.Drawing.Size(889, 572);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);

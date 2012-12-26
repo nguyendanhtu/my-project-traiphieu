@@ -26,6 +26,7 @@ namespace BondApp.ChucNang
         public f320_cap_nhat_lai_suat_thoa_thuan()
         {
             InitializeComponent();
+            format_controls();
         }
 
         #region Public Intrface
