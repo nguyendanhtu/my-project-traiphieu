@@ -28,6 +28,7 @@ namespace BondApp.BaoCao
         public f662_bao_cao_in_so_so_huu_trai_phieu()
         {
             InitializeComponent();
+            format_controls();
         }
 
         #region Public Interface

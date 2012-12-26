@@ -223,7 +223,7 @@ namespace BondApp
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f997_ht_nhom_quyen";
-            this.Text = "f997_ht_nhom_quyen";
+            this.Text = "F997 - Nhóm người sử dụng";
             this.Load += new System.EventHandler(this.f997_ht_nhom_quyen_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
@@ -377,7 +377,24 @@ namespace BondApp
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
 			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            this.KeyDown += new KeyEventHandler(f997_ht_nhom_quyen_KeyDown);
 		}
+
+        void f997_ht_nhom_quyen_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 		#endregion
 
 //

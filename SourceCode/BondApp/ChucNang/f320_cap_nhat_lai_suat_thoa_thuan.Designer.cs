@@ -224,7 +224,7 @@
             this.m_fg1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_fg1.Location = new System.Drawing.Point(0, 304);
             this.m_fg1.Name = "m_fg1";
-            this.m_fg1.Size = new System.Drawing.Size(734, 222);
+            this.m_fg1.Size = new System.Drawing.Size(804, 222);
             this.m_fg1.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg1.Styles"));
             this.m_fg1.TabIndex = 1;
             this.m_fg1.DoubleClick += new System.EventHandler(this.m_fg_DoubleClick_1);
@@ -280,7 +280,7 @@
             this.m_gru_thong_tin_trai_phieu.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_gru_thong_tin_trai_phieu.Location = new System.Drawing.Point(0, 37);
             this.m_gru_thong_tin_trai_phieu.Name = "m_gru_thong_tin_trai_phieu";
-            this.m_gru_thong_tin_trai_phieu.Size = new System.Drawing.Size(734, 126);
+            this.m_gru_thong_tin_trai_phieu.Size = new System.Drawing.Size(804, 126);
             this.m_gru_thong_tin_trai_phieu.TabIndex = 0;
             this.m_gru_thong_tin_trai_phieu.TabStop = false;
             this.m_gru_thong_tin_trai_phieu.Text = "Thông tin trái phiếu";
@@ -320,7 +320,7 @@
             this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
-            this.m_cmd_exit.Location = new System.Drawing.Point(642, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(712, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 7;
@@ -341,7 +341,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 526);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(4);
-            this.panel1.Size = new System.Drawing.Size(734, 36);
+            this.panel1.Size = new System.Drawing.Size(804, 36);
             this.panel1.TabIndex = 12;
             // 
             // m_cmd_reset
@@ -352,7 +352,7 @@
             this.m_cmd_reset.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_reset.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_reset.Image")));
             this.m_cmd_reset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_reset.Location = new System.Drawing.Point(16, 4);
+            this.m_cmd_reset.Location = new System.Drawing.Point(86, 4);
             this.m_cmd_reset.Name = "m_cmd_reset";
             this.m_cmd_reset.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_reset.TabIndex = 0;
@@ -367,7 +367,7 @@
             this.m_cmd_chon_duyet.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_chon_duyet.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_chon_duyet.Image")));
             this.m_cmd_chon_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_chon_duyet.Location = new System.Drawing.Point(104, 4);
+            this.m_cmd_chon_duyet.Location = new System.Drawing.Point(174, 4);
             this.m_cmd_chon_duyet.Name = "m_cmd_chon_duyet";
             this.m_cmd_chon_duyet.Size = new System.Drawing.Size(93, 28);
             this.m_cmd_chon_duyet.TabIndex = 1;
@@ -383,7 +383,7 @@
             this.m_cmd_chon_sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_chon_sua.ImageIndex = 3;
             this.m_cmd_chon_sua.ImageList = this.ImageList;
-            this.m_cmd_chon_sua.Location = new System.Drawing.Point(197, 4);
+            this.m_cmd_chon_sua.Location = new System.Drawing.Point(267, 4);
             this.m_cmd_chon_sua.Name = "m_cmd_chon_sua";
             this.m_cmd_chon_sua.Size = new System.Drawing.Size(93, 28);
             this.m_cmd_chon_sua.TabIndex = 2;
@@ -399,7 +399,7 @@
             this.m_cmd_duyet_gd.Enabled = false;
             this.m_cmd_duyet_gd.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet_gd.Image")));
             this.m_cmd_duyet_gd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_duyet_gd.Location = new System.Drawing.Point(290, 4);
+            this.m_cmd_duyet_gd.Location = new System.Drawing.Point(360, 4);
             this.m_cmd_duyet_gd.Name = "m_cmd_duyet_gd";
             this.m_cmd_duyet_gd.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_duyet_gd.TabIndex = 3;
@@ -416,7 +416,7 @@
             this.m_cmd_sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_sua.ImageIndex = 3;
             this.m_cmd_sua.ImageList = this.ImageList;
-            this.m_cmd_sua.Location = new System.Drawing.Point(378, 4);
+            this.m_cmd_sua.Location = new System.Drawing.Point(448, 4);
             this.m_cmd_sua.Name = "m_cmd_sua";
             this.m_cmd_sua.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_sua.TabIndex = 4;
@@ -432,7 +432,7 @@
             this.m_cmd_lap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_lap.ImageIndex = 3;
             this.m_cmd_lap.ImageList = this.ImageList;
-            this.m_cmd_lap.Location = new System.Drawing.Point(466, 4);
+            this.m_cmd_lap.Location = new System.Drawing.Point(536, 4);
             this.m_cmd_lap.Name = "m_cmd_lap";
             this.m_cmd_lap.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_lap.TabIndex = 5;
@@ -448,7 +448,7 @@
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(554, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(624, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 6;
@@ -462,7 +462,7 @@
             this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(734, 37);
+            this.m_lbl_title.Size = new System.Drawing.Size(804, 37);
             this.m_lbl_title.TabIndex = 13;
             this.m_lbl_title.Text = "F320 - Cập nhật lãi suất thỏa thuận";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -492,7 +492,7 @@
             this.m_gru_thong_tin_cap_nhat.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_gru_thong_tin_cap_nhat.Location = new System.Drawing.Point(0, 163);
             this.m_gru_thong_tin_cap_nhat.Name = "m_gru_thong_tin_cap_nhat";
-            this.m_gru_thong_tin_cap_nhat.Size = new System.Drawing.Size(734, 135);
+            this.m_gru_thong_tin_cap_nhat.Size = new System.Drawing.Size(804, 135);
             this.m_gru_thong_tin_cap_nhat.TabIndex = 2;
             this.m_gru_thong_tin_cap_nhat.TabStop = false;
             this.m_gru_thong_tin_cap_nhat.Text = "Thông tin cập nhật lãi suất";
@@ -694,7 +694,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 562);
+            this.ClientSize = new System.Drawing.Size(804, 562);
             this.Controls.Add(this.m_gru_thong_tin_cap_nhat);
             this.Controls.Add(this.m_fg1);
             this.Controls.Add(this.m_gru_thong_tin_trai_phieu);

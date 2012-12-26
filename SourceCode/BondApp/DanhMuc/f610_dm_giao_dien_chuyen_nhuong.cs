@@ -157,7 +157,7 @@ namespace BondApp
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 526);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(984, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(934, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_lap_chuyen_nhuong
@@ -169,7 +169,7 @@ namespace BondApp
             this.m_cmd_lap_chuyen_nhuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_lap_chuyen_nhuong.ImageIndex = 2;
             this.m_cmd_lap_chuyen_nhuong.ImageList = this.ImageList;
-            this.m_cmd_lap_chuyen_nhuong.Location = new System.Drawing.Point(540, 4);
+            this.m_cmd_lap_chuyen_nhuong.Location = new System.Drawing.Point(490, 4);
             this.m_cmd_lap_chuyen_nhuong.Name = "m_cmd_lap_chuyen_nhuong";
             this.m_cmd_lap_chuyen_nhuong.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_lap_chuyen_nhuong.TabIndex = 26;
@@ -183,7 +183,7 @@ namespace BondApp
             this.m_cmd_duyet_chuyen_nhuong.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_duyet_chuyen_nhuong.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet_chuyen_nhuong.Image")));
             this.m_cmd_duyet_chuyen_nhuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_duyet_chuyen_nhuong.Location = new System.Drawing.Point(628, 4);
+            this.m_cmd_duyet_chuyen_nhuong.Location = new System.Drawing.Point(578, 4);
             this.m_cmd_duyet_chuyen_nhuong.Name = "m_cmd_duyet_chuyen_nhuong";
             this.m_cmd_duyet_chuyen_nhuong.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_duyet_chuyen_nhuong.TabIndex = 22;
@@ -198,7 +198,7 @@ namespace BondApp
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(716, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(666, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 13;
@@ -228,7 +228,7 @@ namespace BondApp
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(804, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(754, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 14;
@@ -243,7 +243,7 @@ namespace BondApp
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(892, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(842, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -262,7 +262,7 @@ namespace BondApp
             this.m_grb_thong_tin_ban_hang.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_grb_thong_tin_ban_hang.Location = new System.Drawing.Point(0, 31);
             this.m_grb_thong_tin_ban_hang.Name = "m_grb_thong_tin_ban_hang";
-            this.m_grb_thong_tin_ban_hang.Size = new System.Drawing.Size(984, 92);
+            this.m_grb_thong_tin_ban_hang.Size = new System.Drawing.Size(934, 92);
             this.m_grb_thong_tin_ban_hang.TabIndex = 34;
             this.m_grb_thong_tin_ban_hang.TabStop = false;
             this.m_grb_thong_tin_ban_hang.Text = "Thông tin giao dịch phong tỏa";
@@ -349,11 +349,11 @@ namespace BondApp
             // m_lbl_title
             // 
             this.m_lbl_title.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_title.ForeColor = System.Drawing.Color.DarkRed;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(984, 31);
+            this.m_lbl_title.Size = new System.Drawing.Size(934, 31);
             this.m_lbl_title.TabIndex = 33;
             this.m_lbl_title.Text = "F610 -Danh sách giao dịch chuyển nhượng";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -364,14 +364,14 @@ namespace BondApp
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_fg.Location = new System.Drawing.Point(0, 123);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(984, 397);
+            this.m_fg.Size = new System.Drawing.Size(934, 397);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 35;
             // 
             // f610_dm_giao_dien_chuyen_nhuong
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(984, 562);
+            this.ClientSize = new System.Drawing.Size(934, 562);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_grb_thong_tin_ban_hang);
             this.Controls.Add(this.m_lbl_title);

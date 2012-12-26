@@ -187,13 +187,13 @@ namespace SaleManagement
             // m_lbl_header
             // 
             this.m_lbl_header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_header.ForeColor = System.Drawing.Color.DarkRed;
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
             this.m_lbl_header.Size = new System.Drawing.Size(968, 24);
             this.m_lbl_header.TabIndex = 24;
-            this.m_lbl_header.Text = "F655- DANH SÁCH TRẢ LÃI";
+            this.m_lbl_header.Text = "F655- Danh sách chốt trả lãi/gốc";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox1
@@ -596,7 +596,7 @@ namespace SaleManagement
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_lbl_header);
             this.Name = "f655_danh_sach_chot_lai";
-            this.Text = "F655 - Danh sách chốt lãi";
+            this.Text = "F655 - Danh sách chốt trả lãi/gốc";
             this.Load += new System.EventHandler(this.f655_danh_sach_chot_lai_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -226,12 +226,12 @@ namespace BondApp
             // m_lbl_lich_nhac_viec_den
             // 
             this.m_lbl_lich_nhac_viec_den.AutoSize = true;
+            this.m_lbl_lich_nhac_viec_den.Enabled = false;
             this.m_lbl_lich_nhac_viec_den.Location = new System.Drawing.Point(360, 51);
             this.m_lbl_lich_nhac_viec_den.Name = "m_lbl_lich_nhac_viec_den";
             this.m_lbl_lich_nhac_viec_den.Size = new System.Drawing.Size(53, 13);
             this.m_lbl_lich_nhac_viec_den.TabIndex = 23;
             this.m_lbl_lich_nhac_viec_den.Text = "Đến ngày";
-            this.m_lbl_lich_nhac_viec_den.Enabled = false;
             // 
             // m_cmd_filter
             // 
@@ -311,12 +311,13 @@ namespace BondApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			TEN_TRUY_CAP = 1
-,MO_TA = 6
-,LOAI_HANH_DONG = 4
-,DOI_TUONG_THAO_TAC = 5
-,THOI_GIAN = 3
-,TEN = 2
+			STT = 1,
+            TEN_TRUY_CAP = 2
+,MO_TA = 7
+,LOAI_HANH_DONG = 5
+,DOI_TUONG_THAO_TAC = 6
+,THOI_GIAN = 4
+,TEN = 3
 
 		}			
 		#endregion
@@ -362,6 +363,7 @@ namespace BondApp
                                 , CIPConvert.ToDecimal(m_cbo_loai_hanh_dong.SelectedValue));
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
 			m_fg.Redraw = true;
 		}
         private void load_data_2_cbo_loai_hanh_dong()
@@ -403,7 +405,30 @@ namespace BondApp
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_filter.Click += new EventHandler(m_cmd_filter_Click);
+            this.KeyDown += new KeyEventHandler(f661_bao_cao_log_he_thong_KeyDown);
+            m_cbo_loai_hanh_dong.SelectedIndexChanged += new EventHandler(m_cbo_loai_hanh_dong_SelectedIndexChanged);
 		}
+
+        void m_cbo_loai_hanh_dong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            load_data_2_grid();
+        }
+
+        void f661_bao_cao_log_he_thong_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Escape)
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
         void m_cmd_filter_Click(object sender, EventArgs e)
         {
