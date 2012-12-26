@@ -165,7 +165,7 @@ namespace BondApp
                     break;
                 case e_form_mode.KHONG_TRAI_PHIEU_SINH_LICH:
                     m_obj_trans = get_trans_object(m_fg);
-                    m_lbl_header.Text = "F650 - SINH LỊCH THANH TOÁN LÃI GỐC";
+                    m_lbl_header.Text = "F650 - Sinh lịch thanh toán lãi gốc";
                     this.Text = "F650 - Sinh lịch thanh toán lãi gốc";
                     m_cmd_generate.Visible = true;
                     m_cmd_thong_bao_ls.Visible = false;
@@ -174,7 +174,7 @@ namespace BondApp
                     break;
                 case e_form_mode.KHONG_TRAI_PHIEU_THONG_BAO_LAI_SUAT:
                     m_obj_trans = get_trans_object(m_fg);
-                    m_lbl_header.Text = "F650 - THÔNG BÁO LÃI SUẤT";
+                    m_lbl_header.Text = "F650 - Thông báo lãi suất";
                     this.Text = "F650 - Thông báo lãi suất";
                     m_cmd_generate.Visible = false;
                     m_cmd_thong_bao_tien_lai.Visible = false;
@@ -186,7 +186,7 @@ namespace BondApp
                     break;
                 case e_form_mode.KHONG_TRAI_PHIEU_THONG_BAO_NGAY_CHOT_DS_LAI:
                     m_obj_trans = get_trans_object(m_fg);
-                    m_lbl_header.Text = "F650 - THÔNG BÁO NGÀY CHỐT DANH SÁCH NHẬN LÃI";
+                    m_lbl_header.Text = "F650 - Thông báo ngày chốt danh sách nhận lãi";
                     this.Text = "F650 - Thông báo ngày chốt danh sách nhận lãi";
                     m_cmd_generate.Visible = false;
                     m_cmd_thong_bao_ls.Visible = false;
@@ -198,7 +198,7 @@ namespace BondApp
                     break;
                 case e_form_mode.KHONG_TRAI_PHIEU_THONG_BAO_TT_LAI:
                     m_obj_trans = get_trans_object(m_fg);
-                    m_lbl_header.Text = "F650 - THÔNG BÁO THANH TOÁN LÃI TRÁI PHIẾU";
+                    m_lbl_header.Text = "F650 - Thông báo thanh toán lãi trái phiếu";
                     this.Text = "F650 - Thông báo thanh toán lãi trái phiếu";
                     m_cmd_generate.Visible = false;
                     m_cmd_thong_bao_ls.Visible = false;
@@ -210,7 +210,7 @@ namespace BondApp
                     break;
                 case e_form_mode.KHONG_TRAI_PHIEU_THONG_BAO_DOT_THANH_TOAN_LAI_TRAI_PHIEU:
                     m_obj_trans = get_trans_object(m_fg);
-                    m_lbl_header.Text = "F650 - THÔNG BÁO ĐỢT THANH TOÁN LÃI TRÁI PHIẾU";
+                    m_lbl_header.Text = "F650 - Thông báo đợt thanh toán lãi trái phiếu";
                     this.Text = "F650 - Thông báo đợt thanh toán lãi trái phiếu";
                     m_cmd_generate.Visible = false;
                     m_cmd_thong_bao_ls.Visible = false;
