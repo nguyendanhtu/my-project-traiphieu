@@ -91,6 +91,7 @@ namespace BondApp.ChucNang
         US_DM_TRAI_CHU m_us_dm_trai_chu;
         decimal m_d_ky_tinh_lai = 0;
         DateTime m_dat_ngay_chot_lai_cuoi;
+        US_V_HT_LOG_TRUY_CAP m_us_v_ht_log_truy_cap = new US_V_HT_LOG_TRUY_CAP();
 		#endregion
 
 		#region Private Methods
@@ -310,10 +311,27 @@ namespace BondApp.ChucNang
 
                 m_us_dm_trai_chu.Update();
                 m_us_gd_so_du_trai_phieu.Insert();
+                ghi_log_he_thong(m_us.strTEN_TRAI_CHU);
                 load_data_2_grid(m_us_v_trai_phieu);
             }
         }
-
+        private void ghi_log_he_thong(string ip_str_ten_trai_chu)
+        {
+            /* Thông tin chung*/
+            m_us_v_ht_log_truy_cap.dcID_DANG_NHAP = CAppContext_201.getCurrentUserID();
+            m_us_v_ht_log_truy_cap.datTHOI_GIAN = DateTime.Now;
+            m_us_v_ht_log_truy_cap.strDOI_TUONG_THAO_TAC = LOG_DOI_TUONG_TAC_DONG.GD_CHOT_LAI_DETAIL;
+            m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.TRA_LAI;
+            m_us_v_ht_log_truy_cap.strMO_TA = "Trả gốc trái chủ " + ip_str_ten_trai_chu+" sở hữu trái phiếu "+ m_us_v_trai_phieu.strTEN_TRAI_PHIEU;
+            try
+            {
+                m_us_v_ht_log_truy_cap.Insert();
+            }
+            catch
+            {
+                BaseMessages.MsgBox_Infor("Đã xảy ra lỗi trong quá trình ghi log hệ thống");
+            }
+        }
 		private void set_define_events(){
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_chon_trai_phieu.Click += new EventHandler(m_cmd_chon_trai_phieu_Click);

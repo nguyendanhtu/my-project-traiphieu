@@ -117,6 +117,7 @@ namespace BondApp.ChucNang
         DS_V_DM_TRAI_CHU_CHOT_LAI m_ds = new DS_V_DM_TRAI_CHU_CHOT_LAI();
         US_V_DM_TRAI_CHU_CHOT_LAI m_us = new US_V_DM_TRAI_CHU_CHOT_LAI();
         e_Mod m_mod;
+        US_V_HT_LOG_TRUY_CAP m_us_v_ht_log_truy_cap = new US_V_HT_LOG_TRUY_CAP();
         #endregion
 
         #region Private Method
@@ -268,7 +269,7 @@ namespace BondApp.ChucNang
             if (m_us_v_trai_phieu == null || m_us_v_trai_phieu.strMA_TRAI_PHIEU == "") return;
             //grid2us_object(m_us, m_fg.Row);
 
-            if (BaseMessages.MsgBox_Confirm("Thanh toán lãi cho các trái chủ sở hữu trái phiếu " + m_us_v_trai_phieu.strMA_TRAI_PHIEU + "        Kỳ tính lãi: " + m_cbo_ky_tinh_lai.Text))
+            if (BaseMessages.MsgBox_Confirm("Thanh toán lãi cho các trái chủ sở hữu trái phiếu " + m_us_v_trai_phieu.strMA_TRAI_PHIEU + "   Kỳ tính lãi: " + m_cbo_ky_tinh_lai.Text))
             {
                 foreach (DataRow v_dr in m_ds.V_DM_TRAI_CHU_CHOT_LAI.Rows)
                 {
@@ -276,6 +277,7 @@ namespace BondApp.ChucNang
                     m_us_gd_chot_lai_detail.strDA_NHAN_TIEN_YN = "Y";
                     m_us_gd_chot_lai_detail.Update();
                 }
+                ghi_log_he_thong(0, "");
                 BaseMessages.MsgBox_Infor("Đã thanh toán thành công!");
                 load_data_2_grid();
             }
@@ -305,6 +307,7 @@ namespace BondApp.ChucNang
                 m_us_gd_chot_lai_detail.strDA_NHAN_TIEN_YN = m_us.strDA_NHAN_TIEN_YN;
 
                 m_us_gd_chot_lai_detail.Update();
+                ghi_log_he_thong(1, m_us.strTEN_TRAI_CHU);
                 load_data_2_grid();
             }
         }
@@ -472,6 +475,36 @@ namespace BondApp.ChucNang
             {
                 m_us_v_trai_phieu = null;
                 load_data_2_grid();
+            }
+        }
+
+        /*
+         * ip_i_hd = 0: Thanh toán
+         * ip_i_hd = 0: Hoàn tác
+         */
+        private void ghi_log_he_thong(int ip_i_hd, string ip_str_ten_trai_chu)
+        {
+            /* Thông tin chung*/
+            m_us_v_ht_log_truy_cap.dcID_DANG_NHAP = CAppContext_201.getCurrentUserID();
+            m_us_v_ht_log_truy_cap.datTHOI_GIAN = DateTime.Now;
+            m_us_v_ht_log_truy_cap.strDOI_TUONG_THAO_TAC = LOG_DOI_TUONG_TAC_DONG.GD_CHOT_LAI_DETAIL;
+            if (ip_i_hd == 0)
+            {
+                m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.TRA_LAI;
+                m_us_v_ht_log_truy_cap.strMO_TA = "Trả lãi " + " các trái chủ của" + m_us_v_trai_phieu.strTEN_TRAI_PHIEU + " trong kỳ thứ " + m_cbo_ky_tinh_lai.SelectedValue;
+            }
+            else
+            {
+                m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.SUA;
+                m_us_v_ht_log_truy_cap.strMO_TA = "Hoàn tác trả lãi " + " cho trái chủ " + ip_str_ten_trai_chu +" sở hữu "+ m_us_v_trai_phieu.strTEN_TRAI_PHIEU + " trong kỳ thứ " + m_cbo_ky_tinh_lai.SelectedValue;
+            }
+            try
+            {
+                m_us_v_ht_log_truy_cap.Insert();
+            }
+            catch
+            {
+                BaseMessages.MsgBox_Infor("Đã xảy ra lỗi trong quá trình ghi log hệ thống");
             }
         }
 

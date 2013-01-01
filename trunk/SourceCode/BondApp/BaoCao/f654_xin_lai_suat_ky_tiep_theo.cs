@@ -127,22 +127,23 @@ namespace BondApp.BaoCao
                 if (v_i_current != 0)
                 {
                     m_cbo_ky_tinh_lai.SelectedIndex = v_i_current - 1;
-                    load_ngay_chot_theo_ky(v_i_current - 1);
+                    load_ngay_chot_theo_ky(v_i_current);
                 }
             }
         }
 
         private void load_ngay_chot_theo_ky(int i_ky_chot_lai)
         {
-            US_HT_THAM_SO_HE_THONG v_us_ht = new US_HT_THAM_SO_HE_THONG(ID_THAM_SO_HE_THONG.CHOT_LAI_TRUOC);
+            //US_HT_THAM_SO_HE_THONG v_us_ht = new US_HT_THAM_SO_HE_THONG(ID_THAM_SO_HE_THONG.CHOT_LAI_TRUOC);
             US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_trai_phieu.dcID_DOT_PHAT_HANH);
             DateTime v_dat_ngay_chot_tuong_ung = v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH;
+            DateTime v_dat_ngay_chot_lai;
             v_dat_ngay_chot_tuong_ung = v_dat_ngay_chot_tuong_ung.AddMonths(i_ky_chot_lai * (int)m_us_trai_phieu.dcKY_TRA_LAI);
             m_txt_ngay_bat_dau.Text = CIPConvert.ToStr(v_dat_ngay_chot_tuong_ung, "dd/MM/yyyy");
+            v_dat_ngay_chot_lai = v_dat_ngay_chot_tuong_ung.AddDays(-(int)CIPConvert.ToDecimal(m_us_trai_phieu.dcSO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN));
             v_dat_ngay_chot_tuong_ung = v_dat_ngay_chot_tuong_ung.AddMonths((int)m_us_trai_phieu.dcKY_TRA_LAI);
             m_txt_ngay_ket_thuc.Text = CIPConvert.ToStr(v_dat_ngay_chot_tuong_ung, "dd/MM/yyyy");
-            v_dat_ngay_chot_tuong_ung = v_dat_ngay_chot_tuong_ung.AddDays(-(int)CIPConvert.ToDecimal(v_us_ht.strGIA_TRI));
-            m_txt_ngay_chot.Text = CIPConvert.ToStr(v_dat_ngay_chot_tuong_ung, "dd/MM/yyyy");
+            m_txt_ngay_chot.Text = CIPConvert.ToStr(v_dat_ngay_chot_lai, "dd/MM/yyyy");
         }
 
         /*private void grid2us_object(US_V_DM_TRAI_CHU_CHOT_LAI i_us
@@ -220,6 +221,8 @@ namespace BondApp.BaoCao
             v_obj_word_rpt.AddFindAndReplace("<NGAY_TINH_LAI_DAU>", m_txt_ngay_bat_dau.Text);
             v_obj_word_rpt.AddFindAndReplace("<NGAY_TINH_LAI_CUOI>", m_txt_ngay_ket_thuc.Text);
             v_obj_word_rpt.AddFindAndReplace("<NGAY_KHONG_TINH_LAI>", m_txt_ngay_ket_thuc.Text);
+            v_obj_word_rpt.AddFindAndReplace("<NGAY_XAC_DINH_LS>", m_txt_ngay_chot.Text);
+            v_obj_word_rpt.AddFindAndReplace("<GHI_CHU_VE_PHUONG_THUC_XD_LS>", m_us_trai_phieu.strGHI_CHU_PHUONG_THUC_XD_LAI_SUAT);
             v_obj_word_rpt.Export2Word(true);
 
         }

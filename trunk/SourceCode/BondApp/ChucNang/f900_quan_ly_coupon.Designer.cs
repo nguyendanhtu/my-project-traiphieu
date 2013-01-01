@@ -390,7 +390,8 @@
             this.m_cmd_hoan_tac.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_hoan_tac.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_hoan_tac.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_hoan_tac.ImageIndex = 2;
+            this.m_cmd_hoan_tac.ImageIndex = 11;
+            this.m_cmd_hoan_tac.ImageList = this.ImageList;
             this.m_cmd_hoan_tac.Location = new System.Drawing.Point(839, 4);
             this.m_cmd_hoan_tac.Name = "m_cmd_hoan_tac";
             this.m_cmd_hoan_tac.Size = new System.Drawing.Size(88, 28);
