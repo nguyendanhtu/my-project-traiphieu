@@ -86,6 +86,7 @@ namespace BondApp.ChucNang
         US_GD_LICH_THANH_TOAN_LAI_GOC m_us_gd_lich_tt_lai_goc = new US_GD_LICH_THANH_TOAN_LAI_GOC();
         ITransferDataRow m_obj_trans;
         eFormMode m_e_form_mode = eFormMode.CAP_NHAT_LAI_SUAT;
+        US_V_HT_LOG_TRUY_CAP m_us_v_ht_log_truy_cap = new US_V_HT_LOG_TRUY_CAP();
         #endregion
 
         #region Private Methods
@@ -151,7 +152,49 @@ namespace BondApp.ChucNang
             CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
             m_fg.Redraw = true;
         }
-
+        private int get_ky_dieu_chinh_lai_suat(DateTime ip_dat_ngay_ap_dung_ls)
+        {
+            int v_i_ky_dc_lai_suat = 0;
+            if (m_us_v_trai_phieu != null)
+            {
+                decimal v_dc_so_ky_dieu_chinh_lai_suat;
+                DateTime v_dat_ngay_tuong_ung_tung_ky;
+                // Tính số kỳ điều chỉnh lãi suất
+                if (m_us_v_trai_phieu.dcID_DV_DIEU_CHINH_LS == ID_DON_VI_KY_HAN.THANG)
+                {
+                    if (m_us_v_trai_phieu.dcID_DV_KY_HAN == ID_DON_VI_KY_HAN.THANG)
+                        v_dc_so_ky_dieu_chinh_lai_suat = m_us_v_trai_phieu.dcKY_HAN / m_us_v_trai_phieu.dcKY_DIEU_CHINH_LS;
+                    else
+                        v_dc_so_ky_dieu_chinh_lai_suat = (m_us_v_trai_phieu.dcKY_HAN * 12) / m_us_v_trai_phieu.dcKY_DIEU_CHINH_LS;
+                    for (int v_i = 1; v_i <= v_dc_so_ky_dieu_chinh_lai_suat; v_i++)
+                    {
+                        v_dat_ngay_tuong_ung_tung_ky = m_us_v_trai_phieu.datNGAY_PHAT_HANH.AddMonths(int.Parse(CIPConvert.ToStr(m_us_v_trai_phieu.dcKY_DIEU_CHINH_LS))*v_i);
+                        if (ip_dat_ngay_ap_dung_ls == v_dat_ngay_tuong_ung_tung_ky)
+                        {
+                            v_i_ky_dc_lai_suat = v_i;
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    if (m_us_v_trai_phieu.dcID_DV_KY_HAN == ID_DON_VI_KY_HAN.THANG)
+                        v_dc_so_ky_dieu_chinh_lai_suat = m_us_v_trai_phieu.dcKY_HAN / (m_us_v_trai_phieu.dcKY_DIEU_CHINH_LS * 12);
+                    else
+                        v_dc_so_ky_dieu_chinh_lai_suat = m_us_v_trai_phieu.dcKY_HAN / m_us_v_trai_phieu.dcKY_DIEU_CHINH_LS;
+                    for (int v_i = 1; v_i <= v_dc_so_ky_dieu_chinh_lai_suat; v_i++)
+                    {
+                        v_dat_ngay_tuong_ung_tung_ky = m_us_v_trai_phieu.datNGAY_PHAT_HANH.AddYears(int.Parse(CIPConvert.ToStr(m_us_v_trai_phieu.dcKY_DIEU_CHINH_LS)) * v_i);
+                        if (ip_dat_ngay_ap_dung_ls == v_dat_ngay_tuong_ung_tung_ky)
+                        {
+                            v_i_ky_dc_lai_suat = v_i;
+                            break;
+                        }
+                    }
+                }
+            }
+            return v_i_ky_dc_lai_suat;
+        }
         private void select_trai_phieu()
         {
             f300_dm_trai_phieu v_frm300 = new f300_dm_trai_phieu();           
@@ -183,7 +226,7 @@ namespace BondApp.ChucNang
 
 
                 m_txt_ky_han.Text = CIPConvert.ToStr(m_us_v_trai_phieu.dcKY_HAN) + " " + CIPConvert.ToStr(v_us_cm_dm_tu_dien.strTEN);
-                m_txt_lai_suat.Text = CIPConvert.ToStr(m_us_v_trai_phieu.dcLAI_SUAT_DEFAULT, "p");
+                m_txt_lai_suat.Text = CIPConvert.ToStr(m_us_v_trai_phieu.dcLAI_SUAT_DEFAULT, "0.00%");
             }
         }
 
@@ -205,7 +248,7 @@ namespace BondApp.ChucNang
             {
                 m_us_gd_cap_nhat_ls.strDA_DUYET_YN = "N";
                 m_us_gd_cap_nhat_ls.dcID_NGUOI_LAP = CAppContext_201.getCurrentUserID();
-                m_us_gd_cap_nhat_ls.SetNGAY_DUYETNull();
+                m_us_gd_cap_nhat_ls.datNGAY_DUYET = m_date_ngay_duyet.Value;
                 m_us_gd_cap_nhat_ls.SetID_NGUOI_DUYETNull();                
             }
             if (m_e_form_mode == eFormMode.DUYET_LAI_SUAT)
@@ -225,7 +268,6 @@ namespace BondApp.ChucNang
                 us_trai_phieu_2_form();                
                 m_date_ngay_ap_dung_ls.Value = m_us_gd_cap_nhat_ls.datNGAY_BAT_DAU_AD_LS;
                 m_txt_lai_suat_moi.Text = CIPConvert.ToStr(m_us_gd_cap_nhat_ls.dcLAI_SUAT * 100, "#,##0.00");
-                m_date_ngay_ap_dung_ls.Value = m_us_gd_cap_nhat_ls.datNGAY_BAT_DAU_AD_LS;
                 m_date_ngay_cap_nhat.Value = m_us_gd_cap_nhat_ls.datNGAY;
                 if (!m_us_gd_cap_nhat_ls.IsNGAY_DUYETNull())
                     m_date_ngay_duyet.Value = m_us_gd_cap_nhat_ls.datNGAY_DUYET;
@@ -244,7 +286,7 @@ namespace BondApp.ChucNang
                 else
                     m_chb_xac_nhan.Checked = false;
                 m_txt_ghi_chu.Text = m_us_gd_cap_nhat_ls.strGHI_CHU;
-                //load_data_2_grid();
+                m_lbl_ky_dc_lai_suat.Text = "Kỳ " + get_ky_dieu_chinh_lai_suat(m_us_gd_cap_nhat_ls.datNGAY_BAT_DAU_AD_LS);
             }
         }
 
@@ -278,7 +320,35 @@ namespace BondApp.ChucNang
                     break;
             }
         }
+        private void ghi_log_he_thong()
+        {
+            /* Thông tin chung*/
+            m_us_v_ht_log_truy_cap.dcID_DANG_NHAP = CAppContext_201.getCurrentUserID();
+            m_us_v_ht_log_truy_cap.datTHOI_GIAN = DateTime.Now;
+            m_us_v_ht_log_truy_cap.strDOI_TUONG_THAO_TAC = LOG_DOI_TUONG_TAC_DONG.GD_LICH_THANH_TOAN_LAI_GOC;
 
+            /* Thông tin riêng*/
+            switch (m_e_form_mode)
+            {
+                case eFormMode.CAP_NHAT_LAI_SUAT:
+                    m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.CAP_NHAT_LS_THONG_THUONG;
+                    m_us_v_ht_log_truy_cap.strMO_TA = "Cập nhật lãi suất " + m_lbl_ky_dc_lai_suat.Text + " " + m_us_v_trai_phieu.strTEN_TRAI_PHIEU;
+                    break;
+                case eFormMode.DUYET_LAI_SUAT:
+                    m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.DUYET;
+                    m_us_v_ht_log_truy_cap.strMO_TA = "Duyệt cập nhật lãi suất " + m_lbl_ky_dc_lai_suat.Text + " " + m_us_v_trai_phieu.strTEN_TRAI_PHIEU;
+                    break;
+            }
+            // ghi log hệ thống
+            try
+            {
+                m_us_v_ht_log_truy_cap.Insert();
+            }
+            catch
+            {
+                BaseMessages.MsgBox_Infor("Đã xảy ra lỗi trong quá trình ghi log hệ thống");
+            }
+        }
         private void cap_nhat_ls()
         {
             if (!check_thong_tin_cap_nhat_is_ok())
@@ -295,7 +365,8 @@ namespace BondApp.ChucNang
             try
             {
                 m_us_gd_cap_nhat_ls.BeginTransaction();
-                m_us_gd_cap_nhat_ls.Update();                
+                m_us_gd_cap_nhat_ls.Update();
+                ghi_log_he_thong();
                 m_us_gd_cap_nhat_ls.CommitTransaction();
             }
             catch (Exception v_e)
@@ -329,7 +400,8 @@ namespace BondApp.ChucNang
             try
             {
                 m_us_gd_cap_nhat_ls.BeginTransaction();
-                m_us_gd_cap_nhat_ls.Update();                
+                m_us_gd_cap_nhat_ls.Update();
+                ghi_log_he_thong();
                 m_us_gd_cap_nhat_ls.CommitTransaction();
             }
             catch (Exception v_e)
@@ -371,7 +443,7 @@ namespace BondApp.ChucNang
             else
             {
                 us_gd_cap_nhat_ls_2_from();
-                m_date_ngay_cap_nhat.Value = DateTime.Today;
+                //m_date_ngay_cap_nhat.Value = DateTime.Today;
                 an_hien_button_theo_chuc_nang(eFormMode.CAP_NHAT_LAI_SUAT);
             }
         }
@@ -386,7 +458,7 @@ namespace BondApp.ChucNang
             else
             {
                 us_gd_cap_nhat_ls_2_from();
-                m_date_ngay_duyet.Value = DateTime.Today;
+                //m_date_ngay_duyet.Value = DateTime.Today;
                 an_hien_button_theo_chuc_nang(eFormMode.DUYET_LAI_SUAT);
             }
         }

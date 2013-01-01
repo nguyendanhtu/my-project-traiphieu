@@ -83,6 +83,7 @@ namespace BondDS.CDBNames
         public const string GD_SO_DU_TRAI_PHIEU = "Giao dịch số dư trái phiếu";
         public const string HT_NGUOI_SU_DUNG = "Người sử dụng";
         public const string HT_THAM_SO_HE_THONG = "Tham số hệ thống";
+        public const string HT_NHOM_NGUOI_SU_DUNG = "Nhóm người dùng";
     }
     public class ID_THAM_SO_HE_THONG
     {
@@ -146,6 +147,12 @@ namespace BondDS.CDBNames
         public const decimal XOA = 73;
         public const decimal DUYET = 74;
         public const decimal IMPORT = 80;
+        public const decimal CAP_NHAT_LS_THONG_THUONG = 90;
+        public const decimal CAP_NHAT_LS_THOA_THUAN = 92;
+        public const decimal SINH_LICH_TT_LAI_GOC = 93;
+        public const decimal SINH_DS_TRA_LAI = 94;
+        public const decimal TRA_LAI = 95;
+        public const decimal TRA_GOC = 96;
     }
     public class ID_TRANG_THAI_PGT
     {

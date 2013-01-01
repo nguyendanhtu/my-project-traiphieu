@@ -141,7 +141,8 @@ namespace BondApp
             m_us_v_ht_log_truy_cap.dcID_DANG_NHAP = CAppContext_201.getCurrentUserID();
             m_us_v_ht_log_truy_cap.datTHOI_GIAN = DateTime.Now;
             m_us_v_ht_log_truy_cap.strDOI_TUONG_THAO_TAC = LOG_DOI_TUONG_TAC_DONG.GD_LICH_THANH_TOAN_LAI_GOC;
-            m_us_v_ht_log_truy_cap.strMO_TA = "Sinh " + LOG_DOI_TUONG_TAC_DONG.GD_LICH_THANH_TOAN_LAI_GOC;
+            m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.SINH_LICH_TT_LAI_GOC;
+            m_us_v_ht_log_truy_cap.strMO_TA = "Sinh " + LOG_DOI_TUONG_TAC_DONG.GD_LICH_THANH_TOAN_LAI_GOC +" cho " + m_us_v_trai_phieu.strTEN_TRAI_PHIEU;
         }
         private void set_initial_form_load()
         {
@@ -210,8 +211,8 @@ namespace BondApp
                     break;
                 case e_form_mode.KHONG_TRAI_PHIEU_THONG_BAO_DOT_THANH_TOAN_LAI_TRAI_PHIEU:
                     m_obj_trans = get_trans_object(m_fg);
-                    m_lbl_header.Text = "F650 - Thông báo đợt thanh toán lãi trái phiếu";
-                    this.Text = "F650 - Thông báo đợt thanh toán lãi trái phiếu";
+                    m_lbl_header.Text = "F650 - Thông báo TCPH đợt thanh toán";
+                    this.Text = "F650 - Thông báo TCPH đợt thanh toán";
                     m_cmd_generate.Visible = false;
                     m_cmd_thong_bao_ls.Visible = false;
                     m_cmd_thong_bao_tien_lai.Visible = false;
@@ -477,7 +478,7 @@ namespace BondApp
             v_obj_word_rpt.AddFindAndReplace("<MENH_GIA>", m_txt_menh_gia.Text + "VNĐ");
             v_obj_word_rpt.AddFindAndReplace("<NGAY_PHAT_HANH>", m_txt_ngay_phat_hanh.Text);
             v_obj_word_rpt.AddFindAndReplace("<NGAY_DAO_HAN>", m_txt_ngay_dao_han.Text);
-            v_obj_word_rpt.AddFindAndReplace("<SO_LUONG_TRAI_PHIEU>", m_txt_tong_so_luong_trai_phieu.Text);
+            v_obj_word_rpt.AddFindAndReplace("<SO_LUONG_TRAI_PHIEU>", m_txt_tong_so_luong_trai_phieu.Text+" Trái phiếu");
             v_obj_word_rpt.AddFindAndReplace("<TONG_GIA_TRI_TRAI_PHIEU>", m_txt_tong_gia_tri_trai_phieu.Text + "VNĐ");
             v_obj_word_rpt.AddFindAndReplace("<KY_HAN>", m_txt_ky_han.Text + " năm"); // Can phai sua
             v_obj_word_rpt.AddFindAndReplace("<KY_TINH_LAI>", m_txt_ky_tinh_lai.Text + " tháng");
@@ -765,9 +766,7 @@ namespace BondApp
                 {
                     f000_confirm v_confirm = new f000_confirm();
                     v_bool_xac_nhan = v_confirm.display_to_confirm();
-                    m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.SUA;
                 }
-                else m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.THEM;
                 // nếu đồng ý or chưa có thì cho gen
                 if (v_bool_xac_nhan || v_ds_lich.GD_LICH_THANH_TOAN_LAI_GOC.Rows.Count == 0)
                 {

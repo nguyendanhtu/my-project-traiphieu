@@ -329,9 +329,9 @@ namespace BondApp
             // 
             this.m_cmd_chon_trai_phieu.Location = new System.Drawing.Point(593, 17);
             this.m_cmd_chon_trai_phieu.Name = "m_cmd_chon_trai_phieu";
-            this.m_cmd_chon_trai_phieu.Size = new System.Drawing.Size(51, 23);
+            this.m_cmd_chon_trai_phieu.Size = new System.Drawing.Size(33, 23);
             this.m_cmd_chon_trai_phieu.TabIndex = 2;
-            this.m_cmd_chon_trai_phieu.Text = "Chọn";
+            this.m_cmd_chon_trai_phieu.Text = "...";
             this.m_cmd_chon_trai_phieu.UseVisualStyleBackColor = true;
             // 
             // m_txt_ten_trai_phieu
@@ -353,7 +353,7 @@ namespace BondApp
             this.m_lbl_title.Name = "m_lbl_title";
             this.m_lbl_title.Size = new System.Drawing.Size(784, 37);
             this.m_lbl_title.TabIndex = 23;
-            this.m_lbl_title.Text = "F657 - BÁO CÁO LÃI SUẤT TRÁI PHIẾU";
+            this.m_lbl_title.Text = "F657 - Báo cáo lãi suất trái phiếu";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // f657_thong_bao_lai_suat_in_times
@@ -366,7 +366,7 @@ namespace BondApp
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f657_thong_bao_lai_suat_in_times";
-            this.Text = "f657_thong_bao_lai_suat_in_times";
+            this.Text = "F657 - Báo cáo lãi suất trái phiếu";
             this.Load += new System.EventHandler(this.f657_thong_bao_lai_suat_in_times_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
