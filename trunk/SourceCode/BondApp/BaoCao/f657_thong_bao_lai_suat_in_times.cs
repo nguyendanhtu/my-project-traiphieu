@@ -435,7 +435,7 @@ namespace BondApp
 		}
 		private void load_data_2_grid(){						
 			m_ds = new DS_GD_THONG_BAO_LAI_SUAT_IN_TIMES();
-            m_us.fill_dataset_by_trai_phieu_in_times(m_ds, m_date_tu_ngay.Value, m_date_den_ngay.Value, m_us_v_trai_phieu.dcID);
+            m_us.fill_dataset_by_trai_phieu_in_times_tron_ky(m_ds, m_date_tu_ngay.Value, m_date_den_ngay.Value, m_us_v_trai_phieu.dcID);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             CGridUtils.MakeSoTT((int)e_col_Number.STT, m_fg);
