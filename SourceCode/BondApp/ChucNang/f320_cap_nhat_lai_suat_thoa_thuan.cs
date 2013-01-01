@@ -75,6 +75,7 @@ namespace BondApp.ChucNang
         US_GD_LICH_THANH_TOAN_LAI_GOC m_us_gd_lich_tt_lai_goc = new US_GD_LICH_THANH_TOAN_LAI_GOC();
         ITransferDataRow m_obj_trans;
         eFormMode m_e_form_mode = eFormMode.LAP_GD_CAP_NHAP;
+        US_V_HT_LOG_TRUY_CAP m_us_v_ht_log_truy_cap = new US_V_HT_LOG_TRUY_CAP();
         #endregion
 
         #region Private Methods
@@ -262,7 +263,7 @@ namespace BondApp.ChucNang
                 else
                     m_chb_xac_nhan.Checked = false;
                 m_txt_ghi_chu.Text = m_us_gd_cap_nhat_ls.strGHI_CHU;
-                //load_data_2_grid();
+                m_lbl_ky_dc_lai_suat.Text = get_ky_dieu_chinh_lai_suat(m_us_gd_cap_nhat_ls.datNGAY_BAT_DAU_AD_LS, m_us_gd_cap_nhat_ls.datNGAY_KET_THUC_AD_LS);
             }
         }
 
@@ -290,7 +291,8 @@ namespace BondApp.ChucNang
             try
             {
                 m_us_gd_cap_nhat_ls.BeginTransaction();
-                m_us_gd_cap_nhat_ls.Insert();                
+                m_us_gd_cap_nhat_ls.Insert();
+                ghi_log_he_thong();
                 m_us_gd_cap_nhat_ls.CommitTransaction();
             }
             catch (Exception v_e)
@@ -322,7 +324,8 @@ namespace BondApp.ChucNang
             try
             {
                 m_us_gd_cap_nhat_ls.BeginTransaction();
-                m_us_gd_cap_nhat_ls.Update();                
+                m_us_gd_cap_nhat_ls.Update();
+                ghi_log_he_thong();
                 m_us_gd_cap_nhat_ls.CommitTransaction();
             }
             catch (Exception v_e)
@@ -356,7 +359,8 @@ namespace BondApp.ChucNang
             try
             {
                 m_us_gd_cap_nhat_ls.BeginTransaction();
-                m_us_gd_cap_nhat_ls.Update();                
+                m_us_gd_cap_nhat_ls.Update();
+                ghi_log_he_thong();
                 m_us_gd_cap_nhat_ls.CommitTransaction();
             }
             catch (Exception v_e)
@@ -395,7 +399,11 @@ namespace BondApp.ChucNang
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg1, m_fg1.Row)) return;
             m_us_gd_cap_nhat_ls = grid2us_object(m_fg1.Row);
             if (MessageBox.Show("Việc xóa giao dịch cập nhật này sẽ gây ảnh hướng đến lịch sử trả lãi suất.", "Bạn có chắc chắn muốn xóa?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
+            {
                 m_us_gd_cap_nhat_ls.Delete();
+                m_fg1.Rows.Remove(m_fg1.Row);
+                ghi_log_he_thong_xoa(m_us_v_trai_phieu.strTEN_TRAI_PHIEU);
+            }
         }
 
         private void lua_chon_cap_nhan_lai_suat()
@@ -425,7 +433,134 @@ namespace BondApp.ChucNang
                 set_inital_form_load(eFormMode.DUYET_LAI_SUAT);
             }
         }
+        private void ghi_log_he_thong_xoa(string ip_str_ten_tp)
+        {
+            /* Thông tin chung*/
+            m_us_v_ht_log_truy_cap.dcID_DANG_NHAP = CAppContext_201.getCurrentUserID();
+            m_us_v_ht_log_truy_cap.datTHOI_GIAN = DateTime.Now;
+            m_us_v_ht_log_truy_cap.strDOI_TUONG_THAO_TAC = LOG_DOI_TUONG_TAC_DONG.GD_LICH_THANH_TOAN_LAI_GOC;
+            m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.XOA;
+            m_us_v_ht_log_truy_cap.strMO_TA = "Xóa thỏa thuận lãi suất " + ip_str_ten_tp;
+            // ghi log hệ thống
+            try
+            {
+                m_us_v_ht_log_truy_cap.Insert();
+            }
+            catch
+            {
+                BaseMessages.MsgBox_Infor("Đã xảy ra lỗi trong quá trình ghi log hệ thống");
+            }
+        }
+        private void ghi_log_he_thong()
+        {
+            /* Thông tin chung*/
+            m_us_v_ht_log_truy_cap.dcID_DANG_NHAP = CAppContext_201.getCurrentUserID();
+            m_us_v_ht_log_truy_cap.datTHOI_GIAN = DateTime.Now;
+            m_us_v_ht_log_truy_cap.strDOI_TUONG_THAO_TAC = LOG_DOI_TUONG_TAC_DONG.GD_LICH_THANH_TOAN_LAI_GOC;
 
+            /* Thông tin riêng*/
+            switch (m_e_form_mode)
+            {
+                case eFormMode.LAP_GD_CAP_NHAP:
+                    m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.CAP_NHAT_LS_THOA_THUAN;
+                    m_us_v_ht_log_truy_cap.strMO_TA = "Thêm thỏa thuận lãi suất " + m_us_v_trai_phieu.strTEN_TRAI_PHIEU;
+                    break;
+                case eFormMode.CAP_NHAT_LAI_SUAT:
+                    m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.SUA;
+                    m_us_v_ht_log_truy_cap.strMO_TA = "Sửa thỏa thuận lãi suất "+ m_us_v_trai_phieu.strTEN_TRAI_PHIEU;
+                    break;
+                case eFormMode.DUYET_LAI_SUAT:
+                    m_us_v_ht_log_truy_cap.dcID_LOAI_HANH_DONG = LOG_TRUY_CAP.DUYET;
+                    m_us_v_ht_log_truy_cap.strMO_TA = "Duyệt thỏa thuận lãi suất " + m_us_v_trai_phieu.strTEN_TRAI_PHIEU;
+                    break;
+            }
+            // ghi log hệ thống
+            try
+            {
+                m_us_v_ht_log_truy_cap.Insert();
+            }
+            catch
+            {
+                BaseMessages.MsgBox_Infor("Đã xảy ra lỗi trong quá trình ghi log hệ thống");
+            }
+        }
+        private string get_ky_dieu_chinh_lai_suat(DateTime ip_dat_ngay_bd_ap_dung_ls, DateTime ip_dat_ngay_ket_thuc_ap_dung_ls)
+        {
+            string v_str_ky_dc_lai_suat = "";
+            if (m_us_v_trai_phieu != null)
+            {
+                decimal v_dc_so_ky_dieu_chinh_lai_suat;
+                DateTime v_dat_ngay_bd_tuong_ung_tung_ky, v_dat_ngay_ket_thuc_tuong_ung_tung_ky;
+                // Tính số kỳ điều chỉnh lãi suất
+                if (m_us_v_trai_phieu.dcID_DV_DIEU_CHINH_LS == ID_DON_VI_KY_HAN.THANG)
+                {
+                    if (m_us_v_trai_phieu.dcID_DV_KY_HAN == ID_DON_VI_KY_HAN.THANG)
+                        v_dc_so_ky_dieu_chinh_lai_suat = m_us_v_trai_phieu.dcKY_HAN / m_us_v_trai_phieu.dcKY_DIEU_CHINH_LS;
+                    else
+                        v_dc_so_ky_dieu_chinh_lai_suat = (m_us_v_trai_phieu.dcKY_HAN * 12) / m_us_v_trai_phieu.dcKY_DIEU_CHINH_LS;
+                    for (int v_i = 1; v_i <= v_dc_so_ky_dieu_chinh_lai_suat; v_i++)
+                    {
+                        v_dat_ngay_bd_tuong_ung_tung_ky = m_us_v_trai_phieu.datNGAY_PHAT_HANH.AddMonths(int.Parse(CIPConvert.ToStr(m_us_v_trai_phieu.dcKY_DIEU_CHINH_LS)) * (v_i-1));
+                        v_dat_ngay_ket_thuc_tuong_ung_tung_ky = m_us_v_trai_phieu.datNGAY_PHAT_HANH.AddMonths(int.Parse(CIPConvert.ToStr(m_us_v_trai_phieu.dcKY_DIEU_CHINH_LS)) * v_i);
+                        v_dat_ngay_ket_thuc_tuong_ung_tung_ky = v_dat_ngay_ket_thuc_tuong_ung_tung_ky.AddDays(-1);
+                        if (ip_dat_ngay_bd_ap_dung_ls>=v_dat_ngay_bd_tuong_ung_tung_ky && ip_dat_ngay_bd_ap_dung_ls <= v_dat_ngay_ket_thuc_tuong_ung_tung_ky)
+                        {
+                            v_str_ky_dc_lai_suat += CIPConvert.ToStr(v_i);
+                            // Trong 1 kỳ
+                            if (ip_dat_ngay_ket_thuc_ap_dung_ls <= v_dat_ngay_ket_thuc_tuong_ung_tung_ky) break;
+                            // Không phải trong 1 kỳ
+                            else
+                            {
+                                for (int i = v_i; i <= v_dc_so_ky_dieu_chinh_lai_suat; i++)
+                                {
+                                    v_dat_ngay_ket_thuc_tuong_ung_tung_ky = m_us_v_trai_phieu.datNGAY_PHAT_HANH.AddMonths(int.Parse(CIPConvert.ToStr(m_us_v_trai_phieu.dcKY_DIEU_CHINH_LS)) * (i+1));
+                                    if (ip_dat_ngay_ket_thuc_ap_dung_ls <= v_dat_ngay_ket_thuc_tuong_ung_tung_ky)
+                                    {
+                                        v_str_ky_dc_lai_suat += ", "+ CIPConvert.ToStr(i+1);
+                                        break;
+                                    }
+                                    else v_str_ky_dc_lai_suat += ", " + CIPConvert.ToStr(i+1); 
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    if (m_us_v_trai_phieu.dcID_DV_KY_HAN == ID_DON_VI_KY_HAN.THANG)
+                        v_dc_so_ky_dieu_chinh_lai_suat = m_us_v_trai_phieu.dcKY_HAN / (m_us_v_trai_phieu.dcKY_DIEU_CHINH_LS * 12);
+                    else
+                        v_dc_so_ky_dieu_chinh_lai_suat = m_us_v_trai_phieu.dcKY_HAN / m_us_v_trai_phieu.dcKY_DIEU_CHINH_LS;
+                    for (int v_i = 1; v_i <= v_dc_so_ky_dieu_chinh_lai_suat; v_i++)
+                    {
+                        v_dat_ngay_bd_tuong_ung_tung_ky = m_us_v_trai_phieu.datNGAY_PHAT_HANH.AddYears(int.Parse(CIPConvert.ToStr(m_us_v_trai_phieu.dcKY_DIEU_CHINH_LS)) * (v_i - 1));
+                        v_dat_ngay_ket_thuc_tuong_ung_tung_ky = m_us_v_trai_phieu.datNGAY_PHAT_HANH.AddYears(int.Parse(CIPConvert.ToStr(m_us_v_trai_phieu.dcKY_DIEU_CHINH_LS)) * v_i);
+                        v_dat_ngay_ket_thuc_tuong_ung_tung_ky = v_dat_ngay_ket_thuc_tuong_ung_tung_ky.AddDays(-1);
+                        if (ip_dat_ngay_bd_ap_dung_ls >= v_dat_ngay_bd_tuong_ung_tung_ky)
+                        {
+                            v_str_ky_dc_lai_suat += CIPConvert.ToStr(v_i);
+                            // Trong 1 kỳ
+                            if (ip_dat_ngay_ket_thuc_ap_dung_ls <= v_dat_ngay_ket_thuc_tuong_ung_tung_ky) break;
+                            // Không phải trong 1 kỳ
+                            else
+                            {
+                                for (int i = v_i; i <= v_dc_so_ky_dieu_chinh_lai_suat; i++)
+                                {
+                                    v_dat_ngay_ket_thuc_tuong_ung_tung_ky = m_us_v_trai_phieu.datNGAY_PHAT_HANH.AddMonths(int.Parse(CIPConvert.ToStr(m_us_v_trai_phieu.dcKY_DIEU_CHINH_LS)) * (i + 1));
+                                    if (ip_dat_ngay_ket_thuc_ap_dung_ls <= v_dat_ngay_ket_thuc_tuong_ung_tung_ky)
+                                    {
+                                        v_str_ky_dc_lai_suat += CIPConvert.ToStr(v_i);
+                                        break;
+                                    }
+                                    else v_str_ky_dc_lai_suat += CIPConvert.ToStr(v_i);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return v_str_ky_dc_lai_suat;
+        }
         private void cell_changed()
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg1)) return;
@@ -451,6 +586,7 @@ namespace BondApp.ChucNang
             m_txt_lai_suat.Text = ""; ;
             m_txt_lai_suat_moi.Text = "";
             m_txt_ghi_chu.Text = "";
+            m_lbl_ky_dc_lai_suat.Text = "...";
             m_chb_xac_nhan.Checked = false;
             m_cmd_duyet_gd.Enabled = false;
         }
@@ -465,6 +601,7 @@ namespace BondApp.ChucNang
             m_cmd_chon_duyet.Enabled = true;
             m_txt_lai_suat_moi.Text = "";
             m_txt_ghi_chu.Text = "";
+            m_lbl_ky_dc_lai_suat.Text = "...";
             load_data_2_grid();
         }
         #endregion
