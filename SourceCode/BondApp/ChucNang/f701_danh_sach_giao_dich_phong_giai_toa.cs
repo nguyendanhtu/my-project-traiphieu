@@ -139,9 +139,9 @@ namespace BondApp
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 137);
+            this.m_fg.Location = new System.Drawing.Point(0, 151);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(884, 389);
+            this.m_fg.Size = new System.Drawing.Size(884, 375);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -154,7 +154,7 @@ namespace BondApp
             this.m_grb_thong_tin_ban_hang.Controls.Add(this.label1);
             this.m_grb_thong_tin_ban_hang.Controls.Add(this.m_dat_from_date);
             this.m_grb_thong_tin_ban_hang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_grb_thong_tin_ban_hang.Location = new System.Drawing.Point(0, 31);
+            this.m_grb_thong_tin_ban_hang.Location = new System.Drawing.Point(0, 45);
             this.m_grb_thong_tin_ban_hang.Name = "m_grb_thong_tin_ban_hang";
             this.m_grb_thong_tin_ban_hang.Size = new System.Drawing.Size(884, 106);
             this.m_grb_thong_tin_ban_hang.TabIndex = 35;
@@ -227,7 +227,7 @@ namespace BondApp
             this.m_lbl_header.ForeColor = System.Drawing.Color.DarkRed;
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(884, 31);
+            this.m_lbl_header.Size = new System.Drawing.Size(884, 45);
             this.m_lbl_header.TabIndex = 34;
             this.m_lbl_header.Text = "F701 - Danh sách các giao dịch phong tỏa";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -349,14 +349,14 @@ namespace BondApp
         public void display_phong_toa_duyet()
         {
             this.Text = "F701 - Danh sách giao dịch phong tỏa";
-            m_lbl_header.Text = "F701 - DANH SÁCH GIAO DỊCH PHONG TỎA";
+            m_lbl_header.Text = "F701 - Danh sách giao dịch phong tỏa";
             m_e_form_mode = e_form_mode.DANH_SACH_PHONG_TOA;
             this.ShowDialog();
         }
         public void display_giai_toa_duyet()
         {
-            this.Text = "F702 - DANH SÁCH GIAO DỊCH giải tỏa";
-            m_lbl_header.Text = "F702 - DANH SÁCH GIAO DỊCH GIẢI TỎA";
+            this.Text = "F702 - Danh sách giao dịch giải tỏa";
+            m_lbl_header.Text = "F702 - Danh sách giao dịch giải tỏa";
             m_e_form_mode = e_form_mode.DANH_SACH_GIAI_TOA;
             this.ShowDialog();
         }

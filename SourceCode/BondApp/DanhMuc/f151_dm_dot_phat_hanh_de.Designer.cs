@@ -116,9 +116,9 @@
             this.groupBox1.Controls.Add(this.m_lbl_ma_trai_chu);
             this.groupBox1.Controls.Add(this.m_txt_ghi_chu);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 40);
+            this.groupBox1.Location = new System.Drawing.Point(0, 45);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(854, 442);
+            this.groupBox1.Size = new System.Drawing.Size(854, 437);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -402,7 +402,7 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(3, 403);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(3, 398);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(848, 36);
@@ -516,7 +516,7 @@
             this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(854, 40);
+            this.m_lbl_title.Size = new System.Drawing.Size(854, 45);
             this.m_lbl_title.TabIndex = 63;
             this.m_lbl_title.Text = "F151 - Cập nhật thông tin đợt phát hành";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

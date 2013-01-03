@@ -145,10 +145,10 @@ namespace BondApp
             this.m_cmd_filter = new System.Windows.Forms.Button();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_pnl_tong = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.m_lbl_tong_sl_tinh_lai = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.m_lbl_tong_tien_lai = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.m_lbl_tong_sl_tinh_lai = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.m_gbox_thong_tin_tp.SuspendLayout();
             this.m_gru_tim_kiem.SuspendLayout();
@@ -279,7 +279,7 @@ namespace BondApp
             this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(834, 37);
+            this.m_lbl_title.Size = new System.Drawing.Size(834, 45);
             this.m_lbl_title.TabIndex = 27;
             this.m_lbl_title.Text = "F201 - Danh sách trả lãi";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -313,7 +313,7 @@ namespace BondApp
             this.m_gbox_thong_tin_tp.Controls.Add(this.m_lbl_nguoi_lap);
             this.m_gbox_thong_tin_tp.Controls.Add(this.m_txt_ma_trai_phieu);
             this.m_gbox_thong_tin_tp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_gbox_thong_tin_tp.Location = new System.Drawing.Point(0, 37);
+            this.m_gbox_thong_tin_tp.Location = new System.Drawing.Point(0, 45);
             this.m_gbox_thong_tin_tp.Name = "m_gbox_thong_tin_tp";
             this.m_gbox_thong_tin_tp.Size = new System.Drawing.Size(834, 219);
             this.m_gbox_thong_tin_tp.TabIndex = 0;
@@ -578,7 +578,7 @@ namespace BondApp
             this.m_gru_tim_kiem.Controls.Add(this.label1);
             this.m_gru_tim_kiem.Controls.Add(this.m_cmd_filter);
             this.m_gru_tim_kiem.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_gru_tim_kiem.Location = new System.Drawing.Point(0, 256);
+            this.m_gru_tim_kiem.Location = new System.Drawing.Point(0, 264);
             this.m_gru_tim_kiem.Name = "m_gru_tim_kiem";
             this.m_gru_tim_kiem.Size = new System.Drawing.Size(834, 50);
             this.m_gru_tim_kiem.TabIndex = 34;
@@ -615,9 +615,9 @@ namespace BondApp
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 306);
+            this.m_fg.Location = new System.Drawing.Point(0, 314);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(834, 220);
+            this.m_fg.Size = new System.Drawing.Size(834, 212);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 35;
             // 
@@ -634,14 +634,24 @@ namespace BondApp
             this.m_pnl_tong.Size = new System.Drawing.Size(834, 36);
             this.m_pnl_tong.TabIndex = 36;
             // 
-            // label5
+            // m_lbl_tong_tien_lai
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(198, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(113, 13);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Tổng số lượng tính lãi:";
+            this.m_lbl_tong_tien_lai.AutoSize = true;
+            this.m_lbl_tong_tien_lai.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_tong_tien_lai.Location = new System.Drawing.Point(509, 10);
+            this.m_lbl_tong_tien_lai.Name = "m_lbl_tong_tien_lai";
+            this.m_lbl_tong_tien_lai.Size = new System.Drawing.Size(19, 13);
+            this.m_lbl_tong_tien_lai.TabIndex = 21;
+            this.m_lbl_tong_tien_lai.Text = "...";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(440, 10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(68, 13);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Tổng tiền lãi:";
             // 
             // m_lbl_tong_sl_tinh_lai
             // 
@@ -653,24 +663,14 @@ namespace BondApp
             this.m_lbl_tong_sl_tinh_lai.TabIndex = 21;
             this.m_lbl_tong_sl_tinh_lai.Text = "..";
             // 
-            // label7
+            // label5
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(440, 10);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 13);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "Tổng tiền lãi:";
-            // 
-            // m_lbl_tong_tien_lai
-            // 
-            this.m_lbl_tong_tien_lai.AutoSize = true;
-            this.m_lbl_tong_tien_lai.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_tong_tien_lai.Location = new System.Drawing.Point(509, 10);
-            this.m_lbl_tong_tien_lai.Name = "m_lbl_tong_tien_lai";
-            this.m_lbl_tong_tien_lai.Size = new System.Drawing.Size(19, 13);
-            this.m_lbl_tong_tien_lai.TabIndex = 21;
-            this.m_lbl_tong_tien_lai.Text = "...";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(198, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(113, 13);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Tổng số lượng tính lãi:";
             // 
             // f201_dm_gd_chot_lai_detail
             // 

@@ -51,13 +51,13 @@
             // m_lbl_title
             // 
             this.m_lbl_title.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_title.ForeColor = System.Drawing.Color.Red;
+            this.m_lbl_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.m_lbl_title.ForeColor = System.Drawing.Color.DarkRed;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(759, 28);
+            this.m_lbl_title.Size = new System.Drawing.Size(759, 45);
             this.m_lbl_title.TabIndex = 32;
-            this.m_lbl_title.Text = "F801 - THÊM GHI CHÚ CHO CÔNG VIỆC";
+            this.m_lbl_title.Text = "F801 - Thêm ghi chú cho công việc";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ImageList
@@ -139,9 +139,9 @@
             this.groupBox1.Controls.Add(this.m_txt_noi_dung_cong_viec);
             this.groupBox1.Controls.Add(this.m_txt_ngay_dien_ra);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 28);
+            this.groupBox1.Location = new System.Drawing.Point(0, 45);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(759, 293);
+            this.groupBox1.Size = new System.Drawing.Size(759, 276);
             this.groupBox1.TabIndex = 57;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nội dung công việc";

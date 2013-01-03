@@ -44,11 +44,14 @@
             this.m_lbl_so_luong_phong_toa = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.m_txt_sl_da_phong_toa = new System.Windows.Forms.TextBox();
+            this.m_txt_tong_so_du_hien_tai = new System.Windows.Forms.TextBox();
             this.m_txt_so_du_kha_dung = new System.Windows.Forms.TextBox();
             this.m_txt_so_luong_phat_hanh = new System.Windows.Forms.TextBox();
             this.m_txt_so_luong_da_so_huu = new System.Windows.Forms.TextBox();
+            this.m_lbl_tong_so_du_hien_tai = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.m_lbl_so_kha_dung = new System.Windows.Forms.Label();
+            this.m_lbl_label_hien_tai = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.m_gru_thong_tin_trai_phieu = new System.Windows.Forms.GroupBox();
             this.m_txt_ten_khach_hang = new System.Windows.Forms.TextBox();
@@ -96,9 +99,6 @@
             this.m_txt_ghi_chu_2 = new System.Windows.Forms.TextBox();
             this.m_lbl_chuc_danh = new System.Windows.Forms.Label();
             this.m_txt_ghi_chu_1 = new System.Windows.Forms.TextBox();
-            this.m_lbl_label_hien_tai = new System.Windows.Forms.Label();
-            this.m_lbl_tong_so_du_hien_tai = new System.Windows.Forms.Label();
-            this.m_txt_tong_so_du_hien_tai = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.m_gru_thong_tin_trai_phieu.SuspendLayout();
@@ -112,7 +112,7 @@
             this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(970, 40);
+            this.m_lbl_title.Size = new System.Drawing.Size(970, 45);
             this.m_lbl_title.TabIndex = 60;
             this.m_lbl_title.Text = "F510 - Thông tin trái chủ";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -129,9 +129,9 @@
             this.groupBox1.Controls.Add(this.m_lbl_chuc_danh);
             this.groupBox1.Controls.Add(this.m_txt_ghi_chu_1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 40);
+            this.groupBox1.Location = new System.Drawing.Point(0, 45);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(970, 532);
+            this.groupBox1.Size = new System.Drawing.Size(970, 527);
             this.groupBox1.TabIndex = 62;
             this.groupBox1.TabStop = false;
             // 
@@ -264,6 +264,17 @@
             this.m_txt_sl_da_phong_toa.TabStop = false;
             this.m_txt_sl_da_phong_toa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // m_txt_tong_so_du_hien_tai
+            // 
+            this.m_txt_tong_so_du_hien_tai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.m_txt_tong_so_du_hien_tai.Location = new System.Drawing.Point(191, 117);
+            this.m_txt_tong_so_du_hien_tai.Name = "m_txt_tong_so_du_hien_tai";
+            this.m_txt_tong_so_du_hien_tai.ReadOnly = true;
+            this.m_txt_tong_so_du_hien_tai.Size = new System.Drawing.Size(80, 20);
+            this.m_txt_tong_so_du_hien_tai.TabIndex = 40;
+            this.m_txt_tong_so_du_hien_tai.TabStop = false;
+            this.m_txt_tong_so_du_hien_tai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // m_txt_so_du_kha_dung
             // 
             this.m_txt_so_du_kha_dung.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -297,6 +308,15 @@
             this.m_txt_so_luong_da_so_huu.TabStop = false;
             this.m_txt_so_luong_da_so_huu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // m_lbl_tong_so_du_hien_tai
+            // 
+            this.m_lbl_tong_so_du_hien_tai.AutoSize = true;
+            this.m_lbl_tong_so_du_hien_tai.Location = new System.Drawing.Point(117, 119);
+            this.m_lbl_tong_so_du_hien_tai.Name = "m_lbl_tong_so_du_hien_tai";
+            this.m_lbl_tong_so_du_hien_tai.Size = new System.Drawing.Size(61, 13);
+            this.m_lbl_tong_so_du_hien_tai.TabIndex = 41;
+            this.m_lbl_tong_so_du_hien_tai.Text = "Tổng số dư";
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -314,6 +334,16 @@
             this.m_lbl_so_kha_dung.Size = new System.Drawing.Size(83, 13);
             this.m_lbl_so_kha_dung.TabIndex = 41;
             this.m_lbl_so_kha_dung.Text = "Số dư khả dụng";
+            // 
+            // m_lbl_label_hien_tai
+            // 
+            this.m_lbl_label_hien_tai.AutoSize = true;
+            this.m_lbl_label_hien_tai.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_label_hien_tai.Location = new System.Drawing.Point(43, 119);
+            this.m_lbl_label_hien_tai.Name = "m_lbl_label_hien_tai";
+            this.m_lbl_label_hien_tai.Size = new System.Drawing.Size(59, 13);
+            this.m_lbl_label_hien_tai.TabIndex = 41;
+            this.m_lbl_label_hien_tai.Text = "Hiện tại: ";
             // 
             // label5
             // 
@@ -646,7 +676,7 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cbo_trang_thai);
             this.m_pnl_out_place_dm.Controls.Add(this.label6);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(3, 493);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(3, 488);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(964, 36);
@@ -658,6 +688,7 @@
             this.m_cmd_duyet.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_duyet.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_duyet.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_duyet.Enabled = false;
             this.m_cmd_duyet.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet.Image")));
             this.m_cmd_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_duyet.Location = new System.Drawing.Point(696, 4);
@@ -665,7 +696,6 @@
             this.m_cmd_duyet.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_duyet.TabIndex = 0;
             this.m_cmd_duyet.Text = "&Duyệt";
-            this.m_cmd_duyet.Enabled = false;
             // 
             // m_cmd_save
             // 
@@ -733,17 +763,16 @@
             this.m_cbo_trang_thai.Name = "m_cbo_trang_thai";
             this.m_cbo_trang_thai.Size = new System.Drawing.Size(158, 21);
             this.m_cbo_trang_thai.TabIndex = 22;
-            this.m_cbo_trang_thai.Enabled = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Enabled = false;
             this.label6.Location = new System.Drawing.Point(9, 12);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 13);
             this.label6.TabIndex = 35;
             this.label6.Text = "Trạng thái";
-            this.label6.Enabled = false;
             // 
             // label2
             // 
@@ -793,36 +822,6 @@
             this.m_txt_ghi_chu_1.Name = "m_txt_ghi_chu_1";
             this.m_txt_ghi_chu_1.Size = new System.Drawing.Size(855, 20);
             this.m_txt_ghi_chu_1.TabIndex = 19;
-            // 
-            // m_lbl_label_hien_tai
-            // 
-            this.m_lbl_label_hien_tai.AutoSize = true;
-            this.m_lbl_label_hien_tai.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_label_hien_tai.Location = new System.Drawing.Point(43, 119);
-            this.m_lbl_label_hien_tai.Name = "m_lbl_label_hien_tai";
-            this.m_lbl_label_hien_tai.Size = new System.Drawing.Size(59, 13);
-            this.m_lbl_label_hien_tai.TabIndex = 41;
-            this.m_lbl_label_hien_tai.Text = "Hiện tại: ";
-            // 
-            // m_lbl_tong_so_du_hien_tai
-            // 
-            this.m_lbl_tong_so_du_hien_tai.AutoSize = true;
-            this.m_lbl_tong_so_du_hien_tai.Location = new System.Drawing.Point(117, 119);
-            this.m_lbl_tong_so_du_hien_tai.Name = "m_lbl_tong_so_du_hien_tai";
-            this.m_lbl_tong_so_du_hien_tai.Size = new System.Drawing.Size(61, 13);
-            this.m_lbl_tong_so_du_hien_tai.TabIndex = 41;
-            this.m_lbl_tong_so_du_hien_tai.Text = "Tổng số dư";
-            // 
-            // m_txt_tong_so_du_hien_tai
-            // 
-            this.m_txt_tong_so_du_hien_tai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_txt_tong_so_du_hien_tai.Location = new System.Drawing.Point(191, 117);
-            this.m_txt_tong_so_du_hien_tai.Name = "m_txt_tong_so_du_hien_tai";
-            this.m_txt_tong_so_du_hien_tai.ReadOnly = true;
-            this.m_txt_tong_so_du_hien_tai.Size = new System.Drawing.Size(80, 20);
-            this.m_txt_tong_so_du_hien_tai.TabIndex = 40;
-            this.m_txt_tong_so_du_hien_tai.TabStop = false;
-            this.m_txt_tong_so_du_hien_tai.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // f500_dm_trai_chu_de
             // 

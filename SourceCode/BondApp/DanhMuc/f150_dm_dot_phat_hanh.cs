@@ -197,6 +197,7 @@ namespace BondApp
             this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_view.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_view.Enabled = false;
             this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_view.ImageIndex = 18;
             this.m_cmd_view.ImageList = this.ImageList;
@@ -205,7 +206,6 @@ namespace BondApp
             this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_view.TabIndex = 21;
             this.m_cmd_view.Text = "Xem";
-            this.m_cmd_view.Enabled = false;
             // 
             // m_cmd_delete
             // 
@@ -244,7 +244,7 @@ namespace BondApp
             this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(884, 40);
+            this.m_lbl_title.Size = new System.Drawing.Size(884, 45);
             this.m_lbl_title.TabIndex = 64;
             this.m_lbl_title.Text = "F150 - Danh sách đợt phát hành";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -255,7 +255,7 @@ namespace BondApp
             this.m_gru_tim_kiem.Controls.Add(this.label1);
             this.m_gru_tim_kiem.Controls.Add(this.m_cmd_filter);
             this.m_gru_tim_kiem.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_gru_tim_kiem.Location = new System.Drawing.Point(0, 40);
+            this.m_gru_tim_kiem.Location = new System.Drawing.Point(0, 45);
             this.m_gru_tim_kiem.Name = "m_gru_tim_kiem";
             this.m_gru_tim_kiem.Size = new System.Drawing.Size(884, 49);
             this.m_gru_tim_kiem.TabIndex = 65;
@@ -292,9 +292,9 @@ namespace BondApp
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 89);
+            this.m_fg.Location = new System.Drawing.Point(0, 94);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(884, 337);
+            this.m_fg.Size = new System.Drawing.Size(884, 332);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 66;
             // 

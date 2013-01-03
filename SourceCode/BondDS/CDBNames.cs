@@ -147,12 +147,12 @@ namespace BondDS.CDBNames
         public const decimal XOA = 73;
         public const decimal DUYET = 74;
         public const decimal IMPORT = 80;
-        public const decimal CAP_NHAT_LS_THONG_THUONG = 90;
-        public const decimal CAP_NHAT_LS_THOA_THUAN = 92;
-        public const decimal SINH_LICH_TT_LAI_GOC = 93;
-        public const decimal SINH_DS_TRA_LAI = 94;
-        public const decimal TRA_LAI = 95;
-        public const decimal TRA_GOC = 96;
+        public const decimal CAP_NHAT_LS_THONG_THUONG = 94;
+        public const decimal CAP_NHAT_LS_THOA_THUAN = 95;
+        public const decimal SINH_LICH_TT_LAI_GOC = 96;
+        public const decimal SINH_DS_TRA_LAI = 97;
+        public const decimal TRA_LAI = 98;
+        public const decimal TRA_GOC = 99;
     }
     public class ID_TRANG_THAI_PGT
     {

@@ -83,7 +83,7 @@
             this.m_lbl_header.ForeColor = System.Drawing.Color.DarkRed;
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(904, 24);
+            this.m_lbl_header.Size = new System.Drawing.Size(904, 45);
             this.m_lbl_header.TabIndex = 23;
             this.m_lbl_header.Text = "F650 - Lịch thanh toán lãi gốc";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -93,9 +93,9 @@
             this.m_fg.AutoResize = false;
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 159);
+            this.m_fg.Location = new System.Drawing.Point(0, 180);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(904, 261);
+            this.m_fg.Size = new System.Drawing.Size(904, 240);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 0;
             // 
@@ -331,7 +331,7 @@
             this.groupBox1.Controls.Add(this.m_lbl_lai_suat);
             this.groupBox1.Controls.Add(this.m_txt_ma_trai_phieu);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(0, 24);
+            this.groupBox1.Location = new System.Drawing.Point(0, 45);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(904, 135);
             this.groupBox1.TabIndex = 0;

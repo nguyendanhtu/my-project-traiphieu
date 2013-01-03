@@ -572,13 +572,17 @@ namespace BondApp
 		#endregion
 
 		#region Public Interface
-		public void display(){			
-			this.ShowDialog();
+		public void display(){
+            m_lbl_header.Text = "F658 - Chốt danh sách theo yêu cầu";
+            this.Text = "F658 - Chốt danh sách theo yêu cầu";
+            this.ShowDialog();
 		}
 
         public void display_for_yeu_cau_ngan_hang_thanh_toan()
         {
             m_form_mode = e_form_mode.YEU_CAU_NGAN_HANG_THANH_TOAN;
+            this.Text = "F658- Yêu cầu TCPH / NHQLTK thanh toán";
+            m_lbl_header.Text = "F658- Yêu cầu TCPH / NHQLTK thanh toán";
             this.ShowDialog();
         }
 
