@@ -243,7 +243,7 @@ namespace BondApp
             this.m_gru_tim_kiem.Controls.Add(this.label1);
             this.m_gru_tim_kiem.Controls.Add(this.m_cmd_filter);
             this.m_gru_tim_kiem.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_gru_tim_kiem.Location = new System.Drawing.Point(0, 37);
+            this.m_gru_tim_kiem.Location = new System.Drawing.Point(0, 45);
             this.m_gru_tim_kiem.Name = "m_gru_tim_kiem";
             this.m_gru_tim_kiem.Size = new System.Drawing.Size(884, 49);
             this.m_gru_tim_kiem.TabIndex = 25;
@@ -283,7 +283,7 @@ namespace BondApp
             this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(884, 37);
+            this.m_lbl_title.Size = new System.Drawing.Size(884, 45);
             this.m_lbl_title.TabIndex = 24;
             this.m_lbl_title.Text = "F100 - Danh mục tổ chức phát hành";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -292,9 +292,9 @@ namespace BondApp
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 86);
+            this.m_fg.Location = new System.Drawing.Point(0, 94);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(884, 440);
+            this.m_fg.Size = new System.Drawing.Size(884, 432);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 26;
             // 

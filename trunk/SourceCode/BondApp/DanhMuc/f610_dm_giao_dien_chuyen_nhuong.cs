@@ -260,7 +260,7 @@ namespace BondApp
             this.m_grb_thong_tin_ban_hang.Controls.Add(this.label1);
             this.m_grb_thong_tin_ban_hang.Controls.Add(this.m_dat_from_date);
             this.m_grb_thong_tin_ban_hang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_grb_thong_tin_ban_hang.Location = new System.Drawing.Point(0, 31);
+            this.m_grb_thong_tin_ban_hang.Location = new System.Drawing.Point(0, 45);
             this.m_grb_thong_tin_ban_hang.Name = "m_grb_thong_tin_ban_hang";
             this.m_grb_thong_tin_ban_hang.Size = new System.Drawing.Size(934, 92);
             this.m_grb_thong_tin_ban_hang.TabIndex = 34;
@@ -353,7 +353,7 @@ namespace BondApp
             this.m_lbl_title.ForeColor = System.Drawing.Color.DarkRed;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(934, 31);
+            this.m_lbl_title.Size = new System.Drawing.Size(934, 45);
             this.m_lbl_title.TabIndex = 33;
             this.m_lbl_title.Text = "F610 -Danh sách giao dịch chuyển nhượng";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -361,10 +361,10 @@ namespace BondApp
             // m_fg
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_fg.Location = new System.Drawing.Point(0, 123);
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_fg.Location = new System.Drawing.Point(0, 137);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(934, 397);
+            this.m_fg.Size = new System.Drawing.Size(934, 389);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 35;
             // 

@@ -280,7 +280,7 @@
             this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_txt_ten_trai_phieu);
             this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_txt_ma_trai_phieu);
             this.m_gru_thong_tin_trai_phieu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_gru_thong_tin_trai_phieu.Location = new System.Drawing.Point(0, 37);
+            this.m_gru_thong_tin_trai_phieu.Location = new System.Drawing.Point(0, 45);
             this.m_gru_thong_tin_trai_phieu.Name = "m_gru_thong_tin_trai_phieu";
             this.m_gru_thong_tin_trai_phieu.Size = new System.Drawing.Size(884, 126);
             this.m_gru_thong_tin_trai_phieu.TabIndex = 0;
@@ -466,7 +466,7 @@
             this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(884, 37);
+            this.m_lbl_title.Size = new System.Drawing.Size(884, 45);
             this.m_lbl_title.TabIndex = 13;
             this.m_lbl_title.Text = "F320 - Cập nhật lãi suất thỏa thuận";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -496,7 +496,7 @@
             this.m_gru_thong_tin_cap_nhat.Controls.Add(this.label4);
             this.m_gru_thong_tin_cap_nhat.Controls.Add(this.label3);
             this.m_gru_thong_tin_cap_nhat.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_gru_thong_tin_cap_nhat.Location = new System.Drawing.Point(0, 163);
+            this.m_gru_thong_tin_cap_nhat.Location = new System.Drawing.Point(0, 171);
             this.m_gru_thong_tin_cap_nhat.Name = "m_gru_thong_tin_cap_nhat";
             this.m_gru_thong_tin_cap_nhat.Size = new System.Drawing.Size(884, 135);
             this.m_gru_thong_tin_cap_nhat.TabIndex = 2;

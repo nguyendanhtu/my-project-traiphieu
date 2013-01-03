@@ -132,7 +132,7 @@
             this.m_lbl_to_chuc_phat_hanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_to_chuc_phat_hanh.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_to_chuc_phat_hanh.Name = "m_lbl_to_chuc_phat_hanh";
-            this.m_lbl_to_chuc_phat_hanh.Size = new System.Drawing.Size(674, 31);
+            this.m_lbl_to_chuc_phat_hanh.Size = new System.Drawing.Size(674, 45);
             this.m_lbl_to_chuc_phat_hanh.TabIndex = 9;
             this.m_lbl_to_chuc_phat_hanh.Text = "F100 - Thông tin tổ chức phát hành";
             this.m_lbl_to_chuc_phat_hanh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

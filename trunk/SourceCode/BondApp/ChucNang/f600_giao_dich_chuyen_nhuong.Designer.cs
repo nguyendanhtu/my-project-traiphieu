@@ -136,6 +136,7 @@
             this.m_txt_noi_dung_chuyen_nhuong = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.m_gru_thong_tin_chuyen_nhuong = new System.Windows.Forms.GroupBox();
+            this.label44 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.m_date_ngay_vao_so = new System.Windows.Forms.DateTimePicker();
@@ -149,6 +150,7 @@
             this.m_txt_gia_tri_chuyen_nhuong_thuc_te = new System.Windows.Forms.TextBox();
             this.m_txt_gia_tri_chuyen_nhuong = new System.Windows.Forms.TextBox();
             this.m_txt_nguoi_duyet = new System.Windows.Forms.TextBox();
+            this.m_txt_phan_tram_thue = new System.Windows.Forms.TextBox();
             this.m_txt_nguoi_lap = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
@@ -158,8 +160,6 @@
             this.label31 = new System.Windows.Forms.Label();
             this.m_lbl_phi_gd_max_min = new System.Windows.Forms.Label();
             this.m_gru_thong_tin_khach_hang = new System.Windows.Forms.GroupBox();
-            this.m_txt_phan_tram_thue = new System.Windows.Forms.TextBox();
-            this.label44 = new System.Windows.Forms.Label();
             this.m_gru_thong_tin_trai_phieu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -175,7 +175,7 @@
             this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(904, 40);
+            this.m_lbl_title.Size = new System.Drawing.Size(904, 45);
             this.m_lbl_title.TabIndex = 1;
             this.m_lbl_title.Text = "F600 - Giao dịch chuyển nhượng";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -200,7 +200,7 @@
             this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_txt_ten_trai_phieu);
             this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_txt_ma_trai_phieu);
             this.m_gru_thong_tin_trai_phieu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_gru_thong_tin_trai_phieu.Location = new System.Drawing.Point(0, 40);
+            this.m_gru_thong_tin_trai_phieu.Location = new System.Drawing.Point(0, 45);
             this.m_gru_thong_tin_trai_phieu.Name = "m_gru_thong_tin_trai_phieu";
             this.m_gru_thong_tin_trai_phieu.Size = new System.Drawing.Size(904, 95);
             this.m_gru_thong_tin_trai_phieu.TabIndex = 0;
@@ -1331,6 +1331,15 @@
             this.m_gru_thong_tin_chuyen_nhuong.TabStop = false;
             this.m_gru_thong_tin_chuyen_nhuong.Text = "Thông tin chuyển nhượng";
             // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(260, 121);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(15, 13);
+            this.label44.TabIndex = 45;
+            this.label44.Text = "%";
+            // 
             // label39
             // 
             this.label39.AutoSize = true;
@@ -1457,6 +1466,15 @@
             this.m_txt_nguoi_duyet.TabStop = false;
             this.m_txt_nguoi_duyet.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // m_txt_phan_tram_thue
+            // 
+            this.m_txt_phan_tram_thue.BackColor = System.Drawing.Color.White;
+            this.m_txt_phan_tram_thue.Location = new System.Drawing.Point(142, 93);
+            this.m_txt_phan_tram_thue.Name = "m_txt_phan_tram_thue";
+            this.m_txt_phan_tram_thue.Size = new System.Drawing.Size(116, 20);
+            this.m_txt_phan_tram_thue.TabIndex = 2;
+            this.m_txt_phan_tram_thue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // m_txt_nguoi_lap
             // 
             this.m_txt_nguoi_lap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -1536,30 +1554,12 @@
             this.m_gru_thong_tin_khach_hang.Controls.Add(this.groupBox1);
             this.m_gru_thong_tin_khach_hang.Controls.Add(this.groupBox3);
             this.m_gru_thong_tin_khach_hang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_gru_thong_tin_khach_hang.Location = new System.Drawing.Point(0, 135);
+            this.m_gru_thong_tin_khach_hang.Location = new System.Drawing.Point(0, 140);
             this.m_gru_thong_tin_khach_hang.Name = "m_gru_thong_tin_khach_hang";
             this.m_gru_thong_tin_khach_hang.Size = new System.Drawing.Size(904, 275);
             this.m_gru_thong_tin_khach_hang.TabIndex = 1;
             this.m_gru_thong_tin_khach_hang.TabStop = false;
             this.m_gru_thong_tin_khach_hang.Text = "Thông tin khách hàng";
-            // 
-            // m_txt_phan_tram_thue
-            // 
-            this.m_txt_phan_tram_thue.BackColor = System.Drawing.Color.White;
-            this.m_txt_phan_tram_thue.Location = new System.Drawing.Point(142, 93);
-            this.m_txt_phan_tram_thue.Name = "m_txt_phan_tram_thue";
-            this.m_txt_phan_tram_thue.Size = new System.Drawing.Size(116, 20);
-            this.m_txt_phan_tram_thue.TabIndex = 2;
-            this.m_txt_phan_tram_thue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(260, 121);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(15, 13);
-            this.label44.TabIndex = 45;
-            this.label44.Text = "%";
             // 
             // f600_giao_dich_chuyen_nhuong
             // 

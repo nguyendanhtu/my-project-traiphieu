@@ -84,7 +84,9 @@ namespace BondApp
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f998_ht_nguoi_su_dung_de));
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
+            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -101,10 +103,8 @@ namespace BondApp
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.m_cbo_nhom_quyen = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.m_cmd_save = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            this.m_cbo_nhom_quyen = new System.Windows.Forms.ComboBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -119,6 +119,21 @@ namespace BondApp
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(464, 36);
             this.m_pnl_out_place_dm.TabIndex = 1;
+            // 
+            // m_cmd_save
+            // 
+            this.m_cmd_save.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_save.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_save.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_save.ImageIndex = 10;
+            this.m_cmd_save.ImageList = this.ImageList;
+            this.m_cmd_save.Location = new System.Drawing.Point(284, 4);
+            this.m_cmd_save.Name = "m_cmd_save";
+            this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_save.TabIndex = 0;
+            this.m_cmd_save.Text = "&Lưu";
             // 
             // ImageList
             // 
@@ -146,6 +161,21 @@ namespace BondApp
             this.ImageList.Images.SetKeyName(19, "");
             this.ImageList.Images.SetKeyName(20, "");
             this.ImageList.Images.SetKeyName(21, "");
+            // 
+            // m_cmd_exit
+            // 
+            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_exit.ImageIndex = 11;
+            this.m_cmd_exit.ImageList = this.ImageList;
+            this.m_cmd_exit.Location = new System.Drawing.Point(372, 4);
+            this.m_cmd_exit.Name = "m_cmd_exit";
+            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_exit.TabIndex = 1;
+            this.m_cmd_exit.Text = "Trở về (Esc)";
             // 
             // label1
             // 
@@ -179,12 +209,12 @@ namespace BondApp
             // 
             // label4
             // 
+            this.label4.Enabled = false;
             this.label4.Location = new System.Drawing.Point(216, 124);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 16);
             this.label4.TabIndex = 13;
             this.label4.Text = "Có quyền Admin?";
-            this.label4.Enabled = false;
             // 
             // m_txt_ten_truy_cap
             // 
@@ -253,12 +283,12 @@ namespace BondApp
             // 
             // m_chk_is_admin
             // 
+            this.m_chk_is_admin.Enabled = false;
             this.m_chk_is_admin.Location = new System.Drawing.Point(312, 124);
             this.m_chk_is_admin.Name = "m_chk_is_admin";
-            this.m_chk_is_admin.Size = new System.Drawing.Size(56, 16);
+            this.m_chk_is_admin.Size = new System.Drawing.Size(60, 20);
             this.m_chk_is_admin.TabIndex = 14;
             this.m_chk_is_admin.Text = "Không";
-            this.m_chk_is_admin.Enabled = false;
             // 
             // groupBox1
             // 
@@ -314,17 +344,6 @@ namespace BondApp
             this.label7.TabIndex = 1;
             this.label7.Text = "(*)";
             // 
-            // m_cbo_nhom_quyen
-            // 
-            this.m_cbo_nhom_quyen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_nhom_quyen.Items.AddRange(new object[] {
-            "Đang sử dụng",
-            "Đã đóng"});
-            this.m_cbo_nhom_quyen.Location = new System.Drawing.Point(112, 147);
-            this.m_cbo_nhom_quyen.Name = "m_cbo_nhom_quyen";
-            this.m_cbo_nhom_quyen.Size = new System.Drawing.Size(224, 21);
-            this.m_cbo_nhom_quyen.TabIndex = 12;
-            // 
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -335,35 +354,16 @@ namespace BondApp
             this.label10.Text = "Nhóm quyền";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // m_cmd_save
+            // m_cbo_nhom_quyen
             // 
-            this.m_cmd_save.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_save.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_save.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_save.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_save.ImageIndex = 10;
-            this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(284, 4);
-            this.m_cmd_save.Name = "m_cmd_save";
-            this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_save.TabIndex = 0;
-            this.m_cmd_save.Text = "&Lưu";
-            // 
-            // m_cmd_exit
-            // 
-            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_exit.ImageIndex = 11;
-            this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(372, 4);
-            this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 1;
-            this.m_cmd_exit.Text = "Trở về (Esc)";
+            this.m_cbo_nhom_quyen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_nhom_quyen.Items.AddRange(new object[] {
+            "Đang sử dụng",
+            "Đã đóng"});
+            this.m_cbo_nhom_quyen.Location = new System.Drawing.Point(112, 147);
+            this.m_cbo_nhom_quyen.Name = "m_cbo_nhom_quyen";
+            this.m_cbo_nhom_quyen.Size = new System.Drawing.Size(224, 21);
+            this.m_cbo_nhom_quyen.TabIndex = 12;
             // 
             // f998_ht_nguoi_su_dung_de
             // 

@@ -201,7 +201,7 @@ namespace BondApp
             this.m_gru_thong_tin_cap_nhat.Controls.Add(this.label6);
             this.m_gru_thong_tin_cap_nhat.Controls.Add(this.label5);
             this.m_gru_thong_tin_cap_nhat.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_gru_thong_tin_cap_nhat.Location = new System.Drawing.Point(0, 137);
+            this.m_gru_thong_tin_cap_nhat.Location = new System.Drawing.Point(0, 145);
             this.m_gru_thong_tin_cap_nhat.Name = "m_gru_thong_tin_cap_nhat";
             this.m_gru_thong_tin_cap_nhat.Size = new System.Drawing.Size(784, 55);
             this.m_gru_thong_tin_cap_nhat.TabIndex = 22;
@@ -257,7 +257,7 @@ namespace BondApp
             this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_cmd_chon_trai_phieu);
             this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_txt_ten_trai_phieu);
             this.m_gru_thong_tin_trai_phieu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_gru_thong_tin_trai_phieu.Location = new System.Drawing.Point(0, 37);
+            this.m_gru_thong_tin_trai_phieu.Location = new System.Drawing.Point(0, 45);
             this.m_gru_thong_tin_trai_phieu.Name = "m_gru_thong_tin_trai_phieu";
             this.m_gru_thong_tin_trai_phieu.Size = new System.Drawing.Size(784, 100);
             this.m_gru_thong_tin_trai_phieu.TabIndex = 21;
@@ -351,7 +351,7 @@ namespace BondApp
             this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(784, 37);
+            this.m_lbl_title.Size = new System.Drawing.Size(784, 45);
             this.m_lbl_title.TabIndex = 23;
             this.m_lbl_title.Text = "F657 - Báo cáo lãi suất trái phiếu";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

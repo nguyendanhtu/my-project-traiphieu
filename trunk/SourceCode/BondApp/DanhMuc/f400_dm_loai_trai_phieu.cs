@@ -177,6 +177,7 @@ namespace BondApp
             this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
             this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_view.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_view.Enabled = false;
             this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_view.ImageIndex = 18;
             this.m_cmd_view.ImageList = this.ImageList;
@@ -185,7 +186,6 @@ namespace BondApp
             this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_view.TabIndex = 21;
             this.m_cmd_view.Text = "Xem";
-            this.m_cmd_view.Enabled = false;
             // 
             // m_cmd_delete
             // 
@@ -233,7 +233,7 @@ namespace BondApp
             this.m_gru_tim_kiem.Controls.Add(this.label1);
             this.m_gru_tim_kiem.Controls.Add(this.m_cmd_filter);
             this.m_gru_tim_kiem.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_gru_tim_kiem.Location = new System.Drawing.Point(0, 37);
+            this.m_gru_tim_kiem.Location = new System.Drawing.Point(0, 45);
             this.m_gru_tim_kiem.Name = "m_gru_tim_kiem";
             this.m_gru_tim_kiem.Size = new System.Drawing.Size(686, 49);
             this.m_gru_tim_kiem.TabIndex = 25;
@@ -273,7 +273,7 @@ namespace BondApp
             this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(686, 37);
+            this.m_lbl_title.Size = new System.Drawing.Size(686, 45);
             this.m_lbl_title.TabIndex = 24;
             this.m_lbl_title.Text = "F500 - Danh mục trái trủ";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

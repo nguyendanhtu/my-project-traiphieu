@@ -315,7 +315,7 @@
             this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(889, 40);
+            this.m_lbl_title.Size = new System.Drawing.Size(889, 45);
             this.m_lbl_title.TabIndex = 0;
             this.m_lbl_title.Text = "F700 - Giao dịch phong tỏa, giải tỏa";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -376,7 +376,7 @@
             this.groupBox1.Controls.Add(this.m_lbl_dien_thoai);
             this.groupBox1.Controls.Add(this.m_lbl_tru_so_chinh);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(0, 40);
+            this.groupBox1.Location = new System.Drawing.Point(0, 45);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(889, 184);
             this.groupBox1.TabIndex = 1;
@@ -570,7 +570,7 @@
             this.groupBox3.Controls.Add(this.m_lbl_so_luong_tp_cam_co);
             this.groupBox3.Controls.Add(this.m_txt_so_luong_tp_cam_co);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox3.Location = new System.Drawing.Point(0, 224);
+            this.groupBox3.Location = new System.Drawing.Point(0, 229);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(889, 206);
             this.groupBox3.TabIndex = 2;
@@ -856,9 +856,9 @@
             this.groupBox2.Controls.Add(this.m_txt_chuc_vu);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Enabled = false;
-            this.groupBox2.Location = new System.Drawing.Point(0, 430);
+            this.groupBox2.Location = new System.Drawing.Point(0, 435);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(889, 106);
+            this.groupBox2.Size = new System.Drawing.Size(889, 101);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Đơn vị xác nhận - Công ty cổ phần Chứng khoán Ngân hàng Công thương Việt Nam";

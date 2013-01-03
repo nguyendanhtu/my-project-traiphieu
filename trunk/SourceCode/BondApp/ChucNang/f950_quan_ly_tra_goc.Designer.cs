@@ -75,7 +75,7 @@
             this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(944, 40);
+            this.m_lbl_title.Size = new System.Drawing.Size(944, 50);
             this.m_lbl_title.TabIndex = 3;
             this.m_lbl_title.Text = "F950 - Quản lý trả gốc";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -101,7 +101,7 @@
             this.groupBox2.Controls.Add(this.m_txt_ten_trai_phieu);
             this.groupBox2.Controls.Add(this.m_txt_ma_trai_phieu);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Location = new System.Drawing.Point(0, 40);
+            this.groupBox2.Location = new System.Drawing.Point(0, 50);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(944, 112);
             this.groupBox2.TabIndex = 61;
@@ -347,9 +347,9 @@
             this.groupBox1.Controls.Add(this.m_fg);
             this.groupBox1.Controls.Add(this.m_gru_tim_kiem);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 152);
+            this.groupBox1.Location = new System.Drawing.Point(0, 162);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(944, 374);
+            this.groupBox1.Size = new System.Drawing.Size(944, 364);
             this.groupBox1.TabIndex = 65;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách trái chủ";
@@ -360,7 +360,7 @@
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.Location = new System.Drawing.Point(3, 65);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(938, 306);
+            this.m_fg.Size = new System.Drawing.Size(938, 296);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 25;
             // 

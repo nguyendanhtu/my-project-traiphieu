@@ -32,9 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f310_cap_nhat_lai_suat));
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cmd_reset = new SIS.Controls.Button.SiSButton();
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_cmd_chon_duyet = new SIS.Controls.Button.SiSButton();
             this.m_cmd_chon_cap_nhat = new SIS.Controls.Button.SiSButton();
-            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_cmd_duyet_gd = new SIS.Controls.Button.SiSButton();
             this.m_cmd_cap_nhat = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
@@ -93,10 +93,10 @@
             this.panel1.Controls.Add(this.m_cmd_cap_nhat);
             this.panel1.Controls.Add(this.m_cmd_exit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 526);
+            this.panel1.Location = new System.Drawing.Point(0, 546);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(4);
-            this.panel1.Size = new System.Drawing.Size(834, 36);
+            this.panel1.Size = new System.Drawing.Size(844, 36);
             this.panel1.TabIndex = 2;
             // 
             // m_cmd_reset
@@ -108,40 +108,11 @@
             this.m_cmd_reset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_reset.ImageIndex = 11;
             this.m_cmd_reset.ImageList = this.ImageList;
-            this.m_cmd_reset.Location = new System.Drawing.Point(267, 4);
+            this.m_cmd_reset.Location = new System.Drawing.Point(277, 4);
             this.m_cmd_reset.Name = "m_cmd_reset";
             this.m_cmd_reset.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_reset.TabIndex = 0;
             this.m_cmd_reset.Text = "&Chọn lại";
-            // 
-            // m_cmd_chon_duyet
-            // 
-            this.m_cmd_chon_duyet.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_chon_duyet.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_chon_duyet.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_chon_duyet.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_chon_duyet.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_chon_duyet.Image")));
-            this.m_cmd_chon_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_chon_duyet.Location = new System.Drawing.Point(355, 4);
-            this.m_cmd_chon_duyet.Name = "m_cmd_chon_duyet";
-            this.m_cmd_chon_duyet.Size = new System.Drawing.Size(93, 28);
-            this.m_cmd_chon_duyet.TabIndex = 1;
-            this.m_cmd_chon_duyet.Text = "&Chọn duyệt";
-            // 
-            // m_cmd_chon_cap_nhat
-            // 
-            this.m_cmd_chon_cap_nhat.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_chon_cap_nhat.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_chon_cap_nhat.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_chon_cap_nhat.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_chon_cap_nhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_chon_cap_nhat.ImageIndex = 3;
-            this.m_cmd_chon_cap_nhat.ImageList = this.ImageList;
-            this.m_cmd_chon_cap_nhat.Location = new System.Drawing.Point(448, 4);
-            this.m_cmd_chon_cap_nhat.Name = "m_cmd_chon_cap_nhat";
-            this.m_cmd_chon_cap_nhat.Size = new System.Drawing.Size(118, 28);
-            this.m_cmd_chon_cap_nhat.TabIndex = 2;
-            this.m_cmd_chon_cap_nhat.Text = "&Chọn cập nhật";
             // 
             // ImageList
             // 
@@ -170,6 +141,35 @@
             this.ImageList.Images.SetKeyName(20, "");
             this.ImageList.Images.SetKeyName(21, "");
             // 
+            // m_cmd_chon_duyet
+            // 
+            this.m_cmd_chon_duyet.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_chon_duyet.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_chon_duyet.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_chon_duyet.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_chon_duyet.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_chon_duyet.Image")));
+            this.m_cmd_chon_duyet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_chon_duyet.Location = new System.Drawing.Point(365, 4);
+            this.m_cmd_chon_duyet.Name = "m_cmd_chon_duyet";
+            this.m_cmd_chon_duyet.Size = new System.Drawing.Size(93, 28);
+            this.m_cmd_chon_duyet.TabIndex = 1;
+            this.m_cmd_chon_duyet.Text = "&Chọn duyệt";
+            // 
+            // m_cmd_chon_cap_nhat
+            // 
+            this.m_cmd_chon_cap_nhat.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_chon_cap_nhat.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_chon_cap_nhat.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_chon_cap_nhat.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_chon_cap_nhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_chon_cap_nhat.ImageIndex = 3;
+            this.m_cmd_chon_cap_nhat.ImageList = this.ImageList;
+            this.m_cmd_chon_cap_nhat.Location = new System.Drawing.Point(458, 4);
+            this.m_cmd_chon_cap_nhat.Name = "m_cmd_chon_cap_nhat";
+            this.m_cmd_chon_cap_nhat.Size = new System.Drawing.Size(118, 28);
+            this.m_cmd_chon_cap_nhat.TabIndex = 2;
+            this.m_cmd_chon_cap_nhat.Text = "&Chọn cập nhật";
+            // 
             // m_cmd_duyet_gd
             // 
             this.m_cmd_duyet_gd.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -179,7 +179,7 @@
             this.m_cmd_duyet_gd.Enabled = false;
             this.m_cmd_duyet_gd.Image = ((System.Drawing.Image)(resources.GetObject("m_cmd_duyet_gd.Image")));
             this.m_cmd_duyet_gd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_duyet_gd.Location = new System.Drawing.Point(566, 4);
+            this.m_cmd_duyet_gd.Location = new System.Drawing.Point(576, 4);
             this.m_cmd_duyet_gd.Name = "m_cmd_duyet_gd";
             this.m_cmd_duyet_gd.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_duyet_gd.TabIndex = 3;
@@ -195,7 +195,7 @@
             this.m_cmd_cap_nhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_cap_nhat.ImageIndex = 3;
             this.m_cmd_cap_nhat.ImageList = this.ImageList;
-            this.m_cmd_cap_nhat.Location = new System.Drawing.Point(654, 4);
+            this.m_cmd_cap_nhat.Location = new System.Drawing.Point(664, 4);
             this.m_cmd_cap_nhat.Name = "m_cmd_cap_nhat";
             this.m_cmd_cap_nhat.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_cap_nhat.TabIndex = 4;
@@ -210,7 +210,7 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(742, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(752, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 5;
@@ -235,9 +235,9 @@
             this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_txt_ten_trai_phieu);
             this.m_gru_thong_tin_trai_phieu.Controls.Add(this.m_txt_ma_trai_phieu);
             this.m_gru_thong_tin_trai_phieu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_gru_thong_tin_trai_phieu.Location = new System.Drawing.Point(0, 37);
+            this.m_gru_thong_tin_trai_phieu.Location = new System.Drawing.Point(0, 45);
             this.m_gru_thong_tin_trai_phieu.Name = "m_gru_thong_tin_trai_phieu";
-            this.m_gru_thong_tin_trai_phieu.Size = new System.Drawing.Size(834, 126);
+            this.m_gru_thong_tin_trai_phieu.Size = new System.Drawing.Size(844, 126);
             this.m_gru_thong_tin_trai_phieu.TabIndex = 0;
             this.m_gru_thong_tin_trai_phieu.TabStop = false;
             this.m_gru_thong_tin_trai_phieu.Text = "Thông tin trái phiếu";
@@ -409,7 +409,7 @@
             this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(834, 37);
+            this.m_lbl_title.Size = new System.Drawing.Size(844, 45);
             this.m_lbl_title.TabIndex = 8;
             this.m_lbl_title.Text = "F310 - Cập nhật lãi suất định kỳ";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -419,9 +419,9 @@
             this.m_fg.AutoResize = false;
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 304);
+            this.m_fg.Location = new System.Drawing.Point(0, 312);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(834, 222);
+            this.m_fg.Size = new System.Drawing.Size(844, 234);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 1;
             // 
@@ -448,9 +448,9 @@
             this.m_gru_thong_tin_cap_nhat.Controls.Add(this.label4);
             this.m_gru_thong_tin_cap_nhat.Controls.Add(this.label3);
             this.m_gru_thong_tin_cap_nhat.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_gru_thong_tin_cap_nhat.Location = new System.Drawing.Point(0, 163);
+            this.m_gru_thong_tin_cap_nhat.Location = new System.Drawing.Point(0, 171);
             this.m_gru_thong_tin_cap_nhat.Name = "m_gru_thong_tin_cap_nhat";
-            this.m_gru_thong_tin_cap_nhat.Size = new System.Drawing.Size(834, 135);
+            this.m_gru_thong_tin_cap_nhat.Size = new System.Drawing.Size(844, 135);
             this.m_gru_thong_tin_cap_nhat.TabIndex = 1;
             this.m_gru_thong_tin_cap_nhat.TabStop = false;
             this.m_gru_thong_tin_cap_nhat.Text = "Thông tin cập nhật lãi suất";
@@ -657,7 +657,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 562);
+            this.ClientSize = new System.Drawing.Size(844, 582);
             this.Controls.Add(this.m_gru_thong_tin_cap_nhat);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.panel1);

@@ -59,8 +59,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cmd_xac_nhan = new SIS.Controls.Button.SiSButton();
             this.m_cmd_hoan_tac = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
+            this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_gru_tim_kiem = new System.Windows.Forms.GroupBox();
@@ -83,7 +83,7 @@
             this.m_lbl_title.ForeColor = System.Drawing.Color.Maroon;
             this.m_lbl_title.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_title.Name = "m_lbl_title";
-            this.m_lbl_title.Size = new System.Drawing.Size(1019, 40);
+            this.m_lbl_title.Size = new System.Drawing.Size(1019, 50);
             this.m_lbl_title.TabIndex = 2;
             this.m_lbl_title.Text = "F900 - Quản lý trả lãi định kỳ";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -115,7 +115,7 @@
             this.groupBox2.Controls.Add(this.m_txt_ten_trai_phieu);
             this.groupBox2.Controls.Add(this.m_txt_ma_trai_phieu);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Location = new System.Drawing.Point(0, 40);
+            this.groupBox2.Location = new System.Drawing.Point(0, 50);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1019, 99);
             this.groupBox2.TabIndex = 56;
@@ -398,21 +398,6 @@
             this.m_cmd_hoan_tac.TabIndex = 28;
             this.m_cmd_hoan_tac.Text = "&Hoàn tác";
             // 
-            // m_cmd_exit
-            // 
-            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_exit.ImageIndex = 12;
-            this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(927, 4);
-            this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 27;
-            this.m_cmd_exit.Text = "Thoát (Esc)";
-            // 
             // ImageList
             // 
             this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
@@ -440,14 +425,29 @@
             this.ImageList.Images.SetKeyName(20, "");
             this.ImageList.Images.SetKeyName(21, "");
             // 
+            // m_cmd_exit
+            // 
+            this.m_cmd_exit.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_exit.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_exit.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_exit.ImageIndex = 12;
+            this.m_cmd_exit.ImageList = this.ImageList;
+            this.m_cmd_exit.Location = new System.Drawing.Point(927, 4);
+            this.m_cmd_exit.Name = "m_cmd_exit";
+            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_exit.TabIndex = 27;
+            this.m_cmd_exit.Text = "Thoát (Esc)";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.m_fg);
             this.groupBox1.Controls.Add(this.m_gru_tim_kiem);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 139);
+            this.groupBox1.Location = new System.Drawing.Point(0, 149);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1019, 387);
+            this.groupBox1.Size = new System.Drawing.Size(1019, 377);
             this.groupBox1.TabIndex = 60;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách trái chủ";
@@ -458,7 +458,7 @@
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.Location = new System.Drawing.Point(3, 65);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1013, 319);
+            this.m_fg.Size = new System.Drawing.Size(1013, 309);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 25;
             // 

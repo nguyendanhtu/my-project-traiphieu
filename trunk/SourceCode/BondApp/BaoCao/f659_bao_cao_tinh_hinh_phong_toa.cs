@@ -172,9 +172,9 @@ namespace BondApp
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 123);
+            this.m_fg.Location = new System.Drawing.Point(0, 137);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1080, 337);
+            this.m_fg.Size = new System.Drawing.Size(1080, 323);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -185,7 +185,7 @@ namespace BondApp
             this.m_lbl_header.ForeColor = System.Drawing.Color.DarkRed;
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(1080, 31);
+            this.m_lbl_header.Size = new System.Drawing.Size(1080, 45);
             this.m_lbl_header.TabIndex = 24;
             this.m_lbl_header.Text = "F659 - Báo cáo tình hình phong tỏa";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -200,7 +200,7 @@ namespace BondApp
             this.m_grb_thong_tin_ban_hang.Controls.Add(this.label1);
             this.m_grb_thong_tin_ban_hang.Controls.Add(this.m_dat_from_date);
             this.m_grb_thong_tin_ban_hang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_grb_thong_tin_ban_hang.Location = new System.Drawing.Point(0, 31);
+            this.m_grb_thong_tin_ban_hang.Location = new System.Drawing.Point(0, 45);
             this.m_grb_thong_tin_ban_hang.Name = "m_grb_thong_tin_ban_hang";
             this.m_grb_thong_tin_ban_hang.Size = new System.Drawing.Size(1080, 92);
             this.m_grb_thong_tin_ban_hang.TabIndex = 29;
@@ -306,14 +306,14 @@ namespace BondApp
         public void display_danh_sach_phong_toa()
         {
             this.Text = "F659 - Báo cáo tình hình phong tỏa";
-            m_lbl_header.Text = "F659 - BÁO CÁO TÌNH HÌNH PHONG TỎA";
+            m_lbl_header.Text = "F659 - Báo cáo tình hình phong tỏa";
             m_e_form_mode = e_form_mode.PHONG_TOA;
             this.ShowDialog();
         }
         public void display_danh_sach_giai_toa()
         {
             this.Text = "F660 - Báo cáo tình hình giải tỏa";
-            m_lbl_header.Text = "F660 - BÁO CÁO TÌNH HÌNH GIẢI TỎA";
+            m_lbl_header.Text = "F660 - Báo cáo tình hình giải tỏa";
             m_e_form_mode = e_form_mode.GIAI_TOA;
             this.ShowDialog();
         }
