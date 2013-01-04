@@ -184,7 +184,7 @@ namespace BondApp
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 481);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(958, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(894, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_yeu_cau_ngan_hang_thanh_toan
@@ -226,7 +226,7 @@ namespace BondApp
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(866, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(802, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -239,7 +239,7 @@ namespace BondApp
             this.m_lbl_header.ForeColor = System.Drawing.Color.DarkRed;
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(958, 45);
+            this.m_lbl_header.Size = new System.Drawing.Size(894, 45);
             this.m_lbl_header.TabIndex = 58;
             this.m_lbl_header.Text = "F658- Yêu cầu TCPH / NHQLTK thanh toán";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -276,7 +276,7 @@ namespace BondApp
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 45);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(958, 168);
+            this.groupBox1.Size = new System.Drawing.Size(894, 168);
             this.groupBox1.TabIndex = 59;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin trái phiếu";
@@ -547,14 +547,14 @@ namespace BondApp
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.Location = new System.Drawing.Point(0, 213);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(958, 268);
+            this.m_fg.Size = new System.Drawing.Size(894, 268);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 60;
             // 
             // f658_bao_cao_chot_danh_sach_nguoi_so_huu_trai_phieu_theo_yeu_cau
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(958, 517);
+            this.ClientSize = new System.Drawing.Size(894, 517);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_lbl_header);
@@ -642,7 +642,8 @@ namespace BondApp
                     break;
                 case e_form_mode.YEU_CAU_NGAN_HANG_THANH_TOAN:
                     m_cmd_export_excel.Enabled = false;
-                    m_lbl_header.Text = "F658 - YÊU CẦU NGÂN HÀNG THANH TOÁN";
+                    m_lbl_header.Text = "F658 - Yêu cầu ngân hàng thanh toán";
+                    this.Text = "F658 - Yêu cầu ngân hàng thanh toán";
                     break;
             }
 			m_obj_trans = get_trans_object(m_fg);

@@ -239,7 +239,7 @@ namespace BondApp
             this.m_lbl_title.Name = "m_lbl_title";
             this.m_lbl_title.Size = new System.Drawing.Size(968, 45);
             this.m_lbl_title.TabIndex = 31;
-            this.m_lbl_title.Text = "F601 -BÁO CÁO TÌNH HÌNH CHUYỂN NHƯỢNG";
+            this.m_lbl_title.Text = "F601 -Báo cáo tình hình chuyển nhượng";
             this.m_lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_pnl_out_place_dm
@@ -292,7 +292,7 @@ namespace BondApp
             this.Controls.Add(this.m_lbl_title);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f601_bao_cao_giao_dich_chuyen_nhuong";
-            this.Text = "f601_bao_cao_giao_dich_chuyen_nhuong";
+            this.Text = "F601 -Báo cáo tình hình chuyển nhượng";
             this.Load += new System.EventHandler(this.f601_bao_cao_giao_dich_chuyen_nhuong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.m_grb_thong_tin_ban_hang.ResumeLayout(false);
