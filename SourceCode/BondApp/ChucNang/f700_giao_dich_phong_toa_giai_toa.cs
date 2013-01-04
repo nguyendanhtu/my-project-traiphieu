@@ -448,7 +448,7 @@ namespace BondApp
                 m_dat_ngay.Value = m_us_gd_phong_toa_giai_toa.datNGAY_GIAO_DICH;
                 m_txt_cua.Text = m_us_gd_phong_toa_giai_toa.strCUA;
                 if (m_us_gd_phong_toa_giai_toa.dcTY_LE_PHI_GD == 0) m_txt_ty_le_phi_gd.Text = "0";
-                else m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.dcTY_LE_PHI_GD * 100, "#,###0.00000");
+                else m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.dcTY_LE_PHI_GD * 100, "#,###0.000");
                 if (m_us_gd_phong_toa_giai_toa.dcPHI_GIAO_DICH == 0) m_txt_phi_gd.Text = "0";
                 else m_txt_phi_gd.Text = CIPConvert.ToStr(m_us_gd_phong_toa_giai_toa.dcPHI_GIAO_DICH,"#,###");
             }
@@ -471,7 +471,7 @@ namespace BondApp
 
             m_txt_ma_so_trai_phieu.Text = ip_us_trai_phieu.strMA_TRAI_PHIEU;
             m_txt_to_chuc_phat_hanh.Text = ip_us_trai_phieu.strTEN_TRAI_PHIEU;
-            m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcTY_LE_PHI_PHONG_GIAI_TOA*100, "#,##0.00");
+            m_txt_ty_le_phi_gd.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcTY_LE_PHI_PHONG_GIAI_TOA*100, "#,##0.000");
             if (v_us_dm_dot_phat_hanh.dcMENH_GIA == 0) m_txt_menh_gia.Text = "0";
             else
                 m_txt_menh_gia.Text = CIPConvert.ToStr(v_us_dm_dot_phat_hanh.dcMENH_GIA, "#,###");

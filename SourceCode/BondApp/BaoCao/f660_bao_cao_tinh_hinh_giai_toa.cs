@@ -135,7 +135,7 @@ namespace BondApp
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 460);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(1080, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(894, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_export_excel
@@ -162,7 +162,7 @@ namespace BondApp
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(988, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(802, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -174,7 +174,7 @@ namespace BondApp
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.Location = new System.Drawing.Point(0, 137);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(1080, 323);
+            this.m_fg.Size = new System.Drawing.Size(894, 323);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -185,9 +185,9 @@ namespace BondApp
             this.m_lbl_header.ForeColor = System.Drawing.Color.DarkRed;
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Size = new System.Drawing.Size(1080, 45);
+            this.m_lbl_header.Size = new System.Drawing.Size(894, 45);
             this.m_lbl_header.TabIndex = 24;
-            this.m_lbl_header.Text = "F660 - BÁO CÁO TÌNH HÌNH GIẢI TỎA";
+            this.m_lbl_header.Text = "F660 - Báo cáo tình hình giải tỏa";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_grb_thong_tin_ban_hang
@@ -202,7 +202,7 @@ namespace BondApp
             this.m_grb_thong_tin_ban_hang.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_grb_thong_tin_ban_hang.Location = new System.Drawing.Point(0, 45);
             this.m_grb_thong_tin_ban_hang.Name = "m_grb_thong_tin_ban_hang";
-            this.m_grb_thong_tin_ban_hang.Size = new System.Drawing.Size(1080, 92);
+            this.m_grb_thong_tin_ban_hang.Size = new System.Drawing.Size(894, 92);
             this.m_grb_thong_tin_ban_hang.TabIndex = 29;
             this.m_grb_thong_tin_ban_hang.TabStop = false;
             this.m_grb_thong_tin_ban_hang.Text = "Thông tin giao dịch phong tỏa";
@@ -246,7 +246,7 @@ namespace BondApp
             this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_view.ImageIndex = 5;
             this.m_cmd_view.ImageList = this.ImageList;
-            this.m_cmd_view.Location = new System.Drawing.Point(989, 16);
+            this.m_cmd_view.Location = new System.Drawing.Point(803, 16);
             this.m_cmd_view.Name = "m_cmd_view";
             this.m_cmd_view.Size = new System.Drawing.Size(88, 73);
             this.m_cmd_view.TabIndex = 29;
@@ -282,7 +282,7 @@ namespace BondApp
             // f660_bao_cao_tinh_hinh_giai_toa
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(1080, 496);
+            this.ClientSize = new System.Drawing.Size(894, 496);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_grb_thong_tin_ban_hang);
             this.Controls.Add(this.m_lbl_header);
@@ -307,7 +307,7 @@ namespace BondApp
         public void display_danh_sach_giai_toa()
         {
             this.Text = "F660 - Báo cáo tình hình giải tỏa";
-            m_lbl_header.Text = "F660 - BÁO CÁO TÌNH HÌNH GIẢI TỎA";
+            m_lbl_header.Text = "F660 - Báo cáo tình hình giải tỏa";
             m_e_form_mode = e_form_mode.GIAI_TOA;
             this.ShowDialog();
         }

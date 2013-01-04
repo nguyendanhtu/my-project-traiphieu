@@ -541,10 +541,10 @@ namespace SaleManagement
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_export_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 447);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 443);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(968, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(968, 40);
             this.m_pnl_out_place_dm.TabIndex = 57;
             // 
             // m_cmd_export_excel
@@ -558,9 +558,9 @@ namespace SaleManagement
             this.m_cmd_export_excel.ImageList = this.ImageList;
             this.m_cmd_export_excel.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_export_excel.Name = "m_cmd_export_excel";
-            this.m_cmd_export_excel.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_export_excel.Size = new System.Drawing.Size(144, 32);
             this.m_cmd_export_excel.TabIndex = 22;
-            this.m_cmd_export_excel.Text = "Xuất excel";
+            this.m_cmd_export_excel.Text = "Xuất Danh sách chốt";
             // 
             // m_cmd_exit
             // 
@@ -573,7 +573,7 @@ namespace SaleManagement
             this.m_cmd_exit.ImageList = this.ImageList;
             this.m_cmd_exit.Location = new System.Drawing.Point(876, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_exit.Size = new System.Drawing.Size(88, 32);
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
@@ -583,7 +583,7 @@ namespace SaleManagement
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.Location = new System.Drawing.Point(0, 219);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(968, 228);
+            this.m_fg.Size = new System.Drawing.Size(968, 224);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 58;
             // 

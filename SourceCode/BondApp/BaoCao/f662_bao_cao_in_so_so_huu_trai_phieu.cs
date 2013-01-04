@@ -115,7 +115,8 @@ namespace BondApp.BaoCao
             foreach (DataRow v_dr in m_ds.V_DM_TRAI_CHU_CHOT_LAI.Rows)
             {
                 v_dr["ID_TRAI_PHIEU"] = m_us_trai_phieu.dcMENH_GIA * CIPConvert.ToDecimal(v_dr["TONG_SO_DU"]);
-                v_dr["SO_TAI_KHOAN"] = CIPConvert.ToStr(v_dr[V_DM_TRAI_CHU_CHOT_LAI.SO_TAI_KHOAN]) + " mở tại " + CIPConvert.ToStr(v_dr[V_DM_TRAI_CHU_CHOT_LAI.MO_TAI_NGAN_HANG]);
+                v_dr["SO_TAI_KHOAN"] = v_dr[V_DM_TRAI_CHU_CHOT_LAI.SO_TAI_KHOAN] + " mở tại " + v_dr[V_DM_TRAI_CHU_CHOT_LAI.MO_TAI_NGAN_HANG];
+                if (CIPConvert.ToStr(v_dr["SO_TAI_KHOAN"]).Trim().Equals("mở tại")) v_dr["SO_TAI_KHOAN"] = "";
             }
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
