@@ -309,7 +309,7 @@ namespace BondApp
             m_txt_ben_mua_sdt.Text = ip_us_trai_chu_mua.strMOBILE;
             m_txt_ben_mua_so_fax.Text = ip_us_trai_chu_mua.strFAX;
             m_txt_ben_mua_dia_chi.Text = ip_us_trai_chu_mua.strDIA_CHI;
-            m_txt_chuc_vu_ng_dai_dien.Text = ip_us_trai_chu_mua.strCHUC_VU;
+            m_txt_ben_mua_chuc_vu_ng_dai_dien.Text = ip_us_trai_chu_mua.strCHUC_VU;
             if (m_e_form_mode == eFormMode.LAP_CHUYEN_NHUONG)
             {
                 m_txt_ben_mua_ten_nguoi_dai_dien.Text = ip_us_trai_chu_mua.strTEN_NGUOI_DAI_DIEN;
