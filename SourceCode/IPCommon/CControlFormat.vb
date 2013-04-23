@@ -130,8 +130,8 @@ Public Class CControlFormat
                 Select Case i_form_style
                     Case IPFormStyle.DialogForm
                         .FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable
-                        .MaximizeBox = False
-                        .MinimizeBox = False
+                        .MaximizeBox = True
+                        .MinimizeBox = True
                         .StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
                         .ShowInTaskbar = False
                     Case IPFormStyle.DockableTopForm
@@ -171,8 +171,8 @@ Public Class CControlFormat
                 .Font = getRegularFont()
                 .ForeColor = getRegularForeColor()
                 .FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-                .MaximizeBox = False
-                .MinimizeBox = False
+                .MaximizeBox = True
+                .MinimizeBox = True
                 .StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
                 .ShowInTaskbar = False
                 '.ResumeLayout(False)
