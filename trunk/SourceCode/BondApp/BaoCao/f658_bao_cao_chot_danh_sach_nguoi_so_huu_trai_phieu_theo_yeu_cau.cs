@@ -774,9 +774,14 @@ namespace BondApp
         private void export_yeu_cau_ngan_hang_thanh_toan()
         {
             IP.Core.IPWordReport.CWordReport v_obj_word_rpt = new CWordReport("f800_Yeu Cau Ngan Hang Thanh Toan.doc");
+
+            v_obj_word_rpt.AddFindAndReplace("<TO_CHUC_PHAT_HANH>", m_us_trai_phieu.strTEN_TO_CHUC_PHAT_HANH);
             v_obj_word_rpt.AddFindAndReplace("<TEN_TRAI_PHIEU>", m_us_trai_phieu.strTEN_TRAI_PHIEU);
             v_obj_word_rpt.AddFindAndReplace("<MA_TRAI_PHIEU>", m_us_trai_phieu.strMA_TRAI_PHIEU);
             v_obj_word_rpt.AddFindAndReplace("<NGAY_PHAT_HANH>", m_txt_ngay_phat_hanh.Text);
+            v_obj_word_rpt.AddFindAndReplace("<MA_SO>", m_us_trai_phieu.strSO_HOP_DONG_DL_DK_LUU_KY);
+            v_obj_word_rpt.AddFindAndReplace("<NGAY_KY_KET>",CIPConvert.ToStr( m_us_trai_phieu.datNGAY_KY_HD));
+            
 
             US_GD_CHOT_LAI v_us = new US_GD_CHOT_LAI();
             DS_GD_CHOT_LAI v_ds = new DS_GD_CHOT_LAI();
