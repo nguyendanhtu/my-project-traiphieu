@@ -271,7 +271,7 @@ namespace BondApp.ChucNang
         {
             if (!CValidateTextBox.IsValid(m_txt_ma_trai_phieu, DataType.StringType, allowNull.NO, false)) return false;
             if (!CValidateTextBox.IsValid(m_txt_lai_suat_moi, DataType.NumberType, allowNull.NO, false)) return false;
-            if (m_date_ket_thuc_ap_dung_ls.Value <= m_date_ngay_bat_dau_ap_dung_ls.Value) return false;
+            if (m_date_ket_thuc_ap_dung_ls.Value < m_date_ngay_bat_dau_ap_dung_ls.Value) return false;
             return true;
         }        
 
