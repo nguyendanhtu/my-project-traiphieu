@@ -29,8 +29,19 @@ Public Class CWordReport
     End Sub
     Public Sub Export2Word(Optional ByVal i_b_show As Boolean = True)
         Dim v_str_replace As Object
+        Dim v_str_replace2 As Object
         For Each v_str_find As Object In Me.m_hst_FindAndReplaceCollection.Keys
             v_str_replace = Me.m_hst_FindAndReplaceCollection.Item(v_str_find).ToString()
+            While Len(v_str_replace) > 255
+                v_str_replace2 = Left(v_str_replace.ToString(), 255 - Len(v_str_find))
+                v_str_replace = Right(v_str_replace.ToString(), Len(v_str_replace) - 255)
+                Dim v_str As String = " "
+                v_str_replace2 = v_str_replace2.ToString() & v_str_find.ToString()
+
+                Me.FindAndReplace(v_str_find, v_str_replace2)
+
+            End While
+
             Me.FindAndReplace(v_str_find, v_str_replace)
         Next
         m_objWordDocument.Save()
@@ -82,6 +93,7 @@ Public Class CWordReport
         Dim v_find_forward As Object = True
         Dim v_find_wrap As Object = Word.WdFindWrap.wdFindContinue
         Dim v_find_replace As Object = Word.WdReplace.wdReplaceAll
+
         m_objWordlApp.Selection.Find.Execute(i_str_find _
             , m_o_missing _
             , m_o_missing _
