@@ -138,10 +138,10 @@ namespace BondApp.BaoCao
             US_DM_DOT_PHAT_HANH v_us_dm_dot_phat_hanh = new US_DM_DOT_PHAT_HANH(m_us_trai_phieu.dcID_DOT_PHAT_HANH);
             DateTime v_dat_ngay_chot_tuong_ung = v_us_dm_dot_phat_hanh.datNGAY_PHAT_HANH;
             DateTime v_dat_ngay_chot_lai;
-            v_dat_ngay_chot_tuong_ung = v_dat_ngay_chot_tuong_ung.AddMonths(i_ky_chot_lai * (int)m_us_trai_phieu.dcKY_TRA_LAI);
+            v_dat_ngay_chot_tuong_ung = v_dat_ngay_chot_tuong_ung.AddMonths(i_ky_chot_lai * (int)m_us_trai_phieu.dcID_DV_DIEU_CHINH_LS);
             m_txt_ngay_bat_dau.Text = CIPConvert.ToStr(v_dat_ngay_chot_tuong_ung, "dd/MM/yyyy");
             v_dat_ngay_chot_lai = v_dat_ngay_chot_tuong_ung.AddDays(-(int)CIPConvert.ToDecimal(m_us_trai_phieu.dcSO_NGAY_CHOT_LAI_TRUOC_NGAY_THANH_TOAN));
-            v_dat_ngay_chot_tuong_ung = v_dat_ngay_chot_tuong_ung.AddMonths((int)m_us_trai_phieu.dcKY_TRA_LAI);
+            v_dat_ngay_chot_tuong_ung = v_dat_ngay_chot_tuong_ung.AddMonths((int)m_us_trai_phieu.dcID_DV_DIEU_CHINH_LS);
             m_txt_ngay_ket_thuc.Text = CIPConvert.ToStr(v_dat_ngay_chot_tuong_ung, "dd/MM/yyyy");
             m_txt_ngay_chot.Text = CIPConvert.ToStr(v_dat_ngay_chot_lai, "dd/MM/yyyy");
         }
