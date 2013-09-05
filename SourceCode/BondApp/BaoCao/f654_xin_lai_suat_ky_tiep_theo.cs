@@ -223,6 +223,8 @@ namespace BondApp.BaoCao
             v_obj_word_rpt.AddFindAndReplace("<NGAY_KHONG_TINH_LAI>", m_txt_ngay_ket_thuc.Text);
             v_obj_word_rpt.AddFindAndReplace("<NGAY_XAC_DINH_LS>", m_txt_ngay_chot.Text);
             v_obj_word_rpt.AddFindAndReplace("<GHI_CHU_VE_PHUONG_THUC_XD_LS>", m_us_trai_phieu.strGHI_CHU_PHUONG_THUC_XD_LAI_SUAT);
+            US_CM_DM_TU_DIEN v_us_ngan_hang = new US_CM_DM_TU_DIEN(m_us_trai_phieu.dcID_NGAN_HANG_THAM_CHIEU_LAI_SUAT);
+            v_obj_word_rpt.AddFindAndReplace("<TEN_NGAN_HANG>", v_us_ngan_hang.strTEN);
             v_obj_word_rpt.Export2Word(true);
 
         }
