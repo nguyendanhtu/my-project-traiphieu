@@ -1159,6 +1159,8 @@ namespace BondApp
             try
             {
                 if (m_eformmode == e_form_mode.DUYET_GD_CHOT_LAI) return;
+                if (m_eformmode == e_form_mode.XEM_GD_CHOT_LAI_DETAIL) return;
+                if (m_e_form_mode == DataEntryFormMode.UpdateDataState) return;
                 load_data_ky_tinh_lai_2_from();
             }
             catch (Exception v_e)
