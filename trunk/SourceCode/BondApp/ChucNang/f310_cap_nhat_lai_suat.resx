@@ -122,10 +122,10 @@
   </metadata>
   <data name="ImageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAO
-        HwAAAk1TRnQBSQFMAgEBFgEAAWQBAQFkAQEBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        HwAAAk1TRnQBSQFMAgEBFgEAAXQBAQF0AQEBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAAWADAAEBAQABCAYAARgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -264,41 +264,41 @@
   <data name="m_cmd_chon_duyet.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAKxSURBVDhPpZNvMBMAGMbfTcTGLMaGbWxZm4kmqbYs
-        XWEhDeXCEDKybNa2bHZrmuSiq6PDOfWlf9d13PVBHXd1ThelEsvlY1eXruP0547DcfK25ktXV+l8+H18
-        f3fP89wLiAhrAci2ACBZA4Bi5ICvTggMVTT4nBCBp1YAnjouuBtZQLTSgXCGCsRzZIALbgD1EEa97jlA
-        vU35+n+CWoegjlDA7wwcL3sTjyGdzM+rFkC1tx/Uka/IerfgzVkFSrrCv8F5t4NAsjE4HqcZ9D9GqGQC
-        mP22kxsZY5rXe7F3SYmJ3dsQrOQSQr07ALOFN+ffuHHEQx8cRPulA7KW4wp6hop9ddNc60Q2jmIZJvXs
-        RDDRrMRqbyA2eAAI20STRfZ4pNXy+r01Ah9nieUiIKn5AncTpyPxngS7pjVoRx0eehCHLqeCL7kZGUC0
-        UVYEVAO/xmzPweqxo0g1Cfr8j0cTKKWRCfTa8PfqF+n4ZMGGz5fNmNcXjx46wR2SluvqVvWTgKLazN/a
-        tHv+2VIb6p/mL5M1wg+RzeLZtvFyHFpowkfzFix+nIIUjaibrArzIhk4sM7sD3DWschFx6R05Q6XDWVR
-        7TXD5fhq8RpWvszFWx9NODjTgj3TFlQPyjGgQmynFcQwaaooR7wIoGr5QDFwwauKDRBUKAXf7Nj9sc37
-        lu9/qceBmVbsmWrAu5+qUDeUhqyKPW8Dc6WhLKUEWMd2OYgFdpEU2IW7nUBwVhKwDyev55TGPzSPKLBj
-        woI3JtRoGE5HgU42xcqUxbAKpMBUioFZLPkN4GekOeGmZpxMaE/Gy5NZaBg9gBH6lBluarosJEsGfxUI
-        5UfASUq2r6gk811OfxyKLfKF0ERFPi8tHf4piEjNgxVyQSQvqIsqVixGyIqMgqQc4GWsQrCWV/5x+x3k
-        uX3QMwGeewAAAABJRU5ErkJggg==
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAKuSURBVDhPpdNbTBIAFMbxIyYJKJKioAIKSSCGYWYl
+        SbZCSc1Qy6WihuYlSZCQBBlhmLm01bSpc9ZLt7WmWw/WdKs5W1pWpuTysdWyNZ1dNp06nXli2kPrauvh
+        //rbzr4dQMT/Cih2fyDb/IFq4oKPQQRMTSR4H5OAh14IHgYeuJvYQLAxwOUUDQhnKADniAB1EEq76tFP
+        u0n9/G9AjROodVELOgLGSl7JMbiD9XHVAFR5+UIt5ZKiZxNen1GhtDPsC5wl7geyncklnWQyfgtUsAAs
+        vlspDcxR3cvd2LNYiPFdWxBslCKXOncAVjN/1q9h/TCpPCiQ/gNA0XPdoJyp4VzeMNsynokjWIIJ3dsR
+        zHQbocoLCPUkAFGrZCLfIUd6Db/PSyf0XgZKJUDWCoTuZm57/B0pdk7p0IEGPHAvFl1PBF0gmphAsFNX
+        AJpRUG1xZGHV6GGkmYW9fkcjXajF4XGMmrC32mep+Gjejk+XLJjTK0eSQXiLrOe5ESu/A6iajYLNjTvn
+        niy2Yvnj3CWKTvQuvCl6pnWsFAfnG/HBnBULHiYhVSfpomhCPclGLqyx+AGcdi5y3jkpo3Cb67qSiLbq
+        oVJ8sXAFK55n4433ZhyYbsbuKStqB5ToXxbtoKujWHRNhPM8MdD0AqAaeeBZyQEIzJOBT2bM3pimPUt3
+        P9Vh/3QLdk/W4+0PlWgYTEF22a7XAdmyEHahFNhHdjiLAU6+DDh5O5eDoIwE4BxMXMstlt+3DKuwfdyK
+        18a1aBxKRaFBMclOV0Sx1TJgFUYDq0D6UyBIS1mOl5x2PK4tES9OZKBxZB+Ky5OmecmpiuAMBfwRECkP
+        rZSU6SMpSn+T1ReL0VblfEi8Kpefkgp/BcTJOd/KBolSXRtRoFoQK/JNwoQs4KetAvjVi64+hK/kuX3Q
+        xnVEsQAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="m_cmd_duyet_gd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAKxSURBVDhPpZNvMBMAGMbfTcTGLMaGbWxZm4kmqbYs
-        XWEhDeXCEDKybNa2bHZrmuSiq6PDOfWlf9d13PVBHXd1ThelEsvlY1eXruP0547DcfK25ktXV+l8+H18
-        f3fP89wLiAhrAci2ACBZA4Bi5ICvTggMVTT4nBCBp1YAnjouuBtZQLTSgXCGCsRzZIALbgD1EEa97jlA
-        vU35+n+CWoegjlDA7wwcL3sTjyGdzM+rFkC1tx/Uka/IerfgzVkFSrrCv8F5t4NAsjE4HqcZ9D9GqGQC
-        mP22kxsZY5rXe7F3SYmJ3dsQrOQSQr07ALOFN+ffuHHEQx8cRPulA7KW4wp6hop9ddNc60Q2jmIZJvXs
-        RDDRrMRqbyA2eAAI20STRfZ4pNXy+r01Ah9nieUiIKn5AncTpyPxngS7pjVoRx0eehCHLqeCL7kZGUC0
-        UVYEVAO/xmzPweqxo0g1Cfr8j0cTKKWRCfTa8PfqF+n4ZMGGz5fNmNcXjx46wR2SluvqVvWTgKLazN/a
-        tHv+2VIb6p/mL5M1wg+RzeLZtvFyHFpowkfzFix+nIIUjaibrArzIhk4sM7sD3DWschFx6R05Q6XDWVR
-        7TXD5fhq8RpWvszFWx9NODjTgj3TFlQPyjGgQmynFcQwaaooR7wIoGr5QDFwwauKDRBUKAXf7Nj9sc37
-        lu9/qceBmVbsmWrAu5+qUDeUhqyKPW8Dc6WhLKUEWMd2OYgFdpEU2IW7nUBwVhKwDyev55TGPzSPKLBj
-        woI3JtRoGE5HgU42xcqUxbAKpMBUioFZLPkN4GekOeGmZpxMaE/Gy5NZaBg9gBH6lBluarosJEsGfxUI
-        5UfASUq2r6gk811OfxyKLfKF0ERFPi8tHf4piEjNgxVyQSQvqIsqVixGyIqMgqQc4GWsQrCWV/5x+x3k
-        uX3QMwGeewAAAABJRU5ErkJggg==
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAKuSURBVDhPpdNbTBIAFMbxIyYJKJKioAIKSSCGYWYl
+        SbZCSc1Qy6WihuYlSZCQBBlhmLm01bSpc9ZLt7WmWw/WdKs5W1pWpuTysdWyNZ1dNp06nXli2kPrauvh
+        //rbzr4dQMT/Cih2fyDb/IFq4oKPQQRMTSR4H5OAh14IHgYeuJvYQLAxwOUUDQhnKADniAB1EEq76tFP
+        u0n9/G9AjROodVELOgLGSl7JMbiD9XHVAFR5+UIt5ZKiZxNen1GhtDPsC5wl7geyncklnWQyfgtUsAAs
+        vlspDcxR3cvd2LNYiPFdWxBslCKXOncAVjN/1q9h/TCpPCiQ/gNA0XPdoJyp4VzeMNsynokjWIIJ3dsR
+        zHQbocoLCPUkAFGrZCLfIUd6Db/PSyf0XgZKJUDWCoTuZm57/B0pdk7p0IEGPHAvFl1PBF0gmphAsFNX
+        AJpRUG1xZGHV6GGkmYW9fkcjXajF4XGMmrC32mep+Gjejk+XLJjTK0eSQXiLrOe5ESu/A6iajYLNjTvn
+        niy2Yvnj3CWKTvQuvCl6pnWsFAfnG/HBnBULHiYhVSfpomhCPclGLqyx+AGcdi5y3jkpo3Cb67qSiLbq
+        oVJ8sXAFK55n4433ZhyYbsbuKStqB5ToXxbtoKujWHRNhPM8MdD0AqAaeeBZyQEIzJOBT2bM3pimPUt3
+        P9Vh/3QLdk/W4+0PlWgYTEF22a7XAdmyEHahFNhHdjiLAU6+DDh5O5eDoIwE4BxMXMstlt+3DKuwfdyK
+        18a1aBxKRaFBMclOV0Sx1TJgFUYDq0D6UyBIS1mOl5x2PK4tES9OZKBxZB+Ky5OmecmpiuAMBfwRECkP
+        rZSU6SMpSn+T1ReL0VblfEi8Kpefkgp/BcTJOd/KBolSXRtRoFoQK/JNwoQs4KetAvjVi64+hK/kuX3Q
+        xnVEsQAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="m_fg.ColumnInfo" xml:space="preserve">
-    <value>9,1,0,0,0,85,Columns:0{Width:1;}	1{Width:32;Caption:"STT";DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	2{Width:33;Caption:"STT";Visible:False;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	3{Width:128;Caption:"Ngày lập";DataType:System.DateTime;Format:"dd/MM/yyyy";TextAlign:LeftCenter;TextAlignFixed:CenterCenter;ImageAlignFixed:CenterCenter;}	4{Width:117;Caption:"Lãi suất áp dụng";DataType:System.Decimal;Format:"0.00%";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	5{Width:97;Caption:"Ngày áp dụng";DataType:System.DateTime;Format:"dd/MM/yyyy";TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	6{Width:75;Caption:"Đã cập nhật";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;ImageAlign:CenterCenter;}	7{Width:85;Caption:"Đã duyệt";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;ImageAlign:CenterCenter;}	8{Width:278;Caption:"Ghi chú";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	</value>
+    <value>9,1,0,0,0,85,Columns:0{Width:1;}	1{Width:32;Caption:"STT";DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	2{Width:33;Caption:"STT";Visible:False;DataType:System.Decimal;TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	3{Width:128;Caption:"Ngày lập";DataType:System.DateTime;Format:"dd/MM/yyyy";TextAlign:LeftCenter;TextAlignFixed:CenterCenter;ImageAlignFixed:CenterCenter;}	4{Width:117;Caption:"Lãi suất áp dụng";DataType:System.Decimal;Format:"#.####%";TextAlign:RightCenter;TextAlignFixed:CenterCenter;}	5{Width:97;Caption:"Ngày áp dụng";DataType:System.DateTime;Format:"dd/MM/yyyy";TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	6{Width:75;Caption:"Đã cập nhật";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;ImageAlign:CenterCenter;}	7{Width:85;Caption:"Đã duyệt";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;ImageAlign:CenterCenter;}	8{Width:278;Caption:"Ghi chú";DataType:System.String;TextAlign:LeftCenter;TextAlignFixed:CenterCenter;}	</value>
   </data>
   <data name="m_fg.Styles" xml:space="preserve">
     <value>Normal{Font:Microsoft Sans Serif, 8.25pt;}	Alternate{BackColor:Info;}	Fixed{BackColor:Control;ForeColor:ControlText;Border:Flat,1,ControlDark,Both;}	Highlight{BackColor:Highlight;ForeColor:HighlightText;}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	EmptyArea{BackColor:AppWorkspace;Border:Flat,1,ControlDarkDark,Both;}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal2{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	</value>

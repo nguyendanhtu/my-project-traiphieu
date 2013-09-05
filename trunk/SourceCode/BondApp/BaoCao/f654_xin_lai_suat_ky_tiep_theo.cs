@@ -216,7 +216,7 @@ namespace BondApp.BaoCao
         {
             if (m_us_trai_phieu == null || m_us_trai_phieu.strMA_TRAI_PHIEU == "") return;
             IP.Core.IPWordReport.CWordReport v_obj_word_rpt = new CWordReport("f800_Xin LS.doc");
-            v_obj_word_rpt.AddFindAndReplace("<TEN_TRAI_PHIEU>", m_us_trai_phieu.strTEN_TRAI_PHIEU);
+            v_obj_word_rpt.AddFindAndReplace("<TEN_TRAI_PHIEU>", "trái phiếu "+ m_us_trai_phieu.strTEN_TO_CHUC_PHAT_HANH);
             v_obj_word_rpt.AddFindAndReplace("<NGAY_PHAT_HANH>", m_txt_ngay_phat_hanh.Text);
             v_obj_word_rpt.AddFindAndReplace("<NGAY_TINH_LAI_DAU>", m_txt_ngay_bat_dau.Text);
             v_obj_word_rpt.AddFindAndReplace("<NGAY_TINH_LAI_CUOI>", m_txt_ngay_ket_thuc.Text);
