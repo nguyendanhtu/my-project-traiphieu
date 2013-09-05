@@ -178,7 +178,7 @@ namespace BondApp.BaoCao
             m_txt_ngay_dao_han.Text = CIPConvert.ToStr(m_us_trai_phieu.datNGAY_DAO_HAN);
             m_txt_tong_so_luong_trai_phieu.Text = CIPConvert.ToStr(m_us_trai_phieu.dcTONG_SL_PHAT_HANH, "#,###");
             m_txt_tong_gia_tri_trai_phieu.Text = CIPConvert.ToStr(m_us_trai_phieu.dcTONG_GIA_TRI, "#,###");
-            m_txt_lai_suat.Text = CIPConvert.ToStr(m_us_trai_phieu.dcLAI_SUAT_DEFAULT * 100, "#,##0.00");
+            m_txt_lai_suat.Text = m_us_trai_phieu.strGHI_CHU_PHUONG_THUC_XD_LAI_SUAT;
             m_txt_ky_tinh_lai.Text = CIPConvert.ToStr(m_us_trai_phieu.dcKY_TRA_LAI, "#,###");
         }
 
@@ -227,7 +227,7 @@ namespace BondApp.BaoCao
             //v_obj_export_excel2.AddFindAndReplaceItem("<LOAI_TRAI_PHIEU>", m_us_trai_phieu.strLOAI_TRAI_PHIEU);
             v_obj_export_excel2.AddFindAndReplaceItem("<MENH_GIA>", CIPConvert.ToStr(m_us_trai_phieu.dcMENH_GIA,"#,###")+" VNĐ/ Trái phiếu");
             v_obj_export_excel2.AddFindAndReplaceItem("<KY_HAN_TRAI_PHIEU>", m_us_trai_phieu.dcKY_HAN.ToString() + " " + m_us_trai_phieu.strDON_VI_KY_HAN);
-            v_obj_export_excel2.AddFindAndReplaceItem("<LAI_SUAT>", m_us_trai_phieu.dcLAI_SUAT_DEFAULT* 100 +"%");
+            v_obj_export_excel2.AddFindAndReplaceItem("<LAI_SUAT>", m_us_trai_phieu.strGHI_CHU_PHUONG_THUC_XD_LAI_SUAT);
             
             v_obj_export_excel2.AddFindAndReplaceItem("<PHUONG_THUC_TRA_LAI>", v_str_phuong_thuc_tra_lai);
             v_obj_export_excel2.AddFindAndReplaceItem("<NGAY_PHAT_HANH>", CIPConvert.ToStr(m_us_trai_phieu.datNGAY_PHAT_HANH,"dd/MM/yyyy"));

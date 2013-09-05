@@ -71,9 +71,9 @@
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 190);
+            this.m_fg.Location = new System.Drawing.Point(0, 204);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(958, 291);
+            this.m_fg.Size = new System.Drawing.Size(958, 277);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 64;
             // 
@@ -110,7 +110,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(506, 109);
+            this.label2.Location = new System.Drawing.Point(209, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 13);
             this.label2.TabIndex = 55;
@@ -149,10 +149,11 @@
             // m_txt_lai_suat
             // 
             this.m_txt_lai_suat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_txt_lai_suat.Location = new System.Drawing.Point(134, 102);
+            this.m_txt_lai_suat.Location = new System.Drawing.Point(431, 109);
+            this.m_txt_lai_suat.Multiline = true;
             this.m_txt_lai_suat.Name = "m_txt_lai_suat";
             this.m_txt_lai_suat.ReadOnly = true;
-            this.m_txt_lai_suat.Size = new System.Drawing.Size(120, 20);
+            this.m_txt_lai_suat.Size = new System.Drawing.Size(397, 44);
             this.m_txt_lai_suat.TabIndex = 53;
             this.m_txt_lai_suat.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -196,7 +197,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 45);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(958, 145);
+            this.groupBox1.Size = new System.Drawing.Size(958, 159);
             this.groupBox1.TabIndex = 63;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin trái phiếu";
@@ -204,7 +205,7 @@
             // m_txt_ky_tinh_lai
             // 
             this.m_txt_ky_tinh_lai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.m_txt_ky_tinh_lai.Location = new System.Drawing.Point(431, 106);
+            this.m_txt_ky_tinh_lai.Location = new System.Drawing.Point(134, 109);
             this.m_txt_ky_tinh_lai.Name = "m_txt_ky_tinh_lai";
             this.m_txt_ky_tinh_lai.ReadOnly = true;
             this.m_txt_ky_tinh_lai.Size = new System.Drawing.Size(69, 20);
@@ -320,7 +321,7 @@
             // m_lbl_ky_tinh_lai
             // 
             this.m_lbl_ky_tinh_lai.AutoSize = true;
-            this.m_lbl_ky_tinh_lai.Location = new System.Drawing.Point(371, 109);
+            this.m_lbl_ky_tinh_lai.Location = new System.Drawing.Point(49, 112);
             this.m_lbl_ky_tinh_lai.Name = "m_lbl_ky_tinh_lai";
             this.m_lbl_ky_tinh_lai.Size = new System.Drawing.Size(54, 13);
             this.m_lbl_ky_tinh_lai.TabIndex = 41;
@@ -338,7 +339,7 @@
             // m_lbl_lai_suat
             // 
             this.m_lbl_lai_suat.AutoSize = true;
-            this.m_lbl_lai_suat.Location = new System.Drawing.Point(49, 105);
+            this.m_lbl_lai_suat.Location = new System.Drawing.Point(381, 112);
             this.m_lbl_lai_suat.Name = "m_lbl_lai_suat";
             this.m_lbl_lai_suat.Size = new System.Drawing.Size(44, 13);
             this.m_lbl_lai_suat.TabIndex = 42;
