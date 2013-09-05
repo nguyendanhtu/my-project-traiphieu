@@ -78,10 +78,12 @@
             this.m_txt_ghi_chu = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.m_gru_thong_tin_trai_phieu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.m_gru_thong_tin_cap_nhat.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -418,10 +420,10 @@
             // 
             this.m_fg.AutoResize = false;
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
-            this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 312);
+            this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_fg.Location = new System.Drawing.Point(0, 0);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(844, 234);
+            this.m_fg.Size = new System.Drawing.Size(844, 240);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 1;
             // 
@@ -653,13 +655,22 @@
             this.label3.Text = "Ghi chú";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.m_fg);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 306);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(844, 240);
+            this.panel2.TabIndex = 9;
+            // 
             // f310_cap_nhat_lai_suat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 582);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.m_gru_thong_tin_cap_nhat);
-            this.Controls.Add(this.m_fg);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_gru_thong_tin_trai_phieu);
             this.Controls.Add(this.m_lbl_title);
@@ -671,6 +682,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.m_gru_thong_tin_cap_nhat.ResumeLayout(false);
             this.m_gru_thong_tin_cap_nhat.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -725,6 +737,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label m_lbl_ky_dc_lai_suat;
+        private System.Windows.Forms.Panel panel2;
 
     }
 }
