@@ -34,7 +34,7 @@ Public Class CWordReport
             v_str_replace = Me.m_hst_FindAndReplaceCollection.Item(v_str_find).ToString()
             While Len(v_str_replace) > 255
                 v_str_replace2 = Left(v_str_replace.ToString(), 255 - Len(v_str_find))
-                v_str_replace = Right(v_str_replace.ToString(), Len(v_str_replace) - 255)
+                v_str_replace = Right(v_str_replace.ToString(), Len(v_str_replace) - (255 - Len(v_str_find)))
                 Dim v_str As String = " "
                 v_str_replace2 = v_str_replace2.ToString() & v_str_find.ToString()
 
