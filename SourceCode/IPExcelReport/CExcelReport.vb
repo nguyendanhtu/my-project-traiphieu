@@ -192,7 +192,25 @@ Public Class CExcelReport
         Me.FindAndReplaceCollection.Add(i_obj_find, i_obj_replace)
     End Sub
 
-
+    ''' <summary>
+    ''' NinhVH tạo ngày 30/04/2013
+    ''' Không hiển thị file
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Sub FindAndReplace()
+        Try
+            If Not m_init_successful Then Exit Sub
+            Dim v_str_replace As String
+            For Each v_str_find As String In Me.FindAndReplaceCollection.Keys
+                v_str_replace = Me.FindAndReplaceCollection.Item(v_str_find).ToString()
+                m_objExcelWorksheet.Cells.Replace(What:=v_str_find, Replacement:=v_str_replace)
+            Next
+        Catch v_e As Exception
+            m_objExcelApp.Workbooks.Close()
+            Unmount()
+            Throw v_e
+        End Try
+    End Sub
 
     Public Sub FindAndReplace(ByVal i_b_show As Boolean)
         Try
@@ -215,6 +233,16 @@ Public Class CExcelReport
             Unmount()
             Throw v_e
         End Try
+    End Sub
+
+    ''' <summary>
+    ''' Hiển thị file Excel sau khi load dữ liệu
+    ''' NinhVH tạo ngày 30/04/2013
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Sub ShowFile()
+        m_objExcelApp.Visible = True
+        m_b_haved_show = True
     End Sub
 
     Private Sub init_excel()
