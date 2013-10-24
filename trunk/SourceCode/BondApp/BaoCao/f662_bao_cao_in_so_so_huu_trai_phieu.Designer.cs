@@ -75,14 +75,14 @@
             this.m_fg.Name = "m_fg";
             this.m_fg.Size = new System.Drawing.Size(958, 277);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 64;
+            this.m_fg.TabIndex = 2;
             // 
             // m_cmd_chon_trai_phieu
             // 
             this.m_cmd_chon_trai_phieu.Location = new System.Drawing.Point(260, 23);
             this.m_cmd_chon_trai_phieu.Name = "m_cmd_chon_trai_phieu";
             this.m_cmd_chon_trai_phieu.Size = new System.Drawing.Size(27, 23);
-            this.m_cmd_chon_trai_phieu.TabIndex = 58;
+            this.m_cmd_chon_trai_phieu.TabIndex = 0;
             this.m_cmd_chon_trai_phieu.Text = "...";
             this.m_cmd_chon_trai_phieu.UseVisualStyleBackColor = true;
             this.m_cmd_chon_trai_phieu.Click += new System.EventHandler(this.m_cmd_chon_trai_phieu_Click_1);
@@ -198,7 +198,7 @@
             this.groupBox1.Location = new System.Drawing.Point(0, 45);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(958, 159);
-            this.groupBox1.TabIndex = 63;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin trái phiếu";
             // 
@@ -362,7 +362,7 @@
             this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_header.Name = "m_lbl_header";
             this.m_lbl_header.Size = new System.Drawing.Size(958, 45);
-            this.m_lbl_header.TabIndex = 62;
+            this.m_lbl_header.TabIndex = 0;
             this.m_lbl_header.Text = "F662 - Sổ đăng ký người sở hữu TP";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -402,7 +402,7 @@
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(958, 36);
-            this.m_pnl_out_place_dm.TabIndex = 61;
+            this.m_pnl_out_place_dm.TabIndex = 3;
             // 
             // m_cmd_export_excel
             // 
@@ -416,7 +416,7 @@
             this.m_cmd_export_excel.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_export_excel.Name = "m_cmd_export_excel";
             this.m_cmd_export_excel.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_export_excel.TabIndex = 23;
+            this.m_cmd_export_excel.TabIndex = 0;
             this.m_cmd_export_excel.Text = "Xuất excel";
             this.m_cmd_export_excel.Click += new System.EventHandler(this.m_cmd_export_excel_Click_1);
             // 
@@ -432,7 +432,7 @@
             this.m_cmd_exit.Location = new System.Drawing.Point(866, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 11;
+            this.m_cmd_exit.TabIndex = 1;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             this.m_cmd_exit.Click += new System.EventHandler(this.m_cmd_exit_Click_1);
             // 
