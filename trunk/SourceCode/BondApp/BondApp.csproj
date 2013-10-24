@@ -244,6 +244,7 @@
     <Content Include="App.ico" />
     <None Include="bin\Debug\Reports\Templates\F260_file_template_import.xls" />
     <None Include="bin\Debug\Reports\Templates\f300 _Danh Sach Chot.xls" />
+    <None Include="bin\Debug\Reports\Templates\f500_DLDKLK_So_DKNSHTP.xls" />
     <None Include="bin\Debug\Reports\Templates\f500_DLDKLK_So_DKNSHTP_bia.xls" />
     <None Include="bin\Debug\Reports\Templates\f500_DLDKLK_So_DKNSHTP_dsnshtp.xls" />
     <None Include="bin\Debug\Reports\Templates\f500_DLDKLK_So_DKNSHTP_sdknsh.xls" />
